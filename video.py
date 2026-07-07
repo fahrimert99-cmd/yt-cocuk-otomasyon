@@ -227,6 +227,110 @@ def _resize_cover(src, boyut, dst):
 # 5. FFMPEG İLE BİRLEŞTİRME
 #    Ken Burns (yavaş zoom) + alt yazı gömme + ses
 # ----------------------------------------------------------
+# ----------------------------------------------------------
+# AI GÖRSEL ÜRETİMİ (Pollinations — ücretsiz, anahtar gerektirmez)
+# Her sahne için senaryoya uygun sevimli çocuk çizimi üretir.
+# Başarısız olursa degrade karta düşer (video asla boş kalmaz).
+# ----------------------------------------------------------
+def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True):
+    import urllib.parse, urllib.request
+    W, H = boyut
+    stil = ("children's book illustration, cute, colorful, cartoon, friendly, "
+            "soft lighting, simple, no text") if cocuk else \
+           ("digital illustration, colorful, high quality, no text")
+    tam = f"{prompt}, {stil}"
+    q = urllib.parse.quote(tam)
+    url = (f"https://image.pollinations.ai/prompt/{q}"
+           f"?width={W}&height={H}&nologo=true&seed={1000+idx}")
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "yt-otomasyon"})
+        with urllib.request.urlopen(req, timeout=90) as r:
+            data = r.read()
+        ham = path + ".raw"
+        with open(ham, "wb") as f:
+            f.write(data)
+        _resize_cover(ham, boyut, path)
+        os.remove(ham)
+        return True
+    except Exception as e:
+        print(f"      [görsel {idx} AI hatası, karta düşülüyor: {e}]")
+        gradient_kart(prompt[:80], boyut, idx, path)
+        return False
+
+
+def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True):
+    """sahneler: [{'gorsel': 'ingilizce görsel tarifi'}, ...] (Gemini'den).
+    Yoksa cümlelerden türetir. Her sahne için AI görsel üretir."""
+    if sahneler:
+        prompts = [s.get("gorsel") or s.get("metin") or "" for s in sahneler if s]
+    else:
+        # sahne yoksa ~2 cümlede bir görsel
+        prompts = [" ".join(cumleler[i:i+2]) for i in range(0, len(cumleler), 2)]
+    prompts = [p for p in prompts if p.strip()] or ["colorful happy scene"]
+    paths = []
+    for i, p in enumerate(prompts):
+        dst = os.path.join(tmp, f"sahne_{i:03d}.jpg")
+        gorsel_uret_ai(p, boyut, i, dst, cocuk=cocuk)
+        paths.append(dst)
+    return paths
+
+
+# ----------------------------------------------------------
+# ANİMASYONLU MONTAJ: Ken Burns (yavaş zoom) + çapraz geçiş
+# ----------------------------------------------------------
+def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.7):
+    W, H = boyut
+    toplam = sure_al(mp3)
+    n = len(gorseller)
+    # her sahnenin süresi: geçiş paylarını da hesaba katarak sesi tam kaplasın
+    # toplam = n*D - (n-1)*gecis  ->  D = (toplam + (n-1)*gecis) / n
+    D = (toplam + (n - 1) * gecis) / n if n > 0 else toplam
+    D = max(D, gecis + 0.6)
+    tmp = tempfile.mkdtemp()
+    klipler = []
+    for i, g in enumerate(gorseller):
+        seg = os.path.join(tmp, f"k{i}.mp4")
+        yon = 0.0009 if i % 2 == 0 else 0.0007
+        zoom = f"zoompan=z='min(zoom+{yon},1.15)':d={int(D*fps)}:s={W}x{H}:fps={fps}"
+        subprocess.run(["ffmpeg", "-y", "-loop", "1", "-i", g, "-t", f"{D:.3f}",
+                        "-vf", f"scale={W}:{H},{zoom},format=yuv420p",
+                        "-r", str(fps), "-c:v", "libx264", "-preset", "veryfast",
+                        "-crf", "23", seg], check=True, capture_output=True)
+        klipler.append(seg)
+
+    tmpv = os.path.join(tmp, "gorsel.mp4")
+    if n == 1:
+        shutil.copy(klipler[0], tmpv)
+    else:
+        inputs = []
+        for k in klipler:
+            inputs += ["-i", k]
+        fc = ""
+        prev = "0:v"
+        for i in range(1, n):
+            off = i * (D - gecis)
+            out = f"v{i}"
+            fc += (f"[{prev}][{i}:v]xfade=transition=fade:"
+                   f"duration={gecis}:offset={off:.3f}[{out}];")
+            prev = out
+        fc = fc.rstrip(";")
+        subprocess.run(["ffmpeg", "-y", *inputs, "-filter_complex", fc,
+                        "-map", f"[{prev}]", "-r", str(fps), "-c:v", "libx264",
+                        "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
+                        tmpv], check=True, capture_output=True)
+
+    # alt yazı göm + ses ekle
+    ass_esc = ass.replace("\\", "/").replace(":", "\\:")
+    subprocess.run(["ffmpeg", "-y", "-i", tmpv, "-i", mp3,
+                    "-vf", f"subtitles='{ass_esc}'",
+                    "-map", "0:v", "-map", "1:a",
+                    "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+                    "-c:a", "aac", "-b:a", "192k", "-shortest", cikti],
+                   check=True, capture_output=True)
+    shutil.rmtree(tmp, ignore_errors=True)
+    return toplam
+
+
 def sure_al(mp3):
     out = subprocess.run(["ffprobe","-v","error","-show_entries","format=duration",
                           "-of","default=noprint_wrappers=1:nokey=1", mp3],
@@ -277,8 +381,11 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
 # ----------------------------------------------------------
 # ANA AKIŞ
 # ----------------------------------------------------------
-def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%"):
-    """Orkestratör tarafından çağrılır: script dosyası -> mp4. Çıktı yolunu döndürür."""
+def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
+               sahneler=None, animasyon=True, cocuk=True):
+    """Orkestratör tarafından çağrılır: script -> mp4.
+    sahneler verilirse (Gemini'den), her sahne için AI görsel üretir ve
+    Ken Burns + çapraz geçişle animasyonlu montaj yapar."""
     boyut = CONFIG["dikey"] if dikey else CONFIG["yatay"]
     voice = CONFIG["sesler"][ses]
     text, cumleler = metni_oku(script_path)
@@ -288,9 +395,13 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%"):
     cues = cue_olustur(boundaries, CONFIG["altyazi_max_kelime"], CONFIG["altyazi_max_sure"])
     ass = os.path.join(tmp, "sub.ass")
     ass_yaz(cues, ass, CONFIG, dikey)
-    gorseller = gorselleri_hazirla(cumleler, boyut, tmp)
     os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
-    video_uret(gorseller, mp3, ass, cikti, boyut, CONFIG["fps"])
+    if animasyon:
+        gorseller = sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=cocuk)
+        video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, CONFIG["fps"])
+    else:
+        gorseller = gorselleri_hazirla(cumleler, boyut, tmp)
+        video_uret(gorseller, mp3, ass, cikti, boyut, CONFIG["fps"])
     shutil.rmtree(tmp, ignore_errors=True)
     return cikti
 
