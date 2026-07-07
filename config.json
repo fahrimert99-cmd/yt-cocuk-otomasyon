@@ -2,7 +2,7 @@
   "format": "dikey",
   "ses": "erkek",
   "tonlama": "-12Hz",
-  "gizlilik": "private",
+  "gizlilik": "public",
   "kategori": "28",
   "cocuk_icerigi": false,
   "animasyon": true
