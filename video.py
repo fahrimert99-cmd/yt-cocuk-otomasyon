@@ -35,11 +35,11 @@ CONFIG = {
     # Alt yazı stili (libass / ASS)
     "altyazi": {
         "font": "DejaVu Sans",      # sizin makinede "Arial" yazabilirsiniz
-        "punto_yatay": 22,
-        "punto_dikey": 14,
+        "punto_yatay": 24,
+        "punto_dikey": 17,
         "renk": "&H00FFFFFF",       # beyaz
         "kenar_renk": "&H00000000", # siyah kenarlık
-        "kenar_kalinlik": 3,
+        "kenar_kalinlik": 4,
         "alt_bosluk": 60,
     },
     "altyazi_max_kelime": 8,        # bir alt yazı satırındaki max kelime
@@ -75,9 +75,9 @@ def metni_oku(path):
 # 2. SESLENDIRME + ZAMAN-SENKRON ALT YAZI (edge-tts)
 #    Çıktı: narration.mp3  +  subtitle cue listesi
 # ----------------------------------------------------------
-async def _tts(text, voice, rate, mp3_path):
+async def _tts(text, voice, rate, mp3_path, pitch="+0Hz"):
     import edge_tts
-    comm = edge_tts.Communicate(text, voice, rate=rate)
+    comm = edge_tts.Communicate(text, voice, rate=rate, pitch=pitch)
     boundaries = []
     with open(mp3_path, "wb") as f:
         async for ch in comm.stream():
@@ -91,8 +91,8 @@ async def _tts(text, voice, rate, mp3_path):
                 })
     return boundaries
 
-def seslendir(text, voice, rate, mp3_path):
-    return asyncio.run(_tts(text, voice, rate, mp3_path))
+def seslendir(text, voice, rate, mp3_path, pitch="+0Hz"):
+    return asyncio.run(_tts(text, voice, rate, mp3_path, pitch=pitch))
 
 def cue_olustur(boundaries, max_kelime, max_sure):
     """WordBoundary listesini alt yazı cue'larına gruplar."""
@@ -382,16 +382,17 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
 # ANA AKIŞ
 # ----------------------------------------------------------
 def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
-               sahneler=None, animasyon=True, cocuk=True):
+               sahneler=None, animasyon=True, cocuk=True, tonlama="+0Hz"):
     """Orkestratör tarafından çağrılır: script -> mp4.
     sahneler verilirse (Gemini'den), her sahne için AI görsel üretir ve
-    Ken Burns + çapraz geçişle animasyonlu montaj yapar."""
+    Ken Burns + çapraz geçişle animasyonlu montaj yapar.
+    tonlama: ses tonu (örn '-12Hz' daha tok/derin erkek sesi)."""
     boyut = CONFIG["dikey"] if dikey else CONFIG["yatay"]
     voice = CONFIG["sesler"][ses]
     text, cumleler = metni_oku(script_path)
     tmp = tempfile.mkdtemp()
     mp3 = os.path.join(tmp, "narration.mp3")
-    boundaries = seslendir(text, voice, hiz, mp3)
+    boundaries = seslendir(text, voice, hiz, mp3, pitch=tonlama)
     cues = cue_olustur(boundaries, CONFIG["altyazi_max_kelime"], CONFIG["altyazi_max_sure"])
     ass = os.path.join(tmp, "sub.ass")
     ass_yaz(cues, ass, CONFIG, dikey)
