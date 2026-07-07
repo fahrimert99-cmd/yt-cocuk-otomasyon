@@ -28,7 +28,7 @@ CONFIG = {
         "erkek": "tr-TR-AhmetNeural",
     },
     "varsayilan_ses": "kadin",
-    "konusma_hizi":   "+0%",        # örn "+10%" daha hızlı, "-10%" daha yavaş
+    "konusma_hizi":   "+10%",        # örn "+10%" daha hızlı, "-10%" daha yavaş
     "yatay":  (1920, 1080),         # 16:9
     "dikey":  (1080, 1920),         # 9:16 Shorts
     "fps": 30,
