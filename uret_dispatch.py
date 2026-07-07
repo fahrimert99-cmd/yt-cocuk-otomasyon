@@ -56,6 +56,7 @@ def main():
     kategori = str(cfg.get("kategori", "27"))
     cocuk = bool(cfg.get("cocuk_icerigi", False))
     animasyon = bool(cfg.get("animasyon", True))
+    tonlama = str(cfg.get("tonlama", "+0Hz"))
     sahneler = veri.get("sahneler") or None
 
     print(f"[1/3] Icerik alindi ({len(script.split())} kelime). Baslik: {baslik}")
@@ -68,7 +69,7 @@ def main():
     cikti = "output/video.mp4"
     print("[2/3] Video uretiliyor (edge-tts + alt yazi + FFmpeg) ...")
     V.uret_video(sp, cikti, ses=ses, dikey=dikey,
-                 sahneler=sahneler, animasyon=animasyon, cocuk=cocuk)
+                 sahneler=sahneler, animasyon=animasyon, cocuk=cocuk, tonlama=tonlama)
     print(f"      Cikti: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
     print("[3/3] YouTube'a yukleniyor ...")
