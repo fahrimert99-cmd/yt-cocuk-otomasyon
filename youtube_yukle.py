@@ -24,7 +24,7 @@ def _kimlik():
 
 def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False):
     """
-    gizlilik: 'private' | 'unlisted' | 'public'
+    gizlilik: 'public' | 'unlisted' | 'public'
     kategori: 27=Eğitim, 24=Eğlence, 28=Bilim&Teknoloji, 22=İnsanlar&Bloglar
     """
     yt = build("youtube", "v3", credentials=_kimlik())
