@@ -237,7 +237,7 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True):
     W, H = boyut
     stil = ("children's book illustration, cute, colorful, cartoon, friendly, "
             "soft lighting, simple, no text") if cocuk else \
-           ("digital illustration, colorful, high quality, no text")
+           ("cinematic scientific illustration, detailed, dramatic lighting, realistic, educational, high quality, no text")
     tam = f"{prompt}, {stil}"
     q = urllib.parse.quote(tam)
     url = (f"https://image.pollinations.ai/prompt/{q}"
