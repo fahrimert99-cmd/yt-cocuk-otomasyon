@@ -70,4 +70,16 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import traceback, subprocess
+    try:
+        main()
+    except BaseException:
+        tb = traceback.format_exc()
+        open("hata.log", "w", encoding="utf-8").write(tb)
+        for c in (["git","config","user.name","bot"],
+                  ["git","config","user.email","bot@users.noreply.github.com"],
+                  ["git","add","hata.log"],
+                  ["git","commit","-m","hata logu"],
+                  ["git","push"]):
+            subprocess.run(c, check=False)
+        raise
