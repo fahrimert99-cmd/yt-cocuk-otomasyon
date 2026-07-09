@@ -60,22 +60,24 @@ def uret(baslik):
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     yollar = []
     if key:
-        yollar.append(lambda: _gemini(prompt, key))
-    yollar += [lambda: _poll_post(prompt), lambda: _poll_get(prompt)]
+        yollar.append(("gemini", lambda: _gemini(prompt, key)))
+    yollar += [("poll_post", lambda: _poll_post(prompt)),
+               ("poll_get", lambda: _poll_get(prompt))]
 
-    son_hata = None
-    for yol in yollar:
-        for deneme in range(2):
-            try:
-                ham = yol()
-                data = json.loads(_temizle(ham))
-                if data.get("script"):
-                    return data
-            except Exception as e:
-                son_hata = e
-                time.sleep(2)
-    raise SystemExit(f"AI senaryo üretilemedi (tüm yollar başarısız). Son hata: {son_hata}. "
-                     f"Öneri: GEMINI_API_KEY ekleyin (aistudio.google.com/apikey).")
+    hatalar = []
+    for ad, yol in yollar:
+        try:
+            ham = yol()
+            data = json.loads(_temizle(ham))
+            if data.get("script"):
+                return data
+            hatalar.append(f"{ad}: script bos/gecersiz JSON")
+        except Exception as e:
+            hatalar.append(f"{ad}: {type(e).__name__}: {str(e)[:200]}")
+            time.sleep(1)
+    import time as _t
+    raise SystemExit("AI senaryo uretilemedi @" + _t.strftime("%H:%M:%S") +
+                     " | " + " || ".join(hatalar))
 
 
 if __name__ == "__main__":
