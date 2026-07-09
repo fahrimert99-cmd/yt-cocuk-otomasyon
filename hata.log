@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 75, in <module>
+    main()
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 39, in main
+    veri = ai_script.uret(baslik)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/ai_script.py", line 77, in uret
+    raise SystemExit(f"AI senaryo üretilemedi (tüm yollar başarısız). Son hata: {son_hata}. "
+SystemExit: AI senaryo üretilemedi (tüm yollar başarısız). Son hata: 'content'. Öneri: GEMINI_API_KEY ekleyin (aistudio.google.com/apikey).
