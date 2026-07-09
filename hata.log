@@ -4,6 +4,6 @@ Traceback (most recent call last):
   File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 39, in main
     veri = ai_script.uret(baslik)
            ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/ai_script.py", line 80, in uret
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/ai_script.py", line 87, in uret
     raise SystemExit("AI senaryo uretilemedi @" + _t.strftime("%H:%M:%S") +
-SystemExit: AI senaryo uretilemedi @21:33:22 | gemini: HTTPError: HTTP Error 429: Too Many Requests || poll_post: KeyError: 'content' || poll_get: script bos/gecersiz JSON
+SystemExit: AI senaryo uretilemedi @21:41:24 | gemini#1: HTTPError: HTTP Error 429: Too Many Requests || gemini#2: HTTPError: HTTP Error 429: Too Many Requests || gemini#3: HTTPError: HTTP Error 429: Too Many Requests || gemini#4: HTTPError: HTTP Error 429: Too Many Requests || poll_post#1: KeyError: 'content' || poll_get: script bos
