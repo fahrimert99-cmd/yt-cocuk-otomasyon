@@ -4,6 +4,6 @@ Traceback (most recent call last):
   File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 39, in main
     veri = ai_script.uret(baslik)
            ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/ai_script.py", line 77, in uret
-    raise SystemExit(f"AI senaryo üretilemedi (tüm yollar başarısız). Son hata: {son_hata}. "
-SystemExit: AI senaryo üretilemedi (tüm yollar başarısız). Son hata: 'content'. Öneri: GEMINI_API_KEY ekleyin (aistudio.google.com/apikey).
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/ai_script.py", line 79, in uret
+    raise SystemExit("AI senaryo uretilemedi @" + _t.strftime("%H:%M:%S") +
+SystemExit: AI senaryo uretilemedi @21:30:54 | gemini: JSONDecodeError: Unterminated string starting at: line 11 column 13 (char 426) || poll_post: KeyError: 'content' || poll_get: script bos/gecersiz JSON
