@@ -1,27 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI Senaryo Üretici (GitHub-native).
-GEMINI_API_KEY tanımlıysa Google Gemini kullanır (daha kaliteli);
-yoksa anahtarsız ücretsiz Pollinations AI'ya düşer.
-Başlık verilir -> {baslik, aciklama, etiketler, script, sahneler} döner.
+AI Senaryo Üretici (GitHub-native, sağlam).
+GEMINI_API_KEY varsa Gemini (en kaliteli/güvenilir); yoksa anahtarsız Pollinations
+(POST /openai -> GET fallback). Her yol için tekrar denemeli + esnek JSON ayrıştırma.
 """
-import os, re, json, urllib.request
+import os, re, json, time, urllib.parse, urllib.request
 
-PROMPT = """Sen Veritasium tarzinda, meraki uyandiran bilim ve egitim icerigi ureten bir YouTube yazarisin. Sasirtici, sezgiye aykiri bilim gercekleri anlatirsin.
-Asagidaki BASLIK icin genel izleyiciye uygun, akici ve merakli bir Turkce seslendirme metni yaz.
+PROMPT = """Sen Veritasium tarzinda bilim icerigi ureten bir YouTube yazarisin.
 BASLIK: {baslik}
-Kurallar: Yaklasik 50 saniyelik dikey video, yaklasik 110 kelime. Ilk cumle guclu bir kanca (sasirtici soru/iddia) olsun; ortada net ve DOGRU bir aciklama; sonda dusundurucu bir kapanis. Bilimsel olarak dogru ol; sade ama etkileyici bir dil kullan. Emoji/baslik/madde YOK, duz paragraf.
-Anlatimi 5 sahneye bol; her sahne icin o anki anlatimla uyumlu, sinematik ve bilimsel, INGILIZCE bir gorsel tarifi yaz (gorselde yazi olmasin).
-Yaniti SADECE tek satirlik gecerli JSON olarak ver, kod blogu veya aciklama ekleme:
-{{"baslik":"basligi kullan","aciklama":"2-3 cumle","etiketler":["e1","e2","e3","e4","e5"],"script":"tam seslendirme metni","sahneler":[{{"metin":"sahnenin turkce cumlesi","gorsel":"cinematic scientific english illustration description"}}]}}"""
+Bu baslik icin genel izleyiciye uygun, akici, bilimsel olarak DOGRU bir Turkce seslendirme metni yaz. ~110 kelime, ilk cumle guclu bir kanca olsun, sonda dusundurucu bir kapanis. Emoji/baslik/madde YOK, duz paragraf. Anlatimi 5 sahneye bol; her sahne icin INGILIZCE sinematik bir gorsel tarifi yaz.
+CEVABINI SADECE gecerli JSON olarak ver. Baska hicbir sey yazma, aciklama/kod blogu ekleme:
+{{"baslik":"...","aciklama":"2-3 cumle","etiketler":["e1","e2","e3","e4","e5"],"script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english description"}}]}}"""
 
 
 def _temizle(t):
-    t = t.strip()
+    t = (t or "").strip()
     t = re.sub(r"^```(json)?", "", t).strip()
     t = re.sub(r"```$", "", t).strip()
-    # ilk { ile son } arasini al (fazlalik metni ele)
     i, j = t.find("{"), t.rfind("}")
     if i >= 0 and j > i:
         t = t[i:j+1]
@@ -39,30 +35,47 @@ def _gemini(prompt, key, model="gemini-2.5-flash"):
     return d["candidates"][0]["content"]["parts"][0]["text"]
 
 
-def _pollinations(prompt):
-    # anahtarsiz, OpenAI-uyumlu ucretsiz endpoint
+def _poll_post(prompt):
     url = "https://text.pollinations.ai/openai"
-    body = {"model": "openai", "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.9}
+    body = {"model": "openai", "temperature": 0.9,
+            "messages": [{"role": "system", "content": "Yalnizca gecerli JSON dondur."},
+                         {"role": "user", "content": prompt}]}
     req = urllib.request.Request(url, data=json.dumps(body).encode(),
-                                 headers={"Content-Type": "application/json"})
+                                 headers={"Content-Type": "application/json", "User-Agent": "yt"})
     with urllib.request.urlopen(req, timeout=120) as r:
         d = json.loads(r.read().decode())
     return d["choices"][0]["message"]["content"]
 
 
+def _poll_get(prompt):
+    q = urllib.parse.quote(prompt)
+    url = f"https://text.pollinations.ai/{q}?model=openai"
+    req = urllib.request.Request(url, headers={"User-Agent": "yt"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        return r.read().decode("utf-8", "ignore")
+
+
 def uret(baslik):
     prompt = PROMPT.format(baslik=baslik)
     key = os.environ.get("GEMINI_API_KEY", "").strip()
-    ham = None
+    yollar = []
     if key:
-        try:
-            ham = _gemini(prompt, key)
-        except Exception as e:
-            print(f"   [Gemini hata: {e}; Pollinations'a düşülüyor]")
-    if ham is None:
-        ham = _pollinations(prompt)
-    return json.loads(_temizle(ham))
+        yollar.append(lambda: _gemini(prompt, key))
+    yollar += [lambda: _poll_post(prompt), lambda: _poll_get(prompt)]
+
+    son_hata = None
+    for yol in yollar:
+        for deneme in range(2):
+            try:
+                ham = yol()
+                data = json.loads(_temizle(ham))
+                if data.get("script"):
+                    return data
+            except Exception as e:
+                son_hata = e
+                time.sleep(2)
+    raise SystemExit(f"AI senaryo üretilemedi (tüm yollar başarısız). Son hata: {son_hata}. "
+                     f"Öneri: GEMINI_API_KEY ekleyin (aistudio.google.com/apikey).")
 
 
 if __name__ == "__main__":
