@@ -24,10 +24,11 @@ def _temizle(t):
     return t
 
 
-def _gemini(prompt, key, model="gemini-2.5-flash"):
+def _gemini(prompt, key, model="gemini-2.0-flash"):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
     body = {"contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.9, "maxOutputTokens": 2048}}
+            "generationConfig": {"temperature": 0.9, "maxOutputTokens": 4096,
+                                 "responseMimeType": "application/json"}}
     req = urllib.request.Request(url, data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=90) as r:
