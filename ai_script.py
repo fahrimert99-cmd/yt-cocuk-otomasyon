@@ -67,15 +67,22 @@ def uret(baslik):
 
     hatalar = []
     for ad, yol in yollar:
-        try:
-            ham = yol()
-            data = json.loads(_temizle(ham))
-            if data.get("script"):
-                return data
-            hatalar.append(f"{ad}: script bos/gecersiz JSON")
-        except Exception as e:
-            hatalar.append(f"{ad}: {type(e).__name__}: {str(e)[:200]}")
-            time.sleep(1)
+        denemeler = 4 if ad == "gemini" else 1
+        for k in range(denemeler):
+            try:
+                ham = yol()
+                data = json.loads(_temizle(ham))
+                if data.get("script"):
+                    return data
+                hatalar.append(f"{ad}: script bos")
+                break
+            except Exception as e:
+                msg = str(e)
+                hatalar.append(f"{ad}#{k+1}: {type(e).__name__}: {msg[:120]}")
+                if "429" in msg and k < denemeler - 1:
+                    time.sleep(30)      # dakika-limiti sifirlanmasini bekle
+                else:
+                    break
     import time as _t
     raise SystemExit("AI senaryo uretilemedi @" + _t.strftime("%H:%M:%S") +
                      " | " + " || ".join(hatalar))
