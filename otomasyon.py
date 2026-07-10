@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-GitHub-native otomasyon (Make'siz).
-basliklar.txt'ten sıradaki başlığı alır -> AI senaryo -> video -> YouTube -> sırayı ilerletir.
-durum.json sırayı hatırlar (workflow commit'ler).
-Ayarlar: config.json
+GitHub-native otomasyon (AI BAĞIMLILIĞI YOK).
+senaryolar.json'daki önceden hazırlanmış senaryolardan sıradakini alır ->
+video üretir -> YouTube'a yükler -> sırayı ilerletir.
+Hiçbir API anahtarı/kota gerektirmez. Ayarlar: config.json
 """
 import os, json, tempfile
-import ai_script
 import video as V
 
-BASLIKLAR = "basliklar.txt"
+SENARYOLAR = "senaryolar.json"
 DURUM = "durum.json"
 
 
-def _basliklar():
-    with open(BASLIKLAR, encoding="utf-8") as f:
-        return [l.strip() for l in f if l.strip() and not l.startswith("#")]
+def _senaryolar():
+    with open(SENARYOLAR, encoding="utf-8") as f:
+        return json.load(f)
 
 
 def _durum():
@@ -29,15 +28,11 @@ def _durum():
 def main():
     with open("config.json", encoding="utf-8") as f:
         cfg = json.load(f)
-    basliklar = _basliklar()
+    senaryolar = _senaryolar()
     durum = _durum()
-    idx = durum["sonraki"] % len(basliklar)
-    baslik = basliklar[idx]
-    print(f"[1/4] Başlık ({idx+1}/{len(basliklar)}): {baslik}")
-
-    print("[2/4] AI senaryo yazılıyor ...")
-    veri = ai_script.uret(baslik)
-    print(f"      Başlık: {veri.get('baslik')}")
+    idx = durum["sonraki"] % len(senaryolar)
+    veri = senaryolar[idx]
+    print(f"[1/3] Senaryo ({idx+1}/{len(senaryolar)}): {veri['baslik']}")
 
     tmp = tempfile.mkdtemp()
     sp = os.path.join(tmp, "script.txt")
@@ -45,7 +40,7 @@ def main():
         f.write(veri["script"])
     os.makedirs("output", exist_ok=True)
     cikti = "output/video.mp4"
-    print("[3/4] Video üretiliyor (AI görsel + hareket + alt yazı) ...")
+    print("[2/3] Video üretiliyor (ses + görsel + alt yazı) ...")
     V.uret_video(sp, cikti,
                  ses=cfg.get("ses", "erkek"),
                  dikey=(cfg.get("format", "dikey") == "dikey"),
@@ -55,11 +50,11 @@ def main():
                  tonlama=str(cfg.get("tonlama", "+0Hz")))
     print(f"      Çıktı: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
-    print("[4/4] YouTube'a yükleniyor ...")
+    print("[3/3] YouTube'a yükleniyor ...")
     import youtube_yukle as YT
-    etiketler = veri.get("etiketler") or []
-    YT.yukle(cikti, veri.get("baslik", baslik), veri.get("aciklama", ""),
-             etiketler, gizlilik=cfg.get("gizlilik", "private"),
+    YT.yukle(cikti, veri["baslik"], veri.get("aciklama", ""),
+             veri.get("etiketler", []),
+             gizlilik=cfg.get("gizlilik", "private"),
              kategori=str(cfg.get("kategori", "28")),
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)))
 
@@ -74,12 +69,9 @@ if __name__ == "__main__":
     try:
         main()
     except BaseException:
-        tb = traceback.format_exc()
-        open("hata.log", "w", encoding="utf-8").write(tb)
+        open("hata.log", "w", encoding="utf-8").write(traceback.format_exc())
         for c in (["git","config","user.name","bot"],
                   ["git","config","user.email","bot@users.noreply.github.com"],
-                  ["git","add","hata.log"],
-                  ["git","commit","-m","hata logu"],
-                  ["git","push"]):
+                  ["git","add","hata.log"], ["git","commit","-m","hata"], ["git","push"]):
             subprocess.run(c, check=False)
         raise
