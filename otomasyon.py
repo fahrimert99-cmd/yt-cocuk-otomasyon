@@ -20,7 +20,7 @@ def _senaryolar():
 
 def _durum():
     if os.path.exists(DURUM):
-        with open(DURUM, encoding="utf-8") as f:
+        with open(DURUM, encoding="utf-8-sig") as f:
             return json.load(f)
     return {"sonraki": 0}
 
