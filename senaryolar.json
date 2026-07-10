@@ -1,132 +1,411 @@
-[
-  {
-    "baslik": "Gökyüzü Neden Mavi, Gün Batımı Neden Kırmızı?",
-    "aciklama": "Gökyüzünün mavi, gün batımının kırmızı olmasının ardındaki ışık saçılması fiziğini anlatıyoruz. #bilim #fizik",
-    "etiketler": ["bilim", "fizik", "gökyüzü", "ışık", "günbatımı"],
-    "script": "Gökyüzüne baktığında mavi görürsün, ama Güneş ışığı aslında renksizdir. İşin sırrı, atmosferdeki minik hava moleküllerinde gizli. Güneş ışığı bu moleküllere çarptığında, mavi ışık diğer renklerden çok daha fazla saçılır ve gökyüzünün her yanına dağılır. İşte bu yüzden yukarısı masmavi görünür. Peki gün batımında ne değişir? Güneş ufka indiğinde, ışık atmosferde çok daha uzun bir yol kat eder. Mavi ışık bu yolda saçılıp tükenir, geriye yalnızca kırmızı ve turuncu kalır. Yani gökyüzünün rengi, ışığın kat ettiği yola bağlıdır. Bir dahaki gün batımında, aslında fiziğin en sessiz ama en güzel gösterisini izliyor olacaksın.",
-    "sahneler": [
-      {"metin": "Masmavi gökyüzü", "gorsel": "clear vivid blue sky over a green meadow, bright sunny day, cinematic wide shot"},
-      {"metin": "Işık moleküllere çarpıyor", "gorsel": "sunlight rays hitting tiny air molecules, blue light scattering, scientific illustration, glowing particles"},
-      {"metin": "Mavi ışık dağılıyor", "gorsel": "blue light waves dispersing across the atmosphere, physics visualization, soft glow"},
-      {"metin": "Kızıl gün batımı", "gorsel": "dramatic red and orange sunset over the ocean horizon, long light rays, cinematic"},
-      {"metin": "İzleyen kişi", "gorsel": "silhouette of a person watching a beautiful sunset, peaceful, golden hour"}
-    ]
-  },
-  {
-    "baslik": "Elektrik Tellerin İçinde Ne Kadar Hızlı Akar?",
-    "aciklama": "Elektronların şaşırtıcı yavaşlığına rağmen elektriğin neden anında çalıştığını açıklıyoruz. #bilim #elektrik",
-    "etiketler": ["bilim", "elektrik", "fizik", "enerji", "elektron"],
-    "script": "Işığı açtığında lamba anında yanar. Peki elektronlar telin içinde ışık hızıyla mı koşar? Şaşırtıcı ama hayır. Bir teldeki elektronlar aslında inanılmaz yavaş ilerler; saatte birkaç santimetre, yani bir salyangoz hızında. O zaman lamba nasıl anında yanıyor? Çünkü teli dolduran sayısız elektron bir arada, tıpkı baştan sona suyla dolu bir hortum gibidir. Bir uçtan ittiğinde, diğer uçtaki su hemen fışkırır; suyun kendisinin baştan sona gitmesi gerekmez. Elektrikte de itiş, yani elektrik alanı, telin içinde neredeyse ışık hızında yayılır. Yani hareket eden bilgi hızlıdır, ama elektronların kendisi tembel tembel süzülür.",
-    "sahneler": [
-      {"metin": "Lamba yanıyor", "gorsel": "a light bulb turning on instantly in a dark room, warm glow, cinematic"},
-      {"metin": "Telin içindeki elektronlar", "gorsel": "close up of copper wire with tiny glowing electrons drifting slowly, scientific illustration"},
-      {"metin": "Suyla dolu hortum", "gorsel": "a garden hose full of water, water pushed from one end spraying out the other, clear analogy"},
-      {"metin": "Elektrik alanı yayılıyor", "gorsel": "an electric field wave rushing through a wire at high speed, energy visualization, glowing blue"},
-      {"metin": "Yavaş süzülen elektronlar", "gorsel": "electrons slowly drifting like a snail while a fast wave passes, contrast illustration"}
-    ]
-  },
-  {
-    "baslik": "Neden Ay Hep Aynı Yüzünü Gösterir?",
-    "aciklama": "Ay'ın Dünya'ya hep aynı yüzünü göstermesinin nedeni olan gelgit kilitlenmesini anlatıyoruz. #uzay #ay",
-    "etiketler": ["bilim", "uzay", "ay", "astronomi", "dünya"],
-    "script": "Ay'a her baktığında hep aynı yüzünü görürsün. Sanki bize sırtını hiç dönmüyor. Peki bu bir tesadüf mü? Hayır, bunun adı gelgit kilitlenmesi. Milyarlarca yıl önce Ay kendi ekseni etrafında daha hızlı dönüyordu. Ama Dünya'nın çekim kuvveti, Ay'ın üzerinde hafif bir şişkinlik yaratarak onu yavaşça frenledi. Sonunda Ay öyle bir dengeye ulaştı ki, kendi etrafında bir tam dönüşü, Dünya'nın etrafındaki bir turuyla tam olarak aynı sürede tamamlıyor. İşte bu yüzden bize hep aynı yüzü bakıyor. Diğer yüzünü, yani Ay'ın karanlık tarafını, ancak uzay araçları sayesinde görebildik. Evrende hiçbir şey durup dururken böyle değildir.",
-    "sahneler": [
-      {"metin": "Gökyüzündeki Ay", "gorsel": "the full moon glowing in a dark starry night sky, cinematic"},
-      {"metin": "Ay Dünya etrafında dönüyor", "gorsel": "the moon orbiting the earth in space, showing the same face, astronomy illustration"},
-      {"metin": "Dünya'nın çekimi", "gorsel": "earth's gravity creating a slight bulge on the moon, tidal forces, scientific visualization"},
-      {"metin": "Senkron dönüş", "gorsel": "the moon rotating exactly once per orbit around earth, synchronized rotation diagram"},
-      {"metin": "Ay'ın uzak yüzü", "gorsel": "the far side of the moon revealed, cratered surface, spacecraft view, cinematic"}
-    ]
-  },
-  {
-    "baslik": "Zaman Herkes İçin Aynı Hızda mı Akar?",
-    "aciklama": "Görelilik gereği zamanın hıza ve yerçekimine göre nasıl değiştiğini anlatıyoruz. #bilim #görelilik",
-    "etiketler": ["bilim", "fizik", "zaman", "görelilik", "einstein"],
-    "script": "Zamanın herkes için aynı aktığını sanırız; bir saniye her yerde bir saniyedir. Ama Einstein bunun doğru olmadığını gösterdi. Ne kadar hızlı hareket edersen, senin için zaman o kadar yavaş akar. Uzayda ışık hızına yakın giden bir astronot için saniyeler, Dünya'dakinden daha yavaş geçer. Dahası, yerçekimi de zamanı büker; güçlü çekim alanında zaman daha yavaş işler. Bu sadece teori değil. GPS uyduları hızlı hareket ettiği ve zayıf çekimde olduğu için, saatleri bizimkinden farklı işler. Mühendisler bunu hesaba katmasa, telefonundaki konum her gün kilometrelerce şaşardı. Yani zaman, sandığın kadar sabit değil; esner, bükülür ve akışı sana bağlıdır.",
-    "sahneler": [
-      {"metin": "Saatler", "gorsel": "many clocks showing different times, surreal, cinematic, warm light"},
-      {"metin": "Hızlı giden astronot", "gorsel": "an astronaut traveling near light speed in space, time dilation, glowing stars streaking"},
-      {"metin": "Yerçekimi zamanı büküyor", "gorsel": "gravity bending the fabric of spacetime near a massive planet, scientific visualization"},
-      {"metin": "GPS uyduları", "gorsel": "GPS satellites orbiting earth, beaming signals, technology illustration, cinematic"},
-      {"metin": "Esneyen zaman", "gorsel": "a clock melting and stretching like elastic, abstract time concept, artistic"}
-    ]
-  },
-  {
-    "baslik": "Uçaklar Gerçekte Nasıl Havada Kalır?",
-    "aciklama": "Tonlarca ağırlıktaki uçakların kanatları sayesinde nasıl uçtuğunu açıklıyoruz. #bilim #havacılık",
-    "etiketler": ["bilim", "fizik", "uçak", "havacılık", "aerodinamik"],
-    "script": "Yüzlerce ton ağırlığındaki bir uçak, nasıl olur da havada asılı kalır? Sihir değil, saf fizik. İşin kahramanı kanatlar. Bir uçak kanadının üst yüzeyi kavislidir; alt yüzeyi ise daha düz. Uçak ilerlerken kanadın üstünden geçen hava, alttakinden daha hızlı akar. Hızlı akan havanın basıncı düşer. Böylece altta yüksek, üstte düşük basınç oluşur ve bu fark, kanadı yukarı doğru iter. Buna kaldırma kuvveti denir. Motorlar uçağı yeterince hızlı ilerlettiğinde, kaldırma kuvveti uçağın ağırlığını yener ve dev makine gökyüzüne yükselir. Yani bir uçak, aslında havanın kendisine yaslanarak uçar. Bir dahaki uçuşunda, seni taşıyan şeyin görünmez hava olduğunu hatırla.",
-    "sahneler": [
-      {"metin": "Havadaki uçak", "gorsel": "a large passenger airplane flying high above the clouds, cinematic, blue sky"},
-      {"metin": "Kanat kesiti", "gorsel": "cross section of an airplane wing showing curved top and flat bottom, diagram, clean"},
-      {"metin": "Hava akışı", "gorsel": "air flowing faster over the curved top of a wing, slower underneath, airflow visualization"},
-      {"metin": "Basınç farkı ve kaldırma", "gorsel": "low pressure above and high pressure below a wing creating lift force, arrows, scientific"},
-      {"metin": "Yükselen uçak", "gorsel": "airplane taking off and climbing into the sky, powerful, cinematic sunset"}
-    ]
-  },
-  {
-    "baslik": "Ses Boşlukta Neden Duyulmaz?",
-    "aciklama": "Sesin yayılmak için neden bir ortama ihtiyaç duyduğunu, uzayın neden sessiz olduğunu anlatıyoruz. #bilim #uzay",
-    "etiketler": ["bilim", "fizik", "ses", "uzay", "dalga"],
-    "script": "Uzay filmlerinde patlamalar gümbür gümbür duyulur. Ama gerçekte uzay tamamen sessizdir. Neden? Çünkü ses, tek başına yolculuk edemez. Ses aslında bir titreşimdir; havadaki, sudaki ya da katı bir maddedeki moleküllerin birbirini itmesiyle dalga dalga ilerler. Konuştuğunda, ses telin havayı titretir, o hava komşusunu iter ve titreşim kulağına ulaşır. Ama uzay boşluğunda itilecek molekül yoktur; her yer neredeyse tam bir boşluktur. Titreşimi taşıyacak hiçbir şey olmadığı için ses hiç doğmadan ölür. İşte bu yüzden bir astronot, yanındaki patlamayı bile duyamaz. Uzayın en ürkütücü yanı belki de karanlığı değil, o mutlak sessizliğidir.",
-    "sahneler": [
-      {"metin": "Sessiz uzay", "gorsel": "silent deep space with distant stars and a nebula, vast emptiness, cinematic"},
-      {"metin": "Ses dalgası havada", "gorsel": "sound waves traveling through air molecules, vibrations spreading, scientific illustration"},
-      {"metin": "Konuşan insan", "gorsel": "close up of vocal cords vibrating and sound waves leaving a mouth, illustration"},
-      {"metin": "Boş uzayda molekül yok", "gorsel": "empty vacuum of space with no molecules, sound wave fading into nothing, concept art"},
-      {"metin": "Sessiz astronot", "gorsel": "an astronaut floating in space near a silent explosion, no sound, cinematic"}
-    ]
-  },
-  {
-    "baslik": "Neden Sıcak Su Bazen Soğuk Sudan Hızlı Donar?",
-    "aciklama": "Sezgiye aykırı Mpemba etkisini ve arkasındaki olası nedenleri anlatıyoruz. #bilim #fizik",
-    "etiketler": ["bilim", "fizik", "su", "donma", "mpemba"],
-    "script": "Mantık der ki, soğuk su dona en yakın olduğu için önce donmalı. Ama bazen tam tersi olur: sıcak su, soğuk sudan daha hızlı buza döner. Buna Mpemba etkisi denir ve bilim insanlarını hâlâ şaşırtıyor. Peki nasıl olabilir? Birkaç ipucu var. Sıcak su daha hızlı buharlaşır, böylece donacak su miktarı azalır. Ayrıca sıcak suda çözünmüş gazlar kaçar ve su molekülleri farklı bir düzene geçer. Sıcak suyun içindeki dolaşım da ısıyı yüzeye taşıyarak soğumayı hızlandırabilir. İşin ilginci, bilim bu etkiyi tam olarak hâlâ açıklayamadı. Yani bazen en basit görünen sorular, en derin gizemleri saklar.",
-    "sahneler": [
-      {"metin": "İki bardak su", "gorsel": "two glasses of water, one steaming hot and one cold, side by side, cinematic"},
-      {"metin": "Buza dönüşen su", "gorsel": "water freezing into ice crystals forming, macro shot, beautiful"},
-      {"metin": "Sıcak su buharlaşıyor", "gorsel": "hot water steaming and evaporating, rising vapor, scientific illustration"},
-      {"metin": "Su moleküllerinin düzeni", "gorsel": "water molecules rearranging as they cool, molecular illustration, glowing"},
-      {"metin": "Çözülmemiş gizem", "gorsel": "a question mark made of ice, mystery concept, cold blue tones, artistic"}
-    ]
-  },
-  {
-    "baslik": "Dönen Bir Jiroskop Neden Düşmez?",
-    "aciklama": "Dönen cisimlerin dengesini sağlayan açısal momentumu basitçe anlatıyoruz. #bilim #fizik",
-    "etiketler": ["bilim", "fizik", "jiroskop", "denge", "momentum"],
-    "script": "Duran bir bisiklet hemen devrilir. Ama tekerlekler dönmeye başlayınca sihirli bir şekilde dik durur. Aynı şeyi bir topaçta da görürüz: hızla dönerken yere yatmaya bir türlü razı olmaz. Bunun sırrı açısal momentum denen bir şeyde. Bir cisim döndüğünde, dönme ekseni bir yön belirler ve bu yönü korumak ister. Onu devirmeye çalışan yerçekimi kuvveti, dönme sayesinde başka bir yöne, kenara doğru saptırılır. İşte topacın hafifçe salınarak ama düşmeden dönmesinin nedeni budur. Bu ilke o kadar güçlüdür ki, uçakların, gemilerin ve uzay araçlarının yönünü bulmasını sağlar. Bazen dengede kalmanın yolu, durmak değil, dönmeye devam etmektir.",
-    "sahneler": [
-      {"metin": "Dönen topaç", "gorsel": "a spinning top balancing perfectly on a table, motion blur, cinematic close up"},
-      {"metin": "Bisiklet tekerleği", "gorsel": "a spinning bicycle wheel staying upright, physics demonstration, clean background"},
-      {"metin": "Dönme ekseni", "gorsel": "a spinning gyroscope with a glowing rotation axis, angular momentum visualization"},
-      {"metin": "Yerçekimi sapıyor", "gorsel": "gravity force being redirected sideways on a spinning object, arrows, scientific diagram"},
-      {"metin": "Uzay aracı jiroskopu", "gorsel": "a gyroscope guiding a spacecraft in orbit, technology illustration, cinematic"}
-    ]
-  },
-  {
-    "baslik": "Yerçekimi Bir Kuvvet mi, Yoksa Bükülmüş Uzay mı?",
-    "aciklama": "Einstein'ın yerçekimini uzay-zamanın eğriliği olarak açıklayan devrimci fikrini anlatıyoruz. #bilim #uzay",
-    "etiketler": ["bilim", "fizik", "yerçekimi", "einstein", "uzayzaman"],
-    "script": "Bir elmanın yere düşmesini yerçekimi kuvvetine bağlarız. Ama Einstein bize çok daha tuhaf bir gerçek gösterdi. Ona göre yerçekimi bir kuvvet değil; uzayın kendisinin bükülmesidir. Şöyle düşün: gergin bir çarşafın ortasına ağır bir top koyarsan, çarşaf çukurlaşır. Şimdi kenara küçük bir bilye bırak; bilye o çukura doğru yuvarlanır. İşte Güneş de uzay-zamanı tıpkı böyle büker ve gezegenler bu eğrilikte kayarak yörüngede kalır. Yani Dünya, Güneş'e bir iple bağlı değil; sadece bükülmüş uzayın çukurunda dönüyor. Sen de şu an sandalyende otururken, aslında bükülmüş uzay-zamanın seni Dünya'ya doğru ittiğini hissediyorsun. Yerçekimi, evrenin şeklidir.",
-    "sahneler": [
-      {"metin": "Düşen elma", "gorsel": "an apple falling from a tree in slow motion, cinematic, soft light"},
-      {"metin": "Gergin çarşap ve top", "gorsel": "a heavy ball on a stretched fabric creating a dip, analogy for spacetime, clean illustration"},
-      {"metin": "Küçük bilye çukura yuvarlanıyor", "gorsel": "a small marble rolling into the curve created by a heavy ball on fabric, physics demo"},
-      {"metin": "Güneş uzayı büküyor", "gorsel": "the sun bending the grid of spacetime with planets orbiting in the curve, cosmic visualization"},
-      {"metin": "Bükülmüş evren", "gorsel": "the curved fabric of spacetime across the universe, stars and galaxies, cinematic"}
-    ]
-  },
-  {
-    "baslik": "Kelebek Etkisi Gerçekten Mümkün mü?",
-    "aciklama": "Kaos teorisini ve küçük değişikliklerin nasıl büyük sonuçlar doğurabildiğini anlatıyoruz. #bilim #kaos",
-    "etiketler": ["bilim", "kaos", "kelebeketkisi", "matematik", "hava"],
-    "script": "Bir kelebeğin kanat çırpması, dünyanın öbür ucunda bir kasırga başlatabilir mi? Kulağa saçma geliyor, ama arkasında ciddi bir bilim var: kaos teorisi. Bazı sistemler başlangıç koşullarına inanılmaz duyarlıdır. En küçük bir değişiklik, zamanla katlanarak büyür ve sonucu tamamen değiştirir. Hava durumu tam olarak böyle bir sistemdir. Bir meteorolog ölçümlere minicik bir hata koysa bile, birkaç gün sonraki tahmin bambaşka çıkabilir. Kelebek gerçekten bir kasırga yaratmaz elbette; ama bu benzetme, evrende küçük şeylerin devasa sonuçlar doğurabileceğini anlatır. İşte bu yüzden havayı ancak birkaç gün öncesinden doğru tahmin edebiliriz. Bazen en küçük seçimler, en büyük farkı yaratır.",
-    "sahneler": [
-      {"metin": "Kanat çırpan kelebek", "gorsel": "a delicate butterfly flapping its wings in a sunny garden, macro, cinematic"},
-      {"metin": "Uzakta oluşan fırtına", "gorsel": "a powerful hurricane forming over the ocean, dramatic clouds, aerial view"},
-      {"metin": "Küçük değişim büyüyor", "gorsel": "a tiny change growing into large diverging paths, chaos theory visualization, abstract"},
-      {"metin": "Hava tahmini", "gorsel": "a meteorologist looking at complex weather maps and swirling patterns, technology"},
-      {"metin": "Küçük seçimler", "gorsel": "a single butterfly and a distant storm connected by a glowing thread, artistic concept"}
-    ]
-  }
+﻿[
+    {
+        "baslik":  "GÃ¶kyÃ¼zÃ¼ Neden Mavi, GÃ¼n BatÄ±mÄ± Neden KÄ±rmÄ±zÄ±?",
+        "aciklama":  "GÃ¶kyÃ¼zÃ¼nÃ¼n mavi, gÃ¼n batÄ±mÄ±nÄ±n kÄ±rmÄ±zÄ± olmasÄ±nÄ±n ardÄ±ndaki Ä±ÅŸÄ±k saÃ§Ä±lmasÄ± fiziÄŸini anlatÄ±yoruz. #bilim #fizik",
+        "etiketler":  [
+                          "bilim",
+                          "fizik",
+                          "gÃ¶kyÃ¼zÃ¼",
+                          "Ä±ÅŸÄ±k",
+                          "gÃ¼nbatÄ±mÄ±"
+                      ],
+        "script":  "GÃ¶kyÃ¼zÃ¼ne baktÄ±ÄŸÄ±nda mavi gÃ¶rÃ¼rsÃ¼n, ama GÃ¼neÅŸ Ä±ÅŸÄ±ÄŸÄ± aslÄ±nda renksizdir. Ä°ÅŸin sÄ±rrÄ±, atmosferdeki minik hava molekÃ¼llerinde gizli. GÃ¼neÅŸ Ä±ÅŸÄ±ÄŸÄ± bu molekÃ¼llere Ã§arptÄ±ÄŸÄ±nda, mavi Ä±ÅŸÄ±k diÄŸer renklerden Ã§ok daha fazla saÃ§Ä±lÄ±r ve gÃ¶kyÃ¼zÃ¼nÃ¼n her yanÄ±na daÄŸÄ±lÄ±r. Ä°ÅŸte bu yÃ¼zden yukarÄ±sÄ± masmavi gÃ¶rÃ¼nÃ¼r. Peki gÃ¼n batÄ±mÄ±nda ne deÄŸiÅŸir? GÃ¼neÅŸ ufka indiÄŸinde, Ä±ÅŸÄ±k atmosferde Ã§ok daha uzun bir yol kat eder. Mavi Ä±ÅŸÄ±k bu yolda saÃ§Ä±lÄ±p tÃ¼kenir, geriye yalnÄ±zca kÄ±rmÄ±zÄ± ve turuncu kalÄ±r. Yani gÃ¶kyÃ¼zÃ¼nÃ¼n rengi, Ä±ÅŸÄ±ÄŸÄ±n kat ettiÄŸi yola baÄŸlÄ±dÄ±r. Bir dahaki gÃ¼n batÄ±mÄ±nda, aslÄ±nda fiziÄŸin en sessiz ama en gÃ¼zel gÃ¶sterisini izliyor olacaksÄ±n.",
+        "sahneler":  [
+                         {
+                             "metin":  "Masmavi gÃ¶kyÃ¼zÃ¼",
+                             "gorsel":  "clear vivid blue sky over a green meadow, bright sunny day, cinematic wide shot"
+                         },
+                         {
+                             "metin":  "IÅŸÄ±k molekÃ¼llere Ã§arpÄ±yor",
+                             "gorsel":  "sunlight rays hitting tiny air molecules, blue light scattering, scientific illustration, glowing particles"
+                         },
+                         {
+                             "metin":  "Mavi Ä±ÅŸÄ±k daÄŸÄ±lÄ±yor",
+                             "gorsel":  "blue light waves dispersing across the atmosphere, physics visualization, soft glow"
+                         },
+                         {
+                             "metin":  "KÄ±zÄ±l gÃ¼n batÄ±mÄ±",
+                             "gorsel":  "dramatic red and orange sunset over the ocean horizon, long light rays, cinematic"
+                         },
+                         {
+                             "metin":  "Ä°zleyen kiÅŸi",
+                             "gorsel":  "silhouette of a person watching a beautiful sunset, peaceful, golden hour"
+                         }
+                     ]
+    },
+    {
+        "baslik":  "Elektrik Tellerin Ä°Ã§inde Ne Kadar HÄ±zlÄ± Akar?",
+        "aciklama":  "ElektronlarÄ±n ÅŸaÅŸÄ±rtÄ±cÄ± yavaÅŸlÄ±ÄŸÄ±na raÄŸmen elektriÄŸin neden anÄ±nda Ã§alÄ±ÅŸtÄ±ÄŸÄ±nÄ± aÃ§Ä±klÄ±yoruz. #bilim #elektrik",
+        "etiketler":  [
+                          "bilim",
+                          "elektrik",
+                          "fizik",
+                          "enerji",
+                          "elektron"
+                      ],
+        "script":  "IÅŸÄ±ÄŸÄ± aÃ§tÄ±ÄŸÄ±nda lamba anÄ±nda yanar. Peki elektronlar telin iÃ§inde Ä±ÅŸÄ±k hÄ±zÄ±yla mÄ± koÅŸar? ÅaÅŸÄ±rtÄ±cÄ± ama hayÄ±r. Bir teldeki elektronlar aslÄ±nda inanÄ±lmaz yavaÅŸ ilerler; saatte birkaÃ§ santimetre, yani bir salyangoz hÄ±zÄ±nda. O zaman lamba nasÄ±l anÄ±nda yanÄ±yor? Ã‡Ã¼nkÃ¼ teli dolduran sayÄ±sÄ±z elektron bir arada, tÄ±pkÄ± baÅŸtan sona suyla dolu bir hortum gibidir. Bir uÃ§tan ittiÄŸinde, diÄŸer uÃ§taki su hemen fÄ±ÅŸkÄ±rÄ±r; suyun kendisinin baÅŸtan sona gitmesi gerekmez. Elektrikte de itiÅŸ, yani elektrik alanÄ±, telin iÃ§inde neredeyse Ä±ÅŸÄ±k hÄ±zÄ±nda yayÄ±lÄ±r. Yani hareket eden bilgi hÄ±zlÄ±dÄ±r, ama elektronlarÄ±n kendisi tembel tembel sÃ¼zÃ¼lÃ¼r.",
+        "sahneler":  [
+                         {
+                             "metin":  "Lamba yanÄ±yor",
+                             "gorsel":  "a light bulb turning on instantly in a dark room, warm glow, cinematic"
+                         },
+                         {
+                             "metin":  "Telin iÃ§indeki elektronlar",
+                             "gorsel":  "close up of copper wire with tiny glowing electrons drifting slowly, scientific illustration"
+                         },
+                         {
+                             "metin":  "Suyla dolu hortum",
+                             "gorsel":  "a garden hose full of water, water pushed from one end spraying out the other, clear analogy"
+                         },
+                         {
+                             "metin":  "Elektrik alanÄ± yayÄ±lÄ±yor",
+                             "gorsel":  "an electric field wave rushing through a wire at high speed, energy visualization, glowing blue"
+                         },
+                         {
+                             "metin":  "YavaÅŸ sÃ¼zÃ¼len elektronlar",
+                             "gorsel":  "electrons slowly drifting like a snail while a fast wave passes, contrast illustration"
+                         }
+                     ]
+    },
+    {
+        "baslik":  "Neden Ay Hep AynÄ± YÃ¼zÃ¼nÃ¼ GÃ¶sterir?",
+        "aciklama":  "Ay\u0027Ä±n DÃ¼nya\u0027ya hep aynÄ± yÃ¼zÃ¼nÃ¼ gÃ¶stermesinin nedeni olan gelgit kilitlenmesini anlatÄ±yoruz. #uzay #ay",
+        "etiketler":  [
+                          "bilim",
+                          "uzay",
+                          "ay",
+                          "astronomi",
+                          "dÃ¼nya"
+                      ],
+        "script":  "Ay\u0027a her baktÄ±ÄŸÄ±nda hep aynÄ± yÃ¼zÃ¼nÃ¼ gÃ¶rÃ¼rsÃ¼n. Sanki bize sÄ±rtÄ±nÄ± hiÃ§ dÃ¶nmÃ¼yor. Peki bu bir tesadÃ¼f mÃ¼? HayÄ±r, bunun adÄ± gelgit kilitlenmesi. Milyarlarca yÄ±l Ã¶nce Ay kendi ekseni etrafÄ±nda daha hÄ±zlÄ± dÃ¶nÃ¼yordu. Ama DÃ¼nya\u0027nÄ±n Ã§ekim kuvveti, Ay\u0027Ä±n Ã¼zerinde hafif bir ÅŸiÅŸkinlik yaratarak onu yavaÅŸÃ§a frenledi. Sonunda Ay Ã¶yle bir dengeye ulaÅŸtÄ± ki, kendi etrafÄ±nda bir tam dÃ¶nÃ¼ÅŸÃ¼, DÃ¼nya\u0027nÄ±n etrafÄ±ndaki bir turuyla tam olarak aynÄ± sÃ¼rede tamamlÄ±yor. Ä°ÅŸte bu yÃ¼zden bize hep aynÄ± yÃ¼zÃ¼ bakÄ±yor. DiÄŸer yÃ¼zÃ¼nÃ¼, yani Ay\u0027Ä±n karanlÄ±k tarafÄ±nÄ±, ancak uzay araÃ§larÄ± sayesinde gÃ¶rebildik. Evrende hiÃ§bir ÅŸey durup dururken bÃ¶yle deÄŸildir.",
+        "sahneler":  [
+                         {
+                             "metin":  "GÃ¶kyÃ¼zÃ¼ndeki Ay",
+                             "gorsel":  "the full moon glowing in a dark starry night sky, cinematic"
+                         },
+                         {
+                             "metin":  "Ay DÃ¼nya etrafÄ±nda dÃ¶nÃ¼yor",
+                             "gorsel":  "the moon orbiting the earth in space, showing the same face, astronomy illustration"
+                         },
+                         {
+                             "metin":  "DÃ¼nya\u0027nÄ±n Ã§ekimi",
+                             "gorsel":  "earth\u0027s gravity creating a slight bulge on the moon, tidal forces, scientific visualization"
+                         },
+                         {
+                             "metin":  "Senkron dÃ¶nÃ¼ÅŸ",
+                             "gorsel":  "the moon rotating exactly once per orbit around earth, synchronized rotation diagram"
+                         },
+                         {
+                             "metin":  "Ay\u0027Ä±n uzak yÃ¼zÃ¼",
+                             "gorsel":  "the far side of the moon revealed, cratered surface, spacecraft view, cinematic"
+                         }
+                     ]
+    },
+    {
+        "baslik":  "Zaman Herkes Ä°Ã§in AynÄ± HÄ±zda mÄ± Akar?",
+        "aciklama":  "GÃ¶relilik gereÄŸi zamanÄ±n hÄ±za ve yerÃ§ekimine gÃ¶re nasÄ±l deÄŸiÅŸtiÄŸini anlatÄ±yoruz. #bilim #gÃ¶relilik",
+        "etiketler":  [
+                          "bilim",
+                          "fizik",
+                          "zaman",
+                          "gÃ¶relilik",
+                          "einstein"
+                      ],
+        "script":  "ZamanÄ±n herkes iÃ§in aynÄ± aktÄ±ÄŸÄ±nÄ± sanÄ±rÄ±z; bir saniye her yerde bir saniyedir. Ama Einstein bunun doÄŸru olmadÄ±ÄŸÄ±nÄ± gÃ¶sterdi. Ne kadar hÄ±zlÄ± hareket edersen, senin iÃ§in zaman o kadar yavaÅŸ akar. Uzayda Ä±ÅŸÄ±k hÄ±zÄ±na yakÄ±n giden bir astronot iÃ§in saniyeler, DÃ¼nya\u0027dakinden daha yavaÅŸ geÃ§er. DahasÄ±, yerÃ§ekimi de zamanÄ± bÃ¼ker; gÃ¼Ã§lÃ¼ Ã§ekim alanÄ±nda zaman daha yavaÅŸ iÅŸler. Bu sadece teori deÄŸil. GPS uydularÄ± hÄ±zlÄ± hareket ettiÄŸi ve zayÄ±f Ã§ekimde olduÄŸu iÃ§in, saatleri bizimkinden farklÄ± iÅŸler. MÃ¼hendisler bunu hesaba katmasa, telefonundaki konum her gÃ¼n kilometrelerce ÅŸaÅŸardÄ±. Yani zaman, sandÄ±ÄŸÄ±n kadar sabit deÄŸil; esner, bÃ¼kÃ¼lÃ¼r ve akÄ±ÅŸÄ± sana baÄŸlÄ±dÄ±r.",
+        "sahneler":  [
+                         {
+                             "metin":  "Saatler",
+                             "gorsel":  "many clocks showing different times, surreal, cinematic, warm light"
+                         },
+                         {
+                             "metin":  "HÄ±zlÄ± giden astronot",
+                             "gorsel":  "an astronaut traveling near light speed in space, time dilation, glowing stars streaking"
+                         },
+                         {
+                             "metin":  "YerÃ§ekimi zamanÄ± bÃ¼kÃ¼yor",
+                             "gorsel":  "gravity bending the fabric of spacetime near a massive planet, scientific visualization"
+                         },
+                         {
+                             "metin":  "GPS uydularÄ±",
+                             "gorsel":  "GPS satellites orbiting earth, beaming signals, technology illustration, cinematic"
+                         },
+                         {
+                             "metin":  "Esneyen zaman",
+                             "gorsel":  "a clock melting and stretching like elastic, abstract time concept, artistic"
+                         }
+                     ]
+    },
+    {
+        "baslik":  "UÃ§aklar GerÃ§ekte NasÄ±l Havada KalÄ±r?",
+        "aciklama":  "Tonlarca aÄŸÄ±rlÄ±ktaki uÃ§aklarÄ±n kanatlarÄ± sayesinde nasÄ±l uÃ§tuÄŸunu aÃ§Ä±klÄ±yoruz. #bilim #havacÄ±lÄ±k",
+        "etiketler":  [
+                          "bilim",
+                          "fizik",
+                          "uÃ§ak",
+                          "havacÄ±lÄ±k",
+                          "aerodinamik"
+                      ],
+        "script":  "YÃ¼zlerce ton aÄŸÄ±rlÄ±ÄŸÄ±ndaki bir uÃ§ak, nasÄ±l olur da havada asÄ±lÄ± kalÄ±r? Sihir deÄŸil, saf fizik. Ä°ÅŸin kahramanÄ± kanatlar. Bir uÃ§ak kanadÄ±nÄ±n Ã¼st yÃ¼zeyi kavislidir; alt yÃ¼zeyi ise daha dÃ¼z. UÃ§ak ilerlerken kanadÄ±n Ã¼stÃ¼nden geÃ§en hava, alttakinden daha hÄ±zlÄ± akar. HÄ±zlÄ± akan havanÄ±n basÄ±ncÄ± dÃ¼ÅŸer. BÃ¶ylece altta yÃ¼ksek, Ã¼stte dÃ¼ÅŸÃ¼k basÄ±nÃ§ oluÅŸur ve bu fark, kanadÄ± yukarÄ± doÄŸru iter. Buna kaldÄ±rma kuvveti denir. Motorlar uÃ§aÄŸÄ± yeterince hÄ±zlÄ± ilerlettiÄŸinde, kaldÄ±rma kuvveti uÃ§aÄŸÄ±n aÄŸÄ±rlÄ±ÄŸÄ±nÄ± yener ve dev makine gÃ¶kyÃ¼zÃ¼ne yÃ¼kselir. Yani bir uÃ§ak, aslÄ±nda havanÄ±n kendisine yaslanarak uÃ§ar. Bir dahaki uÃ§uÅŸunda, seni taÅŸÄ±yan ÅŸeyin gÃ¶rÃ¼nmez hava olduÄŸunu hatÄ±rla.",
+        "sahneler":  [
+                         {
+                             "metin":  "Havadaki uÃ§ak",
+                             "gorsel":  "a large passenger airplane flying high above the clouds, cinematic, blue sky"
+                         },
+                         {
+                             "metin":  "Kanat kesiti",
+                             "gorsel":  "cross section of an airplane wing showing curved top and flat bottom, diagram, clean"
+                         },
+                         {
+                             "metin":  "Hava akÄ±ÅŸÄ±",
+                             "gorsel":  "air flowing faster over the curved top of a wing, slower underneath, airflow visualization"
+                         },
+                         {
+                             "metin":  "BasÄ±nÃ§ farkÄ± ve kaldÄ±rma",
+                             "gorsel":  "low pressure above and high pressure below a wing creating lift force, arrows, scientific"
+                         },
+                         {
+                             "metin":  "YÃ¼kselen uÃ§ak",
+                             "gorsel":  "airplane taking off and climbing into the sky, powerful, cinematic sunset"
+                         }
+                     ]
+    },
+    {
+        "baslik":  "Ses BoÅŸlukta Neden Duyulmaz?",
+        "aciklama":  "Sesin yayÄ±lmak iÃ§in neden bir ortama ihtiyaÃ§ duyduÄŸunu, uzayÄ±n neden sessiz olduÄŸunu anlatÄ±yoruz. #bilim #uzay",
+        "etiketler":  [
+                          "bilim",
+                          "fizik",
+                          "ses",
+                          "uzay",
+                          "dalga"
+                      ],
+        "script":  "Uzay filmlerinde patlamalar gÃ¼mbÃ¼r gÃ¼mbÃ¼r duyulur. Ama gerÃ§ekte uzay tamamen sessizdir. Neden? Ã‡Ã¼nkÃ¼ ses, tek baÅŸÄ±na yolculuk edemez. Ses aslÄ±nda bir titreÅŸimdir; havadaki, sudaki ya da katÄ± bir maddedeki molekÃ¼llerin birbirini itmesiyle dalga dalga ilerler. KonuÅŸtuÄŸunda, ses telin havayÄ± titretir, o hava komÅŸusunu iter ve titreÅŸim kulaÄŸÄ±na ulaÅŸÄ±r. Ama uzay boÅŸluÄŸunda itilecek molekÃ¼l yoktur; her yer neredeyse tam bir boÅŸluktur. TitreÅŸimi taÅŸÄ±yacak hiÃ§bir ÅŸey olmadÄ±ÄŸÄ± iÃ§in ses hiÃ§ doÄŸmadan Ã¶lÃ¼r. Ä°ÅŸte bu yÃ¼zden bir astronot, yanÄ±ndaki patlamayÄ± bile duyamaz. UzayÄ±n en Ã¼rkÃ¼tÃ¼cÃ¼ yanÄ± belki de karanlÄ±ÄŸÄ± deÄŸil, o mutlak sessizliÄŸidir.",
+        "sahneler":  [
+                         {
+                             "metin":  "Sessiz uzay",
+                             "gorsel":  "silent deep space with distant stars and a nebula, vast emptiness, cinematic"
+                         },
+                         {
+                             "metin":  "Ses dalgasÄ± havada",
+                             "gorsel":  "sound waves traveling through air molecules, vibrations spreading, scientific illustration"
+                         },
+                         {
+                             "metin":  "KonuÅŸan insan",
+                             "gorsel":  "close up of vocal cords vibrating and sound waves leaving a mouth, illustration"
+                         },
+                         {
+                             "metin":  "BoÅŸ uzayda molekÃ¼l yok",
+                             "gorsel":  "empty vacuum of space with no molecules, sound wave fading into nothing, concept art"
+                         },
+                         {
+                             "metin":  "Sessiz astronot",
+                             "gorsel":  "an astronaut floating in space near a silent explosion, no sound, cinematic"
+                         }
+                     ]
+    },
+    {
+        "baslik":  "Neden SÄ±cak Su Bazen SoÄŸuk Sudan HÄ±zlÄ± Donar?",
+        "aciklama":  "Sezgiye aykÄ±rÄ± Mpemba etkisini ve arkasÄ±ndaki olasÄ± nedenleri anlatÄ±yoruz. #bilim #fizik",
+        "etiketler":  [
+                          "bilim",
+                          "fizik",
+                          "su",
+                          "donma",
+                          "mpemba"
+                      ],
+        "script":  "MantÄ±k der ki, soÄŸuk su dona en yakÄ±n olduÄŸu iÃ§in Ã¶nce donmalÄ±. Ama bazen tam tersi olur: sÄ±cak su, soÄŸuk sudan daha hÄ±zlÄ± buza dÃ¶ner. Buna Mpemba etkisi denir ve bilim insanlarÄ±nÄ± hÃ¢lÃ¢ ÅŸaÅŸÄ±rtÄ±yor. Peki nasÄ±l olabilir? BirkaÃ§ ipucu var. SÄ±cak su daha hÄ±zlÄ± buharlaÅŸÄ±r, bÃ¶ylece donacak su miktarÄ± azalÄ±r. AyrÄ±ca sÄ±cak suda Ã§Ã¶zÃ¼nmÃ¼ÅŸ gazlar kaÃ§ar ve su molekÃ¼lleri farklÄ± bir dÃ¼zene geÃ§er. SÄ±cak suyun iÃ§indeki dolaÅŸÄ±m da Ä±sÄ±yÄ± yÃ¼zeye taÅŸÄ±yarak soÄŸumayÄ± hÄ±zlandÄ±rabilir. Ä°ÅŸin ilginci, bilim bu etkiyi tam olarak hÃ¢lÃ¢ aÃ§Ä±klayamadÄ±. Yani bazen en basit gÃ¶rÃ¼nen sorular, en derin gizemleri saklar.",
+        "sahneler":  [
+                         {
+                             "metin":  "Ä°ki bardak su",
+                             "gorsel":  "two glasses of water, one steaming hot and one cold, side by side, cinematic"
+                         },
+                         {
+                             "metin":  "Buza dÃ¶nÃ¼ÅŸen su",
+                             "gorsel":  "water freezing into ice crystals forming, macro shot, beautiful"
+                         },
+                         {
+                             "metin":  "SÄ±cak su buharlaÅŸÄ±yor",
+                             "gorsel":  "hot water steaming and evaporating, rising vapor, scientific illustration"
+                         },
+                         {
+                             "metin":  "Su molekÃ¼llerinin dÃ¼zeni",
+                             "gorsel":  "water molecules rearranging as they cool, molecular illustration, glowing"
+                         },
+                         {
+                             "metin":  "Ã‡Ã¶zÃ¼lmemiÅŸ gizem",
+                             "gorsel":  "a question mark made of ice, mystery concept, cold blue tones, artistic"
+                         }
+                     ]
+    },
+    {
+        "baslik":  "DÃ¶nen Bir Jiroskop Neden DÃ¼ÅŸmez?",
+        "aciklama":  "DÃ¶nen cisimlerin dengesini saÄŸlayan aÃ§Ä±sal momentumu basitÃ§e anlatÄ±yoruz. #bilim #fizik",
+        "etiketler":  [
+                          "bilim",
+                          "fizik",
+                          "jiroskop",
+                          "denge",
+                          "momentum"
+                      ],
+        "script":  "Duran bir bisiklet hemen devrilir. Ama tekerlekler dÃ¶nmeye baÅŸlayÄ±nca sihirli bir ÅŸekilde dik durur. AynÄ± ÅŸeyi bir topaÃ§ta da gÃ¶rÃ¼rÃ¼z: hÄ±zla dÃ¶nerken yere yatmaya bir tÃ¼rlÃ¼ razÄ± olmaz. Bunun sÄ±rrÄ± aÃ§Ä±sal momentum denen bir ÅŸeyde. Bir cisim dÃ¶ndÃ¼ÄŸÃ¼nde, dÃ¶nme ekseni bir yÃ¶n belirler ve bu yÃ¶nÃ¼ korumak ister. Onu devirmeye Ã§alÄ±ÅŸan yerÃ§ekimi kuvveti, dÃ¶nme sayesinde baÅŸka bir yÃ¶ne, kenara doÄŸru saptÄ±rÄ±lÄ±r. Ä°ÅŸte topacÄ±n hafifÃ§e salÄ±narak ama dÃ¼ÅŸmeden dÃ¶nmesinin nedeni budur. Bu ilke o kadar gÃ¼Ã§lÃ¼dÃ¼r ki, uÃ§aklarÄ±n, gemilerin ve uzay araÃ§larÄ±nÄ±n yÃ¶nÃ¼nÃ¼ bulmasÄ±nÄ± saÄŸlar. Bazen dengede kalmanÄ±n yolu, durmak deÄŸil, dÃ¶nmeye devam etmektir.",
+        "sahneler":  [
+                         {
+                             "metin":  "DÃ¶nen topaÃ§",
+                             "gorsel":  "a spinning top balancing perfectly on a table, motion blur, cinematic close up"
+                         },
+                         {
+                             "metin":  "Bisiklet tekerleÄŸi",
+                             "gorsel":  "a spinning bicycle wheel staying upright, physics demonstration, clean background"
+                         },
+                         {
+                             "metin":  "DÃ¶nme ekseni",
+                             "gorsel":  "a spinning gyroscope with a glowing rotation axis, angular momentum visualization"
+                         },
+                         {
+                             "metin":  "YerÃ§ekimi sapÄ±yor",
+                             "gorsel":  "gravity force being redirected sideways on a spinning object, arrows, scientific diagram"
+                         },
+                         {
+                             "metin":  "Uzay aracÄ± jiroskopu",
+                             "gorsel":  "a gyroscope guiding a spacecraft in orbit, technology illustration, cinematic"
+                         }
+                     ]
+    },
+    {
+        "baslik":  "YerÃ§ekimi Bir Kuvvet mi, Yoksa BÃ¼kÃ¼lmÃ¼ÅŸ Uzay mÄ±?",
+        "aciklama":  "Einstein\u0027Ä±n yerÃ§ekimini uzay-zamanÄ±n eÄŸriliÄŸi olarak aÃ§Ä±klayan devrimci fikrini anlatÄ±yoruz. #bilim #uzay",
+        "etiketler":  [
+                          "bilim",
+                          "fizik",
+                          "yerÃ§ekimi",
+                          "einstein",
+                          "uzayzaman"
+                      ],
+        "script":  "Bir elmanÄ±n yere dÃ¼ÅŸmesini yerÃ§ekimi kuvvetine baÄŸlarÄ±z. Ama Einstein bize Ã§ok daha tuhaf bir gerÃ§ek gÃ¶sterdi. Ona gÃ¶re yerÃ§ekimi bir kuvvet deÄŸil; uzayÄ±n kendisinin bÃ¼kÃ¼lmesidir. ÅÃ¶yle dÃ¼ÅŸÃ¼n: gergin bir Ã§arÅŸafÄ±n ortasÄ±na aÄŸÄ±r bir top koyarsan, Ã§arÅŸaf Ã§ukurlaÅŸÄ±r. Åimdi kenara kÃ¼Ã§Ã¼k bir bilye bÄ±rak; bilye o Ã§ukura doÄŸru yuvarlanÄ±r. Ä°ÅŸte GÃ¼neÅŸ de uzay-zamanÄ± tÄ±pkÄ± bÃ¶yle bÃ¼ker ve gezegenler bu eÄŸrilikte kayarak yÃ¶rÃ¼ngede kalÄ±r. Yani DÃ¼nya, GÃ¼neÅŸ\u0027e bir iple baÄŸlÄ± deÄŸil; sadece bÃ¼kÃ¼lmÃ¼ÅŸ uzayÄ±n Ã§ukurunda dÃ¶nÃ¼yor. Sen de ÅŸu an sandalyende otururken, aslÄ±nda bÃ¼kÃ¼lmÃ¼ÅŸ uzay-zamanÄ±n seni DÃ¼nya\u0027ya doÄŸru ittiÄŸini hissediyorsun. YerÃ§ekimi, evrenin ÅŸeklidir.",
+        "sahneler":  [
+                         {
+                             "metin":  "DÃ¼ÅŸen elma",
+                             "gorsel":  "an apple falling from a tree in slow motion, cinematic, soft light"
+                         },
+                         {
+                             "metin":  "Gergin Ã§arÅŸap ve top",
+                             "gorsel":  "a heavy ball on a stretched fabric creating a dip, analogy for spacetime, clean illustration"
+                         },
+                         {
+                             "metin":  "KÃ¼Ã§Ã¼k bilye Ã§ukura yuvarlanÄ±yor",
+                             "gorsel":  "a small marble rolling into the curve created by a heavy ball on fabric, physics demo"
+                         },
+                         {
+                             "metin":  "GÃ¼neÅŸ uzayÄ± bÃ¼kÃ¼yor",
+                             "gorsel":  "the sun bending the grid of spacetime with planets orbiting in the curve, cosmic visualization"
+                         },
+                         {
+                             "metin":  "BÃ¼kÃ¼lmÃ¼ÅŸ evren",
+                             "gorsel":  "the curved fabric of spacetime across the universe, stars and galaxies, cinematic"
+                         }
+                     ]
+    },
+    {
+        "baslik":  "Kelebek Etkisi GerÃ§ekten MÃ¼mkÃ¼n mÃ¼?",
+        "aciklama":  "Kaos teorisini ve kÃ¼Ã§Ã¼k deÄŸiÅŸikliklerin nasÄ±l bÃ¼yÃ¼k sonuÃ§lar doÄŸurabildiÄŸini anlatÄ±yoruz. #bilim #kaos",
+        "etiketler":  [
+                          "bilim",
+                          "kaos",
+                          "kelebeketkisi",
+                          "matematik",
+                          "hava"
+                      ],
+        "script":  "Bir kelebeÄŸin kanat Ã§Ä±rpmasÄ±, dÃ¼nyanÄ±n Ã¶bÃ¼r ucunda bir kasÄ±rga baÅŸlatabilir mi? KulaÄŸa saÃ§ma geliyor, ama arkasÄ±nda ciddi bir bilim var: kaos teorisi. BazÄ± sistemler baÅŸlangÄ±Ã§ koÅŸullarÄ±na inanÄ±lmaz duyarlÄ±dÄ±r. En kÃ¼Ã§Ã¼k bir deÄŸiÅŸiklik, zamanla katlanarak bÃ¼yÃ¼r ve sonucu tamamen deÄŸiÅŸtirir. Hava durumu tam olarak bÃ¶yle bir sistemdir. Bir meteorolog Ã¶lÃ§Ã¼mlere minicik bir hata koysa bile, birkaÃ§ gÃ¼n sonraki tahmin bambaÅŸka Ã§Ä±kabilir. Kelebek gerÃ§ekten bir kasÄ±rga yaratmaz elbette; ama bu benzetme, evrende kÃ¼Ã§Ã¼k ÅŸeylerin devasa sonuÃ§lar doÄŸurabileceÄŸini anlatÄ±r. Ä°ÅŸte bu yÃ¼zden havayÄ± ancak birkaÃ§ gÃ¼n Ã¶ncesinden doÄŸru tahmin edebiliriz. Bazen en kÃ¼Ã§Ã¼k seÃ§imler, en bÃ¼yÃ¼k farkÄ± yaratÄ±r.",
+        "sahneler":  [
+                         {
+                             "metin":  "Kanat Ã§Ä±rpan kelebek",
+                             "gorsel":  "a delicate butterfly flapping its wings in a sunny garden, macro, cinematic"
+                         },
+                         {
+                             "metin":  "Uzakta oluÅŸan fÄ±rtÄ±na",
+                             "gorsel":  "a powerful hurricane forming over the ocean, dramatic clouds, aerial view"
+                         },
+                         {
+                             "metin":  "KÃ¼Ã§Ã¼k deÄŸiÅŸim bÃ¼yÃ¼yor",
+                             "gorsel":  "a tiny change growing into large diverging paths, chaos theory visualization, abstract"
+                         },
+                         {
+                             "metin":  "Hava tahmini",
+                             "gorsel":  "a meteorologist looking at complex weather maps and swirling patterns, technology"
+                         },
+                         {
+                             "metin":  "KÃ¼Ã§Ã¼k seÃ§imler",
+                             "gorsel":  "a single butterfly and a distant storm connected by a glowing thread, artistic concept"
+                         }
+                     ]
+    },
+    {
+        "tts":  {
+                    "voice":  "energetic_female",
+                    "pitch":  "+1",
+                    "speed":  1.35
+                },
+        "script":  "0:00-0:05|HOOK: \"Ready? You will be amazed!\" (energetic, 1.35x)`n0:05-0:12|INTRO: Short promise + what will surprise`n0:12-0:35|FEATURE1: Close-up demo + reaction`n0:35-0:58|FEATURE2: Fast cuts + slow-mo reveal`n0:58-1:20|FEATURE3: Big surprise + confetti`n1:20-1:30|CLOSING: CTA subscribe + teaser",
+        "baslik":  "Bu Oyuncak Sirlari Seni Sasirtacak!",
+        "etiketler":  [
+                          "toy",
+                          "surprise",
+                          "kids",
+                          "review"
+                      ],
+        "sahaneler":  [
+                          "HOOK: zoom + bright flash",
+                          "Feature1: macro close-up",
+                          "Feature2: slow-motion",
+                          "Feature3: reveal box + confetti",
+                          "Closing: reaction + CTA"
+                      ],
+        "aciklama":  "Quick surprising toy demo - 3 attention features and a surprise reveal."
+    },
+    {
+        "tts":  {
+                    "voice":  "cheerful_male",
+                    "pitch":  "+1",
+                    "speed":  1.35
+                },
+        "script":  "0:00-0:05|HOOK: \"Opening... you won\u0027t stop until you see #5!\" (cheerful, 1.35x)`n0:05-0:12|RULES: 5 items, scoring system`n0:12-2:00|UNBOXING: Each item ~20s demo + reaction + score graphic`n2:00-2:20|TOP3: Quick summary + favorite pick + poll CTA",
+        "baslik":  "Gizemli Kutudan En Iyi 5 Surpriz Cikti!",
+        "etiketler":  [
+                          "unboxing",
+                          "top5",
+                          "kids",
+                          "surprise"
+                      ],
+        "sahaneler":  [
+                          "Box close-up + confetti",
+                          "Reveal each item",
+                          "Kid reactions",
+                          "Top3 overlay graphics",
+                          "Poll CTA screen"
+                      ],
+        "aciklama":  "Unboxing + top5 ranking - quick scoring and viewer poll call-to-action."
+    },
+    {
+        "tts":  {
+                    "voice":  "narrator_epic",
+                    "pitch":  "0",
+                    "speed":  1.3
+                },
+        "script":  "0:00-0:06|HOOK: robot signal + \"Episode 1: Awakening\" (epic, 1.30x)`n0:06-0:30|SETUP: Robot lost, mission assigned`n0:30-1:30|SCENE A: Robot first encounter - discovery and small puzzle`n1:30-2:30|SCENE B: Mini-mission solved + clue found`n2:30-2:45|CLIFFHANGER: Big threat appears - \"Episode 2 soon!\"",
+        "baslik":  "Kayip Robotun Macerasi - Bolum 1",
+        "etiketler":  [
+                          "story",
+                          "kids-series",
+                          "robot",
+                          "adventure"
+                      ],
+        "sahaneler":  [
+                          "Opening: signal SFX",
+                          "Setup: map and mission",
+                          "Scene A: close-ups",
+                          "Scene B: action cuts",
+                          "Cliffhanger: dark silhouette"
+                      ],
+        "aciklama":  "Short adventure series start: robot awakening, mini missions, cliffhanger."
+    }
 ]
