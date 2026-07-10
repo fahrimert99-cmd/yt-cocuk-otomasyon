@@ -1,103 +1,106 @@
 [
   {
-    "baslik": "Aylar Neden Vardır",
-    "aciklama": "Ay'ın Dünya'ya ve çocuklara sihirli görünen etkisi",
+    "baslik": "BU PARÇA BEDENİ SİLİYOR! İçinde Neler Var? 🤔",
+    "aciklama": "Cilt hücrelerimiz her gün yok oluyor! İçinde neler var, neden bu kadar hızlı değişiyor?",
     "etiketler": [
+      "vücud",
       "bilim",
-      "uzay",
-      "ay"
+      "hücre",
+      "açıklı"
     ],
-    "script": "Gökyüzüne bak! Gece ışıl ışıl parlayan şey. Ay! Ama ay ne için vardır? Ay, Dünya'yı evrenin karanlığında dönerken dengede tuttuğu gibi sihirli bir duruş sağlar. Ay olmadan, Dünya sallanıp savrulurdu. Ay aynı zamanda denizin gelgitini yaratır, balıkları, midyeleri ve hatta bizim milyonlarca hayatı harekete geçirir. Ay olmadan hayat kara parçasında kalırdı. Ay gökyüzümüzün en sadık arkadaşı, her gece bize eşlik eder.",
+    "script": "Bekle, bildin mi? Seni oluşturan hücrelerin milyarlarcası ŞUANDA ölüyor. Tiksindi mi? Merak etme, yeni hücreler doğuyor. Evet, tam şimdi! Cildin en üst tabakası tamamen 28 günde değişiyor. Yani sen 28 gün sonra biraz daha 'yeni' bir insansın! Peki neden? Çünkü ciltler savaşıyor. Güneş, hava kirliliği, kötü bakteri... Hücreler bu savaşta ölüyor ve yeni askerler geliyor. Bu bile değil - saçlarınız büyüyor, dişleriniz değişiyor, kemiklerin içinde yeni kan yapılıyor. Siz tamamen dinamik, yaşayan, yenilenen bir sistem! Vücudunuz senin olmayan vücud değil, tamamen yeni parçalardan yapılıyor.",
     "sahneler": [
       {
-        "metin": "Ay gökyüzünde",
-        "gorsel": "full moon bright in night sky, stars around, dark blue sky"
+        "metin": "Hücre ölüyor",
+        "gorsel": "microscopic view of dying skin cells, dark background, animation"
       },
       {
-        "metin": "Gelgit dalgaları",
-        "gorsel": "ocean waves pulling in and out, moon above, tide animation"
+        "metin": "Yeni hücre doğuyor",
+        "gorsel": "bright new cell forming, glowing, renewal animation"
       },
       {
-        "metin": "Ay dönerken Dünya",
-        "gorsel": "Earth rotating with Moon in orbit, space view, scientific"
+        "metin": "Cilt tabakası değişiyor",
+        "gorsel": "cross-section of skin showing old layer shedding, new layer underneath"
       },
       {
-        "metin": "Deniz ve balıklar",
-        "gorsel": "underwater ocean scene with fish, moonlight filtering down"
+        "metin": "Çocuğun yüzü şaşkın",
+        "gorsel": "kid's amazed face, thinking about the fact, cinematic"
       }
     ],
     "seslendirme": {
       "motor": "google",
       "ses": "tr-TR-Neural2-C",
-      "hız": 1.2,
+      "hız": 1.3,
       "pitch": 0
     }
   },
   {
-    "baslik": "Dünya Neden Mavi",
-    "aciklama": "Sularımız gezegenimizi yaşanabilir yapan mucize",
+    "baslik": "UYURKEN KAYBOLAN SAATLERİN SIRARRRI! 😴 Nereye Gidiyor?",
+    "aciklama": "Uyku sırasında beyin neler yapıyor? Saatler neden uçup gidiyor?",
     "etiketler": [
+      "uyku",
+      "beyin",
       "bilim",
-      "coğrafya",
-      "su"
+      "psikolog"
     ],
-    "script": "Uzaydan Dünya'ya bak. Mavi! Çok mavi! Peki neden mavi? Su! Dünya'mızın yüzde yetmiş beşi su ile kaplı. Bu masif mavi biaslar, haddi adım bahçelerdir, belki de iyileştirilmiş yemişler, hayvan barınakları, balık çiftlikleri. Deniz yaşam olmadan, havamız zehirli olurdu. Ağaçlar var ama bitkilerse - kural, bitkilerin su gerektirir. Su taşıya ve döndürür. Dünya'nın maviliği yaşamın işaretidir. Gemi gökyüzüne bakın, yeryüzüne bakın, ve mucizeyi görün.",
+    "script": "Hep fark ettin mi? Uyuyunca saat uçuyor, sabahlıyorsun! Bir gece geçiyor ama seninle hiçbir şey olmuyormuş gibi hissediyorsun. Ama aslında beynin çılgın bir gece partisi yapıyor! Beyin uyurken hafızaları organize ediyor - hangi bilgiyi tutayım, hangisini sil? Rüyalar? Beynin filmleri! Vücudun dinleniyor, kas onarılıyor, iç organlar yeni hücre yapıyor. Kimyasal reaksiyonlar yağıyor. Ama hissetmiyor musun? Çünkü vizyonun kapalı, vücudun sessiz, beyin otopilotta. 8 saat sonra BANG, uyandırılıyorsun. Yani uyku aslında vücudunun en yoğun çalışma saatlerinden biri! Seni iyileştiriyor, güçlendiriyor, hazırlıyor.",
     "sahneler": [
       {
-        "metin": "Mavi Dünya uzaydan",
-        "gorsel": "Earth from space, blue oceans, white clouds, solar view"
+        "metin": "Çocuk uyuyor",
+        "gorsel": "peaceful child sleeping in bed, moonlight, soft colors"
       },
       {
-        "metin": "Deniz dalgaları",
-        "gorsel": "turquoise tropical ocean waves, beautiful beach, cinematic"
+        "metin": "Beyin çalışıyor",
+        "gorsel": "brain neurons firing, synapses glowing, night mode colors"
       },
       {
-        "metin": "Su damlası",
-        "gorsel": "macro close-up of water droplet, crystal clear, light reflection"
+        "metin": "Hafıza organize ediliyor",
+        "gorsel": "memories sorting, files organizing in brain, digital animation"
       },
       {
-        "metin": "Yaşam buzlu",
-        "gorsel": "underwater coral reef, colorful fish, sunlight rays, paradise"
+        "metin": "Uyandırılış",
+        "gorsel": "alarm clock ringing, child waking up, morning sunlight"
       }
     ],
     "seslendirme": {
       "motor": "google",
       "ses": "tr-TR-Neural2-A",
-      "hız": 1.15,
+      "hız": 1.25,
       "pitch": 0
     }
   },
   {
-    "baslik": "Yıldızlar Kaç Yaşında",
-    "aciklama": "Gökyüzündeki yıldızlar ve onların yaşam öyküleri",
+    "baslik": "RENKLER ASLINDA BOŞMU?! 🌈 Gerçeği Düş Kırıyor!",
+    "aciklama": "Gözlerinin gördüğü renkler aslında gerçek mi? Beyin oyun oynuyor mu?",
     "etiketler": [
-      "bilim",
-      "uzay",
-      "yıldızlar"
+      "renk",
+      "göz",
+      "beyin",
+      "illüzyon"
     ],
-    "script": "Gece gökyüzüne bak ve sayısız yıldız gör. Ama bu yıldızlar kaç yaşında? Bazı yıldızlar milyonlar, bazıları milyarlar yaş çeker. Gökyüzüne baktığımız zaman, aslında zamanda geriye bakıyoruz. En yakın yıldız, güneş hariç, dört ışık yılı uzakta. Demek ki, ondan gelen ışık dört yıl yolculuk yapmış. Evet, ışık! Işık en hızlı şey. Bu yüzden, eski yıldızları görüyoruz, çünkü ışık çok vakit alıyor gelmek için. Yıldızları izleyip, zamanın akışını öğrenebiliriz.",
+    "script": "Peki duydun mu? Renkler aslında yokmuş. Şaka değil, gerçekten! Gözünde sadece ışık var. Kırmızı mı? Aslında çok hızlı titreşen ışık. Mavi mi? Başka hızla titreşen ışık. Beynin bu titreşimleri okuyor ve 'buna kırmızı demeliyim' diyor. Ama kırmızı aslında orada değil! Beyin uydurmaya başlıyor. Gökkuşağı? Beynin ucundan uçan bir resim! Daha da kötüsü - güneşin ışığında gördüğün şeyler geceleri tamamen farklı görünür, çünkü beyin aydınlığa göre renkleri ayarlıyor. Yani sen renkleri değil, beyninin renkler hakkındaki kararlarını görüyorsün! Gerçeklik mi, beden mi, beyin mi? Hepsi karışmış!",
     "sahneler": [
       {
-        "metin": "Yıldız dolu gökyüzü",
-        "gorsel": "night sky full of stars, Milky Way visible, dark field, space"
+        "metin": "Işık spektrumu",
+        "gorsel": "light spectrum wave animation, showing frequencies"
       },
       {
-        "metin": "Işık seyahati",
-        "gorsel": "light beam traveling through space, stars distance illustration"
+        "metin": "Titreşen ışık",
+        "gorsel": "vibrating light waves in different frequencies, colorful"
       },
       {
-        "metin": "Yıldız doğumu",
-        "gorsel": "star formation nebula, colorful dust cloud, cosmic scene"
+        "metin": "Göz ve beyin iletişimi",
+        "gorsel": "eye receiving light, neural signals to brain, brain processing"
       },
       {
-        "metin": "Gözlemci çocuk",
-        "gorsel": "child looking at night sky with telescope, wonder and stars"
+        "metin": "Gökkuşağı",
+        "gorsel": "rainbow in sky, prismatic light, beautiful natural phenomenon"
       }
     ],
     "seslendirme": {
       "motor": "google",
       "ses": "tr-TR-Neural2-B",
-      "hız": 1.2,
+      "hız": 1.3,
       "pitch": 0
     }
   }
