@@ -1,106 +1,106 @@
-[
+﻿[
   {
-    "baslik": "BU PARÇA BEDENİ SİLİYOR! İçinde Neler Var? 🤔",
-    "aciklama": "Cilt hücrelerimiz her gün yok oluyor! İçinde neler var, neden bu kadar hızlı değişiyor?",
+    "baslik": "BU PARÃ‡A BEDENÄ° SÄ°LÄ°YOR! Ä°Ã§inde Neler Var? ğŸ¤”",
+    "aciklama": "Cilt hÃ¼crelerimiz her gÃ¼n yok oluyor! Ä°Ã§inde neler var, neden bu kadar hÄ±zlÄ± deÄŸiÅŸiyor?",
     "etiketler": [
-      "vücud",
+      "vÃ¼cud",
       "bilim",
-      "hücre",
-      "açıklı"
+      "hÃ¼cre",
+      "aÃ§Ä±klÄ±"
     ],
-    "script": "Bekle, bildin mi? Seni oluşturan hücrelerin milyarlarcası ŞUANDA ölüyor. Tiksindi mi? Merak etme, yeni hücreler doğuyor. Evet, tam şimdi! Cildin en üst tabakası tamamen 28 günde değişiyor. Yani sen 28 gün sonra biraz daha 'yeni' bir insansın! Peki neden? Çünkü ciltler savaşıyor. Güneş, hava kirliliği, kötü bakteri... Hücreler bu savaşta ölüyor ve yeni askerler geliyor. Bu bile değil - saçlarınız büyüyor, dişleriniz değişiyor, kemiklerin içinde yeni kan yapılıyor. Siz tamamen dinamik, yaşayan, yenilenen bir sistem! Vücudunuz senin olmayan vücud değil, tamamen yeni parçalardan yapılıyor.",
+    "script": "Bekle, bildin mi? Seni oluÅŸturan hÃ¼crelerin milyarlarcasÄ± ÅUANDA Ã¶lÃ¼yor. Tiksindi mi? Merak etme, yeni hÃ¼creler doÄŸuyor. Evet, tam ÅŸimdi! Cildin en Ã¼st tabakasÄ± tamamen 28 gÃ¼nde deÄŸiÅŸiyor. Yani sen 28 gÃ¼n sonra biraz daha 'yeni' bir insansÄ±n! Peki neden? Ã‡Ã¼nkÃ¼ ciltler savaÅŸÄ±yor. GÃ¼neÅŸ, hava kirliliÄŸi, kÃ¶tÃ¼ bakteri... HÃ¼creler bu savaÅŸta Ã¶lÃ¼yor ve yeni askerler geliyor. Bu bile deÄŸil - saÃ§larÄ±nÄ±z bÃ¼yÃ¼yor, diÅŸleriniz deÄŸiÅŸiyor, kemiklerin iÃ§inde yeni kan yapÄ±lÄ±yor. Siz tamamen dinamik, yaÅŸayan, yenilenen bir sistem! VÃ¼cudunuz senin olmayan vÃ¼cud deÄŸil, tamamen yeni parÃ§alardan yapÄ±lÄ±yor.",
     "sahneler": [
       {
-        "metin": "Hücre ölüyor",
+        "metin": "HÃ¼cre Ã¶lÃ¼yor",
         "gorsel": "microscopic view of dying skin cells, dark background, animation"
       },
       {
-        "metin": "Yeni hücre doğuyor",
+        "metin": "Yeni hÃ¼cre doÄŸuyor",
         "gorsel": "bright new cell forming, glowing, renewal animation"
       },
       {
-        "metin": "Cilt tabakası değişiyor",
+        "metin": "Cilt tabakasÄ± deÄŸiÅŸiyor",
         "gorsel": "cross-section of skin showing old layer shedding, new layer underneath"
       },
       {
-        "metin": "Çocuğun yüzü şaşkın",
+        "metin": "Ã‡ocuÄŸun yÃ¼zÃ¼ ÅŸaÅŸkÄ±n",
         "gorsel": "kid's amazed face, thinking about the fact, cinematic"
       }
     ],
     "seslendirme": {
       "motor": "google",
       "ses": "tr-TR-Neural2-C",
-      "hız": 1.3,
+      "hÄ±z": 1.3,
       "pitch": 0
     }
   },
   {
-    "baslik": "UYURKEN KAYBOLAN SAATLERİN SIRARRRI! 😴 Nereye Gidiyor?",
-    "aciklama": "Uyku sırasında beyin neler yapıyor? Saatler neden uçup gidiyor?",
+    "baslik": "UYURKEN KAYBOLAN SAATLERÄ°N SIRARRRI! ğŸ˜´ Nereye Gidiyor?",
+    "aciklama": "Uyku sÄ±rasÄ±nda beyin neler yapÄ±yor? Saatler neden uÃ§up gidiyor?",
     "etiketler": [
       "uyku",
       "beyin",
       "bilim",
       "psikolog"
     ],
-    "script": "Hep fark ettin mi? Uyuyunca saat uçuyor, sabahlıyorsun! Bir gece geçiyor ama seninle hiçbir şey olmuyormuş gibi hissediyorsun. Ama aslında beynin çılgın bir gece partisi yapıyor! Beyin uyurken hafızaları organize ediyor - hangi bilgiyi tutayım, hangisini sil? Rüyalar? Beynin filmleri! Vücudun dinleniyor, kas onarılıyor, iç organlar yeni hücre yapıyor. Kimyasal reaksiyonlar yağıyor. Ama hissetmiyor musun? Çünkü vizyonun kapalı, vücudun sessiz, beyin otopilotta. 8 saat sonra BANG, uyandırılıyorsun. Yani uyku aslında vücudunun en yoğun çalışma saatlerinden biri! Seni iyileştiriyor, güçlendiriyor, hazırlıyor.",
+    "script": "Hep fark ettin mi? Uyuyunca saat uÃ§uyor, sabahlÄ±yorsun! Bir gece geÃ§iyor ama seninle hiÃ§bir ÅŸey olmuyormuÅŸ gibi hissediyorsun. Ama aslÄ±nda beynin Ã§Ä±lgÄ±n bir gece partisi yapÄ±yor! Beyin uyurken hafÄ±zalarÄ± organize ediyor - hangi bilgiyi tutayÄ±m, hangisini sil? RÃ¼yalar? Beynin filmleri! VÃ¼cudun dinleniyor, kas onarÄ±lÄ±yor, iÃ§ organlar yeni hÃ¼cre yapÄ±yor. Kimyasal reaksiyonlar yaÄŸÄ±yor. Ama hissetmiyor musun? Ã‡Ã¼nkÃ¼ vizyonun kapalÄ±, vÃ¼cudun sessiz, beyin otopilotta. 8 saat sonra BANG, uyandÄ±rÄ±lÄ±yorsun. Yani uyku aslÄ±nda vÃ¼cudunun en yoÄŸun Ã§alÄ±ÅŸma saatlerinden biri! Seni iyileÅŸtiriyor, gÃ¼Ã§lendiriyor, hazÄ±rlÄ±yor.",
     "sahneler": [
       {
-        "metin": "Çocuk uyuyor",
+        "metin": "Ã‡ocuk uyuyor",
         "gorsel": "peaceful child sleeping in bed, moonlight, soft colors"
       },
       {
-        "metin": "Beyin çalışıyor",
+        "metin": "Beyin Ã§alÄ±ÅŸÄ±yor",
         "gorsel": "brain neurons firing, synapses glowing, night mode colors"
       },
       {
-        "metin": "Hafıza organize ediliyor",
+        "metin": "HafÄ±za organize ediliyor",
         "gorsel": "memories sorting, files organizing in brain, digital animation"
       },
       {
-        "metin": "Uyandırılış",
+        "metin": "UyandÄ±rÄ±lÄ±ÅŸ",
         "gorsel": "alarm clock ringing, child waking up, morning sunlight"
       }
     ],
     "seslendirme": {
       "motor": "google",
       "ses": "tr-TR-Neural2-A",
-      "hız": 1.25,
+      "hÄ±z": 1.25,
       "pitch": 0
     }
   },
   {
-    "baslik": "RENKLER ASLINDA BOŞMU?! 🌈 Gerçeği Düş Kırıyor!",
-    "aciklama": "Gözlerinin gördüğü renkler aslında gerçek mi? Beyin oyun oynuyor mu?",
+    "baslik": "RENKLER ASLINDA BOÅMU?! ğŸŒˆ GerÃ§eÄŸi DÃ¼ÅŸ KÄ±rÄ±yor!",
+    "aciklama": "GÃ¶zlerinin gÃ¶rdÃ¼ÄŸÃ¼ renkler aslÄ±nda gerÃ§ek mi? Beyin oyun oynuyor mu?",
     "etiketler": [
       "renk",
-      "göz",
+      "gÃ¶z",
       "beyin",
-      "illüzyon"
+      "illÃ¼zyon"
     ],
-    "script": "Peki duydun mu? Renkler aslında yokmuş. Şaka değil, gerçekten! Gözünde sadece ışık var. Kırmızı mı? Aslında çok hızlı titreşen ışık. Mavi mi? Başka hızla titreşen ışık. Beynin bu titreşimleri okuyor ve 'buna kırmızı demeliyim' diyor. Ama kırmızı aslında orada değil! Beyin uydurmaya başlıyor. Gökkuşağı? Beynin ucundan uçan bir resim! Daha da kötüsü - güneşin ışığında gördüğün şeyler geceleri tamamen farklı görünür, çünkü beyin aydınlığa göre renkleri ayarlıyor. Yani sen renkleri değil, beyninin renkler hakkındaki kararlarını görüyorsün! Gerçeklik mi, beden mi, beyin mi? Hepsi karışmış!",
+    "script": "Peki duydun mu? Renkler aslÄ±nda yokmuÅŸ. Åaka deÄŸil, gerÃ§ekten! GÃ¶zÃ¼nde sadece Ä±ÅŸÄ±k var. KÄ±rmÄ±zÄ± mÄ±? AslÄ±nda Ã§ok hÄ±zlÄ± titreÅŸen Ä±ÅŸÄ±k. Mavi mi? BaÅŸka hÄ±zla titreÅŸen Ä±ÅŸÄ±k. Beynin bu titreÅŸimleri okuyor ve 'buna kÄ±rmÄ±zÄ± demeliyim' diyor. Ama kÄ±rmÄ±zÄ± aslÄ±nda orada deÄŸil! Beyin uydurmaya baÅŸlÄ±yor. GÃ¶kkuÅŸaÄŸÄ±? Beynin ucundan uÃ§an bir resim! Daha da kÃ¶tÃ¼sÃ¼ - gÃ¼neÅŸin Ä±ÅŸÄ±ÄŸÄ±nda gÃ¶rdÃ¼ÄŸÃ¼n ÅŸeyler geceleri tamamen farklÄ± gÃ¶rÃ¼nÃ¼r, Ã§Ã¼nkÃ¼ beyin aydÄ±nlÄ±ÄŸa gÃ¶re renkleri ayarlÄ±yor. Yani sen renkleri deÄŸil, beyninin renkler hakkÄ±ndaki kararlarÄ±nÄ± gÃ¶rÃ¼yorsÃ¼n! GerÃ§eklik mi, beden mi, beyin mi? Hepsi karÄ±ÅŸmÄ±ÅŸ!",
     "sahneler": [
       {
-        "metin": "Işık spektrumu",
+        "metin": "IÅŸÄ±k spektrumu",
         "gorsel": "light spectrum wave animation, showing frequencies"
       },
       {
-        "metin": "Titreşen ışık",
+        "metin": "TitreÅŸen Ä±ÅŸÄ±k",
         "gorsel": "vibrating light waves in different frequencies, colorful"
       },
       {
-        "metin": "Göz ve beyin iletişimi",
+        "metin": "GÃ¶z ve beyin iletiÅŸimi",
         "gorsel": "eye receiving light, neural signals to brain, brain processing"
       },
       {
-        "metin": "Gökkuşağı",
+        "metin": "GÃ¶kkuÅŸaÄŸÄ±",
         "gorsel": "rainbow in sky, prismatic light, beautiful natural phenomenon"
       }
     ],
     "seslendirme": {
       "motor": "google",
       "ses": "tr-TR-Neural2-B",
-      "hız": 1.3,
+      "hÄ±z": 1.3,
       "pitch": 0
     }
   }
