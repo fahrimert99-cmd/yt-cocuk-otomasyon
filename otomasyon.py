@@ -51,13 +51,23 @@ def main():
                  tonlama=str(cfg.get("tonlama", "+0Hz")))
     print(f"      Çıktı: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
+    # Çarpıcı kapak fotoğrafı üret
+    kapak_yolu = None
+    try:
+        import kapak as K
+        kapak_yolu = K.kapak_uret(cikti, veri["baslik"], "output/kapak.jpg")
+        print(f"      Kapak: {kapak_yolu}")
+    except Exception as e:
+        print(f"      Kapak üretilemedi (atlanıyor): {str(e)[:120]}")
+
     print("[3/3] YouTube'a yükleniyor ...")
     import youtube_yukle as YT
     YT.yukle(cikti, veri["baslik"], veri.get("aciklama", ""),
              veri.get("etiketler", []),
              gizlilik=cfg.get("gizlilik", "private"),
              kategori=str(cfg.get("kategori", "28")),
-             cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)))
+             cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
+             kapak=kapak_yolu)
 
     durum["sonraki"] = idx + 1
     with open(DURUM, "w", encoding="utf-8") as f:
