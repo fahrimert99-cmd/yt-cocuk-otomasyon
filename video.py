@@ -94,6 +94,74 @@ async def _tts(text, voice, rate, mp3_path, pitch="+0Hz"):
 def seslendir(text, voice, rate, mp3_path, pitch="+0Hz"):
     return asyncio.run(_tts(text, voice, rate, mp3_path, pitch=pitch))
 
+# ----------------------------------------------------------
+# 2b. PROSODİK SESLENDIRME (cümle bazlı vurgu/tonlama)
+#     Her cümle, türüne göre farklı hız+ton ile ayrı seslendirilir,
+#     aralara doğal duraklama eklenir; monoton robot sesi kırılır.
+# ----------------------------------------------------------
+def _pct(s):
+    return int(re.sub(r"[^\-+\d]", "", s) or 0)
+
+def _hz(s):
+    return int(re.sub(r"[^\-+\d]", "", s) or 0)
+
+def _cumle_prosodi(i, n, cumle, base_rate, base_pitch):
+    """Cümlenin türüne/konumuna göre (rate, pitch, sonraki duraklama sn) döndürür."""
+    rate, pitch = base_rate, base_pitch
+    pause = 0.28
+    if i == 0:                                  # kanca: enerjik, biraz yüksek ton
+        rate += 0; pitch += 5; pause = 0.40
+    elif i == n - 1:                            # kapanış: yavaş, derin, düşündürücü
+        rate -= 8; pitch -= 4; pause = 0.0
+    elif cumle.rstrip().endswith("?"):          # soru: yükselen ton, sonrası nefes payı
+        pitch += 6; pause = 0.42
+    elif cumle.rstrip().endswith("!"):          # ünlem: enerjik ve hafif hızlı
+        rate += 4; pitch += 4; pause = 0.32
+    elif len(cumle.split()) <= 4:               # kısa vurucu cümle: yavaş ve vurgulu
+        rate -= 6; pitch += 2; pause = 0.38
+    else:                                       # normal anlatım: hafif dalgalanma
+        pitch += (2 if i % 2 == 0 else -2)
+    return rate, pitch, pause
+
+def _mp3_to_pcm(mp3_path):
+    """mp3 -> 24kHz mono s16le ham PCM baytları (ffmpeg)."""
+    r = subprocess.run(["ffmpeg", "-v", "error", "-i", mp3_path,
+                        "-f", "s16le", "-ac", "1", "-ar", "24000", "-"],
+                       capture_output=True, check=True)
+    return r.stdout
+
+def seslendir_prosodik(cumleler, voice, rate, mp3_path, pitch="+0Hz"):
+    """Cümle cümle farklı prosodi ile seslendirir, tek mp3'te birleştirir.
+    Dönüş: zaman kaydırması yapılmış WordBoundary listesi (alt yazı senkronu korunur)."""
+    base_rate, base_pitch = _pct(rate), _hz(pitch)
+    tmp = tempfile.mkdtemp()
+    SR, BPS = 24000, 2                      # 24 kHz, 16-bit mono
+    pcm = bytearray()
+    boundaries = []
+    n = len(cumleler)
+    for i, cumle in enumerate(cumleler):
+        r, p, pause = _cumle_prosodi(i, n, cumle, base_rate, base_pitch)
+        seg = os.path.join(tmp, f"seg{i:03d}.mp3")
+        seg_bnd = asyncio.run(_tts(cumle, voice,
+                                   f"{'+' if r >= 0 else ''}{r}%",
+                                   seg,
+                                   pitch=f"{'+' if p >= 0 else ''}{p}Hz"))
+        data = _mp3_to_pcm(seg)
+        offset = len(pcm) / (SR * BPS)      # bu segmentin başlangıç saniyesi
+        for b in seg_bnd:
+            boundaries.append({"start": b["start"] + offset,
+                               "dur": b["dur"], "text": b["text"]})
+        pcm.extend(data)
+        if pause > 0 and i < n - 1:         # cümleler arası doğal nefes
+            pcm.extend(b"\x00" * int(SR * BPS * pause))
+    rawf = os.path.join(tmp, "full.pcm")
+    with open(rawf, "wb") as f:
+        f.write(bytes(pcm))
+    subprocess.run(["ffmpeg", "-v", "error", "-y",
+                    "-f", "s16le", "-ac", "1", "-ar", str(SR), "-i", rawf,
+                    "-b:a", "128k", mp3_path], check=True)
+    return boundaries
+
 def cue_olustur(boundaries, max_kelime, max_sure):
     """WordBoundary listesini alt yazı cue'larına gruplar."""
     cues, buf = [], []
@@ -276,27 +344,57 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True):
 
 
 # ----------------------------------------------------------
-# ANİMASYONLU MONTAJ: Ken Burns (yavaş zoom) + çapraz geçiş
+# PROFESYONEL KEN BURNS: sahne başına farklı kamera hareketi
+# (zoom in/out, sola/sağa/yukarı/aşağı kaydırma, diyagonal).
+# Titremeyi önlemek için görsel önce büyütülür (sub-pixel akış).
 # ----------------------------------------------------------
-def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.7):
+def _ken_burns_vf(i, W, H, frames, fps):
+    """i. sahne için akıcı, çeşitlendirilmiş bir kamera hareketi filtresi üretir."""
+    d = max(int(frames), 1)
+    # merkez konumlandırma (zoom değişince görsel ortada kalsın)
+    cx = "iw/2-(iw/zoom/2)"
+    cy = "ih/2-(ih/zoom/2)"
+    # 7 farklı sinematik hareket; sahneler arasında dönüşümlü kullanılır
+    hareketler = [
+        (f"1.0+0.26*on/{d}", cx, cy),                              # yavaş zoom-in (merkez)
+        (f"1.26-0.26*on/{d}", cx, cy),                             # yavaş zoom-out (nefes alma)
+        ("1.16", f"(iw-iw/zoom)*on/{d}", cy),                      # sağa kaydırma
+        ("1.16", f"(iw-iw/zoom)*(1-on/{d})", cy),                  # sola kaydırma
+        ("1.16", cx, f"(ih-ih/zoom)*(1-on/{d})"),                  # yukarı kaydırma
+        ("1.16", cx, f"(ih-ih/zoom)*on/{d}"),                      # aşağı kaydırma
+        (f"1.0+0.22*on/{d}", f"(iw-iw/zoom)*on/{d}",              # zoom-in + diyagonal
+         f"(ih-ih/zoom)*on/{d}"),
+    ]
+    z, x, y = hareketler[i % len(hareketler)]
+    # 3x ön-büyütme -> zoompan tam-piksel yuvarlamasından doğan titreşimi yok eder
+    presc = "scale=iw*3:ih*3:flags=lanczos"
+    zp = (f"zoompan=z='{z}':x='{x}':y='{y}':"
+          f"d={d}:s={W}x{H}:fps={fps}")
+    return f"{presc},{zp},format=yuv420p"
+
+
+def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.6):
     W, H = boyut
     toplam = sure_al(mp3)
     n = len(gorseller)
     # her sahnenin süresi: geçiş paylarını da hesaba katarak sesi tam kaplasın
-    # toplam = n*D - (n-1)*gecis  ->  D = (toplam + (n-1)*gecis) / n
     D = (toplam + (n - 1) * gecis) / n if n > 0 else toplam
-    D = max(D, gecis + 0.6)
+    D = max(D, gecis + 0.8)
+    frames = int(D * fps)
     tmp = tempfile.mkdtemp()
     klipler = []
     for i, g in enumerate(gorseller):
         seg = os.path.join(tmp, f"k{i}.mp4")
-        yon = 0.0009 if i % 2 == 0 else 0.0007
-        zoom = f"zoompan=z='min(zoom+{yon},1.15)':d={int(D*fps)}:s={W}x{H}:fps={fps}"
+        vf = _ken_burns_vf(i, W, H, frames, fps)
         subprocess.run(["ffmpeg", "-y", "-loop", "1", "-i", g, "-t", f"{D:.3f}",
-                        "-vf", f"scale={W}:{H},{zoom},format=yuv420p",
-                        "-r", str(fps), "-c:v", "libx264", "-preset", "veryfast",
-                        "-crf", "23", seg], check=True, capture_output=True)
+                        "-vf", vf, "-r", str(fps),
+                        "-c:v", "libx264", "-preset", "veryfast",
+                        "-crf", "22", seg], check=True, capture_output=True)
         klipler.append(seg)
+
+    # çeşitli sinematik geçişler (sahneler arasında dönüşümlü)
+    GECISLER = ["smoothleft", "smoothright", "fade", "slideup",
+                "circleopen", "wiperight", "dissolve", "smoothup"]
 
     tmpv = os.path.join(tmp, "gorsel.mp4")
     if n == 1:
@@ -310,7 +408,8 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.7):
         for i in range(1, n):
             off = i * (D - gecis)
             out = f"v{i}"
-            fc += (f"[{prev}][{i}:v]xfade=transition=fade:"
+            trans = GECISLER[(i - 1) % len(GECISLER)]
+            fc += (f"[{prev}][{i}:v]xfade=transition={trans}:"
                    f"duration={gecis}:offset={off:.3f}[{out}];")
             prev = out
         fc = fc.rstrip(";")
@@ -319,10 +418,11 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.7):
                         "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
                         tmpv], check=True, capture_output=True)
 
-    # alt yazı göm + ses ekle
+    # alt yazı göm + hafif sinematik renk düzeltmesi (canlılık + yumuşak vinyet) + ses
     ass_esc = ass.replace("\\", "/").replace(":", "\\:")
+    grade = "eq=saturation=1.12:contrast=1.04:brightness=0.01,vignette=angle=PI/6"
     subprocess.run(["ffmpeg", "-y", "-i", tmpv, "-i", mp3,
-                    "-vf", f"subtitles='{ass_esc}'",
+                    "-vf", f"subtitles='{ass_esc}',{grade}",
                     "-map", "0:v", "-map", "1:a",
                     "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
                     "-c:a", "aac", "-b:a", "192k", "-shortest", cikti],
@@ -392,7 +492,12 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     text, cumleler = metni_oku(script_path)
     tmp = tempfile.mkdtemp()
     mp3 = os.path.join(tmp, "narration.mp3")
-    boundaries = seslendir(text, voice, hiz, mp3, pitch=tonlama)
+    try:
+        boundaries = seslendir_prosodik(cumleler, voice, hiz, mp3, pitch=tonlama)
+        print("      Ses: prosodik mod (cümle bazlı vurgu/tonlama)")
+    except Exception as e:
+        print(f"      Prosodik mod başarısız ({e}), tek parça seslendirmeye dönülüyor")
+        boundaries = seslendir(text, voice, hiz, mp3, pitch=tonlama)
     cues = cue_olustur(boundaries, CONFIG["altyazi_max_kelime"], CONFIG["altyazi_max_sure"])
     ass = os.path.join(tmp, "sub.ass")
     ass_yaz(cues, ass, CONFIG, dikey)
