@@ -11,6 +11,7 @@ GitHub-native otomasyon (AI BAĞIMLILIĞI YOK) — RESILIENT VERSION
 import os, json, tempfile, traceback, subprocess, time
 from datetime import datetime
 import video as V
+from senaryolar_validator import validate_and_load
 
 SENARYOLAR = "senaryolar.json"
 DURUM = "durum.json"
@@ -53,8 +54,12 @@ def checkpoint_temizle():
 # ============================================================
 
 def _senaryolar():
-    with open(SENARYOLAR, encoding="utf-8") as f:
-        return json.load(f)
+    """Senaryoları doğrulamalar ile yükle."""
+    try:
+        return validate_and_load(SENARYOLAR)
+    except RuntimeError as e:
+        print(f"❌ {e}", flush=True)
+        raise
 
 def _durum():
     if os.path.exists(DURUM):
