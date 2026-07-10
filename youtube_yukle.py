@@ -22,7 +22,7 @@ def _kimlik():
         scopes=["https://www.googleapis.com/auth/youtube.upload"],
     )
 
-def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False):
+def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False, kapak=None):
     """
     gizlilik: 'public' | 'unlisted' | 'public'
     kategori: 27=Eğitim, 24=Eğlence, 28=Bilim&Teknoloji, 22=İnsanlar&Bloglar
@@ -47,4 +47,11 @@ def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27",
         _, yanit = istek.next_chunk()
     vid = yanit["id"]
     print(f"✓ Yüklendi: https://youtu.be/{vid}  (gizlilik: {gizlilik})")
+    # Çarpıcı kapak fotoğrafını yükle (kanal doğrulanmamışsa atlanır, video kaybolmaz)
+    if kapak and os.path.exists(kapak):
+        try:
+            yt.thumbnails().set(videoId=vid, media_body=MediaFileUpload(kapak)).execute()
+            print("✓ Kapak fotoğrafı ayarlandı")
+        except Exception as e:
+            print(f"! Kapak ayarlanamadı (kanal doğrulanmamış olabilir): {str(e)[:120]}")
     return vid
