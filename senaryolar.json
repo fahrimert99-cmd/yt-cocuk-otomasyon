@@ -1,104 +1,104 @@
-﻿[
-    {
-        "seslendirme":  {
-                            "motor":  "google",
-                            "pitch":  0,
-                            "ses":  "tr-TR-Neural2-C",
-                            "hız":  1.2
-                        },
-        "script":  "Gökyüzüne bak! Gece ışıl ışıl parlayan şey. Ay! Ama ay ne için vardır? Ay, Dünya\u0027yı evrenin karanlığında dönerken dengede tuttuğu gibi sihirli bir duruş sağlar. Ay olmadan, Dünya sallanıp savrulurdu. Ay aynı zamanda denizin gelgitini yaratır, balıkları, midyeleri ve hatta bizim milyonlarca hayatı harekete geçirir. Ay olmadan hayat kara parçasında kalırdı. Ay gökyüzümüzün en sadık arkadaşı, her gece bize eşlik eder.",
-        "baslik":  "Aylar Neden Vardır",
-        "etiketler":  [
-                          "bilim",
-                          "uzay",
-                          "ay"
-                      ],
-        "sahneler":  [
-                         {
-                             "gorsel":  "full moon bright in night sky, stars around, dark blue sky",
-                             "metin":  "Ay gökyüzünde"
-                         },
-                         {
-                             "gorsel":  "ocean waves pulling in and out, moon above, tide animation",
-                             "metin":  "Gelgit dalgaları"
-                         },
-                         {
-                             "gorsel":  "Earth rotating with Moon in orbit, space view, scientific",
-                             "metin":  "Ay dönerken Dünya"
-                         },
-                         {
-                             "gorsel":  "underwater ocean scene with fish, moonlight filtering down",
-                             "metin":  "Deniz ve balıklar"
-                         }
-                     ],
-        "aciklama":  "Ay\u0027ın Dünya\u0027ya ve çocuklara sihirli görünen etkisi"
-    },
-    {
-        "seslendirme":  {
-                            "motor":  "google",
-                            "pitch":  0,
-                            "ses":  "tr-TR-Neural2-A",
-                            "hız":  1.15
-                        },
-        "script":  "Uzaydan Dünya\u0027ya bak. Mavi! Çok mavi! Peki neden mavi? Su! Dünya\u0027mızın yüzde yetmiş beşi su ile kaplı. Bu masif mavi biaslar, haddi adım bahçelerdir, belki de iyileştirilmiş yemişler, hayvan barınakları, balık çiftlikleri. Deniz yaşam olmadan, havamız zehirli olurdu. Ağaçlar var ama bitkilerse - kural, bitkilerin su gerektirir. Su taşıya ve döndürür. Dünya\u0027nın maviliği yaşamın işaretidir. Gemi gökyüzüne bakın, yeryüzüne bakın, ve mucizeyi görün.",
-        "baslik":  "Dünya Neden Mavi?",
-        "etiketler":  [
-                          "bilim",
-                          "coğrafya",
-                          "su"
-                      ],
-        "sahneler":  [
-                         {
-                             "gorsel":  "Earth from space, blue oceans, white clouds, solar view",
-                             "metin":  "Mavi Dünya uzaydan"
-                         },
-                         {
-                             "gorsel":  "turquoise tropical ocean waves, beautiful beach, cinematic",
-                             "metin":  "Deniz dalgaları"
-                         },
-                         {
-                             "gorsel":  "macro close-up of water droplet, crystal clear, light reflection",
-                             "metin":  "Su damlası"
-                         },
-                         {
-                             "gorsel":  "underwater coral reef, colorful fish, sunlight rays, paradise",
-                             "metin":  "Yaşam buzlu"
-                         }
-                     ],
-        "aciklama":  "Sularımız gezegenimizi yaşanabilir yapan mucize"
-    },
-    {
-        "seslendirme":  {
-                            "motor":  "google",
-                            "pitch":  0,
-                            "ses":  "tr-TR-Neural2-B",
-                            "hız":  1.2
-                        },
-        "script":  "Gece gökyüzüne bak ve sayısız yıldız gör. Ama bu yıldızlar kaç yaşında? Bazı yıldızlar milyonlar, bazıları milyarlar yaş çeker. Gökyüzüne baktığımız zaman, aslında zamanda geriye bakıyoruz. En yakın yıldız, güneş hariç, dört ışık yılı uzakta. Demek ki, ondan gelen ışık dört yıl yolculuk yapmış. Evet, ışık! Işık en hızlı şey. Bu yüzden, eski yıldızları görüyoruz, çünkü ışık çok vakit alıyor gelmek için. Yıldızları izleyip, zamanın akışını öğrenebiliriz.",
-        "baslik":  "Yıldızlar Kaç Yaşında?",
-        "etiketler":  [
-                          "bilim",
-                          "uzay",
-                          "yıldızlar"
-                      ],
-        "sahneler":  [
-                         {
-                             "gorsel":  "night sky full of stars, Milky Way visible, dark field, space",
-                             "metin":  "Yıldız dolu gökyüzü"
-                         },
-                         {
-                             "gorsel":  "light beam traveling through space, stars distance illustration",
-                             "metin":  "Işık seyahati"
-                         },
-                         {
-                             "gorsel":  "star formation nebula, colorful dust cloud, cosmic scene",
-                             "metin":  "Yıldız doğumu"
-                         },
-                         {
-                             "gorsel":  "child looking at night sky with telescope, wonder and stars",
-                             "metin":  "Gözlemci çocuk"
-                         }
-                     ],
-        "aciklama":  "Gökyüzündeki yıldızlar ve onların yaşam öyküleri"
+[
+  {
+    "baslik": "Aylar Neden Vardır",
+    "aciklama": "Ay'ın Dünya'ya ve çocuklara sihirli görünen etkisi",
+    "etiketler": [
+      "bilim",
+      "uzay",
+      "ay"
+    ],
+    "script": "Gökyüzüne bak! Gece ışıl ışıl parlayan şey. Ay! Ama ay ne için vardır? Ay, Dünya'yı evrenin karanlığında dönerken dengede tuttuğu gibi sihirli bir duruş sağlar. Ay olmadan, Dünya sallanıp savrulurdu. Ay aynı zamanda denizin gelgitini yaratır, balıkları, midyeleri ve hatta bizim milyonlarca hayatı harekete geçirir. Ay olmadan hayat kara parçasında kalırdı. Ay gökyüzümüzün en sadık arkadaşı, her gece bize eşlik eder.",
+    "sahneler": [
+      {
+        "metin": "Ay gökyüzünde",
+        "gorsel": "full moon bright in night sky, stars around, dark blue sky"
+      },
+      {
+        "metin": "Gelgit dalgaları",
+        "gorsel": "ocean waves pulling in and out, moon above, tide animation"
+      },
+      {
+        "metin": "Ay dönerken Dünya",
+        "gorsel": "Earth rotating with Moon in orbit, space view, scientific"
+      },
+      {
+        "metin": "Deniz ve balıklar",
+        "gorsel": "underwater ocean scene with fish, moonlight filtering down"
+      }
+    ],
+    "seslendirme": {
+      "motor": "google",
+      "ses": "tr-TR-Neural2-C",
+      "hız": 1.2,
+      "pitch": 0
     }
+  },
+  {
+    "baslik": "Dünya Neden Mavi",
+    "aciklama": "Sularımız gezegenimizi yaşanabilir yapan mucize",
+    "etiketler": [
+      "bilim",
+      "coğrafya",
+      "su"
+    ],
+    "script": "Uzaydan Dünya'ya bak. Mavi! Çok mavi! Peki neden mavi? Su! Dünya'mızın yüzde yetmiş beşi su ile kaplı. Bu masif mavi biaslar, haddi adım bahçelerdir, belki de iyileştirilmiş yemişler, hayvan barınakları, balık çiftlikleri. Deniz yaşam olmadan, havamız zehirli olurdu. Ağaçlar var ama bitkilerse - kural, bitkilerin su gerektirir. Su taşıya ve döndürür. Dünya'nın maviliği yaşamın işaretidir. Gemi gökyüzüne bakın, yeryüzüne bakın, ve mucizeyi görün.",
+    "sahneler": [
+      {
+        "metin": "Mavi Dünya uzaydan",
+        "gorsel": "Earth from space, blue oceans, white clouds, solar view"
+      },
+      {
+        "metin": "Deniz dalgaları",
+        "gorsel": "turquoise tropical ocean waves, beautiful beach, cinematic"
+      },
+      {
+        "metin": "Su damlası",
+        "gorsel": "macro close-up of water droplet, crystal clear, light reflection"
+      },
+      {
+        "metin": "Yaşam buzlu",
+        "gorsel": "underwater coral reef, colorful fish, sunlight rays, paradise"
+      }
+    ],
+    "seslendirme": {
+      "motor": "google",
+      "ses": "tr-TR-Neural2-A",
+      "hız": 1.15,
+      "pitch": 0
+    }
+  },
+  {
+    "baslik": "Yıldızlar Kaç Yaşında",
+    "aciklama": "Gökyüzündeki yıldızlar ve onların yaşam öyküleri",
+    "etiketler": [
+      "bilim",
+      "uzay",
+      "yıldızlar"
+    ],
+    "script": "Gece gökyüzüne bak ve sayısız yıldız gör. Ama bu yıldızlar kaç yaşında? Bazı yıldızlar milyonlar, bazıları milyarlar yaş çeker. Gökyüzüne baktığımız zaman, aslında zamanda geriye bakıyoruz. En yakın yıldız, güneş hariç, dört ışık yılı uzakta. Demek ki, ondan gelen ışık dört yıl yolculuk yapmış. Evet, ışık! Işık en hızlı şey. Bu yüzden, eski yıldızları görüyoruz, çünkü ışık çok vakit alıyor gelmek için. Yıldızları izleyip, zamanın akışını öğrenebiliriz.",
+    "sahneler": [
+      {
+        "metin": "Yıldız dolu gökyüzü",
+        "gorsel": "night sky full of stars, Milky Way visible, dark field, space"
+      },
+      {
+        "metin": "Işık seyahati",
+        "gorsel": "light beam traveling through space, stars distance illustration"
+      },
+      {
+        "metin": "Yıldız doğumu",
+        "gorsel": "star formation nebula, colorful dust cloud, cosmic scene"
+      },
+      {
+        "metin": "Gözlemci çocuk",
+        "gorsel": "child looking at night sky with telescope, wonder and stars"
+      }
+    ],
+    "seslendirme": {
+      "motor": "google",
+      "ses": "tr-TR-Neural2-B",
+      "hız": 1.2,
+      "pitch": 0
+    }
+  }
 ]
