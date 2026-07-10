@@ -1,9 +1,15 @@
 Traceback (most recent call last):
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 75, in <module>
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 70, in <module>
     main()
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 39, in main
-    veri = ai_script.uret(baslik)
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/ai_script.py", line 87, in uret
-    raise SystemExit("AI senaryo uretilemedi @" + _t.strftime("%H:%M:%S") +
-SystemExit: AI senaryo uretilemedi @04:23:19 | gemini#1: HTTPError: HTTP Error 429: Too Many Requests || gemini#2: HTTPError: HTTP Error 429: Too Many Requests || gemini#3: HTTPError: HTTP Error 429: Too Many Requests || gemini#4: HTTPError: HTTP Error 429: Too Many Requests || poll_post#1: KeyError: 'content' || poll_get: script bos
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 31, in main
+    senaryolar = _senaryolar()
+                 ^^^^^^^^^^^^^
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 18, in _senaryolar
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/json/__init__.py", line 335, in loads
+    raise JSONDecodeError("Unexpected UTF-8 BOM (decode using utf-8-sig)",
+json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
