@@ -2,7 +2,7 @@ name: Gunluk Bilim Videosu
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 17 * * *"
   workflow_dispatch:
 
 permissions:
