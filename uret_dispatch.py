@@ -57,6 +57,7 @@ def main():
     cocuk = bool(cfg.get("cocuk_icerigi", False))
     animasyon = bool(cfg.get("animasyon", True))
     tonlama = str(cfg.get("tonlama", "+0Hz"))
+    hiz = str(cfg.get("hiz", "+15%"))
     sahneler = veri.get("sahneler") or None
 
     print(f"[1/3] Icerik alindi ({len(script.split())} kelime). Baslik: {baslik}")
@@ -68,7 +69,7 @@ def main():
     os.makedirs("output", exist_ok=True)
     cikti = "output/video.mp4"
     print("[2/3] Video uretiliyor (edge-tts + alt yazi + FFmpeg) ...")
-    V.uret_video(sp, cikti, ses=ses, dikey=dikey,
+    V.uret_video(sp, cikti, ses=ses, dikey=dikey, hiz=hiz,
                  sahneler=sahneler, animasyon=animasyon, cocuk=cocuk, tonlama=tonlama)
     print(f"      Cikti: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
