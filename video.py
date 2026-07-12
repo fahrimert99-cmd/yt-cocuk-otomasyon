@@ -351,7 +351,7 @@ def _eleven_key():
 
 def _eleven_seslendir(text, mp3_path):
     """ElevenLabs ile gerçekçi seslendirme + kelime zamanlaması (alt yazı senkronu)."""
-    import urllib.request, base64 as _b64
+    import urllib.request, urllib.error, base64 as _b64
     key = _eleven_key()
     if not key:
         raise RuntimeError("ElevenLabs anahtarı yok")
@@ -362,8 +362,11 @@ def _eleven_seslendir(text, mp3_path):
                                "style": 0.2, "use_speaker_boost": True}}
     req = urllib.request.Request(url, data=json.dumps(body).encode(),
                                  headers={"xi-api-key": key, "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=180) as r:
-        d = json.loads(r.read().decode())
+    try:
+        with urllib.request.urlopen(req, timeout=180) as r:
+            d = json.loads(r.read().decode())
+    except urllib.error.HTTPError as he:
+        raise RuntimeError(f"{he.code}: {he.read().decode()[:200]}")
     with open(mp3_path, "wb") as f:
         f.write(_b64.b64decode(d["audio_base64"]))
     al = d.get("alignment") or d.get("normalized_alignment") or {}
@@ -408,6 +411,9 @@ def stok_video_ara(query, boyut, path, dikey=True):
                         return path
                 except Exception:
                     continue
+        return None
+    except urllib.error.HTTPError as he:
+        print(f"      [Pexels {he.code}: {he.read().decode()[:150]}]")
         return None
     except Exception as e:
         print(f"      [Pexels hata: {str(e)[:80]}]")
