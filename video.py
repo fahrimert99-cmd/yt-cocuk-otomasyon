@@ -328,21 +328,60 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True):
         return False
 
 
+def _pexels_key():
+    return (os.environ.get("PEXELS_API_KEY") or os.environ.get("GEMINI_API_KEY", "")).strip()
+
+
+def stok_video_ara(query, boyut, path, dikey=True):
+    """Pexels'ten konuya uygun gerçek stok video indirir. Başarısızsa None."""
+    import urllib.parse, urllib.request
+    key = _pexels_key()
+    if not key:
+        return None
+    try:
+        q = " ".join(query.split()[:4]) or query
+        url = ("https://api.pexels.com/videos/search?query=" + urllib.parse.quote(q)
+               + "&per_page=8&orientation=" + ("portrait" if dikey else "landscape"))
+        req = urllib.request.Request(url, headers={"Authorization": key})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            d = json.loads(r.read().decode())
+        for vid in d.get("videos", []):
+            files = [f for f in vid.get("video_files", []) if f.get("link")]
+            files.sort(key=lambda f: abs((f.get("width") or 0) - boyut[0]))
+            for f in files:
+                try:
+                    urllib.request.urlretrieve(f["link"], path)
+                    if os.path.getsize(path) > 10000:
+                        return path
+                except Exception:
+                    continue
+        return None
+    except Exception as e:
+        print(f"      [Pexels hata: {str(e)[:80]}]")
+        return None
+
+
 def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True):
-    """sahneler: [{'gorsel': 'ingilizce görsel tarifi'}, ...] (Gemini'den).
-    Yoksa cümlelerden türetir. Her sahne için AI görsel üretir."""
+    """Her sahne için önce gerçek stok video (Pexels), yoksa fotogerçekçi AI görseli.
+    ('video', yol) veya ('image', yol) listesi döndürür."""
     if sahneler:
         prompts = [s.get("gorsel") or s.get("metin") or "" for s in sahneler if s]
     else:
-        # sahne yoksa ~2 cümlede bir görsel
         prompts = [" ".join(cumleler[i:i+2]) for i in range(0, len(cumleler), 2)]
-    prompts = [p for p in prompts if p.strip()] or ["colorful happy scene"]
-    paths = []
+    prompts = [p for p in prompts if p.strip()] or ["colorful scene"]
+    dikey = boyut[1] > boyut[0]
+    gorseller = []
     for i, p in enumerate(prompts):
-        dst = os.path.join(tmp, f"sahne_{i:03d}.jpg")
-        gorsel_uret_ai(p, boyut, i, dst, cocuk=cocuk)
-        paths.append(dst)
-    return paths
+        vpath = os.path.join(tmp, f"sahne_{i:03d}.mp4")
+        if not cocuk and stok_video_ara(p, boyut, vpath, dikey=dikey):
+            gorseller.append(("video", vpath))
+            print(f"      Sahne {i+1}/{len(prompts)}: gerçek stok video ✓")
+        else:
+            ipath = os.path.join(tmp, f"sahne_{i:03d}.jpg")
+            gorsel_uret_ai(p, boyut, i, ipath, cocuk=cocuk)
+            gorseller.append(("image", ipath))
+            print(f"      Sahne {i+1}/{len(prompts)}: AI görseli")
+    return gorseller
 
 
 # ----------------------------------------------------------
@@ -376,13 +415,14 @@ def _ken_burns_vf(i, W, H, frames, fps):
 
 
 def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.45,
-                         max_sahne_sn=3.0):
+                         max_sahne_sn=5.0):
     import math
     W, H = boyut
     toplam = sure_al(mp3)
+    # normalize: düz string -> ("image", yol)
+    gorseller = [g if isinstance(g, (tuple, list)) else ("image", g) for g in gorseller]
     n0 = len(gorseller) or 1
-    # DİNAMİK: görsel ~her 3 sn'de bir değişsin (slayt hissi yerine tempo).
-    # Yetmezse mevcut görseller döngüyle çoğaltılır (her biri farklı Ken Burns alır).
+    # Gerçek videolar zaten hareketli; görsellerde tempo için gerekiyorsa çoğalt.
     seg = max(n0, math.ceil(toplam / max_sahne_sn))
     gorseller = [gorseller[i % n0] for i in range(seg)]
     n = len(gorseller)
@@ -391,13 +431,22 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.45,
     frames = int(D * fps)
     tmp = tempfile.mkdtemp()
     klipler = []
-    for i, g in enumerate(gorseller):
+    for i, (tip, g) in enumerate(gorseller):
         seg = os.path.join(tmp, f"k{i}.mp4")
-        vf = _ken_burns_vf(i, W, H, frames, fps)
-        subprocess.run(["ffmpeg", "-y", "-loop", "1", "-i", g, "-t", f"{D:.3f}",
-                        "-vf", vf, "-r", str(fps),
-                        "-c:v", "libx264", "-preset", "veryfast",
-                        "-crf", "22", seg], check=True, capture_output=True)
+        if tip == "video":
+            off = (i * 1.7) % 4.0   # tekrar olursa farklı an
+            vf = (f"scale={W}:{H}:force_original_aspect_ratio=increase,"
+                  f"crop={W}:{H},fps={fps},format=yuv420p")
+            subprocess.run(["ffmpeg", "-y", "-ss", f"{off:.1f}", "-stream_loop", "-1",
+                            "-i", g, "-t", f"{D:.3f}", "-vf", vf, "-r", str(fps), "-an",
+                            "-c:v", "libx264", "-preset", "veryfast", "-crf", "23", seg],
+                           check=True, capture_output=True)
+        else:
+            vf = _ken_burns_vf(i, W, H, frames, fps)
+            subprocess.run(["ffmpeg", "-y", "-loop", "1", "-i", g, "-t", f"{D:.3f}",
+                            "-vf", vf, "-r", str(fps),
+                            "-c:v", "libx264", "-preset", "veryfast",
+                            "-crf", "22", seg], check=True, capture_output=True)
         klipler.append(seg)
 
     # çeşitli sinematik geçişler (sahneler arasında dönüşümlü)
