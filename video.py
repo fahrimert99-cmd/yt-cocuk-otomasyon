@@ -398,7 +398,7 @@ def stok_video_ara(query, boyut, path, dikey=True):
         q = " ".join(query.split()[:4]) or query
         url = ("https://api.pexels.com/videos/search?query=" + urllib.parse.quote(q)
                + "&per_page=8&orientation=" + ("portrait" if dikey else "landscape"))
-        req = urllib.request.Request(url, headers={"Authorization": key})
+        req = urllib.request.Request(url, headers={"Authorization": key, "User-Agent": "Mozilla/5.0 (compatible; ytbot/1.0)"})
         with urllib.request.urlopen(req, timeout=30) as r:
             d = json.loads(r.read().decode())
         for vid in d.get("videos", []):
