@@ -30,9 +30,20 @@ def main():
         cfg = json.load(f)
     senaryolar = _senaryolar()
     durum = _durum()
-    idx = durum["sonraki"] % len(senaryolar)
+    n = len(senaryolar)
+    yapilan = set(durum.get("yapilan", []))
+    # ASLA TEKRAR ETME: sıradaki YAPILMAMIŞ konuyu bul
+    idx = durum.get("sonraki", 0) % n
+    denendi = 0
+    while senaryolar[idx]["baslik"] in yapilan and denendi < n:
+        idx = (idx + 1) % n
+        denendi += 1
+    if denendi >= n:
+        print("✓ Tüm konular yayınlanmış! Tekrar üretilmedi. "
+              "Yeni içerik için senaryolar.json'a konu ekleyin.")
+        return
     veri = senaryolar[idx]
-    print(f"[1/3] Senaryo ({idx+1}/{len(senaryolar)}): {veri['baslik']}")
+    print(f"[1/3] Senaryo ({idx+1}/{n}): {veri['baslik']}")
 
     tmp = tempfile.mkdtemp()
     sp = os.path.join(tmp, "script.txt")
@@ -82,10 +93,13 @@ def main():
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
              kapak=kapak_yolu, yayin_zamani=yayin_zamani)
 
-    durum["sonraki"] = idx + 1
+    # Yayınlanan başlığı kaydet (bir daha asla üretilmez)
+    yapilan.add(veri["baslik"])
+    durum["yapilan"] = sorted(yapilan)
+    durum["sonraki"] = (idx + 1) % n
     with open(DURUM, "w", encoding="utf-8") as f:
         json.dump(durum, f, ensure_ascii=False, indent=2)
-    print(f"TAMAM ✓  (sıradaki: {durum['sonraki']})")
+    print(f"TAMAM ✓  (yapılan: {len(yapilan)}/{n}, sıradaki: {durum['sonraki']})")
 
 
 if __name__ == "__main__":
