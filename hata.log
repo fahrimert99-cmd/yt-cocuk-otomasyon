@@ -1,15 +1,33 @@
 Traceback (most recent call last):
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 70, in <module>
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 108, in <module>
     main()
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 32, in main
-    durum = _durum()
-            ^^^^^^^^
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 24, in _durum
-    return json.load(f)
-           ^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/json/__init__.py", line 293, in load
-    return loads(fp.read(),
-           ^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/json/__init__.py", line 335, in loads
-    raise JSONDecodeError("Unexpected UTF-8 BOM (decode using utf-8-sig)",
-json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 89, in main
+    YT.yukle(cikti, veri["baslik"], veri.get("aciklama", ""),
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/youtube_yukle.py", line 55, in yukle
+    _, yanit = istek.next_chunk()
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/googleapiclient/http.py", line 1007, in next_chunk
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/google_auth_httplib2.py", line 205, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/google/auth/credentials.py", line 240, in before_request
+    self._blocking_refresh(request)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/google/auth/credentials.py", line 203, in _blocking_refresh
+    self.refresh(request)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/google/auth/credentials.py", line 517, in refresh
+    self._perform_refresh_token(request)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/google/oauth2/credentials.py", line 435, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/google/oauth2/reauth.py", line 370, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/google/oauth2/_client.py", line 73, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
