@@ -602,6 +602,8 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     text, cumleler = metni_oku(script_path)
     tmp = tempfile.mkdtemp()
     mp3 = os.path.join(tmp, "narration.mp3")
+    _ek=_eleven_key(); _pk=_pexels_key()
+    print(f"      [anahtar: eleven={_ek[:6]}..len{len(_ek)}, pexels={_pk[:6]}..len{len(_pk)}]")
     boundaries = None
     if _eleven_key():
         try:
