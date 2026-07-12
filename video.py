@@ -42,7 +42,7 @@ CONFIG = {
         "kenar_kalinlik": 4,
         "alt_bosluk": 60,
     },
-    "altyazi_max_kelime": 8,        # bir alt yazı satırındaki max kelime
+    "altyazi_max_kelime": 3,        # kelime kelime vurgulu (Shorts tarzı)
     "altyazi_max_sure": 4.0,        # bir alt yazı satırının max süresi (sn)
     "output_dir": "output",
     "assets_dir": "assets",
@@ -373,13 +373,19 @@ def _ken_burns_vf(i, W, H, frames, fps):
     return f"{presc},{zp},format=yuv420p"
 
 
-def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.6):
+def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.45,
+                         max_sahne_sn=3.0):
+    import math
     W, H = boyut
     toplam = sure_al(mp3)
+    n0 = len(gorseller) or 1
+    # DİNAMİK: görsel ~her 3 sn'de bir değişsin (slayt hissi yerine tempo).
+    # Yetmezse mevcut görseller döngüyle çoğaltılır (her biri farklı Ken Burns alır).
+    seg = max(n0, math.ceil(toplam / max_sahne_sn))
+    gorseller = [gorseller[i % n0] for i in range(seg)]
     n = len(gorseller)
-    # her sahnenin süresi: geçiş paylarını da hesaba katarak sesi tam kaplasın
     D = (toplam + (n - 1) * gecis) / n if n > 0 else toplam
-    D = max(D, gecis + 0.8)
+    D = max(D, gecis + 0.6)
     frames = int(D * fps)
     tmp = tempfile.mkdtemp()
     klipler = []
