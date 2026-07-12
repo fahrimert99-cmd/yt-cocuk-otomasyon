@@ -1,46 +1,12 @@
 [
   {
-    "baslik": "İNSANLAR SENİ İLK 7 SANİYEDE YARGILIYOR! 😳",
-    "aciklama": "İlk izlenimin gücünü ve neden değiştirmenin çok zor olduğunu anlatıyoruz.",
-    "etiketler": [
-      "psikoloji",
-      "ilkizlenim",
-      "insan",
-      "ilişkiler",
-      "ipucu"
-    ],
-    "script": "Biriyle tanıştığın ilk yedi saniyede, o kişi senin hakkında çoktan karar vermiştir. Zeki misin, güvenilir misin, sempatik misin, hepsi saniyeler içinde belirlenir. Buna ilk izlenim etkisi denir ve beynimiz bunu binlerce yıllık hayatta kalma içgüdüsüyle yapar. En çarpıcısı, bu ilk izlenimi sonradan değiştirmek çok zordur, çünkü beynin ilk kararını doğrulayacak kanıtlar arar. Yani gülümsemen, duruşun ve ses tonun daha ağzını açmadan senin yerine konuşur. Bir sonraki tanışmanda bunu hatırla, çünkü ikinci bir ilk izlenim şansın asla olmayacak.",
-    "sahneler": [
-      {
-        "metin": "tanışma anı",
-        "gorsel": "two people meeting and shaking hands, cinematic, dramatic lighting"
-      },
-      {
-        "metin": "beyin hızlı karar veriyor",
-        "gorsel": "human brain making a split second judgment, glowing neural connections"
-      },
-      {
-        "metin": "7 saniye",
-        "gorsel": "a stopwatch showing seven seconds, dramatic close up"
-      },
-      {
-        "metin": "kendine güvenen duruş",
-        "gorsel": "confident person with strong body language, cinematic portrait"
-      },
-      {
-        "metin": "ilk izlenim",
-        "gorsel": "two silhouettes with a first impression concept, moody lighting"
-      }
-    ]
-  },
-  {
     "baslik": "MARKETLER SENİ BÖYLE KANDIRIYOR! 🛒",
-    "aciklama": "Marketlerin fark ettirmeden daha çok harcatmak için kullandığı gizli tuzaklar.",
+    "aciklama": "Marketlerin fark ettirmeden daha çok harcatmak için kurduğu gizli tuzaklar.",
     "etiketler": [
       "market",
+      "tüketici",
       "psikoloji",
       "alışveriş",
-      "tüketici",
       "tuzak"
     ],
     "script": "Markete sadece süt almaya gidersin, elinde poşetlerle çıkarsın. Bu tesadüf değil, tamamen tasarım. Süt ve ekmek gibi temel ürünler neden hep en arkadadır? Tüm mağazayı gezmen için. Göz hizasındaki raflar en pahalı markalara ayrılır, ucuz olanlar en alta konur. Yavaş çalan müzik seni yavaşlatır ve daha çok gezersin. Kırmızı indirim etiketleri beynini harekete geçirir. Hatta yerdeki karolar bile, arabanı yavaşlatıp daha fazla ürüne bakman için özenle yerleştirilir. Yani attığın her adım önceden planlanmıştır. Bir dahaki alışverişte bu görünmez tuzakları fark et.",
@@ -51,7 +17,7 @@
       },
       {
         "metin": "en arkadaki süt",
-        "gorsel": "milk cartons at the very back of a store, dramatic"
+        "gorsel": "milk cartons at the very back of a store"
       },
       {
         "metin": "göz hizası raf",
@@ -59,7 +25,7 @@
       },
       {
         "metin": "kırmızı indirim etiketi",
-        "gorsel": "bright red sale discount tags on products, eye catching"
+        "gorsel": "bright red sale tags on products, eye catching"
       },
       {
         "metin": "dolu alışveriş arabası",
@@ -68,342 +34,376 @@
     ]
   },
   {
-    "baslik": "TELEFONUN SENİ DİNLİYOR MU? 📱",
-    "aciklama": "Reklamların nasıl bu kadar isabetli olduğunun ürkütücü gerçeği.",
+    "baslik": "RESTORANLAR MENÜYLE SENİ BÖYLE KANDIRIYOR! 🍽️",
+    "aciklama": "Restoran menülerinin sana en kârlı yemeği seçtiren gizli tasarımı.",
     "etiketler": [
-      "telefon",
-      "gizlilik",
-      "reklam",
-      "veri",
-      "teknoloji"
-    ],
-    "script": "Bir arkadaşınla bir üründen bahsedersin, birkaç dakika sonra reklamı karşına çıkar. Telefonun seni gizlice mi dinliyor? Gerçek daha da ürkütücü. Çoğu durumda mikrofonunu dinlemesine gerek bile yok. Nerede olduğunu, neyi arattığını, kimlerle takıldığını, hatta parmağının ekranda ne kadar durduğunu biliyor. Bu veriler o kadar detaylı ki, sen daha ne istediğini bilmeden tahmin edebiliyor. Yani seni dinlemiyor, seni okuyor. Ve çoğu zaman seni kendinden bile daha iyi tanıyor. Belki de asıl soru dinliyor mu değil, ne kadarını biliyor olmalı.",
-    "sahneler": [
-      {
-        "metin": "mikrofonlu telefon",
-        "gorsel": "smartphone with a glowing microphone icon, dark moody"
-      },
-      {
-        "metin": "veri akışı",
-        "gorsel": "streams of personal data flowing around a person, cyberpunk style"
-      },
-      {
-        "metin": "isabetli reklam",
-        "gorsel": "a perfectly targeted ad popping up on a phone screen"
-      },
-      {
-        "metin": "konum takibi",
-        "gorsel": "a map with location tracking dots, surveillance concept"
-      },
-      {
-        "metin": "telefon seni tanıyor",
-        "gorsel": "phone silhouette knowing a persons secrets, mysterious"
-      }
-    ]
-  },
-  {
-    "baslik": "NEDEN EN SEVDİKLERİMİZE BAĞIRIRIZ? 💔",
-    "aciklama": "Yabancılara kibar, sevdiklerimize sert olmamızın şaşırtıcı nedeni.",
-    "etiketler": [
+      "restoran",
+      "menü",
       "psikoloji",
-      "ilişkiler",
-      "aile",
-      "duygu",
-      "sevgi"
+      "tüketici",
+      "tuzak"
     ],
-    "script": "En kibar olduğumuz insanlar çoğu zaman yabancılardır, en çok bağırdıklarımız ise en sevdiklerimiz. Kulağa ters gelse de bunun bir açıklaması var. Sevdiğimiz insanların yanında kendimizi güvende hissederiz ve maskelerimizi düşürürüz. Onların bizi terk etmeyeceğine güveniriz, bu yüzden en ham duygularımızı onlara gösteririz. Ayrıca beynimiz, kaybetmekten en çok korktuğumuz kişilere karşı en yoğun tepkileri verir. Yani o bağırış aslında çoğu zaman gizli bir seni kaybetmekten korkuyorum çığlığıdır. Belki de en çok sevdiklerimize, en çok nazik olmayı hatırlamalıyız.",
+    "script": "Bir restoran menüsü aslında dikkatle tasarlanmış bir tuzaktır. En pahalı yemek neden en üste konur? Yanındaki her şeyi ucuz göstermek için. Fiyatların yanında çoğu zaman para birimi simgesi yoktur, çünkü lira yazısı sana para harcadığını hatırlatır. En kârlı yemekler bir kutu içine alınır ya da yanına küçük bir resim konur, gözün hemen oraya kayar. Şefin önerisi dedikleri genelde en çok kâr bırakan üründür. Hatta yemek isimleri bile iştahını kabartacak kelimelerle özenle seçilir. Yani sen seçtiğini sanırsın ama aslında senin için çoktan seçilmiştir.",
     "sahneler": [
       {
-        "metin": "tartışma anı",
-        "gorsel": "a couple arguing at home, emotional cinematic"
+        "metin": "restoran menüsü",
+        "gorsel": "an elegant restaurant menu on a table, cinematic"
       },
       {
-        "metin": "güvende hissetmek",
-        "gorsel": "a person feeling safe and relaxed with a loved one"
+        "metin": "en üstteki pahalı yemek",
+        "gorsel": "the most expensive dish listed at the top of a menu"
       },
       {
-        "metin": "maskenin düşmesi",
-        "gorsel": "a mask falling away revealing a real face, symbolic"
+        "metin": "simgesiz fiyat",
+        "gorsel": "a menu price without a currency symbol, close up"
       },
       {
-        "metin": "gergin kalp",
-        "gorsel": "a heart symbol under tension, emotional art"
+        "metin": "çerçeveli yemek",
+        "gorsel": "a dish highlighted in a box on a menu with a small photo"
       },
       {
-        "metin": "barışma sarılması",
-        "gorsel": "two people reconciling with a warm hug, heartfelt"
+        "metin": "iştah açan isim",
+        "gorsel": "an appetizing gourmet dish beautifully plated"
       }
     ]
   },
   {
-    "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
-    "aciklama": "Gemilerin ve uçakların kaybolduğu esrarengiz bölgenin gerçeği.",
+    "baslik": "İNDİRİM ETİKETLERİ KOCAMAN BİR YALAN! 🏷️",
+    "aciklama": "O büyük kırmızı indirim etiketinin arkasındaki gerçek.",
     "etiketler": [
-      "gizem",
-      "bermuda",
-      "okyanus",
-      "kayıp",
-      "esrarengiz"
-    ],
-    "script": "Onlarca gemi, uçak ve yüzlerce insan aynı bölgede esrarengiz şekilde kayboldu. Bermuda Şeytan Üçgeni gerçekten lanetli mi? Uzaylılar mı, dev girdaplar mı? Gerçek çok daha sıradan ama bir o kadar ilginç. Bu bölge dünyanın en yoğun deniz trafiğine sahip yerlerinden biri, yani daha çok kaza olması aslında beklenir. Ani fırtınalar, denizden yükselen dev metan gazı kabarcıkları ve pusulaları şaşırtan manyetik alanlar birçok kaybı açıklıyor. Yani belki de gizemin asıl kaynağı doğanın kendisi. Ama itiraf edelim, lanetli üçgen kulağa çok daha heyecanlı geliyor.",
-    "sahneler": [
-      {
-        "metin": "üçgen harita",
-        "gorsel": "a mysterious triangle marked on an ocean map, dramatic"
-      },
-      {
-        "metin": "fırtınalı deniz",
-        "gorsel": "a ship struggling in a violent stormy sea, cinematic"
-      },
-      {
-        "metin": "kaybolan uçak",
-        "gorsel": "a plane vanishing into thick fog over the ocean"
-      },
-      {
-        "metin": "dönen pusula",
-        "gorsel": "a compass needle spinning wildly, close up mysterious"
-      },
-      {
-        "metin": "derin okyanus",
-        "gorsel": "deep dark mysterious ocean depths, eerie"
-      }
-    ]
-  },
-  {
-    "baslik": "ÇOCUKKEN ZAMAN NEDEN YAVAŞTI? ⏳",
-    "aciklama": "Yaşlandıkça zamanın neden hızlandığının psikolojik sırrı.",
-    "etiketler": [
-      "zaman",
-      "psikoloji",
-      "hafıza",
-      "yaşam",
-      "beyin"
-    ],
-    "script": "Çocukken bir yaz tatili sonsuz gibiydi, şimdiyse bir yıl göz açıp kapayana kadar geçiyor. Zaman gerçekten hızlanıyor mu? Aslında beynin sana bir oyun oynuyor. Çocukken her şey yeniydi ve beynin sürekli yeni anılar kaydediyordu, bu yüzden zaman dolu ve uzun hissettiriyordu. Büyüdükçe hayat rutine biner, günler birbirine benzer ve beynin kaydedecek yeni bir şey bulamaz, zaman da uçup gider. İşin sırrı tam da burada: yeni şeyler denedikçe zamanı yeniden yavaşlatabilirsin. Yani hayatı uzatmanın yolu, onu yeni deneyimlerle doldurmaktan geçiyor.",
-    "sahneler": [
-      {
-        "metin": "sonsuz yaz",
-        "gorsel": "a child enjoying an endless summer day, nostalgic warm light"
-      },
-      {
-        "metin": "anı kaydeden beyin",
-        "gorsel": "a brain recording colorful memories, artistic"
-      },
-      {
-        "metin": "uçan takvim",
-        "gorsel": "calendar pages flying away rapidly, time passing"
-      },
-      {
-        "metin": "rutin döngü",
-        "gorsel": "a person stuck in a repetitive daily routine loop"
-      },
-      {
-        "metin": "yeni deneyim",
-        "gorsel": "a person trying an exciting new adventure, vibrant"
-      }
-    ]
-  },
-  {
-    "baslik": "BİR 'LIKE' BEYNİNE NE YAPIYOR? ❤️",
-    "aciklama": "Sosyal medyanın seni nasıl bağımlı yaptığının kimyası.",
-    "etiketler": [
-      "sosyalmedya",
-      "psikoloji",
-      "bağımlılık",
-      "dopamin",
-      "beyin"
-    ],
-    "script": "Bir paylaşımının beğeni aldığını gördüğünde içinde küçük bir sıcaklık hissedersin. Bu tesadüf değil, tamamen kimyasal. Her beğeni, beynine dopamin adı verilen bir mutluluk kimyasalı salgılatır, tıpkı kumarda kazanmak gibi. En sinsi kısmı şu: beğeninin ne zaman geleceğini asla bilemezsin ve bu belirsizlik bağımlılığı daha da güçlendirir. Bu yüzden telefonu elinden bırakamaz, sürekli kontrol edersin. Sosyal medya şirketleri bunu çok iyi bilir ve uygulamalarını tam da seni bağımlı yapacak şekilde tasarlar. Yani parmağın ekranı kaydırırken, aslında avlanan sensin.",
-    "sahneler": [
-      {
-        "metin": "beğeni bildirimi",
-        "gorsel": "a phone screen exploding with likes and notifications"
-      },
-      {
-        "metin": "dopamin salınımı",
-        "gorsel": "a brain releasing glowing dopamine, neuroscience art"
-      },
-      {
-        "metin": "kumar makinesi",
-        "gorsel": "a slot machine spinning, addiction comparison, dramatic"
-      },
-      {
-        "metin": "takıntılı kontrol",
-        "gorsel": "a person compulsively checking their phone in the dark"
-      },
-      {
-        "metin": "tasarlanan bağımlılık",
-        "gorsel": "app interface designed to be addictive, concept art"
-      }
-    ]
-  },
-  {
-    "baslik": "NEDEN KARANLIKTAN KORKARIZ? 🌑",
-    "aciklama": "Karanlık korkusunun atalarımızdan kalan gerçek nedeni.",
-    "etiketler": [
-      "korku",
-      "psikoloji",
-      "karanlık",
-      "evrim",
-      "insan"
-    ],
-    "script": "Işıkları kapatınca içinde beliren o tedirginlik nereden geliyor? Aslında karanlığın kendisinden değil, gizlediklerinden korkarız. Binlerce yıl önce ataların için karanlık gerçek bir ölüm kalım meselesiydi, çünkü avcılar geceleri saldırırdı. Göremediğimizde beynimiz boşlukları en kötü ihtimallerle doldurur, bu yüzden sıradan bir gölge bile bir canavara dönüşür. Bu korku o kadar derine işlemiştir ki, güvende olduğumuzu bilsek bile mantığımız çoğu zaman devreye giremez. Yani karanlık korkusu bir zayıflık değil, atalarından sana miras kalan bir hayatta kalma sistemidir.",
-    "sahneler": [
-      {
-        "metin": "karanlık oda",
-        "gorsel": "a dark room with a hand near a light switch, suspense"
-      },
-      {
-        "metin": "ateş başında atalar",
-        "gorsel": "ancient humans huddled around a fire at night, primal"
-      },
-      {
-        "metin": "gölgeler canavara dönüşüyor",
-        "gorsel": "shadows morphing into monster shapes, eerie"
-      },
-      {
-        "metin": "ilkel korku",
-        "gorsel": "a primal fear in wide eyes in darkness, dramatic"
-      },
-      {
-        "metin": "beyin korkuyu dolduruyor",
-        "gorsel": "brain filling darkness with imagined threats, concept"
-      }
-    ]
-  },
-  {
-    "baslik": "BİR YALANI NASIL ANLARSIN? 🤥",
-    "aciklama": "İnsanların yalan söylerken kendini ele veren gizli işaretleri.",
-    "etiketler": [
+      "indirim",
+      "alışveriş",
+      "tüketici",
       "yalan",
-      "psikoloji",
-      "beden dili",
-      "ipucu",
-      "insan"
+      "tuzak"
     ],
-    "script": "İnsanların büyük çoğunluğu yalan söylerken kendini ele verir, yeter ki nereye bakacağını bil. Yalan söyleyen biri genellikle gereksiz detaylar verir, çünkü hikayesini inandırıcı kılmaya çalışır. Gözlerini kaçırması şart değildir, tam tersine bazıları fazla göz teması kurar. En sık kaçırılan ipucu ise mikro ifadelerdir: yüzde bir saniyeden kısa beliren gerçek duygular. Sesi aniden değişir, zaman kazanmak için sorunun kelimelerini tekrarlar. Ama unutma, hiçbir işaret tek başına kesin kanıt değildir. En iyi yalan yakalayıcı, dikkatle dinleyen sabırlı bir zihindir.",
+    "script": "O büyük kırmızı yüzde elli indirim etiketi seni heyecanlandırıyor, değil mi? Ama çoğu zaman en büyük yalan orada saklıdır. Birçok mağaza, indirime girmeden hemen önce fiyatı gizlice yükseltir, sonra indirdik diye eski fiyatı geri yazar. Yani aslında hiç indirim yoktur. Son üç ürün ya da stoklarla sınırlı yazıları çoğu zaman gerçek değildir, sadece seni acele ettirmek içindir. Üstünü çizdikleri o yüksek fiyat da belki hiç satılmamıştır. Yani bir dahaki sefere kırmızı etiketi görünce heyecanlanmadan önce, o fiyatı bir hafta önce kontrol et.",
     "sahneler": [
       {
-        "metin": "yalan söyleyen kişi",
-        "gorsel": "a person telling a lie, subtle nervous expression"
+        "metin": "büyük indirim etiketi",
+        "gorsel": "a huge red 50 percent off tag, dramatic"
       },
       {
-        "metin": "gergin beden dili",
-        "gorsel": "nervous fidgeting hands and body language, close up"
+        "metin": "gizlice yükseltilen fiyat",
+        "gorsel": "a price being secretly raised then crossed out"
       },
       {
-        "metin": "mikro ifade",
-        "gorsel": "a fleeting micro expression on a face, extreme close up"
+        "metin": "son 3 ürün uyarısı",
+        "gorsel": "a last 3 items in stock warning sign, urgency"
       },
       {
-        "metin": "kaçan bakışlar",
-        "gorsel": "shifting eyes and gestures, detective observation"
+        "metin": "acele tuzağı",
+        "gorsel": "a countdown urgency tactic in a store"
       },
       {
-        "metin": "dikkatli gözlemci",
-        "gorsel": "a sharp observer studying someone carefully, cinematic"
+        "metin": "tereddüt eden müşteri",
+        "gorsel": "a shopper hesitating in front of a sale sign"
       }
     ]
   },
   {
-    "baslik": "PARANI ZENGİNLER BÖYLE BÜYÜTÜYOR 💰",
-    "aciklama": "Zenginlerle çoğu insan arasındaki asıl farkın sırrı.",
+    "baslik": "MARKALAR SENİ RENKLERLE KANDIRIYOR! 🎨",
+    "aciklama": "Marka renklerinin beynine sen fark etmeden gönderdiği gizli mesajlar.",
     "etiketler": [
-      "para",
-      "zenginlik",
-      "yatırım",
-      "bileşikfaiz",
-      "başarı"
+      "marka",
+      "renk",
+      "psikoloji",
+      "reklam",
+      "tuzak"
     ],
-    "script": "Zenginlerle çoğu insan arasındaki fark, ne kadar kazandıkları değil, parayla ne yaptıklarıdır. Sıradan biri para kazanınca harcar; zengin biri ise o parayı çalıştırır. Bu sırrın adı bileşik faiz. Küçük bir miktar bile zamanla kendi üzerine katlanarak büyür, tıpkı yokuş aşağı yuvarlanan bir kartopunun devleşmesi gibi. Hesaplara göre, yirmili yaşlarda biriktirmeye başlayan biri, otuzlu yaşlarda başlayandan çok daha zengin olur, üstelik toplamda daha az para yatırarak. Çünkü en güçlü faktör para değil, zamandır. Yani en iyi yatırımı yapmanın günü, tam olarak bugündür.",
+    "script": "Sevdiğin markaların renkleri tesadüf değil, üzerinde yıllarca çalışılmış psikolojik silahlardır. Kırmızı açlık ve aciliyet hissi uyandırır, bu yüzden fast food zincirlerinin çoğu kırmızıdır. Mavi güven verir, bu yüzden bankalar ve teknoloji devleri onu seçer. Yeşil doğallık ve sağlık hissettirir, sağlıksız ürünler bile bu yüzden yeşil ambalaja bürünür. Sarı dikkat çeker ve mutluluk çağrıştırır. Bu renkler beynine sen fark etmeden mesaj gönderir. Yani bir markaya kandığını sandığın an, aslında binlerce dolarlık bir renk stratejisine kanmışsındır.",
     "sahneler": [
       {
-        "metin": "büyüyen para",
-        "gorsel": "money visually growing and multiplying, golden cinematic"
+        "metin": "renkli marka logoları",
+        "gorsel": "various colorful brand logos, marketing concept"
       },
       {
-        "metin": "büyüyen kartopu",
-        "gorsel": "a snowball rolling downhill growing huge, dramatic"
+        "metin": "kırmızı açlık",
+        "gorsel": "a red fast food sign triggering hunger, dramatic"
       },
       {
-        "metin": "bileşik faiz grafiği",
-        "gorsel": "an exponential growth graph glowing, finance concept"
+        "metin": "mavi güven",
+        "gorsel": "a blue bank or tech logo, trustworthy feel"
       },
       {
-        "metin": "erken yatırım",
-        "gorsel": "a young person investing early, hopeful bright"
+        "metin": "yeşil sağlık ambalajı",
+        "gorsel": "green healthy looking product packaging"
       },
       {
-        "metin": "zaman ve zenginlik",
-        "gorsel": "time and wealth accumulating together, symbolic art"
+        "metin": "renk psikolojisi",
+        "gorsel": "a color psychology chart, informative art"
       }
     ]
   },
   {
-    "baslik": "NEDEN DOYSAN DA YEMEYE DEVAM EDERSİN? 🍔",
-    "aciklama": "İştahını kontrol edenin miden değil beynin ve pazarlamacılar olduğu gerçeği.",
+    "baslik": "AVM'LER SENİ İÇERİDE BÖYLE TUTUYOR! 🏬",
+    "aciklama": "AVM'lerin zamanı unutturup seni daha çok gezdiren gizli tasarımı.",
     "etiketler": [
+      "avm",
+      "alışveriş",
       "psikoloji",
-      "yemek",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Bir AVM'ye girdiğinde neden zamanın nasıl geçtiğini anlamazsın? Çünkü tam olarak öyle tasarlanmıştır. AVM'lerde neredeyse hiç saat ve pencere yoktur, dışarıdaki zamanı unutman istenir. Girişler genellikle seni belirli bir yöne zorlar. En çok istediğin mağazalar hep en tepede ya da en uçtadır, oraya giderken onlarca vitrinin önünden geçersin. Yürüyen merdivenler bile seni her katı dolaşmaya mecbur bırakacak şekilde yerleştirilir. Yumuşak müzik ve loş ışıklar seni rahatlatıp yavaşlatır. Yani içeride geçirdiğin her fazladan dakika, dikkatle planlanmış bir tuzaktır.",
+    "sahneler": [
+      {
+        "metin": "avm içi",
+        "gorsel": "a large shopping mall interior, no clocks visible, cinematic"
+      },
+      {
+        "metin": "penceresiz koridor",
+        "gorsel": "a windowless mall corridor with shops"
+      },
+      {
+        "metin": "yönlendiren yerleşim",
+        "gorsel": "a mall layout guiding shoppers along a path"
+      },
+      {
+        "metin": "yürüyen merdiven",
+        "gorsel": "mall escalators forcing a longer route"
+      },
+      {
+        "metin": "loş rahatlatıcı ışık",
+        "gorsel": "soft relaxing mall lighting, inviting"
+      }
+    ]
+  },
+  {
+    "baslik": "ONLİNE ALIŞVERİŞ SENİ BÖYLE KANDIRIYOR! 🛍️",
+    "aciklama": "İnternet mağazalarının seni düşünmeden satın aldıran numaraları.",
+    "etiketler": [
+      "online",
+      "alışveriş",
+      "internet",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "İnternetten alışveriş yaparken bu ürüne şu an sekiz kişi daha bakıyor yazısını gördün mü? Çoğu zaman o rakam tamamen uydurmadır. Geri sayım sayaçları, son birkaç saat uyarıları, hepsi paniğe kapılıp düşünmeden satın alman için tasarlanır. Bir ürünü sepete atıp çıktığında sana indirim maili gelmesi de tesadüf değildir, tereddüt ettiğini bilirler. Yıldızlı yorumların bir kısmı sahtedir. Hatta en çok satan etiketi bile çoğu zaman sadece o ürünü öne çıkarmak içindir. Yani ekranın karşısında bile, her tıklaman izlenip yönlendiriliyor.",
+    "sahneler": [
+      {
+        "metin": "kaç kişi bakıyor uyarısı",
+        "gorsel": "a popup saying 8 people are viewing this item"
+      },
+      {
+        "metin": "geri sayım sayacı",
+        "gorsel": "a countdown timer on a shopping website, urgency"
+      },
+      {
+        "metin": "sepet indirim maili",
+        "gorsel": "an abandoned cart discount email notification"
+      },
+      {
+        "metin": "sahte yorumlar",
+        "gorsel": "fake five star reviews on a product page"
+      },
+      {
+        "metin": "en çok satan etiketi",
+        "gorsel": "a bestseller badge on a product, marketing"
+      }
+    ]
+  },
+  {
+    "baslik": "UYGULAMALAR SENİ BÖYLE BAĞIMLI YAPIYOR! 📱",
+    "aciklama": "Telefon uygulamalarının dikkatini çalmak için beynini hedef alması.",
+    "etiketler": [
+      "uygulama",
+      "bağımlılık",
+      "telefon",
+      "psikoloji",
+      "tuzak"
+    ],
+    "script": "Telefonundaki uygulamalar seni ekranda tutmak için doğrudan beynini hedef alır. Aşağı çekince yenilenen o akış, tıpkı bir kumar makinesi gibi çalışır, ne geleceğini bilemez ve durmak istemezsin. Kırmızı bildirim baloncukları beyninde küçük bir alarm etkisi yaratır, tıklamadan rahat edemezsin. Bir kişi seni beğendi gibi mesajlar merakını sürekli kaşır. Videolar otomatik oynar ki durmana fırsat kalmasın. Hepsi, dikkatini mümkün olduğunca uzun süre tutup satmak için tasarlanmıştır. Yani asıl ürün uygulama değil, sensin. Ve dikkatin, satılan en değerli şey.",
+    "sahneler": [
+      {
+        "metin": "sonsuz akış",
+        "gorsel": "an infinite scrolling social media feed on a phone"
+      },
+      {
+        "metin": "kırmızı bildirimler",
+        "gorsel": "red notification badges piling up on app icons"
+      },
+      {
+        "metin": "beğenildin mesajı",
+        "gorsel": "a someone liked you notification, curiosity"
+      },
+      {
+        "metin": "otomatik oynayan video",
+        "gorsel": "autoplaying videos keeping a viewer hooked"
+      },
+      {
+        "metin": "satılan dikkat",
+        "gorsel": "human attention being sold as a product, concept art"
+      }
+    ]
+  },
+  {
+    "baslik": "KAHVE ZİNCİRLERİNİN GİZLİ OYUNU! ☕",
+    "aciklama": "Kahve zincirlerinin boy isimleri ve fiyatlarındaki gizli tuzak.",
+    "etiketler": [
+      "kahve",
+      "fiyat",
+      "psikoloji",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Kahve zincirlerinde neden küçük boy yoktur da orta, büyük ve dev vardır? Çünkü küçük kelimesi sana az aldığını hissettirir. En küçük boyu orta diye adlandırıp ortadan başlatırlar, böylece daha büyüğüne yönelirsin. Fiyatlar öyle ayarlanır ki, biraz daha para verip bir üst boya geçmek hep mantıklı görünür, buna tuzak seçenek denir. Menüdeki en pahalı içecek, diğerlerini uygun göstermek için oradadır. Şurup ve ekstralar ise kârın büyük kısmıdır. Yani o fincanı elinde tutarken, aslında zekice kurulmuş bir fiyat oyununun tam ortasındasın.",
+    "sahneler": [
+      {
+        "metin": "kahve boyları",
+        "gorsel": "coffee cup sizes medium large extra large lined up"
+      },
+      {
+        "metin": "küçük boy yok",
+        "gorsel": "a coffee menu with no small size option"
+      },
+      {
+        "metin": "fiyat kademeleri",
+        "gorsel": "tiered coffee prices on a menu board"
+      },
+      {
+        "metin": "tuzak fiyat",
+        "gorsel": "decoy pricing making the middle option attractive"
+      },
+      {
+        "metin": "şurup ekstralar",
+        "gorsel": "coffee syrups and extras, high profit add ons"
+      }
+    ]
+  },
+  {
+    "baslik": "FİYATLARDAKİ 99 KURUŞ TUZAĞI! 💸",
+    "aciklama": "Neredeyse her fiyatın neden 99 kuruşla bittiğinin beyin oyunu.",
+    "etiketler": [
+      "fiyat",
+      "psikoloji",
+      "alışveriş",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Neredeyse her fiyat neden yüz lira değil de doksan dokuz lira doksan kuruştur? Bu bir kuruş meselesi değil, tam bir beyin oyunudur. Beynimiz sayıları soldan sağa okur ve ilk rakama takılır. Doksan dokuz lira, beynine yüz değil doksan olarak kaydolur, yani ucuz. Buna sol basamak etkisi denir ve onlarca yıldır işe yarar. Kırmızı fiyat etiketleri de aynı numaranın parçasıdır, gözüne indirim gibi görünür. Bazen tam yuvarlak sayı, kaliteli hissettirmek için bilerek kullanılır. Yani o bir kuruşluk fark, aslında cebinden çok daha fazlasını çıkarmak için tasarlanmıştır.",
+    "sahneler": [
+      {
+        "metin": "99 kuruş fiyat etiketi",
+        "gorsel": "a price tag showing 99.90, close up"
+      },
+      {
+        "metin": "soldan okuyan beyin",
+        "gorsel": "a brain focusing on the first digit of a price"
+      },
+      {
+        "metin": "sol basamak etkisi",
+        "gorsel": "left digit effect concept, informative art"
+      },
+      {
+        "metin": "kırmızı fiyat",
+        "gorsel": "red discount price tags catching the eye"
+      },
+      {
+        "metin": "bir kuruş tuzağı",
+        "gorsel": "a single penny symbolizing a pricing trick"
+      }
+    ]
+  },
+  {
+    "baslik": "SÜPERMARKET KOKUSU BİLE TUZAK! 👃",
+    "aciklama": "Marketlerin taze ekmek kokusuyla iştahını ve alışverişini artırması.",
+    "etiketler": [
+      "market",
+      "koku",
+      "psikoloji",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Markete girdiğinde seni karşılayan o taze ekmek kokusu tesadüf değil. Fırın çoğu zaman kapıya yakın konur, çünkü taze ekmek kokusu açlık hissini tetikler ve aç bir insan daha çok alışveriş yapar. Bazı mağazalar havaya özel kokular bile verir. Meyve sebze reyonu neden hep girişte ve rengarenktir? Çünkü tazelik hissi sana burası kaliteli dedirtir ve gardını düşürür. Üstüne su püskürtülen sebzeler daha taze görünür ama aslında daha çabuk bozulur. Yani daha ilk adımda, beş duyun birden ele geçirilir.",
+    "sahneler": [
+      {
+        "metin": "kapıdaki fırın",
+        "gorsel": "a bakery section near a supermarket entrance, fresh bread"
+      },
+      {
+        "metin": "ekmek kokusu açlık",
+        "gorsel": "the smell of fresh bread triggering hunger, warm"
+      },
+      {
+        "metin": "rengarenk manav",
+        "gorsel": "a colorful fruit and vegetable section at the entrance"
+      },
+      {
+        "metin": "su püskürtülen sebze",
+        "gorsel": "vegetables sprayed with water looking fresh"
+      },
+      {
+        "metin": "ele geçirilen duyular",
+        "gorsel": "the five senses being targeted in a store, concept"
+      }
+    ]
+  },
+  {
+    "baslik": "REKLAMLAR BEYNİNİ BÖYLE KANDIRIYOR! 📺",
+    "aciklama": "Reklamların mantığına değil duygularına konuşarak seni ikna etmesi.",
+    "etiketler": [
+      "reklam",
+      "psikoloji",
+      "pazarlama",
       "beyin",
-      "alışkanlık",
-      "sağlık"
+      "tuzak"
     ],
-    "script": "Tok olduğunu bildiğin halde neden o son dilime uzanırsın? Suç sende değil, beyninde. Şeker ve yağ oranı yüksek yiyecekler, beynindeki ödül merkezini o kadar güçlü uyarır ki, doyduğunu söyleyen sinyalleri bastırır. Buna lezzet noktası denir ve gıda şirketleri ürünlerini tam da seni durduramayacak şekilde tasarlar. Ayrıca gözünün önündeki yemek, beynine hâlâ açsın yalanını söyler. En çarpıcısı, tabağının büyüklüğü bile ne kadar yediğini belirler. Yani iştahını kontrol eden çoğu zaman miden değil, gözlerin ve pazarlamacılardır.",
+    "script": "Bir reklamı beğenmesen bile, beynin onu kaydeder. Reklamlar mantığına değil, doğrudan duygularına konuşur. Mutlu aileler, gülen insanlar, o ürünü mutlulukla eşleştirmen için oradadır. Bir ünlünün ürünü kullanması, beynine güvenilir sinyali gönderir. Bir şeyi ne kadar çok görürsen ona o kadar güvenirsin, buna aşinalık etkisi denir ve tekrar tekrar gösterilmesi tam da bu yüzdendir. Milyonlar tercih ediyor cümlesi, sürüye uyma içgüdünü tetikler. Yani reklam sana ürünü satmaz, bir duyguyu satar ve o duyguyu ürünle birlikte hatırlarsın.",
     "sahneler": [
       {
-        "metin": "son dilime uzanmak",
-        "gorsel": "a hand reaching for the last slice of pizza, tempting"
+        "metin": "mutlu aile reklamı",
+        "gorsel": "a happy family in a commercial, warm advertising"
       },
       {
-        "metin": "ödül merkezi",
-        "gorsel": "a brain reward center lighting up with pleasure, art"
+        "metin": "ünlü onayı",
+        "gorsel": "a celebrity endorsing a product, marketing"
       },
       {
-        "metin": "işlenmiş gıda",
-        "gorsel": "colorful processed junk food designed to be irresistible"
+        "metin": "tekrarlanan reklam",
+        "gorsel": "the same ad repeated many times, familiarity"
       },
       {
-        "metin": "büyük tabak küçük tabak",
-        "gorsel": "comparison of a big plate versus a small plate of food"
+        "metin": "milyonlar tercih ediyor",
+        "gorsel": "a millions choose us slogan, bandwagon effect"
       },
       {
-        "metin": "gıda pazarlaması",
-        "gorsel": "clever food marketing manipulating desire, concept"
+        "metin": "ürüne bağlanan duygu",
+        "gorsel": "an emotion linked to a product in memory, concept"
       }
     ]
   },
   {
-    "baslik": "İLK 90 SANİYEDE DUYGULARINI SEÇEBİLİRSİN 🧠",
-    "aciklama": "Bir duygunun vücudunda sadece 90 saniye yaşadığı şaşırtıcı gerçeği.",
+    "baslik": "SADAKAT KARTLARININ GERÇEK AMACI! 💳",
+    "aciklama": "Puan kazandırıyor gibi görünen sadakat kartlarının asıl aldığı şey.",
     "etiketler": [
-      "psikoloji",
-      "duygu",
-      "öfke",
-      "kontrol",
-      "beyin"
+      "sadakat",
+      "kart",
+      "veri",
+      "tüketici",
+      "tuzak"
     ],
-    "script": "Öfkelendiğinde o duygunun vücudunu ele geçirmesi haksızlık gibi gelir. Ama şaşırtıcı bir gerçek var: bir duyguyu tetikleyen kimyasallar vücudunda yalnızca doksan saniye kalır. Yani öfke, korku ya da kaygı, biyolojik olarak sadece bir buçuk dakika yaşar. Peki neden saatlerce sürüyormuş gibi hisseder? Çünkü o düşünceyi zihninde tekrar tekrar besleriz ve kimyasal her seferinde yeniden tetiklenir. İşin sırrı şu: o ilk doksan saniyeyi sadece izleyip geçmesine izin verirsen, duygu üzerindeki kontrolü sen ele alırsın. Yani hislerinin esiri değil, sahibi olabilirsin.",
+    "script": "O sadakat kartı sana puan kazandırıyor gibi görünür ama asıl kazanan mağazadır. Her kullandığında ne aldığını, ne zaman aldığını ve ne sıklıkla geldiğini kaydederler. Bu veriyle alışkanlıklarını öğrenir, sana tam da alacağın şeylerin reklamını gönderirler. Puanların birikiyor hissi, seni başka yere değil hep aynı mağazaya bağlar. Bazen sadece kart sahiplerine özel fiyat verilir, yani kart çıkarmayan aslında cezalandırılır. O küçük indirimin karşılığında verdiğin şey paradan çok daha değerlidir: kendi alışkanlıkların. Yani bedava sandığın kart, en pahalı bilgiyle ödenir.",
     "sahneler": [
       {
-        "metin": "öfke dalgası",
-        "gorsel": "a wave of anger surging through a person, dramatic red tones"
+        "metin": "sadakat kartı",
+        "gorsel": "a store loyalty card being scanned, close up"
       },
       {
-        "metin": "90 saniye kum saati",
-        "gorsel": "an hourglass measuring ninety seconds, close up"
+        "metin": "kaydedilen alışveriş",
+        "gorsel": "purchase data being recorded from a card"
       },
       {
-        "metin": "tekrarlayan düşünce",
-        "gorsel": "a thought looping and re-triggering in the mind, art"
+        "metin": "hedefli teklif",
+        "gorsel": "personalized targeted offers sent to a phone"
       },
       {
-        "metin": "sakin nefes",
-        "gorsel": "a calm person breathing and letting emotion pass, serene"
+        "metin": "biriken puanlar",
+        "gorsel": "loyalty points accumulating, gamified"
       },
       {
-        "metin": "duygunun sahibi",
-        "gorsel": "a person calmly in control of their emotions, powerful"
+        "metin": "veri paradan değerli",
+        "gorsel": "personal data shown as more valuable than money"
       }
     ]
   }
