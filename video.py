@@ -401,12 +401,17 @@ def stok_video_ara(query, boyut, path, dikey=True):
         req = urllib.request.Request(url, headers={"Authorization": key, "User-Agent": "Mozilla/5.0 (compatible; ytbot/1.0)"})
         with urllib.request.urlopen(req, timeout=30) as r:
             d = json.loads(r.read().decode())
-        for vid in d.get("videos", []):
+        vids = d.get("videos", [])
+        print(f"      [Pexels: {len(vids)} sonuç -> '{q}']")
+        for vid in vids:
             files = [f for f in vid.get("video_files", []) if f.get("link")]
             files.sort(key=lambda f: abs((f.get("width") or 0) - boyut[0]))
             for f in files:
                 try:
-                    urllib.request.urlretrieve(f["link"], path)
+                    dreq = urllib.request.Request(
+                        f["link"], headers={"User-Agent": "Mozilla/5.0 (compatible; ytbot/1.0)"})
+                    with urllib.request.urlopen(dreq, timeout=90) as resp, open(path, "wb") as out:
+                        out.write(resp.read())
                     if os.path.getsize(path) > 10000:
                         return path
                 except Exception:
