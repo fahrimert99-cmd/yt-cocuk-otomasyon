@@ -328,8 +328,61 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True):
         return False
 
 
+def _keys():
+    """Tek secret (GEMINI_API_KEY yuvası) içinde JSON: {"pexels":..,"eleven":..}.
+    Eski düz string ise pexels kabul edilir."""
+    raw = (os.environ.get("YT_KEYS") or os.environ.get("GEMINI_API_KEY", "")).strip()
+    try:
+        d = json.loads(raw)
+        if isinstance(d, dict):
+            return d
+    except Exception:
+        pass
+    return {"pexels": raw}
+
+
 def _pexels_key():
-    return (os.environ.get("PEXELS_API_KEY") or os.environ.get("GEMINI_API_KEY", "")).strip()
+    return (os.environ.get("PEXELS_API_KEY") or _keys().get("pexels", "")).strip()
+
+
+def _eleven_key():
+    return (os.environ.get("ELEVEN_API_KEY") or _keys().get("eleven", "")).strip()
+
+
+def _eleven_seslendir(text, mp3_path):
+    """ElevenLabs ile gerçekçi seslendirme + kelime zamanlaması (alt yazı senkronu)."""
+    import urllib.request, base64 as _b64
+    key = _eleven_key()
+    if not key:
+        raise RuntimeError("ElevenLabs anahtarı yok")
+    voice_id = os.environ.get("ELEVEN_VOICE_ID", "").strip() or "pNInz6obpgDQGcFmaJgB"  # Adam (tok/derin erkek)
+    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
+    body = {"text": text, "model_id": "eleven_multilingual_v2",
+            "voice_settings": {"stability": 0.45, "similarity_boost": 0.8,
+                               "style": 0.2, "use_speaker_boost": True}}
+    req = urllib.request.Request(url, data=json.dumps(body).encode(),
+                                 headers={"xi-api-key": key, "Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=180) as r:
+        d = json.loads(r.read().decode())
+    with open(mp3_path, "wb") as f:
+        f.write(_b64.b64decode(d["audio_base64"]))
+    al = d.get("alignment") or d.get("normalized_alignment") or {}
+    chars = al.get("characters", [])
+    st = al.get("character_start_times_seconds", [])
+    en = al.get("character_end_times_seconds", [])
+    boundaries, cur, ws, we = [], "", None, None
+    for ch, s, e in zip(chars, st, en):
+        if ch.isspace():
+            if cur:
+                boundaries.append({"start": ws, "dur": max(0.05, we - ws), "text": cur})
+                cur, ws = "", None
+        else:
+            if not cur:
+                ws = s
+            cur += ch; we = e
+    if cur:
+        boundaries.append({"start": ws, "dur": max(0.05, we - ws), "text": cur})
+    return boundaries
 
 
 def stok_video_ara(query, boyut, path, dikey=True):
@@ -549,12 +602,21 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     text, cumleler = metni_oku(script_path)
     tmp = tempfile.mkdtemp()
     mp3 = os.path.join(tmp, "narration.mp3")
-    try:
-        boundaries = seslendir_prosodik(cumleler, voice, hiz, mp3, pitch=tonlama)
-        print("      Ses: prosodik mod (cümle bazlı vurgu/tonlama)")
-    except Exception as e:
-        print(f"      Prosodik mod başarısız ({e}), tek parça seslendirmeye dönülüyor")
-        boundaries = seslendir(text, voice, hiz, mp3, pitch=tonlama)
+    boundaries = None
+    if _eleven_key():
+        try:
+            boundaries = _eleven_seslendir(text, mp3)
+            print("      Ses: ElevenLabs (gerçekçi insan sesi)")
+        except Exception as e:
+            print(f"      ElevenLabs hata ({str(e)[:90]}), edge-tts'e dönülüyor")
+            boundaries = None
+    if boundaries is None:
+        try:
+            boundaries = seslendir_prosodik(cumleler, voice, hiz, mp3, pitch=tonlama)
+            print("      Ses: prosodik mod (cümle bazlı vurgu/tonlama)")
+        except Exception as e:
+            print(f"      Prosodik mod başarısız ({e}), tek parça seslendirmeye dönülüyor")
+            boundaries = seslendir(text, voice, hiz, mp3, pitch=tonlama)
     cues = cue_olustur(boundaries, CONFIG["altyazi_max_kelime"], CONFIG["altyazi_max_sure"])
     ass = os.path.join(tmp, "sub.ass")
     ass_yaz(cues, ass, CONFIG, dikey)
