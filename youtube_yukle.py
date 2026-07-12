@@ -19,7 +19,7 @@ def _kimlik():
         token_uri=TOKEN_URI,
         client_id=os.environ["YT_CLIENT_ID"],
         client_secret=os.environ["YT_CLIENT_SECRET"],
-        scopes=["https://www.googleapis.com/auth/youtube.upload"],
+        scopes=["https://www.googleapis.com/auth/youtube.force-ssl"],
     )
 
 def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani):
