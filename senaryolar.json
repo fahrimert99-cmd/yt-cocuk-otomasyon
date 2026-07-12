@@ -454,5 +454,651 @@
         "gorsel": "personal data more valuable than money"
       }
     ]
+  },
+  {
+    "baslik": "KREDİ KARTI TAKSİT TUZAĞI! 💳",
+    "aciklama": "Taksitin neden göründüğü kadar masum olmadığı.",
+    "etiketler": [
+      "kredikartı",
+      "taksit",
+      "para",
+      "borç",
+      "tuzak"
+    ],
+    "script": "Kredi kartı taksiti sana iyilik gibi görünür ama asıl amaç seni harcatmaktır. Taksit, pahalı bir ürünü küçük parçalara böler ve beynin o küçük rakamı görünce kolayca evet der. Aslında ödediğin toplam çoğu zaman daha fazladır. Bir de kart, nakit gibi acı vermez, para gittiğini hissetmezsin. Böylece bütçenden fazlasını harcarsın. Taksit gördüğünde, gerçek toplamı hesapla.",
+    "sahneler": [
+      {
+        "metin": "kredi kartı",
+        "gorsel": "a credit card held in hand, cinematic"
+      },
+      {
+        "metin": "bölünen fiyat",
+        "gorsel": "a large price split into small installments"
+      },
+      {
+        "metin": "küçük rakam yanılgısı",
+        "gorsel": "brain tricked by a small monthly number"
+      },
+      {
+        "metin": "acı vermeyen ödeme",
+        "gorsel": "paying with a card feeling painless"
+      },
+      {
+        "metin": "artan toplam",
+        "gorsel": "the real total growing higher, concept"
+      },
+      {
+        "metin": "bütçe aşımı",
+        "gorsel": "a budget being exceeded, warning"
+      }
+    ]
+  },
+  {
+    "baslik": "ABONELİKLER SENİ BÖYLE KANDIRIYOR! 🔄",
+    "aciklama": "Kolay başlayıp zor iptal edilen aboneliklerin tuzağı.",
+    "etiketler": [
+      "abonelik",
+      "para",
+      "tuzak",
+      "dijital",
+      "tüketici"
+    ],
+    "script": "Aboneliğe başlaman iki tıktır ama iptal etmen neden bir kabusa döner? Çünkü öyle tasarlanmıştır. İptal düğmesi bilerek derinlere gizlenir, seni vazgeçiresiye kadar uğraştırırlar. Küçük aylık ücret zararsız görünür ama yıl sonunda toplamı şaşırtıcıdır. Unuttuğun aboneliklerden aylarca para çekilir. Her ay kart ekstranı kontrol et, kullanmadığın aboneliklerin hepsini iptal et.",
+    "sahneler": [
+      {
+        "metin": "kolay abonelik",
+        "gorsel": "an easy one click subscribe button"
+      },
+      {
+        "metin": "gizli iptal",
+        "gorsel": "a hidden hard to find cancel button"
+      },
+      {
+        "metin": "küçük aylık ücret",
+        "gorsel": "a small monthly fee looking harmless"
+      },
+      {
+        "metin": "yıllık toplam",
+        "gorsel": "the yearly total revealed, surprising"
+      },
+      {
+        "metin": "unutulan abonelik",
+        "gorsel": "forgotten subscriptions draining money"
+      },
+      {
+        "metin": "kart ekstresi",
+        "gorsel": "checking a card statement for charges"
+      }
+    ]
+  },
+  {
+    "baslik": "'ÜCRETSİZ DENEME' TUZAĞINA DİKKAT! ⏰",
+    "aciklama": "Bedava denemenin nasıl otomatik ödemeye dönüştüğü.",
+    "etiketler": [
+      "ücretsiz",
+      "deneme",
+      "abonelik",
+      "para",
+      "tuzak"
+    ],
+    "script": "Ücretsiz deneme diyorlar ama neden kart bilgini istiyorlar? Çünkü asıl plan seni ödemeye geçirmek. Deneme bitince otomatik olarak para çekilir, çoğu insan tarihi unutur. Hatırlatma göndermemeleri de tesadüf değil. Bazıları iptali özellikle zorlaştırır. Bedava deneme başlatırken, biten günü hemen takvimine yaz ve gerekirse bir gün önce iptal et.",
+    "sahneler": [
+      {
+        "metin": "ücretsiz deneme",
+        "gorsel": "a free trial offer on a screen"
+      },
+      {
+        "metin": "kart bilgisi isteme",
+        "gorsel": "a form asking for card details"
+      },
+      {
+        "metin": "otomatik ödeme",
+        "gorsel": "an automatic charge after trial ends"
+      },
+      {
+        "metin": "unutulan tarih",
+        "gorsel": "a forgotten trial end date on a calendar"
+      },
+      {
+        "metin": "hatırlatma yok",
+        "gorsel": "no reminder sent, silence concept"
+      },
+      {
+        "metin": "takvime not",
+        "gorsel": "writing the trial end date on a calendar"
+      }
+    ]
+  },
+  {
+    "baslik": "BANKALAR GİZLİ ÜCRETLERLE KANDIRIYOR! 🏦",
+    "aciklama": "Fark etmeden ödediğin küçük banka ücretleri.",
+    "etiketler": [
+      "banka",
+      "para",
+      "ücret",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Bankalar en çok, fark etmediğin küçük ücretlerden kazanır. Hesap işletim ücreti, kart aidatı, havale masrafı, hepsi minik minik cebinden çıkar. Bu ücretler bilerek karmaşık sözleşmelerin içine gizlenir. Faiz oranları da göründüğü gibi değildir. Çoğu ücret aslında sorunca kaldırılabilir ama kimse sormaz. Banka ekstranı incele, ödediğin her kalemi sorgula.",
+    "sahneler": [
+      {
+        "metin": "banka binası",
+        "gorsel": "a modern bank building, cinematic"
+      },
+      {
+        "metin": "gizli ücretler",
+        "gorsel": "hidden fees in a bank statement"
+      },
+      {
+        "metin": "karmaşık sözleşme",
+        "gorsel": "a complicated contract with fine print"
+      },
+      {
+        "metin": "minik kesintiler",
+        "gorsel": "small charges adding up over time"
+      },
+      {
+        "metin": "kaldırılabilir ücret",
+        "gorsel": "a fee being waived after asking"
+      },
+      {
+        "metin": "ekstre incelemesi",
+        "gorsel": "carefully reviewing a bank statement"
+      }
+    ]
+  },
+  {
+    "baslik": "SPOR SALONU ÜYELİĞİ TUZAĞI! 💪",
+    "aciklama": "Salonların gelmemeni umarak para kazandığı gerçeği.",
+    "etiketler": [
+      "spor",
+      "salon",
+      "üyelik",
+      "para",
+      "tuzak"
+    ],
+    "script": "Spor salonları aslında senin gelmemeni umar. Çünkü kapasitelerinin kat kat üstünde üye kaydederler, herkes gelse içeri sığmaz. Yıllık sözleşmeler, otomatik yenilemeler ve zor iptal koşulları, sen gitmesen de para akmaya devam etsin diyedir. Ocak ayı indirimleri, motivasyonu yüksekken seni bağlamak içindir. Üye olmadan önce iptal koşullarını mutlaka oku.",
+    "sahneler": [
+      {
+        "metin": "spor salonu",
+        "gorsel": "a modern gym interior, cinematic"
+      },
+      {
+        "metin": "fazla üye kaydı",
+        "gorsel": "a gym overselling memberships"
+      },
+      {
+        "metin": "yıllık sözleşme",
+        "gorsel": "a yearly gym contract"
+      },
+      {
+        "metin": "otomatik yenileme",
+        "gorsel": "an auto renewing membership"
+      },
+      {
+        "metin": "ocak indirimi",
+        "gorsel": "a january new year gym discount"
+      },
+      {
+        "metin": "boş salon",
+        "gorsel": "an empty gym after january, concept"
+      }
+    ]
+  },
+  {
+    "baslik": "UÇAK BİLETİ FİYAT OYUNU! ✈️",
+    "aciklama": "Aynı koltuğun neden herkese farklı fiyata satıldığı.",
+    "etiketler": [
+      "uçak",
+      "bilet",
+      "fiyat",
+      "seyahat",
+      "tuzak"
+    ],
+    "script": "Aynı uçaktaki aynı koltuk, neden herkese farklı fiyata satılır? Çünkü fiyatlar sürekli değişir. Ne kadar çok aradıysan, sistem senin o bileti istediğini anlar ve fiyatı yükseltebilir. Son bir koltuk uyarıları çoğu zaman seni acele ettirmek içindir. Bagaj, koltuk seçimi, hepsi ekstra ücret olarak sonradan eklenir. Aramadan önce tarayıcını gizli modda aç.",
+    "sahneler": [
+      {
+        "metin": "uçak koltukları",
+        "gorsel": "airplane seats from the aisle, cinematic"
+      },
+      {
+        "metin": "değişen fiyatlar",
+        "gorsel": "flight prices constantly changing on a screen"
+      },
+      {
+        "metin": "takip edilen arama",
+        "gorsel": "search history tracked raising a price"
+      },
+      {
+        "metin": "son koltuk uyarısı",
+        "gorsel": "a last seat available warning"
+      },
+      {
+        "metin": "ekstra ücretler",
+        "gorsel": "baggage and seat selection extra fees"
+      },
+      {
+        "metin": "gizli mod",
+        "gorsel": "browsing flights in incognito mode"
+      }
+    ]
+  },
+  {
+    "baslik": "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
+    "aciklama": "Ücretsiz kargo için daha çok harcatma tuzağı.",
+    "etiketler": [
+      "kargo",
+      "online",
+      "alışveriş",
+      "para",
+      "tuzak"
+    ],
+    "script": "Bedava kargo için biraz daha ekle diyorlar, sen de ekliyorsun. İşte tuzak tam burada. İhtiyacın olmayan bir ürünü, kargo ücretinden kurtulmak için sepete atarsın. Oysa çoğu zaman o kargo ücretini ödemek daha ucuza gelir. Bedava kargo eşiği, tam da seni fazladan harcatacak şekilde belirlenir. Sepete bir şey eklemeden önce, gerçekten gerekli mi diye sor.",
+    "sahneler": [
+      {
+        "metin": "kargo kutusu",
+        "gorsel": "a delivery package box, cinematic"
+      },
+      {
+        "metin": "bedava kargo eşiği",
+        "gorsel": "a free shipping threshold message"
+      },
+      {
+        "metin": "gereksiz ürün ekleme",
+        "gorsel": "adding an unneeded item to a cart"
+      },
+      {
+        "metin": "sepet toplamı artıyor",
+        "gorsel": "a cart total increasing"
+      },
+      {
+        "metin": "kargo mu ucuz",
+        "gorsel": "comparing shipping cost versus extra item"
+      },
+      {
+        "metin": "düşünen alışverişçi",
+        "gorsel": "a shopper reconsidering a purchase"
+      }
+    ]
+  },
+  {
+    "baslik": "OYUNLARDAKİ SATIN ALMA TUZAĞI! 🎮",
+    "aciklama": "Ücretsiz oyunların nasıl para kazandığı.",
+    "etiketler": [
+      "oyun",
+      "satınalma",
+      "çocuk",
+      "para",
+      "tuzak"
+    ],
+    "script": "Ücretsiz oyunlar nasıl milyarlar kazanır? İçindeki küçük satın almalarla. Oyun, seni tam ilerleyeceğin anda durdurur ve beklemek yerine az bir para öde der. Parlak kutular, sınırlı süreli teklifler, hepsi anlık karar verdirmek içindir. Gerçek parayı önce oyun parasına çevirirler ki ne harcadığını hissetmeyesin. Özellikle çocuklarda bu tuzak çok güçlüdür. Uygulama içi satın almayı kapat.",
+    "sahneler": [
+      {
+        "metin": "mobil oyun",
+        "gorsel": "a colorful mobile game on a phone"
+      },
+      {
+        "metin": "ilerlemeyi durdurma",
+        "gorsel": "a game blocking progress to sell"
+      },
+      {
+        "metin": "parlak kutular",
+        "gorsel": "glowing loot boxes in a game"
+      },
+      {
+        "metin": "sınırlı teklif",
+        "gorsel": "a limited time offer popup in a game"
+      },
+      {
+        "metin": "sanal para",
+        "gorsel": "real money turned into game currency"
+      },
+      {
+        "metin": "çocuk oyunda",
+        "gorsel": "a child playing a mobile game, concept"
+      }
+    ]
+  },
+  {
+    "baslik": "KASADAKİ ÇİKOLATA TUZAĞI! 🍫",
+    "aciklama": "Kasa önündeki ürünlerin neden orada olduğu.",
+    "etiketler": [
+      "market",
+      "kasa",
+      "psikoloji",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Market kasasında sıra beklerken önündeki çikolata ve sakızlar tesadüf değil. Oraya, tam da irade gücün en zayıf anında konur. Alışverişten yorulmuş beynin, küçük ve ucuz görünen bu ürünlere kolayca evet der. Buna dürtüsel satın alma denir ve marketlerin en kârlı köşesidir. Çocuk göz hizasına konması da ayrı bir taktiktir. Kasada gözünü listende tut.",
+    "sahneler": [
+      {
+        "metin": "market kasası",
+        "gorsel": "a supermarket checkout line, cinematic"
+      },
+      {
+        "metin": "kasadaki çikolata",
+        "gorsel": "chocolate and candy at a checkout counter"
+      },
+      {
+        "metin": "zayıf irade anı",
+        "gorsel": "tired brain making an impulse choice"
+      },
+      {
+        "metin": "dürtüsel alım",
+        "gorsel": "an impulse purchase at the register"
+      },
+      {
+        "metin": "çocuk göz hizası",
+        "gorsel": "candy placed at a childs eye level"
+      },
+      {
+        "metin": "alışveriş listesi",
+        "gorsel": "focusing on a shopping list at checkout"
+      }
+    ]
+  },
+  {
+    "baslik": "'DOĞAL & ORGANİK' YALANI! 🌿",
+    "aciklama": "Yeşil ambalajların ve doğal kelimesinin gizli oyunu.",
+    "etiketler": [
+      "organik",
+      "doğal",
+      "ambalaj",
+      "sağlık",
+      "tuzak"
+    ],
+    "script": "Üzerinde doğal yazan her ürün doğal değildir. Doğal kelimesinin çoğu ülkede yasal bir tanımı bile yoktur, yani neredeyse her şeye yazılabilir. Yeşil ambalaj, yaprak resimleri, hepsi sana sağlıklı hissettirmek içindir. Sağlıksız bir ürün bile bu şekilde masum görünebilir. Buna yeşil yıkama denir. Ambalajdaki resme değil, arkadaki içindekiler listesine bak.",
+    "sahneler": [
+      {
+        "metin": "doğal etiketi",
+        "gorsel": "a product labeled natural, close up"
+      },
+      {
+        "metin": "yeşil ambalaj",
+        "gorsel": "green leafy product packaging"
+      },
+      {
+        "metin": "yaprak resimleri",
+        "gorsel": "leaf imagery on unhealthy food packaging"
+      },
+      {
+        "metin": "yasal tanım yok",
+        "gorsel": "the word natural with no legal meaning"
+      },
+      {
+        "metin": "yeşil yıkama",
+        "gorsel": "greenwashing marketing concept"
+      },
+      {
+        "metin": "içindekiler listesi",
+        "gorsel": "reading the ingredients list on the back"
+      }
+    ]
+  },
+  {
+    "baslik": "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉",
+    "aciklama": "Aynı parayla neden daha az ürün aldığın.",
+    "etiketler": [
+      "gıda",
+      "ambalaj",
+      "enflasyon",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Sevdiğin bir ürünün paketi neden bir anda küçüldü ama fiyatı aynı kaldı? Buna küçültme enflasyonu denir. Şirketler fiyatı artırmak yerine, sessizce içindeki miktarı azaltır, çünkü tüketici fiyat artışını fark eder ama azalan gramajı fark etmez. Cips paketindeki hava, çikolatadaki incelme, hepsi bu oyunun parçası. Fiyata değil, birim gramaj fiyatına bak.",
+    "sahneler": [
+      {
+        "metin": "küçülen paket",
+        "gorsel": "a product package shrinking in size"
+      },
+      {
+        "metin": "aynı fiyat",
+        "gorsel": "the same price tag on a smaller product"
+      },
+      {
+        "metin": "cips paketindeki hava",
+        "gorsel": "a chip bag mostly full of air"
+      },
+      {
+        "metin": "incelen çikolata",
+        "gorsel": "a chocolate bar getting thinner"
+      },
+      {
+        "metin": "gramaj azalması",
+        "gorsel": "reduced weight on a product label"
+      },
+      {
+        "metin": "birim fiyat",
+        "gorsel": "comparing price per gram on a shelf"
+      }
+    ]
+  },
+  {
+    "baslik": "KARTLA NEDEN DAHA ÇOK HARCARSIN? 💳",
+    "aciklama": "Nakit yerine kartla ödemenin gizli etkisi.",
+    "etiketler": [
+      "para",
+      "kart",
+      "psikoloji",
+      "harcama",
+      "tuzak"
+    ],
+    "script": "Kartla öderken neden nakitten daha rahat harcarsın? Çünkü kart, paranın gittiğini hissettirmez. Nakit verirken elinden çıkanı görürsün, beynin küçük bir acı yaşar ve seni frenler. Kartta ise bu fren yoktur, sadece bir dokunuş. Araştırmalar, insanların kartla çok daha fazla harcadığını gösteriyor. Temassız ödeme bunu daha da kolaylaştırır. Bütçeni korumak istiyorsan, nakit dene.",
+    "sahneler": [
+      {
+        "metin": "nakit ödeme",
+        "gorsel": "paying with physical cash, hand giving money"
+      },
+      {
+        "metin": "elden çıkan para",
+        "gorsel": "seeing cash leave your hand, concept"
+      },
+      {
+        "metin": "kartla dokunuş",
+        "gorsel": "a quick contactless card tap"
+      },
+      {
+        "metin": "hissedilmeyen harcama",
+        "gorsel": "spending without feeling the loss"
+      },
+      {
+        "metin": "artan harcama",
+        "gorsel": "spending more with a card, chart"
+      },
+      {
+        "metin": "nakit bütçe",
+        "gorsel": "budgeting with cash envelopes"
+      }
+    ]
+  },
+  {
+    "baslik": "OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨",
+    "aciklama": "Rezervasyon sitelerinin acele ettiren numaraları.",
+    "etiketler": [
+      "otel",
+      "rezervasyon",
+      "seyahat",
+      "online",
+      "tuzak"
+    ],
+    "script": "Otel sitesinde bu fiyata son oda ve iki kişi daha bakıyor yazılarını görüyor musun? Çoğu zaman bunlar seni paniğe sokup hemen rezervasyon yaptırmak içindir. Gösterilen fiyat çoğu zaman vergiler ve ücretler eklenince kabarır. Sıralamada en üstteki oteller, en iyisi değil, siteye en çok komisyon ödeyendir. Rezervasyondan önce oteli doğrudan aramayı dene.",
+    "sahneler": [
+      {
+        "metin": "otel rezervasyon sitesi",
+        "gorsel": "a hotel booking website on a screen"
+      },
+      {
+        "metin": "son oda uyarısı",
+        "gorsel": "a last room at this price warning"
+      },
+      {
+        "metin": "kaç kişi bakıyor",
+        "gorsel": "a 2 others viewing message"
+      },
+      {
+        "metin": "gizli vergiler",
+        "gorsel": "hidden taxes added at checkout"
+      },
+      {
+        "metin": "komisyonlu sıralama",
+        "gorsel": "top listed hotels paying commission"
+      },
+      {
+        "metin": "oteli arama",
+        "gorsel": "calling a hotel directly to book"
+      }
+    ]
+  },
+  {
+    "baslik": "KUMARHANELER SENİ BÖYLE TUTAR! 🎰",
+    "aciklama": "Kumarhanelerin zamanı ve parayı unutturan tasarımı.",
+    "etiketler": [
+      "kumarhane",
+      "psikoloji",
+      "tasarım",
+      "para",
+      "tuzak"
+    ],
+    "script": "Kumarhanede neden saat ve pencere yoktur? Zamanı tamamen unutasın diye. Işıklar, sesler ve neredeyse kazandın anları, beynini oyunda tutmak için titizlikle tasarlanır. Bedava içecekler, kaybettiğin parayı unutturmak içindir. Paranı fişe çevirmeleri de tesadüf değil, gerçek para gibi hissetmezsin. Her şey, mümkün olduğunca uzun kalman için kurulmuştur. En büyük kazanan hep evdir.",
+    "sahneler": [
+      {
+        "metin": "kumarhane içi",
+        "gorsel": "a casino interior with bright lights, cinematic"
+      },
+      {
+        "metin": "saatsiz salon",
+        "gorsel": "a casino with no clocks or windows"
+      },
+      {
+        "metin": "neredeyse kazandın",
+        "gorsel": "a slot machine near miss effect"
+      },
+      {
+        "metin": "bedava içecek",
+        "gorsel": "free drinks served at a casino"
+      },
+      {
+        "metin": "fişe çevrilen para",
+        "gorsel": "cash turned into casino chips"
+      },
+      {
+        "metin": "kazanan ev",
+        "gorsel": "the house always wins concept"
+      }
+    ]
+  },
+  {
+    "baslik": "FAST FOOD MENÜ TUZAĞI! 🍔",
+    "aciklama": "Menü tahtasının sana daha çok yediren tasarımı.",
+    "etiketler": [
+      "fastfood",
+      "menü",
+      "psikoloji",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Fast food kasasında sorulan büyük boy ister misin sorusu masum değil. Buna yukarı satış denir ve çok işe yarar. Menüler, en kârlı ürünleri tam göz hizana koyacak şekilde tasarlanır. Yanına patates ve içecek eklemek hep uygun görünür, çünkü tek tek almaktan ucuzdur ama toplamda daha çok harcarsın. Aç karnına sipariş vermek de kötü bir fikirdir. Ne istediğine önceden karar ver.",
+    "sahneler": [
+      {
+        "metin": "fast food menüsü",
+        "gorsel": "a bright fast food menu board"
+      },
+      {
+        "metin": "büyük boy sorusu",
+        "gorsel": "a cashier asking to upsize a meal"
+      },
+      {
+        "metin": "göz hizası ürün",
+        "gorsel": "profitable items at eye level on a menu"
+      },
+      {
+        "metin": "menü kombosu",
+        "gorsel": "a combo meal deal offer"
+      },
+      {
+        "metin": "artan toplam",
+        "gorsel": "a growing order total"
+      },
+      {
+        "metin": "aç sipariş",
+        "gorsel": "ordering food while hungry, concept"
+      }
+    ]
+  },
+  {
+    "baslik": "TELEFON FATURANDAKİ GİZLİ ÜCRETLER! 📞",
+    "aciklama": "Faturana sessizce eklenen küçük ücretler.",
+    "etiketler": [
+      "telefon",
+      "fatura",
+      "ücret",
+      "operatör",
+      "tuzak"
+    ],
+    "script": "Telefon faturan neden her ay biraz farklı? Çünkü içine fark etmediğin küçük ücretler eklenir. Kullanmadığın servisler, otomatik açılan abonelikler, aşım ücretleri, hepsi minik minik birikir. Kampanya bitince fiyatın sessizce artması da klasik bir taktiktir. Bu ücretlerin çoğu sorunca iptal edilebilir. Faturanı her ay tek tek incele, tanımadığın kalemleri operatörüne sor.",
+    "sahneler": [
+      {
+        "metin": "telefon faturası",
+        "gorsel": "a phone bill on a screen"
+      },
+      {
+        "metin": "gizli servis ücreti",
+        "gorsel": "hidden service charges on a bill"
+      },
+      {
+        "metin": "otomatik abonelik",
+        "gorsel": "auto activated paid services"
+      },
+      {
+        "metin": "kampanya bitişi",
+        "gorsel": "a promo ending and price rising"
+      },
+      {
+        "metin": "aşım ücreti",
+        "gorsel": "overage charges on a phone bill"
+      },
+      {
+        "metin": "faturayı sorgulama",
+        "gorsel": "questioning phone bill charges"
+      }
+    ]
+  },
+  {
+    "baslik": "SİTELERDEKİ ALDATICI BUTONLAR! 🖱️",
+    "aciklama": "Web sitelerinin seni yanlış tıklamaya iten tasarımı.",
+    "etiketler": [
+      "internet",
+      "tasarım",
+      "aldatma",
+      "dijital",
+      "tuzak"
+    ],
+    "script": "Bir siteden çıkmak istersin ama kabul et düğmesi kocaman ve renkli, hayır ise minik ve gri. Bu tesadüf değil, buna karanlık desen denir. Siteler, seni istemediğin şeyi kabul etmeye ya da fazladan ürün almaya yönlendirmek için butonları bilerek böyle tasarlar. Önceden işaretlenmiş kutucuklar, gizli iptaller, hepsi bu oyunun parçası. Tıklamadan önce iki kez oku.",
+    "sahneler": [
+      {
+        "metin": "aldatıcı buton",
+        "gorsel": "a big colorful accept button vs tiny reject"
+      },
+      {
+        "metin": "karanlık desen",
+        "gorsel": "dark pattern web design concept"
+      },
+      {
+        "metin": "önceden işaretli kutu",
+        "gorsel": "a pre checked checkbox on a form"
+      },
+      {
+        "metin": "gizli çıkış",
+        "gorsel": "a hard to find exit or reject option"
+      },
+      {
+        "metin": "yönlendiren tasarım",
+        "gorsel": "a website nudging a wrong click"
+      },
+      {
+        "metin": "dikkatli okuma",
+        "gorsel": "reading carefully before clicking"
+      }
+    ]
   }
 ]
