@@ -22,7 +22,18 @@ def _kimlik():
         scopes=["https://www.googleapis.com/auth/youtube.upload"],
     )
 
-def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False, kapak=None):
+def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani):
+    st = {"selfDeclaredMadeForKids": bool(cocuk_icerigi)}
+    if yayin_zamani:
+        # zamanlanmis yayin: video 'private' yuklenir, publishAt'ta otomatik public olur
+        st["privacyStatus"] = "private"
+        st["publishAt"] = yayin_zamani
+    else:
+        st["privacyStatus"] = gizlilik
+    return st
+
+
+def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False, kapak=None, yayin_zamani=None):
     """
     gizlilik: 'public' | 'unlisted' | 'public'
     kategori: 27=Eğitim, 24=Eğlence, 28=Bilim&Teknoloji, 22=İnsanlar&Bloglar
@@ -35,10 +46,7 @@ def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27",
             "tags": etiketler,
             "categoryId": kategori,
         },
-        "status": {
-            "privacyStatus": gizlilik,
-            "selfDeclaredMadeForKids": bool(cocuk_icerigi),
-        },
+        "status": _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani),
     }
     media = MediaFileUpload(dosya, chunksize=-1, resumable=True, mimetype="video/mp4")
     istek = yt.videos().insert(part="snippet,status", body=body, media_body=media)
@@ -46,7 +54,7 @@ def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27",
     while yanit is None:
         _, yanit = istek.next_chunk()
     vid = yanit["id"]
-    print(f"✓ Yüklendi: https://youtu.be/{vid}  (gizlilik: {gizlilik})")
+    print(f"✓ Yüklendi: https://youtu.be/{vid}" + (f"  (yayın: {yayin_zamani} UTC)" if yayin_zamani else f"  (gizlilik: {gizlilik})"))
     # Çarpıcı kapak fotoğrafını yükle (kanal doğrulanmamışsa atlanır, video kaybolmaz)
     if kapak and os.path.exists(kapak):
         try:
