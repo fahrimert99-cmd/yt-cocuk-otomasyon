@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 """
 GitHub-native otomasyon (AI BAĞIMLILIĞI YOK).
-senaryolar.json'daki önceden hazırlanmış senaryolardan sıradakini alır ->
-video üretir -> YouTube'a yükler -> sırayı ilerletir.
-Hiçbir API anahtarı/kota gerektirmez. Ayarlar: config.json
+senaryolar.json'daki hazır senaryolardan sıradakini alır -> video üretir ->
+YouTube'a yükler -> sırayı ilerletir. Ayarlar: config.json
 """
-import os, json, tempfile
+import os, json, tempfile, io, sys
 import video as V
 
 SENARYOLAR = "senaryolar.json"
 DURUM = "durum.json"
+LOG = io.StringIO()
 
 
 def _senaryolar():
@@ -25,6 +25,12 @@ def _durum():
     return {"sonraki": 0}
 
 
+def _durum_yaz(durum):
+    durum["son_rapor"] = LOG.getvalue()[-1800:]
+    with open(DURUM, "w", encoding="utf-8") as f:
+        json.dump(durum, f, ensure_ascii=False, indent=2)
+
+
 def main():
     with open("config.json", encoding="utf-8-sig") as f:
         cfg = json.load(f)
@@ -32,15 +38,14 @@ def main():
     durum = _durum()
     n = len(senaryolar)
     yapilan = set(durum.get("yapilan", []))
-    # ASLA TEKRAR ETME: sıradaki YAPILMAMIŞ konuyu bul
     idx = durum.get("sonraki", 0) % n
     denendi = 0
     while senaryolar[idx]["baslik"] in yapilan and denendi < n:
         idx = (idx + 1) % n
         denendi += 1
     if denendi >= n:
-        print("✓ Tüm konular yayınlanmış! Tekrar üretilmedi. "
-              "Yeni içerik için senaryolar.json'a konu ekleyin.")
+        print("✓ Tüm konular yayınlanmış! Yeni içerik için senaryolar.json'a konu ekleyin.")
+        _durum_yaz(durum)
         return
     veri = senaryolar[idx]
     print(f"[1/3] Senaryo ({idx+1}/{n}): {veri['baslik']}")
@@ -51,7 +56,7 @@ def main():
         f.write(veri["script"])
     os.makedirs("output", exist_ok=True)
     cikti = "output/video.mp4"
-    print("[2/3] Video üretiliyor (ses + görsel + alt yazı) ...")
+    print("[2/3] Video üretiliyor ...")
     V.uret_video(sp, cikti,
                  ses=cfg.get("ses", "erkek"),
                  dikey=(cfg.get("format", "dikey") == "dikey"),
@@ -62,16 +67,20 @@ def main():
                  tonlama=str(cfg.get("tonlama", "+0Hz")))
     print(f"      Çıktı: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
-    # Çarpıcı kapak fotoğrafı üret
     kapak_yolu = None
     try:
         import kapak as K
         kapak_yolu = K.kapak_uret(cikti, veri["baslik"], "output/kapak.jpg")
         print(f"      Kapak: {kapak_yolu}")
     except Exception as e:
-        print(f"      Kapak üretilemedi (atlanıyor): {str(e)[:120]}")
+        print(f"      Kapak üretilemedi: {str(e)[:120]}")
 
-    # Prime time zamanlı yayın: config'te yayin_saati_utc varsa, videoyu o saate planla
+    if cfg.get("yukleme_atla"):
+        print("[3/3] TANI MODU — yükleme atlandı (kanal kirlenmez)")
+        _durum_yaz(durum)
+        print("TANI TAMAM ✓")
+        return
+
     yayin_zamani = None
     saat = cfg.get("yayin_saati_utc")
     if saat:
@@ -93,23 +102,38 @@ def main():
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
              kapak=kapak_yolu, yayin_zamani=yayin_zamani)
 
-    # Yayınlanan başlığı kaydet (bir daha asla üretilmez)
     yapilan.add(veri["baslik"])
     durum["yapilan"] = sorted(yapilan)
     durum["sonraki"] = (idx + 1) % n
-    with open(DURUM, "w", encoding="utf-8") as f:
-        json.dump(durum, f, ensure_ascii=False, indent=2)
+    _durum_yaz(durum)
     print(f"TAMAM ✓  (yapılan: {len(yapilan)}/{n}, sıradaki: {durum['sonraki']})")
 
 
 if __name__ == "__main__":
     import traceback, subprocess
+    class Tee:
+        def __init__(self, *s): self.s = s
+        def write(self, x):
+            for st in self.s:
+                try: st.write(x)
+                except Exception: pass
+        def flush(self):
+            for st in self.s:
+                try: st.flush()
+                except Exception: pass
+    sys.stdout = Tee(sys.__stdout__, LOG)
+    sys.stderr = Tee(sys.__stderr__, LOG)
     try:
         main()
     except BaseException:
+        LOG.write("\n" + traceback.format_exc())
+        try:
+            d = _durum(); d["son_rapor"] = LOG.getvalue()[-1800:]
+            open(DURUM, "w", encoding="utf-8").write(json.dumps(d, ensure_ascii=False, indent=2))
+        except Exception: pass
         open("hata.log", "w", encoding="utf-8").write(traceback.format_exc())
         for c in (["git","config","user.name","bot"],
                   ["git","config","user.email","bot@users.noreply.github.com"],
-                  ["git","add","hata.log"], ["git","commit","-m","hata"], ["git","push"]):
+                  ["git","add","-A"], ["git","commit","-m","tani/hata"], ["git","push"]):
             subprocess.run(c, check=False)
         raise
