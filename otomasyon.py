@@ -60,6 +60,19 @@ def main():
     except Exception as e:
         print(f"      Kapak üretilemedi (atlanıyor): {str(e)[:120]}")
 
+    # Prime time zamanlı yayın: config'te yayin_saati_utc varsa, videoyu o saate planla
+    yayin_zamani = None
+    saat = cfg.get("yayin_saati_utc")
+    if saat:
+        from datetime import datetime, timezone, timedelta
+        hh, mm = map(int, str(saat).split(":"))
+        now = datetime.now(timezone.utc)
+        hedef = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
+        if hedef <= now + timedelta(minutes=10):
+            hedef += timedelta(days=1)
+        yayin_zamani = hedef.strftime("%Y-%m-%dT%H:%M:%SZ")
+        print(f"      Prime time yayın: {yayin_zamani} UTC")
+
     print("[3/3] YouTube'a yükleniyor ...")
     import youtube_yukle as YT
     YT.yukle(cikti, veri["baslik"], veri.get("aciklama", ""),
@@ -67,7 +80,7 @@ def main():
              gizlilik=cfg.get("gizlilik", "private"),
              kategori=str(cfg.get("kategori", "28")),
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
-             kapak=kapak_yolu)
+             kapak=kapak_yolu, yayin_zamani=yayin_zamani)
 
     durum["sonraki"] = idx + 1
     with open(DURUM, "w", encoding="utf-8") as f:
