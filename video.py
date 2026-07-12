@@ -305,11 +305,13 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True):
     W, H = boyut
     stil = ("children's book illustration, cute, colorful, cartoon, friendly, "
             "soft lighting, simple, no text") if cocuk else \
-           ("cinematic scientific illustration, detailed, dramatic lighting, realistic, educational, high quality, no text")
+           ("professional photograph, photorealistic, cinematic, realistic, "
+            "high detail, dramatic lighting, shallow depth of field, 4k, no text, no watermark")
     tam = f"{prompt}, {stil}"
     q = urllib.parse.quote(tam)
+    model = "flux" if not cocuk else "flux"
     url = (f"https://image.pollinations.ai/prompt/{q}"
-           f"?width={W}&height={H}&nologo=true&seed={1000+idx}")
+           f"?width={W}&height={H}&nologo=true&model={model}&seed={1000+idx}")
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "yt-otomasyon"})
         with urllib.request.urlopen(req, timeout=90) as r:
