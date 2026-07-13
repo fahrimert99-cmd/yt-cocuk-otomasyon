@@ -1,11 +1,11 @@
 {
   "format": "dikey",
   "ses": "erkek",
-  "tonlama": "-12Hz",
+  "tonlama": "+0Hz",
   "gizlilik": "public",
   "kategori": "28",
   "cocuk_icerigi": false,
   "animasyon": true,
-  "hiz": "+18%",
+  "hiz": "+6%",
   "yayin_saati_utc": "16:00"
 }
