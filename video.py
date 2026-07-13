@@ -345,6 +345,45 @@ def _pexels_key():
     return (os.environ.get("PEXELS_API_KEY") or _keys().get("pexels", "")).strip()
 
 
+def _google_key():
+    return (os.environ.get("GOOGLE_TTS_KEY") or _keys().get("google", "")).strip()
+
+
+def _google_seslendir(text, mp3_path):
+    """Google Cloud TTS (nöral Türkçe) + kelime zamanlaması (SSML mark timepoints)."""
+    import urllib.request, urllib.error, base64 as _b64, html
+    key = _google_key()
+    if not key:
+        raise RuntimeError("Google TTS anahtarı yok")
+    voice = os.environ.get("GOOGLE_TTS_VOICE", "").strip() or "tr-TR-Wavenet-E"
+    words = text.split()
+    ssml = "<speak>" + " ".join(f'<mark name="{i}"/>{html.escape(w)}'
+                                for i, w in enumerate(words)) + "</speak>"
+    body = {"input": {"ssml": ssml},
+            "voice": {"languageCode": "tr-TR", "name": voice},
+            "audioConfig": {"audioEncoding": "MP3", "speakingRate": 1.05, "pitch": 0.0},
+            "enableTimePointing": ["SSML_MARK"]}
+    url = f"https://texttospeech.googleapis.com/v1beta1/text:synthesize?key={key}"
+    req = urllib.request.Request(url, data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json",
+                                          "User-Agent": "Mozilla/5.0 (compatible; ytbot/1.0)"})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            d = json.loads(r.read().decode())
+    except urllib.error.HTTPError as he:
+        raise RuntimeError(f"{he.code}: {he.read().decode()[:220]}")
+    with open(mp3_path, "wb") as f:
+        f.write(_b64.b64decode(d["audioContent"]))
+    dur = sure_al(mp3_path)
+    tps = sorted(d.get("timepoints", []), key=lambda t: int(t["markName"]))
+    boundaries = []
+    for i, w in enumerate(words):
+        s = tps[i]["timeSeconds"] if i < len(tps) else i * dur / max(1, len(words))
+        e = tps[i + 1]["timeSeconds"] if i + 1 < len(tps) else dur
+        boundaries.append({"start": s, "dur": max(0.05, e - s), "text": w})
+    return boundaries
+
+
 def _eleven_key():
     return (os.environ.get("ELEVEN_API_KEY") or _keys().get("eleven", "")).strip()
 
@@ -613,10 +652,17 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     text, cumleler = metni_oku(script_path)
     tmp = tempfile.mkdtemp()
     mp3 = os.path.join(tmp, "narration.mp3")
-    _ek=_eleven_key(); _pk=_pexels_key()
-    print(f"      [anahtar: eleven={_ek[:6]}..len{len(_ek)}, pexels={_pk[:6]}..len{len(_pk)}]")
+    _gk=_google_key(); _pk=_pexels_key()
+    print(f"      [anahtar: google={_gk[:6]}..len{len(_gk)}, pexels={_pk[:6]}..len{len(_pk)}]")
     boundaries = None
-    if _eleven_key():
+    if _google_key():
+        try:
+            boundaries = _google_seslendir(text, mp3)
+            print("      Ses: Google TTS (nöral Türkçe)")
+        except Exception as e:
+            print(f"      Google TTS hata ({str(e)[:110]}), edge-tts'e dönülüyor")
+            boundaries = None
+    if boundaries is None and _eleven_key():
         try:
             boundaries = _eleven_seslendir(text, mp3)
             print("      Ses: ElevenLabs (gerçekçi insan sesi)")
