@@ -371,7 +371,7 @@ def _google_seslendir(text, mp3_path):
         with urllib.request.urlopen(req, timeout=120) as r:
             d = json.loads(r.read().decode())
     except urllib.error.HTTPError as he:
-        raise RuntimeError(f"{he.code}: {he.read().decode()[:220]}")
+        raise RuntimeError(f"{he.code}: {he.read().decode()[:450]}")
     with open(mp3_path, "wb") as f:
         f.write(_b64.b64decode(d["audioContent"]))
     dur = sure_al(mp3_path)
@@ -660,7 +660,7 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
             boundaries = _google_seslendir(text, mp3)
             print("      Ses: Google TTS (nöral Türkçe)")
         except Exception as e:
-            print(f"      Google TTS hata ({str(e)[:110]}), edge-tts'e dönülüyor")
+            print(f"      Google TTS hata: {str(e)[:400]}")
             boundaries = None
     if boundaries is None and _eleven_key():
         try:
