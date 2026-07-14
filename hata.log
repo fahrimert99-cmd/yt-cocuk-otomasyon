@@ -1,7 +1,7 @@
 Traceback (most recent call last):
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 108, in <module>
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 127, in <module>
     main()
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 89, in main
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/otomasyon.py", line 98, in main
     YT.yukle(cikti, veri["baslik"], veri.get("aciklama", ""),
   File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/youtube_yukle.py", line 55, in yukle
     _, yanit = istek.next_chunk()
@@ -30,4 +30,4 @@ Traceback (most recent call last):
     _client._handle_error_response(response_data, retryable_error)
   File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/google/oauth2/_client.py", line 73, in _handle_error_response
     raise exceptions.RefreshError(
-google.auth.exceptions.RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
