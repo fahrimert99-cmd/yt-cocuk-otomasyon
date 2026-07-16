@@ -64,7 +64,8 @@ def main():
                  sahneler=veri.get("sahneler"),
                  animasyon=bool(cfg.get("animasyon", True)),
                  cocuk=bool(cfg.get("cocuk_icerigi", False)),
-                 tonlama=str(cfg.get("tonlama", "+0Hz")))
+                 tonlama=str(cfg.get("tonlama", "+0Hz")),
+                 gorsel_stil=str(cfg.get("gorsel_stil", "stok")))
     print(f"      Çıktı: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
     kapak_yolu = None
@@ -76,7 +77,20 @@ def main():
         print(f"      Kapak üretilemedi: {str(e)[:120]}")
 
     if cfg.get("yukleme_atla"):
-        print("[3/3] TANI MODU — yükleme atlandı (kanal kirlenmez)")
+        print("[3/3] ÖNİZLEME MODU — yükleme atlandı (kanal kirlenmez)")
+        try:
+            import shutil, subprocess
+            shutil.copy(cikti, "onizleme.mp4")
+            if kapak_yolu and os.path.exists(kapak_yolu):
+                shutil.copy(kapak_yolu, "onizleme_kapak.jpg")
+            for c in (["git","config","user.name","bot"],
+                      ["git","config","user.email","bot@users.noreply.github.com"],
+                      ["git","add","onizleme.mp4","onizleme_kapak.jpg"],
+                      ["git","commit","-m","onizleme"], ["git","push"]):
+                subprocess.run(c, check=False)
+            print("      onizleme.mp4 repoya kaydedildi — indirip izleyebilirsin")
+        except Exception as e:
+            print(f"      Önizleme kaydedilemedi: {str(e)[:100]}")
         _durum_yaz(durum)
         print("TANI TAMAM ✓")
         return
