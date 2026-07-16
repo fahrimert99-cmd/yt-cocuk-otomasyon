@@ -300,13 +300,20 @@ def _resize_cover(src, boyut, dst):
 # Her sahne için senaryoya uygun sevimli çocuk çizimi üretir.
 # Başarısız olursa degrade karta düşer (video asla boş kalmaz).
 # ----------------------------------------------------------
-def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True):
+def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True, stil_ad="foto"):
     import urllib.parse, urllib.request
     W, H = boyut
-    stil = ("children's book illustration, cute, colorful, cartoon, friendly, "
-            "soft lighting, simple, no text") if cocuk else \
-           ("professional photograph, photorealistic, cinematic, realistic, "
-            "high detail, dramatic lighting, shallow depth of field, 4k, no text, no watermark")
+    if cocuk:
+        stil = ("children's book illustration, cute, colorful, cartoon, friendly, "
+                "soft lighting, simple, no text")
+    elif stil_ad == "illustrasyon":
+        # Veritasium/editoryal animasyon tarzı: elle çizilmiş his
+        stil = ("stylized editorial illustration, digital painting, painterly artwork, "
+                "muted warm color palette, dramatic cinematic lighting, detailed character art, "
+                "film still composition, hand drawn animation style, no text, no watermark")
+    else:
+        stil = ("professional photograph, photorealistic, cinematic, realistic, "
+                "high detail, dramatic lighting, shallow depth of field, 4k, no text, no watermark")
     tam = f"{prompt}, {stil}"
     q = urllib.parse.quote(tam)
     model = "flux" if not cocuk else "flux"
@@ -464,7 +471,7 @@ def stok_video_ara(query, boyut, path, dikey=True):
         return None
 
 
-def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True):
+def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="stok"):
     """Her sahne için önce gerçek stok video (Pexels), yoksa fotogerçekçi AI görseli.
     ('video', yol) veya ('image', yol) listesi döndürür."""
     if sahneler:
@@ -476,14 +483,14 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True):
     gorseller = []
     for i, p in enumerate(prompts):
         vpath = os.path.join(tmp, f"sahne_{i:03d}.mp4")
-        if not cocuk and stok_video_ara(p, boyut, vpath, dikey=dikey):
+        if stil == "stok" and not cocuk and stok_video_ara(p, boyut, vpath, dikey=dikey):
             gorseller.append(("video", vpath))
             print(f"      Sahne {i+1}/{len(prompts)}: gerçek stok video ✓")
         else:
             ipath = os.path.join(tmp, f"sahne_{i:03d}.jpg")
-            gorsel_uret_ai(p, boyut, i, ipath, cocuk=cocuk)
+            gorsel_uret_ai(p, boyut, i, ipath, cocuk=cocuk, stil_ad=stil)
             gorseller.append(("image", ipath))
-            print(f"      Sahne {i+1}/{len(prompts)}: AI görseli")
+            print(f"      Sahne {i+1}/{len(prompts)}: AI görseli ({stil})")
     return gorseller
 
 
@@ -642,7 +649,8 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
 # ANA AKIŞ
 # ----------------------------------------------------------
 def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
-               sahneler=None, animasyon=True, cocuk=True, tonlama="+0Hz"):
+               sahneler=None, animasyon=True, cocuk=True, tonlama="+0Hz",
+               gorsel_stil="stok"):
     """Orkestratör tarafından çağrılır: script -> mp4.
     sahneler verilirse (Gemini'den), her sahne için AI görsel üretir ve
     Ken Burns + çapraz geçişle animasyonlu montaj yapar.
@@ -681,7 +689,8 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     ass_yaz(cues, ass, CONFIG, dikey)
     os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
     if animasyon:
-        gorseller = sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=cocuk)
+        gorseller = sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp,
+                                             cocuk=cocuk, stil=gorsel_stil)
         video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, CONFIG["fps"])
     else:
         gorseller = gorselleri_hazirla(cumleler, boyut, tmp)
