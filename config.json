@@ -7,5 +7,7 @@
   "cocuk_icerigi": false,
   "animasyon": true,
   "hiz": "+6%",
-  "yayin_saati_utc": "16:00"
+  "yayin_saati_utc": "16:00",
+  "gorsel_stil": "illustrasyon",
+  "yukleme_atla": true
 }
