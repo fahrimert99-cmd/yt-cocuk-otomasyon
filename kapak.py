@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 """
 Çarpıcı YouTube kapak (thumbnail) üretici.
-Videodan bir kare alır, 1280x720'ye getirir, kontrastı artırır ve
+Videodan bir kare alır, 1080x1920 (dikey Shorts) yapar, kontrastı artırır ve
 üzerine BÜYÜK, kalın, dikkat çekici başlık yazısı basar.
 """
 import os, re, subprocess
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 
-W, H = 1280, 720
+W, H = 1080, 1920   # Shorts: DİKEY 9:16
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 
@@ -48,7 +48,7 @@ def kapak_uret(video_path, baslik, cikti="output/kapak.jpg"):
     # alt kısma koyu degrade (yazı zemini)
     grad = Image.new("L", (1, H), 0)
     for y in range(H):
-        grad.putpixel((0, y), int(200 * (y / H) ** 1.4))
+        grad.putpixel((0, y), int(215 * max(0.0, (y / H - 0.28) / 0.72) ** 1.15))
     alpha = grad.resize((W, H))
     dark = Image.new("RGB", (W, H), (0, 0, 0))
     bg = Image.composite(dark, bg, alpha)
@@ -59,21 +59,21 @@ def kapak_uret(video_path, baslik, cikti="output/kapak.jpg"):
     metin = re.sub(r"[^\w\sğüşiöçİĞÜŞÖÇ?!.,'-]", "", baslik, flags=re.UNICODE).strip()
     metin = _tr_upper(metin)
     # font boyutunu satır sayısına göre ayarla
-    for fs in (110, 96, 84, 74, 64):
+    for fs in (150, 132, 116, 100, 88, 76):
         font = ImageFont.truetype(FONT_BOLD, fs)
         kelimeler = metin.split()
         satirlar, cur = [], ""
-        maxw = W - 120
+        maxw = W - 150
         for k in kelimeler:
             test = (cur + " " + k).strip()
             if d.textlength(test, font=font) <= maxw: cur = test
             else: satirlar.append(cur); cur = k
         if cur: satirlar.append(cur)
-        if len(satirlar) <= 4: break
+        if len(satirlar) <= 5: break
 
     lh = int(fs * 1.12)
     toplam = lh * len(satirlar)
-    ty = H - toplam - 55           # alta hizala
+    ty = int(H * 0.62) - toplam // 2      # ortanın altı (Shorts arayüzü altı kapatır)
     for ln in satirlar:
         w = d.textlength(ln, font=font)
         tx = (W - w)//2
@@ -87,7 +87,7 @@ def kapak_uret(video_path, baslik, cikti="output/kapak.jpg"):
         ty += lh
 
     # 4) üstte kırmızı vurgu şeridi
-    d.rectangle([0, 0, W, 14], fill=(230, 30, 45))
+    d.rectangle([0, 0, W, 22], fill=(230, 30, 45))
 
     bg.convert("RGB").save(cikti, quality=88)
     return cikti
