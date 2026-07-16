@@ -102,6 +102,22 @@ def main():
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
              kapak=kapak_yolu, yayin_zamani=yayin_zamani)
 
+    # TikTok/Reels icin: videoyu + kapagi repoya kaydet (elle indirilebilsin)
+    try:
+        import shutil, subprocess
+        shutil.copy(cikti, "son_video.mp4")
+        if kapak_yolu and os.path.exists(kapak_yolu):
+            shutil.copy(kapak_yolu, "son_kapak.jpg")
+        for c in (["git","config","user.name","bot"],
+                  ["git","config","user.email","bot@users.noreply.github.com"],
+                  ["git","add","son_video.mp4","son_kapak.jpg"],
+                  ["git","commit","-m",f"son video: {veri['baslik'][:40]}"],
+                  ["git","push"]):
+            subprocess.run(c, check=False)
+        print("      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)")
+    except Exception as e:
+        print(f"      Video repoya kaydedilemedi: {str(e)[:100]}")
+
     yapilan.add(veri["baslik"])
     durum["yapilan"] = sorted(yapilan)
     durum["sonraki"] = (idx + 1) % n
