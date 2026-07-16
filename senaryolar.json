@@ -304,40 +304,116 @@
     ]
   },
   {
-    "baslik": "99 KURUŞ TUZAĞINA DİKKAT! 💸",
-    "aciklama": "Fiyatların neden 99 kuruşla bittiğinin beyin oyunu.",
+    "baslik": "KUMARHANELER SENİ BÖYLE TUTAR! 🎰",
+    "aciklama": "Kumarhanelerin zamanı ve parayı unutturan tasarımı.",
     "etiketler": [
-      "fiyat",
+      "kumarhane",
       "psikoloji",
-      "alışveriş",
+      "tasarım",
+      "para",
+      "tuzak"
+    ],
+    "script": "Kumarhanede neden saat ve pencere yoktur? Zamanı tamamen unutasın diye. Işıklar, sesler ve neredeyse kazandın anları, beynini oyunda tutmak için titizlikle tasarlanır. Bedava içecekler, kaybettiğin parayı unutturmak içindir. Paranı fişe çevirmeleri de tesadüf değil, gerçek para gibi hissetmezsin. Her şey, mümkün olduğunca uzun kalman için kurulmuştur. En büyük kazanan hep evdir.",
+    "sahneler": [
+      {
+        "metin": "kumarhane içi",
+        "gorsel": "a casino interior with bright lights, cinematic"
+      },
+      {
+        "metin": "saatsiz salon",
+        "gorsel": "a casino with no clocks or windows"
+      },
+      {
+        "metin": "neredeyse kazandın",
+        "gorsel": "a slot machine near miss effect"
+      },
+      {
+        "metin": "bedava içecek",
+        "gorsel": "free drinks served at a casino"
+      },
+      {
+        "metin": "fişe çevrilen para",
+        "gorsel": "cash turned into casino chips"
+      },
+      {
+        "metin": "kazanan ev",
+        "gorsel": "the house always wins concept"
+      }
+    ]
+  },
+  {
+    "baslik": "SPOR SALONU ÜYELİĞİ TUZAĞI! 💪",
+    "aciklama": "Salonların gelmemeni umarak para kazandığı gerçeği.",
+    "etiketler": [
+      "spor",
+      "salon",
+      "üyelik",
+      "para",
+      "tuzak"
+    ],
+    "script": "Spor salonları aslında senin gelmemeni umar. Çünkü kapasitelerinin kat kat üstünde üye kaydederler, herkes gelse içeri sığmaz. Yıllık sözleşmeler, otomatik yenilemeler ve zor iptal koşulları, sen gitmesen de para akmaya devam etsin diyedir. Ocak ayı indirimleri, motivasyonu yüksekken seni bağlamak içindir. Üye olmadan önce iptal koşullarını mutlaka oku.",
+    "sahneler": [
+      {
+        "metin": "spor salonu",
+        "gorsel": "a modern gym interior, cinematic"
+      },
+      {
+        "metin": "fazla üye kaydı",
+        "gorsel": "a gym overselling memberships"
+      },
+      {
+        "metin": "yıllık sözleşme",
+        "gorsel": "a yearly gym contract"
+      },
+      {
+        "metin": "otomatik yenileme",
+        "gorsel": "an auto renewing membership"
+      },
+      {
+        "metin": "ocak indirimi",
+        "gorsel": "a january new year gym discount"
+      },
+      {
+        "metin": "boş salon",
+        "gorsel": "an empty gym after january, concept"
+      }
+    ]
+  },
+  {
+    "baslik": "FAST FOOD MENÜ TUZAĞI! 🍔",
+    "aciklama": "Menü tahtasının sana daha çok yediren tasarımı.",
+    "etiketler": [
+      "fastfood",
+      "menü",
+      "psikoloji",
       "tüketici",
       "tuzak"
     ],
-    "script": "Neredeyse her fiyat neden yüz değil de doksan dokuz lira? Bu bir kuruş meselesi değil, beyin oyunu. Beynin sayıları soldan okur ve ilk rakama takılır. Doksan dokuz, beynine yüz değil doksan olarak kaydolur, yani ucuz. Buna sol basamak etkisi denir. Kırmızı etiketler de aynı oyunun parçası. O bir kuruş, cebinden çok daha fazlasını çıkarır.",
+    "script": "Fast food kasasında sorulan büyük boy ister misin sorusu masum değil. Buna yukarı satış denir ve çok işe yarar. Menüler, en kârlı ürünleri tam göz hizana koyacak şekilde tasarlanır. Yanına patates ve içecek eklemek hep uygun görünür, çünkü tek tek almaktan ucuzdur ama toplamda daha çok harcarsın. Aç karnına sipariş vermek de kötü bir fikirdir. Ne istediğine önceden karar ver.",
     "sahneler": [
       {
-        "metin": "99 kuruş etiketi",
-        "gorsel": "a price tag showing 99.90, close up"
+        "metin": "fast food menüsü",
+        "gorsel": "a bright fast food menu board"
       },
       {
-        "metin": "soldan okuyan beyin",
-        "gorsel": "a brain focusing on the first digit"
+        "metin": "büyük boy sorusu",
+        "gorsel": "a cashier asking to upsize a meal"
       },
       {
-        "metin": "sol basamak etkisi",
-        "gorsel": "left digit effect concept art"
+        "metin": "göz hizası ürün",
+        "gorsel": "profitable items at eye level on a menu"
       },
       {
-        "metin": "ucuz yanılsaması",
-        "gorsel": "a price feeling cheap illusion"
+        "metin": "menü kombosu",
+        "gorsel": "a combo meal deal offer"
       },
       {
-        "metin": "kırmızı fiyat",
-        "gorsel": "red discount price tags"
+        "metin": "artan toplam",
+        "gorsel": "a growing order total"
       },
       {
-        "metin": "boşalan cep",
-        "gorsel": "money leaving a wallet, concept"
+        "metin": "aç sipariş",
+        "gorsel": "ordering food while hungry, concept"
       }
     ]
   },
@@ -376,6 +452,196 @@
       {
         "metin": "ele geçen duyular",
         "gorsel": "the five senses targeted in a store"
+      }
+    ]
+  },
+  {
+    "baslik": "KASADAKİ ÇİKOLATA TUZAĞI! 🍫",
+    "aciklama": "Kasa önündeki ürünlerin neden orada olduğu.",
+    "etiketler": [
+      "market",
+      "kasa",
+      "psikoloji",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Market kasasında sıra beklerken önündeki çikolata ve sakızlar tesadüf değil. Oraya, tam da irade gücün en zayıf anında konur. Alışverişten yorulmuş beynin, küçük ve ucuz görünen bu ürünlere kolayca evet der. Buna dürtüsel satın alma denir ve marketlerin en kârlı köşesidir. Çocuk göz hizasına konması da ayrı bir taktiktir. Kasada gözünü listende tut.",
+    "sahneler": [
+      {
+        "metin": "market kasası",
+        "gorsel": "a supermarket checkout line, cinematic"
+      },
+      {
+        "metin": "kasadaki çikolata",
+        "gorsel": "chocolate and candy at a checkout counter"
+      },
+      {
+        "metin": "zayıf irade anı",
+        "gorsel": "tired brain making an impulse choice"
+      },
+      {
+        "metin": "dürtüsel alım",
+        "gorsel": "an impulse purchase at the register"
+      },
+      {
+        "metin": "çocuk göz hizası",
+        "gorsel": "candy placed at a childs eye level"
+      },
+      {
+        "metin": "alışveriş listesi",
+        "gorsel": "focusing on a shopping list at checkout"
+      }
+    ]
+  },
+  {
+    "baslik": "OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨",
+    "aciklama": "Rezervasyon sitelerinin acele ettiren numaraları.",
+    "etiketler": [
+      "otel",
+      "rezervasyon",
+      "seyahat",
+      "online",
+      "tuzak"
+    ],
+    "script": "Otel sitesinde bu fiyata son oda ve iki kişi daha bakıyor yazılarını görüyor musun? Çoğu zaman bunlar seni paniğe sokup hemen rezervasyon yaptırmak içindir. Gösterilen fiyat çoğu zaman vergiler ve ücretler eklenince kabarır. Sıralamada en üstteki oteller, en iyisi değil, siteye en çok komisyon ödeyendir. Rezervasyondan önce oteli doğrudan aramayı dene.",
+    "sahneler": [
+      {
+        "metin": "otel rezervasyon sitesi",
+        "gorsel": "a hotel booking website on a screen"
+      },
+      {
+        "metin": "son oda uyarısı",
+        "gorsel": "a last room at this price warning"
+      },
+      {
+        "metin": "kaç kişi bakıyor",
+        "gorsel": "a 2 others viewing message"
+      },
+      {
+        "metin": "gizli vergiler",
+        "gorsel": "hidden taxes added at checkout"
+      },
+      {
+        "metin": "komisyonlu sıralama",
+        "gorsel": "top listed hotels paying commission"
+      },
+      {
+        "metin": "oteli arama",
+        "gorsel": "calling a hotel directly to book"
+      }
+    ]
+  },
+  {
+    "baslik": "BANKALAR GİZLİ ÜCRETLERLE KANDIRIYOR! 🏦",
+    "aciklama": "Fark etmeden ödediğin küçük banka ücretleri.",
+    "etiketler": [
+      "banka",
+      "para",
+      "ücret",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Bankalar en çok, fark etmediğin küçük ücretlerden kazanır. Hesap işletim ücreti, kart aidatı, havale masrafı, hepsi minik minik cebinden çıkar. Bu ücretler bilerek karmaşık sözleşmelerin içine gizlenir. Faiz oranları da göründüğü gibi değildir. Çoğu ücret aslında sorunca kaldırılabilir ama kimse sormaz. Banka ekstranı incele, ödediğin her kalemi sorgula.",
+    "sahneler": [
+      {
+        "metin": "banka binası",
+        "gorsel": "a modern bank building, cinematic"
+      },
+      {
+        "metin": "gizli ücretler",
+        "gorsel": "hidden fees in a bank statement"
+      },
+      {
+        "metin": "karmaşık sözleşme",
+        "gorsel": "a complicated contract with fine print"
+      },
+      {
+        "metin": "minik kesintiler",
+        "gorsel": "small charges adding up over time"
+      },
+      {
+        "metin": "kaldırılabilir ücret",
+        "gorsel": "a fee being waived after asking"
+      },
+      {
+        "metin": "ekstre incelemesi",
+        "gorsel": "carefully reviewing a bank statement"
+      }
+    ]
+  },
+  {
+    "baslik": "UÇAK BİLETİ FİYAT OYUNU! ✈️",
+    "aciklama": "Aynı koltuğun neden herkese farklı fiyata satıldığı.",
+    "etiketler": [
+      "uçak",
+      "bilet",
+      "fiyat",
+      "seyahat",
+      "tuzak"
+    ],
+    "script": "Aynı uçaktaki aynı koltuk, neden herkese farklı fiyata satılır? Çünkü fiyatlar sürekli değişir. Ne kadar çok aradıysan, sistem senin o bileti istediğini anlar ve fiyatı yükseltebilir. Son bir koltuk uyarıları çoğu zaman seni acele ettirmek içindir. Bagaj, koltuk seçimi, hepsi ekstra ücret olarak sonradan eklenir. Aramadan önce tarayıcını gizli modda aç.",
+    "sahneler": [
+      {
+        "metin": "uçak koltukları",
+        "gorsel": "airplane seats from the aisle, cinematic"
+      },
+      {
+        "metin": "değişen fiyatlar",
+        "gorsel": "flight prices constantly changing on a screen"
+      },
+      {
+        "metin": "takip edilen arama",
+        "gorsel": "search history tracked raising a price"
+      },
+      {
+        "metin": "son koltuk uyarısı",
+        "gorsel": "a last seat available warning"
+      },
+      {
+        "metin": "ekstra ücretler",
+        "gorsel": "baggage and seat selection extra fees"
+      },
+      {
+        "metin": "gizli mod",
+        "gorsel": "browsing flights in incognito mode"
+      }
+    ]
+  },
+  {
+    "baslik": "99 KURUŞ TUZAĞINA DİKKAT! 💸",
+    "aciklama": "Fiyatların neden 99 kuruşla bittiğinin beyin oyunu.",
+    "etiketler": [
+      "fiyat",
+      "psikoloji",
+      "alışveriş",
+      "tüketici",
+      "tuzak"
+    ],
+    "script": "Neredeyse her fiyat neden yüz değil de doksan dokuz lira? Bu bir kuruş meselesi değil, beyin oyunu. Beynin sayıları soldan okur ve ilk rakama takılır. Doksan dokuz, beynine yüz değil doksan olarak kaydolur, yani ucuz. Buna sol basamak etkisi denir. Kırmızı etiketler de aynı oyunun parçası. O bir kuruş, cebinden çok daha fazlasını çıkarır.",
+    "sahneler": [
+      {
+        "metin": "99 kuruş etiketi",
+        "gorsel": "a price tag showing 99.90, close up"
+      },
+      {
+        "metin": "soldan okuyan beyin",
+        "gorsel": "a brain focusing on the first digit"
+      },
+      {
+        "metin": "sol basamak etkisi",
+        "gorsel": "left digit effect concept art"
+      },
+      {
+        "metin": "ucuz yanılsaması",
+        "gorsel": "a price feeling cheap illusion"
+      },
+      {
+        "metin": "kırmızı fiyat",
+        "gorsel": "red discount price tags"
+      },
+      {
+        "metin": "boşalan cep",
+        "gorsel": "money leaving a wallet, concept"
       }
     ]
   },
@@ -570,120 +836,6 @@
     ]
   },
   {
-    "baslik": "BANKALAR GİZLİ ÜCRETLERLE KANDIRIYOR! 🏦",
-    "aciklama": "Fark etmeden ödediğin küçük banka ücretleri.",
-    "etiketler": [
-      "banka",
-      "para",
-      "ücret",
-      "tüketici",
-      "tuzak"
-    ],
-    "script": "Bankalar en çok, fark etmediğin küçük ücretlerden kazanır. Hesap işletim ücreti, kart aidatı, havale masrafı, hepsi minik minik cebinden çıkar. Bu ücretler bilerek karmaşık sözleşmelerin içine gizlenir. Faiz oranları da göründüğü gibi değildir. Çoğu ücret aslında sorunca kaldırılabilir ama kimse sormaz. Banka ekstranı incele, ödediğin her kalemi sorgula.",
-    "sahneler": [
-      {
-        "metin": "banka binası",
-        "gorsel": "a modern bank building, cinematic"
-      },
-      {
-        "metin": "gizli ücretler",
-        "gorsel": "hidden fees in a bank statement"
-      },
-      {
-        "metin": "karmaşık sözleşme",
-        "gorsel": "a complicated contract with fine print"
-      },
-      {
-        "metin": "minik kesintiler",
-        "gorsel": "small charges adding up over time"
-      },
-      {
-        "metin": "kaldırılabilir ücret",
-        "gorsel": "a fee being waived after asking"
-      },
-      {
-        "metin": "ekstre incelemesi",
-        "gorsel": "carefully reviewing a bank statement"
-      }
-    ]
-  },
-  {
-    "baslik": "SPOR SALONU ÜYELİĞİ TUZAĞI! 💪",
-    "aciklama": "Salonların gelmemeni umarak para kazandığı gerçeği.",
-    "etiketler": [
-      "spor",
-      "salon",
-      "üyelik",
-      "para",
-      "tuzak"
-    ],
-    "script": "Spor salonları aslında senin gelmemeni umar. Çünkü kapasitelerinin kat kat üstünde üye kaydederler, herkes gelse içeri sığmaz. Yıllık sözleşmeler, otomatik yenilemeler ve zor iptal koşulları, sen gitmesen de para akmaya devam etsin diyedir. Ocak ayı indirimleri, motivasyonu yüksekken seni bağlamak içindir. Üye olmadan önce iptal koşullarını mutlaka oku.",
-    "sahneler": [
-      {
-        "metin": "spor salonu",
-        "gorsel": "a modern gym interior, cinematic"
-      },
-      {
-        "metin": "fazla üye kaydı",
-        "gorsel": "a gym overselling memberships"
-      },
-      {
-        "metin": "yıllık sözleşme",
-        "gorsel": "a yearly gym contract"
-      },
-      {
-        "metin": "otomatik yenileme",
-        "gorsel": "an auto renewing membership"
-      },
-      {
-        "metin": "ocak indirimi",
-        "gorsel": "a january new year gym discount"
-      },
-      {
-        "metin": "boş salon",
-        "gorsel": "an empty gym after january, concept"
-      }
-    ]
-  },
-  {
-    "baslik": "UÇAK BİLETİ FİYAT OYUNU! ✈️",
-    "aciklama": "Aynı koltuğun neden herkese farklı fiyata satıldığı.",
-    "etiketler": [
-      "uçak",
-      "bilet",
-      "fiyat",
-      "seyahat",
-      "tuzak"
-    ],
-    "script": "Aynı uçaktaki aynı koltuk, neden herkese farklı fiyata satılır? Çünkü fiyatlar sürekli değişir. Ne kadar çok aradıysan, sistem senin o bileti istediğini anlar ve fiyatı yükseltebilir. Son bir koltuk uyarıları çoğu zaman seni acele ettirmek içindir. Bagaj, koltuk seçimi, hepsi ekstra ücret olarak sonradan eklenir. Aramadan önce tarayıcını gizli modda aç.",
-    "sahneler": [
-      {
-        "metin": "uçak koltukları",
-        "gorsel": "airplane seats from the aisle, cinematic"
-      },
-      {
-        "metin": "değişen fiyatlar",
-        "gorsel": "flight prices constantly changing on a screen"
-      },
-      {
-        "metin": "takip edilen arama",
-        "gorsel": "search history tracked raising a price"
-      },
-      {
-        "metin": "son koltuk uyarısı",
-        "gorsel": "a last seat available warning"
-      },
-      {
-        "metin": "ekstra ücretler",
-        "gorsel": "baggage and seat selection extra fees"
-      },
-      {
-        "metin": "gizli mod",
-        "gorsel": "browsing flights in incognito mode"
-      }
-    ]
-  },
-  {
     "baslik": "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "aciklama": "Ücretsiz kargo için daha çok harcatma tuzağı.",
     "etiketler": [
@@ -756,44 +908,6 @@
       {
         "metin": "çocuk oyunda",
         "gorsel": "a child playing a mobile game, concept"
-      }
-    ]
-  },
-  {
-    "baslik": "KASADAKİ ÇİKOLATA TUZAĞI! 🍫",
-    "aciklama": "Kasa önündeki ürünlerin neden orada olduğu.",
-    "etiketler": [
-      "market",
-      "kasa",
-      "psikoloji",
-      "tüketici",
-      "tuzak"
-    ],
-    "script": "Market kasasında sıra beklerken önündeki çikolata ve sakızlar tesadüf değil. Oraya, tam da irade gücün en zayıf anında konur. Alışverişten yorulmuş beynin, küçük ve ucuz görünen bu ürünlere kolayca evet der. Buna dürtüsel satın alma denir ve marketlerin en kârlı köşesidir. Çocuk göz hizasına konması da ayrı bir taktiktir. Kasada gözünü listende tut.",
-    "sahneler": [
-      {
-        "metin": "market kasası",
-        "gorsel": "a supermarket checkout line, cinematic"
-      },
-      {
-        "metin": "kasadaki çikolata",
-        "gorsel": "chocolate and candy at a checkout counter"
-      },
-      {
-        "metin": "zayıf irade anı",
-        "gorsel": "tired brain making an impulse choice"
-      },
-      {
-        "metin": "dürtüsel alım",
-        "gorsel": "an impulse purchase at the register"
-      },
-      {
-        "metin": "çocuk göz hizası",
-        "gorsel": "candy placed at a childs eye level"
-      },
-      {
-        "metin": "alışveriş listesi",
-        "gorsel": "focusing on a shopping list at checkout"
       }
     ]
   },
@@ -908,120 +1022,6 @@
       {
         "metin": "nakit bütçe",
         "gorsel": "budgeting with cash envelopes"
-      }
-    ]
-  },
-  {
-    "baslik": "OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨",
-    "aciklama": "Rezervasyon sitelerinin acele ettiren numaraları.",
-    "etiketler": [
-      "otel",
-      "rezervasyon",
-      "seyahat",
-      "online",
-      "tuzak"
-    ],
-    "script": "Otel sitesinde bu fiyata son oda ve iki kişi daha bakıyor yazılarını görüyor musun? Çoğu zaman bunlar seni paniğe sokup hemen rezervasyon yaptırmak içindir. Gösterilen fiyat çoğu zaman vergiler ve ücretler eklenince kabarır. Sıralamada en üstteki oteller, en iyisi değil, siteye en çok komisyon ödeyendir. Rezervasyondan önce oteli doğrudan aramayı dene.",
-    "sahneler": [
-      {
-        "metin": "otel rezervasyon sitesi",
-        "gorsel": "a hotel booking website on a screen"
-      },
-      {
-        "metin": "son oda uyarısı",
-        "gorsel": "a last room at this price warning"
-      },
-      {
-        "metin": "kaç kişi bakıyor",
-        "gorsel": "a 2 others viewing message"
-      },
-      {
-        "metin": "gizli vergiler",
-        "gorsel": "hidden taxes added at checkout"
-      },
-      {
-        "metin": "komisyonlu sıralama",
-        "gorsel": "top listed hotels paying commission"
-      },
-      {
-        "metin": "oteli arama",
-        "gorsel": "calling a hotel directly to book"
-      }
-    ]
-  },
-  {
-    "baslik": "KUMARHANELER SENİ BÖYLE TUTAR! 🎰",
-    "aciklama": "Kumarhanelerin zamanı ve parayı unutturan tasarımı.",
-    "etiketler": [
-      "kumarhane",
-      "psikoloji",
-      "tasarım",
-      "para",
-      "tuzak"
-    ],
-    "script": "Kumarhanede neden saat ve pencere yoktur? Zamanı tamamen unutasın diye. Işıklar, sesler ve neredeyse kazandın anları, beynini oyunda tutmak için titizlikle tasarlanır. Bedava içecekler, kaybettiğin parayı unutturmak içindir. Paranı fişe çevirmeleri de tesadüf değil, gerçek para gibi hissetmezsin. Her şey, mümkün olduğunca uzun kalman için kurulmuştur. En büyük kazanan hep evdir.",
-    "sahneler": [
-      {
-        "metin": "kumarhane içi",
-        "gorsel": "a casino interior with bright lights, cinematic"
-      },
-      {
-        "metin": "saatsiz salon",
-        "gorsel": "a casino with no clocks or windows"
-      },
-      {
-        "metin": "neredeyse kazandın",
-        "gorsel": "a slot machine near miss effect"
-      },
-      {
-        "metin": "bedava içecek",
-        "gorsel": "free drinks served at a casino"
-      },
-      {
-        "metin": "fişe çevrilen para",
-        "gorsel": "cash turned into casino chips"
-      },
-      {
-        "metin": "kazanan ev",
-        "gorsel": "the house always wins concept"
-      }
-    ]
-  },
-  {
-    "baslik": "FAST FOOD MENÜ TUZAĞI! 🍔",
-    "aciklama": "Menü tahtasının sana daha çok yediren tasarımı.",
-    "etiketler": [
-      "fastfood",
-      "menü",
-      "psikoloji",
-      "tüketici",
-      "tuzak"
-    ],
-    "script": "Fast food kasasında sorulan büyük boy ister misin sorusu masum değil. Buna yukarı satış denir ve çok işe yarar. Menüler, en kârlı ürünleri tam göz hizana koyacak şekilde tasarlanır. Yanına patates ve içecek eklemek hep uygun görünür, çünkü tek tek almaktan ucuzdur ama toplamda daha çok harcarsın. Aç karnına sipariş vermek de kötü bir fikirdir. Ne istediğine önceden karar ver.",
-    "sahneler": [
-      {
-        "metin": "fast food menüsü",
-        "gorsel": "a bright fast food menu board"
-      },
-      {
-        "metin": "büyük boy sorusu",
-        "gorsel": "a cashier asking to upsize a meal"
-      },
-      {
-        "metin": "göz hizası ürün",
-        "gorsel": "profitable items at eye level on a menu"
-      },
-      {
-        "metin": "menü kombosu",
-        "gorsel": "a combo meal deal offer"
-      },
-      {
-        "metin": "artan toplam",
-        "gorsel": "a growing order total"
-      },
-      {
-        "metin": "aç sipariş",
-        "gorsel": "ordering food while hungry, concept"
       }
     ]
   },
