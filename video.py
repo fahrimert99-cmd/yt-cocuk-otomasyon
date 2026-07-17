@@ -192,7 +192,7 @@ def _ass_zaman(t):
     cs = int((t - s) * 100)
     return f"{h:d}:{m:02d}:{s:02d}.{cs:02d}"
 
-def ass_yaz(cues, path, cfg, dikey):
+def ass_yaz(cues, path, cfg, dikey, kanca=None):
     a = cfg["altyazi"]
     punto = a["punto_dikey"] if dikey else a["punto_yatay"]
     head = f"""[Script Info]
@@ -203,12 +203,17 @@ PlayResY: {'1920' if dikey else '1080'}
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Outline, Shadow, Alignment, MarginL, MarginR, MarginV
 Style: Def,{a['font']},{punto*4},{a['renk']},{a['kenar_renk']},&H88000000,-1,{a['kenar_kalinlik']},1,2,80,80,{a['alt_bosluk']}
+Style: Kanca,{a['font']},{int(punto*4*1.62)},&H0000DDFF,&H00000000,&H00000000,-1,7,2,8,70,70,{240 if dikey else 90}
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     with open(path, "w", encoding="utf-8") as f:
         f.write(head)
+        if kanca:
+            k = str(kanca).strip().replace("\n", " ")
+            f.write(f"Dialogue: 1,0:00:00.00,0:00:02.60,Kanca,,0,0,0,,"
+                    f"{{\\fad(100,320)}}{k}\n")
         for c in cues:
             txt = c["text"].replace("\n", " ")
             f.write(f"Dialogue: 0,{_ass_zaman(c['start'])},{_ass_zaman(c['end'])},Def,,0,0,0,,{txt}\n")
@@ -650,7 +655,7 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
 # ----------------------------------------------------------
 def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
                sahneler=None, animasyon=True, cocuk=True, tonlama="+0Hz",
-               gorsel_stil="stok"):
+               gorsel_stil="stok", kanca=None):
     """Orkestratör tarafından çağrılır: script -> mp4.
     sahneler verilirse (Gemini'den), her sahne için AI görsel üretir ve
     Ken Burns + çapraz geçişle animasyonlu montaj yapar.
@@ -686,7 +691,7 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
             boundaries = seslendir(text, voice, hiz, mp3, pitch=tonlama)
     cues = cue_olustur(boundaries, CONFIG["altyazi_max_kelime"], CONFIG["altyazi_max_sure"])
     ass = os.path.join(tmp, "sub.ass")
-    ass_yaz(cues, ass, CONFIG, dikey)
+    ass_yaz(cues, ass, CONFIG, dikey, kanca=kanca)
     os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
     if animasyon:
         gorseller = sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp,
