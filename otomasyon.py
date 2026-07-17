@@ -65,7 +65,8 @@ def main():
                  animasyon=bool(cfg.get("animasyon", True)),
                  cocuk=bool(cfg.get("cocuk_icerigi", False)),
                  tonlama=str(cfg.get("tonlama", "+0Hz")),
-                 gorsel_stil=str(cfg.get("gorsel_stil", "stok")))
+                 gorsel_stil=str(cfg.get("gorsel_stil", "stok")),
+                 kanca=veri.get("kanca"))
     print(f"      Çıktı: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
     kapak_yolu = None
