@@ -204,6 +204,7 @@ PlayResY: {'1920' if dikey else '1080'}
 Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Outline, Shadow, Alignment, MarginL, MarginR, MarginV
 Style: Def,{a['font']},{punto*4},{a['renk']},{a['kenar_renk']},&H88000000,-1,{a['kenar_kalinlik']},1,2,80,80,{a['alt_bosluk']}
 Style: Kanca,{a['font']},{int(punto*4*1.62)},&H0000DDFF,&H00000000,&H00000000,-1,7,2,8,70,70,{240 if dikey else 90}
+Style: Abone,{a['font']},{int(punto*4*0.92)},&H00FFFFFF,&H002020E0,&H00000000,-1,6,0,2,60,60,{int((240 if dikey else 90)*1.15)}
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -217,6 +218,12 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         for c in cues:
             txt = c["text"].replace("\n", " ")
             f.write(f"Dialogue: 0,{_ass_zaman(c['start'])},{_ass_zaman(c['end'])},Def,,0,0,0,,{txt}\n")
+        # --- ABONE OL kartı: son ~1.8sn, alt-orta, seslendirmeye dokunmaz ---
+        if cues:
+            son = cues[-1]["end"]
+            basla = max(0.0, son - 1.8)
+            f.write(f"Dialogue: 2,{_ass_zaman(basla)},{_ass_zaman(son + 0.4)},Abone,,0,0,0,,"
+                    f"{{\\fad(200,150)}}\u25B6 ABONE OL  \u2022  her ak\u015fam yeni tuzak\n")
 
 # ----------------------------------------------------------
 # 4. GÖRSELLER
