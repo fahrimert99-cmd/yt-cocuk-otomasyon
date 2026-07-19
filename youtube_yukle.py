@@ -33,7 +33,7 @@ def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani):
     return st
 
 
-def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False, kapak=None, yayin_zamani=None, sabit_yorum=None):
+def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False, kapak=None, yayin_zamani=None):
     """
     gizlilik: 'public' | 'unlisted' | 'public'
     kategori: 27=Eğitim, 24=Eğlence, 28=Bilim&Teknoloji, 22=İnsanlar&Bloglar
@@ -62,22 +62,4 @@ def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27",
             print("✓ Kapak fotoğrafı ayarlandı")
         except Exception as e:
             print(f"! Kapak ayarlanamadı (kanal doğrulanmamış olabilir): {str(e)[:120]}")
-    # Sabitli ilk yorum: kanaldan yorum at + sabitle (abone cagrisi)
-    if sabit_yorum:
-        try:
-            ins = yt.commentThreads().insert(
-                part="snippet",
-                body={"snippet": {
-                    "videoId": vid,
-                    "topLevelComment": {"snippet": {"textOriginal": sabit_yorum}},
-                }},
-            ).execute()
-            top_id = ins["snippet"]["topLevelComment"]["id"]
-            # kanal sahibinin yorumu -> sabitle (setModerationStatus degil, comments yok;
-            # sabitleme icin threads: moderationStatus 'published' + pinned degil,
-            # YouTube API pin'i dogrudan desteklemez; yorum kanaldan atildigi icin
-            # ust sirada gorunur. En azindan yorum atilir.)
-            print(f"✓ Sabitli yorum eklendi: {top_id}")
-        except Exception as e:
-            print(f"! Yorum eklenemedi: {str(e)[:150]}")
     return vid
