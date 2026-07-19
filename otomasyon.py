@@ -115,8 +115,7 @@ def main():
              gizlilik=cfg.get("gizlilik", "private"),
              kategori=str(cfg.get("kategori", "28")),
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
-             kapak=kapak_yolu, yayin_zamani=yayin_zamani,
-             sabit_yorum=None)  # GECICI: force-ssl token yarin gelince acilacak
+             kapak=kapak_yolu, yayin_zamani=yayin_zamani)
 
     # TikTok/Reels icin: videoyu + kapagi repoya kaydet (elle indirilebilsin)
     try:
