@@ -116,11 +116,7 @@ def main():
              kategori=str(cfg.get("kategori", "28")),
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
              kapak=kapak_yolu, yayin_zamani=yayin_zamani,
-             sabit_yorum=(
-                 f"{veri.get('kanca','Bu tuzağı biliyor muydun?')}\n\n"
-                 "👇 Her akşam yeni bir tüketici tuzağı. Kaçırmamak için ABONE OL!\n"
-                 "Sen hangi tuzağa düştün? Yorumla 👇"
-             ))
+             sabit_yorum=None)  # GECICI: force-ssl token yarin gelince acilacak
 
     # TikTok/Reels icin: videoyu + kapagi repoya kaydet (elle indirilebilsin)
     try:
