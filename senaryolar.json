@@ -16,7 +16,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Markete tek bir şey almaya girdin, elin kolun poşetlerle çıktın. Tesadüf değil, tuzak. Süt ve ekmek neden hep en arkada? Tüm mağazayı gezesin diye. En pahalı markalar tam göz hizanda, ucuzlar en altta. Yavaş müzik seni yavaşlatır, kırmızı etiketler beynini kandırır. Attığın her adım önceden planlandı. Bir dahaki sefere fark et.",
+    "script": "Markete tek şey almaya girdin, poşetlerle çıktın. Tuzak. Süt en arkada, tüm mağazayı gezesin diye. Pahalı markalar göz hizanda. Yavaş müzik seni yavaşlatır, kırmızı etiketler kandırır. Peki süt neden hep en arkada? Artık biliyorsun.",
     "sahneler": [
       {
         "metin": "poşetlerle çıkan müşteri",
@@ -62,7 +62,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Restoran menüsü aslında bir tuzaktır. En pahalı yemek en üste konur, yanındaki her şeyi ucuz göstersin diye. Fiyatın yanında para simgesi yoktur, harcadığını unutasın diye. En kârlı yemek bir kutuyla çerçevelenir, gözün oraya kayar. Şefin önerisi genelde en çok kâr bırakandır. Sen seçtiğini sanırsın, ama senin için çoktan seçilmiştir.",
+    "script": "Restoran menüsü bir tuzaktır. En pahalı yemek en üstte, gerisini ucuz göstersin diye. Para simgesi yoktur, harcadığını unutasın diye. Çerçeveli yemek en kârlıdır. Yani menü seni seçiyor, sen değil. Sen seçtiğini mi sandın?",
     "sahneler": [
       {
         "metin": "şık menü",
@@ -108,7 +108,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O kocaman kırmızı indirim etiketi çoğu zaman koca bir yalandır. Birçok mağaza, indirimden hemen önce fiyatı gizlice yükseltir, sonra indirdik der. Yani gerçek indirim yoktur. Son üç ürün yazısı da genelde uydurmadır, seni acele ettirmek içindir. Üstü çizili o yüksek fiyat belki hiç satılmadı bile. Etikete kanmadan önce, o fiyatı bir hafta önce kontrol et.",
+    "script": "O kırmızı indirim etiketi çoğu zaman yalandır. Mağaza önce fiyatı gizlice yükseltir, sonra indirdim der. Son üç ürün yazısı da uydurma, seni acele ettirir. Yani o indirim sahte. Almadan önce fiyatı bir hafta geriye bak.",
     "sahneler": [
       {
         "metin": "büyük indirim etiketi",
@@ -154,7 +154,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Markaların renkleri tesadüf değil, üzerinde yıllarca çalışılmış silahlardır. Kırmızı açlık ve aciliyet uyandırır, fast food zincirleri bu yüzden kırmızıdır. Mavi güven verir, bankalar onu seçer. Yeşil sağlık hissettirir, sağlıksız ürünler bile yeşile bürünür. Sarı dikkat çeker. Bu renkler sen fark etmeden beynine konuşur. Yani markaya değil, binlerce dolarlık renk stratejisine kanıyorsun.",
+    "script": "Marka renkleri tesadüf değil, silahtır. Kırmızı açlık uyandırır, fast food bu yüzden kırmızı. Mavi güven verir, bankalar onu seçer. Yeşil sağlık hissettirir. Peki neden hep kırmızı? Çünkü sen fark etmeden beynine konuşuyor.",
     "sahneler": [
       {
         "metin": "renkli logolar",
@@ -200,7 +200,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "AVM'de neden zamanın nasıl geçtiğini anlamazsın? Çünkü öyle tasarlandı. AVM'lerde neredeyse hiç saat ve pencere yoktur, dışarıyı unutasın diye. En sevdiğin mağazalar hep en uçta, oraya giderken onlarca vitrin geçersin. Yürüyen merdivenler seni her katı dolaştırır. Loş ışık ve yumuşak müzik seni yavaşlatır. İçeride geçen her fazla dakika, planlanmış bir tuzaktır.",
+    "script": "AVM'de zamanı neden anlamazsın? Öyle tasarlandı. Saat ve pencere yoktur, dışarıyı unutasın diye. Sevdiğin mağazalar en uçta, vitrinleri geçesin diye. Loş ışık seni yavaşlatır. AVM'de neden saat yok? Artık cevabı biliyorsun.",
     "sahneler": [
       {
         "metin": "saatsiz avm",
@@ -246,7 +246,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "İnternette alışveriş yaparken şu an sekiz kişi daha bakıyor yazısını gördün mü? O rakam çoğu zaman tamamen uydurmadır. Geri sayım sayaçları, son birkaç saat uyarıları, hepsi paniğe kapılıp düşünmeden alman için. Sepeti bırakınca indirim maili gelmesi de tesadüf değil, tereddüt ettiğini bilirler. Yıldızlı yorumların bir kısmı sahtedir. Her tıklaman izlenip yönlendiriliyor.",
+    "script": "İnternette şu an sekiz kişi bakıyor yazısı çoğu zaman uydurma. Geri sayımlar, son saat uyarıları, düşünmeden alman için. Sepeti bırakınca gelen indirim de tesadüf değil. Yani sekiz kişi bakıyor yalan. Her tıklaman izleniyor.",
     "sahneler": [
       {
         "metin": "kaç kişi bakıyor uyarısı",
@@ -292,7 +292,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Telefonundaki uygulamalar doğrudan beynini hedef alır. Aşağı çekince yenilenen akış, tıpkı kumar makinesi gibidir, ne geleceğini bilemezsin ve durmak istemezsin. Kırmızı bildirim baloncukları beyninde alarm etkisi yaratır. Videolar otomatik oynar ki durmayasın. Hepsi dikkatini uzun süre tutup satmak için tasarlandı. Yani asıl ürün uygulama değil, sensin.",
+    "script": "Uygulamalar beynini hedef alır. Aşağı çekince yenilenen akış, kumar makinesi gibidir, durmak istemezsin. Kırmızı bildirim alarm etkisi yaratır. Videolar otomatik oynar. Telefonu neden bırakamıyorsun? Çünkü asıl ürün uygulama değil, sensin.",
     "sahneler": [
       {
         "metin": "sonsuz akış",
@@ -338,7 +338,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kahve zincirlerinde neden küçük boy yoktur? Çünkü küçük kelimesi az aldığını hissettirir. En küçüğü orta diye adlandırıp seni büyüğe yöneltirler. Fiyatlar öyle ayarlanır ki, biraz fazla verip üst boya geçmek hep mantıklı görünür, buna tuzak seçenek denir. En pahalı içecek, diğerlerini ucuz göstermek için oradadır. Elindeki fincan, bir fiyat oyununun parçası.",
+    "script": "Kahve zincirinde neden küçük boy yok? Küçük kelimesi az aldığını hissettirir. En küçüğü orta derler, büyüğe yöneltirler. Biraz fazla verip üste geçmek hep mantıklı görünür. Küçük boy neden yok? Çünkü elindeki fincan bir fiyat oyunu.",
     "sahneler": [
       {
         "metin": "kahve boyları",
@@ -384,7 +384,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kumarhanede neden saat ve pencere yoktur? Zamanı tamamen unutasın diye. Işıklar, sesler ve neredeyse kazandın anları, beynini oyunda tutmak için titizlikle tasarlanır. Bedava içecekler, kaybettiğin parayı unutturmak içindir. Paranı fişe çevirmeleri de tesadüf değil, gerçek para gibi hissetmezsin. Her şey, mümkün olduğunca uzun kalman için kurulmuştur. En büyük kazanan hep evdir.",
+    "script": "Kumarhanede neden saat ve pencere yok? Zamanı unutasın diye. Işıklar, sesler, neredeyse kazandın anları beynini oyunda tutar. Bedava içkiler kaybını unutturur. Neden hiç saat yok? Çünkü en büyük kazanan hep evdir.",
     "sahneler": [
       {
         "metin": "kumarhane içi",
@@ -430,7 +430,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Spor salonları aslında senin gelmemeni umar. Çünkü kapasitelerinin kat kat üstünde üye kaydederler, herkes gelse içeri sığmaz. Yıllık sözleşmeler, otomatik yenilemeler ve zor iptal koşulları, sen gitmesen de para akmaya devam etsin diyedir. Ocak ayı indirimleri, motivasyonu yüksekken seni bağlamak içindir. Üye olmadan önce iptal koşullarını mutlaka oku.",
+    "script": "Spor salonu senin gelmemeni umar. Kapasitesinin kat kat üstünde üye kaydeder. Yıllık sözleşme, zor iptal, sen gitmesen de para aksın diye. Ocak indirimi seni bağlamak için. Salon neden gelmeni istemez? Çünkü para üyelikte, gelişte değil.",
     "sahneler": [
       {
         "metin": "spor salonu",
@@ -476,7 +476,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Fast food kasasında sorulan büyük boy ister misin sorusu masum değil. Buna yukarı satış denir ve çok işe yarar. Menüler, en kârlı ürünleri tam göz hizana koyacak şekilde tasarlanır. Yanına patates ve içecek eklemek hep uygun görünür, çünkü tek tek almaktan ucuzdur ama toplamda daha çok harcarsın. Aç karnına sipariş vermek de kötü bir fikirdir. Ne istediğine önceden karar ver.",
+    "script": "Kasada büyük boy ister misin sorusu masum değil, buna yukarı satış denir. Menü en kârlıyı göz hizana koyar. Patates ve içecek eklemek hep uygun görünür ama fazla harcarsın. Büyük boy bir tuzak. Aç karnına sipariş verme.",
     "sahneler": [
       {
         "metin": "fast food menüsü",
@@ -522,7 +522,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Markete girince seni karşılayan taze ekmek kokusu tesadüf değil. Fırın kapıya yakın konur, çünkü ekmek kokusu açlığı tetikler ve aç insan daha çok alışveriş yapar. Bazı mağazalar havaya özel koku bile verir. Meyve sebze neden hep girişte ve rengarenk? Tazelik hissi gardını düşürsün diye. İlk adımda beş duyun birden ele geçirilir.",
+    "script": "Markete girince taze ekmek kokusu tesadüf değil. Fırın kapıya yakındır, çünkü ekmek kokusu açlığı tetikler, aç insan çok alır. Bazı mağazalar havaya koku verir. O ekmek kokusu tuzak. İlk adımda beş duyun ele geçirilir.",
     "sahneler": [
       {
         "metin": "kapıdaki fırın",
@@ -568,7 +568,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Market kasasında sıra beklerken önündeki çikolata ve sakızlar tesadüf değil. Oraya, tam da irade gücün en zayıf anında konur. Alışverişten yorulmuş beynin, küçük ve ucuz görünen bu ürünlere kolayca evet der. Buna dürtüsel satın alma denir ve marketlerin en kârlı köşesidir. Çocuk göz hizasına konması da ayrı bir taktiktir. Kasada gözünü listende tut.",
+    "script": "Kasada beklerken önündeki çikolata tesadüf değil. Tam iraden en zayıfken oraya konur. Yorgun beynin ucuz görünene evet der, buna dürtüsel satın alma denir. Kasada neden çikolata var? Çünkü orası en kârlı köşedir. Gözünü listende tut.",
     "sahneler": [
       {
         "metin": "market kasası",
@@ -614,7 +614,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Otel sitesinde bu fiyata son oda ve iki kişi daha bakıyor yazılarını görüyor musun? Çoğu zaman bunlar seni paniğe sokup hemen rezervasyon yaptırmak içindir. Gösterilen fiyat çoğu zaman vergiler ve ücretler eklenince kabarır. Sıralamada en üstteki oteller, en iyisi değil, siteye en çok komisyon ödeyendir. Rezervasyondan önce oteli doğrudan aramayı dene.",
+    "script": "Otel sitesinde son oda ve iki kişi bakıyor yazısı seni panikletir. Fiyat, vergiler eklenince kabarır. En üstteki otel en iyisi değil, en çok komisyon ödeyendir. Son oda yalan. Rezervasyondan önce oteli doğrudan ara.",
     "sahneler": [
       {
         "metin": "otel rezervasyon sitesi",
@@ -660,7 +660,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bankalar en çok, fark etmediğin küçük ücretlerden kazanır. Hesap işletim ücreti, kart aidatı, havale masrafı, hepsi minik minik cebinden çıkar. Bu ücretler bilerek karmaşık sözleşmelerin içine gizlenir. Faiz oranları da göründüğü gibi değildir. Çoğu ücret aslında sorunca kaldırılabilir ama kimse sormaz. Banka ekstranı incele, ödediğin her kalemi sorgula.",
+    "script": "Bankalar en çok fark etmediğin ücretlerden kazanır. Hesap işletim, kart aidatı, havale masrafı, minik minik çıkar. Karmaşık sözleşmeye gizlenir. Banka senden ne alıyor? Çoğu ücret sorunca kalkar ama kimse sormaz. Ekstranı incele.",
     "sahneler": [
       {
         "metin": "banka binası",
@@ -706,7 +706,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Aynı uçaktaki aynı koltuk, neden herkese farklı fiyata satılır? Çünkü fiyatlar sürekli değişir. Ne kadar çok aradıysan, sistem senin o bileti istediğini anlar ve fiyatı yükseltebilir. Son bir koltuk uyarıları çoğu zaman seni acele ettirmek içindir. Bagaj, koltuk seçimi, hepsi ekstra ücret olarak sonradan eklenir. Aramadan önce tarayıcını gizli modda aç.",
+    "script": "Aynı koltuk neden herkese farklı fiyat? Fiyatlar sürekli değişir. Çok aradıysan sistem anlar, fiyatı yükseltir. Son koltuk uyarısı seni acele ettirir. Fiyat neden sürekli değişiyor? Aramadan önce tarayıcını gizli modda aç.",
     "sahneler": [
       {
         "metin": "uçak koltukları",
@@ -752,7 +752,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Neredeyse her fiyat neden yüz değil de doksan dokuz lira? Bu bir kuruş meselesi değil, beyin oyunu. Beynin sayıları soldan okur ve ilk rakama takılır. Doksan dokuz, beynine yüz değil doksan olarak kaydolur, yani ucuz. Buna sol basamak etkisi denir. Kırmızı etiketler de aynı oyunun parçası. O bir kuruş, cebinden çok daha fazlasını çıkarır.",
+    "script": "Neredeyse her fiyat neden 99? Kuruş meselesi değil, beyin oyunu. Beynin soldan okur, 99'u yüz değil doksan sanır. Buna sol basamak etkisi denir. Neden 100 değil de 99? Çünkü o bir kuruş, cebinden çok daha fazlasını çıkarır.",
     "sahneler": [
       {
         "metin": "99 kuruş etiketi",
@@ -798,7 +798,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir reklamı beğenmesen bile beynin onu kaydeder. Reklamlar mantığına değil, duygularına konuşur. Mutlu aileler, gülen insanlar, o ürünü mutlulukla eşleştirmen için oradadır. Ünlünün ürünü kullanması güvenilir sinyali gönderir. Bir şeyi ne kadar çok görürsen ona o kadar güvenirsin, tekrar tekrar gösterilmesi bu yüzden. Reklam sana ürünü değil, bir duyguyu satar.",
+    "script": "Reklamı beğenmesen bile beynin kaydeder. Mantığına değil, duygularına konuşur. Mutlu aileler, gülen insanlar, ürünü mutlulukla eşleştirir. Ne çok görürsen o kadar güvenirsin. Reklam sana ne satıyor? Ürünü değil, bir duyguyu.",
     "sahneler": [
       {
         "metin": "mutlu aile reklamı",
@@ -844,7 +844,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O sadakat kartı sana puan kazandırıyor gibi görünür ama asıl kazanan mağazadır. Her kullandığında ne aldığını, ne zaman aldığını kaydederler. Bu veriyle alışkanlıklarını öğrenip tam alacağın şeyin reklamını gönderirler. Puan hissi seni hep aynı mağazaya bağlar. Verdiğin o küçük indirimin karşılığı paradan değerli: kendi alışkanlıkların. Bedava sandığın kart, en pahalı bilgiyle ödenir.",
+    "script": "Sadakat kartı sana puan verir gibi görünür, asıl kazanan mağaza. Ne aldığını, ne zaman aldığını kaydeder. Bu veriyle tam alacağını reklamlar. O kart neyi alıyor? Kendi alışkanlıklarını. Bedava sandığın kart en pahalı bilgiyle ödenir.",
     "sahneler": [
       {
         "metin": "sadakat kartı",
@@ -890,7 +890,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kredi kartı taksiti sana iyilik gibi görünür ama asıl amaç seni harcatmaktır. Taksit, pahalı bir ürünü küçük parçalara böler ve beynin o küçük rakamı görünce kolayca evet der. Aslında ödediğin toplam çoğu zaman daha fazladır. Bir de kart, nakit gibi acı vermez, para gittiğini hissetmezsin. Böylece bütçenden fazlasını harcarsın. Taksit gördüğünde, gerçek toplamı hesapla.",
+    "script": "Taksit iyilik gibi görünür ama seni harcatır. Pahalı ürünü küçük parçalara böler, beynin küçük rakama kolay evet der. Toplam çoğu zaman daha fazladır. Kart acı vermez. Taksit neden tuzak? Gördüğünde gerçek toplamı hesapla.",
     "sahneler": [
       {
         "metin": "kredi kartı",
@@ -936,7 +936,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Aboneliğe başlaman iki tıktır ama iptal etmen neden bir kabusa döner? Çünkü öyle tasarlanmıştır. İptal düğmesi bilerek derinlere gizlenir, seni vazgeçiresiye kadar uğraştırırlar. Küçük aylık ücret zararsız görünür ama yıl sonunda toplamı şaşırtıcıdır. Unuttuğun aboneliklerden aylarca para çekilir. Her ay kart ekstranı kontrol et, kullanmadığın aboneliklerin hepsini iptal et.",
+    "script": "Abone olmak iki tık, iptal neden kabus? Öyle tasarlandı. İptal düğmesi derinlere gizlenir, vazgeçesiye uğraşırsın. Küçük aylık ücret yıl sonunda şaşırtır. İptal neden bu kadar zor? Her ay ekstranı kontrol et, kullanmadığını iptal et.",
     "sahneler": [
       {
         "metin": "kolay abonelik",
@@ -982,7 +982,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Ücretsiz deneme diyorlar ama neden kart bilgini istiyorlar? Çünkü asıl plan seni ödemeye geçirmek. Deneme bitince otomatik olarak para çekilir, çoğu insan tarihi unutur. Hatırlatma göndermemeleri de tesadüf değil. Bazıları iptali özellikle zorlaştırır. Bedava deneme başlatırken, biten günü hemen takvimine yaz ve gerekirse bir gün önce iptal et.",
+    "script": "Ücretsiz deneme diyorlar ama neden kart istiyorlar? Çünkü plan seni ödemeye geçirmek. Deneme bitince otomatik para çekilir, çoğu kişi unutur. Hatırlatma da göndermezler. Neden kart istiyorlar? Başlarken biten günü takvimine yaz.",
     "sahneler": [
       {
         "metin": "ücretsiz deneme",
@@ -1028,7 +1028,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bedava kargo için biraz daha ekle diyorlar, sen de ekliyorsun. İşte tuzak tam burada. İhtiyacın olmayan bir ürünü, kargo ücretinden kurtulmak için sepete atarsın. Oysa çoğu zaman o kargo ücretini ödemek daha ucuza gelir. Bedava kargo eşiği, tam da seni fazladan harcatacak şekilde belirlenir. Sepete bir şey eklemeden önce, gerçekten gerekli mi diye sor.",
+    "script": "Bedava kargo için biraz daha ekle diyorlar, eklersin. Tuzak burada. İhtiyacın olmayanı kargodan kurtulmak için alırsın, oysa kargo daha ucuza gelirdi. Bedava kargo bedava değil. Eşik seni fazla harcatmak için ayarlanır. Gerçekten gerekli mi?",
     "sahneler": [
       {
         "metin": "kargo kutusu",
@@ -1074,7 +1074,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Ücretsiz oyunlar nasıl milyarlar kazanır? İçindeki küçük satın almalarla. Oyun, seni tam ilerleyeceğin anda durdurur ve beklemek yerine az bir para öde der. Parlak kutular, sınırlı süreli teklifler, hepsi anlık karar verdirmek içindir. Gerçek parayı önce oyun parasına çevirirler ki ne harcadığını hissetmeyesin. Özellikle çocuklarda bu tuzak çok güçlüdür. Uygulama içi satın almayı kapat.",
+    "script": "Ücretsiz oyunlar nasıl milyar kazanır? Küçük satın almalarla. Oyun tam ilerleyeceğin an durdurur, az para öde der. Parlak kutular anlık karar verdirir. Bedava oyun nasıl kazanıyor? Parayı önce oyun parasına çevirir. Uygulama içi satın almayı kapat.",
     "sahneler": [
       {
         "metin": "mobil oyun",
@@ -1120,7 +1120,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Üzerinde doğal yazan her ürün doğal değildir. Doğal kelimesinin çoğu ülkede yasal bir tanımı bile yoktur, yani neredeyse her şeye yazılabilir. Yeşil ambalaj, yaprak resimleri, hepsi sana sağlıklı hissettirmek içindir. Sağlıksız bir ürün bile bu şekilde masum görünebilir. Buna yeşil yıkama denir. Ambalajdaki resme değil, arkadaki içindekiler listesine bak.",
+    "script": "Doğal yazan her ürün doğal değil. Doğal kelimesinin çoğu ülkede yasal tanımı yok, her şeye yazılır. Yeşil ambalaj sağlıklı hissettirir. Sağlıksız ürün masum görünür, buna yeşil yıkama denir. Doğal ne demek? Resme değil, içindekiler listesine bak.",
     "sahneler": [
       {
         "metin": "doğal etiketi",
@@ -1166,7 +1166,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sevdiğin bir ürünün paketi neden bir anda küçüldü ama fiyatı aynı kaldı? Buna küçültme enflasyonu denir. Şirketler fiyatı artırmak yerine, sessizce içindeki miktarı azaltır, çünkü tüketici fiyat artışını fark eder ama azalan gramajı fark etmez. Cips paketindeki hava, çikolatadaki incelme, hepsi bu oyunun parçası. Fiyata değil, birim gramaj fiyatına bak.",
+    "script": "Sevdiğin ürünün paketi neden küçüldü ama fiyat aynı? Buna küçültme enflasyonu denir. Şirket fiyatı artırmaz, sessizce gramajı azaltır, çünkü fark etmezsin. Cipsteki hava, çikolatadaki incelme. Paket neden küçüldü? Birim gramaj fiyatına bak.",
     "sahneler": [
       {
         "metin": "küçülen paket",
@@ -1212,7 +1212,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kartla öderken neden nakitten daha rahat harcarsın? Çünkü kart, paranın gittiğini hissettirmez. Nakit verirken elinden çıkanı görürsün, beynin küçük bir acı yaşar ve seni frenler. Kartta ise bu fren yoktur, sadece bir dokunuş. Araştırmalar, insanların kartla çok daha fazla harcadığını gösteriyor. Temassız ödeme bunu daha da kolaylaştırır. Bütçeni korumak istiyorsan, nakit dene.",
+    "script": "Kartla neden nakitten rahat harcarsın? Kart paranın gittiğini hissettirmez. Nakit verirken beynin küçük acı yaşar, seni frenler. Kartta fren yok, tek dokunuş. Kart neden cebini boşaltır? Bütçeni korumak istiyorsan nakit dene.",
     "sahneler": [
       {
         "metin": "nakit ödeme",
@@ -1258,7 +1258,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Telefon faturan neden her ay biraz farklı? Çünkü içine fark etmediğin küçük ücretler eklenir. Kullanmadığın servisler, otomatik açılan abonelikler, aşım ücretleri, hepsi minik minik birikir. Kampanya bitince fiyatın sessizce artması da klasik bir taktiktir. Bu ücretlerin çoğu sorunca iptal edilebilir. Faturanı her ay tek tek incele, tanımadığın kalemleri operatörüne sor.",
+    "script": "Telefon faturan neden her ay farklı? İçine fark etmediğin ücretler eklenir. Kullanmadığın servisler, otomatik abonelikler, aşım ücretleri birikir. Kampanya bitince fiyat sessizce artar. Faturan neden hep farklı? Her ay tek tek incele, sorgula.",
     "sahneler": [
       {
         "metin": "telefon faturası",
@@ -1304,7 +1304,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir siteden çıkmak istersin ama kabul et düğmesi kocaman ve renkli, hayır ise minik ve gri. Bu tesadüf değil, buna karanlık desen denir. Siteler, seni istemediğin şeyi kabul etmeye ya da fazladan ürün almaya yönlendirmek için butonları bilerek böyle tasarlar. Önceden işaretlenmiş kutucuklar, gizli iptaller, hepsi bu oyunun parçası. Tıklamadan önce iki kez oku.",
+    "script": "Siteden çıkmak istersin, kabul et kocaman, hayır minik ve gri. Tesadüf değil, buna karanlık desen denir. Seni istemediğin şeyi kabul ettirmek için böyle tasarlanır. İşaretli kutucuklar, gizli iptaller. O buton seni kandırıyor. Tıklamadan iki kez oku.",
     "sahneler": [
       {
         "metin": "aldatıcı buton",
@@ -3696,7 +3696,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Neredeyse her fiyat 9 ile biter: 9,99 - 19,90 - 99. Neden 10 ya da 100 değil? Çünkü beynin soldan okur. 9,99'u 'dokuz bir şey' diye algılarsın, 'on' değil. Aradaki bir kuruş önemsiz ama algı devasa. On yıllardır işe yarıyor. Yuvarlarsan gerçek fiyatı görürsün. Rakama değil, değere bak.",
+    "script": "Neredeyse her fiyat 9 ile biter. Neden 10 değil? Beynin soldan okur, 9,99'u dokuz sanır, on değil. Bir kuruş önemsiz ama algı devasa. Neden hep 9? On yıllardır işe yarıyor. Yuvarla, gerçek fiyatı gör.",
     "sahneler": [
       {
         "metin": "99 fiyat etiketi",
@@ -3742,7 +3742,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir kutu alırsın, açarsın, içinde küçücük ürün ve bir sürü boşluk. Neden kutu bu kadar büyük? Çünkü büyük kutu rafta göz doldurur, 'çok ürün var' hissi verir. Elinde ağırlık beklersin, değerli sanırsın. Ama içi hava. Ambalaj boyutu bir yanılsama. Gramaja ve içindekilere bak, kutuya değil.",
+    "script": "Kutuyu açarsın, içinde küçük ürün ve bir sürü boşluk. Neden bu kadar büyük? Rafta göz doldurur, çok ürün var hissi verir. Ağırlık beklersin, değerli sanırsın, ama içi hava. Kutu neden büyük? Gramaja bak, kutuya değil.",
     "sahneler": [
       {
         "metin": "büyük kutu küçük ürün",
@@ -3834,7 +3834,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir satıcı sana önce en pahalı ürünü gösterir. Şaşırırsın. Sonra 'ama şu daha uygun' der, ucuz gelir. Aslında o da pahalıdır ama ilk gördüğün fiyat aklına kazınmıştır. Her şey ona göre ucuz görünür. Buna çapalama denir. İlk fiyat bir tuzak. Kendi bütçenle gel, onların sıralamasına kapılma.",
+    "script": "Satıcı önce en pahalı ürünü gösterir, şaşırırsın. Sonra şu daha uygun der, ucuz gelir. Aslında o da pahalı ama ilk fiyat aklına kazındı. Buna çapalama denir. İlk gördüğün neden pahalı? Kendi bütçenle gel, sıralamaya kapılma.",
     "sahneler": [
       {
         "metin": "pahalı ürün gösterme",
@@ -3972,7 +3972,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Küçük, orta, büyük boy sunulur. Çoğu insan ortayı seçer, 'ne çok ne az' der. İşin sırrı: onlar zaten ortayı almanı ister. Küçük çok küçük, büyük çok pahalı ayarlanır ki orta mantıklı görünsün. Aslında en kârlı seçenek odur. Üç seçenek bir yönlendirme. Boyu ihtiyacına göre seç, sunuma göre değil.",
+    "script": "Küçük, orta, büyük sunulur, çoğu kişi ortayı seçer. Sır şu: onlar zaten ortayı ister. Küçük çok küçük, büyük çok pahalı ayarlanır ki orta mantıklı görünsün. En kârlı odur. Neden orta alıyorsun? Boyu ihtiyacına göre seç, sunuma göre değil.",
     "sahneler": [
       {
         "metin": "üç boy içecek",
@@ -4018,7 +4018,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sepetin 130 lira, kargo bedava için 150 lira gerekiyor. 'Az kaldı, bir şey daha ekleyeyim' dersin. Sonuçta kargodan kaçınmak için 30 lira fazla harcarsın. Kargo 20 liraydı. Yani tasarruf ederken daha çok ödedin. Eşik, tam da bunun için ayarlanır. Sepetine bak, gerçekten ihtiyacın olan var mı?",
+    "script": "Sepetin 130, bedava kargo için 150 gerekiyor. Az kaldı dersin, eklersin. Kargodan kaçmak için 30 fazla harcarsın, kargo 20'ydi. Tasarruf ederken çok ödedin. O eşik neden var? Tam bunun için. Sepetine bak, gerçekten gerekli mi?",
     "sahneler": [
       {
         "metin": "online sepet",
@@ -4202,7 +4202,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "İki tişört, aynı kumaş, aynı dikiş. Biri sade, diğerinde küçük bir logo. Logolusu üç kat pahalı. Neden? Çünkü logo sana ürün değil, statü satar. 'Bunu giyen şu grupta' hissi. Kumaşa değil, imaja para verirsin. Marka, kimliğini satın aldığını sandırır. Kaliteye bak, logoya değil. Çoğu zaman fark kumaşta değil, etikettedir.",
+    "script": "İki tişört, aynı kumaş. Biri sade, diğerinde logo, üç kat pahalı. Neden? Logo ürün değil, statü satar. Kumaşa değil, imaja ödersin. Marka kimliğini satar. Logo neden pahalı? Kaliteye bak, çoğu zaman fark etikettedir.",
     "sahneler": [
       {
         "metin": "logolu tişört",
@@ -4708,7 +4708,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürün alırken 'indirim kodu' ararsın, hemen bulursun. Şans mı? Hayır. O kodlar bilerek dağıtılır. Çünkü kod arayan kişi, almaya kararlıdır. Küçük bir indirim, kararsızı alıcıya çevirir. Kod seni 'kazandım' hissiyle satın almaya iter. İndirim gerçek ama seni ittiği yön belli. Kod için değil, ihtiyaç için al.",
+    "script": "Ürün alırken indirim kodu ararsın, hemen bulursun. Şans mı? Hayır, bilerek dağıtılır. Çünkü kod arayan almaya kararlıdır, küçük indirim kararsızı alıcıya çevirir. Kod neden kolay bulunur? Seni kazandım hissiyle iter. İhtiyaç için al, kod için değil.",
     "sahneler": [
       {
         "metin": "indirim kodu ekran",
