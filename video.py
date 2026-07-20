@@ -201,10 +201,11 @@ PlayResX: {'1080' if dikey else '1920'}
 PlayResY: {'1920' if dikey else '1080'}
 
 [V4+ Styles]
-Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Outline, Shadow, Alignment, MarginL, MarginR, MarginV
-Style: Def,{a['font']},{punto*4},{a['renk']},{a['kenar_renk']},&H88000000,-1,{a['kenar_kalinlik']},1,2,80,80,{a['alt_bosluk']}
-Style: Kanca,{a['font']},{int(punto*4*1.62)},&H0000DDFF,&H00000000,&H00000000,-1,7,2,8,70,70,{240 if dikey else 90}
-Style: Abone,{a['font']},{int(punto*4*0.98)},&H0000DDFF,&H00000000,&H00000000,-1,6,3,2,60,60,{int((240 if dikey else 90)*1.15)}
+Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV
+Style: Def,{a['font']},{punto*4},{a['renk']},{a['kenar_renk']},&H88000000,-1,1,{a['kenar_kalinlik']},1,2,80,80,{a['alt_bosluk']}
+Style: Kanca,{a['font']},{int(punto*4*1.62)},&H0000DDFF,&H00000000,&H00000000,-1,1,7,2,8,70,70,{240 if dikey else 90}
+Style: Abone,{a['font']},{int(punto*4*1.05)},&H000F0F0F,&H000AD6FF,&H66000000,-1,3,16,0,8,60,60,{520 if dikey else 300}
+Style: AboneAlt,{a['font']},{int(punto*4*0.72)},&H00FFFFFF,&H00000000,&H00000000,-1,1,3,1,8,60,60,{700 if dikey else 400}
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -218,30 +219,27 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         for c in cues:
             txt = c["text"].replace("\n", " ")
             f.write(f"Dialogue: 0,{_ass_zaman(c['start'])},{_ass_zaman(c['end'])},Def,,0,0,0,,{txt}\n")
-        # --- ABONE OL: parlayan sarı buton, nabız animasyonu ---
-        # Konum: orta (bir kez, izleyici yoğunken) + son (sadık izleyici). Seslendirmeye dokunmaz.
+        # --- ABONE OL: sarı hap buton, SADECE PAYOFF anında (üst-orta) ---
+        # Karar (tek değişken testi): baştan/ortadan buton yok; tuzağın ifşa
+        # olduğu son ~5.5sn'de üst-orta bantta belirir, nabız gibi parlar.
         if cues:
             son = cues[-1]["end"]
-            orta = son / 2.0
-            btn = "\u25B6 ABONE OL  \u2022  her ak\u015fam yeni tuzak"
-            # nabız: 100%->112%->100% döngüsü (dikkat çeker), yumuşak fade
+            btn = "\u25B6 ABONE OL"
+            alt_metin = "her ak\u015fam yeni tuzak"
             def _nabiz(bas, bit):
                 d = int((bit - bas) * 1000)
-                # her ~600ms bir nabız
                 anim = ""
                 t = 0
                 while t < d - 200:
                     anim += f"\\t({t},{t+300},\\fscx112\\fscy112)\\t({t+300},{t+600},\\fscx100\\fscy100)"
                     t += 600
                 return anim
-            # ORTA: 2.0sn, bir kez parlar
-            o_bas, o_bit = orta - 1.0, orta + 1.0
-            f.write(f"Dialogue: 2,{_ass_zaman(o_bas)},{_ass_zaman(o_bit)},Abone,,0,0,0,,"
-                    f"{{\\fad(250,250){_nabiz(o_bas,o_bit)}}}{btn}\n")
-            # SON: 2.5sn, nabızlı
-            s_bas, s_bit = max(o_bit+0.5, son - 2.5), son + 0.4
-            f.write(f"Dialogue: 2,{_ass_zaman(s_bas)},{_ass_zaman(s_bit)},Abone,,0,0,0,,"
-                    f"{{\\fad(250,150){_nabiz(s_bas,s_bit)}}}{btn}\n")
+            p_bas = max(3.0, son - 5.5)
+            p_bit = son + 0.4
+            f.write(f"Dialogue: 2,{_ass_zaman(p_bas)},{_ass_zaman(p_bit)},Abone,,0,0,0,,"
+                    f"{{\\fad(250,150){_nabiz(p_bas,p_bit)}}}{btn}\n")
+            f.write(f"Dialogue: 2,{_ass_zaman(p_bas)},{_ass_zaman(p_bit)},AboneAlt,,0,0,0,,"
+                    f"{{\\fad(250,150)}}{alt_metin}\n")
 
 # ----------------------------------------------------------
 # 4. GÖRSELLER
