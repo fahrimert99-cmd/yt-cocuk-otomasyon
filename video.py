@@ -536,8 +536,8 @@ def _ken_burns_vf(i, W, H, frames, fps):
     return f"{presc},{zp},format=yuv420p"
 
 
-def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.45,
-                         max_sahne_sn=5.0):
+def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
+                         max_sahne_sn=3.5):
     import math
     W, H = boyut
     toplam = sure_al(mp3)
