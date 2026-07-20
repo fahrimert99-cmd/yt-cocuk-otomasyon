@@ -204,7 +204,7 @@ PlayResY: {'1920' if dikey else '1080'}
 Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Outline, Shadow, Alignment, MarginL, MarginR, MarginV
 Style: Def,{a['font']},{punto*4},{a['renk']},{a['kenar_renk']},&H88000000,-1,{a['kenar_kalinlik']},1,2,80,80,{a['alt_bosluk']}
 Style: Kanca,{a['font']},{int(punto*4*1.62)},&H0000DDFF,&H00000000,&H00000000,-1,7,2,8,70,70,{240 if dikey else 90}
-Style: Abone,{a['font']},{int(punto*4*0.92)},&H00FFFFFF,&H002020E0,&H00000000,-1,6,0,2,60,60,{int((240 if dikey else 90)*1.15)}
+Style: Abone,{a['font']},{int(punto*4*0.95)},&H00101010,&H000000FF,&H0000DDFF,-1,0,3,18,2,60,60,{int((240 if dikey else 90)*1.15)}
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -218,12 +218,30 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         for c in cues:
             txt = c["text"].replace("\n", " ")
             f.write(f"Dialogue: 0,{_ass_zaman(c['start'])},{_ass_zaman(c['end'])},Def,,0,0,0,,{txt}\n")
-        # --- ABONE OL kartı: son ~1.8sn, alt-orta, seslendirmeye dokunmaz ---
+        # --- ABONE OL: parlayan sarı buton, nabız animasyonu ---
+        # Konum: orta (bir kez, izleyici yoğunken) + son (sadık izleyici). Seslendirmeye dokunmaz.
         if cues:
             son = cues[-1]["end"]
-            basla = max(0.0, son - 1.8)
-            f.write(f"Dialogue: 2,{_ass_zaman(basla)},{_ass_zaman(son + 0.4)},Abone,,0,0,0,,"
-                    f"{{\\fad(200,150)}}\u25B6 ABONE OL  \u2022  her ak\u015fam yeni tuzak\n")
+            orta = son / 2.0
+            btn = "\u25B6 ABONE OL  \u2022  her ak\u015fam yeni tuzak"
+            # nabız: 100%->112%->100% döngüsü (dikkat çeker), yumuşak fade
+            def _nabiz(bas, bit):
+                d = int((bit - bas) * 1000)
+                # her ~600ms bir nabız
+                anim = ""
+                t = 0
+                while t < d - 200:
+                    anim += f"\\t({t},{t+300},\\fscx112\\fscy112)\\t({t+300},{t+600},\\fscx100\\fscy100)"
+                    t += 600
+                return anim
+            # ORTA: 2.0sn, bir kez parlar
+            o_bas, o_bit = orta - 1.0, orta + 1.0
+            f.write(f"Dialogue: 2,{_ass_zaman(o_bas)},{_ass_zaman(o_bit)},Abone,,0,0,0,,"
+                    f"{{\\fad(250,250){_nabiz(o_bas,o_bit)}}}{btn}\n")
+            # SON: 2.5sn, nabızlı
+            s_bas, s_bit = max(o_bit+0.5, son - 2.5), son + 0.4
+            f.write(f"Dialogue: 2,{_ass_zaman(s_bas)},{_ass_zaman(s_bit)},Abone,,0,0,0,,"
+                    f"{{\\fad(250,150){_nabiz(s_bas,s_bit)}}}{btn}\n")
 
 # ----------------------------------------------------------
 # 4. GÖRSELLER
