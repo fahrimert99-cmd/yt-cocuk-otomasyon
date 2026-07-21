@@ -618,27 +618,27 @@
     "sahneler": [
       {
         "metin": "otel rezervasyon sitesi",
-        "gorsel": "a hotel booking website on a screen"
+        "gorsel": "laptop screen showing hotel booking website"
       },
       {
         "metin": "son oda uyarısı",
-        "gorsel": "a last room at this price warning"
+        "gorsel": "hotel room interior with bed"
       },
       {
         "metin": "kaç kişi bakıyor",
-        "gorsel": "a 2 others viewing message"
+        "gorsel": "smartphone showing hotel reservation app"
       },
       {
         "metin": "gizli vergiler",
-        "gorsel": "hidden taxes added at checkout"
+        "gorsel": "credit card payment on laptop online"
       },
       {
         "metin": "komisyonlu sıralama",
-        "gorsel": "top listed hotels paying commission"
+        "gorsel": "list of hotels on travel website screen"
       },
       {
         "metin": "oteli arama",
-        "gorsel": "calling a hotel directly to book"
+        "gorsel": "person calling on phone at desk"
       }
     ],
     "kanca": "\"SON ODA\" YALAN"
