@@ -384,6 +384,16 @@ def _google_seslendir(text, mp3_path):
     if not key:
         raise RuntimeError("Google TTS anahtarı yok")
     voice = os.environ.get("GOOGLE_TTS_VOICE", "").strip() or "tr-TR-Wavenet-E"
+    # --- GECICI TANI: kullanilabilir tr-TR seslerini listele ---
+    if True:  # GECICI
+        try:
+            lu = f"https://texttospeech.googleapis.com/v1beta1/voices?languageCode=tr-TR&key={key}"
+            lr = urllib.request.Request(lu, headers={"User-Agent": "Mozilla/5.0 (compatible; ytbot/1.0)"})
+            with urllib.request.urlopen(lr, timeout=60) as rr:
+                vs = json.loads(rr.read().decode()).get("voices", [])
+            print("MEVCUT_TR_SESLER: " + ", ".join(sorted(x.get("name","") for x in vs)))
+        except Exception as e:
+            print("SES_LISTE_HATA: " + str(e)[:200])
     words = text.split()
     ssml = "<speak>" + " ".join(f'<mark name="{i}"/>{html.escape(w)}'
                                 for i, w in enumerate(words)) + "</speak>"
