@@ -36,11 +36,11 @@ CONFIG = {
     "altyazi": {
         "font": "DejaVu Sans",      # sizin makinede "Arial" yazabilirsiniz
         "punto_yatay": 24,
-        "punto_dikey": 17,
+        "punto_dikey": 19,
         "renk": "&H00FFFFFF",       # beyaz
         "kenar_renk": "&H00000000", # siyah kenarlık
         "kenar_kalinlik": 4,
-        "alt_bosluk": 60,
+        "alt_bosluk": 560,   # Shorts: alttaki ~500px UI ile kapali
     },
     "altyazi_max_kelime": 3,        # kelime kelime vurgulu (Shorts tarzı)
     "altyazi_max_sure": 4.0,        # bir alt yazı satırının max süresi (sn)
@@ -204,7 +204,7 @@ PlayResY: {'1920' if dikey else '1080'}
 Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Outline, Shadow, Alignment, MarginL, MarginR, MarginV
 Style: Def,{a['font']},{punto*4},{a['renk']},{a['kenar_renk']},&H88000000,-1,{a['kenar_kalinlik']},1,2,80,80,{a['alt_bosluk']}
 Style: Kanca,{a['font']},{int(punto*4*1.62)},&H0000DDFF,&H00000000,&H00000000,-1,7,2,8,70,70,{240 if dikey else 90}
-Style: Abone,{a['font']},{int(punto*4*0.98)},&H0000DDFF,&H00000000,&H00000000,-1,6,3,2,60,60,{int((240 if dikey else 90)*1.15)}
+Style: Abone,{a['font']},{int(punto*4*0.98)},&H0000DDFF,&H00000000,&H00000000,-1,6,3,8,60,60,{640 if dikey else 200}
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
