@@ -115,7 +115,12 @@ def main():
              gizlilik=cfg.get("gizlilik", "private"),
              kategori=str(cfg.get("kategori", "28")),
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
-             kapak=kapak_yolu, yayin_zamani=yayin_zamani)
+             kapak=kapak_yolu, yayin_zamani=yayin_zamani,
+             ilk_yorum=(
+                 f"{veri.get('kanca','Bu tuzağı biliyor muydun?')}\n\n"
+                 "Sen bu tuzağa hiç düştün mü? Yorumla \U0001F447\n"
+                 "\U0001F514 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+             ))
 
     # TikTok/Reels icin: videoyu + kapagi repoya kaydet (elle indirilebilsin)
     try:
