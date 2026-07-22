@@ -383,24 +383,22 @@ def _google_seslendir(text, mp3_path):
     key = _google_key()
     if not key:
         raise RuntimeError("Google TTS anahtarı yok")
-    voice = os.environ.get("GOOGLE_TTS_VOICE", "").strip() or "tr-TR-Wavenet-E"
-    # --- GECICI TANI: kullanilabilir tr-TR seslerini listele ---
-    if True:  # GECICI
-        try:
-            lu = f"https://texttospeech.googleapis.com/v1beta1/voices?languageCode=tr-TR&key={key}"
-            lr = urllib.request.Request(lu, headers={"User-Agent": "Mozilla/5.0 (compatible; ytbot/1.0)"})
-            with urllib.request.urlopen(lr, timeout=60) as rr:
-                vs = json.loads(rr.read().decode()).get("voices", [])
-            print("MEVCUT_TR_SESLER: " + ", ".join(sorted(x.get("name","") for x in vs)))
-        except Exception as e:
-            print("SES_LISTE_HATA: " + str(e)[:200])
+    voice = os.environ.get("GOOGLE_TTS_VOICE", "").strip() or "tr-TR-Chirp3-HD-Charon"
     words = text.split()
-    ssml = "<speak>" + " ".join(f'<mark name="{i}"/>{html.escape(w)}'
-                                for i, w in enumerate(words)) + "</speak>"
-    body = {"input": {"ssml": ssml},
-            "voice": {"languageCode": "tr-TR", "name": voice},
-            "audioConfig": {"audioEncoding": "MP3", "speakingRate": 1.05, "pitch": 0.0},
-            "enableTimePointing": ["SSML_MARK"]}
+    hizi = float(os.environ.get("GOOGLE_TTS_RATE", "") or 1.0)
+    chirp = "Chirp" in voice
+    if chirp:
+        # Chirp3-HD: SSML/mark desteklemez -> duz metin, zamanlama orantili hesaplanir
+        body = {"input": {"text": text},
+                "voice": {"languageCode": "tr-TR", "name": voice},
+                "audioConfig": {"audioEncoding": "MP3", "speakingRate": hizi}}
+    else:
+        ssml = "<speak>" + " ".join(f'<mark name="{i}"/>{html.escape(w)}'
+                                    for i, w in enumerate(words)) + "</speak>"
+        body = {"input": {"ssml": ssml},
+                "voice": {"languageCode": "tr-TR", "name": voice},
+                "audioConfig": {"audioEncoding": "MP3", "speakingRate": hizi, "pitch": 0.0},
+                "enableTimePointing": ["SSML_MARK"]}
     url = f"https://texttospeech.googleapis.com/v1beta1/text:synthesize?key={key}"
     req = urllib.request.Request(url, data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json",
@@ -415,10 +413,22 @@ def _google_seslendir(text, mp3_path):
     dur = sure_al(mp3_path)
     tps = sorted(d.get("timepoints", []), key=lambda t: int(t["markName"]))
     boundaries = []
-    for i, w in enumerate(words):
-        s = tps[i]["timeSeconds"] if i < len(tps) else i * dur / max(1, len(words))
-        e = tps[i + 1]["timeSeconds"] if i + 1 < len(tps) else dur
-        boundaries.append({"start": s, "dur": max(0.05, e - s), "text": w})
+    if tps:
+        for i, w in enumerate(words):
+            s = tps[i]["timeSeconds"] if i < len(tps) else i * dur / max(1, len(words))
+            e = tps[i + 1]["timeSeconds"] if i + 1 < len(tps) else dur
+            boundaries.append({"start": s, "dur": max(0.05, e - s), "text": w})
+        print(f"    Ses: {voice} (kelime zamanlamasi: gercek timepoint)")
+    else:
+        # Chirp3-HD gibi timepoint vermeyen sesler: harf uzunluguna gore oranti
+        agirlik = [max(1, len(w)) + 1 for w in words]   # +1 = kelime arasi bosluk
+        toplam = float(sum(agirlik)) or 1.0
+        t = 0.0
+        for w, a in zip(words, agirlik):
+            pay = dur * (a / toplam)
+            boundaries.append({"start": t, "dur": max(0.05, pay), "text": w})
+            t += pay
+        print(f"    Ses: {voice} (kelime zamanlamasi: orantili hesap)")
     return boundaries
 
 
