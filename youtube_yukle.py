@@ -19,7 +19,7 @@ def _kimlik():
         token_uri=TOKEN_URI,
         client_id=os.environ["YT_CLIENT_ID"],
         client_secret=os.environ["YT_CLIENT_SECRET"],
-        scopes=["https://www.googleapis.com/auth/youtube.upload"],
+        scopes=["https://www.googleapis.com/auth/youtube.force-ssl"],
     )
 
 def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani):
@@ -33,7 +33,7 @@ def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani):
     return st
 
 
-def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False, kapak=None, yayin_zamani=None):
+def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False, kapak=None, yayin_zamani=None, ilk_yorum=None):
     """
     gizlilik: 'public' | 'unlisted' | 'public'
     kategori: 27=Eğitim, 24=Eğlence, 28=Bilim&Teknoloji, 22=İnsanlar&Bloglar
@@ -62,4 +62,14 @@ def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27",
             print("✓ Kapak fotoğrafı ayarlandı")
         except Exception as e:
             print(f"! Kapak ayarlanamadı (kanal doğrulanmamış olabilir): {str(e)[:120]}")
+    if ilk_yorum:
+        try:
+            ins = yt.commentThreads().insert(
+                part="snippet",
+                body={"snippet": {"videoId": vid,
+                                  "topLevelComment": {"snippet": {"textOriginal": ilk_yorum}}}},
+            ).execute()
+            print("✓ Abone yorumu eklendi: " + ins["snippet"]["topLevelComment"]["id"])
+        except Exception as e:
+            print(f"! Yorum eklenemedi: {str(e)[:160]}")
     return vid
