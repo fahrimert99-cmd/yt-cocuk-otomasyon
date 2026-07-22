@@ -157,7 +157,27 @@ def main():
     print(f"TAMAM ✓  (yapılan: {len(yapilan)}/{n}, sıradaki: {durum['sonraki']})")
 
 
+def _ses_testi():
+    """GECICI: 4 Chirp3-HD sesiyle ornek uret, repoya kaydet, cik."""
+    import subprocess
+    import video as V
+    METIN=("Kasada beklerken önündeki çikolata tesadüf değil. "
+           "Tam iraden en zayıfken oraya konur. Kasada neden çikolata var? "
+           "Çünkü orası en kârlı köşedir.")
+    for ses in ["Charon","Rasalgethi","Sadaltager","Alnilam"]:
+        os.environ["GOOGLE_TTS_VOICE"]=f"tr-TR-Chirp3-HD-{ses}"
+        try:
+            V._google_seslendir(METIN, f"ses_{ses.lower()}.mp3")
+            print(f"OK {ses}")
+        except Exception as e:
+            print(f"HATA {ses}: {str(e)[:120]}")
+    subprocess.run(["git","config","user.email","bot@x"]); subprocess.run(["git","config","user.name","bot"])
+    subprocess.run(["git","add","ses_*.mp3"]); subprocess.run(["git","commit","-m","ses ornekleri"])
+    subprocess.run(["git","push"])
+
 if __name__ == "__main__":
+    if os.path.exists("SES_TESTI"):
+        _ses_testi(); raise SystemExit(0)
     import traceback, subprocess
     class Tee:
         def __init__(self, *s): self.s = s
