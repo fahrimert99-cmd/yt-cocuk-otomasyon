@@ -110,6 +110,16 @@ def main():
 
     print("[3/3] YouTube'a yükleniyor ...")
     import youtube_yukle as YT
+    # --- Bekleyen yorum: onceki gunun videosu artik public, yorumu simdi at ---
+    _bek = durum.get("bekleyen_yorum")
+    if _bek and _bek.get("video_id"):
+        try:
+            YT.yorum_at(_bek["video_id"], _bek["metin"])
+            print("✓ Onceki videoya abone yorumu eklendi: " + _bek["video_id"])
+            durum["bekleyen_yorum"] = None
+        except Exception as _e:
+            print("! Yorum eklenemedi: " + str(_e)[:160])
+
     _vid = YT.yukle(cikti, veri["baslik"], veri.get("aciklama", ""),
              veri.get("etiketler", []),
              gizlilik=cfg.get("gizlilik", "private"),
