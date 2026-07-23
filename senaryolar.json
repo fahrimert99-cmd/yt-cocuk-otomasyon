@@ -706,7 +706,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Aynı koltuk neden herkese farklı fiyat? Fiyatlar sürekli değişir. Çok aradıysan sistem anlar, fiyatı yükseltir. Son koltuk uyarısı seni acele ettirir. Fiyat neden sürekli değişiyor? Aramadan önce tarayıcını gizli modda aç.",
+    "script": "Sabah bilete baktın: iki bin lira. Akşam tekrar baktın: iki bin üç yüz. Uçak aynı, koltuk aynı, sen aynısın. Değişen tek şey: sistem artık o bileti ne kadar istediğini biliyor. Fiyat neden sürekli değişiyor? Çünkü sen izleniyorsun.",
     "sahneler": [
       {
         "metin": "uçak koltukları",
@@ -752,7 +752,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Neredeyse her fiyat neden 99? Kuruş meselesi değil, beyin oyunu. Beynin soldan okur, 99'u yüz değil doksan sanır. Buna sol basamak etkisi denir. Neden 100 değil de 99? Çünkü o bir kuruş, cebinden çok daha fazlasını çıkarır.",
+    "script": "Yıllar önce bir dükkân sahibi fiyatı bir kuruş düşürdü. Sebebi psikoloji değildi: kasiyer para üstü vermek için kasayı açmak zorunda kalsın, para çalamasın istiyordu. Ama satışlar patladı. Neden 100 değil de 99? O bir kuruş, hâlâ cebinden fazlasını alıyor.",
     "sahneler": [
       {
         "metin": "99 kuruş etiketi",
@@ -798,7 +798,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Reklamı beğenmesen bile beynin kaydeder. Mantığına değil, duygularına konuşur. Mutlu aileler, gülen insanlar, ürünü mutlulukla eşleştirir. Ne çok görürsen o kadar güvenirsin. Reklam sana ne satıyor? Ürünü değil, bir duyguyu.",
+    "script": "Sen ne görüyorsun: mutlu bir aile, gülen çocuklar, sıcak bir mutfak. Reklamcı ne görüyor: markayı mutlulukla eşleştiren bir sinir bağlantısı. Ürünün tadını hiç anlatmadılar, fark ettin mi? Reklam sana ne satıyor? Ürünü değil, olmak istediğin hayatı.",
     "sahneler": [
       {
         "metin": "mutlu aile reklamı",
@@ -844,7 +844,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sadakat kartı sana puan verir gibi görünür, asıl kazanan mağaza. Ne aldığını, ne zaman aldığını kaydeder. Bu veriyle tam alacağını reklamlar. O kart neyi alıyor? Kendi alışkanlıklarını. Bedava sandığın kart en pahalı bilgiyle ödenir.",
+    "script": "Kasada kartı uzattın, birkaç puan kazandın. O anda market de bir şey kazandı: hangi gün geldiğini, neyi ne sıklıkla aldığını, hangi indirime dayanamadığını. Sonra tam o ürünün kuponu telefonuna düşer. O kart neyi alıyor? Alışkanlıklarını.",
     "sahneler": [
       {
         "metin": "sadakat kartı",
@@ -890,7 +890,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Taksit iyilik gibi görünür ama seni harcatır. Pahalı ürünü küçük parçalara böler, beynin küçük rakama kolay evet der. Toplam çoğu zaman daha fazladır. Kart acı vermez. Taksit neden tuzak? Gördüğünde gerçek toplamı hesapla.",
+    "script": "Ayda iki yüz lira. Kulağa hiçbir şey gelmiyor, değil mi? On iki ay çarpınca iki bin dört yüz lira ediyor. Beynin ilk rakamı duyar, ikincisini görmez. Taksit neden tuzak? Çünkü fiyatı küçültmez, sadece görünmez yapar.",
     "sahneler": [
       {
         "metin": "kredi kartı",
@@ -936,7 +936,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Abone olmak iki tık, iptal neden kabus? Öyle tasarlandı. İptal düğmesi derinlere gizlenir, vazgeçesiye uğraşırsın. Küçük aylık ücret yıl sonunda şaşırtır. İptal neden bu kadar zor? Her ay ekstranı kontrol et, kullanmadığını iptal et.",
+    "script": "Kaydolman on saniye sürdü: iki tık, kart bilgisi, tamam. İptal etmek için ayarlara girdin, bulamadın, aradın, beklettiler, vazgeçtin. Bu bir aksaklık değil, tasarım. İptal neden bu kadar zor? Çünkü vazgeçmen için tasarlandı.",
     "sahneler": [
       {
         "metin": "kolay abonelik",
@@ -982,7 +982,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Ücretsiz deneme diyorlar ama neden kart istiyorlar? Çünkü plan seni ödemeye geçirmek. Deneme bitince otomatik para çekilir, çoğu kişi unutur. Hatırlatma da göndermezler. Neden kart istiyorlar? Başlarken biten günü takvimine yaz.",
+    "script": "Bedava diyor ama kart numaranı istiyor. Bedava bir şey için kart neden gereksin? Otuz gün sonra kimse sana hatırlatmayacak. Sessizce çekecekler ve sen üç ay sonra fark edeceksin. Neden kart istiyorlar? Çünkü asıl plan unutman.",
     "sahneler": [
       {
         "metin": "ücretsiz deneme",
@@ -1028,7 +1028,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bedava kargo için biraz daha ekle diyorlar, eklersin. Tuzak burada. İhtiyacın olmayanı kargodan kurtulmak için alırsın, oysa kargo daha ucuza gelirdi. Bedava kargo bedava değil. Eşik seni fazla harcatmak için ayarlanır. Gerçekten gerekli mi?",
+    "script": "Sepetin yüz otuz lira. Kargo bedava olsun diye otuz liralık bir şey daha ekledin. Kargo yirmi liraydı. Yani yirmi lira ödememek için otuz lira harcadın. Bedava kargo bedava değil. O eşik tam bunun için hesaplandı.",
     "sahneler": [
       {
         "metin": "kargo kutusu",
@@ -1074,7 +1074,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Ücretsiz oyunlar nasıl milyar kazanır? Küçük satın almalarla. Oyun tam ilerleyeceğin an durdurur, az para öde der. Parlak kutular anlık karar verdirir. Bedava oyun nasıl kazanıyor? Parayı önce oyun parasına çevirir. Uygulama içi satın almayı kapat.",
+    "script": "Sen ne görüyorsun: yüz elmasa sadece bir hamle kaldı. Oyun ne görüyor: tam kaybetmek üzereyken durdurulmuş, sabırsız bir oyuncu. Parayı elmasa çevirdiler ki lirayı hissetme. Bedava oyun nasıl kazanıyor? Beklemeyi sana sattırarak.",
     "sahneler": [
       {
         "metin": "mobil oyun",
@@ -1120,7 +1120,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Doğal yazan her ürün doğal değil. Doğal kelimesinin çoğu ülkede yasal tanımı yok, her şeye yazılır. Yeşil ambalaj sağlıklı hissettirir. Sağlıksız ürün masum görünür, buna yeşil yıkama denir. Doğal ne demek? Resme değil, içindekiler listesine bak.",
+    "script": "Paketteki yeşil yapraklar, kahverengi karton, el yazısı yazı tipi. Hepsi doğallık hissi için tasarlandı. Ama 'doğal' kelimesinin çoğu yerde yasal karşılığı yok — isteyen yazabiliyor. 'Doğal' ne demek? Ambalajın değil, içindekiler listesinin söylediği şey.",
     "sahneler": [
       {
         "metin": "doğal etiketi",
