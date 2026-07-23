@@ -1,5 +1,5 @@
 {
-  "sonraki": 15,
+  "sonraki": 16,
   "yapilan": [
     "AVM'LER SENİ BÖYLE İÇERDE TUTUYOR! 🏬",
     "BANKALAR GİZLİ ÜCRETLERLE KANDIRIYOR! 🏦",
@@ -14,12 +14,13 @@
     "RESTORAN MENÜSÜ BİR TUZAK! 🍽️",
     "SPOR SALONU ÜYELİĞİ TUZAĞI! 💪",
     "UYGULAMALAR SENİ BÖYLE BAĞIMLI YAPIYOR! 📱",
+    "UÇAK BİLETİ FİYAT OYUNU! ✈️",
     "İNDİRİM ETİKETLERİ YALAN! 🏷️",
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️"
   ],
-  "son_rapor": "[1/3] Senaryo (16/104): UÇAK BİLETİ FİYAT OYUNU! ✈️\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n    Ses: tr-TR-Wavenet-E (kelime zamanlamasi: gercek timepoint)\n      Ses: Google TTS (nöral Türkçe)\n      [Pexels: 8 sonuç -> 'airplane seats from the']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'flight prices constantly changing']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'search history tracked raising']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'a last seat available']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'baggage and seat selection']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'browsing flights in incognito']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (7355 KB)\n      Kapak: output/kapak.jpg\n[3/3] ÖNİZLEME MODU — yükleme atlandı (kanal kirlenmez)\n      onizleme.mp4 repoya kaydedildi — indirip izleyebilirsin\n",
+  "son_rapor": "[1/3] Senaryo (16/104): UÇAK BİLETİ FİYAT OYUNU! ✈️\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n    Ses: tr-TR-Wavenet-E (kelime zamanlamasi: gercek timepoint)\n      Ses: Google TTS (nöral Türkçe)\n      [Pexels: 8 sonuç -> 'airplane seats from the']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'flight prices constantly changing']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'search history tracked raising']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'a last seat available']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'baggage and seat selection']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'browsing flights in incognito']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (7282 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-07-24T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: cWhf4AZdjiw\n✓ Yüklendi: https://youtu.be/SWfcqkRXLeQ  (yayın: 2026-07-24T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
   "bekleyen_yorum": {
-    "video_id": "cWhf4AZdjiw",
-    "metin": "BANKA SENDEN NE ALIYOR?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "SWfcqkRXLeQ",
+    "metin": "FİYAT NEDEN SÜREKLİ DEĞİŞİYOR?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   }
 }
