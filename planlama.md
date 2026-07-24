@@ -16,6 +16,25 @@
 - Görsel tempo sonucu: retention'a etkisi (bekliyor)
 - Abone: 20 (14'ten çıktı, artış sürüyor mu izle)
 
+
+## 🔥 ONAYLANMIŞ SIRADAKİ HAMLE — "İZLEYİCİYE SÖZ HAKKI" (kullanıcı onayladı 24 Tem)
+Kaynak: TubeBuddy AI önerisi + kullanıcı beğenisi
+NE ZAMAN: Çarpıcı anlatım testi bitince (~8 video sonra, ~1 Ağustos)
+NEDEN: Ana darboğaz etkileşim (izlenme %62-64 mükemmel, yorum 0-2, abone/video ~0)
+
+Uygulanacaklar:
+1. KAPANIŞ CTA: Video sonuna "Hangi tuzağı ifşa edelim? Yorumla" tarzı soru
+   - izleyiciye kanalın gidişatında söz hakkı verir
+   - yorum tetikler (algoritma yorumu çok sever)
+   - BONUS: bize konu talebi verisi kazandırır -> senaryo sıralamasını buna göre yaparız
+2. KİŞİSELLEŞTİRİLMİŞ SORU: Genel değil spesifik sor
+   - kötü: "Sizce nasıl kaçınılır?"
+   - iyi : "Sen hiç bilet alırken fiyatın arttığını gördün mü?"
+3. (opsiyonel) Açıklamaya da aynı soru — risksiz, videoya dokunmaz
+
+NOT: TubeBuddy AI'ı "videolarda izleyicilere soru soruyorsun" demiş ama bu YANLIŞ tespit —
+biz soru sormuyoruz, kancalarımız soru formatında. Araçların çıkarımları dikkatli okunmalı.
+
 ## ⏭️ SIRADAKİ KAİZEN (öncelik sırası)
 1. Mevcut değişikliklerin verisini bekle (kanca+süre+loop+tempo)
 2. Arka plan müziği — hafif tempolu, retention'a yardım (ücretsiz kütüphane)
