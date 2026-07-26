@@ -383,7 +383,7 @@ def _google_seslendir(text, mp3_path):
     key = _google_key()
     if not key:
         raise RuntimeError("Google TTS anahtarı yok")
-    voice = os.environ.get("GOOGLE_TTS_VOICE", "").strip() or "tr-TR-Wavenet-E"
+    voice = os.environ.get("GOOGLE_TTS_VOICE", "").strip() or "tr-TR-Chirp3-HD-Charon"
     words = text.split()
     hizi = float(os.environ.get("GOOGLE_TTS_RATE", "") or 1.0)
     chirp = "Chirp" in voice
@@ -565,8 +565,8 @@ def _ken_burns_vf(i, W, H, frames, fps):
     return f"{presc},{zp},format=yuv420p"
 
 
-def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
-                         max_sahne_sn=3.5):
+def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.30,
+                         max_sahne_sn=2.2):
     import math
     W, H = boyut
     toplam = sure_al(mp3)
@@ -657,7 +657,7 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
         d = sure_her
         frames = int(d*fps)
         # yavaş zoom-in (Ken Burns)
-        zoom = f"zoompan=z='min(zoom+0.0008,1.12)':d={frames}:s={W}x{H}:fps={fps}"
+        zoom = f"zoompan=z='min(zoom+0.0016,1.15)':d={frames}:s={W}x{H}:fps={fps}"
         subprocess.run([
             "ffmpeg","-y","-loop","1","-i",g,"-t",f"{d:.3f}",
             "-vf", f"scale={W}:{H},{zoom},format=yuv420p",
