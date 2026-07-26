@@ -383,7 +383,7 @@ def _google_seslendir(text, mp3_path):
     key = _google_key()
     if not key:
         raise RuntimeError("Google TTS anahtarı yok")
-    voice = os.environ.get("GOOGLE_TTS_VOICE", "").strip() or "tr-TR-Chirp3-HD-Charon"
+    voice = os.environ.get("GOOGLE_TTS_VOICE", "").strip() or "tr-TR-Wavenet-E"
     words = text.split()
     hizi = float(os.environ.get("GOOGLE_TTS_RATE", "") or 1.0)
     chirp = "Chirp" in voice
