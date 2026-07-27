@@ -4570,7 +4570,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'İkincisini al, yarı fiyat' ya da 'üç al iki öde' derler. Kazançlı gelir. Ama ihtiyacın tek üründü. İkincisini aldın, belki bozulacak, belki kullanmayacaksın. Tek ürünün maliyetinden fazla ödedin. Kampanya, sana lazım olmayanı aldırır. Kâr sandığın şey, fazla tüketim. İhtiyacın kadar al, kampanya ihtiyaç yaratmasın. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'İkincisini yarı fiyatına al' ya da 'üç al iki öde' kampanyaları kazançlı gibi görünür, ama senin ihtiyacın tek bir üründü. İkincisini aldığında çoğu zaman ya bozulur ya da hiç kullanmazsın, yani tek ürünün maliyetinden fazlasını ödemiş olursun. Bu kampanyalar sana ihtiyacın olmayanı aldırır. İhtiyacın kadar alırsan, kampanya sana sahte bir ihtiyaç yaratamaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "ikincisi bedava",
@@ -4616,7 +4616,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Telefonuna 'Size özel indirim, sadece sizin için' düşer. Kendini özel hissedersin. Ama aynı mesaj milyonlarca kişiye gitti. 'Sana özel' bir kalıp, gerçek değil. Özel hissettirmek, seni bağlamanın yolu. Değerli olduğunu sanırsın, harcarsın. Teklif herkese aynı. Duyguya değil, teklifin gerçek değerine bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Telefonuna düşen 'sadece size özel indirim' mesajı seni değerli hissettirir, ama aynı mesaj milyonlarca kişiye birden gönderilmiştir. 'Sana özel' sözü gerçek bir ayrıcalık değil, seni bağlamak için kurulmuş bir kalıptır. Kendini özel sandığın an, daha rahat harcarsın. Teklif herkese aynıdır. O yüzden duyguya değil, teklifin gerçek değerine bakmalısın. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "sana özel mesaj",
@@ -4662,7 +4662,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bankaya, galeriye, mağazaya gidersin, hemen kahve ikram ederler. Cömertlik mi? Kısmen strateji. Kahve içerken oturursun, kalırsın, konuşursun. Kaldıkça bağlanırsın, hayır demek zorlaşır. Bir de ikram borçluluk yaratır. O bedava kahve, seni masada tutmanın yolu. İkram güzeldir ama kararını etkilemesine izin verme. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bankaya, galeriye ya da mağazaya girdiğinde hemen kahve ikram edilmesi tam bir cömertlik değil, düşünülmüş bir stratejidir. Kahveni içerken oturur, kalır ve konuşursun; ne kadar uzun kalırsan o kadar bağlanır, hayır demen o kadar zorlaşır. Üstelik ikram, içinde küçük bir borçluluk hissi taşır. O bedava kahve, aslında seni masada ve kararsız tutmanın yoludur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "bedava kahve ikram",
