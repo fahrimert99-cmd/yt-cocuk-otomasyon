@@ -385,7 +385,7 @@ def _google_seslendir(text, mp3_path):
         raise RuntimeError("Google TTS anahtarı yok")
     voice = os.environ.get("GOOGLE_TTS_VOICE", "").strip() or "tr-TR-Wavenet-E"
     words = text.split()
-    hizi = float(os.environ.get("GOOGLE_TTS_RATE", "") or 1.0)
+    hizi = float(os.environ.get("GOOGLE_TTS_RATE", "") or 1.08)  # bir tik hizli
     chirp = "Chirp" in voice
     if chirp:
         # Chirp3-HD: SSML/mark desteklemez -> duz metin, zamanlama orantili hesaplanir
