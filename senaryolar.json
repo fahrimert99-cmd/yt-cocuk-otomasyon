@@ -844,7 +844,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kartı uzattın. Üç puan kazandın. Onlar ne kazandı? Ne aldığını. Ne zaman geldiğini. Neye dayanamadığını. Sonra tam o ürünün indirimi telefonuna düşecek. Tesadüf sanacaksın. O kart neyi alıyor? Puanı sen aldın, seni onlar aldı. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Kasada sadakat kartını uzattığında birkaç puan kazanırsın, ama market senden çok daha fazlasını alır. Ne aldığını, ne zaman geldiğini ve hangi indirime dayanamadığını öğrenir. Sonra tam o ürünün indirimi telefonuna düşer. O kart puanı sana verirken, alışkanlıklarını onlara veriyor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "sadakat kartı",
@@ -890,7 +890,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Ayda iki yüz lira. Hiçbir şey gibi, değil mi? Çarp on ikiyle. İki bin dört yüz lira. Beynin ilk rakamı duydu, ikincisini hiç görmedi. Taksit fiyatı küçültmez. Taksit neden tuzak? Çünkü sadece görünmez yapar. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Ayda iki yüz lira taksit kulağa çok masum gelir, ama on iki ayla çarpınca iki bin dört yüz lira eder. Beynin ilk küçük rakamı duyar, asıl büyük toplamı hiç görmez. Taksit aslında fiyatı ucuzlatmaz, sadece gözüne görünmez yapar. Tuzak tam da burada. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "kredi kartı",
@@ -936,7 +936,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kaydolman on saniye sürdü. İki tık. Bitti. İptal için ayarlara girdin. Bulamadın. Aradın. Beklettiler. Vazgeçtin. Bu bir aksaklık değil. Bu tasarım. İptal neden bu kadar zor? Çünkü vazgeçmen için tasarlandı. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir aboneliğe kaydolmak on saniye sürer, iki tıkla biter. Ama iptal etmek istediğinde ayarlarda kaybolursun, müşteri hizmetinde beklersin ve sonunda vazgeçersin. Bu bir aksaklık değil, bilerek böyle tasarlandı. Çünkü vazgeçmen değil, ödemeye devam etmen isteniyor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "kolay abonelik",
@@ -982,7 +982,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bedava diyor. Ama kart numaranı istiyor. Bedava bir şeye kart neden gereksin? Otuz gün sonra kimse hatırlatmayacak. Sessizce çekecekler. Sen üç ay sonra fark edeceksin. Neden kart istiyorlar? Çünkü asıl plan unutman. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Ücretsiz deneme diyorlar ama önce kart numaranı istiyorlar. Bedava bir şey için kart neden gereksin ki? Çünkü otuz gün dolduğunda kimse sana hatırlatmayacak, parayı sessizce çekecekler. Sen aylar sonra fark edeceksin. Kartını istemelerinin tek sebebi, iptal etmeyi unutmanı beklemek. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "ücretsiz deneme",
@@ -1028,7 +1028,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sepetin yüz otuz lira. Kargo bedava olsun diye otuz lira daha ekledin. Kargo kaç liraydı? Yirmi. Yirmi lira ödememek için otuz lira harcadın. Bedava kargo bedava değil. O eşik tam bunun için hesaplandı. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Sepetin yüz otuz liraydı, kargo bedava olsun diye otuz liralık bir ürün daha ekledin. Oysa kargo sadece yirmi liraydı. Yani yirmi lira ödememek için otuz lira harcadın. Bedava kargo aslında hiç bedava değil. O ücretsiz kargo sınırı tam da bunu yaptırmak için hesaplanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "kargo kutusu",
@@ -1074,7 +1074,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Tam kazanacaktın. Oyun durdu. Yüz elmas istiyor. Elmas ne kadar? Bilmiyorsun. Bilmemen için var zaten. Lirayı hissetseydin ödemezdin. Elması hissetmiyorsun. Bedava oyun nasıl kazanıyor? Sabırsızlığını sana sattırarak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Oyunda tam kazanmak üzereyken duruyor ve senden yüz elmas istiyor. Elmasın kaç liraya geldiğini bilmezsin, çünkü bilmemen için öyle tasarlandı. Parayı doğrudan görsen ödemezdin, ama elmas olunca acısını hissetmezsin. Bedava oyunlar işte tam bu sabırsızlıktan kazanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "mobil oyun",
@@ -1120,7 +1120,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Yeşil yaprak. Kahverengi karton. El yazısı yazı tipi. Hepsi tasarlandı. 'Doğal' kelimesinin çoğu yerde yasal karşılığı yok. İsteyen yazıyor. Kimse denetlemiyor. 'Doğal' ne demek? Ambalajın değil, içindekiler listesinin dediği şey. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Paketteki yeşil yapraklar, kahverengi karton ve el yazısı yazılar sana doğallık hissettirmek için tasarlanır. Ama doğal kelimesinin çoğu üründe yasal bir karşılığı yok, isteyen istediği yere yazabiliyor. Bir ürünün gerçekten doğal olup olmadığını ambalajı değil, sadece içindekiler listesi söyler. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "doğal etiketi",
