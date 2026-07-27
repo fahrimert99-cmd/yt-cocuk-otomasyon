@@ -8,5 +8,6 @@
   "animasyon": true,
   "hiz": "+6%",
   "yayin_saati_utc": "16:00",
-  "gorsel_stil": "stok"
+  "gorsel_stil": "stok",
+  "yukleme_atla": true
 }
