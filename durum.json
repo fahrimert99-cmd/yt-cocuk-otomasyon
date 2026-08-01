@@ -1,5 +1,5 @@
 {
-  "sonraki": 23,
+  "sonraki": 24,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'ÜCRETSİZ DENEME' TUZAĞINA DİKKAT! ⏰",
@@ -16,6 +16,7 @@
     "MARKET KOKUSU BİLE TUZAK! 👃",
     "MARKETLER SENİ BÖYLE KANDIRIYOR! 🛒",
     "OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨",
+    "OYUNLARDAKİ SATIN ALMA TUZAĞI! 🎮",
     "REKLAMLAR BEYNİNİ BÖYLE KANDIRIYOR! 📺",
     "RESTORAN MENÜSÜ BİR TUZAK! 🍽️",
     "SADAKAT KARTININ GERÇEK AMACI! 💳",
@@ -25,9 +26,9 @@
     "İNDİRİM ETİKETLERİ YALAN! 🏷️",
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️"
   ],
-  "son_rapor": "[1/3] Senaryo (23/104): 'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n    Ses: tr-TR-Wavenet-E (kelime zamanlamasi: gercek timepoint)\n      Ses: Google TTS (nöral Türkçe)\n      [Pexels: 8 sonuç -> 'hands opening cardboard package']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'online shopping cart on']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'delivery boxes stacked fast']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'hand adding product to']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'courier delivering package to']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'person unboxing delivery excited']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (9656 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-01T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: Vn4aKHtuUHU\n✓ Yüklendi: https://youtu.be/jbt9-dBj43s  (yayın: 2026-08-01T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
+  "son_rapor": "[1/3] Senaryo (24/104): OYUNLARDAKİ SATIN ALMA TUZAĞI! 🎮\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n    Ses: tr-TR-Wavenet-E (kelime zamanlamasi: gercek timepoint)\n      Ses: Google TTS (nöral Türkçe)\n      [Pexels: 8 sonuç -> 'child playing mobile game']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'fingers tapping game on']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'colorful arcade game screen']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'hand holding phone playing']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'kid excited playing video']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'fast paced mobile game']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (8401 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-02T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: jbt9-dBj43s\n✓ Yüklendi: https://youtu.be/FIJNIap9w_g  (yayın: 2026-08-02T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
   "bekleyen_yorum": {
-    "video_id": "jbt9-dBj43s",
-    "metin": "BEDAVA KARGO BEDAVA DEĞİL\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "FIJNIap9w_g",
+    "metin": "BEDAVA OYUN NASIL KAZANIYOR?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   }
 }
