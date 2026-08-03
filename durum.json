@@ -1,5 +1,5 @@
 {
-  "sonraki": 25,
+  "sonraki": 26,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -18,6 +18,7 @@
     "MARKETLER SENİ BÖYLE KANDIRIYOR! 🛒",
     "OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨",
     "OYUNLARDAKİ SATIN ALMA TUZAĞI! 🎮",
+    "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉",
     "REKLAMLAR BEYNİNİ BÖYLE KANDIRIYOR! 📺",
     "RESTORAN MENÜSÜ BİR TUZAK! 🍽️",
     "SADAKAT KARTININ GERÇEK AMACI! 💳",
@@ -27,9 +28,9 @@
     "İNDİRİM ETİKETLERİ YALAN! 🏷️",
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️"
   ],
-  "son_rapor": "[1/3] Senaryo (25/104): 'DOĞAL & ORGANİK' YALANI! 🌿\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n    Ses: tr-TR-Wavenet-E (kelime zamanlamasi: gercek timepoint)\n      Ses: Google TTS (nöral Türkçe)\n      [Pexels: 8 sonuç -> 'fresh green vegetables market']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'hand picking organic product']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'food packaging label macro']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'supermarket shelf products moving']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'reading label on food']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'green leafy product close']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (12908 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-03T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: FIJNIap9w_g\n✓ Yüklendi: https://youtu.be/gjQBVcxb3Gs  (yayın: 2026-08-03T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
+  "son_rapor": "[1/3] Senaryo (26/104): PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n    Ses: tr-TR-Wavenet-E (kelime zamanlamasi: gercek timepoint)\n      Ses: Google TTS (nöral Türkçe)\n      [Pexels: 8 sonuç -> 'chips bag opening closeup']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'chocolate bar breaking macro']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'supermarket shelf products rows']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'hand holding small product']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'price tag on grocery']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'snack packaging close up']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (11563 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-04T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: gjQBVcxb3Gs\n✓ Yüklendi: https://youtu.be/GShgQgqCxhE  (yayın: 2026-08-04T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
   "bekleyen_yorum": {
-    "video_id": "gjQBVcxb3Gs",
-    "metin": "\"DOĞAL\" NE DEMEK?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "GShgQgqCxhE",
+    "metin": "PAKET NEDEN KÜÇÜLDÜ?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   }
 }
