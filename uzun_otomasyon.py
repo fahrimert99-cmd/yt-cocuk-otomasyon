@@ -52,7 +52,16 @@ def main():
         print("Bugun islenecek uygun konu yok (short'lar henuz public degil)."); _save(u); return
     konu=isle["title"]; short_id=isle["short_id"]
     print(f"[1/4] Uzun konu: {konu!r} (short={short_id})")
-    uzun=uzun_script.uret(konu)
+    import re as _re, unicodedata as _ud
+    def _slug(t):
+        t=_ud.normalize("NFKD",t).encode("ascii","ignore").decode().lower()
+        return _re.sub(r"[^a-z0-9]+","-",t).strip("-")
+    _man=os.path.join("uzun_scripts", _slug(konu)+".json")
+    if os.path.exists(_man):
+        with open(_man,encoding="utf-8-sig") as _f: uzun=json.load(_f)
+        print("  [manuel script kullanildi]", _man)
+    else:
+        uzun=uzun_script.uret(konu)
     tmp=tempfile.mkdtemp(); sp=os.path.join(tmp,"script.txt"); open(sp,"w",encoding="utf-8").write(uzun["script"])
     os.makedirs("output",exist_ok=True); cikti="output/uzun_video.mp4"
     print("[2/4] Yatay render ...")
