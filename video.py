@@ -336,24 +336,54 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True, stil_ad="foto"):
         stil = ("professional photograph, photorealistic, cinematic, realistic, "
                 "high detail, dramatic lighting, shallow depth of field, 4k, no text, no watermark")
     tam = f"{prompt}, {stil}"
-    q = urllib.parse.quote(tam)
-    model = "flux" if not cocuk else "flux"
-    url = (f"https://image.pollinations.ai/prompt/{q}"
-           f"?width={W}&height={H}&nologo=true&model={model}&seed={1000+idx}")
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "yt-otomasyon"})
-        with urllib.request.urlopen(req, timeout=90) as r:
-            data = r.read()
+    import base64 as _b64
+    ar = "16:9" if W > H else ("9:16" if H > W else "1:1")
+    key = _google_key()
+    def _save(b):
         ham = path + ".raw"
         with open(ham, "wb") as f:
-            f.write(data)
+            f.write(b)
         _resize_cover(ham, boyut, path)
         os.remove(ham)
         return True
-    except Exception as e:
-        print(f"      [görsel {idx} AI hatası, karta düşülüyor: {e}]")
-        gradient_kart(prompt[:80], boyut, idx, path)
-        return False
+    denemeler = [("imagen-4.0-generate-001", "imagen"),
+                 ("imagen-3.0-generate-002", "imagen"),
+                 ("gemini-2.5-flash-image", "gemini"),
+                 ("gemini-2.0-flash-preview-image-generation", "gemini")]
+    for model, kind in denemeler:
+        try:
+            if kind == "imagen":
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:predict?key={key}"
+                body = {"instances": [{"prompt": tam}],
+                        "parameters": {"sampleCount": 1, "aspectRatio": ar}}
+            else:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
+                body = {"contents": [{"parts": [{"text": "Generate an image: " + tam}]}],
+                        "generationConfig": {"responseModalities": ["IMAGE"]}}
+            req = urllib.request.Request(url, data=json.dumps(body).encode(),
+                                         headers={"Content-Type": "application/json", "User-Agent": "ytbot"})
+            with urllib.request.urlopen(req, timeout=150) as r:
+                d = json.loads(r.read().decode())
+            b64 = None
+            if kind == "imagen":
+                preds = d.get("predictions") or []
+                if preds:
+                    b64 = preds[0].get("bytesBase64Encoded")
+            else:
+                for cand in d.get("candidates", []):
+                    for part in cand.get("content", {}).get("parts", []):
+                        if part.get("inlineData"):
+                            b64 = part["inlineData"]["data"]; break
+                    if b64: break
+            if b64:
+                print(f"      [görsel {idx}: {model} ✓]")
+                return _save(_b64.b64decode(b64))
+            print(f"      [görsel {idx} {model}: görsel yok]")
+        except Exception as e:
+            print(f"      [görsel {idx} {model} hata: {str(e)[:90]}]")
+    print(f"      [görsel {idx}: tüm AI modelleri başarısız, karta düşülüyor]")
+    gradient_kart(prompt[:80], boyut, idx, path)
+    return False
 
 
 def _keys():
