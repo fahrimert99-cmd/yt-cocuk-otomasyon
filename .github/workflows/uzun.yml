@@ -27,11 +27,14 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-        run: python3 uzun_otomasyon.py
-      - name: Uzun durumu kaydet (sadece uzun_durum.json)
+        run: |
+          set -o pipefail
+          python3 uzun_otomasyon.py 2>&1 | sed -E 's/anahtar:.*/anahtar: [redacted]/' | tee uzun_run.log
+      - name: Log + durum kaydet
+        if: always()
         run: |
           git config user.name "uzun-bot"
           git config user.email "uzun-bot@users.noreply.github.com"
-          git add uzun_durum.json || true
-          git commit -m "uzun: sirayi ilerlet" || echo "degisiklik yok"
+          git add uzun_durum.json uzun_run.log || true
+          git commit -m "uzun: run log" || echo "degisiklik yok"
           git push || echo "push atlandi"
