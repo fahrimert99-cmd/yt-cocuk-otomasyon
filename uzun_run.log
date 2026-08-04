@@ -1,0 +1,12 @@
+  [yakalandi] short: 'PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉' -> GShgQgqCxhE
+[1/4] Uzun konu: 'OYUNLARDAKİ SATIN ALMA TUZAĞI' (short=FIJNIap9w_g)
+Traceback (most recent call last):
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_otomasyon.py", line 86, in <module>
+    if __name__=="__main__": main()
+                             ^^^^^^
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_otomasyon.py", line 55, in main
+    uzun=uzun_script.uret(konu)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_script.py", line 45, in uret
+    raise RuntimeError("Uzun script uretilemedi: " + " | ".join(hatalar[:6]))
+RuntimeError: Uzun script uretilemedi: poll_post: HTTP Error 402: Payment Required | poll_get: HTTP Error 402: Payment Required
