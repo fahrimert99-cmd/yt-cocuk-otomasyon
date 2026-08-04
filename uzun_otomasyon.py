@@ -70,7 +70,7 @@ def main():
                  tonlama=str(cfg.get("tonlama","+0Hz")),gorsel_stil=str(cfg.get("uzun_gorsel_stil","stok")),kanca=uzun.get("kanca"))
     kapak=None
     try:
-        import kapak as K; kapak=K.kapak_uret(cikti,uzun["baslik"],"output/uzun_kapak.jpg")
+        import kapak_uzun as K; kapak=K.kapak_uret(cikti,uzun["baslik"],"output/uzun_kapak.jpg")
     except Exception as e: print("kapak atlandi:",str(e)[:60])
     gizlilik=cfg.get("uzun_gizlilik","private"); yayin=None
     if gizlilik=="private":
