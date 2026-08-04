@@ -19,7 +19,8 @@ SADECE su JSON'u dondur:
 def _gemini_key():
     raw = os.environ.get("GEMINI_API_KEY", "").strip()
     if raw.startswith("{"):                      # JSON blob ise 'gemini' alanini kullan
-        try: return (json.loads(raw).get("gemini") or "").strip()
+        try: j=json.loads(raw)
+            return (j.get("gemini") or j.get("google") or "").strip()
         except Exception: return ""
     return raw
 
@@ -33,7 +34,7 @@ def uret(baslik):
                ("poll_get",  lambda: _poll_get(prompt))]
     hatalar = []
     for ad, fn in yollar:
-        for _ in range(4 if ad == "gemini" else 1):
+        for _ in range(2 if ad == "gemini" else 1):
             try:
                 data = json.loads(_temizle(fn()))
                 if data.get("script") and data.get("sahneler"):
