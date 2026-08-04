@@ -74,7 +74,7 @@ def main():
     except Exception as e: print("kapak atlandi:",str(e)[:60])
     gizlilik=cfg.get("uzun_gizlilik","private"); yayin=None
     if gizlilik=="private":
-        h=datetime.now(timezone.utc).replace(hour=17,minute=0,second=0,microsecond=0)
+        h=datetime.now(timezone.utc).replace(hour=18,minute=0,second=0,microsecond=0)
         if h<=datetime.now(timezone.utc)+timedelta(minutes=10): h+=timedelta(days=1)
         yayin=h.isoformat().replace("+00:00","Z")
     print("[3/4] Yukleniyor ...")
