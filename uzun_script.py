@@ -17,6 +17,8 @@ SADECE su JSON'u dondur:
 
 
 def _gemini_key():
+    k = os.environ.get("GEMINI_KEY", "").strip()
+    if k: return k          # ayri/ozel Gemini anahtari (onerilir)
     raw = os.environ.get("GEMINI_API_KEY", "").strip()
     if raw.startswith("{"):
         try:
