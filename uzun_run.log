@@ -7,6 +7,6 @@ Traceback (most recent call last):
   File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_otomasyon.py", line 64, in main
     uzun=uzun_script.uret(konu)
          ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_script.py", line 49, in uret
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_script.py", line 51, in uret
     raise RuntimeError("Uzun script uretilemedi: " + " | ".join(hatalar[:6]))
-RuntimeError: Uzun script uretilemedi: gemini: HTTP Error 403: Forbidden | gemini: HTTP Error 403: Forbidden | poll_post: HTTP Error 402: Payment Required | poll_get: HTTP Error 402: Payment Required
+RuntimeError: Uzun script uretilemedi: gemini: HTTP Error 429: Too Many Requests | gemini: HTTP Error 429: Too Many Requests | poll_post: HTTP Error 402: Payment Required | poll_get: HTTP Error 402: Payment Required
