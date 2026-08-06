@@ -39,7 +39,7 @@ def uret(baslik):
                ("poll_get",  lambda: _poll_get(prompt))]
     hatalar = []
     for ad, fn in yollar:
-        for _ in range(2 if ad == "gemini" else 1):
+        for _ in range(3 if ad == "gemini" else 1):
             try:
                 data = json.loads(_temizle(fn()))
                 if data.get("script") and data.get("sahneler"):
@@ -47,7 +47,7 @@ def uret(baslik):
                 hatalar.append(f"{ad}: bos")
             except Exception as e:
                 hatalar.append(f"{ad}: {str(e)[:140]}")
-            time.sleep(2)
+            time.sleep(30 if ad=='gemini' else 2)
     raise RuntimeError("Uzun script uretilemedi: " + " | ".join(hatalar[:6]))
 
 
