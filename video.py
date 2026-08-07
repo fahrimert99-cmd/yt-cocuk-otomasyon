@@ -202,7 +202,7 @@ PlayResY: {'1920' if dikey else '1080'}
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Outline, Shadow, Alignment, MarginL, MarginR, MarginV
-Style: Def,{a['font']},{punto*4},{a['renk']},{a['kenar_renk']},&H88000000,-1,{a['kenar_kalinlik']},1,2,80,80,{a['alt_bosluk']}
+Style: Def,{a['font']},{punto*4},{a['renk']},{a['kenar_renk']},&H88000000,-1,{a['kenar_kalinlik']},1,2,80,80,{a['alt_bosluk'] if dikey else 90}
 Style: Kanca,{a['font']},{int(punto*4*1.62)},&H0000DDFF,&H00000000,&H00000000,-1,7,2,8,70,70,{240 if dikey else 90}
 Style: Abone,{a['font']},{int(punto*4*0.98)},&H0000DDFF,&H00000000,&H00000000,-1,6,3,8,60,60,{640 if dikey else 200}
 
@@ -407,6 +407,61 @@ def _google_key():
     return (os.environ.get("GOOGLE_TTS_KEY") or _keys().get("google", "")).strip()
 
 
+def _google_tts_uzun(words, voice, hizi, key, mp3_path):
+    """Uzun metni <5000-bayt SSML parcalarina bolerek Google TTS ile seslendirir;
+    ses parcalarini birlestirir, kelime timepoint'lerini kaydirarak birlestirir (altyazi senkronu)."""
+    import urllib.request, urllib.error, base64 as _b64, html
+    def _ssml(ws):
+        return "<speak>" + " ".join(f'<mark name="{j}"/>{html.escape(w)}' for j, w in enumerate(ws)) + "</speak>"
+    parcalar, cur = [], []
+    for w in words:
+        if cur and len(_ssml(cur + [w]).encode("utf-8")) > 4800:
+            parcalar.append(cur); cur = [w]
+        else:
+            cur.append(w)
+    if cur:
+        parcalar.append(cur)
+    tmp = tempfile.mkdtemp(); segler = []; boundaries = []; offset = 0.0
+    url = f"https://texttospeech.googleapis.com/v1beta1/text:synthesize?key={key}"
+    for ci, ws in enumerate(parcalar):
+        body = {"input": {"ssml": _ssml(ws)},
+                "voice": {"languageCode": "tr-TR", "name": voice},
+                "audioConfig": {"audioEncoding": "MP3", "speakingRate": hizi, "pitch": 0.0},
+                "enableTimePointing": ["SSML_MARK"]}
+        req = urllib.request.Request(url, data=json.dumps(body).encode(),
+                                     headers={"Content-Type": "application/json",
+                                              "User-Agent": "Mozilla/5.0 (compatible; ytbot/1.0)"})
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                d = json.loads(r.read().decode())
+        except urllib.error.HTTPError as he:
+            raise RuntimeError(f"{he.code}: {he.read().decode()[:300]}")
+        seg = os.path.join(tmp, f"tts{ci:03d}.mp3")
+        with open(seg, "wb") as f:
+            f.write(_b64.b64decode(d["audioContent"]))
+        dur = sure_al(seg); segler.append(seg)
+        tps = sorted(d.get("timepoints", []), key=lambda t: int(t["markName"]))
+        if tps:
+            for j, w in enumerate(ws):
+                s = tps[j]["timeSeconds"] if j < len(tps) else j * dur / max(1, len(ws))
+                e = tps[j + 1]["timeSeconds"] if j + 1 < len(tps) else dur
+                boundaries.append({"start": offset + s, "dur": max(0.05, e - s), "text": w})
+        else:
+            agir = [max(1, len(w)) + 1 for w in ws]; tot = float(sum(agir)) or 1.0; t = 0.0
+            for w, a in zip(ws, agir):
+                pay = dur * (a / tot)
+                boundaries.append({"start": offset + t, "dur": max(0.05, pay), "text": w}); t += pay
+        offset += dur
+    lst = os.path.join(tmp, "list.txt")
+    with open(lst, "w") as f:
+        for s in segler:
+            f.write("file '" + s + "'\n")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0",
+                    "-i", lst, "-c", "copy", mp3_path], check=True)
+    print(f"    Ses: {voice} (uzun metin {len(parcalar)} parca, gercek timepoint)")
+    return boundaries
+
+
 def _google_seslendir(text, mp3_path):
     """Google Cloud TTS (nöral Türkçe) + kelime zamanlaması (SSML mark timepoints)."""
     import urllib.request, urllib.error, base64 as _b64, html
@@ -417,6 +472,10 @@ def _google_seslendir(text, mp3_path):
     words = text.split()
     hizi = float(os.environ.get("GOOGLE_TTS_RATE", "") or 1.0)  # normal hiz - netlik oncelik
     chirp = "Chirp" in voice
+    if not chirp:
+        _probe = "<speak>" + " ".join(f'<mark name="{i}"/>{html.escape(w)}' for i, w in enumerate(words)) + "</speak>"
+        if len(_probe.encode("utf-8")) > 4800:
+            return _google_tts_uzun(words, voice, hizi, key, mp3_path)  # UZUN: 5000-bayt sinirini asma
     if chirp:
         # Chirp3-HD: SSML/mark desteklemez -> duz metin, zamanlama orantili hesaplanir
         body = {"input": {"text": text},
