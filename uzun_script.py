@@ -34,7 +34,7 @@ def uret(baslik):
     key = _gemini_key()
     yollar = []
     if key:
-        yollar.append(("gemini", lambda: _gemini(prompt, key, "gemini-2.5-flash-lite")))
+        yollar.append(("gemini", lambda: _gemini(prompt, key, "gemini-1.5-flash")))
     yollar += [("poll_post", lambda: _poll_post(prompt)),
                ("poll_get",  lambda: _poll_get(prompt))]
     hatalar = []
