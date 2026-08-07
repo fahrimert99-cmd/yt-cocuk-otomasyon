@@ -1,26 +1,28 @@
 {
   "pending": [
     {
-      "title": "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉",
-      "short_id": "GShgQgqCxhE",
-      "gun": "2026-08-04"
-    },
-    {
       "title": "KARTLA NEDEN DAHA ÇOK HARCARSIN? 💳",
       "short_id": "nn31cgNxaQc",
       "gun": "2026-08-04"
+    },
+    {
+      "title": "SİTELERDEKİ ALDATICI BUTONLAR! 🖱️",
+      "short_id": "DswBK23pfpk",
+      "gun": "2026-08-07"
     }
   ],
   "yapilan": [
-    "OYUNLARDAKİ SATIN ALMA TUZAĞI"
+    "OYUNLARDAKİ SATIN ALMA TUZAĞI",
+    "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉"
   ],
   "yapilan_id": [
-    "FIJNIap9w_g"
+    "FIJNIap9w_g",
+    "GShgQgqCxhE"
   ],
   "bekleyen_yorum": null,
   "son": {
-    "konu": "OYUNLARDAKİ SATIN ALMA TUZAĞI",
-    "uzun_url": "https://youtu.be/fdpfVLlavGE",
-    "gizlilik": "unlisted"
+    "konu": "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉",
+    "uzun_url": "https://youtu.be/9IGZIy_E7VI",
+    "gizlilik": "private"
   }
 }

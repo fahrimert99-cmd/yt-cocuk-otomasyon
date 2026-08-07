@@ -1,12 +1,146 @@
   [yakalandi] short: 'SİTELERDEKİ ALDATICI BUTONLAR! 🖱️' -> DswBK23pfpk
 [1/4] Uzun konu: 'PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉' (short=GShgQgqCxhE)
-Traceback (most recent call last):
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_otomasyon.py", line 95, in <module>
-    if __name__=="__main__": main()
-                             ^^^^^^
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_otomasyon.py", line 64, in main
-    uzun=uzun_script.uret(konu)
-         ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_script.py", line 63, in uret
-    raise RuntimeError("Uzun script uretilemedi: " + " | ".join(hatalar[:8]))
-RuntimeError: Uzun script uretilemedi: gemini-2.5-flash#1: Unterminated string starting at: line 8 column 5 (char 431) | gemini-2.5-flash-lite#1: HTTP Error 404: Not Found | gemini-3.5-flash-lite#1: Expecting ',' delimiter: line 112 column 6 (char 14264) | poll_post: HTTP Error 402: Payment Required | poll_get: HTTP Error 402: Payment Required
+[2/4] Yatay render ...
+      [anahtar: [redacted]
+      Google TTS hata: 400: {
+  "error": {
+    "code": 400,
+    "message": "Either `input.text` or `input.ssml` is longer than the limit of 5000 bytes. This limit is different from quotas. To fix, reduce the byte length of the characters in this request, or consider using the Long Audio API: https://cloud.google.com/text-to-speech/docs/create-audio-text-long-audio-synthesis.",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+
+      Ses: prosodik mod (cümle bazlı vurgu/tonlama)
+      [görsel 0 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 0 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 0 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 0 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 0: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 1/21: AI görseli (illustrasyon)
+      [görsel 1 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 1 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 1 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 1 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 1: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 2/21: AI görseli (illustrasyon)
+      [görsel 2 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 2 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 2 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 2 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 2: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 3/21: AI görseli (illustrasyon)
+      [görsel 3 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 3 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 3 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 3 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 3: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 4/21: AI görseli (illustrasyon)
+      [görsel 4 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 4 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 4 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 4 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 4: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 5/21: AI görseli (illustrasyon)
+      [görsel 5 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 5 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 5 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 5 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 5: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 6/21: AI görseli (illustrasyon)
+      [görsel 6 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 6 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 6 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 6 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 6: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 7/21: AI görseli (illustrasyon)
+      [görsel 7 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 7 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 7 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 7 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 7: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 8/21: AI görseli (illustrasyon)
+      [görsel 8 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 8 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 8 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 8 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 8: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 9/21: AI görseli (illustrasyon)
+      [görsel 9 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 9 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 9 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 9 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 9: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 10/21: AI görseli (illustrasyon)
+      [görsel 10 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 10 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 10 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 10 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 10: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 11/21: AI görseli (illustrasyon)
+      [görsel 11 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 11 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 11 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 11 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 11: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 12/21: AI görseli (illustrasyon)
+      [görsel 12 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 12 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 12 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 12 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 12: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 13/21: AI görseli (illustrasyon)
+      [görsel 13 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 13 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 13 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 13 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 13: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 14/21: AI görseli (illustrasyon)
+      [görsel 14 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 14 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 14 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 14 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 14: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 15/21: AI görseli (illustrasyon)
+      [görsel 15 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 15 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 15 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 15 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 15: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 16/21: AI görseli (illustrasyon)
+      [görsel 16 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 16 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 16 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 16 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 16: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 17/21: AI görseli (illustrasyon)
+      [görsel 17 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 17 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 17 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 17 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 17: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 18/21: AI görseli (illustrasyon)
+      [görsel 18 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 18 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 18 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 18 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 18: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 19/21: AI görseli (illustrasyon)
+      [görsel 19 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 19 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 19 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 19 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 19: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 20/21: AI görseli (illustrasyon)
+      [görsel 20 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]
+      [görsel 20 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]
+      [görsel 20 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]
+      [görsel 20 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]
+      [görsel 20: tüm AI modelleri başarısız, karta düşülüyor]
+      Sahne 21/21: AI görseli (illustrasyon)
+[3/4] Yukleniyor ...
+✓ Yüklendi: https://youtu.be/9IGZIy_E7VI  (yayın: 2026-08-07T18:00:00Z UTC)
+✓ Kapak fotoğrafı ayarlandı
+✓ uzun yuklendi: https://youtu.be/9IGZIy_E7VI (private)
+[4/4] Short'a yonlendirme ...
+✓ short'a yorum: GShgQgqCxhE
+Tamam.
