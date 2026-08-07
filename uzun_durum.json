@@ -1,6 +1,11 @@
 {
   "pending": [
     {
+      "title": "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉",
+      "short_id": "GShgQgqCxhE",
+      "gun": "2026-08-01"
+    },
+    {
       "title": "KARTLA NEDEN DAHA ÇOK HARCARSIN? 💳",
       "short_id": "nn31cgNxaQc",
       "gun": "2026-08-04"
@@ -12,12 +17,10 @@
     }
   ],
   "yapilan": [
-    "OYUNLARDAKİ SATIN ALMA TUZAĞI",
-    "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉"
+    "OYUNLARDAKİ SATIN ALMA TUZAĞI"
   ],
   "yapilan_id": [
-    "FIJNIap9w_g",
-    "GShgQgqCxhE"
+    "FIJNIap9w_g"
   ],
   "bekleyen_yorum": null,
   "son": {
