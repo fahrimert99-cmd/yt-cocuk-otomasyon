@@ -7,6 +7,6 @@ Traceback (most recent call last):
   File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_otomasyon.py", line 64, in main
     uzun=uzun_script.uret(konu)
          ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_script.py", line 51, in uret
-    raise RuntimeError("Uzun script uretilemedi: " + " | ".join(hatalar[:6]))
-RuntimeError: Uzun script uretilemedi: gemini: HTTP Error 404: Not Found | gemini: HTTP Error 404: Not Found | gemini: HTTP Error 404: Not Found | poll_post: HTTP Error 402: Payment Required | poll_get: HTTP Error 402: Payment Required
+  File "/home/runner/work/yt-cocuk-otomasyon/yt-cocuk-otomasyon/uzun_script.py", line 63, in uret
+    raise RuntimeError("Uzun script uretilemedi: " + " | ".join(hatalar[:8]))
+RuntimeError: Uzun script uretilemedi: gemini-2.5-flash#1: Unterminated string starting at: line 8 column 5 (char 431) | gemini-2.5-flash-lite#1: HTTP Error 404: Not Found | gemini-3.5-flash-lite#1: Expecting ',' delimiter: line 112 column 6 (char 14264) | poll_post: HTTP Error 402: Payment Required | poll_get: HTTP Error 402: Payment Required
