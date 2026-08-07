@@ -32,8 +32,10 @@ SADECE su JSON'u dondur:
 
 
 def _gemini_key():
-    k = os.environ.get("GEMINI_KEY", "").strip()
-    if k: return k          # ayri/ozel Gemini anahtari (onerilir)
+    # once UZUN hatta OZEL anahtar (ayri kota); yoksa ortak GEMINI_KEY.
+    for _ad in ("GEMINI_KEY_UZUN", "GEMINI_KEY"):
+        k = os.environ.get(_ad, "").strip()
+        if k: return k
     raw = os.environ.get("GEMINI_API_KEY", "").strip()
     if raw.startswith("{"):
         try:
