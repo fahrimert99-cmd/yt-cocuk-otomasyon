@@ -1,9 +1,21 @@
 # uzun_script.py — 6 dk (~900 kelime) UZUN video metni uretir.
-import os, json, time
+import os, json, time, urllib.request
 from ai_script import _gemini, _poll_post, _poll_get, _temizle
 
 # Guncel UCRETSIZ katman modelleri; anahtarin erisebildigi ilki secilir.
-GEMINI_MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-3.5-flash-lite"]
+GEMINI_MODELS = ["gemini-3.5-flash-lite", "gemini-2.5-flash"]
+
+def _gemini_uzun(prompt, key, model):
+    # ai_script._gemini ile ayni, ama maxOutputTokens buyuk (uzun JSON kesilmesin).
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
+    body = {"contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"temperature": 0.9, "maxOutputTokens": 8192,
+                                 "responseMimeType": "application/json"}}
+    req = urllib.request.Request(url, data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        d = json.loads(r.read().decode())
+    return d["candidates"][0]["content"]["parts"][0]["text"]
 
 UZUN_PROMPT = """BASLIK: {baslik}
 Bu baslik icin, YouTube'da YATAY bir "detayli anlatim" videosu icin Turkce seslendirme metni yaz.
@@ -40,7 +52,7 @@ def uret(baslik):
         for model in GEMINI_MODELS:
             for deneme in range(2):
                 try:
-                    data = json.loads(_temizle(_gemini(prompt, key, model)))
+                    data = json.loads(_temizle(_gemini_uzun(prompt, key, model)))
                     if data.get("script") and data.get("sahneler"):
                         return data
                     hatalar.append(f"{model}: bos yanit")
