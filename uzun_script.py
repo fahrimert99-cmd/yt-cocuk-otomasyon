@@ -25,10 +25,12 @@ Yapi: TEK guclu kanca ile basla (ilk cumle). Sonra bolumler halinde derinlestir:
 (1) mekanizma/para nereden geliyor, (2) psikolojik numaralar, (3) kimler risk altinda ozellikle cocuklar,
 (4) MUTLAKA sonda somut "nasil korunursun" adimlari. Sonda dusundurucu guclu kapanis + kisa abone cagrisi.
 Emoji YOK, madde YOK, baslik satiri YOK; duz akici paragraflar (tek metin).
-Anlatimi 18-22 sahneye bol; her sahne icin KISA INGILIZCE sinematik stok gorsel tarifi yaz.
-Sahne 'metin'leri script'in sirayla parcalari olsun.
+Anlatimi 18-22 sahneye bol. Sahne 'metin'leri script'in SIRAYLA parcalari olsun (o an anlatilan sey).
+Her sahne icin 'gorsel': o cumlede anlatilan seyi gosteren 2-4 KELIMELIK, SOMUT, ARANABILIR Ingilizce stok video anahtar kelimesi.
+Somut nesne/mekan/eylem kullan; ornek: "supermarket shopping cart", "credit card payment", "shrinking product package", "child playing phone game".
+YASAK: soyut/kavramsal ifadeler ("conceptual", "abstract", "cinematic shot", "shadowy figure", "coins dissolving" gibi). Basa "a"/"the" KOYMA, somut ismi basa yaz.
 SADECE su JSON'u dondur:
-{{"baslik":"...","aciklama":"2-3 cumle","etiketler":["e1","e2","e3","e4","e5","e6","e7","e8"],"kanca":"kisa vurucu acilis","script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english"}}]}}"""
+{{"baslik":"...","aciklama":"2-3 cumle","etiketler":["e1","e2","e3","e4","e5","e6","e7","e8"],"kanca":"3-6 kelimelik kisa vurucu merak uyandiran Turkce acilis - ZORUNLU, asla bos birakma","script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english"}}]}}"""
 
 
 def _gemini_key():

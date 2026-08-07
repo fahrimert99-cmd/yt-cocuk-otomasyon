@@ -662,9 +662,18 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
     # normalize: düz string -> ("image", yol)
     gorseller = [g if isinstance(g, (tuple, list)) else ("image", g) for g in gorseller]
     n0 = len(gorseller) or 1
-    # Gerçek videolar zaten hareketli; görsellerde tempo için gerekiyorsa çoğalt.
-    seg = max(n0, math.ceil(toplam / max_sahne_sn))
-    gorseller = [gorseller[i % n0] for i in range(seg)]
+    _dikey = H > W
+    if not _dikey and n0 > 1:
+        # UZUN (yatay): sahneleri SIRAYLA dagit (anlatimla eslesir), dongü YOK
+        per = max(1, round((toplam / n0) / max_sahne_sn))
+        _yeni = []
+        for _i in range(n0):
+            _yeni += [gorseller[_i]] * per
+        gorseller = _yeni
+    else:
+        # SHORTS (dikey): mevcut davranis - DEGISMEDI
+        seg = max(n0, math.ceil(toplam / max_sahne_sn))
+        gorseller = [gorseller[i % n0] for i in range(seg)]
     n = len(gorseller)
     D = (toplam + (n - 1) * gecis) / n if n > 0 else toplam
     D = max(D, gecis + 0.6)

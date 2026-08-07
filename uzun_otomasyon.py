@@ -67,7 +67,7 @@ def main():
     print("[2/4] Yatay render ...")
     V.uret_video(sp,cikti,ses=cfg.get("ses","erkek"),dikey=False,hiz=str(cfg.get("uzun_hiz",cfg.get("hiz","+5%"))),
                  sahneler=uzun.get("sahneler"),animasyon=bool(cfg.get("animasyon",True)),cocuk=bool(cfg.get("cocuk_icerigi",False)),
-                 tonlama=str(cfg.get("tonlama","+0Hz")),gorsel_stil=str(cfg.get("uzun_gorsel_stil","stok")),kanca=uzun.get("kanca"))
+                 tonlama=str(cfg.get("tonlama","+0Hz")),gorsel_stil=str(cfg.get("uzun_gorsel_stil","stok")),kanca=(uzun.get("kanca") or konu))
     kapak=None
     try:
         import kapak_uzun as K; kapak=K.kapak_uret(cikti,uzun["baslik"],"output/uzun_kapak.jpg")
