@@ -2,6 +2,9 @@
 import os, json, time
 from ai_script import _gemini, _poll_post, _poll_get, _temizle
 
+# Guncel UCRETSIZ katman modelleri; anahtarin erisebildigi ilki secilir.
+GEMINI_MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-3.5-flash-lite"]
+
 UZUN_PROMPT = """BASLIK: {baslik}
 Bu baslik icin, YouTube'da YATAY bir "detayli anlatim" videosu icin Turkce seslendirme metni yaz.
 Ton: uyarici/ifsa edici ama sakin ve guven veren; izleyiciyi bir tuzak/aldatma konusunda egiten.
@@ -32,23 +35,32 @@ def _gemini_key():
 def uret(baslik):
     prompt = UZUN_PROMPT.format(baslik=baslik)
     key = _gemini_key()
-    yollar = []
-    if key:
-        yollar.append(("gemini", lambda: _gemini(prompt, key, "gemini-1.5-flash")))
-    yollar += [("poll_post", lambda: _poll_post(prompt)),
-               ("poll_get",  lambda: _poll_get(prompt))]
     hatalar = []
-    for ad, fn in yollar:
-        for _ in range(3 if ad == "gemini" else 1):
-            try:
-                data = json.loads(_temizle(fn()))
-                if data.get("script") and data.get("sahneler"):
-                    return data
-                hatalar.append(f"{ad}: bos")
-            except Exception as e:
-                hatalar.append(f"{ad}: {str(e)[:140]}")
-            time.sleep(30 if ad=='gemini' else 2)
-    raise RuntimeError("Uzun script uretilemedi: " + " | ".join(hatalar[:6]))
+    if key:
+        for model in GEMINI_MODELS:
+            for deneme in range(2):
+                try:
+                    data = json.loads(_temizle(_gemini(prompt, key, model)))
+                    if data.get("script") and data.get("sahneler"):
+                        return data
+                    hatalar.append(f"{model}: bos yanit")
+                    break
+                except Exception as e:
+                    msg = str(e)
+                    hatalar.append(f"{model}#{deneme+1}: {msg[:90]}")
+                    if "429" in msg and deneme == 0:
+                        time.sleep(20); continue
+                    break  # 404/diger -> bu modeli birak, sonrakine gec
+    for ad, fn in (("poll_post", lambda: _poll_post(prompt)),
+                   ("poll_get", lambda: _poll_get(prompt))):
+        try:
+            data = json.loads(_temizle(fn()))
+            if data.get("script") and data.get("sahneler"):
+                return data
+            hatalar.append(f"{ad}: bos")
+        except Exception as e:
+            hatalar.append(f"{ad}: {str(e)[:90]}")
+    raise RuntimeError("Uzun script uretilemedi: " + " | ".join(hatalar[:8]))
 
 
 if __name__ == "__main__":
