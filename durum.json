@@ -1,5 +1,5 @@
 {
-  "sonraki": 32,
+  "sonraki": 33,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -32,11 +32,12 @@
     "UYGULAMALAR SENİ BÖYLE BAĞIMLI YAPIYOR! 📱",
     "UÇAK BİLETİ FİYAT OYUNU! ✈️",
     "İNDİRİM ETİKETLERİ YALAN! 🏷️",
-    "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️"
+    "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
+    "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "[1/3] Senaryo (32/116): AVM'DE NEDEN SAAT YOK?! 🏬\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n    Ses: tr-TR-Wavenet-E (kelime zamanlamasi: gercek timepoint)\n      Ses: Google TTS (nöral Türkçe)\n      [Pexels: 8 sonuç -> 'shopping mall interior wide']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'people walking mall corridor']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 7 sonuç -> 'wristwatch close up']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'mall shops bright lights']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'person shopping bags mall']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'phone clock screen closeup']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (9999 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-10T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: LInZey6M0bo\n✓ Yüklendi: https://youtu.be/aEf2Wxq5lBk  (yayın: 2026-08-10T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
+  "son_rapor": "[1/3] Senaryo (33/116): İSTASYON MARKETİ TUZAĞI! ⛽\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n    Ses: tr-TR-Wavenet-E (kelime zamanlamasi: gercek timepoint)\n      Ses: Google TTS (nöral Türkçe)\n      [Pexels: 8 sonuç -> 'gas station at night']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'fuel pump close up']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'convenience store shelves']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'snacks and drinks fridge']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'hand paying at counter']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'car driving away road']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (12576 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-11T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: aEf2Wxq5lBk\n✓ Yüklendi: https://youtu.be/XAwRPlIKgcE  (yayın: 2026-08-11T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
   "bekleyen_yorum": {
-    "video_id": "aEf2Wxq5lBk",
-    "metin": "AVM'DE SAATİ GÖREMEZSİN\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "XAwRPlIKgcE",
+    "metin": "NEDEN HEP ORADAN ALIRSIN?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   }
 }
