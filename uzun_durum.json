@@ -1,14 +1,14 @@
 {
   "pending": [
     {
-      "title": "TAZE SANILAN ETİN SIRRI! 🥩",
-      "short_id": "LInZey6M0bo",
-      "gun": "2026-08-09"
-    },
-    {
       "title": "AVM'DE NEDEN SAAT YOK?! 🏬",
       "short_id": "aEf2Wxq5lBk",
       "gun": "2026-08-10"
+    },
+    {
+      "title": "İSTASYON MARKETİ TUZAĞI! ⛽",
+      "short_id": "XAwRPlIKgcE",
+      "gun": "2026-08-11"
     }
   ],
   "yapilan": [
@@ -16,19 +16,21 @@
     "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉",
     "KARTLA NEDEN DAHA ÇOK HARCARSIN? 💳",
     "SİTELERDEKİ ALDATICI BUTONLAR! 🖱️",
-    "MARKET ARABALARI NEDEN BÜYÜK? 🛒"
+    "MARKET ARABALARI NEDEN BÜYÜK? 🛒",
+    "TAZE SANILAN ETİN SIRRI! 🥩"
   ],
   "yapilan_id": [
     "FIJNIap9w_g",
     "GShgQgqCxhE",
     "nn31cgNxaQc",
     "DswBK23pfpk",
-    "PszD3sVVf8o"
+    "PszD3sVVf8o",
+    "LInZey6M0bo"
   ],
   "bekleyen_yorum": null,
   "son": {
-    "konu": "MARKET ARABALARI NEDEN BÜYÜK? 🛒",
-    "uzun_url": "https://youtu.be/8wYIswoBQT4",
+    "konu": "TAZE SANILAN ETİN SIRRI! 🥩",
+    "uzun_url": "https://youtu.be/kSTKLXDJO1o",
     "gizlilik": "private"
   }
 }
