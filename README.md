@@ -1,19 +1,31 @@
-# 🤖 YouTube Niş Video Otomasyonu — Make + GitHub (Ücretsiz)
+# 🤖 YouTube Niş Video Otomasyonu — GitHub Actions (Otonom)
 
-**Make senaryonuz zaten oluşturuldu** (adı: *YouTube Nis Video Otomasyonu*).
-Bu depo, videoyu **filigransız** üreten ve YouTube'a yükleyen GitHub tarafıdır.
+Bu depo, **filigransız** video üreten ve YouTube'a yükleyen tam otomatik bir sistemdir.
+Artık **Make'e gerek yok** — her şey GitHub Actions içinde, zamanlanmış olarak kendi kendine çalışır.
+(Eski Make/dispatch yolu hâlâ opsiyonel olarak duruyor, bkz. aşağıda.)
 
 ## Nasıl çalışıyor?
-```
-Make (günlük zamanlayıcı)
-   └─ Gemini: niş konu + senaryo + başlık + etiket üretir (JSON)
-        └─ HTTP: GitHub'ı tetikler (base64 payload)
-              └─ GitHub Actions: edge-tts + alt yazı + FFmpeg ile video
-                    └─ YouTube'a yükler
-```
-Make ağır video dosyasına **hiç dokunmaz** (sadece küçük JSON gider) → Free plan sınırlarına takılmaz. Video render'ı GitHub'da olduğu için **filigran yok, süre/boyut sınırı yok.**
 
-**Maliyet: 0 TL.** Gemini (Make içi, ücretsiz) + edge-tts + FFmpeg + GitHub Actions + YouTube API — hepsi bedava.
+İki bağımsız otonom hat vardır:
+
+```
+KISA (dikey / Shorts)  —  .github/workflows/otomasyon.yml   (her gün 17:00 UTC)
+   └─ senaryolar.json'dan sıradaki hazır senaryo
+        └─ TTS (edge-tts / Google TTS) + Pexels stok video + FFmpeg + altyazı
+             └─ kapak.py ile çarpıcı kapak
+                  └─ YouTube'a zamanlanmış yükleme (16:00 UTC'de public olur)
+
+UZUN (yatay ~6 dk)     —  .github/workflows/uzun.yml         (her gün 08:00 UTC)
+   └─ uzun_script.py: senaryo üretir
+        · Anthropic Claude (birincil, en kaliteli Türkçe)
+        · Gemini (yedek) → Pollinations (son çare)
+        └─ ElevenLabs gerçekçi ses + Pexels stok video + FFmpeg
+             └─ kapak_uzun.py ile kapak
+                  └─ YouTube'a yükler + ilgili short'a "detaylı video" yorumu bırakır
+```
+
+Video render'ı GitHub'da yapıldığı için **filigran yok, süre/boyut sınırı yok.**
+Kısa hat, çalışma anında AI'ya bağımlı değildir (senaryolar `senaryolar.json`'da hazırdır) → dayanıklıdır.
 
 ---
 
@@ -22,9 +34,11 @@ Make ağır video dosyasına **hiç dokunmaz** (sadece küçük JSON gider) → 
 ### 1) Bu depoyu GitHub'a yükle
 Yeni bir GitHub reposu aç, bu klasördeki tüm dosyaları içine at.
 
-### 2) YouTube yükleme izni (ücretsiz)
-1. https://console.cloud.google.com → yeni proje → "YouTube Data API v3"ü etkinleştir.
-2. OAuth consent screen doldur (External, kendi mailini test kullanıcısı ekle).
+### 2) YouTube yükleme izni
+1. https://console.cloud.google.com → yeni proje → **"YouTube Data API v3"**ü etkinleştir.
+2. **OAuth consent screen** doldur.
+   > ⚠️ **Önemli:** Yayın durumunu **"Production" (Yayında)** yap. "Testing" modunda kalırsa
+   > refresh token **7 günde bir geçersiz olur** (`invalid_grant: Token expired or revoked`).
 3. Credentials → OAuth client ID → **Desktop app** → `client_secret.json` indir.
 4. Kendi bilgisayarında:
    ```bash
@@ -34,62 +48,104 @@ Yeni bir GitHub reposu aç, bu klasördeki tüm dosyaları içine at.
    Çıkan **YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN** değerlerini kopyala.
 
 ### 3) GitHub Secrets
-Repo → Settings → Secrets and variables → Actions → New repository secret:
-- `YT_CLIENT_ID`
-- `YT_CLIENT_SECRET`
-- `YT_REFRESH_TOKEN`
+Repo → **Settings → Secrets and variables → Actions → New repository secret**.
 
-### 4) GitHub kişisel erişim token'ı (Make'in tetiklemesi için)
-1. GitHub → Settings → Developer settings → **Personal access tokens (classic)** → Generate.
-2. Kapsam (scope): **repo** işaretle. Token'ı kopyala (bir daha gösterilmez).
+**Zorunlu (YouTube yükleme):**
+| Secret | Açıklama |
+|--------|----------|
+| `YT_CLIENT_ID` | OAuth istemci kimliği |
+| `YT_CLIENT_SECRET` | OAuth istemci sırrı |
+| `YT_REFRESH_TOKEN` | `token_al.py`'den gelen refresh token |
 
-### 5) Make senaryosunu bağla
-1. Make → Scenarios → **YouTube Nis Video Otomasyonu**'nu aç.
-2. İkinci modül (**HTTP → Make a request**) içinde iki yeri düzenle:
-   - **URL**: `https://api.github.com/repos/KULLANICI/REPO/dispatches`
-     → `KULLANICI/REPO` yerine kendi repo yolunu yaz (örn. `fahrimert/yt-otomasyon`).
-   - **Authorization header** değeri: `Bearer GITHUB_PAT_BURAYA`
-     → `GITHUB_PAT_BURAYA` yerine 4. adımdaki token'ı yapıştır.
-3. Kaydet → sağ altta senaryoyu **ON** (aktif) yap.
+**Senaryo üretimi (uzun hat için; kısa hat hazır senaryo kullanır):**
+| Secret | Açıklama |
+|--------|----------|
+| `CLAUDE_API_KEY` | Anthropic Claude anahtarı (birincil sağlayıcı). `ANTHROPIC_API_KEY` de kabul edilir. |
+| `ANTHROPIC_MODEL` | *(opsiyonel)* Model seçimi, örn. `claude-sonnet-5` (maliyet için). Boşsa varsayılan kullanılır. |
+| `GEMINI_API_KEY` / `GEMINI_KEY` / `GEMINI_KEY_UZUN` | Gemini yedek anahtar(lar)ı. `GEMINI_KEY_UZUN` uzun hatta ayrı kota için. |
 
-### 6) Test
-- Make'te senaryonun altındaki **Run once** ile elle tetikle.
-- GitHub → Actions sekmesinde iş çalışır, video üretilip YouTube'a **private** yüklenir.
+**Ses ve görsel:**
+| Secret | Açıklama |
+|--------|----------|
+| `ELEVENLABS_API_KEY` | Gerçekçi ses (uzun videolar). |
+| `ELEVEN_VOICE_ID` | Kullanılacak ElevenLabs ses kimliği. |
+| `GOOGLE_TTS_KEY` | *(opsiyonel)* Google TTS anahtarı. Yoksa ücretsiz edge-tts kullanılır. |
+| `PEXELS_API_KEY` | Gerçek stok video için (ücretsiz Pexels API). |
 
-Bundan sonra her gün otomatik çalışır (zamanlama Make'te ayarlı).
+### 4) Test
+- Repo → **Actions** sekmesi → **"Gunluk Bilim Videosu"** (kısa) veya **"Uzun Video (Otonom)"** →
+  **Run workflow** ile elle tetikle.
+- İş çalışır, video üretilir ve YouTube'a yüklenir. İlk hafta `config.json`'da `"gizlilik": "private"` kalsın.
+
+Bundan sonra iki hat da **zamanlanmış cron** ile her gün kendiliğinden çalışır (workflow dosyalarındaki `schedule`).
 
 ---
 
-## AYARLAR
+## AYARLAR — `config.json`
 
-### İçerik/format — `config.json` (bu depoda)
 ```json
-{ "format": "dikey", "ses": "kadin", "gizlilik": "private", "kategori": "27" }
+{
+  "format": "dikey",
+  "ses": "erkek",
+  "tonlama": "+0Hz",
+  "gizlilik": "public",
+  "kategori": "28",
+  "cocuk_icerigi": false,
+  "animasyon": true,
+  "hiz": "+6%",
+  "yayin_saati_utc": "16:00",
+  "gorsel_stil": "stok",
+  "uzun_gizlilik": "private",
+  "uzun_gorsel_stil": "stok"
+}
 ```
-- format: `dikey` (Shorts) | `yatay`
-- ses: `kadin` | `erkek`
-- gizlilik: `private` | `unlisted` | `public`
-- kategori: 27=Eğitim 28=Bilim 24=Eğlence 22=Blog
 
-### Niş ve senaryo tonu — Make'te
-Make senaryosunda **Gemini modülünün "Text prompt"** alanı içeriği belirler.
-Nişi değiştirmek için oradaki "Nis: İlginç Bilgiler ve Bilim" ifadesini düzenle.
+| Anahtar | Anlamı |
+|---------|--------|
+| `format` | `dikey` (Shorts) \| `yatay` |
+| `ses` | `erkek` \| `kadin` |
+| `hiz` / `tonlama` | Seslendirme hızı (`+6%`) ve ton (`+0Hz`) |
+| `gizlilik` | Kısa video: `private` \| `unlisted` \| `public` |
+| `kategori` | 27=Eğitim, 28=Bilim, 24=Eğlence, 22=Blog |
+| `cocuk_icerigi` | "Made for Kids" işaretlemesi |
+| `yayin_saati_utc` | Kısa videonun zamanlanmış yayın saati (UTC) |
+| `gorsel_stil` / `uzun_gorsel_stil` | `stok` (Pexels) vb. |
+| `uzun_gizlilik` | Uzun video: `private` (zamanlanmış) \| `unlisted` \| `public` |
 
-### Yayın sıklığı — Make'te
-Senaryonun zamanlaması şu an **günde bir**. Make'te senaryonun saat ikonundan
-(Scheduling) sıklığı değiştirebilirsin (Free planda en sık 15 dakikada bir).
+### Konu havuzu
+- **Kısa hat:** `senaryolar.json` içindeki hazır senaryolardan sırayla ilerler; ilerleme `durum.json`'da tutulur.
+- **Uzun hat:** işlenen konuyu `uzun_scripts/<slug>.json` altında manuel script varsa ondan, yoksa AI ile üretir; durum `uzun_durum.json`'da tutulur.
+- Yeni konu eklemek için `senaryolar.json`'a giriş ekle veya `basliklar.txt`'yi kullan.
+
+---
+
+## OPSİYONEL — Make / Dış Tetikleme
+
+Dilersen dışarıdan (Make, cron servisi, kendi scriptin) tetikleyebilirsin:
+`.github/workflows/uret.yml`, `repository_dispatch` (tip: `uret`) ve manuel `workflow_dispatch` destekler.
+Bu yol için ek olarak GitHub Personal Access Token (scope: **repo**) ile şu isteği atman yeterli:
+```
+POST https://api.github.com/repos/KULLANICI/REPO/dispatches
+Authorization: Bearer <GITHUB_PAT>
+{ "event_type": "uret", "client_payload": { "b64": "<base64 senaryo JSON>" } }
+```
 
 ---
 
 ## GÖRSELLER
-Varsayılan: metinden otomatik degrade başlık kartı (sıfır kaynak). İstersen
-`assets/` klasörüne telifsiz `.jpg/.png` (Pexels/Pixabay) koy → Ken Burns zoom ile kullanılır.
+Varsayılan: Pexels'ten konuya uygun **gerçek stok videolar**. Alternatif olarak metinden
+otomatik degrade başlık kartı üretilebilir. `assets/` klasörüne telifsiz `.jpg/.png` koyarsan
+Ken Burns zoom ile kullanılır.
 
 ---
 
-## ÖNERİ
-İlk hafta `"gizlilik": "private"` kalsın. Üretilenleri kontrol et, niş/ses/süreyi oturt,
-sonra `"public"` yap. Böylece kaliteyi kaybetmeden otomasyonu güvenle devreye alırsın.
+## DAYANIKLILIK
+Sistem hatalara karşı sağlamlaştırılmıştır (ayrıntı: `RESILIENCE_GUIDE.md`):
+- AI senaryo üretiminde çok katmanlı yedekleme (Claude → Gemini → Pollinations).
+- Türkçe karakter doğrulaması (diakritiksiz/ASCII üretimi reddedilir).
+- Kısa video public olmadan yönlendirme yorumu atılmaz (403 önlenir), yayına girince atılır.
+- Başarılı çalışmada eski `hata.log` otomatik temizlenir.
 
 ## GÜVENLİK
-GitHub token'ını ve YouTube anahtarlarını sadece Secrets / Make modülüne gir; düz metin olarak repoya koyma. `client_secret.json`'u repoya yükleme.
+Tüm anahtarları **yalnızca GitHub Secrets**'a gir; düz metin olarak repoya koyma.
+`client_secret.json`'u repoya **yükleme**.
