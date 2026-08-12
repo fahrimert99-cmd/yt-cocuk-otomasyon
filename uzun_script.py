@@ -1,6 +1,6 @@
 # uzun_script.py — 6 dk (~900 kelime) UZUN video metni uretir.
 import os, json, time, urllib.request
-from ai_script import _gemini, _poll_post, _poll_get, _temizle
+from ai_script import _gemini, _poll_post, _poll_get, _temizle, _claude, _claude_key
 
 # Guncel UCRETSIZ katman modelleri; anahtarin erisebildigi ilki secilir.
 GEMINI_MODELS = ["gemini-3.5-flash-lite", "gemini-2.5-flash"]
@@ -71,8 +71,30 @@ def _gemini_key():
 
 def uret(baslik):
     prompt = UZUN_PROMPT.format(baslik=baslik)
-    key = _gemini_key()
     hatalar = []
+    # 1) Anthropic Claude (en kaliteli/en tutarli Turkce) — birincil saglayici
+    ckey = _claude_key()
+    if ckey:
+        for deneme in range(2):
+            try:
+                data = json.loads(_temizle(_claude(prompt, ckey)))
+                if data.get("script") and data.get("sahneler"):
+                    if _turkce_yeterli(data["script"]):
+                        return data
+                    hatalar.append(f"claude#{deneme+1}: turkce karakter eksik")
+                    if deneme == 0:
+                        continue
+                    break
+                hatalar.append("claude: bos yanit")
+                break
+            except Exception as e:
+                msg = str(e)
+                hatalar.append(f"claude#{deneme+1}: {msg[:90]}")
+                if "429" in msg and deneme == 0:
+                    time.sleep(15); continue
+                break  # 401/404/diger -> Gemini'ye dus
+    # 2) Gemini (yedek)
+    key = _gemini_key()
     if key:
         for model in GEMINI_MODELS:
             for deneme in range(2):
