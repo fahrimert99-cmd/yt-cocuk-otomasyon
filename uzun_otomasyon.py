@@ -36,6 +36,10 @@ def _capture_short(u,sen):
 def _retry_yorum(u):
     bek=u.get("bekleyen_yorum")
     if bek and bek.get("short_id"):
+        # Short henuz public degilse (zamanlanmis yayin) yorum 403 verir;
+        # bosuna deneyip hata basma, sessizce ertelemeye devam et.
+        if not YT.video_public(bek["short_id"]):
+            print("ertelenmis yorum bekliyor: short henuz public degil ->",bek["short_id"]); return
         try:
             YT.yorum_at(bek["short_id"],bek["metin"]); print("✓ (ertelenmis) yorum:",bek["short_id"]); u["bekleyen_yorum"]=None
         except Exception as e: print("ertelenmis yorum yine olmadi:",str(e)[:100])
@@ -84,10 +88,14 @@ def main():
     uzun_url=f"https://youtu.be/{vid}"; print("✓ uzun yuklendi:",uzun_url,f"({gizlilik})")
     print("[4/4] Short'a yonlendirme ...")
     metin=f"Bu tuzagi DETAYLI anlattigim video kanalimda 👉 {uzun_url}\nKendini ve cocugunu korumanin yollari videonun sonunda."
-    try:
-        YT.yorum_at(short_id,metin); print("✓ short'a yorum:",short_id)
-    except Exception as e:
-        u["bekleyen_yorum"]={"short_id":short_id,"metin":metin}; print("yorum ertelendi:",str(e)[:100])
+    if not YT.video_public(short_id):
+        # Short zamanlanmis ve henuz public degil -> yorumu ertele (403 yeme).
+        u["bekleyen_yorum"]={"short_id":short_id,"metin":metin}; print("yorum ertelendi: short henuz public degil ->",short_id)
+    else:
+        try:
+            YT.yorum_at(short_id,metin); print("✓ short'a yorum:",short_id)
+        except Exception as e:
+            u["bekleyen_yorum"]={"short_id":short_id,"metin":metin}; print("yorum ertelendi:",str(e)[:100])
     u["pending"]=[p for p in u["pending"] if p is not isle]
     u["yapilan"].append(konu); u["yapilan_id"].append(short_id)
     u["son"]={"konu":konu,"uzun_url":uzun_url,"gizlilik":gizlilik}

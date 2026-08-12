@@ -173,6 +173,19 @@ if __name__ == "__main__":
     sys.stderr = Tee(sys.__stderr__, LOG)
     try:
         main()
+        # Basarili calisma: eski hata.log'u temizle ki gecmis hatalar
+        # (or. suresi dolmus token) seni bir daha yaniltmasin.
+        try:
+            if os.path.exists("hata.log") and os.path.getsize("hata.log") > 0:
+                open("hata.log", "w", encoding="utf-8").write("")
+                for c in (["git","config","user.name","bot"],
+                          ["git","config","user.email","bot@users.noreply.github.com"],
+                          ["git","add","hata.log"],
+                          ["git","commit","-m","hata.log temizlendi (basarili calisma)"],
+                          ["git","push"]):
+                    subprocess.run(c, check=False)
+        except Exception:
+            pass
     except BaseException:
         LOG.write("\n" + traceback.format_exc())
         try:
