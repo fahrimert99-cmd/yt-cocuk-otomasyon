@@ -66,7 +66,8 @@ def main():
                  cocuk=bool(cfg.get("cocuk_icerigi", False)),
                  tonlama=str(cfg.get("tonlama", "+0Hz")),
                  gorsel_stil=str(cfg.get("gorsel_stil", "stok")),
-                 kanca=veri.get("kanca"))
+                 kanca=veri.get("kanca"),
+                 eleven_once=bool(cfg.get("kisa_eleven", True)))
     print(f"      Çıktı: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
     kapak_yolu = None
