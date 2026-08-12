@@ -17,20 +17,38 @@ def _gemini_uzun(prompt, key, model):
         d = json.loads(r.read().decode())
     return d["candidates"][0]["content"]["parts"][0]["text"]
 
-UZUN_PROMPT = """BASLIK: {baslik}
-Bu baslik icin, YouTube'da YATAY bir "detayli anlatim" videosu icin Turkce seslendirme metni yaz.
-Ton: uyarici/ifsa edici ama sakin ve guven veren; izleyiciyi bir tuzak/aldatma konusunda egiten.
-Uzunluk: yaklasik 900 kelime (~6 dakika seslendirme). Bilgiler DOGRU olsun, uydurma istatistik verme.
-Yapi: TEK guclu kanca ile basla (ilk cumle). Sonra bolumler halinde derinlestir:
-(1) mekanizma/para nereden geliyor, (2) psikolojik numaralar, (3) kimler risk altinda ozellikle cocuklar,
-(4) MUTLAKA sonda somut "nasil korunursun" adimlari. Sonda dusundurucu guclu kapanis + kisa abone cagrisi.
-Emoji YOK, madde YOK, baslik satiri YOK; duz akici paragraflar (tek metin).
-Anlatimi 18-22 sahneye bol. Sahne 'metin'leri script'in SIRAYLA parcalari olsun (o an anlatilan sey).
-Her sahne icin 'gorsel': o cumlede anlatilan seyi gosteren 2-4 KELIMELIK, SOMUT, ARANABILIR Ingilizce stok video anahtar kelimesi.
-Somut nesne/mekan/eylem kullan; ornek: "supermarket shopping cart", "credit card payment", "shrinking product package", "child playing phone game".
-YASAK: soyut/kavramsal ifadeler ("conceptual", "abstract", "cinematic shot", "shadowy figure", "coins dissolving" gibi). Basa "a"/"the" KOYMA, somut ismi basa yaz.
-SADECE su JSON'u dondur:
-{{"baslik":"...","aciklama":"2-3 cumle","etiketler":["e1","e2","e3","e4","e5","e6","e7","e8"],"kanca":"3-6 kelimelik kisa vurucu merak uyandiran Turkce acilis - ZORUNLU, asla bos birakma","script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english"}}]}}"""
+UZUN_PROMPT = """BAŞLIK: {baslik}
+Bu başlık için, YouTube'da YATAY bir "detaylı anlatım" videosu için Türkçe seslendirme metni yaz.
+Ton: uyarıcı/ifşa edici ama sakin ve güven veren; izleyiciyi bir tuzak/aldatma konusunda eğiten.
+Uzunluk: yaklaşık 900 kelime (~6 dakika seslendirme). Bilgiler DOĞRU olsun, uydurma istatistik verme.
+Yapı: TEK güçlü kanca ile başla (ilk cümle). Sonra bölümler halinde derinleştir:
+(1) mekanizma/para nereden geliyor, (2) psikolojik numaralar, (3) kimler risk altında özellikle çocuklar,
+(4) MUTLAKA sonda somut "nasıl korunursun" adımları. Sonda düşündürücü güçlü kapanış + kısa abone çağrısı.
+Emoji YOK, madde YOK, başlık satırı YOK; düz akıcı paragraflar (tek metin).
+Anlatımı 18-22 sahneye böl. Sahne 'metin'leri script'in SIRAYLA parçaları olsun (o an anlatılan şey).
+Her sahne için 'gorsel': o cümlede anlatılan şeyi gösteren 2-4 KELİMELİK, SOMUT, ARANABİLİR İngilizce stok video anahtar kelimesi.
+Somut nesne/mekân/eylem kullan; örnek: "supermarket shopping cart", "credit card payment", "shrinking product package", "child playing phone game".
+YASAK: soyut/kavramsal ifadeler ("conceptual", "abstract", "cinematic shot", "shadowy figure", "coins dissolving" gibi). Başa "a"/"the" KOYMA, somut ismi başa yaz.
+ÇOK ÖNEMLİ — TÜRKÇE YAZIM: 'script', 'baslik', 'aciklama', 'kanca' ve sahne 'metin' alanlarını KUSURSUZ Türkçe imlâ ile yaz.
+Türkçe'ye özgü harfleri (ç, ğ, ı, İ, ö, ş, ü ve büyükleri Ç, Ğ, İ, Ö, Ş, Ü) HER ZAMAN ve EKSİKSİZ kullan.
+Bu harfleri ASLA ASCII karşılıklarına (c, g, i, o, s, u) sadeleştirme; aksan/diakritik atlama. Örnek: "guclu" DEĞİL "güçlü", "cocuk" DEĞİL "çocuk", "sirri" DEĞİL "sırrı", "yasiyor" DEĞİL "yaşıyor".
+(NOT: yalnızca 'gorsel' alanı İngilizce olacak; onun dışındaki tüm metin doğru Türkçe karakterlerle yazılır.)
+SADECE şu JSON'u döndür:
+{{"baslik":"...","aciklama":"2-3 cümle","etiketler":["e1","e2","e3","e4","e5","e6","e7","e8"],"kanca":"3-6 kelimelik kısa vurucu merak uyandıran Türkçe açılış - ZORUNLU, asla boş bırakma","script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english"}}]}}"""
+
+
+_TR_OZEL = set("çğıöşüÇĞİÖŞÜ")  # Türkçe'ye özgü, ASCII karşılığı olmayan harfler
+
+def _turkce_yeterli(metin):
+    """Metnin gercekten Turkce karakter icerdigini dogrular.
+    Diakritiksiz (ASCII'ye sadelestirilmis) uretimi yakalar: gercek bir
+    ~900 kelimelik Turkce metin bu harfleri yogun icerir; sadelestirilmis
+    metinde neredeyse hic bulunmaz. Kisa metinlerde kontrol atlanir."""
+    s = metin or ""
+    if len(s) < 200:
+        return True  # kanca gibi cok kisa alanlar tek basina yaniltici olabilir
+    ozel = sum(1 for c in s if c in _TR_OZEL)
+    return ozel >= len(s) * 0.01  # en az %1 (gercek Turkce ~%8-10; ASCII ~%0)
 
 
 def _gemini_key():
@@ -58,7 +76,14 @@ def uret(baslik):
                 try:
                     data = json.loads(_temizle(_gemini_uzun(prompt, key, model)))
                     if data.get("script") and data.get("sahneler"):
-                        return data
+                        if _turkce_yeterli(data["script"]):
+                            return data
+                        # Diakritiksiz (ASCII) uretim -> ses ve altyazi Turkce
+                        # karakter kullanmaz; kabul etme, tekrar dene.
+                        hatalar.append(f"{model}#{deneme+1}: turkce karakter eksik")
+                        if deneme == 0:
+                            continue  # ayni modelle bir kez daha dene
+                        break         # sonraki modele gec
                     hatalar.append(f"{model}: bos yanit")
                     break
                 except Exception as e:
@@ -72,8 +97,11 @@ def uret(baslik):
         try:
             data = json.loads(_temizle(fn()))
             if data.get("script") and data.get("sahneler"):
-                return data
-            hatalar.append(f"{ad}: bos")
+                if _turkce_yeterli(data["script"]):
+                    return data
+                hatalar.append(f"{ad}: turkce karakter eksik")
+            else:
+                hatalar.append(f"{ad}: bos")
         except Exception as e:
             hatalar.append(f"{ad}: {str(e)[:90]}")
     raise RuntimeError("Uzun script uretilemedi: " + " | ".join(hatalar[:8]))
