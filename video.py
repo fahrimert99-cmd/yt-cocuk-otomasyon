@@ -526,13 +526,15 @@ def _eleven_key():
             or _keys().get("eleven", "")).strip()
 
 
-def _eleven_seslendir(text, mp3_path):
-    """ElevenLabs ile gerçekçi seslendirme + kelime zamanlaması (alt yazı senkronu)."""
+def _eleven_seslendir(text, mp3_path, voice_id=None):
+    """ElevenLabs ile gerçekçi seslendirme + kelime zamanlaması (alt yazı senkronu).
+    voice_id verilirse o kullanilir (pipeline'a ozel ses); yoksa ELEVEN_VOICE_ID
+    env'i, o da yoksa varsayilan ses."""
     import urllib.request, urllib.error, base64 as _b64
     key = _eleven_key()
     if not key:
         raise RuntimeError("ElevenLabs anahtarı yok")
-    voice_id = os.environ.get("ELEVEN_VOICE_ID", "").strip() or "dDcfsSsiSzmphdMGCECb"  # secilen ses (ELEVEN_VOICE_ID ile ezilebilir)
+    voice_id = (voice_id or "").strip() or os.environ.get("ELEVEN_VOICE_ID", "").strip() or "dDcfsSsiSzmphdMGCECb"
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
     body = {"text": text, "model_id": "eleven_multilingual_v2",
             "voice_settings": {"stability": 0.45, "similarity_boost": 0.8,
@@ -790,7 +792,7 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
 # ----------------------------------------------------------
 def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
                sahneler=None, animasyon=True, cocuk=True, tonlama="+0Hz",
-               gorsel_stil="stok", kanca=None, eleven_once=False):
+               gorsel_stil="stok", kanca=None, eleven_once=False, eleven_voice_id=None):
     """Orkestratör tarafından çağrılır: script -> mp4.
     sahneler verilirse (Gemini'den), her sahne için AI görsel üretir ve
     Ken Burns + çapraz geçişle animasyonlu montaj yapar.
@@ -819,7 +821,8 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
         if _ad == "google" and not _google_key():
             continue
         try:
-            boundaries = _fn(text, mp3)
+            boundaries = (_fn(text, mp3, eleven_voice_id) if _ad == "eleven"
+                          else _fn(text, mp3))
             print(f"      Ses: {_etiket}")
         except Exception as e:
             print(f"      {_ad} TTS hata ({str(e)[:200]}), sonraki saglayiciya geciliyor")
