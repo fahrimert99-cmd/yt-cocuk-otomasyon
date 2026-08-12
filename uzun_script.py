@@ -80,6 +80,7 @@ def uret(baslik):
                 data = json.loads(_temizle(_claude(prompt, ckey)))
                 if data.get("script") and data.get("sahneler"):
                     if _turkce_yeterli(data["script"]):
+                        print("    Senaryo: Anthropic Claude")
                         return data
                     hatalar.append(f"claude#{deneme+1}: turkce karakter eksik")
                     if deneme == 0:
@@ -102,6 +103,7 @@ def uret(baslik):
                     data = json.loads(_temizle(_gemini_uzun(prompt, key, model)))
                     if data.get("script") and data.get("sahneler"):
                         if _turkce_yeterli(data["script"]):
+                            print(f"    Senaryo: Gemini ({model})")
                             return data
                         # Diakritiksiz (ASCII) uretim -> ses ve altyazi Turkce
                         # karakter kullanmaz; kabul etme, tekrar dene.
@@ -123,6 +125,7 @@ def uret(baslik):
             data = json.loads(_temizle(fn()))
             if data.get("script") and data.get("sahneler"):
                 if _turkce_yeterli(data["script"]):
+                    print(f"    Senaryo: {ad} (yedek)")
                     return data
                 hatalar.append(f"{ad}: turkce karakter eksik")
             else:
