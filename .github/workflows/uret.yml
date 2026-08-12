@@ -4,31 +4,49 @@ on:
   repository_dispatch:
     types: [uret]
   workflow_dispatch:
+    inputs:
+      konu:
+        description: "Konu (elle calistirmada; bos ise varsayilan konu)"
+        required: false
+        default: ""
+      dikey:
+        description: "Dikey (Shorts) mi? uzun/yatay icin 'hayir'"
+        required: false
+        default: "hayir"
 
 jobs:
   uret:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: FFmpeg kur
         run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
-      
+
       - name: Python kur
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      
+
       - name: Bagimliliklar
         run: pip install -r requirements.txt
-      
+
       - name: Video uret ve yukle
         env:
           RAW_B64: ${{ github.event.client_payload.b64 }}
+          KONU: ${{ github.event.inputs.konu }}
+          DIKEY: ${{ github.event.inputs.dikey }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          GEMINI_KEY_UZUN: ${{ secrets.GEMINI_KEY_UZUN }}
         run: python3 uret_dispatch.py

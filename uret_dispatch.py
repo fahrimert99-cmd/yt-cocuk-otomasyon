@@ -26,12 +26,19 @@ def _icerik_al():
     if b64:
         ham = base64.b64decode(b64).decode("utf-8")
         return json.loads(_temizle(ham))
-    return {
-        "script":   os.environ.get("SCRIPT", ""),
-        "baslik":   os.environ.get("BASLIK", "Video"),
-        "aciklama": os.environ.get("ACIKLAMA", ""),
-        "etiketler": json.loads(os.environ.get("ETIKETLER", "[]") or "[]"),
-    }
+    if os.environ.get("SCRIPT", "").strip():
+        return {
+            "script":   os.environ.get("SCRIPT", ""),
+            "baslik":   os.environ.get("BASLIK", "Video"),
+            "aciklama": os.environ.get("ACIKLAMA", ""),
+            "etiketler": json.loads(os.environ.get("ETIKETLER", "[]") or "[]"),
+        }
+    # Ne Make payload'i ne de hazir SCRIPT var (elle "Run workflow") ->
+    # konudan Claude (yoksa Gemini) ile tam senaryo + sahneler uret.
+    konu = os.environ.get("KONU", "").strip() or "SİNEMADA MISIR NEDEN PAHALI?"
+    import uzun_script
+    print(f"      [otomatik senaryo uretiliyor: {konu!r}]")
+    return uzun_script.uret(konu)
 
 
 def main():
@@ -51,6 +58,10 @@ def main():
         etiketler = [e.strip() for e in etiketler.split(",") if e.strip()]
 
     dikey    = str(cfg.get("format", "dikey")).lower() == "dikey"
+    # Elle calistirmada DIKEY env'i ile bicim secilebilir (uzun icin "hayir").
+    _dv = os.environ.get("DIKEY", "").strip().lower()
+    if _dv:
+        dikey = _dv in ("1", "true", "evet", "dikey", "yes")
     ses      = cfg.get("ses", "kadin")
     gizlilik = cfg.get("gizlilik", "private")
     kategori = str(cfg.get("kategori", "27"))
@@ -68,9 +79,11 @@ def main():
         f.write(script)
     os.makedirs("output", exist_ok=True)
     cikti = "output/video.mp4"
-    print("[2/3] Video uretiliyor (edge-tts + alt yazi + FFmpeg) ...")
+    print("[2/3] Video uretiliyor (ElevenLabs oncelikli + alt yazi + FFmpeg) ...")
     V.uret_video(sp, cikti, ses=ses, dikey=dikey, hiz=hiz,
-                 sahneler=sahneler, animasyon=animasyon, cocuk=cocuk, tonlama=tonlama)
+                 sahneler=sahneler, animasyon=animasyon, cocuk=cocuk, tonlama=tonlama,
+                 gorsel_stil=str(cfg.get("gorsel_stil", "stok")), kanca=veri.get("kanca"),
+                 eleven_once=bool(cfg.get("eleven", True)))
     print(f"      Cikti: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
     print("[3/3] YouTube'a yukleniyor ...")
