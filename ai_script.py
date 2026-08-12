@@ -37,6 +37,33 @@ def _gemini(prompt, key, model="gemini-2.0-flash"):
     return d["candidates"][0]["content"]["parts"][0]["text"]
 
 
+# --- Anthropic Claude (en kaliteli Türkçe metin) -------------------------
+# Model ANTHROPIC_MODEL ile degistirilebilir (maliyet icin ornegin
+# "claude-sonnet-5" veya "claude-haiku-4-5"). Varsayilan: en yetenekli Opus.
+ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL", "").strip() or "claude-opus-5"
+
+
+def _claude_key():
+    return (os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("CLAUDE_API_KEY") or "").strip()
+
+
+def _claude(prompt, key, model=None, max_tokens=8192):
+    """Anthropic Messages API (ham HTTP, ek bagimlilik yok) ile metin uretir."""
+    model = model or ANTHROPIC_MODEL
+    url = "https://api.anthropic.com/v1/messages"
+    body = {"model": model, "max_tokens": max_tokens,
+            "thinking": {"type": "disabled"},  # duz JSON istiyoruz; dusunme kapali
+            "messages": [{"role": "user", "content": prompt}]}
+    req = urllib.request.Request(
+        url, data=json.dumps(body).encode(),
+        headers={"content-type": "application/json", "x-api-key": key,
+                 "anthropic-version": "2023-06-01"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        d = json.loads(r.read().decode())
+    # content bir blok listesidir; sadece metin bloklarini birlestir
+    return "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
+
+
 def _poll_post(prompt):
     url = "https://text.pollinations.ai/openai"
     body = {"model": "openai", "temperature": 0.9,
@@ -60,7 +87,10 @@ def _poll_get(prompt):
 def uret(baslik):
     prompt = PROMPT.format(baslik=baslik)
     key = os.environ.get("GEMINI_API_KEY", "").strip()
+    ckey = _claude_key()
     yollar = []
+    if ckey:
+        yollar.append(("claude", lambda: _claude(prompt, ckey)))
     if key:
         yollar.append(("gemini", lambda: _gemini(prompt, key)))
     yollar += [("poll_post", lambda: _poll_post(prompt)),
@@ -68,7 +98,7 @@ def uret(baslik):
 
     hatalar = []
     for ad, yol in yollar:
-        denemeler = 4 if ad == "gemini" else 1
+        denemeler = 4 if ad in ("gemini", "claude") else 1
         for k in range(denemeler):
             try:
                 ham = yol()
