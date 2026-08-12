@@ -1,14 +1,14 @@
 {
   "pending": [
     {
-      "title": "AVM'DE NEDEN SAAT YOK?! 🏬",
-      "short_id": "aEf2Wxq5lBk",
-      "gun": "2026-08-10"
-    },
-    {
       "title": "İSTASYON MARKETİ TUZAĞI! ⛽",
       "short_id": "XAwRPlIKgcE",
       "gun": "2026-08-11"
+    },
+    {
+      "title": "SİNEMADA MISIR NEDEN PAHALI? 🍿",
+      "short_id": "LU85MsDn3Ms",
+      "gun": "2026-08-12"
     }
   ],
   "yapilan": [
@@ -17,7 +17,8 @@
     "KARTLA NEDEN DAHA ÇOK HARCARSIN? 💳",
     "SİTELERDEKİ ALDATICI BUTONLAR! 🖱️",
     "MARKET ARABALARI NEDEN BÜYÜK? 🛒",
-    "TAZE SANILAN ETİN SIRRI! 🥩"
+    "TAZE SANILAN ETİN SIRRI! 🥩",
+    "AVM'DE NEDEN SAAT YOK?! 🏬"
   ],
   "yapilan_id": [
     "FIJNIap9w_g",
@@ -25,12 +26,13 @@
     "nn31cgNxaQc",
     "DswBK23pfpk",
     "PszD3sVVf8o",
-    "LInZey6M0bo"
+    "LInZey6M0bo",
+    "aEf2Wxq5lBk"
   ],
   "bekleyen_yorum": null,
   "son": {
-    "konu": "TAZE SANILAN ETİN SIRRI! 🥩",
-    "uzun_url": "https://youtu.be/kSTKLXDJO1o",
+    "konu": "AVM'DE NEDEN SAAT YOK?! 🏬",
+    "uzun_url": "https://youtu.be/j6dOcH0bj_c",
     "gizlilik": "private"
   }
 }
