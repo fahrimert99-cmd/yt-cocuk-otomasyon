@@ -1,11 +1,5 @@
 {
-  "pending": [
-    {
-      "title": "SİNEMADA MISIR NEDEN PAHALI? 🍿",
-      "short_id": "LU85MsDn3Ms",
-      "gun": "2026-08-11"
-    }
-  ],
+  "pending": [],
   "yapilan": [
     "OYUNLARDAKİ SATIN ALMA TUZAĞI",
     "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉",
@@ -14,7 +8,8 @@
     "MARKET ARABALARI NEDEN BÜYÜK? 🛒",
     "TAZE SANILAN ETİN SIRRI! 🥩",
     "AVM'DE NEDEN SAAT YOK?! 🏬",
-    "İSTASYON MARKETİ TUZAĞI! ⛽"
+    "İSTASYON MARKETİ TUZAĞI! ⛽",
+    "SİNEMADA MISIR NEDEN PAHALI? 🍿"
   ],
   "yapilan_id": [
     "FIJNIap9w_g",
@@ -24,12 +19,16 @@
     "PszD3sVVf8o",
     "LInZey6M0bo",
     "aEf2Wxq5lBk",
-    "XAwRPlIKgcE"
+    "XAwRPlIKgcE",
+    "LU85MsDn3Ms"
   ],
-  "bekleyen_yorum": null,
+  "bekleyen_yorum": {
+    "short_id": "LU85MsDn3Ms",
+    "metin": "Bu tuzagi DETAYLI anlattigim video kanalimda 👉 https://youtu.be/BT0nwqvploA\nKendini ve cocugunu korumanin yollari videonun sonunda."
+  },
   "son": {
-    "konu": "İSTASYON MARKETİ TUZAĞI! ⛽",
-    "uzun_url": "https://youtu.be/BYGz2eitE-U",
+    "konu": "SİNEMADA MISIR NEDEN PAHALI? 🍿",
+    "uzun_url": "https://youtu.be/BT0nwqvploA",
     "gizlilik": "private"
   }
 }
