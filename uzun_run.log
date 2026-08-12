@@ -1,61 +1,58 @@
-  [yakalandi] short: 'SİNEMADA MISIR NEDEN PAHALI? 🍿' -> LU85MsDn3Ms
-[1/4] Uzun konu: "AVM'DE NEDEN SAAT YOK?! 🏬" (short=aEf2Wxq5lBk)
+[1/4] Uzun konu: 'İSTASYON MARKETİ TUZAĞI! ⛽' (short=XAwRPlIKgcE)
 [2/4] Yatay render ...
       [anahtar: [redacted]
-    Ses: tr-TR-Wavenet-E (uzun metin 2 parca, gercek timepoint)
+    Ses: tr-TR-Wavenet-E (uzun metin 4 parca, gercek timepoint)
       Ses: Google TTS (nöral Türkçe)
-      [Pexels: 8 sonuç -> 'empty analog clock']
-      Sahne 1/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'shopping mall entrance doors']
-      Sahne 2/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'blank white wall inside']
-      Sahne 3/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'closed shopping mall ceiling']
-      Sahne 4/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'crowded shopping mall corridor']
-      Sahne 5/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'architectural model of building']
-      Sahne 6/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'bright indoor ceiling lights']
-      Sahne 7/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'credit card payment terminal']
-      Sahne 8/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'person looking at wristwatch']
-      Sahne 9/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'escalator in shopping mall']
-      Sahne 10/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'person walking indoor']
-      Sahne 11/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'shiny floor tiles reflection']
-      Sahne 12/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'air ventilation vent ceiling']
-      Sahne 13/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'store display window lights']
-      Sahne 14/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'person carrying shopping bags']
-      Sahne 15/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'child toy store display']
-      Sahne 16/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'child playing arcade game']
-      Sahne 17/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'parent holding child hand']
-      Sahne 18/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'person writing shopping list']
-      Sahne 19/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'analog wrist watch on']
-      Sahne 20/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'looking at watch time']
-      Sahne 21/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'paper shopping list close']
-      Sahne 22/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'person walking away exit']
-      Sahne 23/24: gerçek stok video ✓
-      [Pexels: 8 sonuç -> 'leather wallet cash money']
-      Sahne 24/24: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'car driving highway']
+      Sahne 1/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'gas station exterior']
+      Sahne 2/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'gas station store']
+      Sahne 3/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'fuel pump nozzle']
+      Sahne 4/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'convenience store interior']
+      Sahne 5/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'gas station cash register']
+      Sahne 6/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'candy store shelf']
+      Sahne 7/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'car refueling pump']
+      Sahne 8/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'automatic sliding door']
+      Sahne 9/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'tired driver face']
+      Sahne 10/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'steering wheel hands']
+      Sahne 11/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'coffee machine cup']
+      Sahne 12/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'checkout counter candy']
+      Sahne 13/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'child car seat']
+      Sahne 14/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'child crying car']
+      Sahne 15/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'grocery shelf cereal']
+      Sahne 16/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'parent pushing cart']
+      Sahne 17/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'shopping basket items']
+      Sahne 18/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'notepad pen list']
+      Sahne 19/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'bottled water shelf']
+      Sahne 20/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'cash money wallet']
+      Sahne 21/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'person thinking brain']
+      Sahne 22/23: gerçek stok video ✓
+      [Pexels: 8 sonuç -> 'youtube subscribe button']
+      Sahne 23/23: gerçek stok video ✓
 [3/4] Yukleniyor ...
-✓ Yüklendi: https://youtu.be/j6dOcH0bj_c  (yayın: 2026-08-12T18:00:00Z UTC)
+✓ Yüklendi: https://youtu.be/BYGz2eitE-U  (yayın: 2026-08-12T18:00:00Z UTC)
 ✓ Kapak fotoğrafı ayarlandı
-✓ uzun yuklendi: https://youtu.be/j6dOcH0bj_c (private)
+✓ uzun yuklendi: https://youtu.be/BYGz2eitE-U (private)
 [4/4] Short'a yonlendirme ...
-✓ short'a yorum: aEf2Wxq5lBk
+✓ short'a yorum: XAwRPlIKgcE
 Tamam.
