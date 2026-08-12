@@ -7,11 +7,12 @@ GEMINI_API_KEY varsa Gemini (en kaliteli/güvenilir); yoksa anahtarsız Pollinat
 """
 import os, re, json, time, urllib.parse, urllib.request
 
-PROMPT = """Sen Veritasium tarzinda bilim icerigi ureten bir YouTube yazarisin.
-BASLIK: {baslik}
-Bu baslik icin genel izleyiciye uygun, akici, bilimsel olarak DOGRU bir Turkce seslendirme metni yaz. ~110 kelime, ilk cumle guclu bir kanca olsun, sonda dusundurucu bir kapanis. Emoji/baslik/madde YOK, duz paragraf. Anlatimi 5 sahneye bol; her sahne icin INGILIZCE sinematik bir gorsel tarifi yaz.
-CEVABINI SADECE gecerli JSON olarak ver. Baska hicbir sey yazma, aciklama/kod blogu ekleme:
-{{"baslik":"...","aciklama":"2-3 cumle","etiketler":["e1","e2","e3","e4","e5"],"script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english description"}}]}}"""
+PROMPT = """Sen Veritasium tarzında bilim içeriği üreten bir YouTube yazarısın.
+BAŞLIK: {baslik}
+Bu başlık için genel izleyiciye uygun, akıcı, bilimsel olarak DOĞRU bir Türkçe seslendirme metni yaz. ~110 kelime, ilk cümle güçlü bir kanca olsun, sonda düşündürücü bir kapanış. Emoji/başlık/madde YOK, düz paragraf. Anlatımı 5 sahneye böl; her sahne için İNGİLİZCE sinematik bir görsel tarifi yaz.
+ÇOK ÖNEMLİ — TÜRKÇE YAZIM: 'script', 'baslik', 'aciklama' ve sahne 'metin' alanlarını KUSURSUZ Türkçe imlâ ile yaz. Türkçe'ye özgü harfleri (ç, ğ, ı, İ, ö, ş, ü ve büyükleri) HER ZAMAN ve EKSİKSİZ kullan; ASLA ASCII karşılıklarına (c, g, i, o, s, u) sadeleştirme. Örnek: "guclu" DEĞİL "güçlü", "bilim icerigi" DEĞİL "bilim içeriği". (Yalnızca 'gorsel' alanı İngilizce olacak.)
+CEVABINI SADECE geçerli JSON olarak ver. Başka hiçbir şey yazma, açıklama/kod bloğu ekleme:
+{{"baslik":"...","aciklama":"2-3 cümle","etiketler":["e1","e2","e3","e4","e5"],"script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english description"}}]}}"""
 
 
 def _temizle(t):

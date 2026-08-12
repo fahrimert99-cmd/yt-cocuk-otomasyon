@@ -522,7 +522,8 @@ def _google_seslendir(text, mp3_path):
 
 
 def _eleven_key():
-    return (os.environ.get("ELEVEN_API_KEY") or _keys().get("eleven", "")).strip()
+    return (os.environ.get("ELEVEN_API_KEY") or os.environ.get("ELEVENLABS_API_KEY")
+            or _keys().get("eleven", "")).strip()
 
 
 def _eleven_seslendir(text, mp3_path):
@@ -531,7 +532,7 @@ def _eleven_seslendir(text, mp3_path):
     key = _eleven_key()
     if not key:
         raise RuntimeError("ElevenLabs anahtarı yok")
-    voice_id = os.environ.get("ELEVEN_VOICE_ID", "").strip() or "pNInz6obpgDQGcFmaJgB"  # Adam (tok/derin erkek)
+    voice_id = os.environ.get("ELEVEN_VOICE_ID", "").strip() or "dDcfsSsiSzmphdMGCECb"  # secilen ses (ELEVEN_VOICE_ID ile ezilebilir)
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
     body = {"text": text, "model_id": "eleven_multilingual_v2",
             "voice_settings": {"stability": 0.45, "similarity_boost": 0.8,
@@ -789,11 +790,13 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
 # ----------------------------------------------------------
 def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
                sahneler=None, animasyon=True, cocuk=True, tonlama="+0Hz",
-               gorsel_stil="stok", kanca=None):
+               gorsel_stil="stok", kanca=None, eleven_once=False):
     """Orkestratör tarafından çağrılır: script -> mp4.
     sahneler verilirse (Gemini'den), her sahne için AI görsel üretir ve
     Ken Burns + çapraz geçişle animasyonlu montaj yapar.
-    tonlama: ses tonu (örn '-12Hz' daha tok/derin erkek sesi)."""
+    tonlama: ses tonu (örn '-12Hz' daha tok/derin erkek sesi).
+    eleven_once=True: seslendirmede ElevenLabs (daha gerçekçi) önce denenir;
+    başarısız olursa Google TTS, o da olmazsa edge-tts'e düşülür."""
     boyut = CONFIG["dikey"] if dikey else CONFIG["yatay"]
     voice = CONFIG["sesler"][ses]
     text, cumleler = metni_oku(script_path)
@@ -802,19 +805,24 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     _gk=_google_key(); _pk=_pexels_key()
     print(f"      [anahtar: google={_gk[:6]}..len{len(_gk)}, pexels={_pk[:6]}..len{len(_pk)}]")
     boundaries = None
-    if _google_key():
+    # Seslendirme saglayici sirasi. eleven_once=True (uzun videolar) ise
+    # ElevenLabs (daha gercekci insan sesi) once denenir; degilse mevcut
+    # davranis korunur (Google TTS once, ElevenLabs yedek).
+    _eleven = ("eleven", _eleven_seslendir, "ElevenLabs (gerçekçi insan sesi)")
+    _google = ("google", _google_seslendir, "Google TTS (nöral Türkçe)")
+    sira = ([_eleven, _google] if eleven_once else [_google, _eleven])
+    for _ad, _fn, _etiket in sira:
+        if boundaries is not None:
+            break
+        if _ad == "eleven" and not _eleven_key():
+            continue
+        if _ad == "google" and not _google_key():
+            continue
         try:
-            boundaries = _google_seslendir(text, mp3)
-            print("      Ses: Google TTS (nöral Türkçe)")
+            boundaries = _fn(text, mp3)
+            print(f"      Ses: {_etiket}")
         except Exception as e:
-            print(f"      Google TTS hata: {str(e)[:400]}")
-            boundaries = None
-    if boundaries is None and _eleven_key():
-        try:
-            boundaries = _eleven_seslendir(text, mp3)
-            print("      Ses: ElevenLabs (gerçekçi insan sesi)")
-        except Exception as e:
-            print(f"      ElevenLabs hata ({str(e)[:90]}), edge-tts'e dönülüyor")
+            print(f"      {_ad} TTS hata ({str(e)[:200]}), sonraki saglayiciya geciliyor")
             boundaries = None
     if boundaries is None:
         try:
