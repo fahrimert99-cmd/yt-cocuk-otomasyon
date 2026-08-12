@@ -48,7 +48,10 @@ def _turkce_yeterli(metin):
     if len(s) < 200:
         return True  # kanca gibi cok kisa alanlar tek basina yaniltici olabilir
     ozel = sum(1 for c in s if c in _TR_OZEL)
-    return ozel >= len(s) * 0.01  # en az %1 (gercek Turkce ~%8-10; ASCII ~%0)
+    # Gercek Turkce anlatim ~%8-10 ozel harf icerir; tamamen ASCII ~%0.
+    # Esik %3: hem tam hem KISMEN diakritiksiz (kelimelerin bir kismi "guclu",
+    # "cocuk" gibi bozuk) metinleri reddeder -> TTS'te yabanci aksan olmaz.
+    return ozel >= len(s) * 0.03
 
 
 def _gemini_key():
