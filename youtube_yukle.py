@@ -65,6 +65,23 @@ def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27",
     return vid
 
 
+def video_public(video_id):
+    """Video herkese acik (public) mi kontrol eder.
+    Zamanlanmis (private + publishAt) video yayin saatine kadar 'private'
+    doner; bu videoya yorum atmak 403 verir. Yorumu ancak public olunca at.
+    API hatasi / bulunamama durumunda guvenli tarafta kal: False don (ertele).
+    """
+    try:
+        yt = build("youtube", "v3", credentials=_kimlik())
+        r = yt.videos().list(part="status", id=video_id).execute()
+        items = r.get("items", [])
+        if not items:
+            return False
+        return items[0].get("status", {}).get("privacyStatus") == "public"
+    except Exception:
+        return False
+
+
 def yorum_at(video_id, metin):
     """Kanaldan videoya ust duzey yorum ekler (video PUBLIC olmali)."""
     yt = build("youtube", "v3", credentials=_kimlik())
