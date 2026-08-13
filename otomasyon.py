@@ -38,15 +38,26 @@ def main():
     durum = _durum()
     n = len(senaryolar)
     yapilan = set(durum.get("yapilan", []))
-    idx = durum.get("sonraki", 0) % n
-    denendi = 0
-    while senaryolar[idx]["baslik"] in yapilan and denendi < n:
-        idx = (idx + 1) % n
-        denendi += 1
-    if denendi >= n:
+    # ÖNCELİK: analizde en çok tutan/kanıtlı temalar (market, sinema, fiyat, reklam,
+    # kasa, otel, akaryakıt, çocuk...) önce yayınlansın; kanal büyürken en güçlü
+    # konular öne çıksın. Yapılanlar başlıkla atlanır (tekrar yok), sıra determenistik.
+    ONCELIK = ("market", "kasa", "sinema", "otel", "reklam", "paket", "fiyat", "indirim",
+               "istasyon", "akaryak", "kart", "kredi", "taksit", "abonelik", "çocuk", "cocuk",
+               "oyun", "telefon", "fatura", "restoran", "kahve", "avm", "kargo", "site",
+               "uygulama", "banka", "market", "tuzak")
+
+    def _oncelik_skoru(baslik):
+        bl = baslik.lower()
+        return sum(1 for k in ONCELIK if k in bl)
+
+    kalan = [(i, s) for i, s in enumerate(senaryolar) if s["baslik"] not in yapilan]
+    if not kalan:
         print("✓ Tüm konular yayınlanmış! Yeni içerik için senaryolar.json'a konu ekleyin.")
         _durum_yaz(durum)
         return
+    # En yüksek öncelik skorlu konu; eşitlikte dosya sırası (deterministik).
+    kalan.sort(key=lambda t: (-_oncelik_skoru(t[1]["baslik"]), t[0]))
+    idx = kalan[0][0]
     veri = senaryolar[idx]
     print(f"[1/3] Senaryo ({idx+1}/{n}): {veri['baslik']}")
 
