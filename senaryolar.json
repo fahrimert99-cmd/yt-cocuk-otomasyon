@@ -1836,7 +1836,7 @@
       "harcama",
       "tüketici"
     ],
-    "script": "Koltuğa oturup işlem başlayınca, yıkama, maske, fön gibi ekstraları eklemeyi teklif ederler. Tam o an, yani hayır demenin en zor olduğu anda sorarlar. Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme.",
+    "script": "Kuaförde ekstralar tam 'hayır' demenin en zor olduğu anda önerilir. Koltuğa oturup işlem başlayınca yıkama, maske, fön gibi eklemeleri teklif ederler; her biri küçük ücret, toplamı büyük. Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme.",
     "kanca": "SEN İSTEMEDEN NASIL ARTAR?",
     "sahneler": [
       {
@@ -2106,7 +2106,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Her siteye girdiğinde çıkan o çerez kutusu. 'Tümünü kabul et' kocaman ve renkli, 'reddet' minik ve gri. Neden? Çünkü kabul etmeni istiyorlar. Kabul edince tüm hareketlerini izlerler, veri satarlar. Reddetmek hakkın. O küçük butonu ara, bul, tıkla. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O çerez kutusunda 'kabul et' neden kocaman ve renkli, 'reddet' neden minik ve gri? Çünkü kabul etmeni istiyorlar. Kabul edince tüm hareketlerini izler, veri satarlar. Reddetmek hakkın; o küçük butonu ara, bul, tıkla. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "çerez uyarısı",
@@ -2382,7 +2382,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Berbere sadece saç kesmeye gittin, ama 'bakım yapalım mı, yıkayalım mı, şu ürün çok iyi' derler. Her biri küçük ücret, toplamı büyük. Bu tesadüf değil, eğitim. Çalışanlar ek satış için yönlendirilir. Hayır demek hakkın. Sadece istediğini al, gerisine kapı. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Berberdeki o 'bakım yapalım mı, şu ürün çok iyi' önerileri tesadüf değil, eğitim. Sadece saç kesmeye gittin ama her ek işlem küçük ücret, toplamı büyük. Çalışanlar ek satış için yönlendirilir. Hayır demek hakkın; sadece istediğini al, gerisine kapı. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "berber koltuğu",
@@ -2796,7 +2796,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bazı mağazalara girince güzel bir koku seni sarar. Tesadüf değil. Markalar özel kokular tasarlatır. Koku, hafızaya en hızlı işleyen duyudur. O kokuyu her aldığında markayı hatırlarsın, kendini iyi hissedersin, alışveriş yaparsın. Görünmez ama en güçlü tuzaklardan biri. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O mağazadaki güzel koku tesadüf değil, seni satın almaya iten görünmez bir silah. Markalar özel kokular tasarlatır çünkü koku hafızaya en hızlı işleyen duyudur. O kokuyu her aldığında markayı hatırlar, kendini iyi hisseder, alışveriş yaparsın. En güçlü tuzaklardan biri. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "mağaza içi",
@@ -3026,7 +3026,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir kafede ücretsiz wifi görürsün ve hemen bağlanırsın, ama o bağlantı sandığın kadar bedava değildir. Bağlanmak için mailini, numaranı ya da sosyal medya hesabını isterler. Sen internete bağlanırken, onlar senin bilgilerine bağlanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O bedava wifi'ye bağlanırken aslında sen bağlanmıyorsun, onlar sana bağlanıyor. Kafedeki ücretsiz internet için mailini, numaranı ya da sosyal medya hesabını isterler. Sen internete erişirken, onlar senin bilgilerine erişir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "kafe wifi",
@@ -3072,7 +3072,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Şık restoranların menüsünde fiyatlar sağa hizalı, alt alta sıralanmaz. Bu bir tasarım tercihi değil, bilinçli bir karardır. Fiyatları yan yana görsen en ucuzu seçerdin. Dağınık yerleştirilince fiyatı değil, yemeği düşünürsün. Böylece cebinden çıkacak parayı unutursun. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Şık restoranların menüsünde fiyatların dağınık olması bir tasarım kazası değil, bilinçli bir karar. Yan yana görsen en ucuzu seçerdin; dağıtınca fiyatı değil yemeği düşünürsün. Böylece cebinden çıkacak parayı unutursun. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "şık menü",
@@ -3256,7 +3256,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sık gittiğin markette ürünlerin yeri aniden değişir, aradığını bulamazsın. Bu sinir bozucu ama kasıtlı. Yerini bilmediğin için tüm reyonları gezersin, gezerken aklında olmayan şeyler alırsın. Vitrin de aynı sebeple değişir, hep yeni görünür. Kaybolman, onların kazancı. Listene sadık kal. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Markette ürünlerin yerini durmadan değiştirmeleri sinir bozucu ama kasıtlı. Aradığını bulamayınca tüm reyonları gezer, gezerken aklında olmayan şeyler alırsın. Kaybolman, onların kazancı. Listene sadık kal. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "değişen vitrin",
@@ -3440,7 +3440,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Büyük mağazaya girer girmez parfüm ve makyaj reyonu karşılar seni. Neden en değerli yer onlara ayrılır? Çünkü güzel kokular ve parlak ışıklar seni anında iyi hissettirir. İyi hissedince daha çok harcarsın. Giriş katı bir karşılama değil, bir hazırlıktır. Ruh halin daha kapıda ayarlanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Mağazanın en değerli yeri parfüm ve makyaja ayrılır çünkü ruh halin daha kapıda ayarlanır. Güzel kokular ve parlak ışıklar seni anında iyi hissettirir, iyi hissedince daha çok harcarsın. Giriş katı bir karşılama değil, bir hazırlıktır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "parfüm reyonu",
@@ -4544,7 +4544,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Mağazalarda ışık asla rastgele değildir. Takılar parlak spot altında ışıldar, kıyafetler sıcak ışıkla canlı görünür, market meyveleri özel ışıkla taze. Işık, ürünü olduğundan iyi gösterir. Evde aynı şey sönük kalır. Gördüğün parlaklık üründe değil, tasarımda. Işığın büyüsüne değil, ürünün kendisine bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Gördüğün o parlaklık üründe değil, tasarımda. Takılar spot altında ışıldar, kıyafetler sıcak ışıkla canlanır, meyveler özel ışıkla tazelenir; evde aynısı sönük kalır. Işık ürünü olduğundan iyi gösterir. Işığın büyüsüne değil, ürünün kendisine bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "mağaza spot ışık",
@@ -4636,7 +4636,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Markete girince kocaman 'indirim' standı karşılar seni. En görünür yer neden indirime ayrılır? Çünkü indirim kelimesi seni heyecanlandırır, 'kaçırmayayım' dersin. O standdan alırsın, kendini kazançlı hissedersin, gardını düşürürsün. Sonra tam fiyatlı ürünleri de rahatça alırsın. İndirim standı bir kapıdır. İhtiyacına bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Markete girer girmez o kocaman 'indirim' standıyla karşılaşman tesadüf değil. İndirim kelimesi seni heyecanlandırır, 'kaçırmayayım' dersin, gardını düşürürsün; sonra tam fiyatlı ürünleri de rahatça alırsın. İndirim standı bir kapıdır. İhtiyacına bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "indirim standı",
@@ -4912,7 +4912,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sevdiğin bir ünlü bir ürünü övüyor, güvenirsin, alırsın. Ama o ünlü çoğu zaman ürünü kullanmıyor, sadece para karşılığı konuşuyor. Onların işi güvenini satmak. Sen 'o kullanıyorsa iyidir' dersin, tam da istedikleri bu. Ünlü bir vitrin, ürünü değil imajını satar. Öneriyi değil, ürünün kendisini araştır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O ünlü sevdiğin ürünü kullandığı için değil, para aldığı için övüyor. İşi güvenini satmak. Sen 'o kullanıyorsa iyidir' dersin, tam da istedikleri bu. Ünlü bir vitrin; ürünü değil imajını satar. Öneriyi değil, ürünün kendisini araştır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "ünlü reklam",
@@ -5234,7 +5234,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Vitrindeki manken üstünde her kıyafet mükemmel durur. Ama manken gerçek insan ölçülerinde değildir, kıyafet arkadan toplanıp iğnelenmiştir. Sen aynı şeyi giyince farklı görünür, kendini kötü hissedersin, 'başka bir şey de alayım' dersin. İdeal görüntü bir yanılsama. Manken bir reklam. Kendine değil, ürünün gerçeğine odaklan. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Vitrindeki o kusursuz görüntü koca bir yanılsama. Manken gerçek insan ölçülerinde değil, kıyafet arkadan toplanıp iğnelenmiş. Sen giyince farklı görünür, kötü hisseder, 'başka bir şey de alayım' dersin. Manken bir reklam; kendine değil, ürünün gerçeğine odaklan. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
     "sahneler": [
       {
         "metin": "vitrin mankeni",
@@ -5262,5 +5262,131 @@
       }
     ],
     "kanca": "MANKEN NEDEN FARKLI?"
+  },
+  {
+    "baslik": "BİR GÜNDE DÜŞTÜĞÜN 3 TUZAK! ⚠️",
+    "aciklama": "Farkında bile olmadan her gün düştüğün üç tüketici tuzağı ve nasıl korunacağın.",
+    "etiketler": [
+      "tüketici",
+      "tuzak",
+      "market",
+      "psikoloji",
+      "tasarruf",
+      "farkındalık",
+      "alışveriş",
+      "bilinç"
+    ],
+    "kanca": "HEPSİNE DÜŞÜYORSUN!",
+    "script": "Bugün fark etmeden en az üç tuzağa düştün. Bir: markette göz hizasındaki en pahalı ürünü aldın, ucuzlar alt raftaydı. İki: 'ayda sadece şu kadar' yazısına kandın, toplam fiyata bakmadın. Üç: kasadaki çikolatayı planlamadan sepete attın, çünkü tam oraya konmuştu. Üçü de tesadüf değil, hepsi tasarlandı. Farkında olmak ilk adım. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "sahneler": [
+      {
+        "metin": "göz hizası raf",
+        "gorsel": "supermarket shelf eye level"
+      },
+      {
+        "metin": "ürün seçme",
+        "gorsel": "hand picking product shelf"
+      },
+      {
+        "metin": "taksit yazısı",
+        "gorsel": "installment price tag phone"
+      },
+      {
+        "metin": "toplam hesap",
+        "gorsel": "calculator receipt money"
+      },
+      {
+        "metin": "kasada çikolata",
+        "gorsel": "candy at checkout counter"
+      },
+      {
+        "metin": "düşünen kişi",
+        "gorsel": "person thinking shopping cart"
+      }
+    ]
+  },
+  {
+    "baslik": "BU TUZAĞA DÜŞÜYOR MUSUN? 🧠",
+    "aciklama": "Kendini test et: pazarlama tuzaklarına ne kadar açıksın? Dürüst cevap ver.",
+    "etiketler": [
+      "test",
+      "tüketici",
+      "psikoloji",
+      "tuzak",
+      "pazarlama",
+      "farkındalık",
+      "para",
+      "bilinç"
+    ],
+    "kanca": "DÜRÜST CEVAP VER!",
+    "script": "Kendini test et. İndirim yazısını görünce ihtiyacın olmasa da bakıyor musun? 'Son ürün' yazısı seni acele ettiriyor mu? Ayda taksit rakamı sana ucuz geliyor mu? Üçüne de evet dediysen, tam hedef kitlesisin. Merak etme, bu bir kusur değil, herkesin beyni böyle çalışır. Ama fark eden kazanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "sahneler": [
+      {
+        "metin": "indirim etiketi",
+        "gorsel": "red sale discount sign"
+      },
+      {
+        "metin": "son ürün yazısı",
+        "gorsel": "limited stock label screen"
+      },
+      {
+        "metin": "taksit rakamı",
+        "gorsel": "monthly payment credit card"
+      },
+      {
+        "metin": "karar veren kişi",
+        "gorsel": "person deciding shopping"
+      },
+      {
+        "metin": "kafası karışan",
+        "gorsel": "person scratching head confused"
+      },
+      {
+        "metin": "anlayan kişi",
+        "gorsel": "confident person nodding"
+      }
+    ]
+  },
+  {
+    "baslik": "BUNU BİLİYOR MUYDUN? 🤯",
+    "aciklama": "Fiyat etiketlerindeki çoğu kişinin bilmediği küçük ama etkili bir tuzak.",
+    "etiketler": [
+      "biliyormuydun",
+      "fiyat",
+      "etiket",
+      "tüketici",
+      "tuzak",
+      "psikoloji",
+      "alışveriş",
+      "para"
+    ],
+    "kanca": "ÇOĞU KİŞİ BİLMİYOR",
+    "script": "Bunu çoğu kişi bilmiyor: fiyat etiketlerinde lira simgesi çoğu zaman bilerek çok küçük yazılır ya da hiç konmaz. Neden? Para birimini görmek harcamanın acısını hatırlatır. Simge yoksa o rakam sadece bir sayıya dönüşür, sen de daha kolay ödersin. Küçük bir detay ama beynini doğrudan etkiler. Etikete dikkatli bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "sahneler": [
+      {
+        "metin": "fiyat etiketi",
+        "gorsel": "price tag on product"
+      },
+      {
+        "metin": "etiket yakın",
+        "gorsel": "closeup price label store"
+      },
+      {
+        "metin": "nakit ödeme",
+        "gorsel": "paying cash wallet hand"
+      },
+      {
+        "metin": "kart okutma",
+        "gorsel": "credit card tap payment"
+      },
+      {
+        "metin": "sadece rakam",
+        "gorsel": "number price sticker closeup"
+      },
+      {
+        "metin": "dikkatli bakış",
+        "gorsel": "person reading price tag"
+      }
+    ]
   }
 ]

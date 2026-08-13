@@ -50,16 +50,46 @@ def main():
         bl = baslik.lower()
         return sum(1 for k in ONCELIK if k in bl)
 
+    # ÇEŞİTLİLİK (P4): benzer konular arka arkaya gelmesin -> izleyici yorgunluğu azalsın.
+    # Her konuyu bir kategoriye ata; bir ÖNCEKİ videonun kategorisinden FARKLI bir
+    # kategori tercih et. Böylece market->market->market yerine market->finans->dijital...
+    KATEGORI = {
+        "market": ("market", "kasa", "raf", "reyon", "sepet", "büfe", "labirent", "koku",
+                   "müzik", "ışık", "vitrin", "manken", "boş raf", "sağa", "parfüm"),
+        "finans": ("kart", "kredi", "banka", "faiz", "taksit", "puan", "hediye kart",
+                   "nakit", "bozuk para", "kampanya", "9 ile", "9️⃣"),
+        "dijital": ("uygulama", "internet", "telefon", "site", "oyun", "sosyal", "çerez",
+                    "wifi", "kod", "sanal", "hesap", "ilk ay", "ilk model", "yeni model"),
+        "psikoloji": ("reklam", "ünlü", "sana özel", "yeni", "sınırlı", "bedava", "kupon",
+                      "karşılık", "çapa", "yıldız", "yorum"),
+        "yeme": ("menü", "restoran", "kahve", "fast food", "mısır", "su", "büyük boy",
+                 "orta", "açık büfe", "sinema"),
+        "hizmet": ("kuaför", "berber", "otopark", "taksi", "garanti", "danışman", "iade",
+                   "kargo", "düğün", "otel", "tatil", "havaalan", "spor salon", "abonelik",
+                   "istasyon", "benzin", "wifi"),
+    }
+
+    def _kategori(baslik):
+        bl = baslik.lower()
+        for kat, kws in KATEGORI.items():
+            if any(k in bl for k in kws):
+                return kat
+        return "diger"
+
     kalan = [(i, s) for i, s in enumerate(senaryolar) if s["baslik"] not in yapilan]
     if not kalan:
         print("✓ Tüm konular yayınlanmış! Yeni içerik için senaryolar.json'a konu ekleyin.")
         _durum_yaz(durum)
         return
-    # En yüksek öncelik skorlu konu; eşitlikte dosya sırası (deterministik).
-    kalan.sort(key=lambda t: (-_oncelik_skoru(t[1]["baslik"]), t[0]))
-    idx = kalan[0][0]
+    son_kat = durum.get("son_kategori")
+    # Önce bir önceki videodan FARKLI kategorideki konulara bak; yoksa tüm kalanlara.
+    havuz = [t for t in kalan if _kategori(t[1]["baslik"]) != son_kat] or kalan
+    # Havuz içinde en yüksek öncelik skorlu; eşitlikte dosya sırası (deterministik).
+    havuz.sort(key=lambda t: (-_oncelik_skoru(t[1]["baslik"]), t[0]))
+    idx = havuz[0][0]
     veri = senaryolar[idx]
-    print(f"[1/3] Senaryo ({idx+1}/{n}): {veri['baslik']}")
+    durum["son_kategori"] = _kategori(veri["baslik"])
+    print(f"[1/3] Senaryo ({idx+1}/{n}) [{durum['son_kategori']}]: {veri['baslik']}")
 
     tmp = tempfile.mkdtemp()
     sp = os.path.join(tmp, "script.txt")
