@@ -86,9 +86,24 @@ def main():
                  eleven_once=bool(cfg.get("eleven", True)))
     print(f"      Cikti: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
+    # Carpici kapak uret (dikey->kapak.py, yatay/uzun->kapak_uzun.py).
+    # Boylece bu yoldan yuklenen videolar da ozel kapakli olur (otomatik
+    # kare yerine). Kapak uretilemezse video yine yuklenir.
+    kapak_yolu = None
+    try:
+        if dikey:
+            import kapak as K
+        else:
+            import kapak_uzun as K
+        kapak_yolu = K.kapak_uret(cikti, baslik, "output/kapak.jpg")
+        print(f"      Kapak: {kapak_yolu}")
+    except Exception as e:
+        print(f"      Kapak uretilemedi: {str(e)[:120]}")
+
     print("[3/3] YouTube'a yukleniyor ...")
     import youtube_yukle as YT
-    YT.yukle(cikti, baslik, aciklama, etiketler, gizlilik=gizlilik, kategori=kategori, cocuk_icerigi=cocuk)
+    YT.yukle(cikti, baslik, aciklama, etiketler, gizlilik=gizlilik, kategori=kategori,
+             cocuk_icerigi=cocuk, kapak=kapak_yolu)
     print("TAMAM :)")
 
 
