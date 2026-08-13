@@ -1,5 +1,5 @@
 {
-  "sonraki": 37,
+  "sonraki": 98,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -15,6 +15,7 @@
     "KAHVEDE 'ORTA' YOKTUR! ☕",
     "KARTLA NEDEN DAHA ÇOK HARCARSIN? 💳",
     "KASADAKİ ÇİKOLATA TUZAĞI! 🍫",
+    "KREDİ KARTI PUANI TUZAK MI? 🎁",
     "KREDİ KARTI TAKSİT TUZAĞI! 💳",
     "KUMARHANELER SENİ BÖYLE TUTAR! 🎰",
     "MARKALAR SENİ RENKLERLE KANDIRIYOR! 🎨",
@@ -39,9 +40,10 @@
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "[1/3] Senaryo (37/116): DUTY FREE GERÇEKTEN UCUZ MU? ✈️\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      [Pexels: 8 sonuç -> 'airport duty free shop']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'perfume bottles shelf']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'traveler with luggage']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'airport terminal walking']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'price tag closeup']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'phone price comparison']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (8053 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-13T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 404 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The specified video could not be found. \n✓ Yüklendi: https://youtu.be/OL4P1VFL9iI  (yayın: 2026-08-13T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
+  "son_rapor": "[1/3] Senaryo (98/119) [finans]: KREDİ KARTI PUANI TUZAK MI? 🎁\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      [Pexels: 8 sonuç -> 'credit card points app']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'swiping card rewards']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'loyalty points on screen']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'shopping with credit card']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'reward card closeup']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'spending money card machine']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (7218 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-14T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: OL4P1VFL9iI\n✓ Yüklendi: https://youtu.be/fQcTs5lUQQs  (yayın: 2026-08-14T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
   "bekleyen_yorum": {
-    "video_id": "OL4P1VFL9iI",
-    "metin": "VERGİSİZ NEDEN PAHALI?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
-  }
+    "video_id": "fQcTs5lUQQs",
+    "metin": "PUAN İÇİN NE ÖDÜYORSUN?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+  },
+  "son_kategori": "finans"
 }
