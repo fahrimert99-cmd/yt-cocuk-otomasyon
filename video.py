@@ -203,7 +203,7 @@ PlayResY: {'1920' if dikey else '1080'}
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Outline, Shadow, Alignment, MarginL, MarginR, MarginV
 Style: Def,{a['font']},{punto*4},{a['renk']},{a['kenar_renk']},&H88000000,-1,{a['kenar_kalinlik']},1,2,80,80,{a['alt_bosluk'] if dikey else 90}
-Style: Kanca,{a['font']},{int(punto*4*1.62)},&H0000DDFF,&H00000000,&H00000000,-1,7,2,8,70,70,{240 if dikey else 90}
+Style: Kanca,{a['font']},{int(punto*4*1.80)},&H0000DDFF,&H00000000,&H00000000,-1,8,3,8,60,60,{220 if dikey else 80}
 Style: Abone,{a['font']},{int(punto*4*0.98)},&H0000DDFF,&H00000000,&H00000000,-1,6,3,8,60,60,{640 if dikey else 200}
 
 [Events]
@@ -213,8 +213,12 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         f.write(head)
         if kanca:
             k = str(kanca).strip().replace("\n", " ")
-            f.write(f"Dialogue: 1,0:00:00.00,0:00:02.60,Kanca,,0,0,0,,"
-                    f"{{\\fad(100,320)}}{k}\n")
+            # GÜÇLÜ KANCA: ilk ~3.2sn, büyük + "pop" giriş animasyonu (dikkat çeker).
+            # Pop: 118%'den 100%'e hızlı otur, sonra hafif nefes -> gözü ilk saniyede tutar.
+            pop = ("\\t(0,160,\\fscx118\\fscy118)\\t(160,430,\\fscx100\\fscy100)"
+                   "\\t(430,900,\\fscx105\\fscy105)\\t(900,1400,\\fscx100\\fscy100)")
+            f.write(f"Dialogue: 1,0:00:00.00,0:00:03.20,Kanca,,0,0,0,,"
+                    f"{{\\fad(80,300){pop}}}{k}\n")
         for c in cues:
             txt = c["text"].replace("\n", " ")
             f.write(f"Dialogue: 0,{_ass_zaman(c['start'])},{_ass_zaman(c['end'])},Def,,0,0,0,,{txt}\n")
@@ -225,6 +229,13 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             btn = "\u25B6 ABONE OL  \u2022  her ak\u015fam yeni tuzak"
             # tek yumuşak "nefes": 100->108->100 (yumuşak, titremez)
             puls = "\\t(0,500,\\fscx108\\fscy108)\\t(500,1000,\\fscx100\\fscy100)\\t(1000,1500,\\fscx108\\fscy108)\\t(1500,2000,\\fscx100\\fscy100)"
+            # BAS (erken): hook biter bitmez ~2.9sn belirir, orta CTA'ya carpmaz.
+            # Amac: izleyici ilk saniyelerde abone ipucunu gorsun -> donusum artar.
+            e_bas = 2.9
+            e_bit = min(5.6, orta - 1.3, son - 0.5)
+            if e_bit - e_bas >= 0.8:
+                f.write(f"Dialogue: 2,{_ass_zaman(e_bas)},{_ass_zaman(e_bit)},Abone,,0,0,0,,"
+                        f"{{\\fad(200,200){puls}}}{btn}\n")
             # ORTA: 2.2sn görünür
             o_bas, o_bit = orta - 1.1, orta + 1.1
             f.write(f"Dialogue: 2,{_ass_zaman(o_bas)},{_ass_zaman(o_bit)},Abone,,0,0,0,,"
