@@ -1,7 +1,10 @@
 name: Uzun Video (Otonom)
+# NOT: Uzun videolara GEÇİCİ ARA verildi — önce Shorts'tan büyümek için.
+# Otonom zamanlama (cron) kapatıldı; sadece elle (workflow_dispatch) çalışır.
+# Tekrar başlatmak için aşağıdaki 'schedule' bloğunu geri ekle.
 on:
-  schedule:
-    - cron: "0 8 * * *"
+  # schedule:
+  #   - cron: "0 8 * * *"
   workflow_dispatch: {}
 permissions:
   contents: write
