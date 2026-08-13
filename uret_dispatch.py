@@ -80,10 +80,16 @@ def main():
     os.makedirs("output", exist_ok=True)
     cikti = "output/video.mp4"
     print("[2/3] Video uretiliyor (ElevenLabs oncelikli + alt yazi + FFmpeg) ...")
+    # Ses ID: dikey (short) icin sabit kisa_ses_id (DUTY FREE'deki ses),
+    # yatay (uzun) icin varsa uzun_ses_id; boylece bu yoldan cikan short'lar
+    # da HER ZAMAN ayni sesle uretilir (otomasyon.py ile ayni davranis).
+    _ses_id = (str(cfg.get("kisa_ses_id", "")).strip() if dikey
+               else str(cfg.get("uzun_ses_id", "")).strip()) or None
     V.uret_video(sp, cikti, ses=ses, dikey=dikey, hiz=hiz,
                  sahneler=sahneler, animasyon=animasyon, cocuk=cocuk, tonlama=tonlama,
                  gorsel_stil=str(cfg.get("gorsel_stil", "stok")), kanca=veri.get("kanca"),
-                 eleven_once=bool(cfg.get("eleven", True)))
+                 eleven_once=bool(cfg.get("eleven", True)),
+                 eleven_voice_id=_ses_id)
     print(f"      Cikti: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
     # Carpici kapak uret (dikey->kapak.py, yatay/uzun->kapak_uzun.py).
