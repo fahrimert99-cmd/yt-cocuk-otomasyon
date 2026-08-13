@@ -9,7 +9,7 @@ import os, re, json, time, urllib.parse, urllib.request
 
 PROMPT = """Sen Veritasium tarzında bilim içeriği üreten bir YouTube yazarısın.
 BAŞLIK: {baslik}
-Bu başlık için genel izleyiciye uygun, akıcı, bilimsel olarak DOĞRU bir Türkçe seslendirme metni yaz. ~110 kelime, ilk cümle güçlü bir kanca olsun, sonda düşündürücü bir kapanış. Emoji/başlık/madde YOK, düz paragraf. Anlatımı 5 sahneye böl; her sahne için İNGİLİZCE sinematik bir görsel tarifi yaz.
+Bu başlık için genel izleyiciye uygun, akıcı, bilimsel olarak DOĞRU bir Türkçe seslendirme metni yaz. ~110 kelime. İLK CÜMLE ÇOK ÖNEMLİ: kurulumla/tanımla BAŞLAMA; doğrudan ŞOK EDİCİ sonucu/twist'i ver ki izleyici ilk 2 saniyede kaymasın (örn. "Kurulum..." değil "Aslında sen kandırılıyorsun..." gibi vurucu açılış). Sonda düşündürücü bir kapanış. Uydurma istatistik/sayı verme. Emoji/başlık/madde YOK, düz paragraf. Anlatımı 5 sahneye böl; her sahne için İNGİLİZCE sinematik bir görsel tarifi yaz.
 ÇOK ÖNEMLİ — TÜRKÇE YAZIM: 'script', 'baslik', 'aciklama' ve sahne 'metin' alanlarını KUSURSUZ Türkçe imlâ ile yaz. Türkçe'ye özgü harfleri (ç, ğ, ı, İ, ö, ş, ü ve büyükleri) HER ZAMAN ve EKSİKSİZ kullan; ASLA ASCII karşılıklarına (c, g, i, o, s, u) sadeleştirme. Örnek: "guclu" DEĞİL "güçlü", "bilim icerigi" DEĞİL "bilim içeriği". (Yalnızca 'gorsel' alanı İngilizce olacak.)
 CEVABINI SADECE geçerli JSON olarak ver. Başka hiçbir şey yazma, açıklama/kod bloğu ekleme:
 {{"baslik":"...","aciklama":"2-3 cümle","etiketler":["e1","e2","e3","e4","e5"],"script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english description"}}]}}"""
