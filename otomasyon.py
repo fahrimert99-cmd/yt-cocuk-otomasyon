@@ -76,14 +76,28 @@ def main():
                 return kat
         return "diger"
 
+    def _tema(s):
+        # "tuzak" (varsayilan tuketici tuzagi) ya da "cesitlilik" (tasarruf ipucu,
+        # 'biliyor muydun', genel merak). Eski senaryolarda alan yoksa tuzak sayilir.
+        return s.get("tema", "tuzak")
+
     kalan = [(i, s) for i, s in enumerate(senaryolar) if s["baslik"] not in yapilan]
     if not kalan:
         print("✓ Tüm konular yayınlanmış! Yeni içerik için senaryolar.json'a konu ekleyin.")
         _durum_yaz(durum)
         return
+    # ÇEŞİTLİLİK RİTMİ (P5): sürekli aynı "tuzak" temasi izleyiciyi yorar. Her 3.
+    # videoda bir FARKLI tema (cesitlilik) yayinla -> 2 tuzak + 1 farkli akisi.
+    # Cesitlilik havuzu bitince otomatik tuzaga duser (crash yok).
+    CESIT_RITIM = 3
+    sirada_no = len(yapilan) + 1  # bu uretilecek videonun sira numarasi (1-based)
+    istenen_tema = "cesitlilik" if sirada_no % CESIT_RITIM == 0 else "tuzak"
+    tema_havuz = [t for t in kalan if _tema(t[1]) == istenen_tema] or kalan
+    print(f"      Tema ritmi: {sirada_no}. video -> '{istenen_tema}' "
+          f"(cesitlilik kalan: {sum(1 for t in kalan if _tema(t[1])=='cesitlilik')})")
     son_kat = durum.get("son_kategori")
-    # Önce bir önceki videodan FARKLI kategorideki konulara bak; yoksa tüm kalanlara.
-    havuz = [t for t in kalan if _kategori(t[1]["baslik"]) != son_kat] or kalan
+    # Önce bir önceki videodan FARKLI kategorideki konulara bak; yoksa tüm havuza.
+    havuz = [t for t in tema_havuz if _kategori(t[1]["baslik"]) != son_kat] or tema_havuz
     # Havuz içinde en yüksek öncelik skorlu; eşitlikte dosya sırası (deterministik).
     havuz.sort(key=lambda t: (-_oncelik_skoru(t[1]["baslik"]), t[0]))
     idx = havuz[0][0]

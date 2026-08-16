@@ -1,0 +1,49 @@
+name: Videoyu ElevenLabs ile Yeniden Uret
+
+# Tek seferlik / elle: krediyle uretilmemis (Google TTS'e dusmus) bir videoyu
+# ElevenLabs sesiyle yeniden uretir, ayni saate planlar ve eskisini siler.
+# Gunluk cron'a (otomasyon.yml) ve durum.json'a DOKUNMAZ.
+on:
+  workflow_dispatch:
+    inputs:
+      baslik:
+        description: "senaryolar.json'daki birebir baslik"
+        required: true
+        default: "OYUNCAK NEDEN KASADA? 🧸"
+      eski_video_id:
+        description: "Silinecek eski YouTube video id (bos ise silme atlanir)"
+        required: false
+        default: "KxcvM_2cIcg"
+      yayin_zamani:
+        description: "Planli yayin (UTC), orn 2026-08-17T16:00:00Z"
+        required: false
+        default: "2026-08-17T16:00:00Z"
+
+permissions:
+  contents: read
+
+jobs:
+  yeniden:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: FFmpeg kur
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: ElevenLabs ile yeniden uret + eskiyi sil
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          BASLIK: ${{ github.event.inputs.baslik }}
+          ESKI_VIDEO_ID: ${{ github.event.inputs.eski_video_id }}
+          YAYIN_ZAMANI: ${{ github.event.inputs.yayin_zamani }}
+        run: python3 yeniden_uret.py

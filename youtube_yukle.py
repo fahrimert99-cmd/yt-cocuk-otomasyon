@@ -82,6 +82,14 @@ def video_public(video_id):
         return False
 
 
+def sil(video_id):
+    """Videoyu kanaldan tamamen siler (geri alinamaz).
+    Yeniden uretimde eski (yedek sesli) surumu kaldirmak icin kullanilir."""
+    yt = build("youtube", "v3", credentials=_kimlik())
+    yt.videos().delete(id=video_id).execute()
+    print(f"✓ Eski video silindi: {video_id}")
+
+
 def yorum_at(video_id, metin):
     """Kanaldan videoya ust duzey yorum ekler (video PUBLIC olmali)."""
     yt = build("youtube", "v3", credentials=_kimlik())
