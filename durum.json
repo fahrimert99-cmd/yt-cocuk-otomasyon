@@ -45,7 +45,7 @@
   ],
   "son_rapor": "[1/3] Senaryo (75/119) [market]: OYUNCAK NEDEN KASADA? 🧸\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n      eleven TTS hata (401: {\"detail\":{\"type\":\"invalid_request\",\"code\":\"quota_exceeded\",\"message\":\"This request exceeds your quota of 39228. You have 0 credits remaining, while 162 credits are required for this request.\",\"s), sonraki saglayiciya geciliyor\n    Ses: tr-TR-Wavenet-E (kelime zamanlamasi: gercek timepoint)\n      Ses: Google TTS (nöral Türkçe)\n      [Pexels: 8 sonuç -> 'candy at child eye']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'toys near checkout counter']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'child reaching for candy']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'supermarket checkout line closeup']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'parent with child shopping']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'colorful candy display low']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (13341 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-17T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: Zy02OQqchBY\n✓ Yüklendi: https://youtu.be/KxcvM_2cIcg  (yayın: 2026-08-17T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
   "bekleyen_yorum": {
-    "video_id": "KxcvM_2cIcg",
+    "video_id": "6oC1qXliuRI",
     "metin": "NEDEN ÇOCUK SEVİYESİNDE?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
   "son_kategori": "market"
