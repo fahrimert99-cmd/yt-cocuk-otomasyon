@@ -18,12 +18,12 @@ def _gemini_uzun(prompt, key, model):
     return d["candidates"][0]["content"]["parts"][0]["text"]
 
 UZUN_PROMPT = """BAŞLIK: {baslik}
-Bu başlık için, YouTube'da YATAY bir "detaylı anlatım" videosu için Türkçe seslendirme metni yaz.
-Ton: uyarıcı/ifşa edici ama sakin ve güven veren; izleyiciyi bir tuzak/aldatma konusunda eğiten.
-Uzunluk: yaklaşık 900 kelime (~6 dakika seslendirme). Bilgiler DOĞRU olsun, uydurma istatistik verme.
-Yapı: TEK güçlü kanca ile başla (ilk cümle). Sonra bölümler halinde derinleştir:
-(1) mekanizma/para nereden geliyor, (2) psikolojik numaralar, (3) kimler risk altında özellikle çocuklar,
-(4) MUTLAKA sonda somut "nasıl korunursun" adımları. Sonda düşündürücü güçlü kapanış + kısa abone çağrısı.
+Bu başlık için, YouTube'da YATAY bir "gizem / gerçek olay" belgesel-anlatım videosu için Türkçe seslendirme metni yaz.
+Ton: merak uyandıran, hafif gerilimli ama güven veren bir anlatıcı; izleyiciyi bir gizemin/olayın peşine takan, sürükleyici belgesel dili.
+Uzunluk: yaklaşık 900 kelime (~6 dakika seslendirme). Bilgiler DOĞRU olsun, uydurma istatistik/tarih verme; kesin bilinmeyen yerde "kesin olarak bilinmiyor" de ve teori olduğunu belirt.
+Yapı — RETENTION için kritik: SOĞUK AÇILIŞ ile başla (ilk cümle çarpıcı bir soru ya da merak boşluğu; izleyici ilk 3 saniyede DURSUN). Sonra bölümler halinde derinleştir:
+(1) gizemi/olayı sahnele: nerede, ne zaman, ne oldu, (2) bilinen gerçekler ve kanıtlar, (3) teoriler ve olasılıklar, (4) en çarpıcı detay / dönüm noktası ("ama sonra işler tuhaflaşıyor" gibi açık döngülerle merak taze tut), (5) düşündüren güçlü kapanış + "bir sonraki gizem için abone ol" tarzı kısa merak-odaklı abone çağrısı.
+Her 60-90 saniyede yeni bir soru/merak aç ki izleyici sonuna kadar kalsın.
 Emoji YOK, madde YOK, başlık satırı YOK; düz akıcı paragraflar (tek metin).
 Anlatımı 18-22 sahneye böl. Sahne 'metin'leri script'in SIRAYLA parçaları olsun (o an anlatılan şey).
 Her sahne için 'gorsel': o cümlede anlatılan şeyi gösteren 2-4 KELİMELİK, SOMUT, ARANABİLİR İngilizce stok video anahtar kelimesi.
@@ -137,5 +137,5 @@ def uret(baslik):
 
 if __name__ == "__main__":
     import sys
-    print(json.dumps(uret(sys.argv[1] if len(sys.argv) > 1 else "OYUNLARDAKİ SATIN ALMA TUZAĞI"),
+    print(json.dumps(uret(sys.argv[1] if len(sys.argv) > 1 else "BERMUDA ŞEYTAN ÜÇGENİNDE GERÇEKTE NE OLUYOR?"),
                      ensure_ascii=False, indent=2))
