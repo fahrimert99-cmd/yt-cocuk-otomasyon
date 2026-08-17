@@ -668,8 +668,36 @@ def _ken_burns_vf(i, W, H, frames, fps):
     return f"{presc},{zp},format=yuv420p"
 
 
+def _sahne_sureleri(sahneler, boundaries, toplam):
+    """Her sahnenin GERÇEK anlatım süresini (sn) hesaplar: sahne metinlerinin
+    uzunluğuna göre kelime zaman damgalarına (boundaries) hizalar. Böylece görsel
+    tam da o sahnenin metni konuşulurken görünür (uzunluk farkı olsa bile kaymaz).
+    Hesaplanamazsa None döner -> çağıran taraf eşit-dağıtıma düşer."""
+    n = len(sahneler or [])
+    if n == 0 or not boundaries:
+        return None
+    W = len(boundaries)
+    if W < n:
+        return None
+    # her sahnenin ağırlığı = metnindeki kelime sayısı (yoksa 1)
+    agir = [max(1, len((s.get("metin") or "").split())) for s in sahneler]
+    tw = sum(agir) or n
+    # kümülatif kelime sınırları -> sahne başlangıç kelime indeksleri
+    sinir = [0]; acc = 0
+    for a in agir:
+        acc += a
+        sinir.append(min(W, round(acc / tw * W)))
+    baslangic = [float(boundaries[min(sinir[i], W - 1)]["start"]) for i in range(n)]
+    baslangic[0] = 0.0
+    sureler = []
+    for i in range(n):
+        bit = baslangic[i + 1] if i + 1 < n else toplam
+        sureler.append(max(0.6, bit - baslangic[i]))
+    return sureler
+
+
 def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
-                         max_sahne_sn=3.5):
+                         max_sahne_sn=3.5, sahne_sureleri=None):
     import math
     W, H = boyut
     toplam = sure_al(mp3)
@@ -677,36 +705,51 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
     gorseller = [g if isinstance(g, (tuple, list)) else ("image", g) for g in gorseller]
     n0 = len(gorseller) or 1
     _dikey = H > W
-    if not _dikey and n0 > 1:
-        # UZUN (yatay): sahneleri SIRAYLA dagit (anlatimla eslesir), dongü YOK
+    klip_gorsel = []   # her klibin görseli
+    klip_sure = []     # her klibin EKRAN (unique) süresi sn; None -> uniform hesaplanır
+    if (not _dikey) and n0 > 1 and sahne_sureleri and len(sahne_sureleri) == n0:
+        # TAM SENKRON (uzun/yatay): her sahne, seslendirmedeki GERÇEK süresi kadar
+        # ekranda kalır; tempo için alt-parçalara bölünür (aynı görsel, farklı Ken Burns).
+        for i in range(n0):
+            dur_i = max(0.6, float(sahne_sureleri[i]))
+            sub = max(1, int(round(dur_i / max_sahne_sn)))
+            for _ in range(sub):
+                klip_gorsel.append(gorseller[i]); klip_sure.append(dur_i / sub)
+    elif (not _dikey) and n0 > 1:
+        # Yatay ama senkron bilgisi yok: SIRAYLA eşit dağıtım (eski davranış), döngü YOK
         per = max(1, round((toplam / n0) / max_sahne_sn))
-        _yeni = []
-        for _i in range(n0):
-            _yeni += [gorseller[_i]] * per
-        gorseller = _yeni
+        for i in range(n0):
+            for _ in range(per):
+                klip_gorsel.append(gorseller[i]); klip_sure.append(None)
     else:
-        # SHORTS (dikey): mevcut davranis - DEGISMEDI
+        # SHORTS (dikey): mevcut davranış - DEĞİŞMEDİ (döngü ile doldur)
         seg = max(n0, math.ceil(toplam / max_sahne_sn))
-        gorseller = [gorseller[i % n0] for i in range(seg)]
-    n = len(gorseller)
-    D = (toplam + (n - 1) * gecis) / n if n > 0 else toplam
-    D = max(D, gecis + 0.6)
-    frames = int(D * fps)
+        for i in range(seg):
+            klip_gorsel.append(gorseller[i % n0]); klip_sure.append(None)
+    n = len(klip_gorsel)
+    # None (uniform) süreler için tek tip D hesapla ve doldur (eski davranışla birebir)
+    if any(s is None for s in klip_sure):
+        D = (toplam + (n - 1) * gecis) / n if n > 0 else toplam
+        D = max(D, gecis + 0.6)
+        klip_sure = [(D - gecis) if s is None else s for s in klip_sure]
     tmp = tempfile.mkdtemp()
     klipler = []
-    for i, (tip, g) in enumerate(gorseller):
+    for i, (tip, g) in enumerate(klip_gorsel):
+        u = max(0.3, klip_sure[i])
+        L = u + gecis                 # ENCODE uzunluğu = ekran süresi + geçiş payı
+        frames = int(L * fps)
         seg = os.path.join(tmp, f"k{i}.mp4")
         if tip == "video":
             off = (i * 1.7) % 4.0   # tekrar olursa farklı an
             vf = (f"scale={W}:{H}:force_original_aspect_ratio=increase,"
                   f"crop={W}:{H},fps={fps},format=yuv420p")
             subprocess.run(["ffmpeg", "-y", "-ss", f"{off:.1f}", "-stream_loop", "-1",
-                            "-i", g, "-t", f"{D:.3f}", "-vf", vf, "-r", str(fps), "-an",
+                            "-i", g, "-t", f"{L:.3f}", "-vf", vf, "-r", str(fps), "-an",
                             "-c:v", "libx264", "-preset", "veryfast", "-crf", "23", seg],
                            check=True, capture_output=True)
         else:
             vf = _ken_burns_vf(i, W, H, frames, fps)
-            subprocess.run(["ffmpeg", "-y", "-loop", "1", "-i", g, "-t", f"{D:.3f}",
+            subprocess.run(["ffmpeg", "-y", "-loop", "1", "-i", g, "-t", f"{L:.3f}",
                             "-vf", vf, "-r", str(fps),
                             "-c:v", "libx264", "-preset", "veryfast",
                             "-crf", "22", seg], check=True, capture_output=True)
@@ -725,8 +768,9 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
             inputs += ["-i", k]
         fc = ""
         prev = "0:v"
+        off = 0.0
         for i in range(1, n):
-            off = i * (D - gecis)
+            off += max(0.3, klip_sure[i - 1])   # kümülatif EKRAN süresi = xfade offset
             out = f"v{i}"
             trans = GECISLER[(i - 1) % len(GECISLER)]
             fc += (f"[{prev}][{i}:v]xfade=transition={trans}:"
@@ -852,7 +896,11 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     if animasyon:
         gorseller = sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp,
                                              cocuk=cocuk, stil=gorsel_stil)
-        video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, CONFIG["fps"])
+        # UZUN (yatay) videolarda görselleri seslendirmeye TAM senkronla:
+        # her sahne, metninin konuşulduğu gerçek zaman aralığında görünür.
+        _ss = _sahne_sureleri(sahneler, boundaries, sure_al(mp3)) if (not dikey and sahneler) else None
+        video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, CONFIG["fps"],
+                             sahne_sureleri=_ss)
     else:
         gorseller = gorselleri_hazirla(cumleler, boyut, tmp)
         video_uret(gorseller, mp3, ass, cikti, boyut, CONFIG["fps"])
