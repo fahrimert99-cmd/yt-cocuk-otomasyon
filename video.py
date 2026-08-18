@@ -95,6 +95,23 @@ def _sayi_yaziya(n):
         grup += 1
     return " ".join(reversed(parca)).strip()
 
+# Sıra sayısı (ordinal) okunuşu: son sözcüğe Türkçe sıra eki eklenir.
+_ORDINAL = {
+    "bir": "birinci", "iki": "ikinci", "üç": "üçüncü", "dört": "dördüncü",
+    "beş": "beşinci", "altı": "altıncı", "yedi": "yedinci", "sekiz": "sekizinci",
+    "dokuz": "dokuzuncu", "on": "onuncu", "yirmi": "yirminci", "otuz": "otuzuncu",
+    "kırk": "kırkıncı", "elli": "ellinci", "altmış": "altmışıncı",
+    "yetmiş": "yetmişinci", "seksen": "sekseninci", "doksan": "doksanıncı",
+    "yüz": "yüzüncü", "bin": "bininci", "milyon": "milyonuncu", "milyar": "milyarıncı",
+}
+
+def _sayi_sirali(n):
+    """Tam sayının Türkçe SIRA sayısı okunuşu: 19 -> 'on dokuzuncu', 2 -> 'ikinci'."""
+    parca = _sayi_yaziya(n).split()
+    if parca:
+        parca[-1] = _ORDINAL.get(parca[-1], parca[-1] + "inci")
+    return " ".join(parca)
+
 # Sık sorun çıkaran kısaltma/yabancı sözcükler -> Türkçe okunuş.
 _SES_KISALTMA = {
     r"\bWi-?Fi\b": "vayfay",
@@ -112,6 +129,11 @@ def _ses_normalize(metin):
         h, dk = int(x.group(1)), int(x.group(2))
         return _sayi_yaziya(h) if dk == 0 else f"{_sayi_yaziya(h)} {_sayi_yaziya(dk)}"
     m = re.sub(r"\b(\d{1,2}):([0-5]\d)\b", _saat_rep, m)
+    # sıra sayısı: "19. filo" -> "on dokuzuncu filo" (nokta + boşluk + harf gelirse).
+    # Cümle sonundaki sayı (19. <BÜYÜK harf/çıkış>) ordinal sayılmaz; sadece devam
+    # eden sözcük varsa çevrilir. ≤3 haneyle sınırlı (yıl gibi 4 haneler hariç).
+    m = re.sub(r"\b(\d{1,3})\.(?=\s+[^\W\d_])",
+               lambda x: _sayi_sirali(int(x.group(1))), m)
     m = re.sub(r"(\d+),(\d+)", r"\1 virgül \2", m)           # 13,8 -> 13 virgül 8
     m = re.sub(r"(?<=\d)\.(?=\d{3}\b)", "", m)               # 1.000.000 -> 1000000
     m = re.sub(r"\d+", lambda x: _sayi_yaziya(int(x.group(0))), m)  # sayı -> yazı
