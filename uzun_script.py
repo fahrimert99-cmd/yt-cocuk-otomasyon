@@ -1,4 +1,4 @@
-# uzun_script.py — 3 dk (~450 kelime) UZUN video metni uretir.
+# uzun_script.py — ~2.5-3 dk (~400 kelime) UZUN video metni uretir.
 import os, json, time, urllib.request
 from ai_script import _gemini, _poll_post, _poll_get, _temizle, _claude, _claude_key
 
@@ -20,12 +20,12 @@ def _gemini_uzun(prompt, key, model):
 UZUN_PROMPT = """BAŞLIK: {baslik}
 Bu başlık için, YouTube'da YATAY bir "gizem / gerçek olay" belgesel-anlatım videosu için Türkçe seslendirme metni yaz.
 Ton: merak uyandıran, hafif gerilimli ama güven veren bir anlatıcı; izleyiciyi bir gizemin/olayın peşine takan, sürükleyici belgesel dili.
-Uzunluk: yaklaşık 450 kelime (~3 dakika seslendirme). Bilgiler DOĞRU olsun, uydurma istatistik/tarih verme; kesin bilinmeyen yerde "kesin olarak bilinmiyor" de ve teori olduğunu belirt.
+Uzunluk: yaklaşık 400 kelime (~2,5-3 dakika seslendirme). Bilgiler DOĞRU olsun, uydurma istatistik/tarih verme; kesin bilinmeyen yerde "kesin olarak bilinmiyor" de ve teori olduğunu belirt.
 Yapı — RETENTION için kritik: SOĞUK AÇILIŞ ile başla (ilk cümle çarpıcı bir soru ya da merak boşluğu; izleyici ilk 3 saniyede DURSUN). Sonra bölümler halinde derinleştir:
 (1) gizemi/olayı sahnele: nerede, ne zaman, ne oldu, (2) bilinen gerçekler ve kanıtlar, (3) teoriler ve olasılıklar, (4) en çarpıcı detay / dönüm noktası ("ama sonra işler tuhaflaşıyor" gibi açık döngülerle merak taze tut), (5) düşündüren güçlü kapanış + "bir sonraki gizem için abone ol" tarzı kısa merak-odaklı abone çağrısı.
 Her 60-90 saniyede yeni bir soru/merak aç ki izleyici sonuna kadar kalsın.
 Emoji YOK, madde YOK, başlık satırı YOK; düz akıcı paragraflar (tek metin).
-Anlatımı 11-14 sahneye böl. Sahne 'metin'leri script'in SIRAYLA parçaları olsun (o an anlatılan şey).
+Anlatımı 10-13 sahneye böl. Sahne 'metin'leri script'in SIRAYLA parçaları olsun (o an anlatılan şey).
 Her sahne için 'gorsel': o cümlede anlatılan şeyi gösteren 2-4 KELİMELİK, SOMUT, ARANABİLİR İngilizce stok video anahtar kelimesi.
 Somut nesne/mekân/eylem kullan; örnek: "supermarket shopping cart", "credit card payment", "shrinking product package", "child playing phone game".
 YASAK: soyut/kavramsal ifadeler ("conceptual", "abstract", "cinematic shot", "shadowy figure", "coins dissolving" gibi). Başa "a"/"the" KOYMA, somut ismi başa yaz.
@@ -42,7 +42,7 @@ _TR_OZEL = set("çğıöşüÇĞİÖŞÜ")  # Türkçe'ye özgü, ASCII karşıl
 def _turkce_yeterli(metin):
     """Metnin gercekten Turkce karakter icerdigini dogrular.
     Diakritiksiz (ASCII'ye sadelestirilmis) uretimi yakalar: gercek bir
-    ~450 kelimelik Turkce metin bu harfleri yogun icerir; sadelestirilmis
+    ~400 kelimelik Turkce metin bu harfleri yogun icerir; sadelestirilmis
     metinde neredeyse hic bulunmaz. Kisa metinlerde kontrol atlanir."""
     s = metin or ""
     if len(s) < 200:
