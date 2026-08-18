@@ -77,8 +77,8 @@ def main():
         return "diger"
 
     def _tema(s):
-        # "tuzak" (varsayilan tuketici tuzagi) ya da "cesitlilik" (tasarruf ipucu,
-        # 'biliyor muydun', genel merak). Eski senaryolarda alan yoksa tuzak sayilir.
+        # Tema: "tuzak" (tuketici tuzagi), "gizem" (gizem/gercek olaylar) ya da
+        # "cesitlilik" (eski: tasarruf/'biliyor muydun'). Alan yoksa "tuzak".
         return s.get("tema", "tuzak")
 
     kalan = [(i, s) for i, s in enumerate(senaryolar) if s["baslik"] not in yapilan]
@@ -86,15 +86,36 @@ def main():
         print("✓ Tüm konular yayınlanmış! Yeni içerik için senaryolar.json'a konu ekleyin.")
         _durum_yaz(durum)
         return
-    # ÇEŞİTLİLİK RİTMİ (P5): sürekli aynı "tuzak" temasi izleyiciyi yorar. Her 3.
-    # videoda bir FARKLI tema (cesitlilik) yayinla -> 2 tuzak + 1 farkli akisi.
-    # Cesitlilik havuzu bitince otomatik tuzaga duser (crash yok).
-    CESIT_RITIM = 3
+    # GİZEM GEÇİŞİ (2 hafta): Shorts DEVAM eder ama tema yavaşça "tuzak" -> "gizem"
+    # kayar (kanal, uzun videolarla aynı gizem konseptinde netleşsin).
+    #   Faz1 (gün 0-3):  2 tuzak + 1 gizem
+    #   Faz2 (gün 4-7):  yarı yarıya
+    #   Faz3 (gün 8-11): 2 gizem + 1 tuzak
+    #   Faz4 (gün 12+):  tamamen gizem
+    # Başlangıç tarihi durum.json'a BİR KEZ yazılır (kalıcı). İstenen tema havuzu
+    # boşsa diğer ana temaya düşer (crash yok).
+    from datetime import date as _date
+    if not durum.get("gizem_gecis_baslangic"):
+        durum["gizem_gecis_baslangic"] = _date.today().isoformat()
+    try:
+        _gun = (_date.today() - _date.fromisoformat(durum["gizem_gecis_baslangic"])).days
+    except Exception:
+        _gun = 0
     sirada_no = len(yapilan) + 1  # bu uretilecek videonun sira numarasi (1-based)
-    istenen_tema = "cesitlilik" if sirada_no % CESIT_RITIM == 0 else "tuzak"
-    tema_havuz = [t for t in kalan if _tema(t[1]) == istenen_tema] or kalan
-    print(f"      Tema ritmi: {sirada_no}. video -> '{istenen_tema}' "
-          f"(cesitlilik kalan: {sum(1 for t in kalan if _tema(t[1])=='cesitlilik')})")
+    if _gun <= 3:
+        istenen_tema = "gizem" if sirada_no % 3 == 0 else "tuzak"
+    elif _gun <= 7:
+        istenen_tema = "gizem" if sirada_no % 2 == 0 else "tuzak"
+    elif _gun <= 11:
+        istenen_tema = "tuzak" if sirada_no % 3 == 0 else "gizem"
+    else:
+        istenen_tema = "gizem"
+    tema_havuz = [t for t in kalan if _tema(t[1]) == istenen_tema]
+    if not tema_havuz:  # o tema bitmişse diğer ana temaya düş
+        _diger = "tuzak" if istenen_tema != "tuzak" else "gizem"
+        tema_havuz = [t for t in kalan if _tema(t[1]) == _diger] or kalan
+    print(f"      Gizem geçişi: gün {_gun}, {sirada_no}. video -> '{istenen_tema}' "
+          f"(gizem kalan: {sum(1 for t in kalan if _tema(t[1])=='gizem')})")
     son_kat = durum.get("son_kategori")
     # Önce bir önceki videodan FARKLI kategorideki konulara bak; yoksa tüm havuza.
     havuz = [t for t in tema_havuz if _kategori(t[1]["baslik"]) != son_kat] or tema_havuz
