@@ -107,6 +107,11 @@ def _ses_normalize(metin):
         return metin
     m = metin
     m = re.sub(r"%\s*(\d+)", r"yüzde \1", m)                 # %95 -> yüzde 95
+    # saat: 19:00 -> "on dokuz", 19:30 -> "on dokuz otuz"  (iki nokta okunmasın)
+    def _saat_rep(x):
+        h, dk = int(x.group(1)), int(x.group(2))
+        return _sayi_yaziya(h) if dk == 0 else f"{_sayi_yaziya(h)} {_sayi_yaziya(dk)}"
+    m = re.sub(r"\b(\d{1,2}):([0-5]\d)\b", _saat_rep, m)
     m = re.sub(r"(\d+),(\d+)", r"\1 virgül \2", m)           # 13,8 -> 13 virgül 8
     m = re.sub(r"(?<=\d)\.(?=\d{3}\b)", "", m)               # 1.000.000 -> 1000000
     m = re.sub(r"\d+", lambda x: _sayi_yaziya(int(x.group(0))), m)  # sayı -> yazı
