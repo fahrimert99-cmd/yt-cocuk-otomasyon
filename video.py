@@ -59,6 +59,62 @@ def tr_upper(s):
 # ----------------------------------------------------------
 # 1. METİN OKUMA + CÜMLELERE AYIRMA
 # ----------------------------------------------------------
+# ----------------------------------------------------------
+# SES NORMALİZASYONU — TTS'in takıldığı sayı/yüzde/kısaltmaları
+# seslendirmeden ÖNCE Türkçe okunuşa çevirir (telaffuz düzelir).
+# Altyazı da bu metinden üretildiği için ses ile senkron kalır.
+# ----------------------------------------------------------
+_SAYI_BIR = ["", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"]
+_SAYI_ON  = ["", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"]
+_SAYI_GRUP = ["", " bin", " milyon", " milyar", " trilyon", " katrilyon"]
+
+def _uc_haneli_yazi(n):
+    y, k = divmod(n, 100)
+    o, b = divmod(k, 10)
+    p = []
+    if y:
+        p.append("yüz" if y == 1 else _SAYI_BIR[y] + " yüz")
+    if o:
+        p.append(_SAYI_ON[o])
+    if b:
+        p.append(_SAYI_BIR[b])
+    return " ".join(p)
+
+def _sayi_yaziya(n):
+    """Tam sayıyı Türkçe okunuşuna çevirir (0..katrilyon)."""
+    if n == 0:
+        return "sıfır"
+    parca = []; grup = 0
+    while n > 0 and grup < len(_SAYI_GRUP):
+        n, r = divmod(n, 1000)
+        if r:
+            s = _uc_haneli_yazi(r)
+            if grup == 1 and r == 1:   # "bin" ("bir bin" değil)
+                s = ""
+            parca.append((s + _SAYI_GRUP[grup]).strip())
+        grup += 1
+    return " ".join(reversed(parca)).strip()
+
+# Sık sorun çıkaran kısaltma/yabancı sözcükler -> Türkçe okunuş.
+_SES_KISALTMA = {
+    r"\bWi-?Fi\b": "vayfay",
+    r"\bWIFI\b": "vayfay",
+}
+
+def _ses_normalize(metin):
+    """Sayı, yüzde ve bazı kısaltmaları TTS'in doğru telaffuz edeceği hale getirir."""
+    if not metin:
+        return metin
+    m = metin
+    m = re.sub(r"%\s*(\d+)", r"yüzde \1", m)                 # %95 -> yüzde 95
+    m = re.sub(r"(\d+),(\d+)", r"\1 virgül \2", m)           # 13,8 -> 13 virgül 8
+    m = re.sub(r"(?<=\d)\.(?=\d{3}\b)", "", m)               # 1.000.000 -> 1000000
+    m = re.sub(r"\d+", lambda x: _sayi_yaziya(int(x.group(0))), m)  # sayı -> yazı
+    for pat, rep in _SES_KISALTMA.items():
+        m = re.sub(pat, rep, m, flags=re.IGNORECASE)
+    return m
+
+
 def metni_oku(path):
     with open(path, encoding="utf-8") as f:
         raw = f.read()
@@ -857,6 +913,10 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     boyut = CONFIG["dikey"] if dikey else CONFIG["yatay"]
     voice = CONFIG["sesler"][ses]
     text, cumleler = metni_oku(script_path)
+    # SES NORMALİZASYONU: sayı/yüzde/kısaltmaları seslendirmeden önce Türkçe
+    # okunuşa çevir (TTS telaffuz hatalarını önler). Altyazı da bu metinden üretilir.
+    text = _ses_normalize(text)
+    cumleler = [_ses_normalize(c) for c in cumleler]
     tmp = tempfile.mkdtemp()
     mp3 = os.path.join(tmp, "narration.mp3")
     _gk=_google_key(); _pk=_pexels_key()
