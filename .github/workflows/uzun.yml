@@ -1,10 +1,11 @@
 name: Uzun Video (Otonom)
-# NOT: Uzun videolara GEÇİCİ ARA verildi — önce Shorts'tan büyümek için.
-# Otonom zamanlama (cron) kapatıldı; sadece elle (workflow_dispatch) çalışır.
-# Tekrar başlatmak için aşağıdaki 'schedule' bloğunu geri ekle.
+# Uzun videolar: GİZEM/GERÇEK OLAYLAR, ~3 dk. Haftada 2 kez otonom üretim.
+# NOT: config.json'da "uzun_gizlilik":"unlisted" olduğu sürece videolar
+# gizli (link ile) yüklenir — kanalda herkese açık olmaz. Kaliteyi onaylayınca
+# "private" (zamanlanmış public) yapın.
 on:
-  # schedule:
-  #   - cron: "0 8 * * *"
+  schedule:
+    - cron: "0 8 * * 2,6"   # Salı ve Cumartesi 08:00 UTC — haftada 2 uzun video
   workflow_dispatch: {}
 permissions:
   contents: write
