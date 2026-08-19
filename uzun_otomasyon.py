@@ -60,7 +60,7 @@ def main():
                  eleven_once=bool(cfg.get("uzun_eleven",True)))
     kapak=None
     try:
-        import kapak_uzun as K; kapak=K.kapak_uret(cikti,uzun["baslik"],"output/uzun_kapak.jpg")
+        import kapak_uzun as K; kapak=K.kapak_uret(cikti,uzun["baslik"],"output/uzun_kapak.jpg",kanca=uzun.get("kanca"))
     except Exception as e: print("kapak atlandi:",str(e)[:60])
 
     gizlilik=cfg.get("uzun_gizlilik","unlisted"); yayin=None
