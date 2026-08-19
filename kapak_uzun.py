@@ -20,6 +20,19 @@ def _upper(s):
     return s.translate(str.maketrans({"i": "İ", "ı": "I", "ş": "Ş", "ğ": "Ğ",
                                       "ü": "Ü", "ö": "Ö", "ç": "Ç"})).upper()
 
+# Kapakta gösterilmeyecek zayıf/dolgu kelimeler (baştaki 3 kelimenin sonundan atılır).
+_ZAYIF = {"NE", "Mİ", "MI", "MU", "MÜ", "MİYDİ", "MIYDI", "VAR", "DA", "DE", "BİR", "İLE"}
+
+def _kapak_metni(baslik, maks=3):
+    """Kapak için EN FAZLA `maks` kelimelik vurucu metin: başlığın ilk anlamlı
+    kelimeleri (zayıf son kelimeler atılır). Örn 'BERMUDA ŞEYTAN ÜÇGENİNDE
+    GERÇEKTE NE OLUYOR?' -> 'BERMUDA ŞEYTAN ÜÇGENİNDE'."""
+    metin = _upper(re.sub(r"[^\w\sğüşiöçİĞÜŞÖÇ?!.,'-]", "", baslik or "", flags=re.UNICODE).strip())
+    kel = [w for w in metin.split() if w][:maks]
+    while len(kel) > 1 and kel[-1].strip("?!.,'-") in _ZAYIF:
+        kel.pop()
+    return " ".join(kel) or metin[:20]
+
 def _sure(v):
     r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                         "-of", "default=nokey=1:noprint_wrappers=1", v],
@@ -86,12 +99,12 @@ def kapak_uret(video_path, baslik, cikti="output/uzun_kapak.jpg"):
     base = Image.alpha_composite(base, _dikey_gradyan((5, 6, 12), [(0.0, 130), (0.28, 0), (1.0, 0)]))
     d = ImageDraw.Draw(base, "RGBA")
 
-    # ---- DEV İKİ-RENKLİ BAŞLIK (alt) ----
-    metin = _upper(re.sub(r"[^\w\sğüşiöçİĞÜŞÖÇ?!.,'-]", "", baslik, flags=re.UNICODE).strip())
+    # ---- DEV İKİ-RENKLİ BAŞLIK (alt) — MAKS 3 KELİME, çok vurucu ----
+    metin = _kapak_metni(baslik, maks=3)
     kel = metin.split()
-    fs = 92
-    for _fs in (140, 128, 116, 104, 94, 84):
-        font = ImageFont.truetype(FB, _fs); maxw = W - 130; sat = []; cur = ""
+    fs = 100
+    for _fs in (188, 168, 150, 132, 116, 100):
+        font = ImageFont.truetype(FB, _fs); maxw = W - 120; sat = []; cur = ""
         for k in kel:
             if d.textlength((cur + " " + k).strip(), font=font) <= maxw:
                 cur = (cur + " " + k).strip()
@@ -99,7 +112,7 @@ def kapak_uret(video_path, baslik, cikti="output/uzun_kapak.jpg"):
                 sat.append(cur); cur = k
         if cur: sat.append(cur)
         fs = _fs
-        if len(sat) <= 4: break
+        if len(sat) <= 2: break
     font = ImageFont.truetype(FB, fs)
     lh = int(fs * 1.04); blok = lh * len(sat); ty = H - blok - 44
 
