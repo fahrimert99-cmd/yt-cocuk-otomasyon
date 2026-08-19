@@ -34,7 +34,7 @@ Türkçe'ye özgü harfleri (ç, ğ, ı, İ, ö, ş, ü ve büyükleri Ç, Ğ, �
 Bu harfleri ASLA ASCII karşılıklarına (c, g, i, o, s, u) sadeleştirme; aksan/diakritik atlama. Örnek: "guclu" DEĞİL "güçlü", "cocuk" DEĞİL "çocuk", "sirri" DEĞİL "sırrı", "yasiyor" DEĞİL "yaşıyor".
 (NOT: yalnızca 'gorsel' alanı İngilizce olacak; onun dışındaki tüm metin doğru Türkçe karakterlerle yazılır.)
 SADECE şu JSON'u döndür:
-{{"baslik":"...","aciklama":"2-3 cümle","etiketler":["e1","e2","e3","e4","e5","e6","e7","e8"],"kanca":"3-6 kelimelik ŞOK EDİCİ, kaydırmayı durduran, merak/öfke uyandıran Türkçe açılış - izleyici ilk 2 saniyede DURSUN; ZORUNLU, asla boş bırakma","script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english"}}]}}"""
+{{"baslik":"...","aciklama":"2-3 cümle","etiketler":["e1","e2","e3","e4","e5","e6","e7","e8"],"kanca":"EN FAZLA 3 kelimelik ŞOK EDİCİ, kaydırmayı durduran, merak uyandıran Türkçe açılış (kapakta da kullanılır) - izleyici ilk 2 saniyede DURSUN; ZORUNLU, asla boş bırakma; örnek: 'GEMİLER NEDEN KAYBOLUYOR', 'KİM GÖNDERDİ', 'HERKES YANILDI'","script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english"}}]}}"""
 
 
 _TR_OZEL = set("çğıöşüÇĞİÖŞÜ")  # Türkçe'ye özgü, ASCII karşılığı olmayan harfler

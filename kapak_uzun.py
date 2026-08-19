@@ -72,7 +72,7 @@ def _dikey_gradyan(renk, noktalar):
     kat = Image.new("RGBA", (W, H), renk + (255,)); kat.putalpha(g)
     return kat
 
-def kapak_uret(video_path, baslik, cikti="output/uzun_kapak.jpg"):
+def kapak_uret(video_path, baslik, cikti="output/uzun_kapak.jpg", kanca=None):
     os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
     frame = "/tmp/_ku.jpg"
     if not _kare(video_path, frame): Image.new("RGB", (W, H), (12, 12, 18)).save(frame)
@@ -100,7 +100,9 @@ def kapak_uret(video_path, baslik, cikti="output/uzun_kapak.jpg"):
     d = ImageDraw.Draw(base, "RGBA")
 
     # ---- DEV İKİ-RENKLİ BAŞLIK (alt) — MAKS 3 KELİME, çok vurucu ----
-    metin = _kapak_metni(baslik, maks=3)
+    # Öncelik: KANCA (AI'ın şok edici merak cümlesi, daha tıklatıcı); yoksa başlık.
+    kaynak = (kanca or "").strip() or baslik
+    metin = _kapak_metni(kaynak, maks=3)
     kel = metin.split()
     fs = 100
     for _fs in (188, 168, 150, 132, 116, 100):
