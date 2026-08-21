@@ -1,5 +1,5 @@
 {
-  "sonraki": 95,
+  "sonraki": 4,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -43,15 +43,16 @@
     "TELEFON FATURANDAKİ GİZLİ ÜCRETLER! 📞",
     "UYGULAMALAR SENİ BÖYLE BAĞIMLI YAPIYOR! 📱",
     "UÇAK BİLETİ FİYAT OYUNU! ✈️",
+    "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
     "İNDİRİM ETİKETLERİ YALAN! 🏷️",
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "      Gizem geçişi: gün 2, 45. video -> 'gizem' (gizem kalan: 38)\n[1/3] Senaryo (95/132) [diger]: BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n      google TTS hata (403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"This API method requires billing to be enabled. Please enable billing on project #318605312688 by visiting https://console.developers.google.com/bi), sonraki saglayiciya geciliyor\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      [Pexels: 8 sonuç -> 'atlantic ocean map with']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'a ship sailing into']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'small airplane over vast']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'gas bubbles rising in']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'a compass needle spinning']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'mysterious dark ocean horizon']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (16013 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-21T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: iAho8R_Br_k\n✓ Yüklendi: https://youtu.be/uw2xsT3sgTc  (yayın: 2026-08-21T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
+  "son_rapor": "      Gizem geçişi: gün 3, 46. video -> 'tuzak' (gizem kalan: 37)\n[1/3] Senaryo (4/132) [dijital]: ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n      google TTS hata (403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"This API method requires billing to be enabled. Please enable billing on project #318605312688 by visiting https://console.developers.google.com/bi), sonraki saglayiciya geciliyor\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      [Pexels: 8 sonuç -> 'discount price tag']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'sale sign store']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'crossed out price closeup']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'shopping store shelves']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'hand holding tag']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'person shopping decision']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (8468 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-22T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: uw2xsT3sgTc\n✓ Yüklendi: https://youtu.be/yruHAVyLzQE  (yayın: 2026-08-22T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
   "bekleyen_yorum": {
-    "video_id": "uw2xsT3sgTc",
-    "metin": "GEMİLER NEDEN KAYBOLUYOR?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "yruHAVyLzQE",
+    "metin": "ESKİ FİYAT GERÇEK Mİ?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
-  "son_kategori": "diger",
+  "son_kategori": "dijital",
   "gizem_gecis_baslangic": "2026-08-18"
 }
