@@ -12,8 +12,35 @@ DERİN metrikler YouTube Analytics API + yt-analytics.readonly izni ister; yoksa
 o bölüm atlanır (rapor yine üretilir).
 """
 import os, json, re, datetime as dt
+import smtplib, ssl
+from email.mime.text import MIMEText
+from email.header import Header
 from googleapiclient.discovery import build
 from youtube_yukle import _kimlik
+
+
+def _mail_gonder(konu, govde):
+    """Raporu Gmail SMTP ile e-postayla gönderir (MAIL_USER/MAIL_PASS ayarlıysa).
+    MAIL_PASS = Gmail 'uygulama şifresi' (normal şifre değil). MAIL_TO boşsa
+    gönderene atılır."""
+    user = os.environ.get("MAIL_USER", "").strip()
+    pw = os.environ.get("MAIL_PASS", "").strip()
+    to = os.environ.get("MAIL_TO", "").strip() or user
+    if not (user and pw and to):
+        print("  [mail atlandı: MAIL_USER/MAIL_PASS secret'ları ayarlı değil]")
+        return
+    msg = MIMEText(govde, "plain", "utf-8")
+    msg["Subject"] = Header(konu, "utf-8")
+    msg["From"] = user
+    msg["To"] = to
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587, timeout=60) as s:
+            s.starttls(context=ssl.create_default_context())
+            s.login(user, pw)
+            s.sendmail(user, [to], msg.as_string())
+        print(f"  ✓ rapor e-postayla gönderildi: {to}")
+    except Exception as e:
+        print(f"  ! mail gönderilemedi: {str(e)[:160]}")
 
 # --- tema tespiti (baslik anahtar kelimeleriyle) ---
 GIZEM_KW = ["BERMUDA", "OKYANUS", "PİRAMİT", "ATLANTİS", "GİZEM", "SIR", "KAYIP", "UZAY",
@@ -154,11 +181,14 @@ def main():
     L.append("\n> Not: Retention (izlenme %) ve CTR gibi derin metrikler için "
              "YouTube Analytics izni (yt-analytics.readonly) gerekir; şu an temel "
              "metrikler (izlenme/beğeni/yorum) raporlanıyor.")
+    md = "\n".join(L) + "\n"
     with open("analiz_rapor.md", "w", encoding="utf-8") as f:
-        f.write("\n".join(L) + "\n")
+        f.write(md)
     print(f"✓ Rapor yazıldı: analiz_rapor.md + analiz_rapor.json ({len(videolar)} video)")
     print(f"  Format: {format_ozet}")
     print(f"  Tema:   {tema_ozet}")
+    # Günlük raporu e-postayla gönder (kurulmuşsa)
+    _mail_gonder(f"📊 Kanal Denetim Raporu — {bugun}", md)
 
 if __name__ == "__main__":
     main()
