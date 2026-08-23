@@ -5,15 +5,15 @@
 ## Format performansı (son ~50 video)
 | Format | Video | Ort. izlenme | Toplam izlenme | Etkileşim % |
 |--------|-------|--------------|----------------|-------------|
-| short | 42 | 738 | 30979 | 1.38 |
+| short | 42 | 738 | 30982 | 1.37 |
 | uzun | 10 | 18 | 179 | 12.85 |
 
 ## Tema performansı
 | Tema | Video | Ort. izlenme | Toplam izlenme | Etkileşim % |
 |------|-------|--------------|----------------|-------------|
 | diger | 15 | 690 | 10352 | 1.43 |
-| tuzak | 31 | 603 | 18708 | 1.45 |
-| gizem | 6 | 350 | 2098 | 1.43 |
+| tuzak | 31 | 604 | 18710 | 1.45 |
+| gizem | 6 | 350 | 2099 | 1.43 |
 
 ## En çok izlenen 10 video
 | # | Başlık | İzlenme | Tema | Format |
@@ -34,8 +34,8 @@
 |--------|---------|------|--------|-------|
 | OYUNCAK NEDEN KASADA? 🧸 | 1841 | tuzak | short | 2026-08-17 |
 | MENÜDEKİ GİZLİ TUZAK! 📋 | 1024 | tuzak | short | 2026-08-20 |
-| ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️ | 903 | tuzak | short | 2026-08-22 |
-| BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊 | 847 | gizem | short | 2026-08-21 |
+| ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️ | 905 | tuzak | short | 2026-08-22 |
+| BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊 | 848 | gizem | short | 2026-08-21 |
 | BÜYÜK PAKET HER ZAMAN UCUZ DEĞİL! ⚖️ | 741 | diger | short | 2026-08-18 |
 | MARKET NEDEN LABİRENT GİBİ? 🌀 | 705 | tuzak | short | 2026-08-19 |
 | REKLAMLARDA NEDEN ÇOCUK VAR? 👶 | 619 | tuzak | short | 2026-08-16 |

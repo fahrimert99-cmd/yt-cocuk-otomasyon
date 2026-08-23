@@ -15,21 +15,21 @@
     "short": {
       "video": 42,
       "ort_izlenme": 738,
-      "toplam_izlenme": 30979,
-      "etkilesim_orani": 1.38
+      "toplam_izlenme": 30982,
+      "etkilesim_orani": 1.37
     }
   },
   "tema_ozet": {
     "gizem": {
       "video": 6,
       "ort_izlenme": 350,
-      "toplam_izlenme": 2098,
+      "toplam_izlenme": 2099,
       "etkilesim_orani": 1.43
     },
     "tuzak": {
       "video": 31,
-      "ort_izlenme": 603,
-      "toplam_izlenme": 18708,
+      "ort_izlenme": 604,
+      "toplam_izlenme": 18710,
       "etkilesim_orani": 1.45
     },
     "diger": {
@@ -118,14 +118,14 @@
     },
     {
       "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
-      "izlenme": 903,
+      "izlenme": 905,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-22"
     },
     {
       "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
-      "izlenme": 847,
+      "izlenme": 848,
       "tema": "gizem",
       "format": "short",
       "yayin": "2026-08-21"
