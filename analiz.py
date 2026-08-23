@@ -24,7 +24,7 @@ def _mail_gonder(konu, govde):
     MAIL_PASS = Gmail 'uygulama şifresi' (normal şifre değil). MAIL_TO boşsa
     gönderene atılır."""
     user = os.environ.get("MAIL_USER", "").strip()
-    pw = os.environ.get("MAIL_PASS", "").strip()
+    pw = re.sub(r"\s+", "", os.environ.get("MAIL_PASS", ""))  # app password boşluklarını temizle
     to = os.environ.get("MAIL_TO", "").strip() or user
     if not (user and pw and to):
         print("  [mail atlandı: MAIL_USER/MAIL_PASS secret'ları ayarlı değil]")
