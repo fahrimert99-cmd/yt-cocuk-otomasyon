@@ -1,0 +1,176 @@
+{
+  "tarih": "2026-08-23",
+  "kanal": {
+    "abone": "77",
+    "toplam_izlenme": "29912",
+    "video_sayisi": "51"
+  },
+  "format_ozet": {
+    "uzun": {
+      "video": 10,
+      "ort_izlenme": 18,
+      "toplam_izlenme": 179,
+      "etkilesim_orani": 12.85
+    },
+    "short": {
+      "video": 42,
+      "ort_izlenme": 738,
+      "toplam_izlenme": 30979,
+      "etkilesim_orani": 1.38
+    }
+  },
+  "tema_ozet": {
+    "gizem": {
+      "video": 6,
+      "ort_izlenme": 350,
+      "toplam_izlenme": 2098,
+      "etkilesim_orani": 1.43
+    },
+    "tuzak": {
+      "video": 31,
+      "ort_izlenme": 603,
+      "toplam_izlenme": 18708,
+      "etkilesim_orani": 1.45
+    },
+    "diger": {
+      "video": 15,
+      "ort_izlenme": 690,
+      "toplam_izlenme": 10352,
+      "etkilesim_orani": 1.43
+    }
+  },
+  "top10": [
+    {
+      "baslik": "OYUNCAK NEDEN KASADA? 🧸",
+      "izlenme": 1841,
+      "tema": "tuzak",
+      "format": "short"
+    },
+    {
+      "baslik": "MARKET KOKUSU BİLE TUZAK! 👃",
+      "izlenme": 1550,
+      "tema": "tuzak",
+      "format": "short"
+    },
+    {
+      "baslik": "OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨",
+      "izlenme": 1292,
+      "tema": "diger",
+      "format": "short"
+    },
+    {
+      "baslik": "SİNEMADA MISIR NEDEN PAHALI? 🍿",
+      "izlenme": 1241,
+      "tema": "tuzak",
+      "format": "short"
+    },
+    {
+      "baslik": "KASADAKİ ÇİKOLATA TUZAĞI! 🍫",
+      "izlenme": 1158,
+      "tema": "tuzak",
+      "format": "short"
+    },
+    {
+      "baslik": "REKLAMLAR BEYNİNİ BÖYLE KANDIRIYOR! 📺",
+      "izlenme": 1152,
+      "tema": "tuzak",
+      "format": "short"
+    },
+    {
+      "baslik": "DUTY FREE GERÇEKTEN UCUZ MU? ✈️",
+      "izlenme": 1151,
+      "tema": "gizem",
+      "format": "short"
+    },
+    {
+      "baslik": "SPOR SALONU ÜYELİĞİ TUZAĞI! 💪",
+      "izlenme": 1089,
+      "tema": "diger",
+      "format": "short"
+    },
+    {
+      "baslik": "FAST FOOD MENÜ TUZAĞI! 🍔",
+      "izlenme": 1046,
+      "tema": "tuzak",
+      "format": "short"
+    },
+    {
+      "baslik": "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉",
+      "izlenme": 1033,
+      "tema": "tuzak",
+      "format": "short"
+    }
+  ],
+  "son7gun": [
+    {
+      "baslik": "Okyanusun Haritalanmamış Derinliklerinde Ne Var?",
+      "izlenme": 3,
+      "tema": "gizem",
+      "format": "uzun",
+      "yayin": "2026-08-22"
+    },
+    {
+      "baslik": "ALTIN GÜNÜ BİR TUZAK MI? 💰",
+      "izlenme": 0,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-08-22"
+    },
+    {
+      "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
+      "izlenme": 903,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-08-22"
+    },
+    {
+      "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
+      "izlenme": 847,
+      "tema": "gizem",
+      "format": "short",
+      "yayin": "2026-08-21"
+    },
+    {
+      "baslik": "MENÜDEKİ GİZLİ TUZAK! 📋",
+      "izlenme": 1024,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-08-20"
+    },
+    {
+      "baslik": "MARKET NEDEN LABİRENT GİBİ? 🌀",
+      "izlenme": 705,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-08-19"
+    },
+    {
+      "baslik": "Bermuda Şeytan Üçgeninde Gerçekte Ne Oluyor",
+      "izlenme": 10,
+      "tema": "gizem",
+      "format": "uzun",
+      "yayin": "2026-08-18"
+    },
+    {
+      "baslik": "BÜYÜK PAKET HER ZAMAN UCUZ DEĞİL! ⚖️",
+      "izlenme": 741,
+      "tema": "diger",
+      "format": "short",
+      "yayin": "2026-08-18"
+    },
+    {
+      "baslik": "OYUNCAK NEDEN KASADA? 🧸",
+      "izlenme": 1841,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-08-17"
+    },
+    {
+      "baslik": "REKLAMLARDA NEDEN ÇOCUK VAR? 👶",
+      "izlenme": 619,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-08-16"
+    }
+  ]
+}
