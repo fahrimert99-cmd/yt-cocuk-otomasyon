@@ -31,6 +31,9 @@ def _mail_gonder(konu, govde):
     if not (user and pw and to):
         print("  [mail atlandı: MAIL_USER/MAIL_PASS secret'ları ayarlı değil]")
         return
+    # Tanı (secret sızdırmadan): app-password 16 karakter olmalı, alan adı gmail.com olmalı.
+    _alan = user.split("@")[-1] if "@" in user else "(@ yok!)"
+    print(f"  [mail deneniyor → kullanıcı alan adı: {_alan}, app-password uzunluğu: {len(pw)} (beklenen 16)]")
     msg = MIMEText(govde, "plain", "utf-8")
     msg["Subject"] = Header(konu, "utf-8")
     msg["From"] = user
