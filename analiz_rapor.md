@@ -1,6 +1,6 @@
 # 📊 Kanal Denetim Raporu — 2026-08-24
 
-**Abone:** 76  |  **Toplam izlenme:** 31579  |  **Video:** 52
+**Abone:** 76  |  **Toplam izlenme:** 31224  |  **Video:** 52
 
 ## Format performansı (son ~50 video)
 | Format | Video | Ort. izlenme | Toplam izlenme | Etkileşim % |
