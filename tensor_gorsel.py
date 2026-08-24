@@ -76,7 +76,10 @@ def uret_aitool(prompt, cikti_path, aitools_id):
     sema = _istek("GET", f"/v1/workflows/{aitools_id}")
     attrs = (sema.get("fields") or {}).get("fieldAttrs") or []
     print(f"      [AITool: {sema.get('name','?')} | alan: {len(attrs)}]")
-    print(f"      [fieldAttrs: {json.dumps(attrs, ensure_ascii=False)[:600]}]")
+    print(f"      [fieldAttrs: {json.dumps(attrs, ensure_ascii=False)[:1200]}]")
+    if os.environ.get("DRY_RUN", "").strip().lower() in ("1", "true", "evet", "yes"):
+        print("      [DRY_RUN: sadece şema çekildi, iş OLUŞTURULMADI (kredi harcanmadı)]")
+        return None
     fields, yazildi = [], False
     for a in attrs:
         fn = a.get("fieldName") or a.get("name")
@@ -99,11 +102,11 @@ def uret_aitool(prompt, cikti_path, aitools_id):
 def uret(prompt, cikti_path, model_id=None, aitools_id=None, width=1024, height=576):
     if not _key():
         raise RuntimeError("TENSOR_API_KEY yok")
+    if aitools_id:  # AITool (workflow template) önceliklidir — token anahtarı bunu destekler
+        return uret_aitool(prompt, cikti_path, aitools_id)
     if model_id:
         return uret_model(prompt, cikti_path, model_id, width, height)
-    if aitools_id:
-        return uret_aitool(prompt, cikti_path, aitools_id)
-    raise RuntimeError("model_id ya da aitools_id gerekli")
+    raise RuntimeError("aitools_id ya da model_id gerekli")
 
 if __name__ == "__main__":
     p = os.environ.get("PROMPT") or "underwater ancient ruins of a lost city, cinematic, dramatic god rays, photorealistic"
