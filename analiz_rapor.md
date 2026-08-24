@@ -1,19 +1,19 @@
 # 📊 Kanal Denetim Raporu — 2026-08-24
 
-**Abone:** 76  |  **Toplam izlenme:** 31224  |  **Video:** 52
+**Abone:** 76  |  **Toplam izlenme:** 31579  |  **Video:** 52
 
 ## Format performansı (son ~50 video)
 | Format | Video | Ort. izlenme | Toplam izlenme | Etkileşim % |
 |--------|-------|--------------|----------------|-------------|
 | short | 43 | 734 | 31550 | 1.38 |
-| uzun | 10 | 18 | 184 | 12.5 |
+| uzun | 10 | 18 | 185 | 12.43 |
 
 ## Tema performansı
 | Tema | Video | Ort. izlenme | Toplam izlenme | Etkileşim % |
 |------|-------|--------------|----------------|-------------|
 | diger | 15 | 690 | 10356 | 1.43 |
 | tuzak | 31 | 614 | 19028 | 1.46 |
-| gizem | 7 | 336 | 2350 | 1.36 |
+| gizem | 7 | 336 | 2351 | 1.36 |
 
 ## En çok izlenen 10 video
 | # | Başlık | İzlenme | Tema | Format |
@@ -40,7 +40,7 @@
 | MARKET NEDEN LABİRENT GİBİ? 🌀 | 704 | tuzak | short | 2026-08-19 |
 | ALTIN GÜNÜ BİR TUZAK MI? 💰 | 155 | tuzak | short | 2026-08-23 |
 | Bermuda Şeytan Üçgeninde Gerçekte Ne Olu | 11 | gizem | uzun | 2026-08-18 |
-| Okyanusun Haritalanmamış Derinliklerinde | 4 | gizem | uzun | 2026-08-22 |
+| Okyanusun Haritalanmamış Derinliklerinde | 5 | gizem | uzun | 2026-08-22 |
 | OKYANUSUN DİBİNDE NE VAR? 🌊 | 0 | gizem | short | 2026-08-23 |
 
 > Not: Retention (izlenme %) ve CTR gibi derin metrikler için YouTube Analytics izni (yt-analytics.readonly) gerekir; şu an temel metrikler (izlenme/beğeni/yorum) raporlanıyor.

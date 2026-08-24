@@ -2,7 +2,7 @@
   "tarih": "2026-08-24",
   "kanal": {
     "abone": "76",
-    "toplam_izlenme": "31224",
+    "toplam_izlenme": "31579",
     "video_sayisi": "52"
   },
   "format_ozet": {
@@ -15,15 +15,15 @@
     "uzun": {
       "video": 10,
       "ort_izlenme": 18,
-      "toplam_izlenme": 184,
-      "etkilesim_orani": 12.5
+      "toplam_izlenme": 185,
+      "etkilesim_orani": 12.43
     }
   },
   "tema_ozet": {
     "gizem": {
       "video": 7,
       "ort_izlenme": 336,
-      "toplam_izlenme": 2350,
+      "toplam_izlenme": 2351,
       "etkilesim_orani": 1.36
     },
     "tuzak": {
@@ -118,7 +118,7 @@
     },
     {
       "baslik": "Okyanusun Haritalanmamış Derinliklerinde Ne Var?",
-      "izlenme": 4,
+      "izlenme": 5,
       "tema": "gizem",
       "format": "uzun",
       "yayin": "2026-08-22"
