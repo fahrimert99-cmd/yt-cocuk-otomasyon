@@ -1,5 +1,5 @@
 {
-  "sonraki": 97,
+  "sonraki": 8,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -37,6 +37,7 @@
     "REKLAMLARDA NEDEN ÇOCUK VAR? 👶",
     "RESTORAN MENÜSÜ BİR TUZAK! 🍽️",
     "SADAKAT KARTININ GERÇEK AMACI! 💳",
+    "SON KULLANMA TARİHİ OYUNU! 📅",
     "SPOR SALONU ÜYELİK TUZAĞI! 🏋️",
     "SPOR SALONU ÜYELİĞİ TUZAĞI! 💪",
     "SİNEMADA MISIR NEDEN PAHALI? 🍿",
@@ -50,11 +51,11 @@
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "      Gizem geçişi: gün 5, 48. video -> 'gizem' (gizem kalan: 37)\n[1/3] Senaryo (97/132) [yeme]: OKYANUSUN DİBİNDE NE VAR? 🌊\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n      google TTS hata (403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"This API method requires billing to be enabled. Please enable billing on project #318605312688 by visiting https://console.developers.google.com/bi), sonraki saglayiciya geciliyor\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      [Pexels: 8 sonuç -> 'vast open ocean surface']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'deep dark ocean underwater']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'bioluminescent jellyfish glowing in']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'giant squid silhouette in']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'mysterious deep sea floor']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'light fading into deep']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (17672 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-24T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: TmbvjWRYyKQ\n✓ Yüklendi: https://youtu.be/05db4GRGJyA  (yayın: 2026-08-24T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
+  "son_rapor": "      Gizem geçişi: gün 6, 49. video -> 'tuzak' (gizem kalan: 36)\n[1/3] Senaryo (8/132) [dijital]: SON KULLANMA TARİHİ OYUNU! 📅\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n      google TTS hata (403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"This API method requires billing to be enabled. Please enable billing on project #318605312688 by visiting https://console.developers.google.com/bi), sonraki saglayiciya geciliyor\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      [Pexels: 8 sonuç -> 'product expiry date label']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'food packaging with date']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'fresh food being thrown']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'grocery shelf with dated']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'confused person reading label']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'full trash bin with']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (14339 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-25T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 05db4GRGJyA\n✓ Yüklendi: https://youtu.be/EPcHoPwHhfs  (yayın: 2026-08-25T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
   "bekleyen_yorum": {
-    "video_id": "05db4GRGJyA",
-    "metin": "%95'İ HÂLÂ KEŞFEDİLMEDİ\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "EPcHoPwHhfs",
+    "metin": "O TARİH GERÇEK Mİ?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
-  "son_kategori": "yeme",
+  "son_kategori": "dijital",
   "gizem_gecis_baslangic": "2026-08-18"
 }
