@@ -1,3 +1,25 @@
-﻿checkpoint.json
+# durum/checkpoint (calisma aninda uretilir)
+checkpoint.json
 
+# Python
 __pycache__/
+*.pyc
+
+# Uretilen medya (repoya girmemeli; workflow artifact olarak alinir)
+*.mp4
+*.jpg
+*.jpeg
+*.png
+output/
+
+# Loglar
+*.log
+
+# Yerel anahtar dosyalari
+client_secret.json
+.venv/
+venv/
+
+# assets/ altindaki telifsiz gorseller korunur
+!assets/
+!assets/**

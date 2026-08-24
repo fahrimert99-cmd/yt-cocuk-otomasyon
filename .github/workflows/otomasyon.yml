@@ -8,6 +8,11 @@ on:
 permissions:
   contents: write
 
+# Ayni anda birden fazla calisma durum.json'i bozmasin (uzun.yml ile ayni desen)
+concurrency:
+  group: kisa-video
+  cancel-in-progress: false
+
 jobs:
   uret:
     runs-on: ubuntu-latest
@@ -30,10 +35,29 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
         run: python3 otomasyon.py
+      # Uretilen video/kapak repoya commit edilmez; buradan indirilebilir.
+      - name: Video artifact (son_video.mp4 / son_kapak.jpg)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: son-video
+          path: |
+            son_video.mp4
+            son_kapak.jpg
+          if-no-files-found: ignore
+          retention-days: 14
       - name: Sirayi kaydet
+        if: always()
         run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
-          git add durum.json
-          git commit -m "sonraki" || echo ok
-          git push
+          git add durum.json || true
+          git commit -m "sonraki" || { echo "degisiklik yok"; exit 0; }
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "push tamam (deneme $i)"; exit 0
+            fi
+            echo "push denemesi $i basarisiz, bekleniyor..."; sleep $((2 ** i))
+          done
+          echo "push 5 denemede basarisiz — durum.json bir sonraki calismada tekrar denenir"
+          exit 0
