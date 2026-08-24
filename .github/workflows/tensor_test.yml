@@ -1,17 +1,22 @@
 name: Tensor Gorsel Testi
 
 # Tek görsel üretip output/tensor_test.jpg olarak repoya kaydeder.
-# Tensor.Art API'sini doğrulamak için (video.py'ye bağlamadan önce).
+# model_id verilirse doğrudan model (stages); yoksa aitools_id (workflow template).
 on:
   workflow_dispatch:
     inputs:
       prompt:
         description: "Görsel prompt'u (İngilizce)"
         required: false
-        default: "underwater ancient ruins of a lost city, cinematic, dramatic god rays, photorealistic, 16:9"
+        default: "underwater ancient ruins of a lost city, cinematic, dramatic god rays, photorealistic"
+      model_id:
+        description: "tensor.art model numarası (doğrudan model). Örn Al's Scenery"
+        required: false
+        default: "1034704624923213148"
       aitools_id:
-        description: "tensor.art AITool workflow ID (yayınlanmış metin->görsel aracı)"
-        required: true
+        description: "AITool workflow ID (model_id boşsa kullanılır)"
+        required: false
+        default: ""
       width:
         description: "Genişlik"
         required: false
@@ -37,6 +42,7 @@ jobs:
         env:
           TENSOR_API_KEY: ${{ secrets.TENSOR_API_KEY }}
           PROMPT: ${{ github.event.inputs.prompt }}
+          MODEL_ID: ${{ github.event.inputs.model_id }}
           AITOOLS_ID: ${{ github.event.inputs.aitools_id }}
           WIDTH: ${{ github.event.inputs.width }}
           HEIGHT: ${{ github.event.inputs.height }}
