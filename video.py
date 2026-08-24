@@ -546,13 +546,18 @@ def _google_tts_uzun(words, voice, hizi, key, mp3_path):
                 pay = dur * (a / tot)
                 boundaries.append({"start": offset + t, "dur": max(0.05, pay), "text": w}); t += pay
         offset += dur
-    lst = os.path.join(tmp, "list.txt")
-    with open(lst, "w") as f:
+    # GAPLESS birleştirme: concat FİLTRESİ (parçaları PCM'e çözüp birleştirir) ->
+    # MP3'leri '-c copy' ile eklemekteki birleşim noktası çıtırtısı OLMAZ.
+    if len(segler) == 1:
+        shutil.copy(segler[0], mp3_path)
+    else:
+        inputs = []
         for s in segler:
-            f.write("file '" + s + "'\n")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0",
-                    "-i", lst, "-c", "copy", mp3_path], check=True)
-    print(f"    Ses: {voice} (uzun metin {len(parcalar)} parca, gercek timepoint)")
+            inputs += ["-i", s]
+        fc = "".join(f"[{i}:a]" for i in range(len(segler))) + f"concat=n={len(segler)}:v=0:a=1[a]"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", fc,
+                        "-map", "[a]", "-c:a", "libmp3lame", "-q:a", "2", mp3_path], check=True)
+    print(f"    Ses: {voice} (uzun metin {len(parcalar)} parca, gapless birlestirme)")
     return boundaries
 
 
@@ -870,9 +875,11 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
     grade = "eq=saturation=1.12:contrast=1.04:brightness=0.01,vignette=angle=PI/6"
     subprocess.run(["ffmpeg", "-y", "-i", tmpv, "-i", mp3,
                     "-vf", f"subtitles='{ass_esc}',{grade}",
+                    # SES: kırpılma (clipping) çıtırtısını önle -> sabit örnekleme + tepe sınırlayıcı
+                    "-af", "aresample=44100,alimiter=limit=0.95",
                     "-map", "0:v", "-map", "1:a",
                     "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-                    "-c:a", "aac", "-b:a", "192k", "-shortest", cikti],
+                    "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-shortest", cikti],
                    check=True, capture_output=True)
     shutil.rmtree(tmp, ignore_errors=True)
     return toplam
@@ -917,9 +924,10 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
     subprocess.run([
         "ffmpeg","-y","-i",birlesik,"-i",mp3,
         "-vf", f"subtitles='{ass_esc}'",
+        "-af", "aresample=44100,alimiter=limit=0.95",  # clipping çıtırtısını önle
         "-map","0:v","-map","1:a",
         "-c:v","libx264","-preset","veryfast","-crf","20",
-        "-c:a","aac","-b:a","192k","-shortest",
+        "-c:a","aac","-b:a","192k","-ar","44100","-shortest",
         cikti
     ], check=True, capture_output=True)
     shutil.rmtree(tmp, ignore_errors=True)
