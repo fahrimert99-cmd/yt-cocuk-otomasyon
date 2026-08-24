@@ -1,48 +1,48 @@
 {
-  "tarih": "2026-08-23",
+  "tarih": "2026-08-24",
   "kanal": {
-    "abone": "77",
-    "toplam_izlenme": "29912",
-    "video_sayisi": "51"
+    "abone": "76",
+    "toplam_izlenme": "31579",
+    "video_sayisi": "52"
   },
   "format_ozet": {
+    "short": {
+      "video": 43,
+      "ort_izlenme": 734,
+      "toplam_izlenme": 31550,
+      "etkilesim_orani": 1.38
+    },
     "uzun": {
       "video": 10,
       "ort_izlenme": 18,
-      "toplam_izlenme": 179,
-      "etkilesim_orani": 12.85
-    },
-    "short": {
-      "video": 42,
-      "ort_izlenme": 738,
-      "toplam_izlenme": 30982,
-      "etkilesim_orani": 1.37
+      "toplam_izlenme": 184,
+      "etkilesim_orani": 12.5
     }
   },
   "tema_ozet": {
     "gizem": {
-      "video": 6,
-      "ort_izlenme": 350,
-      "toplam_izlenme": 2099,
-      "etkilesim_orani": 1.43
+      "video": 7,
+      "ort_izlenme": 336,
+      "toplam_izlenme": 2350,
+      "etkilesim_orani": 1.36
     },
     "tuzak": {
       "video": 31,
-      "ort_izlenme": 604,
-      "toplam_izlenme": 18710,
-      "etkilesim_orani": 1.45
+      "ort_izlenme": 614,
+      "toplam_izlenme": 19028,
+      "etkilesim_orani": 1.46
     },
     "diger": {
       "video": 15,
       "ort_izlenme": 690,
-      "toplam_izlenme": 10352,
+      "toplam_izlenme": 10356,
       "etkilesim_orani": 1.43
     }
   },
   "top10": [
     {
       "baslik": "OYUNCAK NEDEN KASADA? 🧸",
-      "izlenme": 1841,
+      "izlenme": 1842,
       "tema": "tuzak",
       "format": "short"
     },
@@ -72,7 +72,7 @@
     },
     {
       "baslik": "REKLAMLAR BEYNİNİ BÖYLE KANDIRIYOR! 📺",
-      "izlenme": 1152,
+      "izlenme": 1153,
       "tema": "tuzak",
       "format": "short"
     },
@@ -83,94 +83,94 @@
       "format": "short"
     },
     {
+      "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
+      "izlenme": 1119,
+      "tema": "tuzak",
+      "format": "short"
+    },
+    {
+      "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
+      "izlenme": 1096,
+      "tema": "gizem",
+      "format": "short"
+    },
+    {
       "baslik": "SPOR SALONU ÜYELİĞİ TUZAĞI! 💪",
       "izlenme": 1089,
       "tema": "diger",
-      "format": "short"
-    },
-    {
-      "baslik": "FAST FOOD MENÜ TUZAĞI! 🍔",
-      "izlenme": 1046,
-      "tema": "tuzak",
-      "format": "short"
-    },
-    {
-      "baslik": "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉",
-      "izlenme": 1033,
-      "tema": "tuzak",
       "format": "short"
     }
   ],
   "son7gun": [
     {
+      "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
+      "izlenme": 0,
+      "tema": "gizem",
+      "format": "short",
+      "yayin": "2026-08-23"
+    },
+    {
+      "baslik": "ALTIN GÜNÜ BİR TUZAK MI? 💰",
+      "izlenme": 155,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-08-23"
+    },
+    {
       "baslik": "Okyanusun Haritalanmamış Derinliklerinde Ne Var?",
-      "izlenme": 3,
+      "izlenme": 4,
       "tema": "gizem",
       "format": "uzun",
       "yayin": "2026-08-22"
     },
     {
-      "baslik": "ALTIN GÜNÜ BİR TUZAK MI? 💰",
-      "izlenme": 0,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-08-22"
-    },
-    {
       "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
-      "izlenme": 905,
+      "izlenme": 1119,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-22"
     },
     {
       "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
-      "izlenme": 848,
+      "izlenme": 1096,
       "tema": "gizem",
       "format": "short",
       "yayin": "2026-08-21"
     },
     {
       "baslik": "MENÜDEKİ GİZLİ TUZAK! 📋",
-      "izlenme": 1024,
+      "izlenme": 1026,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-20"
     },
     {
       "baslik": "MARKET NEDEN LABİRENT GİBİ? 🌀",
-      "izlenme": 705,
+      "izlenme": 704,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-19"
     },
     {
       "baslik": "Bermuda Şeytan Üçgeninde Gerçekte Ne Oluyor",
-      "izlenme": 10,
+      "izlenme": 11,
       "tema": "gizem",
       "format": "uzun",
       "yayin": "2026-08-18"
     },
     {
       "baslik": "BÜYÜK PAKET HER ZAMAN UCUZ DEĞİL! ⚖️",
-      "izlenme": 741,
+      "izlenme": 744,
       "tema": "diger",
       "format": "short",
       "yayin": "2026-08-18"
     },
     {
       "baslik": "OYUNCAK NEDEN KASADA? 🧸",
-      "izlenme": 1841,
+      "izlenme": 1842,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-17"
-    },
-    {
-      "baslik": "REKLAMLARDA NEDEN ÇOCUK VAR? 👶",
-      "izlenme": 619,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-08-16"
     }
   ]
 }
