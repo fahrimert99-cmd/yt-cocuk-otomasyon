@@ -1,81 +1,42 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Tensor.Art (TAMS) AI görsel üretimi — AITools / workflow template API.
-Resmi ComfyUI entegrasyonuyla aynı akış:
-  1) GET  /v1/workflows/{aiToolsId}          -> alan şeması (fields.fieldAttrs)
-  2) POST /v1/jobs/workflow/template         -> iş oluştur (templateId + fields)
-  3) GET  /v1/jobs/{jobId}                    -> poll, SUCCESS'te successInfo.images[].url
+"""Tensor.Art (TAMS) AI görsel üretimi. İki yol destekler:
 
-Gerekli:
-  - TENSOR_API_KEY (secret): tams.tensor.art/apps'te bir APPLICATION altında üretilmiş anahtar.
-  - aiToolsId: tensor.art'ta yayınlanmış bir AITool (metin->görsel) workflow ID'si.
+  A) DOĞRUDAN MODEL (stages) — model_id ile: POST /v1/jobs
+     {stages: [INPUT_INITIALIZE, DIFFUSION{sdModel, prompts, ...}]}
+  B) AITool (workflow template) — aitools_id ile: GET /v1/workflows/{id} +
+     POST /v1/jobs/workflow/template
+
+Her ikisinde de: poll GET /v1/jobs/{id} -> SUCCESS -> successInfo.images[].url indir.
+Anahtar (TENSOR_API_KEY) tams.tensor.art/apps'te bir Application altında üretilmeli.
 Anahtar koda YAZILMAZ; sadece env'den okunur.
 """
 import os, json, time, uuid, urllib.request, urllib.error
 
 BASE = (os.environ.get("TENSOR_BASE_URL") or "https://ap-east-1.tensorart.cloud").rstrip("/")
+NEGATIF = ("blurry, low quality, watermark, text, logo, signature, deformed, "
+           "ugly, cartoon, drawing, cropped, jpeg artifacts")
 
 def _key():
     return (os.environ.get("TENSOR_API_KEY") or os.environ.get("TENSORART_API_KEY") or "").strip()
 
 def _istek(method, path, govde=None):
-    url = BASE + path
-    data = json.dumps(govde).encode() if govde is not None else None
-    req = urllib.request.Request(url, data=data, method=method, headers={
-        "Authorization": "Bearer " + _key(),
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-    })
+    req = urllib.request.Request(BASE + path,
+        data=(json.dumps(govde).encode() if govde is not None else None), method=method,
+        headers={"Authorization": "Bearer " + _key(),
+                 "Content-Type": "application/json", "Accept": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=90) as r:
             return json.loads(r.read().decode())
     except urllib.error.HTTPError as he:
         raise RuntimeError(f"HTTP {he.code} ({method} {path}): {he.read().decode()[:500]}")
 
-def _prompt_alanlarini_doldur(field_attrs, prompt):
-    """GET şemasındaki alanları {nodeId, fieldName, fieldValue} listesine çevirir;
-    prompt/text benzeri alana prompt'u yazar, diğerlerinde mevcut/default değeri korur."""
-    out, prompt_yazildi = [], False
-    for a in field_attrs:
-        node_id = a.get("nodeId") or a.get("node_id")
-        fname = a.get("fieldName") or a.get("field_name") or a.get("name")
-        fval = a.get("fieldValue", a.get("defaultValue", a.get("default", a.get("value", ""))))
-        etiket = f"{fname} {a.get('label','')} {a.get('title','')}".lower()
-        if not prompt_yazildi and ("prompt" in etiket or "text" in etiket
-                                   or (fname or "").lower() in ("prompt", "text", "positive")):
-            fval = prompt
-            prompt_yazildi = True
-        out.append({"nodeId": node_id, "fieldName": fname, "fieldValue": fval})
-    # hiç prompt alanı bulunamadıysa ilk alanı prompt yap (son çare)
-    if not prompt_yazildi and out:
-        out[0]["fieldValue"] = prompt
-    return out
-
 def _indir(url, yol):
     os.makedirs(os.path.dirname(yol) or ".", exist_ok=True)
     with urllib.request.urlopen(url, timeout=120) as r, open(yol, "wb") as f:
         f.write(r.read())
 
-def uret(prompt, cikti_path, aitools_id):
-    if not _key():
-        raise RuntimeError("TENSOR_API_KEY yok")
-    if not aitools_id:
-        raise RuntimeError("aitools_id gerekli (tensor.art'ta yayınlanmış AITool workflow ID)")
-    # 1) alan şeması
-    sema = _istek("GET", f"/v1/workflows/{aitools_id}")
-    field_attrs = (sema.get("fields") or {}).get("fieldAttrs") or []
-    print(f"      [AITool: {sema.get('name','?')} | alan sayısı: {len(field_attrs)}]")
-    print(f"      [fieldAttrs şema: {json.dumps(field_attrs, ensure_ascii=False)[:600]}]")
-    fields = _prompt_alanlarini_doldur(field_attrs, prompt)
-    # 2) iş oluştur
-    govde = {"requestId": uuid.uuid4().hex, "templateId": str(aitools_id),
-             "fields": {"fieldAttrs": fields}}
-    d = _istek("POST", "/v1/jobs/workflow/template", govde)
-    jid = (d.get("job") or {}).get("id") or d.get("jobId") or d.get("id")
-    print(f"      [tensor iş: id={jid} durum={((d.get('job') or {}).get('status'))}]")
-    if not jid:
-        raise RuntimeError(f"job id alınamadı: {json.dumps(d)[:400]}")
-    # 3) poll
+def _poll_indir(jid, cikti_path):
     for _ in range(80):  # ~4 dk
         time.sleep(3)
         r = _istek("GET", f"/v1/jobs/{jid}")
@@ -94,10 +55,60 @@ def uret(prompt, cikti_path, aitools_id):
         print(f"      [bekleniyor... durum={durum or '?'}]")
     raise RuntimeError("iş zaman aşımı")
 
+# --- A) doğrudan model (stages) ---
+def uret_model(prompt, cikti_path, model_id, width=1024, height=576, steps=25):
+    govde = {"requestId": uuid.uuid4().hex, "stages": [
+        {"type": "INPUT_INITIALIZE", "inputInitialize": {"seed": -1, "count": 1}},
+        {"type": "DIFFUSION", "diffusion": {
+            "width": int(width), "height": int(height),
+            "prompts": [{"text": prompt}], "negativePrompts": [{"text": NEGATIF}],
+            "sdModel": str(model_id), "sdVae": "Automatic", "sampler": "Euler a",
+            "steps": int(steps), "cfgScale": 7, "clipSkip": 2}}]}
+    d = _istek("POST", "/v1/jobs", govde)
+    jid = (d.get("job") or {}).get("id") or d.get("jobId") or d.get("id")
+    print(f"      [stages iş: id={jid} durum={((d.get('job') or {}).get('status'))}]")
+    if not jid:
+        raise RuntimeError(f"job id alınamadı: {json.dumps(d)[:400]}")
+    return _poll_indir(jid, cikti_path)
+
+# --- B) AITool (workflow template) ---
+def uret_aitool(prompt, cikti_path, aitools_id):
+    sema = _istek("GET", f"/v1/workflows/{aitools_id}")
+    attrs = (sema.get("fields") or {}).get("fieldAttrs") or []
+    print(f"      [AITool: {sema.get('name','?')} | alan: {len(attrs)}]")
+    print(f"      [fieldAttrs: {json.dumps(attrs, ensure_ascii=False)[:600]}]")
+    fields, yazildi = [], False
+    for a in attrs:
+        fn = a.get("fieldName") or a.get("name")
+        fv = a.get("fieldValue", a.get("defaultValue", a.get("default", a.get("value", ""))))
+        et = f"{fn} {a.get('label','')} {a.get('title','')}".lower()
+        if not yazildi and ("prompt" in et or "text" in et or (fn or "").lower() in ("prompt", "text", "positive")):
+            fv, yazildi = prompt, True
+        fields.append({"nodeId": a.get("nodeId") or a.get("node_id"), "fieldName": fn, "fieldValue": fv})
+    if not yazildi and fields:
+        fields[0]["fieldValue"] = prompt
+    d = _istek("POST", "/v1/jobs/workflow/template",
+               {"requestId": uuid.uuid4().hex, "templateId": str(aitools_id),
+                "fields": {"fieldAttrs": fields}})
+    jid = (d.get("job") or {}).get("id") or d.get("jobId") or d.get("id")
+    print(f"      [aitool iş: id={jid} durum={((d.get('job') or {}).get('status'))}]")
+    if not jid:
+        raise RuntimeError(f"job id alınamadı: {json.dumps(d)[:400]}")
+    return _poll_indir(jid, cikti_path)
+
+def uret(prompt, cikti_path, model_id=None, aitools_id=None, width=1024, height=576):
+    if not _key():
+        raise RuntimeError("TENSOR_API_KEY yok")
+    if model_id:
+        return uret_model(prompt, cikti_path, model_id, width, height)
+    if aitools_id:
+        return uret_aitool(prompt, cikti_path, aitools_id)
+    raise RuntimeError("model_id ya da aitools_id gerekli")
+
 if __name__ == "__main__":
-    import sys
-    p = os.environ.get("PROMPT") or (sys.argv[1] if len(sys.argv) > 1
-        else "underwater ancient ruins of a lost city, cinematic, dramatic god rays, photorealistic")
-    tool = os.environ.get("AITOOLS_ID") or (sys.argv[2] if len(sys.argv) > 2 else "")
-    uret(p, "output/tensor_test.jpg", tool)
+    p = os.environ.get("PROMPT") or "underwater ancient ruins of a lost city, cinematic, dramatic god rays, photorealistic"
+    m = (os.environ.get("MODEL_ID") or "").strip() or None
+    a = (os.environ.get("AITOOLS_ID") or "").strip() or None
+    W = int(os.environ.get("WIDTH", "1024")); H = int(os.environ.get("HEIGHT", "576"))
+    uret(p, "output/tensor_test.jpg", model_id=m, aitools_id=a, width=W, height=H)
     print("TAMAM ✓")
