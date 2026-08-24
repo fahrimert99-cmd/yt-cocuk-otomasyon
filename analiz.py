@@ -23,8 +23,10 @@ def _mail_gonder(konu, govde):
     """Raporu Gmail SMTP ile e-postayla gönderir (MAIL_USER/MAIL_PASS ayarlıysa).
     MAIL_PASS = Gmail 'uygulama şifresi' (normal şifre değil). MAIL_TO boşsa
     gönderene atılır."""
-    user = os.environ.get("MAIL_USER", "").strip()
-    pw = re.sub(r"\s+", "", os.environ.get("MAIL_PASS", ""))  # app password boşluklarını temizle
+    user = os.environ.get("MAIL_USER", "").strip().strip("'\"")
+    # app password: tüm boşlukları (nbsp dahil) ve yanlışlıkla kopyalanan
+    # tırnak işaretlerini temizle. Gmail app password 16 harf, boşluksuz olmalı.
+    pw = re.sub(r"\s+", "", os.environ.get("MAIL_PASS", "")).strip("'\"")
     to = os.environ.get("MAIL_TO", "").strip() or user
     if not (user and pw and to):
         print("  [mail atlandı: MAIL_USER/MAIL_PASS secret'ları ayarlı değil]")
@@ -39,6 +41,11 @@ def _mail_gonder(konu, govde):
             s.login(user, pw)
             s.sendmail(user, [to], msg.as_string())
         print(f"  ✓ rapor e-postayla gönderildi: {to}")
+    except smtplib.SMTPAuthenticationError as e:
+        print(f"  ! mail gönderilemedi (kimlik reddedildi): {str(e)[:160]}")
+        print("    → MAIL_PASS bir Gmail 'uygulama şifresi' olmalı (normal şifre DEĞİL);")
+        print("      hesapta 2 Adımlı Doğrulama açık olmalı ve MAIL_USER app password'ün")
+        print("      ait olduğu Gmail adresiyle aynı olmalı. Secret'ları güncelleyin.")
     except Exception as e:
         print(f"  ! mail gönderilemedi: {str(e)[:160]}")
 
