@@ -1,28 +1,30 @@
 name: Tensor Gorsel Testi
 
-# Tek görsel üretip output/tensor_test.jpg olarak repoya kaydeder.
-# model_id verilirse doğrudan model (stages); yoksa aitools_id (workflow template).
+# aitools_id (AITool workflow template) önceliklidir. dry_run=true iken sadece
+# alan şeması çekilir (kredi harcanmaz), araç tipini görmek için.
 on:
   workflow_dispatch:
     inputs:
+      aitools_id:
+        description: "AITool template ID (tensor.art/template/<ID>)"
+        required: false
+        default: "845429123819050179"
       prompt:
         description: "Görsel prompt'u (İngilizce)"
         required: false
         default: "underwater ancient ruins of a lost city, cinematic, dramatic god rays, photorealistic"
-      model_id:
-        description: "tensor.art model numarası (doğrudan model). Örn Al's Scenery"
+      dry_run:
+        description: "true = sadece alan şeması (kredi harcamaz); false = gerçek üretim"
         required: false
-        default: "1034704624923213148"
-      aitools_id:
-        description: "AITool workflow ID (model_id boşsa kullanılır)"
+        default: "true"
+      model_id:
+        description: "(opsiyonel) doğrudan model — aitools_id boşsa"
         required: false
         default: ""
       width:
-        description: "Genişlik"
         required: false
         default: "1024"
       height:
-        description: "Yükseklik"
         required: false
         default: "576"
 
@@ -41,9 +43,10 @@ jobs:
       - name: Tensor gorsel uret
         env:
           TENSOR_API_KEY: ${{ secrets.TENSOR_API_KEY }}
-          PROMPT: ${{ github.event.inputs.prompt }}
-          MODEL_ID: ${{ github.event.inputs.model_id }}
           AITOOLS_ID: ${{ github.event.inputs.aitools_id }}
+          PROMPT: ${{ github.event.inputs.prompt }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          MODEL_ID: ${{ github.event.inputs.model_id }}
           WIDTH: ${{ github.event.inputs.width }}
           HEIGHT: ${{ github.event.inputs.height }}
         run: python3 tensor_gorsel.py
