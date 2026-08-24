@@ -42,6 +42,7 @@ def _pdf_uret(md_metin, cikti="analiz_rapor.pdf"):
     fpdf2 veya uygun font yoksa None döner (mail düz metne düşer)."""
     try:
         from fpdf import FPDF
+        from fpdf.enums import WrapMode
     except Exception:
         print("  [pdf atlandı: fpdf2 kurulu değil]")
         return None
@@ -85,7 +86,7 @@ def _pdf_uret(md_metin, cikti="analiz_rapor.pdf"):
                 rows = [r + [""] * (sut - len(r)) for r in rows]
                 pdf.set_font("dj", "", 8)
                 with pdf.table(first_row_as_headings=True, line_height=5,
-                               width=pdf.epw) as tablo:
+                               width=pdf.epw, wrapmode=WrapMode.CHAR) as tablo:
                     for r in rows:
                         satir = tablo.row()
                         for c in r:
