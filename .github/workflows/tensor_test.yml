@@ -9,8 +9,8 @@ on:
         description: "Görsel prompt'u (İngilizce)"
         required: false
         default: "underwater ancient ruins of a lost city, cinematic, dramatic god rays, photorealistic, 16:9"
-      model_id:
-        description: "tensor.art model numarası (model sayfasının URL'sindeki sayı)"
+      aitools_id:
+        description: "tensor.art AITool workflow ID (yayınlanmış metin->görsel aracı)"
         required: true
       width:
         description: "Genişlik"
@@ -37,7 +37,7 @@ jobs:
         env:
           TENSOR_API_KEY: ${{ secrets.TENSOR_API_KEY }}
           PROMPT: ${{ github.event.inputs.prompt }}
-          MODEL_ID: ${{ github.event.inputs.model_id }}
+          AITOOLS_ID: ${{ github.event.inputs.aitools_id }}
           WIDTH: ${{ github.event.inputs.width }}
           HEIGHT: ${{ github.event.inputs.height }}
         run: python3 tensor_gorsel.py
