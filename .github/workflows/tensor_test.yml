@@ -1,0 +1,51 @@
+name: Tensor Gorsel Testi
+
+# Tek görsel üretip output/tensor_test.jpg olarak repoya kaydeder.
+# Tensor.Art API'sini doğrulamak için (video.py'ye bağlamadan önce).
+on:
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: "Görsel prompt'u (İngilizce)"
+        required: false
+        default: "underwater ancient ruins of a lost city, cinematic, dramatic god rays, photorealistic, 16:9"
+      model_id:
+        description: "tensor.art model numarası (model sayfasının URL'sindeki sayı)"
+        required: true
+      width:
+        description: "Genişlik"
+        required: false
+        default: "1024"
+      height:
+        description: "Yükseklik"
+        required: false
+        default: "576"
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tensor gorsel uret
+        env:
+          TENSOR_API_KEY: ${{ secrets.TENSOR_API_KEY }}
+          PROMPT: ${{ github.event.inputs.prompt }}
+          MODEL_ID: ${{ github.event.inputs.model_id }}
+          WIDTH: ${{ github.event.inputs.width }}
+          HEIGHT: ${{ github.event.inputs.height }}
+        run: python3 tensor_gorsel.py
+      - name: Gorseli kaydet
+        if: always()
+        run: |
+          git config user.name "tensor-bot"
+          git config user.email "tensor-bot@users.noreply.github.com"
+          git add output/tensor_test.jpg || true
+          git commit -m "tensor test gorseli" || echo "degisiklik yok"
+          git push || echo "push atlandi"
