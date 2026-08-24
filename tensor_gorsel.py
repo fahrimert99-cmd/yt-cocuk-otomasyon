@@ -100,8 +100,12 @@ def uret_aitool(prompt, cikti_path, aitools_id):
     return _poll_indir(jid, cikti_path)
 
 def uret(prompt, cikti_path, model_id=None, aitools_id=None, width=1024, height=576):
-    if not _key():
+    _k = _key()
+    if not _k:
         raise RuntimeError("TENSOR_API_KEY yok")
+    # Tanı (sızdırmadan): uzunluk + önek. Eski 'ak_tensor_...' anahtarı app'e bağlı
+    # DEĞİL; app token farklı olmalı. 'app not found' sürüyorsa secret güncellenmemiş demektir.
+    print(f"      [TENSOR_API_KEY tanı: uzunluk={len(_k)}, önek={_k[:3]!r}, ak_ ile mi başlıyor={_k.startswith('ak_')}]")
     if aitools_id:  # AITool (workflow template) önceliklidir — token anahtarı bunu destekler
         return uret_aitool(prompt, cikti_path, aitools_id)
     if model_id:
