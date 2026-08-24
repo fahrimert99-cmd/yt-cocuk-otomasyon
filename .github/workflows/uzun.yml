@@ -16,11 +16,11 @@ jobs:
   uret:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: FFmpeg kur
         run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
       - name: Python kur
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Bagimliliklar
@@ -43,7 +43,7 @@ jobs:
           python3 uzun_otomasyon.py 2>&1 | sed -E 's/anahtar:.*/anahtar: [redacted]/' | tee uzun_run.log
       - name: Run log artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: uzun-run-log
           path: uzun_run.log

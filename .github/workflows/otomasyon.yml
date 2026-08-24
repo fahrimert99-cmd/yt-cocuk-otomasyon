@@ -17,11 +17,11 @@ jobs:
   uret:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: FFmpeg kur
         run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
       - name: Python kur
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Bagimliliklar
@@ -38,7 +38,7 @@ jobs:
       # Uretilen video/kapak repoya commit edilmez; buradan indirilebilir.
       - name: Video artifact (son_video.mp4 / son_kapak.jpg)
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: son-video
           path: |
