@@ -101,7 +101,14 @@ def _istek(method, path, govde=None):
             status, ctype, son_url = r.status, r.headers.get("Content-Type", ""), r.geturl()
     except urllib.error.HTTPError as he:
         govde_h = he.read().decode("utf-8", "replace")
-        raise RuntimeError(f"HTTP {he.code} ({method} {path}) -> {govde_h[:600]}")
+        ipucu = ""
+        if he.code == 500 and method == "POST" and not govde_h.strip("{} \n"):
+            # Auth GEÇTİ (401/403 değil), gövde şeması da resmi; boş 500 genelde
+            # geçersiz/erişilemeyen model demektir.
+            ipucu = (" | IPUCU: TENSOR_MODEL_ID yayınlanmış bir modelin 'sdModel' "
+                     "id'si mi? (model sayfası URL'sindeki uzun sayı DEĞİL, API "
+                     "'Publish'lenmiş model id'si). Model private/erişilemez de olabilir.")
+        raise RuntimeError(f"HTTP {he.code} ({method} {path}) -> {govde_h[:600]}{ipucu}")
     if not ham.strip():
         # Tanı (secret sızdırmadan): base URL API host mu, nereye gitti?
         api = "tensorart.cloud" in BASE
@@ -148,17 +155,18 @@ def uret(prompt, cikti_path, model_id=None, width=1024, height=576, steps=25):
     model_id = model_id or os.environ.get("TENSOR_MODEL_ID", "").strip()
     if not model_id:
         raise RuntimeError("TENSOR_MODEL_ID ayarlı değil (sdModel gerekli)")
-    # Alan adları resmi demoyla (Tensor-Art/tams-signature-demo) BİREBİR aynı
-    # olmalı: request_id / sd_model / cfg_scale / clip_skip (snake_case).
-    # camelCase alanlar sunucuda 500 veriyordu.
+    # TAMS /v1/jobs şeması: ÜST düzey request_id snake_case; DIFFUSION stage
+    # alanları camelCase (sdModel/sdVae/cfgScale/clipSkip/negativePrompts).
+    # (#56'da bunlar snake_case yapılınca sunucu modeli tanımadı -> HTTP 500.)
     govde = {"request_id": uuid.uuid4().hex, "stages": [
         {"type": "INPUT_INITIALIZE", "inputInitialize": {"seed": -1, "count": 1}},
         {"type": "DIFFUSION", "diffusion": {
             "width": int(width), "height": int(height),
             "prompts": [{"text": prompt}],
-            "sampler": "Euler a", "sdVae": "Automatic",
-            "steps": int(steps), "sd_model": str(model_id),
-            "clip_skip": 2, "cfg_scale": 7}}]}
+            "negativePrompts": [{"text": NEGATIF}],
+            "sdModel": str(model_id), "sdVae": "Automatic",
+            "sampler": "Euler a", "steps": int(steps),
+            "cfgScale": 7, "clipSkip": 2, "etaNoiseSeedDelta": 31337}}]}
     d = _istek("POST", "/v1/jobs", govde)
     jid = (d.get("job") or {}).get("id") or d.get("jobId") or d.get("id")
     print(f"      [tensor iş: id={jid} durum={((d.get('job') or {}).get('status'))}]")
