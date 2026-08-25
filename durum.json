@@ -1,5 +1,5 @@
 {
-  "sonraki": 98,
+  "sonraki": 12,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -10,6 +10,7 @@
     "AVM'DE NEDEN SAAT YOK?! 🏬",
     "AVM'LER SENİ BÖYLE İÇERDE TUTUYOR! 🏬",
     "BANKALAR GİZLİ ÜCRETLERLE KANDIRIYOR! 🏦",
+    "BEDAVA UYGULAMA NASIL KAZANIR? 📲",
     "BENZİNLİK MARKETİ NEDEN PAHALI? ⛽",
     "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
     "BÜYÜK PAKET HER ZAMAN UCUZ DEĞİL! ⚖️",
@@ -52,11 +53,11 @@
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "      Gizem geçişi: gün 7, 50. video -> 'gizem' (gizem kalan: 46)\n[1/3] Senaryo (98/142) [diger]: MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n      google TTS hata (403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"This API method requires billing to be enabled. Please enable billing on project #318605312688 by visiting https://console.developers.google.com/bi), sonraki saglayiciya geciliyor\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      [Pexels: 8 sonuç -> 'deep ocean surface dark']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'submersible descending into deep']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'deep sea pressure gauge']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'strange deep sea anglerfish']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'pitch black deep ocean']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'mysterious deep sea trench']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (13175 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-26T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: OjUp5AzHsEE\n✓ Yüklendi: https://youtu.be/lPruYINo8cQ  (yayın: 2026-08-26T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "e 1/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'person using phone app']\n      [Pixabay: 12 klip / ~1595 toplam -> 'person using phone app']\n      [seçim: pexels~8000 / pixabay~1595 -> önce pexels]\n      Sahne 2/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~6877 toplam -> 'data servers glowing']\n      [Pixabay: 12 klip / ~5696 toplam -> 'data servers glowing']\n      [seçim: pexels~6877 / pixabay~5696 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5525 toplam -> 'app collecting data concept']\n      [Pixabay: 12 klip / ~1872 toplam -> 'app collecting data concept']\n      [seçim: pexels~5525 / pixabay~1872 -> önce pexels]\n      Sahne 4/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5092 toplam -> 'smartphone apps grid']\n      [Pixabay: 12 klip / ~802 toplam -> 'smartphone apps grid']\n      [seçim: pexels~5092 / pixabay~802 -> önce pexels]\n      Sahne 5/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5891 toplam -> 'tapping free app install']\n      [Pixabay: 12 klip / ~701 toplam -> 'tapping free app install']\n      [seçim: pexels~5891 / pixabay~701 -> önce pexels]\n      Sahne 6/6: gerçek stok video ✓ (pexels)\n      [dağılım: pexels=6, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (8969 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-26T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The comment thread could not be created \n✓ Yüklendi: https://youtu.be/JZ22o01mFJY  (yayın: 2026-08-26T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "lPruYINo8cQ",
-    "metin": "11 KİLOMETRE AŞAĞIDA\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "JZ22o01mFJY",
+    "metin": "BEDAVA NASIL PARA EDER?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
-  "son_kategori": "diger",
+  "son_kategori": "dijital",
   "gizem_gecis_baslangic": "2026-08-18"
 }
