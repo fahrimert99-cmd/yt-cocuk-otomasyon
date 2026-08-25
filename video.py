@@ -686,13 +686,14 @@ def _indir(link, path):
 
 
 def _pexels_adaylar(query, boyut, dikey=True):
-    """Pexels'te arar; (toplam_sonuc, [indirme_url'leri]) döndürür. Adaylar API'nin
-    alaka sırasını korur; her video içinde hedef genişliğe en yakın çözünürlük öne gelir.
-    Anahtar yoksa / hata olursa (0, [])."""
+    """Pexels'te arar; (toplam_sonuc, [indirme_url'leri], onizleme_gorsel_url) döndürür.
+    Adaylar API'nin alaka sırasını korur; her video içinde hedef genişliğe en yakın
+    çözünürlük öne gelir. Önizleme, en alakalı (ilk) klibin thumbnail'ıdır (vision için).
+    Anahtar yoksa / hata olursa (0, [], None)."""
     import urllib.parse, urllib.request, urllib.error
     key = _pexels_key()
     if not key:
-        return (0, [])
+        return (0, [], None)
     try:
         q = " ".join(query.split()[:4]) or query
         url = ("https://api.pexels.com/videos/search?query=" + urllib.parse.quote(q)
@@ -703,28 +704,30 @@ def _pexels_adaylar(query, boyut, dikey=True):
         vids = d.get("videos", [])
         total = int(d.get("total_results") or 0)
         print(f"      [Pexels: {len(vids)} klip / ~{total} toplam -> '{q}']")
+        onizleme = vids[0].get("image") if vids else None
         adaylar = []
         for vid in vids:  # API zaten alaka sırasında döndürür
             files = [f for f in vid.get("video_files", []) if f.get("link")]
             files.sort(key=lambda f: abs((f.get("width") or 0) - boyut[0]))
             adaylar += [f["link"] for f in files]
-        return (total, adaylar)
+        return (total, adaylar, onizleme)
     except urllib.error.HTTPError as he:
         print(f"      [Pexels {he.code}: {he.read().decode()[:150]}]")
-        return (0, [])
+        return (0, [], None)
     except Exception as e:
         print(f"      [Pexels hata: {str(e)[:80]}]")
-        return (0, [])
+        return (0, [], None)
 
 
 def _pixabay_adaylar(query, boyut, dikey=True):
-    """Pixabay'de arar; (toplam_sonuc, [indirme_url'leri]) döndürür. Yönelime (dikey/yatay)
-    uyan hitler öne alınır; her hit içinde hedef genişliğe en yakın çözünürlük öne gelir.
-    Anahtar yoksa / hata olursa (0, [])."""
+    """Pixabay'de arar; (toplam_sonuc, [indirme_url'leri], onizleme_gorsel_url) döndürür.
+    Yönelime (dikey/yatay) uyan hitler öne alınır; her hit içinde hedef genişliğe en yakın
+    çözünürlük öne gelir. Önizleme, en alakalı (ilk) hit'in thumbnail'ıdır (vision için).
+    Anahtar yoksa / hata olursa (0, [], None)."""
     import urllib.parse, urllib.request, urllib.error
     key = _pixabay_key()
     if not key:
-        return (0, [])
+        return (0, [], None)
     try:
         q = " ".join(query.split()[:4]) or query
         url = ("https://pixabay.com/api/videos/?key=" + urllib.parse.quote(key)
@@ -743,24 +746,31 @@ def _pixabay_adaylar(query, boyut, dikey=True):
             return (ht > w) if dikey else (w >= ht)
         # alaka sırasını koru, sadece yönelime uymayanları sona at (stable sort)
         hits = sorted(hits, key=lambda h: 0 if _yonelim_uyar(h) else 1)
+
+        def _thumb(h):  # bir hit'in ilk mevcut thumbnail'ını bul
+            for f in (h.get("videos") or {}).values():
+                if isinstance(f, dict) and f.get("thumbnail"):
+                    return f["thumbnail"]
+            return None
+        onizleme = _thumb(hits[0]) if hits else None
         adaylar = []
         for h in hits:
             files = [f for f in (h.get("videos") or {}).values()
                      if isinstance(f, dict) and f.get("url")]
             files.sort(key=lambda f: abs((f.get("width") or 0) - boyut[0]))
             adaylar += [f["url"] for f in files]
-        return (total, adaylar)
+        return (total, adaylar, onizleme)
     except urllib.error.HTTPError as he:
         print(f"      [Pixabay {he.code}: {he.read().decode()[:150]}]")
-        return (0, [])
+        return (0, [], None)
     except Exception as e:
         print(f"      [Pixabay hata: {str(e)[:80]}]")
-        return (0, [])
+        return (0, [], None)
 
 
 def pexels_video_ara(query, boyut, path, dikey=True):
     """Pexels'ten konuya uygun gerçek stok video indirir. Başarısızsa None."""
-    _, adaylar = _pexels_adaylar(query, boyut, dikey)
+    _, adaylar, _ = _pexels_adaylar(query, boyut, dikey)
     for link in adaylar:
         if _indir(link, path):
             return path
@@ -769,31 +779,93 @@ def pexels_video_ara(query, boyut, path, dikey=True):
 
 def pixabay_video_ara(query, boyut, path, dikey=True):
     """Pixabay'den konuya uygun gerçek stok video indirir. Başarısızsa None."""
-    _, adaylar = _pixabay_adaylar(query, boyut, dikey)
+    _, adaylar, _ = _pixabay_adaylar(query, boyut, dikey)
     for link in adaylar:
         if _indir(link, path):
             return path
     return None
 
 
-def stok_video_ara(query, boyut, path, dikey=True, oncelik=None):
-    """Her iki kaynağa da bakar ve KONUYA en uygun kaynağı seçer: o sorgu için hangi
-    kaynakta daha çok video varsa (daha iyi kapsam -> üst sonucu daha alakalı) önce
-    ORADAN indirir; indirilemezse diğerine düşer. Zorunlu bir Pexels/Pixabay oranı
-    yoktur — kaynak, sahnenin konusuna göre değişir. ('pexels'|'pixabay', path) veya None.
+def _vision_kaynak_sec(metin, thumb_pexels, thumb_pixabay):
+    """İki aday thumbnail'ı bir vision modeline (Gemini) gösterip sahne metnine hangisinin
+    daha uygun olduğunu sorar. 'pexels' | 'pixabay' döndürür; anahtar yok / thumbnail yok /
+    hata olursa None (çağıran taraf sayısal vekile düşer)."""
+    import urllib.request, base64 as _b64
+    key = _google_key()
+    if not key or not thumb_pexels or not thumb_pixabay:
+        return None
 
-    Not: klibin görsel içeriğinin konuyla ne kadar örtüştüğünü kod tek başına ölçemez
-    (bunun için görüntü-anlama modeli gerekir); burada 'toplam sonuç sayısı' alaka
-    vekili olarak kullanılır ve her API kendi sonuçlarını alaka sırasında verir.
-    ('oncelik' verilirse yalnızca eşitlik durumunda o kaynak tercih edilir.)"""
-    px_total, px_adaylar = _pexels_adaylar(query, boyut, dikey)
-    pb_total, pb_adaylar = _pixabay_adaylar(query, boyut, dikey)
-    esit_tercih = oncelik if oncelik in ("pexels", "pixabay") else "pexels"
-    if px_total != pb_total:
-        sira = ("pexels", "pixabay") if px_total > pb_total else ("pixabay", "pexels")
-    else:
-        sira = ("pexels", "pixabay") if esit_tercih == "pexels" else ("pixabay", "pexels")
-    print(f"      [seçim: pexels~{px_total} / pixabay~{pb_total} -> önce {sira[0]}]")
+    def _resim(u):
+        try:
+            rq = urllib.request.Request(u, headers={"User-Agent": "ytbot"})
+            with urllib.request.urlopen(rq, timeout=20) as r:
+                return _b64.b64encode(r.read()).decode()
+        except Exception:
+            return None
+    a = _resim(thumb_pexels); b = _resim(thumb_pixabay)
+    if not a or not b:
+        return None
+    talimat = (
+        "Bir video sahnesi icin stok gorsel seciyoruz. Sahne konusu: '"
+        + (metin or "")[:200] + "'. Asagida iki aday gorsel var: birincisi A, ikincisi B. "
+        "Hangisi bu sahne konusuna gorsel olarak daha uygun ve alakali? "
+        "SADECE tek harf yaz: A veya B.")
+    body = {"contents": [{"parts": [
+        {"text": talimat},
+        {"inlineData": {"mimeType": "image/jpeg", "data": a}},
+        {"text": "A"},
+        {"inlineData": {"mimeType": "image/jpeg", "data": b}},
+        {"text": "B"},
+    ]}], "generationConfig": {"temperature": 0, "maxOutputTokens": 5}}
+    for model in ("gemini-2.5-flash", "gemini-2.0-flash"):
+        try:
+            url = (f"https://generativelanguage.googleapis.com/v1beta/models/{model}"
+                   f":generateContent?key={key}")
+            rq = urllib.request.Request(url, data=json.dumps(body).encode(),
+                                        headers={"Content-Type": "application/json", "User-Agent": "ytbot"})
+            with urllib.request.urlopen(rq, timeout=40) as r:
+                d = json.loads(r.read().decode())
+            metinler = []
+            for cand in d.get("candidates", []):
+                for part in cand.get("content", {}).get("parts", []):
+                    if part.get("text"):
+                        metinler.append(part["text"])
+            cevap = (" ".join(metinler)).strip().upper()
+            if cevap.startswith("A") or cevap == "A":
+                return "pexels"
+            if cevap.startswith("B") or cevap == "B":
+                return "pixabay"
+        except Exception as e:
+            print(f"      [vision {model} hata: {str(e)[:70]}]")
+    return None
+
+
+def stok_video_ara(query, boyut, path, dikey=True, oncelik=None):
+    """Her iki kaynağa da bakar ve KONUYA en uygun kaynağı seçer. Seçim önceliği:
+    1) VISION: iki kaynağın en alakalı klibinin thumbnail'ını bir görüntü-anlama modeline
+       (Gemini) gösterip sahne metnine hangisinin görsel olarak daha uygun olduğunu sorar.
+    2) SAYISAL VEKİL: vision yoksa/başarısızsa, o sorgu için hangi kaynakta daha çok video
+       varsa (daha iyi kapsam) onu önceler.
+    Seçilen kaynakta indirme başarısızsa diğeri devreye girer. Zorunlu bir oran yoktur.
+    ('pexels'|'pixabay', path) veya None. ('oncelik' verilirse yalnızca sayısal eşitlikte
+    tercih olarak kullanılır.)"""
+    px_total, px_adaylar, px_thumb = _pexels_adaylar(query, boyut, dikey)
+    pb_total, pb_adaylar, pb_thumb = _pixabay_adaylar(query, boyut, dikey)
+    sira = None
+    # 1) Vision: yalnızca iki kaynakta da aday + thumbnail varsa denenir
+    if px_adaylar and pb_adaylar:
+        secim = _vision_kaynak_sec(query, px_thumb, pb_thumb)
+        if secim:
+            sira = ("pexels", "pixabay") if secim == "pexels" else ("pixabay", "pexels")
+            print(f"      [seçim(vision): pexels~{px_total} / pixabay~{pb_total} -> önce {sira[0]}]")
+    # 2) Sayısal vekil (vision yok/başarısız)
+    if sira is None:
+        esit_tercih = oncelik if oncelik in ("pexels", "pixabay") else "pexels"
+        if px_total != pb_total:
+            sira = ("pexels", "pixabay") if px_total > pb_total else ("pixabay", "pexels")
+        else:
+            sira = ("pexels", "pixabay") if esit_tercih == "pexels" else ("pixabay", "pexels")
+        print(f"      [seçim(sayısal): pexels~{px_total} / pixabay~{pb_total} -> önce {sira[0]}]")
     adaylar = {"pexels": px_adaylar, "pixabay": pb_adaylar}
     for kaynak in sira:
         for link in adaylar[kaynak]:
