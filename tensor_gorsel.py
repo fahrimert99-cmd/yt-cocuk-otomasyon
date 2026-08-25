@@ -128,7 +128,8 @@ def _poll_indir(jid, cikti_path):
         j = r.get("job") or r
         durum = (j.get("status") or "").upper()
         if durum == "SUCCESS":
-            imgs = (j.get("successInfo") or {}).get("images") or []
+            bilgi = j.get("successInfo") or j.get("success_info") or {}
+            imgs = bilgi.get("images") or bilgi.get("imageList") or []
             url = next((im.get("url") for im in imgs if im.get("url")), None)
             if not url:
                 raise RuntimeError(f"SUCCESS ama görsel yok: {json.dumps(j)[:400]}")
@@ -147,13 +148,17 @@ def uret(prompt, cikti_path, model_id=None, width=1024, height=576, steps=25):
     model_id = model_id or os.environ.get("TENSOR_MODEL_ID", "").strip()
     if not model_id:
         raise RuntimeError("TENSOR_MODEL_ID ayarlı değil (sdModel gerekli)")
-    govde = {"requestId": uuid.uuid4().hex, "stages": [
+    # Alan adları resmi demoyla (Tensor-Art/tams-signature-demo) BİREBİR aynı
+    # olmalı: request_id / sd_model / cfg_scale / clip_skip (snake_case).
+    # camelCase alanlar sunucuda 500 veriyordu.
+    govde = {"request_id": uuid.uuid4().hex, "stages": [
         {"type": "INPUT_INITIALIZE", "inputInitialize": {"seed": -1, "count": 1}},
         {"type": "DIFFUSION", "diffusion": {
             "width": int(width), "height": int(height),
-            "prompts": [{"text": prompt}], "negativePrompts": [{"text": NEGATIF}],
-            "sdModel": str(model_id), "sdVae": "Automatic", "sampler": "Euler a",
-            "steps": int(steps), "cfgScale": 7, "clipSkip": 2}}]}
+            "prompts": [{"text": prompt}],
+            "sampler": "Euler a", "sdVae": "Automatic",
+            "steps": int(steps), "sd_model": str(model_id),
+            "clip_skip": 2, "cfg_scale": 7}}]}
     d = _istek("POST", "/v1/jobs", govde)
     jid = (d.get("job") or {}).get("id") or d.get("jobId") or d.get("id")
     print(f"      [tensor iş: id={jid} durum={((d.get('job') or {}).get('status'))}]")
