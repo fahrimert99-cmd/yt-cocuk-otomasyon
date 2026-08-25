@@ -16,11 +16,11 @@ jobs:
   uret:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: FFmpeg kur
         run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
       - name: Python kur
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Bagimliliklar
@@ -41,11 +41,25 @@ jobs:
         run: |
           set -o pipefail
           python3 uzun_otomasyon.py 2>&1 | sed -E 's/anahtar:.*/anahtar: [redacted]/' | tee uzun_run.log
-      - name: Log + durum kaydet
+      - name: Run log artifact
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: uzun-run-log
+          path: uzun_run.log
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Durum kaydet
         if: always()
         run: |
           git config user.name "uzun-bot"
           git config user.email "uzun-bot@users.noreply.github.com"
-          git add uzun_durum.json uzun_run.log || true
-          git commit -m "uzun: run log" || echo "degisiklik yok"
-          git push || echo "push atlandi"
+          git add uzun_durum.json || true
+          git commit -m "uzun: durum" || { echo "degisiklik yok"; exit 0; }
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "push tamam (deneme $i)"; exit 0
+            fi
+            echo "push denemesi $i basarisiz, bekleniyor..."; sleep $((2 ** i))
+          done
+          echo "push atlandi (5 deneme)"; exit 0

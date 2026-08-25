@@ -1,0 +1,42 @@
+name: CI (kontrol)
+
+# Hizli saglik kontrolu: her push ve PR'da calisir. Amac, bozuk bir degisikligin
+# gunluk cron'a (video uretimi) ulasmadan once yakalanmasi.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Python derleme (sozdizimi/import kontrolu)
+        run: python -m compileall -q .
+      - name: JSON dosyalari gecerli mi
+        run: |
+          python3 - <<'PY'
+          import json, glob, sys
+          hata = 0
+          for f in glob.glob("*.json") + glob.glob("uzun_scripts/*.json"):
+              try:
+                  json.load(open(f, encoding="utf-8"))
+              except Exception as e:
+                  print(f"✗ {f}: {e}"); hata = 1
+              else:
+                  print(f"✓ {f}")
+          sys.exit(hata)
+          PY
+      - name: Senaryolar dogrula
+        run: python3 senaryolar_validator.py

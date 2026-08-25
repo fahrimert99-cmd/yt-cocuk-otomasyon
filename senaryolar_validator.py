@@ -12,7 +12,10 @@ from typing import List, Dict, Any, Tuple
 class SenaryoValidator:
     """Senaryo yapısını ve içeriğini doğrula."""
     
-    REQUIRED_FIELDS = ["baslik", "aciklama", "script", "sahneler", "seslendirme"]
+    # NOT: "seslendirme" runtime (otomasyon.py) tarafindan OKUNMUYOR; ses
+    # ayarlari config.json'dan gelir. Bu yuzden zorunlu degildir (varsa yine de
+    # sekli kontrol edilir). Zorunlu alanlar gercek runtime ihtiyaciyla eslesir.
+    REQUIRED_FIELDS = ["baslik", "aciklama", "script", "sahneler"]
     SESLENDIRME_FIELDS = ["motor", "ses", "hiz", "pitch"]
     SAHNE_FIELDS = ["metin", "gorsel"]
     
@@ -31,10 +34,12 @@ class SenaryoValidator:
         """Bozuk UTF-8 karakterleri tespit et."""
         issues = {}
         
-        # Mojibake patterns (double-encoded UTF-8)
+        # Mojibake patterns (double-encoded UTF-8).
+        # NOT: Yalin "â" KALDIRILDI — meşru Türkçe bir harftir (ör. "kâr",
+        # "hâlâ", "kâğıt") ve yanlış alarm veriyordu. Asil mojibake, iki-kez
+        # kodlanmis "Ã..." dizileridir (ör. "Ã¢", "Ã§").
         mojibake_patterns = {
             "Ã": "Corrupted UTF-8 (À-ÿ range)",
-            "â": "Corrupted UTF-8 (â range)",
             "Äž": "Corrupted ğ",
             "Ä°": "Corrupted ı",
             "ğŸ": "Corrupted emoji"

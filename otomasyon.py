@@ -233,21 +233,17 @@ def main():
                   "Sen bu tuzağa hiç düştün mü? Yorumla \U0001F447\n"
                   "\U0001F514 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"),
     }
-    # TikTok/Reels icin: videoyu + kapagi repoya kaydet (elle indirilebilsin)
+    # TikTok/Reels icin: videoyu + kapagi calisma dizinine kopyala.
+    # NOT: Repoya COMMIT EDILMEZ — 18MB'lik mp4'ler git gecmisini sisiriyordu.
+    # Workflow bu dosyalari "artifact" olarak yukler; oradan indirilebilir.
     try:
-        import shutil, subprocess
+        import shutil
         shutil.copy(cikti, "son_video.mp4")
         if kapak_yolu and os.path.exists(kapak_yolu):
             shutil.copy(kapak_yolu, "son_kapak.jpg")
-        for c in (["git","config","user.name","bot"],
-                  ["git","config","user.email","bot@users.noreply.github.com"],
-                  ["git","add","son_video.mp4","son_kapak.jpg"],
-                  ["git","commit","-m",f"son video: {veri['baslik'][:40]}"],
-                  ["git","push"]):
-            subprocess.run(c, check=False)
-        print("      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)")
+        print("      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)")
     except Exception as e:
-        print(f"      Video repoya kaydedilemedi: {str(e)[:100]}")
+        print(f"      Video kopyalanamadi: {str(e)[:100]}")
 
     yapilan.add(veri["baslik"])
     durum["yapilan"] = sorted(yapilan)
