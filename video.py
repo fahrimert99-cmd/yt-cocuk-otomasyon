@@ -497,6 +497,10 @@ def _pexels_key():
     return (os.environ.get("PEXELS_API_KEY") or _keys().get("pexels", "")).strip()
 
 
+def _pixabay_key():
+    return (os.environ.get("PIXABAY_API_KEY") or _keys().get("pixabay", "")).strip()
+
+
 def _google_key():
     return (os.environ.get("GOOGLE_TTS_KEY") or _keys().get("google", "")).strip()
 
@@ -666,7 +670,22 @@ def _eleven_seslendir(text, mp3_path, voice_id=None):
     return boundaries
 
 
-def stok_video_ara(query, boyut, path, dikey=True):
+def _indir(link, path):
+    """Verilen linki path'e indirir; dosya makul boyuttaysa path döner, yoksa None."""
+    import urllib.request
+    try:
+        dreq = urllib.request.Request(
+            link, headers={"User-Agent": "Mozilla/5.0 (compatible; ytbot/1.0)"})
+        with urllib.request.urlopen(dreq, timeout=90) as resp, open(path, "wb") as out:
+            out.write(resp.read())
+        if os.path.getsize(path) > 10000:
+            return path
+    except Exception:
+        pass
+    return None
+
+
+def pexels_video_ara(query, boyut, path, dikey=True):
     """Pexels'ten konuya uygun gerçek stok video indirir. Başarısızsa None."""
     import urllib.parse, urllib.request
     key = _pexels_key()
@@ -685,15 +704,8 @@ def stok_video_ara(query, boyut, path, dikey=True):
             files = [f for f in vid.get("video_files", []) if f.get("link")]
             files.sort(key=lambda f: abs((f.get("width") or 0) - boyut[0]))
             for f in files:
-                try:
-                    dreq = urllib.request.Request(
-                        f["link"], headers={"User-Agent": "Mozilla/5.0 (compatible; ytbot/1.0)"})
-                    with urllib.request.urlopen(dreq, timeout=90) as resp, open(path, "wb") as out:
-                        out.write(resp.read())
-                    if os.path.getsize(path) > 10000:
-                        return path
-                except Exception:
-                    continue
+                if _indir(f["link"], path):
+                    return path
         return None
     except urllib.error.HTTPError as he:
         print(f"      [Pexels {he.code}: {he.read().decode()[:150]}]")
@@ -703,8 +715,58 @@ def stok_video_ara(query, boyut, path, dikey=True):
         return None
 
 
+def pixabay_video_ara(query, boyut, path, dikey=True):
+    """Pixabay'den konuya uygun gerçek stok video indirir. Başarısızsa None.
+    Pexels'e ikinci/yedek kaynak; ikisinin klipleri aynı videoda karışır."""
+    import urllib.parse, urllib.request
+    key = _pixabay_key()
+    if not key:
+        return None
+    try:
+        q = " ".join(query.split()[:4]) or query
+        url = ("https://pixabay.com/api/videos/?key=" + urllib.parse.quote(key)
+               + "&q=" + urllib.parse.quote(q) + "&per_page=12&safesearch=true")
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; ytbot/1.0)"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            d = json.loads(r.read().decode())
+        hits = d.get("hits", [])
+        print(f"      [Pixabay: {len(hits)} sonuç -> '{q}']")
+        # yönelime (dikey/yatay) uyanları öne al, uymayanlar yedek kalsın
+        def _yonelim_uyar(h):
+            w = h.get("width") or 0; ht = h.get("height") or 0
+            if not w or not ht:
+                return True
+            return (ht > w) if dikey else (w >= ht)
+        hits = sorted(hits, key=lambda h: 0 if _yonelim_uyar(h) else 1)
+        for h in hits:
+            files = [f for f in (h.get("videos") or {}).values()
+                     if isinstance(f, dict) and f.get("url")]
+            files.sort(key=lambda f: abs((f.get("width") or 0) - boyut[0]))
+            for f in files:
+                if _indir(f["url"], path):
+                    return path
+        return None
+    except urllib.error.HTTPError as he:
+        print(f"      [Pixabay {he.code}: {he.read().decode()[:150]}]")
+        return None
+    except Exception as e:
+        print(f"      [Pixabay hata: {str(e)[:80]}]")
+        return None
+
+
+def stok_video_ara(query, boyut, path, dikey=True):
+    """Önce Pexels, bulunamazsa Pixabay dener. İki kaynaktan gelen klipler
+    sahneler arasında karışarak tek bir videoyu oluşturur. Hiçbiri yoksa None."""
+    if pexels_video_ara(query, boyut, path, dikey=dikey):
+        return ("pexels", path)
+    if pixabay_video_ara(query, boyut, path, dikey=dikey):
+        return ("pixabay", path)
+    return None
+
+
 def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="stok"):
-    """Her sahne için önce gerçek stok video (Pexels), yoksa fotogerçekçi AI görseli.
+    """Her sahne için önce gerçek stok video (Pexels → Pixabay), yoksa fotogerçekçi
+    AI görseli. Böylece nihai video iki stok kaynağının kliplerinin karışımıdır.
     ('video', yol) veya ('image', yol) listesi döndürür."""
     if sahneler:
         prompts = [s.get("gorsel") or s.get("metin") or "" for s in sahneler if s]
@@ -715,9 +777,11 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
     gorseller = []
     for i, p in enumerate(prompts):
         vpath = os.path.join(tmp, f"sahne_{i:03d}.mp4")
-        if stil == "stok" and not cocuk and stok_video_ara(p, boyut, vpath, dikey=dikey):
+        stok = stok_video_ara(p, boyut, vpath, dikey=dikey) if (stil == "stok" and not cocuk) else None
+        if stok:
+            kaynak = stok[0] if isinstance(stok, tuple) else "stok"
             gorseller.append(("video", vpath))
-            print(f"      Sahne {i+1}/{len(prompts)}: gerçek stok video ✓")
+            print(f"      Sahne {i+1}/{len(prompts)}: gerçek stok video ✓ ({kaynak})")
         else:
             ipath = os.path.join(tmp, f"sahne_{i:03d}.jpg")
             gorsel_uret_ai(p, boyut, i, ipath, cocuk=cocuk, stil_ad=stil)
@@ -954,8 +1018,8 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     cumleler = [_ses_normalize(c) for c in cumleler]
     tmp = tempfile.mkdtemp()
     mp3 = os.path.join(tmp, "narration.mp3")
-    _gk=_google_key(); _pk=_pexels_key()
-    print(f"      [anahtar: google={_gk[:6]}..len{len(_gk)}, pexels={_pk[:6]}..len{len(_pk)}]")
+    _gk=_google_key(); _pk=_pexels_key(); _xk=_pixabay_key()
+    print(f"      [anahtar: google={_gk[:6]}..len{len(_gk)}, pexels={_pk[:6]}..len{len(_pk)}, pixabay={_xk[:6]}..len{len(_xk)}]")
     boundaries = None
     # Seslendirme saglayici sirasi. eleven_once=True (uzun videolar) ise
     # ElevenLabs (daha gercekci insan sesi) once denenir; degilse mevcut

@@ -71,6 +71,7 @@ Repo → **Settings → Secrets and variables → Actions → New repository sec
 | `ELEVEN_VOICE_ID` | Kullanılacak ElevenLabs ses kimliği. |
 | `GOOGLE_TTS_KEY` | *(opsiyonel)* Google TTS anahtarı. Yoksa ücretsiz edge-tts kullanılır. |
 | `PEXELS_API_KEY` | Gerçek stok video için (ücretsiz Pexels API). |
+| `PIXABAY_API_KEY` | *(opsiyonel)* İkinci stok kaynağı (ücretsiz Pixabay API). Pexels bir sahne için sonuç vermezse devreye girer; iki kaynağın klipleri aynı videoda karışır. |
 
 ### 4) Test
 - Repo → **Actions** sekmesi → **"Gunluk Bilim Videosu"** (kısa) veya **"Uzun Video (Otonom)"** →
@@ -133,9 +134,11 @@ Authorization: Bearer <GITHUB_PAT>
 ---
 
 ## GÖRSELLER
-Varsayılan: Pexels'ten konuya uygun **gerçek stok videolar**. Alternatif olarak metinden
-otomatik degrade başlık kartı üretilebilir. `assets/` klasörüne telifsiz `.jpg/.png` koyarsan
-Ken Burns zoom ile kullanılır.
+Varsayılan: her sahne için konuya uygun **gerçek stok videolar**. Kaynak zinciri:
+**Pexels → Pixabay → AI görseli → degrade kart**. `PIXABAY_API_KEY` tanımlıysa, Pexels'in
+sonuç vermediği sahneler Pixabay'den doldurulur; böylece nihai video iki stok kaynağının
+kliplerinin karışımı olur. Alternatif olarak metinden otomatik degrade başlık kartı üretilebilir.
+`assets/` klasörüne telifsiz `.jpg/.png` koyarsan Ken Burns zoom ile kullanılır.
 
 ---
 
