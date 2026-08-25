@@ -50,6 +50,23 @@ def main():
         bl = baslik.lower()
         return sum(1 for k in ONCELIK if k in bl)
 
+    # OKYANUS ÖNCELİĞİ: kanalda en çok tutan format okyanus/deniz gizemi
+    # ("Okyanusun Dibinde", "Bermuda" patladı). Gizem havuzunda su/deniz temalı
+    # konular EN ÖNE gelsin; trend sıcakken bu damardan besle.
+    OKYANUS = ("okyanus", "deniz", "derin", "dalga", "balina", "köpekbalığı", "megalodon",
+               "kraken", "denizaltı", "batık", "girdap", "mercan", "mariana", "marıana",
+               "çukur", "titanik", "bermuda", "su altı", "sualtı", "buzul", "kutup",
+               "canavar", "adası", "mavi del", "hayalet gemi", "bloop", "çember")
+
+    def _tr_lower(s):
+        # Türkçe İ/I küçültme: "DENİZ".lower() -> "deni̇z" (birleşen nokta) olur ve
+        # "deniz" alt dizisiyle eşleşmez. İ->i, I->ı ile önce düzelt.
+        return s.replace("İ", "i").replace("I", "ı").lower()
+
+    def _okyanus_mu(baslik):
+        bl = _tr_lower(baslik)
+        return any(k in bl for k in OKYANUS)
+
     # ÇEŞİTLİLİK (P4): benzer konular arka arkaya gelmesin -> izleyici yorgunluğu azalsın.
     # Her konuyu bir kategoriye ata; bir ÖNCEKİ videonun kategorisinden FARKLI bir
     # kategori tercih et. Böylece market->market->market yerine market->finans->dijital...
@@ -119,8 +136,12 @@ def main():
     son_kat = durum.get("son_kategori")
     # Önce bir önceki videodan FARKLI kategorideki konulara bak; yoksa tüm havuza.
     havuz = [t for t in tema_havuz if _kategori(t[1]["baslik"]) != son_kat] or tema_havuz
-    # Havuz içinde en yüksek öncelik skorlu; eşitlikte dosya sırası (deterministik).
-    havuz.sort(key=lambda t: (-_oncelik_skoru(t[1]["baslik"]), t[0]))
+    # Sıralama: (1) okyanus/deniz temalı gizem konuları EN ÖNE (patlayan format),
+    # (2) sonra öncelik skoru yüksek olanlar, (3) eşitlikte dosya sırası (deterministik).
+    # Okyanus önceliği yalnızca gizem havuzunu etkiler: tuzak başlıkları su kelimesi
+    # içermez, o yüzden tuzak fazında hiçbir değişiklik olmaz.
+    havuz.sort(key=lambda t: (0 if _okyanus_mu(t[1]["baslik"]) else 1,
+                              -_oncelik_skoru(t[1]["baslik"]), t[0]))
     idx = havuz[0][0]
     veri = senaryolar[idx]
     durum["son_kategori"] = _kategori(veri["baslik"])
