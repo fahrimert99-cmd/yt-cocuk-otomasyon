@@ -1,0 +1,30 @@
+name: Dagilim Testi (50/50)
+
+# Sadece elle tetiklenir. Sıradaki konunun sahne görsellerini gerçek Pexels + Pixabay
+# anahtarlarıyla indirip 50/50 dağılımı log'da gösterir. YouTube secret'ları BİLEREK
+# verilmez -> bu iş asla video yükleyemez.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dagilim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: FFmpeg kur
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Dagilimi test et (yukleme YOK)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: python3 dagilim_test.py
