@@ -28,6 +28,7 @@ jobs:
       - name: Tensor.Art gorsel uret
         env:
           TENSOR_APP_ID: ${{ secrets.TENSOR_APP_ID }}
+          TENSOR_PRIVATE_KEY_B64: ${{ secrets.TENSOR_PRIVATE_KEY_B64 }}
           TENSOR_PRIVATE_KEY: ${{ secrets.TENSOR_PRIVATE_KEY }}
           TENSOR_BASE_URL: ${{ secrets.TENSOR_BASE_URL }}
           TENSOR_MODEL_ID: ${{ secrets.TENSOR_MODEL_ID }}

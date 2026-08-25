@@ -32,15 +32,38 @@ def _app_id():
     return (os.environ.get("TENSOR_APP_ID") or "").strip()
 
 
+def _pem_temizle(pem):
+    """Kopyala-yapıştır kaynaklı bozulmaları düzeltir: BOM, süslü tireler
+    (–—‒‑ vb. -> '-'), kaçış '\\n' -> gerçek satır sonu, sar tırnak."""
+    import re
+    if not pem:
+        return ""
+    pem = pem.replace("﻿", "")
+    for d in ("‐", "‑", "‒", "–", "—", "―",
+              "−", "⁃", "－", "─"):
+        pem = pem.replace(d, "-")
+    if "\\n" in pem and "\n" not in pem.strip():
+        pem = pem.replace("\\n", "\n")
+    return pem.strip().strip("'\"").strip() + "\n"
+
+
 def _private_key_pem():
-    """PEM içeriğini önce env'den, yoksa dosyadan okur."""
+    """PEM içeriğini sırasıyla dener: TENSOR_PRIVATE_KEY_B64 (base64, en sağlam)
+    -> TENSOR_PRIVATE_KEY (ham PEM, temizlenir) -> TENSOR_PRIVATE_KEY_PATH."""
+    import re, base64
+    b64 = os.environ.get("TENSOR_PRIVATE_KEY_B64", "")
+    if b64.strip():
+        try:
+            return base64.b64decode(re.sub(r"\s+", "", b64)).decode("utf-8")
+        except Exception as e:
+            print(f"      [uyarı: TENSOR_PRIVATE_KEY_B64 çözülemedi: {str(e)[:80]}]")
     pem = os.environ.get("TENSOR_PRIVATE_KEY", "")
     if pem.strip():
-        return pem
+        return _pem_temizle(pem)
     yol = os.environ.get("TENSOR_PRIVATE_KEY_PATH", "").strip()
     if yol and os.path.exists(yol):
         with open(yol, "r", encoding="utf-8") as f:
-            return f.read()
+            return _pem_temizle(f.read())
     return ""
 
 
