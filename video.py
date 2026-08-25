@@ -754,19 +754,24 @@ def pixabay_video_ara(query, boyut, path, dikey=True):
         return None
 
 
-def stok_video_ara(query, boyut, path, dikey=True):
-    """Önce Pexels, bulunamazsa Pixabay dener. İki kaynaktan gelen klipler
-    sahneler arasında karışarak tek bir videoyu oluşturur. Hiçbiri yoksa None."""
-    if pexels_video_ara(query, boyut, path, dikey=dikey):
-        return ("pexels", path)
-    if pixabay_video_ara(query, boyut, path, dikey=dikey):
-        return ("pixabay", path)
+def stok_video_ara(query, boyut, path, dikey=True, oncelik="pexels"):
+    """Belirtilen kaynağı ('oncelik') önce dener, o sahneye klip bulamazsa diğerini.
+    Böylece sahne bazında 'oncelik' değiştirilerek iki kaynak ~50/50 dağıtılır;
+    ama bir kaynak boş dönerse diğeri devreye girip sahnenin boş kalmasını önler.
+    ('pexels'|'pixabay', path) döndürür; hiçbiri yoksa None."""
+    fonk = {"pexels": pexels_video_ara, "pixabay": pixabay_video_ara}
+    sira = ("pixabay", "pexels") if oncelik == "pixabay" else ("pexels", "pixabay")
+    for kaynak in sira:
+        if fonk[kaynak](query, boyut, path, dikey=dikey):
+            return (kaynak, path)
     return None
 
 
 def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="stok"):
-    """Her sahne için önce gerçek stok video (Pexels → Pixabay), yoksa fotogerçekçi
-    AI görseli. Böylece nihai video iki stok kaynağının kliplerinin karışımıdır.
+    """Her sahne için konuya en uygun gerçek stok videoyu seçer; sahneleri
+    ~yarı Pexels / yarı Pixabay olacak şekilde dönüşümlü dağıtır (tek/çift indeks).
+    Öncelikli kaynak o sahneye klip bulamazsa diğeri devreye girer (sahne boş kalmaz),
+    hiçbiri bulamazsa fotogerçekçi AI görseline düşülür.
     ('video', yol) veya ('image', yol) listesi döndürür."""
     if sahneler:
         prompts = [s.get("gorsel") or s.get("metin") or "" for s in sahneler if s]
@@ -775,18 +780,27 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
     prompts = [p for p in prompts if p.strip()] or ["colorful scene"]
     dikey = boyut[1] > boyut[0]
     gorseller = []
+    sayac = {"pexels": 0, "pixabay": 0, "ai": 0}
     for i, p in enumerate(prompts):
         vpath = os.path.join(tmp, f"sahne_{i:03d}.mp4")
-        stok = stok_video_ara(p, boyut, vpath, dikey=dikey) if (stil == "stok" and not cocuk) else None
+        # 50/50 dağıtım: çift sahneler Pexels'i, tek sahneler Pixabay'i önceler
+        oncelik = "pexels" if i % 2 == 0 else "pixabay"
+        stok = (stok_video_ara(p, boyut, vpath, dikey=dikey, oncelik=oncelik)
+                if (stil == "stok" and not cocuk) else None)
         if stok:
             kaynak = stok[0] if isinstance(stok, tuple) else "stok"
+            sayac[kaynak] = sayac.get(kaynak, 0) + 1
             gorseller.append(("video", vpath))
-            print(f"      Sahne {i+1}/{len(prompts)}: gerçek stok video ✓ ({kaynak})")
+            tercih = " (tercih)" if kaynak == oncelik else " (yedek)"
+            print(f"      Sahne {i+1}/{len(prompts)}: gerçek stok video ✓ ({kaynak}{tercih})")
         else:
             ipath = os.path.join(tmp, f"sahne_{i:03d}.jpg")
             gorsel_uret_ai(p, boyut, i, ipath, cocuk=cocuk, stil_ad=stil)
+            sayac["ai"] += 1
             gorseller.append(("image", ipath))
             print(f"      Sahne {i+1}/{len(prompts)}: AI görseli ({stil})")
+    print(f"      [dağılım: pexels={sayac['pexels']}, pixabay={sayac['pixabay']}, "
+          f"ai={sayac['ai']} / toplam {len(prompts)} sahne]")
     return gorseller
 
 
