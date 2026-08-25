@@ -685,12 +685,14 @@ def _indir(link, path):
     return None
 
 
-def pexels_video_ara(query, boyut, path, dikey=True):
-    """Pexels'ten konuya uygun gerçek stok video indirir. Başarısızsa None."""
-    import urllib.parse, urllib.request
+def _pexels_adaylar(query, boyut, dikey=True):
+    """Pexels'te arar; (toplam_sonuc, [indirme_url'leri]) döndürür. Adaylar API'nin
+    alaka sırasını korur; her video içinde hedef genişliğe en yakın çözünürlük öne gelir.
+    Anahtar yoksa / hata olursa (0, [])."""
+    import urllib.parse, urllib.request, urllib.error
     key = _pexels_key()
     if not key:
-        return None
+        return (0, [])
     try:
         q = " ".join(query.split()[:4]) or query
         url = ("https://api.pexels.com/videos/search?query=" + urllib.parse.quote(q)
@@ -699,29 +701,30 @@ def pexels_video_ara(query, boyut, path, dikey=True):
         with urllib.request.urlopen(req, timeout=30) as r:
             d = json.loads(r.read().decode())
         vids = d.get("videos", [])
-        print(f"      [Pexels: {len(vids)} sonuç -> '{q}']")
-        for vid in vids:
+        total = int(d.get("total_results") or 0)
+        print(f"      [Pexels: {len(vids)} klip / ~{total} toplam -> '{q}']")
+        adaylar = []
+        for vid in vids:  # API zaten alaka sırasında döndürür
             files = [f for f in vid.get("video_files", []) if f.get("link")]
             files.sort(key=lambda f: abs((f.get("width") or 0) - boyut[0]))
-            for f in files:
-                if _indir(f["link"], path):
-                    return path
-        return None
+            adaylar += [f["link"] for f in files]
+        return (total, adaylar)
     except urllib.error.HTTPError as he:
         print(f"      [Pexels {he.code}: {he.read().decode()[:150]}]")
-        return None
+        return (0, [])
     except Exception as e:
         print(f"      [Pexels hata: {str(e)[:80]}]")
-        return None
+        return (0, [])
 
 
-def pixabay_video_ara(query, boyut, path, dikey=True):
-    """Pixabay'den konuya uygun gerçek stok video indirir. Başarısızsa None.
-    Pexels'e ikinci/yedek kaynak; ikisinin klipleri aynı videoda karışır."""
-    import urllib.parse, urllib.request
+def _pixabay_adaylar(query, boyut, dikey=True):
+    """Pixabay'de arar; (toplam_sonuc, [indirme_url'leri]) döndürür. Yönelime (dikey/yatay)
+    uyan hitler öne alınır; her hit içinde hedef genişliğe en yakın çözünürlük öne gelir.
+    Anahtar yoksa / hata olursa (0, [])."""
+    import urllib.parse, urllib.request, urllib.error
     key = _pixabay_key()
     if not key:
-        return None
+        return (0, [])
     try:
         q = " ".join(query.split()[:4]) or query
         url = ("https://pixabay.com/api/videos/?key=" + urllib.parse.quote(key)
@@ -730,48 +733,80 @@ def pixabay_video_ara(query, boyut, path, dikey=True):
         with urllib.request.urlopen(req, timeout=30) as r:
             d = json.loads(r.read().decode())
         hits = d.get("hits", [])
-        print(f"      [Pixabay: {len(hits)} sonuç -> '{q}']")
-        # yönelime (dikey/yatay) uyanları öne al, uymayanlar yedek kalsın
+        total = int(d.get("total") or d.get("totalHits") or 0)
+        print(f"      [Pixabay: {len(hits)} klip / ~{total} toplam -> '{q}']")
+
         def _yonelim_uyar(h):
             w = h.get("width") or 0; ht = h.get("height") or 0
             if not w or not ht:
                 return True
             return (ht > w) if dikey else (w >= ht)
+        # alaka sırasını koru, sadece yönelime uymayanları sona at (stable sort)
         hits = sorted(hits, key=lambda h: 0 if _yonelim_uyar(h) else 1)
+        adaylar = []
         for h in hits:
             files = [f for f in (h.get("videos") or {}).values()
                      if isinstance(f, dict) and f.get("url")]
             files.sort(key=lambda f: abs((f.get("width") or 0) - boyut[0]))
-            for f in files:
-                if _indir(f["url"], path):
-                    return path
-        return None
+            adaylar += [f["url"] for f in files]
+        return (total, adaylar)
     except urllib.error.HTTPError as he:
         print(f"      [Pixabay {he.code}: {he.read().decode()[:150]}]")
-        return None
+        return (0, [])
     except Exception as e:
         print(f"      [Pixabay hata: {str(e)[:80]}]")
-        return None
+        return (0, [])
 
 
-def stok_video_ara(query, boyut, path, dikey=True, oncelik="pexels"):
-    """Belirtilen kaynağı ('oncelik') önce dener, o sahneye klip bulamazsa diğerini.
-    Böylece sahne bazında 'oncelik' değiştirilerek iki kaynak ~50/50 dağıtılır;
-    ama bir kaynak boş dönerse diğeri devreye girip sahnenin boş kalmasını önler.
-    ('pexels'|'pixabay', path) döndürür; hiçbiri yoksa None."""
-    fonk = {"pexels": pexels_video_ara, "pixabay": pixabay_video_ara}
-    sira = ("pixabay", "pexels") if oncelik == "pixabay" else ("pexels", "pixabay")
+def pexels_video_ara(query, boyut, path, dikey=True):
+    """Pexels'ten konuya uygun gerçek stok video indirir. Başarısızsa None."""
+    _, adaylar = _pexels_adaylar(query, boyut, dikey)
+    for link in adaylar:
+        if _indir(link, path):
+            return path
+    return None
+
+
+def pixabay_video_ara(query, boyut, path, dikey=True):
+    """Pixabay'den konuya uygun gerçek stok video indirir. Başarısızsa None."""
+    _, adaylar = _pixabay_adaylar(query, boyut, dikey)
+    for link in adaylar:
+        if _indir(link, path):
+            return path
+    return None
+
+
+def stok_video_ara(query, boyut, path, dikey=True, oncelik=None):
+    """Her iki kaynağa da bakar ve KONUYA en uygun kaynağı seçer: o sorgu için hangi
+    kaynakta daha çok video varsa (daha iyi kapsam -> üst sonucu daha alakalı) önce
+    ORADAN indirir; indirilemezse diğerine düşer. Zorunlu bir Pexels/Pixabay oranı
+    yoktur — kaynak, sahnenin konusuna göre değişir. ('pexels'|'pixabay', path) veya None.
+
+    Not: klibin görsel içeriğinin konuyla ne kadar örtüştüğünü kod tek başına ölçemez
+    (bunun için görüntü-anlama modeli gerekir); burada 'toplam sonuç sayısı' alaka
+    vekili olarak kullanılır ve her API kendi sonuçlarını alaka sırasında verir.
+    ('oncelik' verilirse yalnızca eşitlik durumunda o kaynak tercih edilir.)"""
+    px_total, px_adaylar = _pexels_adaylar(query, boyut, dikey)
+    pb_total, pb_adaylar = _pixabay_adaylar(query, boyut, dikey)
+    esit_tercih = oncelik if oncelik in ("pexels", "pixabay") else "pexels"
+    if px_total != pb_total:
+        sira = ("pexels", "pixabay") if px_total > pb_total else ("pixabay", "pexels")
+    else:
+        sira = ("pexels", "pixabay") if esit_tercih == "pexels" else ("pixabay", "pexels")
+    print(f"      [seçim: pexels~{px_total} / pixabay~{pb_total} -> önce {sira[0]}]")
+    adaylar = {"pexels": px_adaylar, "pixabay": pb_adaylar}
     for kaynak in sira:
-        if fonk[kaynak](query, boyut, path, dikey=dikey):
-            return (kaynak, path)
+        for link in adaylar[kaynak]:
+            if _indir(link, path):
+                return (kaynak, path)
     return None
 
 
 def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="stok"):
-    """Her sahne için konuya en uygun gerçek stok videoyu seçer; sahneleri
-    ~yarı Pexels / yarı Pixabay olacak şekilde dönüşümlü dağıtır (tek/çift indeks).
-    Öncelikli kaynak o sahneye klip bulamazsa diğeri devreye girer (sahne boş kalmaz),
-    hiçbiri bulamazsa fotogerçekçi AI görseline düşülür.
+    """Her sahne için konuya en uygun gerçek stok videoyu seçer. Kaynak (Pexels/Pixabay)
+    sahnenin KONUSUNA göre belirlenir: o sorgu için hangi kaynakta daha çok video varsa
+    oradan alınır (zorunlu bir oran yoktur). Seçilen kaynakta indirme başarısızsa diğeri
+    devreye girer; hiçbiri bulamazsa fotogerçekçi AI görseline düşülür.
     ('video', yol) veya ('image', yol) listesi döndürür."""
     if sahneler:
         prompts = [s.get("gorsel") or s.get("metin") or "" for s in sahneler if s]
@@ -783,16 +818,13 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
     sayac = {"pexels": 0, "pixabay": 0, "ai": 0}
     for i, p in enumerate(prompts):
         vpath = os.path.join(tmp, f"sahne_{i:03d}.mp4")
-        # 50/50 dağıtım: çift sahneler Pexels'i, tek sahneler Pixabay'i önceler
-        oncelik = "pexels" if i % 2 == 0 else "pixabay"
-        stok = (stok_video_ara(p, boyut, vpath, dikey=dikey, oncelik=oncelik)
+        stok = (stok_video_ara(p, boyut, vpath, dikey=dikey)
                 if (stil == "stok" and not cocuk) else None)
         if stok:
             kaynak = stok[0] if isinstance(stok, tuple) else "stok"
             sayac[kaynak] = sayac.get(kaynak, 0) + 1
             gorseller.append(("video", vpath))
-            tercih = " (tercih)" if kaynak == oncelik else " (yedek)"
-            print(f"      Sahne {i+1}/{len(prompts)}: gerçek stok video ✓ ({kaynak}{tercih})")
+            print(f"      Sahne {i+1}/{len(prompts)}: gerçek stok video ✓ ({kaynak})")
         else:
             ipath = os.path.join(tmp, f"sahne_{i:03d}.jpg")
             gorsel_uret_ai(p, boyut, i, ipath, cocuk=cocuk, stil_ad=stil)
