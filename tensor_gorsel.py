@@ -97,9 +97,22 @@ def _istek(method, path, govde=None):
                  "Content-Type": "application/json", "Accept": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=90) as r:
-            return json.loads(r.read().decode())
+            ham = r.read().decode("utf-8", "replace")
+            status, ctype, son_url = r.status, r.headers.get("Content-Type", ""), r.geturl()
     except urllib.error.HTTPError as he:
-        raise RuntimeError(f"HTTP {he.code} ({method} {path}): {he.read().decode()[:500]}")
+        govde_h = he.read().decode("utf-8", "replace")
+        raise RuntimeError(f"HTTP {he.code} ({method} {path}) -> {govde_h[:600]}")
+    if not ham.strip():
+        # Tanı (secret sızdırmadan): base URL API host mu, nereye gitti?
+        api = "tensorart.cloud" in BASE
+        raise RuntimeError(
+            f"BOŞ yanıt (HTTP {status}, {method} {path}, ctype={ctype}). "
+            f"base API-host mu={api}, son URL host={son_url.split('/')[2] if '//' in son_url else '?'}. "
+            f"TENSOR_BASE_URL muhtemelen yanlış (API host: https://ap-east-1.tensorart.cloud).")
+    try:
+        return json.loads(ham)
+    except Exception:
+        raise RuntimeError(f"JSON değil (HTTP {status}, ctype={ctype}): {ham[:600]}")
 
 
 def _indir(url, yol):
