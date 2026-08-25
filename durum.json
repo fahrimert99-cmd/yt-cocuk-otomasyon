@@ -1,5 +1,5 @@
 {
-  "sonraki": 12,
+  "sonraki": 99,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -14,6 +14,7 @@
     "BENZİNLİK MARKETİ NEDEN PAHALI? ⛽",
     "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
     "BÜYÜK PAKET HER ZAMAN UCUZ DEĞİL! ⚖️",
+    "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
     "DUTY FREE GERÇEKTEN UCUZ MU? ✈️",
     "FAST FOOD MENÜ TUZAĞI! 🍔",
     "KAHVE ZİNCİRLERİNİN GİZLİ OYUNU! ☕",
@@ -53,11 +54,11 @@
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "e 1/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'person using phone app']\n      [Pixabay: 12 klip / ~1595 toplam -> 'person using phone app']\n      [seçim: pexels~8000 / pixabay~1595 -> önce pexels]\n      Sahne 2/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~6877 toplam -> 'data servers glowing']\n      [Pixabay: 12 klip / ~5696 toplam -> 'data servers glowing']\n      [seçim: pexels~6877 / pixabay~5696 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5525 toplam -> 'app collecting data concept']\n      [Pixabay: 12 klip / ~1872 toplam -> 'app collecting data concept']\n      [seçim: pexels~5525 / pixabay~1872 -> önce pexels]\n      Sahne 4/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5092 toplam -> 'smartphone apps grid']\n      [Pixabay: 12 klip / ~802 toplam -> 'smartphone apps grid']\n      [seçim: pexels~5092 / pixabay~802 -> önce pexels]\n      Sahne 5/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5891 toplam -> 'tapping free app install']\n      [Pixabay: 12 klip / ~701 toplam -> 'tapping free app install']\n      [seçim: pexels~5891 / pixabay~701 -> önce pexels]\n      Sahne 6/6: gerçek stok video ✓ (pexels)\n      [dağılım: pexels=6, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (8969 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-26T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The comment thread could not be created \n✓ Yüklendi: https://youtu.be/JZ22o01mFJY  (yayın: 2026-08-26T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "ayısal): pexels~8000 / pixabay~2667 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'empty dark ship cabin']\n      [Pixabay: 12 klip / ~6081 toplam -> 'empty dark ship cabin']\n      [vision gemini-2.5-flash hata: HTTP Error 403: Forbidden]\n      [vision gemini-2.0-flash hata: HTTP Error 403: Forbidden]\n      [seçim(sayısal): pexels~8000 / pixabay~6081 -> önce pexels]\n      Sahne 4/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'calm vast ocean horizon']\n      [Pixabay: 12 klip / ~16187 toplam -> 'calm vast ocean horizon']\n      [vision gemini-2.5-flash hata: HTTP Error 403: Forbidden]\n      [vision gemini-2.0-flash hata: HTTP Error 403: Forbidden]\n      [seçim(sayısal): pexels~8000 / pixabay~16187 -> önce pixabay]\n      Sahne 5/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~8000 toplam -> 'old nautical map with']\n      [Pixabay: 12 klip / ~2091 toplam -> 'old nautical map with']\n      [vision gemini-2.5-flash hata: HTTP Error 403: Forbidden]\n      [vision gemini-2.0-flash hata: HTTP Error 403: Forbidden]\n      [seçim(sayısal): pexels~8000 / pixabay~2091 -> önce pexels]\n      Sahne 6/6: gerçek stok video ✓ (pexels)\n      [dağılım: pexels=5, pixabay=1, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (12881 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-26T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 404 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The specified video could not be found. \n✓ Yüklendi: https://youtu.be/SRv-KrvX3hw  (yayın: 2026-08-26T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "JZ22o01mFJY",
-    "metin": "BEDAVA NASIL PARA EDER?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "SRv-KrvX3hw",
+    "metin": "MÜRETTEBAT YOK OLDU\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
-  "son_kategori": "dijital",
+  "son_kategori": "diger",
   "gizem_gecis_baslangic": "2026-08-18"
 }
