@@ -1,5 +1,5 @@
 {
-  "sonraki": 8,
+  "sonraki": 98,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -22,6 +22,7 @@
     "KREDİ KARTI PUANI TUZAK MI? 🎁",
     "KREDİ KARTI TAKSİT TUZAĞI! 💳",
     "KUMARHANELER SENİ BÖYLE TUTAR! 🎰",
+    "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
     "MARKALAR SENİ RENKLERLE KANDIRIYOR! 🎨",
     "MARKET ARABALARI NEDEN BÜYÜK? 🛒",
     "MARKET KOKUSU BİLE TUZAK! 👃",
@@ -51,11 +52,11 @@
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "      Gizem geçişi: gün 6, 49. video -> 'tuzak' (gizem kalan: 36)\n[1/3] Senaryo (8/132) [dijital]: SON KULLANMA TARİHİ OYUNU! 📅\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n      google TTS hata (403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"This API method requires billing to be enabled. Please enable billing on project #318605312688 by visiting https://console.developers.google.com/bi), sonraki saglayiciya geciliyor\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      [Pexels: 8 sonuç -> 'product expiry date label']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'food packaging with date']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'fresh food being thrown']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'grocery shelf with dated']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'confused person reading label']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'full trash bin with']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (14339 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-25T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 05db4GRGJyA\n✓ Yüklendi: https://youtu.be/EPcHoPwHhfs  (yayın: 2026-08-25T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 repoya kaydedildi (TikTok/Reels icin indirilebilir)\n",
+  "son_rapor": "      Gizem geçişi: gün 7, 50. video -> 'gizem' (gizem kalan: 46)\n[1/3] Senaryo (98/142) [diger]: MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊\n[2/3] Video üretiliyor ...\n      [anahtar: google=AIzaSy..len39, pexels=CWBqWE..len56]\n      google TTS hata (403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"This API method requires billing to be enabled. Please enable billing on project #318605312688 by visiting https://console.developers.google.com/bi), sonraki saglayiciya geciliyor\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      [Pexels: 8 sonuç -> 'deep ocean surface dark']\n      Sahne 1/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'submersible descending into deep']\n      Sahne 2/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'deep sea pressure gauge']\n      Sahne 3/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'strange deep sea anglerfish']\n      Sahne 4/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'pitch black deep ocean']\n      Sahne 5/6: gerçek stok video ✓\n      [Pexels: 8 sonuç -> 'mysterious deep sea trench']\n      Sahne 6/6: gerçek stok video ✓\n      Çıktı: output/video.mp4  (13175 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-26T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: OjUp5AzHsEE\n✓ Yüklendi: https://youtu.be/lPruYINo8cQ  (yayın: 2026-08-26T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "OjUp5AzHsEE",
-    "metin": "O TARİH GERÇEK Mİ?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "lPruYINo8cQ",
+    "metin": "11 KİLOMETRE AŞAĞIDA\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
-  "son_kategori": "dijital",
+  "son_kategori": "diger",
   "gizem_gecis_baslangic": "2026-08-18"
 }
