@@ -1,5 +1,5 @@
 {
-  "sonraki": 28,
+  "sonraki": 35,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -20,6 +20,7 @@
     "HEDİYE KARTI NEDEN SEVİLİR? 🎫",
     "KAHVE ZİNCİRLERİNİN GİZLİ OYUNU! ☕",
     "KAHVEDE 'ORTA' YOKTUR! ☕",
+    "KARGO KADAR BEKLETMEK NEDEN? ⏰",
     "KARTLA NEDEN DAHA ÇOK HARCARSIN? 💳",
     "KASADAKİ ÇİKOLATA TUZAĞI! 🍫",
     "KREDİ KARTI PUANI TUZAK MI? 🎁",
@@ -55,11 +56,11 @@
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "pexels)\n      [Pexels: 8 klip / ~4929 toplam -> 'unused gift card in']\n      [Pixabay: 12 klip / ~2209 toplam -> 'unused gift card in']\n      [seçim(vision): pexels~4929 / pixabay~2209 -> önce pexels]\n      Sahne 2/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~4553 toplam -> 'store checkout with gift']\n      [Pixabay: 12 klip / ~595 toplam -> 'store checkout with gift']\n      [seçim(vision): pexels~4553 / pixabay~595 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~3076 toplam -> 'spending more than card']\n      [Pixabay: 12 klip / ~663 toplam -> 'spending more than card']\n      [seçim(vision): pexels~3076 / pixabay~663 -> önce pexels]\n      Sahne 4/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'gift card stand in']\n      [Pixabay: 12 klip / ~2360 toplam -> 'gift card stand in']\n      [seçim(vision): pexels~8000 / pixabay~2360 -> önce pexels]\n      Sahne 5/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'person giving gift card']\n      [Pixabay: 12 klip / ~2138 toplam -> 'person giving gift card']\n      [seçim(vision): pexels~8000 / pixabay~2138 -> önce pexels]\n      Sahne 6/6: gerçek stok video ✓ (pexels)\n      [dağılım: pexels=6, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (9068 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-26T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The comment thread could not be created \n✓ Yüklendi: https://youtu.be/kR0mTyp-NXM  (yayın: 2026-08-26T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "seup']\n      [Pixabay: 12 klip / ~713 toplam -> 'express delivery option closeup']\n      [seçim(vision): pexels~8000 / pixabay~713 -> önce pexels]\n      Sahne 2/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~3620 toplam -> 'package waiting in warehouse']\n      [Pixabay: 12 klip / ~1346 toplam -> 'package waiting in warehouse']\n      [seçim(vision): pexels~3620 / pixabay~1346 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~7886 toplam -> 'delivery truck on road']\n      [Pixabay: 12 klip / ~4369 toplam -> 'delivery truck on road']\n      [seçim(vision): pexels~7886 / pixabay~4369 -> önce pixabay]\n      Sahne 4/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~8000 toplam -> 'calendar showing delivery days']\n      [Pixabay: 12 klip / ~2243 toplam -> 'calendar showing delivery days']\n      [seçim(vision): pexels~8000 / pixabay~2243 -> önce pixabay]\n      Sahne 5/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~8000 toplam -> 'patient person waiting delivery']\n      [Pixabay: 12 klip / ~1369 toplam -> 'patient person waiting delivery']\n      [seçim(vision): pexels~8000 / pixabay~1369 -> önce pexels]\n      Sahne 6/6: gerçek stok video ✓ (pexels)\n      [dağılım: pexels=4, pixabay=2, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (7973 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-27T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The comment thread could not be created \n✓ Yüklendi: https://youtu.be/J8Pqp2dlMkA  (yayın: 2026-08-27T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "kR0mTyp-NXM",
-    "metin": "O BAKİYE KİME KALIR?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "J8Pqp2dlMkA",
+    "metin": "NEDEN BEKLETİYORLAR?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
-  "son_kategori": "finans",
+  "son_kategori": "hizmet",
   "gizem_gecis_baslangic": "2026-08-18"
 }
