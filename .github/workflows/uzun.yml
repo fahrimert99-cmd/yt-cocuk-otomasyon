@@ -28,6 +28,7 @@ jobs:
       - name: Uzun video uret ve yukle
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
           GEMINI_KEY_UZUN: ${{ secrets.GEMINI_KEY_UZUN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
