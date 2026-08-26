@@ -1,5 +1,5 @@
 {
-  "sonraki": 99,
+  "sonraki": 128,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -47,6 +47,7 @@
     "SİTELERDEKİ ALDATICI BUTONLAR! 🖱️",
     "TAZE SANILAN ETİN SIRRI! 🥩",
     "TELEFON FATURANDAKİ GİZLİ ÜCRETLER! 📞",
+    "TERRAKOTA ORDUSUNUN SIRRI 🏺",
     "UYGULAMALAR SENİ BÖYLE BAĞIMLI YAPIYOR! 📱",
     "UÇAK BİLETİ FİYAT OYUNU! ✈️",
     "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
@@ -54,11 +55,11 @@
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "ayısal): pexels~8000 / pixabay~2667 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'empty dark ship cabin']\n      [Pixabay: 12 klip / ~6081 toplam -> 'empty dark ship cabin']\n      [vision gemini-2.5-flash hata: HTTP Error 403: Forbidden]\n      [vision gemini-2.0-flash hata: HTTP Error 403: Forbidden]\n      [seçim(sayısal): pexels~8000 / pixabay~6081 -> önce pexels]\n      Sahne 4/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'calm vast ocean horizon']\n      [Pixabay: 12 klip / ~16187 toplam -> 'calm vast ocean horizon']\n      [vision gemini-2.5-flash hata: HTTP Error 403: Forbidden]\n      [vision gemini-2.0-flash hata: HTTP Error 403: Forbidden]\n      [seçim(sayısal): pexels~8000 / pixabay~16187 -> önce pixabay]\n      Sahne 5/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~8000 toplam -> 'old nautical map with']\n      [Pixabay: 12 klip / ~2091 toplam -> 'old nautical map with']\n      [vision gemini-2.5-flash hata: HTTP Error 403: Forbidden]\n      [vision gemini-2.0-flash hata: HTTP Error 403: Forbidden]\n      [seçim(sayısal): pexels~8000 / pixabay~2091 -> önce pexels]\n      Sahne 6/6: gerçek stok video ✓ (pexels)\n      [dağılım: pexels=5, pixabay=1, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (12881 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-26T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 404 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The specified video could not be found. \n✓ Yüklendi: https://youtu.be/SRv-KrvX3hw  (yayın: 2026-08-26T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "6 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5965 toplam -> 'ancient clay horse and']\n      [Pixabay: 12 klip / ~1292 toplam -> 'ancient clay horse and']\n      [vision gemini-2.5-flash hata: HTTP Error 403: Forbidden]\n      [vision gemini-2.0-flash hata: HTTP Error 403: Forbidden]\n      [seçim(sayısal): pexels~5965 / pixabay~1292 -> önce pexels]\n      Sahne 4/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~4160 toplam -> 'ancient chinese tomb mound']\n      [Pixabay: 12 klip / ~1046 toplam -> 'ancient chinese tomb mound']\n      [vision gemini-2.5-flash hata: HTTP Error 403: Forbidden]\n      [vision gemini-2.0-flash hata: HTTP Error 403: Forbidden]\n      [seçim(sayısal): pexels~4160 / pixabay~1046 -> önce pexels]\n      Sahne 5/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'terracotta soldiers dramatic light']\n      [Pixabay: 12 klip / ~12974 toplam -> 'terracotta soldiers dramatic light']\n      [vision gemini-2.5-flash hata: HTTP Error 403: Forbidden]\n      [vision gemini-2.0-flash hata: HTTP Error 403: Forbidden]\n      [seçim(sayısal): pexels~8000 / pixabay~12974 -> önce pixabay]\n      Sahne 6/6: gerçek stok video ✓ (pixabay)\n      [dağılım: pexels=5, pixabay=1, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (16411 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-26T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The comment thread could not be created \n✓ Yüklendi: https://youtu.be/t67FAAJuT2w  (yayın: 2026-08-26T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "SRv-KrvX3hw",
-    "metin": "MÜRETTEBAT YOK OLDU\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "t67FAAJuT2w",
+    "metin": "8000 ASKER, HEPSİ FARKLI\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
-  "son_kategori": "diger",
+  "son_kategori": "yeme",
   "gizem_gecis_baslangic": "2026-08-18"
 }
