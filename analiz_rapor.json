@@ -1,42 +1,42 @@
 {
-  "tarih": "2026-08-26",
+  "tarih": "2026-08-27",
   "kanal": {
-    "abone": "78",
-    "toplam_izlenme": "33095",
-    "video_sayisi": "55"
+    "abone": "83",
+    "toplam_izlenme": "35414",
+    "video_sayisi": "57"
   },
   "format_ozet": {
     "short": {
-      "video": 48,
-      "ort_izlenme": 706,
-      "toplam_izlenme": 33910,
+      "video": 49,
+      "ort_izlenme": 719,
+      "toplam_izlenme": 35243,
       "etkilesim_orani": 1.38
     },
     "uzun": {
       "video": 10,
-      "ort_izlenme": 22,
-      "toplam_izlenme": 221,
-      "etkilesim_orani": 11.31
+      "ort_izlenme": 24,
+      "toplam_izlenme": 237,
+      "etkilesim_orani": 10.55
     }
   },
   "tema_ozet": {
-    "tuzak": {
-      "video": 32,
-      "ort_izlenme": 596,
-      "toplam_izlenme": 19069,
-      "etkilesim_orani": 1.47
-    },
     "gizem": {
       "video": 8,
-      "ort_izlenme": 473,
-      "toplam_izlenme": 3784,
-      "etkilesim_orani": 1.37
+      "ort_izlenme": 500,
+      "toplam_izlenme": 3998,
+      "etkilesim_orani": 1.33
+    },
+    "tuzak": {
+      "video": 33,
+      "ort_izlenme": 578,
+      "toplam_izlenme": 19081,
+      "etkilesim_orani": 1.47
     },
     "diger": {
       "video": 18,
-      "ort_izlenme": 627,
-      "toplam_izlenme": 11278,
-      "etkilesim_orani": 1.42
+      "ort_izlenme": 689,
+      "toplam_izlenme": 12401,
+      "etkilesim_orani": 1.43
     }
   },
   "top10": [
@@ -47,15 +47,15 @@
       "format": "short"
     },
     {
-      "baslik": "MARKET KOKUSU BİLE TUZAK! 👃",
-      "izlenme": 1550,
-      "tema": "tuzak",
+      "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
+      "izlenme": 1597,
+      "tema": "gizem",
       "format": "short"
     },
     {
-      "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1393,
-      "tema": "gizem",
+      "baslik": "MARKET KOKUSU BİLE TUZAK! 👃",
+      "izlenme": 1550,
+      "tema": "tuzak",
       "format": "short"
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "baslik": "REKLAMLAR BEYNİNİ BÖYLE KANDIRIYOR! 📺",
-      "izlenme": 1153,
+      "izlenme": 1155,
       "tema": "tuzak",
       "format": "short"
     },
@@ -90,18 +90,39 @@
     },
     {
       "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
-      "izlenme": 1136,
+      "izlenme": 1137,
       "tema": "tuzak",
       "format": "short"
     },
     {
-      "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
-      "izlenme": 1099,
-      "tema": "gizem",
+      "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
+      "izlenme": 1107,
+      "tema": "diger",
       "format": "short"
     }
   ],
   "son7gun": [
+    {
+      "baslik": "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
+      "izlenme": 2,
+      "tema": "gizem",
+      "format": "short",
+      "yayin": "2026-08-27"
+    },
+    {
+      "baslik": "KARGO KADAR BEKLETMEK NEDEN? ⏰",
+      "izlenme": 1,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-08-26"
+    },
+    {
+      "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
+      "izlenme": 1107,
+      "tema": "diger",
+      "format": "short",
+      "yayin": "2026-08-26"
+    },
     {
       "baslik": "HEDİYE KARTI NEDEN SEVİLİR? 🎫",
       "izlenme": 1,
@@ -110,81 +131,60 @@
       "yayin": "2026-08-26"
     },
     {
-      "baslik": "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
-      "izlenme": 2,
-      "tema": "gizem",
-      "format": "short",
-      "yayin": "2026-08-25"
-    },
-    {
       "baslik": "Dünyanın En Derin Noktasında Ne Yaşıyor?",
-      "izlenme": 3,
-      "tema": "diger",
-      "format": "short",
-      "yayin": "2026-08-25"
-    },
-    {
-      "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 2,
+      "izlenme": 9,
       "tema": "diger",
       "format": "short",
       "yayin": "2026-08-25"
     },
     {
       "baslik": "SON KULLANMA TARİHİ OYUNU! 📅",
-      "izlenme": 913,
+      "izlenme": 924,
       "tema": "diger",
       "format": "short",
       "yayin": "2026-08-25"
     },
     {
       "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1393,
+      "izlenme": 1597,
       "tema": "gizem",
       "format": "short",
       "yayin": "2026-08-24"
     },
     {
       "baslik": "ALTIN GÜNÜ BİR TUZAK MI? 💰",
-      "izlenme": 157,
+      "izlenme": 158,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-23"
     },
     {
       "baslik": "Okyanusun Haritalanmamış Derinliklerinde Ne Var?",
-      "izlenme": 36,
+      "izlenme": 48,
       "tema": "gizem",
       "format": "uzun",
       "yayin": "2026-08-22"
     },
     {
       "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
-      "izlenme": 1136,
+      "izlenme": 1137,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-22"
     },
     {
       "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
-      "izlenme": 1099,
+      "izlenme": 1097,
       "tema": "gizem",
       "format": "short",
       "yayin": "2026-08-21"
     },
     {
       "baslik": "MENÜDEKİ GİZLİ TUZAK! 📋",
-      "izlenme": 1027,
+      "izlenme": 1028,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-20"
-    },
-    {
-      "baslik": "MARKET NEDEN LABİRENT GİBİ? 🌀",
-      "izlenme": 705,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-08-19"
     }
   ]
 }
