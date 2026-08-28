@@ -233,6 +233,82 @@ def _grup_ozet(videolar, anahtar):
         }
     return out
 
+def _ai_gemini_key():
+    """Analiz için Gemini anahtarı: GOOGLE_TTS_KEY veya GEMINI_API_KEY (düz ya da
+    JSON içindeki 'google'/'gemini' alanı)."""
+    k = os.environ.get("GOOGLE_TTS_KEY", "").strip()
+    if k:
+        return k
+    raw = os.environ.get("GEMINI_API_KEY", "").strip()
+    if raw.startswith("{"):
+        try:
+            j = json.loads(raw)
+            return (j.get("google") or j.get("gemini") or "").strip()
+        except Exception:
+            return ""
+    return raw
+
+
+def _ai_yorum(rapor, bulgular, aksiyonlar):
+    """Verileri bir LLM'e (Claude → Gemini) verip 'danışman' ağzıyla anlatısal bir
+    değerlendirme yazdırır. Anahtar yoksa / hata olursa None döner (rapor yine
+    kural-tabanlı önerilerle çıkar). Ekstra bağımlılık yok; ai_script'in ham-HTTP
+    yardımcıları kullanılır."""
+    try:
+        from ai_script import _claude, _claude_key, _gemini, _temizle
+    except Exception:
+        return None
+    veri = {
+        "kanal": rapor.get("kanal"),
+        "format_ozet": rapor.get("format_ozet"),
+        "tema_ozet": rapor.get("tema_ozet"),
+        "top10": rapor.get("top10"),
+        "son7gun": rapor.get("son7gun"),
+        "kural_bulgular": [b.lstrip("- ") for b in bulgular],
+        "kural_aksiyonlar": aksiyonlar,
+    }
+    prompt = (
+        "Sen bir YouTube kanalı büyütme danışmanısın. Aşağıdaki performans verilerine "
+        "göre kanal sahibine SAMİMİ ama profesyonel, YORUMLAYICI bir değerlendirme yaz: "
+        "neyin iyi gittiği, neyin endişe verici olduğu ve önümüzdeki hafta somut olarak "
+        "neye odaklanması gerektiği. 2-3 kısa paragraf, akıcı Türkçe. "
+        "SADECE verilen verilere dayan, sayı/oran UYDURMA; veride olmayan bir şey iddia etme. "
+        "Türkçe karakterleri (ç, ğ, ı, İ, ö, ş, ü) eksiksiz kullan. Emoji kullanma. "
+        "Kural-tabanlı bulguları tekrar etme, onları BÜTÜNLEŞTİRİP anlamlandır. "
+        'SADECE şu JSON\'u döndür: {"yorum":"...(2-3 paragraf düz metin, \\n\\n ile ayrılmış)..."}\n\n'
+        "VERİLER (JSON):\n" + json.dumps(veri, ensure_ascii=False)
+    )
+
+    def _cikar(ham):
+        data = json.loads(_temizle(ham))
+        y = (data.get("yorum") or "").strip()
+        return y or None
+
+    # 1) Claude (en kaliteli Türkçe)
+    ck = _claude_key()
+    if ck:
+        try:
+            y = _cikar(_claude(prompt, ck, max_tokens=1200))
+            if y:
+                print("  ✓ AI yorum: Claude")
+                return y
+        except Exception as e:
+            print(f"  [AI yorum claude hata: {str(e)[:90]}]")
+    # 2) Gemini (yedek)
+    gk = _ai_gemini_key()
+    if gk:
+        for model in ("gemini-2.5-flash", "gemini-2.0-flash"):
+            try:
+                y = _cikar(_gemini(prompt, gk, model=model))
+                if y:
+                    print(f"  ✓ AI yorum: Gemini ({model})")
+                    return y
+            except Exception as e:
+                print(f"  [AI yorum gemini {model} hata: {str(e)[:80]}]")
+    print("  [AI yorum atlandı: anahtar yok / tüm sağlayıcılar başarısız]")
+    return None
+
+
 def _degerlendirme(videolar, format_ozet, tema_ozet, top, yeni):
     """Ham verilerden yorum + SOMUT AKSİYON önerileri üretir (API'siz, deterministik).
     Döndürür: (markdown_satirlari, json_dict). Rapora 'ne yapmalısın' bölümü ekler."""
@@ -322,13 +398,16 @@ def main():
                   "toplam_izlenme": kanal_ist.get("viewCount"),
                   "video_sayisi": kanal_ist.get("videoCount")},
         "degerlendirme": {"bulgular": bulgular, "aksiyonlar": aksiyonlar},
-        "format_ozet": format_ozet,
-        "tema_ozet": tema_ozet,
         "top10": [{"baslik": v["baslik"], "izlenme": v["izlenme"], "tema": v["tema"],
                    "format": v["format"]} for v in top],
         "son7gun": [{"baslik": v["baslik"], "izlenme": v["izlenme"], "tema": v["tema"],
                      "format": v["format"], "yayin": v["yayin"]} for v in yeni],
+        "format_ozet": format_ozet,
+        "tema_ozet": tema_ozet,
     }
+    # LLM ile anlatısal 'danışman yorumu' (varsa); başarısızsa None kalır
+    ai_yorum = _ai_yorum(rapor, bulgular, aksiyonlar)
+    rapor["degerlendirme"]["ai_yorum"] = ai_yorum
     with open("analiz_rapor.json", "w", encoding="utf-8") as f:
         json.dump(rapor, f, ensure_ascii=False, indent=2)
 
@@ -337,7 +416,12 @@ def main():
     L.append(f"# 📊 Kanal Denetim Raporu — {bugun}\n")
     k = rapor["kanal"]
     L.append(f"**Abone:** {k['abone']}  |  **Toplam izlenme:** {k['toplam_izlenme']}  |  **Video:** {k['video_sayisi']}\n")
-    # --- ÖNCE 'ne yapmalısın': değerlendirme + aksiyonlar en üstte ---
+    # --- AI danışman yorumu (varsa) en üstte, anlatısal ---
+    if ai_yorum:
+        L.append("## 🗣️ Danışman Yorumu (AI)")
+        L.append(ai_yorum)
+        L.append("")
+    # --- sonra kural-tabanlı 'ne yapmalısın': değerlendirme + aksiyonlar ---
     L.append("## 🧭 Değerlendirme & Öneriler")
     L.extend(bulgular)
     L.append("\n### ✅ Sıradaki aksiyonlar")
