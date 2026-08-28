@@ -233,6 +233,73 @@ def _grup_ozet(videolar, anahtar):
         }
     return out
 
+def _degerlendirme(videolar, format_ozet, tema_ozet, top, yeni):
+    """Ham verilerden yorum + SOMUT AKSİYON önerileri üretir (API'siz, deterministik).
+    Döndürür: (markdown_satirlari, json_dict). Rapora 'ne yapmalısın' bölümü ekler."""
+    bulgular = []   # markdown madde satırları
+    aksiyonlar = [] # numaralı somut adımlar
+
+    genel_ort = _ort(videolar, "izlenme")
+
+    # 1) TEMA: en güçlü / en zayıf (ort. izlenmeye göre)
+    temalar = sorted(tema_ozet.items(), key=lambda x: -x[1]["ort_izlenme"])
+    if temalar:
+        en_iyi_t, ei = temalar[0]
+        bulgular.append(f"- 🎯 **En çok tutan tema: {en_iyi_t}** — ort. {ei['ort_izlenme']} izlenme "
+                        f"({ei['video']} video). Bu damardan daha çok konu üret.")
+        aksiyonlar.append(f"`senaryolar.json`'a **{en_iyi_t}** temasında yeni konular ekle "
+                          f"(en çok izlenen damar).")
+        if len(temalar) >= 2:
+            en_kotu_t, ek = temalar[-1]
+            # anlamlı olması için en az 2 video olsun ve en iyiden belirgin düşük olsun
+            if ek["video"] >= 2 and ei["ort_izlenme"] >= max(1, ek["ort_izlenme"]) * 1.5:
+                bulgular.append(f"- ⚠️ **En zayıf tema: {en_kotu_t}** — ort. {ek['ort_izlenme']} izlenme "
+                                f"({ek['video']} video). Bu temada üretimi azalt ya da başlık/kancayı güçlendir.")
+                aksiyonlar.append(f"**{en_kotu_t}** temasında yeni üretimi azalt; mevcutların başlık/kapağını gözden geçir.")
+
+    # 2) FORMAT: short vs uzun hangisi daha çok izleniyor
+    if len(format_ozet) >= 2:
+        fmt = sorted(format_ozet.items(), key=lambda x: -x[1]["ort_izlenme"])
+        (f1, d1), (f2, d2) = fmt[0], fmt[-1]
+        bulgular.append(f"- 📐 **{f1}** formatı daha çok izleniyor: ort. {d1['ort_izlenme']} vs "
+                        f"{f2} {d2['ort_izlenme']}. Ağırlığı **{f1}**'e kaydırmayı düşün.")
+
+    # 3) ETKİLEŞİM: en yüksek etkileşim oranı hangi temada
+    etk = [(t, d) for t, d in tema_ozet.items() if d["toplam_izlenme"] > 0]
+    if etk:
+        et, ed = max(etk, key=lambda x: x[1]["etkilesim_orani"])
+        bulgular.append(f"- 💬 **En yüksek etkileşim: {et}** (%{ed['etkilesim_orani']}). "
+                        f"İzleyici en çok burada yorum/beğeni bırakıyor — CTA'yı bu içerikte koru.")
+
+    # 4) TOP10: en çok izlenen 10 videoda baskın tema
+    if top:
+        say = {}
+        for v in top:
+            say[v["tema"]] = say.get(v["tema"], 0) + 1
+        baskin, n = max(say.items(), key=lambda x: x[1])
+        if n >= 3:
+            bulgular.append(f"- 🏆 En çok izlenen 10 videonun **{n}'i {baskin}** teması — "
+                            f"kanıtlanmış damar, önceliklendir.")
+
+    # 5) TREND: son 7 gün ortalaması genel ortalamaya göre
+    if yeni:
+        s7 = _ort(yeni, "izlenme")
+        if s7 >= genel_ort:
+            bulgular.append(f"- 📈 **Trend iyi:** son 7 gün ort. {s7} ≥ genel ort. {genel_ort}. "
+                            f"Mevcut yönü sürdür.")
+        else:
+            bulgular.append(f"- 📉 **Dikkat:** son 7 gün ort. {s7} < genel ort. {genel_ort}. "
+                            f"Son üretimleri gözden geçir (başlık/kapak/tema seçimi).")
+            aksiyonlar.append("Son 7 günün düşük performansını incele: başlık kancası ve kapak yeterince çarpıcı mı?")
+
+    if not bulgular:
+        bulgular.append("- Henüz güçlü bir sinyal yok (az veri). Birkaç video daha biriktikçe öneriler netleşir.")
+    if not aksiyonlar:
+        aksiyonlar.append("Mevcut yönü koru; bir sonraki denetimde tema/format sinyallerine göre ayar yap.")
+
+    return bulgular, aksiyonlar
+
+
 def main():
     yt = build("youtube", "v3", credentials=_kimlik())
     videolar, kanal_ist = _videolar(yt)
@@ -246,11 +313,15 @@ def main():
     esik = (dt.date.today() - dt.timedelta(days=7)).isoformat()
     yeni = [v for v in videolar if v["yayin"] >= esik]
 
+    # verilerden yorum + somut aksiyon önerileri (API'siz)
+    bulgular, aksiyonlar = _degerlendirme(videolar, format_ozet, tema_ozet, top, yeni)
+
     rapor = {
         "tarih": bugun,
         "kanal": {"abone": kanal_ist.get("subscriberCount"),
                   "toplam_izlenme": kanal_ist.get("viewCount"),
                   "video_sayisi": kanal_ist.get("videoCount")},
+        "degerlendirme": {"bulgular": bulgular, "aksiyonlar": aksiyonlar},
         "format_ozet": format_ozet,
         "tema_ozet": tema_ozet,
         "top10": [{"baslik": v["baslik"], "izlenme": v["izlenme"], "tema": v["tema"],
@@ -266,6 +337,13 @@ def main():
     L.append(f"# 📊 Kanal Denetim Raporu — {bugun}\n")
     k = rapor["kanal"]
     L.append(f"**Abone:** {k['abone']}  |  **Toplam izlenme:** {k['toplam_izlenme']}  |  **Video:** {k['video_sayisi']}\n")
+    # --- ÖNCE 'ne yapmalısın': değerlendirme + aksiyonlar en üstte ---
+    L.append("## 🧭 Değerlendirme & Öneriler")
+    L.extend(bulgular)
+    L.append("\n### ✅ Sıradaki aksiyonlar")
+    for i, a in enumerate(aksiyonlar, 1):
+        L.append(f"{i}. {a}")
+    L.append("")
     L.append("## Format performansı (son ~50 video)")
     L.append("| Format | Video | Ort. izlenme | Toplam izlenme | Etkileşim % |")
     L.append("|--------|-------|--------------|----------------|-------------|")
