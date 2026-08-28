@@ -1,43 +1,23 @@
 {
-  "tarih": "2026-08-27",
+  "tarih": "2026-08-28",
   "kanal": {
-    "abone": "83",
-    "toplam_izlenme": "35414",
-    "video_sayisi": "57"
+    "abone": "85",
+    "toplam_izlenme": "35489",
+    "video_sayisi": "58"
   },
-  "format_ozet": {
-    "short": {
-      "video": 49,
-      "ort_izlenme": 719,
-      "toplam_izlenme": 35243,
-      "etkilesim_orani": 1.38
-    },
-    "uzun": {
-      "video": 10,
-      "ort_izlenme": 24,
-      "toplam_izlenme": 237,
-      "etkilesim_orani": 10.55
-    }
-  },
-  "tema_ozet": {
-    "gizem": {
-      "video": 8,
-      "ort_izlenme": 500,
-      "toplam_izlenme": 3998,
-      "etkilesim_orani": 1.33
-    },
-    "tuzak": {
-      "video": 33,
-      "ort_izlenme": 578,
-      "toplam_izlenme": 19081,
-      "etkilesim_orani": 1.47
-    },
-    "diger": {
-      "video": 18,
-      "ort_izlenme": 689,
-      "toplam_izlenme": 12401,
-      "etkilesim_orani": 1.43
-    }
+  "degerlendirme": {
+    "bulgular": [
+      "- 🎯 **En çok tutan tema: diger** — ort. 660 izlenme (19 video). Bu damardan daha çok konu üret.",
+      "- 📐 **short** formatı daha çok izleniyor: ort. 728 vs uzun 28. Ağırlığı **short**'e kaydırmayı düşün.",
+      "- 💬 **En yüksek etkileşim: tuzak** (%1.47). İzleyici en çok burada yorum/beğeni bırakıyor — CTA'yı bu içerikte koru.",
+      "- 🏆 En çok izlenen 10 videonun **6'i tuzak** teması — kanıtlanmış damar, önceliklendir.",
+      "- 📉 **Dikkat:** son 7 gün ort. 604 < genel ort. 611. Son üretimleri gözden geçir (başlık/kapak/tema seçimi)."
+    ],
+    "aksiyonlar": [
+      "`senaryolar.json`'a **diger** temasında yeni konular ekle (en çok izlenen damar).",
+      "Son 7 günün düşük performansını incele: başlık kancası ve kapak yeterince çarpıcı mı?"
+    ],
+    "ai_yorum": "Merhaba, kanalınızın güncel performans verilerini titizlikle inceledim. Öncelikle, kısa (short) format videolarınızın genel izlenme ve erişim konusunda çok başarılı olduğunu belirtmek isterim. Toplam izlenmelerin büyük çoğunluğu bu format üzerinden geliyor ve ortalama 728 izlenme ile kanalınızın lokomotifi konumundalar. Özellikle \"Tuzak\" temalı içerikleriniz hem en yüksek etkileşim oranına sahip (%1.47) hem de en çok izlenen 10 videonuzun altısını oluşturarak izleyicide güçlü bir yankı bulduğunu kanıtlıyor. \"Diğer\" teması da ortalama 660 izlenme ile yüksek potansiyel taşıyor. Bu, içerik stratejinizin genel olarak doğru yolda olduğunu gösteriyor.\n\nAncak, kanalınızın toplam abone sayısının (85) elde ettiğiniz yüksek izlenme sayısına (35489) kıyasla oldukça düşük olması, kısa format izleyicilerini abone tabanına dönüştürme konusunda henüz yeterince başarılı olamadığımızı gösteriyor. Ayrıca, uzun format videolarınızın ortalama 28 izlenme ile neredeyse hiç performans göstermediği ve kaynaklarınızı verimsiz kullandığı dikkat çekiyor. Son 7 gündeki ortalama izlenme sayısının genel ortalamanın bir miktar altında kalması da, son dönemdeki içerik başlıkları veya kapak görselleri gibi unsurları gözden geçirmemiz gerektiğine işaret ediyor. Bazı yeni videoların tek haneli izlenmelerde kalması endişe verici.\n\nÖnümüzdeki hafta için somut olarak şu adımlara odaklanmanızı öneririm: Kısa format videolarınızın üretimini \"Tuzak\" ve \"Diğer\" temalarına ağırlık vererek devam ettirin. Bu temalardaki başarı kanıtlanmış durumda. Düşük performans gösteren uzun format içeriklerin üretimine şimdilik ara vererek, bu enerjiyi başarılı kısa format stratejinizi daha da güçlendirmeye yönlendirin. Özellikle son 7 gündeki düşük izlenmeli videolarınızı detaylıca inceleyerek, başlık ve küçük resim gibi kritik ilk izlenim noktalarını nasıl iyileştirebileceğinizi belirleyin. Bu adımlar, abone tabanınızı büyütürken genel kanal performansınızı istikrarlı hale getirmenize yardımcı olacaktır."
   },
   "top10": [
     {
@@ -48,7 +28,7 @@
     },
     {
       "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1597,
+      "izlenme": 1598,
       "tema": "gizem",
       "format": "short"
     },
@@ -66,8 +46,14 @@
     },
     {
       "baslik": "SİNEMADA MISIR NEDEN PAHALI? 🍿",
-      "izlenme": 1247,
+      "izlenme": 1250,
       "tema": "tuzak",
+      "format": "short"
+    },
+    {
+      "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
+      "izlenme": 1183,
+      "tema": "diger",
       "format": "short"
     },
     {
@@ -84,27 +70,28 @@
     },
     {
       "baslik": "DUTY FREE GERÇEKTEN UCUZ MU? ✈️",
-      "izlenme": 1152,
+      "izlenme": 1153,
       "tema": "gizem",
       "format": "short"
     },
     {
       "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
-      "izlenme": 1137,
+      "izlenme": 1139,
       "tema": "tuzak",
-      "format": "short"
-    },
-    {
-      "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1107,
-      "tema": "diger",
       "format": "short"
     }
   ],
   "son7gun": [
     {
+      "baslik": "MEGALODON HÂLÂ YAŞIYOR OLABİLİR Mİ? 🦈",
+      "izlenme": 4,
+      "tema": "diger",
+      "format": "short",
+      "yayin": "2026-08-28"
+    },
+    {
       "baslik": "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
-      "izlenme": 2,
+      "izlenme": 1002,
       "tema": "gizem",
       "format": "short",
       "yayin": "2026-08-27"
@@ -118,7 +105,7 @@
     },
     {
       "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1107,
+      "izlenme": 1183,
       "tema": "diger",
       "format": "short",
       "yayin": "2026-08-26"
@@ -132,21 +119,21 @@
     },
     {
       "baslik": "Dünyanın En Derin Noktasında Ne Yaşıyor?",
-      "izlenme": 9,
+      "izlenme": 55,
       "tema": "diger",
       "format": "short",
       "yayin": "2026-08-25"
     },
     {
       "baslik": "SON KULLANMA TARİHİ OYUNU! 📅",
-      "izlenme": 924,
+      "izlenme": 929,
       "tema": "diger",
       "format": "short",
       "yayin": "2026-08-25"
     },
     {
       "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1597,
+      "izlenme": 1598,
       "tema": "gizem",
       "format": "short",
       "yayin": "2026-08-24"
@@ -160,31 +147,58 @@
     },
     {
       "baslik": "Okyanusun Haritalanmamış Derinliklerinde Ne Var?",
-      "izlenme": 48,
+      "izlenme": 84,
       "tema": "gizem",
       "format": "uzun",
       "yayin": "2026-08-22"
     },
     {
       "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
-      "izlenme": 1137,
+      "izlenme": 1139,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-22"
     },
     {
       "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
-      "izlenme": 1097,
+      "izlenme": 1098,
       "tema": "gizem",
       "format": "short",
       "yayin": "2026-08-21"
-    },
-    {
-      "baslik": "MENÜDEKİ GİZLİ TUZAK! 📋",
-      "izlenme": 1028,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-08-20"
     }
-  ]
+  ],
+  "format_ozet": {
+    "short": {
+      "video": 50,
+      "ort_izlenme": 728,
+      "toplam_izlenme": 36387,
+      "etkilesim_orani": 1.38
+    },
+    "uzun": {
+      "video": 10,
+      "ort_izlenme": 28,
+      "toplam_izlenme": 281,
+      "etkilesim_orani": 8.9
+    }
+  },
+  "tema_ozet": {
+    "diger": {
+      "video": 19,
+      "ort_izlenme": 660,
+      "toplam_izlenme": 12534,
+      "etkilesim_orani": 1.45
+    },
+    "gizem": {
+      "video": 8,
+      "ort_izlenme": 630,
+      "toplam_izlenme": 5038,
+      "etkilesim_orani": 1.25
+    },
+    "tuzak": {
+      "video": 33,
+      "ort_izlenme": 579,
+      "toplam_izlenme": 19096,
+      "etkilesim_orani": 1.47
+    }
+  }
 }
