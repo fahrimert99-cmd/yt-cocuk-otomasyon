@@ -1,5 +1,5 @@
 {
-  "sonraki": 128,
+  "sonraki": 47,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -22,6 +22,7 @@
     "KAHVEDE 'ORTA' YOKTUR! ☕",
     "KARGO KADAR BEKLETMEK NEDEN? ⏰",
     "KARTLA NEDEN DAHA ÇOK HARCARSIN? 💳",
+    "KASA SIRASI NEDEN UZUN? 🧾",
     "KASADAKİ ÇİKOLATA TUZAĞI! 🍫",
     "KREDİ KARTI PUANI TUZAK MI? 🎁",
     "KREDİ KARTI TAKSİT TUZAĞI! 💳",
@@ -58,11 +59,11 @@
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "  [Pexels: 8 klip / ~8000 toplam -> 'terracotta warrior face close']\n      [Pixabay: 12 klip / ~3293 toplam -> 'terracotta warrior face close']\n      [seçim(vision): pexels~8000 / pixabay~3293 -> önce pexels]\n      Sahne 2/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~1872 toplam -> 'terracotta army excavation pit']\n      [Pixabay: 12 klip / ~307 toplam -> 'terracotta army excavation pit']\n      [seçim(vision): pexels~1872 / pixabay~307 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5888 toplam -> 'ancient clay horse and']\n      [Pixabay: 12 klip / ~1295 toplam -> 'ancient clay horse and']\n      [seçim(vision): pexels~5888 / pixabay~1295 -> önce pixabay]\n      Sahne 4/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~4118 toplam -> 'ancient chinese tomb mound']\n      [Pixabay: 12 klip / ~1048 toplam -> 'ancient chinese tomb mound']\n      [seçim(vision): pexels~4118 / pixabay~1048 -> önce pexels]\n      Sahne 5/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'terracotta soldiers dramatic light']\n      [Pixabay: 12 klip / ~13028 toplam -> 'terracotta soldiers dramatic light']\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~13028 -> önce pixabay]\n      Sahne 6/6: gerçek stok video ✓ (pixabay)\n      [dağılım: pexels=3, pixabay=3, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (12895 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-29T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 0Ed5tzx_h54\n✓ Yüklendi: https://youtu.be/lqjAYeBuuWI  (yayın: 2026-08-29T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "g in line']\n      [Pixabay: 12 klip / ~6376 toplam -> 'people waiting in line']\n      [seçim(vision): pexels~8000 / pixabay~6376 -> önce pixabay]\n      Sahne 3/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~2083 toplam -> 'candy gum at checkout']\n      [Pixabay: 12 klip / ~358 toplam -> 'candy gum at checkout']\n      [seçim(vision): pexels~2083 / pixabay~358 -> önce pexels]\n      Sahne 4/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~4204 toplam -> 'magazines near cashier closeup']\n      [Pixabay: 12 klip / ~439 toplam -> 'magazines near cashier closeup']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~4204 / pixabay~439 -> önce pexels]\n      Sahne 5/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~3298 toplam -> 'last second purchase closeup']\n      [Pixabay: 12 klip / ~745 toplam -> 'last second purchase closeup']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~3298 / pixabay~745 -> önce pexels]\n      Sahne 6/6: gerçek stok video ✓ (pexels)\n      [dağılım: pexels=4, pixabay=2, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (12954 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-30T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 404 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The specified video could not be found. \n✓ Yüklendi: https://youtu.be/VrMTRnh66xg  (yayın: 2026-08-30T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "lqjAYeBuuWI",
-    "metin": "8000 ASKER, HEPSİ FARKLI\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "VrMTRnh66xg",
+    "metin": "SIRA NEDEN UZUN?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
-  "son_kategori": "yeme",
+  "son_kategori": "market",
   "gizem_gecis_baslangic": "2026-08-18"
 }
