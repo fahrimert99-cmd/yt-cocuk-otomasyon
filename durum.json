@@ -1,5 +1,5 @@
 {
-  "sonraki": 100,
+  "sonraki": 128,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -50,6 +50,7 @@
     "SİTELERDEKİ ALDATICI BUTONLAR! 🖱️",
     "TAZE SANILAN ETİN SIRRI! 🥩",
     "TELEFON FATURANDAKİ GİZLİ ÜCRETLER! 📞",
+    "TERRAKOTA ORDUSUNUN SIRRI 🏺",
     "UYGULAMALAR SENİ BÖYLE BAĞIMLI YAPIYOR! 📱",
     "UÇAK BİLETİ FİYAT OYUNU! ✈️",
     "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
@@ -57,11 +58,11 @@
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "     [Pixabay: 12 klip / ~235 toplam -> 'huge fossil shark tooth']\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~3382 / pixabay~235 -> önce pexels]\n      Sahne 2/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~3279 toplam -> 'large shark next to']\n      [Pixabay: 12 klip / ~233 toplam -> 'large shark next to']\n      [seçim(vision): pexels~3279 / pixabay~233 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'dark deep ocean water']\n      [Pixabay: 12 klip / ~22264 toplam -> 'dark deep ocean water']\n      [seçim(vision): pexels~8000 / pixabay~22264 -> önce pexels]\n      Sahne 4/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'vast unexplored deep sea']\n      [Pixabay: 12 klip / ~13922 toplam -> 'vast unexplored deep sea']\n      [seçim(vision): pexels~8000 / pixabay~13922 -> önce pexels]\n      Sahne 5/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~7807 toplam -> 'large shadow moving in']\n      [Pixabay: 12 klip / ~3502 toplam -> 'large shadow moving in']\n      [seçim(vision): pexels~7807 / pixabay~3502 -> önce pixabay]\n      Sahne 6/6: gerçek stok video ✓ (pixabay)\n      [dağılım: pexels=5, pixabay=1, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (11267 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-28T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The comment thread could not be created \n✓ Yüklendi: https://youtu.be/0Ed5tzx_h54  (yayın: 2026-08-28T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "  [Pexels: 8 klip / ~8000 toplam -> 'terracotta warrior face close']\n      [Pixabay: 12 klip / ~3293 toplam -> 'terracotta warrior face close']\n      [seçim(vision): pexels~8000 / pixabay~3293 -> önce pexels]\n      Sahne 2/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~1872 toplam -> 'terracotta army excavation pit']\n      [Pixabay: 12 klip / ~307 toplam -> 'terracotta army excavation pit']\n      [seçim(vision): pexels~1872 / pixabay~307 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5888 toplam -> 'ancient clay horse and']\n      [Pixabay: 12 klip / ~1295 toplam -> 'ancient clay horse and']\n      [seçim(vision): pexels~5888 / pixabay~1295 -> önce pixabay]\n      Sahne 4/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~4118 toplam -> 'ancient chinese tomb mound']\n      [Pixabay: 12 klip / ~1048 toplam -> 'ancient chinese tomb mound']\n      [seçim(vision): pexels~4118 / pixabay~1048 -> önce pexels]\n      Sahne 5/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'terracotta soldiers dramatic light']\n      [Pixabay: 12 klip / ~13028 toplam -> 'terracotta soldiers dramatic light']\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~13028 -> önce pixabay]\n      Sahne 6/6: gerçek stok video ✓ (pixabay)\n      [dağılım: pexels=3, pixabay=3, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (12895 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-29T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 0Ed5tzx_h54\n✓ Yüklendi: https://youtu.be/lqjAYeBuuWI  (yayın: 2026-08-29T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "0Ed5tzx_h54",
-    "metin": "18 METRELİK CANAVAR\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "lqjAYeBuuWI",
+    "metin": "8000 ASKER, HEPSİ FARKLI\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
-  "son_kategori": "diger",
+  "son_kategori": "yeme",
   "gizem_gecis_baslangic": "2026-08-18"
 }
