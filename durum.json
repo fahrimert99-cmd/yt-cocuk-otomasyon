@@ -1,5 +1,5 @@
 {
-  "sonraki": 47,
+  "sonraki": 101,
   "yapilan": [
     "'BEDAVA KARGO' GERÇEKTE BEDAVA DEĞİL! 📦",
     "'DOĞAL & ORGANİK' YALANI! 🌿",
@@ -35,6 +35,7 @@
     "MARKETLER SENİ BÖYLE KANDIRIYOR! 🛒",
     "MEGALODON HÂLÂ YAŞIYOR OLABİLİR Mİ? 🦈",
     "MENÜDEKİ GİZLİ TUZAK! 📋",
+    "OKYANUSTAN GELEN ESRARENGİZ SES 🔊",
     "OKYANUSUN DİBİNDE NE VAR? 🌊",
     "OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨",
     "OYUNCAK NEDEN KASADA? 🧸",
@@ -59,11 +60,11 @@
     "İNTERNET ALIŞVERİŞİ SENİ KANDIRIYOR! 🛍️",
     "İSTASYON MARKETİ TUZAĞI! ⛽"
   ],
-  "son_rapor": "g in line']\n      [Pixabay: 12 klip / ~6376 toplam -> 'people waiting in line']\n      [seçim(vision): pexels~8000 / pixabay~6376 -> önce pixabay]\n      Sahne 3/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~2083 toplam -> 'candy gum at checkout']\n      [Pixabay: 12 klip / ~358 toplam -> 'candy gum at checkout']\n      [seçim(vision): pexels~2083 / pixabay~358 -> önce pexels]\n      Sahne 4/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~4204 toplam -> 'magazines near cashier closeup']\n      [Pixabay: 12 klip / ~439 toplam -> 'magazines near cashier closeup']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~4204 / pixabay~439 -> önce pexels]\n      Sahne 5/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~3298 toplam -> 'last second purchase closeup']\n      [Pixabay: 12 klip / ~745 toplam -> 'last second purchase closeup']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~3298 / pixabay~745 -> önce pexels]\n      Sahne 6/6: gerçek stok video ✓ (pexels)\n      [dağılım: pexels=4, pixabay=2, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (12954 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-30T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 404 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The specified video could not be found. \n✓ Yüklendi: https://youtu.be/VrMTRnh66xg  (yayın: 2026-08-30T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": " pexels~8000 / pixabay~16515 -> önce pexels]\n      Sahne 1/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~7730 toplam -> 'sound wave audio spectrogram']\n      [Pixabay: 12 klip / ~10657 toplam -> 'sound wave audio spectrogram']\n      [seçim(vision): pexels~7730 / pixabay~10657 -> önce pixabay]\n      Sahne 2/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~3533 toplam -> 'scientist with headphones at']\n      [Pixabay: 12 klip / ~370 toplam -> 'scientist with headphones at']\n      [seçim(vision): pexels~3533 / pixabay~370 -> önce pexels]\n      Sahne 3/6: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~2824 toplam -> 'large iceberg cracking in']\n      [Pixabay: 12 klip / ~1380 toplam -> 'large iceberg cracking in']\n      [seçim(vision): pexels~2824 / pixabay~1380 -> önce pixabay]\n      Sahne 4/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~5490 toplam -> 'mysterious shape in deep']\n      [Pixabay: 12 klip / ~5387 toplam -> 'mysterious shape in deep']\n      [seçim(vision): pexels~5490 / pixabay~5387 -> önce pixabay]\n      Sahne 5/6: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~8000 toplam -> 'vast empty ocean at']\n      [Pixabay: 12 klip / ~14201 toplam -> 'vast empty ocean at']\n      [seçim(vision): pexels~8000 / pixabay~14201 -> önce pexels]\n      Sahne 6/6: gerçek stok video ✓ (pexels)\n      [dağılım: pexels=3, pixabay=3, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (12073 KB)\n      Kapak: output/kapak.jpg\n      Prime time yayın: 2026-08-31T16:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: VrMTRnh66xg\n✓ Yüklendi: https://youtu.be/3NPxlrW9VUs  (yayın: 2026-08-31T16:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "VrMTRnh66xg",
-    "metin": "SIRA NEDEN UZUN?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
+    "video_id": "3NPxlrW9VUs",
+    "metin": "KİMSE AÇIKLAYAMADI\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"
   },
-  "son_kategori": "market",
+  "son_kategori": "diger",
   "gizem_gecis_baslangic": "2026-08-18"
 }
