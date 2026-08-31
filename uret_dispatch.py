@@ -67,7 +67,9 @@ def main():
     if _dv:
         dikey = _dv in ("1", "true", "evet", "dikey", "yes")
     ses      = cfg.get("ses", "kadin")
-    gizlilik = cfg.get("gizlilik", "private")
+    # Senaryo kendi gizliliğini belirtebilir (ör. fragman -> "unlisted" ile
+    # önce incele, sonra public yap). Yoksa config'ten.
+    gizlilik = veri.get("gizlilik") or cfg.get("gizlilik", "private")
     kategori = str(cfg.get("kategori", "27"))
     cocuk = bool(cfg.get("cocuk_icerigi", False))
     animasyon = bool(cfg.get("animasyon", True))
