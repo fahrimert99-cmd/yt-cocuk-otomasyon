@@ -107,6 +107,18 @@ class SenaryoValidator:
     ABONE_KW = ("abone", "subscribe", "kanala katıl", "takip et")
     TEASER_KW = ("yarın", "bir sonraki", "sonraki video", "yeni video", "seri", "kaçırma")
 
+    # İlk cümle (sözlü açılış) Shorts'ta ilk 2-3 saniyeyi ve retention'ı belirler.
+    # Punchy bir kanca kısa olur; uzun/yavaş açılış izleyiciyi kaydırtır.
+    HOOK_MAX_KELIME = 14
+
+    @staticmethod
+    def _ilk_cumle(script: str) -> str:
+        s = (script or "").strip()
+        if not s:
+            return ""
+        m = re.split(r"(?<=[.!?])\s+", s, maxsplit=1)
+        return m[0] if m else s
+
     @staticmethod
     def script_quality(item: Dict[str, Any]) -> List[str]:
         s = (item.get("script") or "").lower()
@@ -115,6 +127,10 @@ class SenaryoValidator:
             w.append("abone CTA'sı yok — dönüşüm için sonda net bir abone çağrısı ekle")
         if not any(k in s for k in SenaryoValidator.TEASER_KW):
             w.append("süreklilik/teaser yok — 'yarın yeni video' tarzı geri dönüş kancası ekle")
+        ilk = SenaryoValidator._ilk_cumle(item.get("script") or "")
+        n = len(ilk.split())
+        if n > SenaryoValidator.HOOK_MAX_KELIME:
+            w.append(f"açılış kancası uzun ({n} kelime) — ilk cümleyi kısalt, ilk 2 saniyede vur")
         return w
 
     @staticmethod
