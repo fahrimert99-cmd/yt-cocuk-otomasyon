@@ -22,6 +22,11 @@ def _temizle(txt):
 
 
 def _icerik_al():
+    # Elle "Run workflow": hazır senaryo dosyası yolu (ör. kanal fragmanı).
+    dosya = os.environ.get("SENARYO_DOSYA", "").strip()
+    if dosya and os.path.exists(dosya):
+        with open(dosya, encoding="utf-8-sig") as f:
+            return json.load(f)
     b64 = os.environ.get("RAW_B64", "").strip()
     if b64:
         ham = base64.b64decode(b64).decode("utf-8")
