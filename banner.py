@@ -129,67 +129,79 @@ def uret(cikti="output/banner.png"):
     _paste(_play(200), (300, H - 250), -12)
     _paste(_play(200), (W - 300, H - 250), 12)
 
-    # --- Altın hedef/nişangah motifi (marka adının solunda, güvenli alan içinde) ---
-    hedef = _hedef(300, altin)
-    hy = SY0 + 30
-    base.alpha_composite(hedef, (SX0 + 6, (H - 300) // 2 - 40))
-
     d = ImageDraw.Draw(base, "RGBA")
 
-    # --- KELİME-MARKA: 'TUZAK AVCISI' altın, kırmızı-siyah gölge ---
-    tx_left = SX0 + 330  # hedef motifinin sağından başla
-    maxw = SX1 - tx_left - 10
-    font = ImageFont.truetype(FB, 190)
-    for fs in (200, 190, 176, 160, 148, 132):
+    # === MERKEZLİ MARKA BLOĞU — TAMAMI güvenli alan (1546x423) İÇİNDE, kenar boşluklu ===
+    # (Önceki sürüm kenarlara yapışıp mobilde kırpılıyordu; artık ortalı ve marjlı.)
+    MX = 120                       # güvenli alan yatay iç boşluk
+    avail = SAFE_W - 2 * MX        # kullanılabilir genişlik
+    ch = 180                       # nişangah boyutu
+    gap = 34
+    # kelime-marka fontu: nişangah + boşluk + yazı avail'e SIĞSIN
+    font = ImageFont.truetype(FB, 150)
+    for fs in (150, 138, 126, 114, 104, 94, 84):
         font = ImageFont.truetype(FB, fs)
-        if _yazi_boyu(d, ad, font)[0] <= maxw:
+        tw, th = _yazi_boyu(d, ad, font)
+        if ch + gap + tw <= avail:
             break
     tw, th = _yazi_boyu(d, ad, font)
-    tx = tx_left
-    ty = (H - th) // 2 - 60
-    # gölge (kırmızı + siyah), 3D his
-    for off in range(10, 0, -2):
+
+    sl = cfg["slogan"]
+    sf = ImageFont.truetype(FB, 52)
+    sw, sh = (_yazi_boyu(d, sl, sf) if sl else (0, 0))
+    rozet = "PZT-PAZ · 12:00 & 20:00"
+    rf = ImageFont.truetype(FB, 40)
+    rw, rh = _yazi_boyu(d, rozet, rf)
+    hn = cfg["handle"]
+    if hn and not hn.startswith("@"):
+        hn = "@" + hn
+    hf = ImageFont.truetype(FB, 40)
+    hw, hh = (_yazi_boyu(d, hn, hf) if hn else (0, 0))
+
+    row_h = max(ch, th)
+    pad = 18
+    total_h = row_h + (sh + 20 if sl else 0) + (rh + pad) + 24
+    y0 = SY0 + (SAFE_H - total_h) // 2
+
+    # --- 1) marka satırı: nişangah + 'TUZAK AVCISI' (yatay ORTALI) ---
+    block_w = ch + gap + tw
+    bx = (W - block_w) // 2
+    cy = y0 + row_h // 2
+    hed = _hedef(ch, altin)
+    base.alpha_composite(hed, (bx, cy - ch // 2))
+    d = ImageDraw.Draw(base, "RGBA")
+    tx = bx + ch + gap
+    ty = cy - th // 2 - 6
+    for off in range(8, 0, -2):
         d.text((tx + off, ty + off), ad, font=font, fill=(120, 0, 8, 255))
-    o = max(6, fs // 18)
+    o = max(5, fs // 20)
     for dx in range(-o, o + 1, 2):
         for dy in range(-o, o + 1, 2):
             d.text((tx + dx, ty + dy), ad, font=font, fill=(0, 0, 0, 255))
     d.text((tx, ty), ad, font=font, fill=altin + (255,))
+    ly = ty + th + 14
+    d.rectangle([tx, ly, tx + tw, ly + 9], fill=altin + (255,))
 
-    # altın alt-çizgi
-    ly = ty + th + 26
-    d.rectangle([tx, ly, tx + tw, ly + 12], fill=altin + (255,))
-
-    # --- Slogan (beyaz) ---
-    if cfg["slogan"]:
-        sf = ImageFont.truetype(FB, 58)
-        sl = cfg["slogan"]
-        sw, sh = _yazi_boyu(d, sl, sf)
-        sx, sy = tx, ly + 34
+    yc = y0 + row_h + 20
+    # --- 2) slogan (ORTALI) ---
+    if sl:
+        sx = (W - sw) // 2
         for dx in (-2, 0, 2):
             for dy in (-2, 0, 2):
-                d.text((sx + dx, sy + dy), sl, font=sf, fill=(0, 0, 0, 255))
-        d.text((sx, sy), sl, font=sf, fill=(245, 245, 245, 255))
+                d.text((sx + dx, yc + dy), sl, font=sf, fill=(0, 0, 0, 255))
+        d.text((sx, yc), sl, font=sf, fill=(245, 245, 245, 255))
+        yc += sh + 24
 
-    # --- Yayın saatleri rozeti (altın) ---
-    rozet = "PZT–PAZ · 12:00 & 20:00"
-    rf = ImageFont.truetype(FB, 44)
-    rw, rh = _yazi_boyu(d, rozet, rf)
-    rx, ry = tx, SY1 - rh - 26
-    pad = 22
-    d.rounded_rectangle([rx - pad, ry - pad // 2, rx + rw + pad, ry + rh + pad], radius=18,
-                        fill=(0, 0, 0, 140), outline=altin + (255,), width=3)
-    d.text((rx, ry), rozet, font=rf, fill=altin + (255,))
-
-    # --- Handle (sağ alt, rozetle simetrik) ---
-    if cfg["handle"]:
-        hn = cfg["handle"]
-        if not hn.startswith("@"):
-            hn = "@" + hn
-        hf = ImageFont.truetype(FB, 50)
-        hw, hh = _yazi_boyu(d, hn, hf)
-        hx = SX1 - hw
-        hy = ry + (rh - hh) // 2
+    # --- 3) rozet + handle: birlikte tek satır, ORTALI ---
+    bgap = 34
+    row2_w = (rw + 2 * pad) + ((bgap + hw) if hn else 0)
+    rx = (W - row2_w) // 2
+    d.rounded_rectangle([rx, yc - pad // 2, rx + rw + 2 * pad, yc + rh + pad], radius=16,
+                        fill=(0, 0, 0, 150), outline=altin + (255,), width=3)
+    d.text((rx + pad, yc), rozet, font=rf, fill=altin + (255,))
+    if hn:
+        hx = rx + rw + 2 * pad + bgap
+        hy = yc + (rh - hh) // 2
         for dx in (-2, 0, 2):
             for dy in (-2, 0, 2):
                 d.text((hx + dx, hy + dy), hn, font=hf, fill=(0, 0, 0, 255))
