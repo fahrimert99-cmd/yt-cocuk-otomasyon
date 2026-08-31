@@ -90,6 +90,34 @@ def sil(video_id):
     print(f"✓ Eski video silindi: {video_id}")
 
 
+def _oynatma_listesi_bul_veya_olustur(yt, ad, aciklama=""):
+    """Verilen adda oynatma listesi varsa id'sini döner, yoksa oluşturur (public)."""
+    tok = None
+    while True:
+        r = yt.playlists().list(part="snippet", mine=True, maxResults=50, pageToken=tok).execute()
+        for it in r.get("items", []):
+            if it["snippet"]["title"] == ad:
+                return it["id"]
+        tok = r.get("nextPageToken")
+        if not tok:
+            break
+    r = yt.playlists().insert(part="snippet,status", body={
+        "snippet": {"title": ad, "description": aciklama},
+        "status": {"privacyStatus": "public"}}).execute()
+    return r["id"]
+
+
+def oynatma_listesine_ekle(video_id, liste_adi, liste_aciklama=""):
+    """Videoyu adı verilen oynatma listesine ekler (liste yoksa oluşturur).
+    İzlenme süresi/oturum uzunluğu için: kategoriye göre grupla."""
+    yt = build("youtube", "v3", credentials=_kimlik())
+    pid = _oynatma_listesi_bul_veya_olustur(yt, liste_adi, liste_aciklama)
+    yt.playlistItems().insert(part="snippet", body={
+        "snippet": {"playlistId": pid,
+                    "resourceId": {"kind": "youtube#video", "videoId": video_id}}}).execute()
+    return pid
+
+
 def yorum_at(video_id, metin):
     """Kanaldan videoya ust duzey yorum ekler (video PUBLIC olmali)."""
     yt = build("youtube", "v3", credentials=_kimlik())

@@ -214,6 +214,22 @@ def main():
              kategori=str(cfg.get("kategori", "28")),
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
              kapak=kapak_yolu, yayin_zamani=yayin_zamani)
+    # OYNATMA LİSTESİ: videoyu kategori/temasına göre listeye ekle (izlenme
+    # süresi/oturum uzunluğu -> algoritma sever). Hata olursa yükleme bozulmaz.
+    if cfg.get("oynatma_listesi", True):
+        _LISTE = {"market": "🛒 Market & AVM Tuzakları",
+                  "finans": "💳 Banka & Kart Tuzakları",
+                  "dijital": "📱 Dijital & Uygulama Tuzakları",
+                  "psikoloji": "🧠 Psikolojik Satış Oyunları",
+                  "yeme": "🍔 Restoran & Yeme-İçme Tuzakları",
+                  "hizmet": "🏨 Hizmet & Abonelik Tuzakları"}
+        _liste = ("🌊 Gizemler & Bilinmeyenler" if veri.get("tema") == "gizem"
+                  else _LISTE.get(durum.get("son_kategori"), "🎯 Tüm Tuzaklar"))
+        try:
+            YT.oynatma_listesine_ekle(_vid, _liste)
+            print(f"      Oynatma listesine eklendi: {_liste}")
+        except Exception as e:
+            print(f"      Oynatma listesi atlandı: {str(e)[:120]}")
     # Yorum, video public olduktan SONRA atilir (ozel videoya yorum yasak).
     # Video ID + yorum metni durum.json'a yazilir; yorum.yml 19:15'te gonderir.
     durum["bekleyen_yorum"] = {

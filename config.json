@@ -20,5 +20,6 @@
   "marka_logo": "assets/marka/avatar.png",
   "marka_konum": "ust",
   "marka_slogan": "Her gün yeni bir tüketici tuzağı",
-  "marka_handle": "@tuzakavcisitv"
+  "marka_handle": "@tuzakavcisitv",
+  "oynatma_listesi": true
 }
