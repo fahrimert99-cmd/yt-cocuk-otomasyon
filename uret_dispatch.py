@@ -52,8 +52,12 @@ def main():
     if not script:
         raise SystemExit("Senaryo metni bos - Make'ten icerik gelmedi.")
     baslik   = (veri.get("baslik") or "Video")[:100]
-    aciklama = veri.get("aciklama") or ""
     etiketler = veri.get("etiketler") or []
+    try:
+        import aciklama as _ACK
+        aciklama = _ACK.olustur(veri, cfg)  # SEO + marka footer
+    except Exception:
+        aciklama = veri.get("aciklama") or ""
     if isinstance(etiketler, str):
         etiketler = [e.strip() for e in etiketler.split(",") if e.strip()]
 

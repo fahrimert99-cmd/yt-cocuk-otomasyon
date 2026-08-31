@@ -206,7 +206,9 @@ def main():
         except Exception as _e:
             print("! Yorum eklenemedi: " + str(_e)[:160])
 
-    _vid = YT.yukle(cikti, veri["baslik"], veri.get("aciklama", ""),
+    import aciklama as ACK
+    _aciklama = ACK.olustur(veri, cfg)  # SEO + marka footer (CTA/saat/handle/hashtag)
+    _vid = YT.yukle(cikti, veri["baslik"], _aciklama,
              veri.get("etiketler", []),
              gizlilik=cfg.get("gizlilik", "private"),
              kategori=str(cfg.get("kategori", "28")),
