@@ -16,7 +16,7 @@
   "uzun_gorsel_stil": "stok",
   "uzun_aktif": false,
   "marka_ad": "TUZAK AVCISI",
-  "marka_renk": [230, 20, 30],
+  "marka_renk": [255, 195, 30],
   "marka_logo": "",
   "marka_konum": "ust"
 }
