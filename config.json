@@ -19,5 +19,6 @@
   "marka_renk": [255, 195, 30],
   "marka_logo": "assets/marka/avatar.png",
   "marka_konum": "ust",
-  "marka_slogan": "Her gün yeni bir tüketici tuzağı"
+  "marka_slogan": "Her gün yeni bir tüketici tuzağı",
+  "marka_handle": "@tuzakavcisitv"
 }

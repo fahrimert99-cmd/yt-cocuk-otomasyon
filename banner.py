@@ -36,6 +36,7 @@ def _cfg():
         "ad": str(c.get("marka_ad", "TUZAK AVCISI") or "TUZAK AVCISI").strip(),
         "renk": renk,
         "slogan": str(c.get("marka_slogan", "Her gün yeni bir tüketici tuzağı") or "").strip(),
+        "handle": str(c.get("marka_handle", "") or "").strip(),
     }
 
 
@@ -179,6 +180,20 @@ def uret(cikti="output/banner.png"):
     d.rounded_rectangle([rx - pad, ry - pad // 2, rx + rw + pad, ry + rh + pad], radius=18,
                         fill=(0, 0, 0, 140), outline=altin + (255,), width=3)
     d.text((rx, ry), rozet, font=rf, fill=altin + (255,))
+
+    # --- Handle (sağ alt, rozetle simetrik) ---
+    if cfg["handle"]:
+        hn = cfg["handle"]
+        if not hn.startswith("@"):
+            hn = "@" + hn
+        hf = ImageFont.truetype(FB, 50)
+        hw, hh = _yazi_boyu(d, hn, hf)
+        hx = SX1 - hw
+        hy = ry + (rh - hh) // 2
+        for dx in (-2, 0, 2):
+            for dy in (-2, 0, 2):
+                d.text((hx + dx, hy + dy), hn, font=hf, fill=(0, 0, 0, 255))
+        d.text((hx, hy), hn, font=hf, fill=altin + (255,))
 
     # --- Vinyet (kenarları karart) ---
     vig = Image.new("L", (W, H), 0)
