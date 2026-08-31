@@ -262,7 +262,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Markete girer girmez neden meyve sebze görürsün? Çünkü renkli, taze ve sağlıklı görünür. Bu seni iyi hissettirir, savunmanı düşürür. 'Bugün sağlıklı alışveriş yapıyorum' dersin, sonra çikolata reyonuna dalarsın. Giriş bir tuzak. Seni rahatlatıp cüzdanını açtırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Markete girer girmez neden meyve sebze görürsün? Çünkü renkli, taze ve sağlıklı görünür. Bu seni iyi hissettirir, savunmanı düşürür. 'Bugün sağlıklı alışveriş yapıyorum' dersin, sonra çikolata reyonuna dalarsın. Giriş bir tuzak. Seni rahatlatıp cüzdanını açtırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "market girişi manav",
@@ -285,7 +285,7 @@
         "gorsel": "chocolate aisle in supermarket closeup"
       },
       {
-        "metin": "dolu sepet",
+        "metin": "dolu sepet Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "full shopping basket mixed items closeup"
       }
     ],
@@ -309,7 +309,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Çöpe attığın o ürün büyük ihtimalle hâlâ yenilebilirdi. Üründe iki farklı tarih var ve çoğu insan farkı bilmiyor: 'tavsiye edilen tüketim tarihi' geçince ürün bozulmaz, sadece en iyi hali geçer. Ama sen atarsın, yeniden alırsın; markalar bunu bilir. Milyonlarca sağlam ürün böyle çöpe gidiyor. Etikete iyi bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Çöpe attığın o ürün büyük ihtimalle hâlâ yenilebilirdi. Üründe iki farklı tarih var ve çoğu insan farkı bilmiyor: 'tavsiye edilen tüketim tarihi' geçince ürün bozulmaz, sadece en iyi hali geçer. Ama sen atarsın, yeniden alırsın; markalar bunu bilir. Milyonlarca sağlam ürün böyle çöpe gidiyor. Etikete iyi bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "ürün etiketi tarih",
@@ -332,7 +332,7 @@
         "gorsel": "confused person reading label closeup"
       },
       {
-        "metin": "dolu çöp kovası",
+        "metin": "dolu çöp kovası Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "full trash bin with food waste closeup"
       }
     ],
@@ -356,7 +356,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürüne defalarca baktın, fiyatı arttı mı? Yanılmıyorsun. Bazı siteler ne kadar çok istediğini anlar ve fiyatı yükseltir. Aynı ürün, farklı telefonda daha ucuz. Gizli sekmede fiyat düşebilir. İlgini gösterdikçe pahalanırsın. Bir dahaki sefere gizli modda bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürüne defalarca baktın, fiyatı arttı mı? Yanılmıyorsun. Bazı siteler ne kadar çok istediğini anlar ve fiyatı yükseltir. Aynı ürün, farklı telefonda daha ucuz. Gizli sekmede fiyat düşebilir. İlgini gösterdikçe pahalanırsın. Bir dahaki sefere gizli modda bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "telefonda alışveriş",
@@ -379,7 +379,7 @@
         "gorsel": "thoughtful online shopper closeup"
       },
       {
-        "metin": "ekranda ürün",
+        "metin": "ekranda ürün Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "product page on laptop screen closeup"
       }
     ],
@@ -403,7 +403,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürünün binlerce beş yıldızı var ama eline geçince berbat. Neden? Çünkü o yorumların çoğu sahte. Sahte yorum çiftlikleri para karşılığı puan yazar. Gerçek yorumlar genelde üç yıldızlıdır, detaylıdır. Sadece yıldıza bakma, kötü yorumları oku. Gerçek orada. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürünün binlerce beş yıldızı var ama eline geçince berbat. Neden? Çünkü o yorumların çoğu sahte. Sahte yorum çiftlikleri para karşılığı puan yazar. Gerçek yorumlar genelde üç yıldızlıdır, detaylıdır. Sadece yıldıza bakma, kötü yorumları oku. Gerçek orada. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "yıldızlı yorum ekranı",
@@ -426,7 +426,7 @@
         "gorsel": "detailed negative review text closeup"
       },
       {
-        "metin": "telefon değerlendirme",
+        "metin": "telefon değerlendirme Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "rating stars on smartphone closeup"
       }
     ],
@@ -450,7 +450,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O çerez kutusunda 'kabul et' neden kocaman ve renkli, 'reddet' neden minik ve gri? Çünkü kabul etmeni istiyorlar. Kabul edince tüm hareketlerini izler, veri satarlar. Reddetmek hakkın; o küçük butonu ara, bul, tıkla. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O çerez kutusunda 'kabul et' neden kocaman ve renkli, 'reddet' neden minik ve gri? Çünkü kabul etmeni istiyorlar. Kabul edince tüm hareketlerini izler, veri satarlar. Reddetmek hakkın; o küçük butonu ara, bul, tıkla. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "çerez uyarısı",
@@ -473,7 +473,7 @@
         "gorsel": "grey decline button hard to see closeup"
       },
       {
-        "metin": "bilinçli kullanıcı",
+        "metin": "bilinçli kullanıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "aware person using laptop closeup"
       }
     ],
@@ -497,7 +497,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O bedava uygulamada asıl ürün sensin. Her tıklaman, her araman, her beğenin toplanıp reklamcılara satılıyor; arkasındaki şirket milyarlarca kazanıyor. Bedava dedikleri şeyin bedelini, farkında olmadan kendi verinle ödüyorsun. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O bedava uygulamada asıl ürün sensin. Her tıklaman, her araman, her beğenin toplanıp reklamcılara satılıyor; arkasındaki şirket milyarlarca kazanıyor. Bedava dedikleri şeyin bedelini, farkında olmadan kendi verinle ödüyorsun. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "telefon uygulamaları",
@@ -520,7 +520,7 @@
         "gorsel": "smartphone apps grid"
       },
       {
-        "metin": "düşünen kullanıcı",
+        "metin": "düşünen kullanıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "tapping free app install"
       }
     ],
@@ -544,7 +544,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürünün fiyatı 'ayda sadece 200 lira' diye yazar. Toplam fiyat nerede? Küçük harflerde. Çünkü 'ayda 200' kulağa ucuz gelir, '4800 lira' korkutur. Taksit, harcamanı hissettirmez. Ayda azıcık dersin, ama borcun büyür. Her zaman toplam fiyata bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürünün fiyatı 'ayda sadece 200 lira' diye yazar. Toplam fiyat nerede? Küçük harflerde. Çünkü 'ayda 200' kulağa ucuz gelir, '4800 lira' korkutur. Taksit, harcamanı hissettirmez. Ayda azıcık dersin, ama borcun büyür. Her zaman toplam fiyata bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "taksit reklamı",
@@ -567,7 +567,7 @@
         "gorsel": "hailing a taxi street"
       },
       {
-        "metin": "hesap yapan kişi",
+        "metin": "hesap yapan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "gps navigation in car"
       }
     ],
@@ -591,7 +591,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kasada 'kuruşlar kalsın' derler, sen de aldırmaz geçersin. Ama düşün: bir markette günde on bin işlem, her birinde yarım lira. Bu ayda milyonlarca lira eder. Senin için önemsiz, onlar için servet. Küçük gördüğün o para, dev bir gelir kaynağı. Üstünü iste. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Kasada 'kuruşlar kalsın' derler, sen de aldırmaz geçersin. Ama düşün: bir markette günde on bin işlem, her birinde yarım lira. Bu ayda milyonlarca lira eder. Senin için önemsiz, onlar için servet. Küçük gördüğün o para, dev bir gelir kaynağı. Üstünü iste. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "kasa bozuk para",
@@ -614,7 +614,7 @@
         "gorsel": "receipt with rounded total closeup"
       },
       {
-        "metin": "hesap makinesi",
+        "metin": "hesap makinesi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "calculator with money closeup"
       }
     ],
@@ -638,7 +638,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Faizsiz birikim' denen altın gününde son sırada olan kaybeder. Paranı bugün verirsin ama sıra sana aylar sonra gelir; o sürede enflasyon paranı eritir. İlk alan kazançlı, son alan zararlı çıkar, sistem herkese eşit değil. Matematiği iyi hesapla. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Faizsiz birikim' denen altın gününde son sırada olan kaybeder. Paranı bugün verirsin ama sıra sana aylar sonra gelir; o sürede enflasyon paranı eritir. İlk alan kazançlı, son alan zararlı çıkar, sistem herkese eşit değil. Matematiği iyi hesapla. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "altın günü",
@@ -661,7 +661,7 @@
         "gorsel": "gold bracelets close up"
       },
       {
-        "metin": "hesap yapan kadın",
+        "metin": "hesap yapan kadın Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "woman calculating savings closeup"
       }
     ],
@@ -685,7 +685,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Banka 'sıfır faizli kredi' der, koşarsın. Ama dosya masrafı, hayat sigortası, hesap ücreti eklenir. Sıfır faiz, başka isimlerle geri alınır. Sonunda normal krediden farkı kalmaz. Bankalar faizi gizlemez, ismini değiştirir. Toplam geri ödemeye bak, reklama değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Banka 'sıfır faizli kredi' der, koşarsın. Ama dosya masrafı, hayat sigortası, hesap ücreti eklenir. Sıfır faiz, başka isimlerle geri alınır. Sonunda normal krediden farkı kalmaz. Bankalar faizi gizlemez, ismini değiştirir. Toplam geri ödemeye bak, reklama değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "banka kredisi",
@@ -708,7 +708,7 @@
         "gorsel": "person signing loan papers closeup"
       },
       {
-        "metin": "hesap tablosu",
+        "metin": "hesap tablosu Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "spreadsheet with numbers closeup"
       }
     ],
@@ -732,7 +732,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Berberdeki o 'bakım yapalım mı, şu ürün çok iyi' önerileri tesadüf değil, eğitim. Sadece saç kesmeye gittin ama her ek işlem küçük ücret, toplamı büyük. Çalışanlar ek satış için yönlendirilir. Hayır demek hakkın; sadece istediğini al, gerisine kapı. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Berberdeki o 'bakım yapalım mı, şu ürün çok iyi' önerileri tesadüf değil, eğitim. Sadece saç kesmeye gittin ama her ek işlem küçük ücret, toplamı büyük. Çalışanlar ek satış için yönlendirilir. Hayır demek hakkın; sadece istediğini al, gerisine kapı. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "berber koltuğu",
@@ -755,7 +755,7 @@
         "gorsel": "salon product display closeup"
       },
       {
-        "metin": "hayır diyen müşteri",
+        "metin": "hayır diyen müşteri Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "customer politely declining closeup"
       }
     ],
@@ -779,7 +779,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sinema bileti bir fiyat, mısır neredeyse aynı fiyat. Saçma değil mi? Sinemalar biletten az kazanır, asıl parayı mısır ve içecekten yapar. Bir kova mısırın maliyeti birkaç lira, sana on katına satılır. Dışarıdan yiyecek yasağı da bu yüzden. Kâr perdede değil, lobide. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Sinema bileti bir fiyat, mısır neredeyse aynı fiyat. Saçma değil mi? Sinemalar biletten az kazanır, asıl parayı mısır ve içecekten yapar. Bir kova mısırın maliyeti birkaç lira, sana on katına satılır. Dışarıdan yiyecek yasağı da bu yüzden. Kâr perdede değil, lobide. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "sinema mısır",
@@ -802,7 +802,7 @@
         "gorsel": "corn kernels cheap raw closeup"
       },
       {
-        "metin": "film izleyen kişi",
+        "metin": "film izleyen kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person watching movie eating closeup"
       }
     ],
@@ -826,7 +826,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Düğün planlarken her şey ekstra çıkar: sandalye kılıfı ekstra, ışık ekstra, pasta ekstra. Neden? Çünkü 'hayatının en önemli günü' derler, pazarlık edemezsin. Duygular devredeyken cüzdan açılır. Bunu bilirler. Baştan net paket iste, her kalemi yazdır. Duyguyla değil akılla karar ver. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Düğün planlarken her şey ekstra çıkar: sandalye kılıfı ekstra, ışık ekstra, pasta ekstra. Neden? Çünkü 'hayatının en önemli günü' derler, pazarlık edemezsin. Duygular devredeyken cüzdan açılır. Bunu bilirler. Baştan net paket iste, her kalemi yazdır. Duyguyla değil akılla karar ver. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "düğün salonu",
@@ -849,7 +849,7 @@
         "gorsel": "happy couple planning closeup"
       },
       {
-        "metin": "sözleşme imza",
+        "metin": "sözleşme imza Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "signing venue contract closeup"
       }
     ],
@@ -873,7 +873,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir mağazaya girdiğinde çoğunlukla sağa dönersin. Bu bir içgüdü ve mağazalar bunu bilir. En kârlı ürünleri sağ tarafa, saat yönünün tersine bir rota kurarlar. Sen farkında olmadan onların istediği yolu izlersin. Attığın rota bile tasarlanmış. Bilerek yürü. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir mağazaya girdiğinde çoğunlukla sağa dönersin. Bu bir içgüdü ve mağazalar bunu bilir. En kârlı ürünleri sağ tarafa, saat yönünün tersine bir rota kurarlar. Sen farkında olmadan onların istediği yolu izlersin. Attığın rota bile tasarlanmış. Bilerek yürü. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "mağaza girişi",
@@ -896,7 +896,7 @@
         "gorsel": "top view of store aisles closeup"
       },
       {
-        "metin": "yürüyen müşteri",
+        "metin": "yürüyen müşteri Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "customer walking through store closeup"
       }
     ],
@@ -920,7 +920,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir menüde ya da vitrinde çok pahalı bir ürün görürsün. Onu kimse almaz. Peki neden var? Çünkü yanındaki ürünü ucuz göstermek için. Bin liralık ürünün yanında beş yüz liralık 'uygun' gelir. Buna çapa denir. Beynin ilk gördüğü fiyata göre karar verir. Bağımsız düşün. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir menüde ya da vitrinde çok pahalı bir ürün görürsün. Onu kimse almaz. Peki neden var? Çünkü yanındaki ürünü ucuz göstermek için. Bin liralık ürünün yanında beş yüz liralık 'uygun' gelir. Buna çapa denir. Beynin ilk gördüğü fiyata göre karar verir. Bağımsız düşün. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "vitrin fiyatları",
@@ -943,7 +943,7 @@
         "gorsel": "person comparing prices closeup"
       },
       {
-        "metin": "etiket detay",
+        "metin": "etiket detay Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "price label close up"
       }
     ],
@@ -967,7 +967,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Son üç ürün kaldı' ya da 'kampanya bitmek üzere' yazıları seni panikletmek için oradadır. Oysa çoğu zaman bu bir yalandır. Sayaç sıfırlanır, stok yeniden dolar, ama sen o an düşünmeden satın alırsın. Acele ettiren o yazı, tam da mantıklı kararı vermeni engellemek için tasarlanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Son üç ürün kaldı' ya da 'kampanya bitmek üzere' yazıları seni panikletmek için oradadır. Oysa çoğu zaman bu bir yalandır. Sayaç sıfırlanır, stok yeniden dolar, ama sen o an düşünmeden satın alırsın. Acele ettiren o yazı, tam da mantıklı kararı vermeni engellemek için tasarlanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "son ürün uyarısı",
@@ -990,7 +990,7 @@
         "gorsel": "sale ending sign"
       },
       {
-        "metin": "sakin düşünen kişi",
+        "metin": "sakin düşünen kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "limited stock display"
       }
     ],
@@ -1014,7 +1014,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sana bedava bir tat ya da küçük bir hediye verdiklerinde içinde tuhaf bir borç hissi oluşur. 'Madem verdiler, ben de bir şey almalıyım' dersin. Buna karşılıklılık kuralı denir ve insan beynine işlemiştir. O küçük hediye aslında bedava değil, seni almaya mecbur hissettirmek için verilir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Sana bedava bir tat ya da küçük bir hediye verdiklerinde içinde tuhaf bir borç hissi oluşur. 'Madem verdiler, ben de bir şey almalıyım' dersin. Buna karşılıklılık kuralı denir ve insan beynine işlemiştir. O küçük hediye aslında bedava değil, seni almaya mecbur hissettirmek için verilir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "bedava numune",
@@ -1037,7 +1037,7 @@
         "gorsel": "promotional giveaway booth"
       },
       {
-        "metin": "alışveriş yapan kişi",
+        "metin": "alışveriş yapan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "sample tasting at market"
       }
     ],
@@ -1061,7 +1061,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir markette çalan müziğin hızı asla rastgele seçilmez. Yavaş müzik adımlarını yavaşlatır, reyonlarda daha çok vakit geçirmeni sağlar. Ne kadar uzun kalırsan, o kadar çok ürün sepetine girer. Duyduğun o sakin melodi, aslında daha fazla harcaman için tasarlanmış sessiz bir yönlendirmedir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir markette çalan müziğin hızı asla rastgele seçilmez. Yavaş müzik adımlarını yavaşlatır, reyonlarda daha çok vakit geçirmeni sağlar. Ne kadar uzun kalırsan, o kadar çok ürün sepetine girer. Duyduğun o sakin melodi, aslında daha fazla harcaman için tasarlanmış sessiz bir yönlendirmedir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "mağaza müziği",
@@ -1084,7 +1084,7 @@
         "gorsel": "grocery store wide shot"
       },
       {
-        "metin": "rahatlamış insan",
+        "metin": "rahatlamış insan Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "shopping calmly in market"
       }
     ],
@@ -1108,7 +1108,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O mağazadaki güzel koku tesadüf değil, seni satın almaya iten görünmez bir silah. Markalar özel kokular tasarlatır çünkü koku hafızaya en hızlı işleyen duyudur. O kokuyu her aldığında markayı hatırlar, kendini iyi hisseder, alışveriş yaparsın. En güçlü tuzaklardan biri. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O mağazadaki güzel koku tesadüf değil, seni satın almaya iten görünmez bir silah. Markalar özel kokular tasarlatır çünkü koku hafızaya en hızlı işleyen duyudur. O kokuyu her aldığında markayı hatırlar, kendini iyi hisseder, alışveriş yaparsın. En güçlü tuzaklardan biri. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "mağaza içi",
@@ -1131,7 +1131,7 @@
         "gorsel": "perfume bottle spraying mist closeup"
       },
       {
-        "metin": "alışveriş anı",
+        "metin": "alışveriş anı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person enjoying shopping closeup"
       }
     ],
@@ -1155,7 +1155,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Artık her yer 'kartla öde, temassız öde' diyor. Neden? Çünkü nakit verirken paranı hissedersin, elin titrer. Kartla bu acı yok olur, kolayca harcarsın. Araştırmalar kartla yüzde yetmiş daha fazla harcadığını gösteriyor. Nakit seni frenler. Bazen fişi elle ödemek bilinç kazandırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Artık her yer 'kartla öde, temassız öde' diyor. Neden? Çünkü nakit verirken paranı hissedersin, elin titrer. Kartla bu acı yok olur, kolayca harcarsın. Araştırmalar kartla yüzde yetmiş daha fazla harcadığını gösteriyor. Nakit seni frenler. Bazen fişi elle ödemek bilinç kazandırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "temassız ödeme",
@@ -1178,7 +1178,7 @@
         "gorsel": "open empty leather wallet closeup"
       },
       {
-        "metin": "hesap yapan kişi",
+        "metin": "hesap yapan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person reviewing spending closeup"
       }
     ],
@@ -1202,7 +1202,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürün yıllardır aynı ama üstünde hep 'yeni' ya da 'geliştirilmiş formül' yazar. Çoğu zaman değişen tek şey ambalaj. 'Yeni' kelimesi merak uyandırır, tekrar aldırır. İçerik aynı, kutu farklı. Gerçek yenilik nadirdir. Etikete değil içindekilere bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürün yıllardır aynı ama üstünde hep 'yeni' ya da 'geliştirilmiş formül' yazar. Çoğu zaman değişen tek şey ambalaj. 'Yeni' kelimesi merak uyandırır, tekrar aldırır. İçerik aynı, kutu farklı. Gerçek yenilik nadirdir. Etikete değil içindekilere bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "yeni ürün etiketi",
@@ -1225,7 +1225,7 @@
         "gorsel": "ingredients list on package closeup"
       },
       {
-        "metin": "karşılaştıran alıcı",
+        "metin": "karşılaştıran alıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "shopper comparing two products closeup"
       }
     ],
@@ -1249,7 +1249,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Aldığın hediye kartının bir kısmı büyük ihtimalle hiç harcanmayacak ve o para direkt mağazaya kâr kalıyor. Dahası, kartı kullanan genelde kart değerinden fazla harcar; üstelik parayı önceden alırlar. Sen hediye sanırsın, onlar kazanç görür. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Aldığın hediye kartının bir kısmı büyük ihtimalle hiç harcanmayacak ve o para direkt mağazaya kâr kalıyor. Dahası, kartı kullanan genelde kart değerinden fazla harcar; üstelik parayı önceden alırlar. Sen hediye sanırsın, onlar kazanç görür. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "hediye kartı",
@@ -1272,7 +1272,7 @@
         "gorsel": "gift card stand in shop closeup"
       },
       {
-        "metin": "hediye veren kişi",
+        "metin": "hediye veren kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person giving gift card closeup"
       }
     ],
@@ -1296,7 +1296,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürünü iade etmek istersin ama süreç kabusa döner: form doldur, kargola, bekle, ara. Bu tesadüf değil. İade ne kadar zor olursa, o kadar çok insan vazgeçer. Vazgeçtiğinde para onlarda kalır. Ama iade senin yasal hakkın. Zorluğa aldırma, hakkını kullan, diren. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürünü iade etmek istersin ama süreç kabusa döner: form doldur, kargola, bekle, ara. Bu tesadüf değil. İade ne kadar zor olursa, o kadar çok insan vazgeçer. Vazgeçtiğinde para onlarda kalır. Ama iade senin yasal hakkın. Zorluğa aldırma, hakkını kullan, diren. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "iade paketi",
@@ -1319,7 +1319,7 @@
         "gorsel": "person on hold customer service closeup"
       },
       {
-        "metin": "kararlı kişi",
+        "metin": "kararlı kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "determined person filing return closeup"
       }
     ],
@@ -1343,7 +1343,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O bedava wifi'ye bağlanırken aslında sen bağlanmıyorsun, onlar sana bağlanıyor. Kafedeki ücretsiz internet için mailini, numaranı ya da sosyal medya hesabını isterler. Sen internete erişirken, onlar senin bilgilerine erişir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O bedava wifi'ye bağlanırken aslında sen bağlanmıyorsun, onlar sana bağlanıyor. Kafedeki ücretsiz internet için mailini, numaranı ya da sosyal medya hesabını isterler. Sen internete erişirken, onlar senin bilgilerine erişir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "kafe wifi",
@@ -1366,7 +1366,7 @@
         "gorsel": "free wifi network screen"
       },
       {
-        "metin": "dikkatli kullanıcı",
+        "metin": "dikkatli kullanıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "people using phones cafe"
       }
     ],
@@ -1390,7 +1390,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Şık restoranların menüsünde fiyatların dağınık olması bir tasarım kazası değil, bilinçli bir karar. Yan yana görsen en ucuzu seçerdin; dağıtınca fiyatı değil yemeği düşünürsün. Böylece cebinden çıkacak parayı unutursun. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Şık restoranların menüsünde fiyatların dağınık olması bir tasarım kazası değil, bilinçli bir karar. Yan yana görsen en ucuzu seçerdin; dağıtınca fiyatı değil yemeği düşünürsün. Böylece cebinden çıkacak parayı unutursun. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "şık menü",
@@ -1413,7 +1413,7 @@
         "gorsel": "fine dining plate closeup"
       },
       {
-        "metin": "garson sipariş",
+        "metin": "garson sipariş Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "restaurant interior warm"
       }
     ],
@@ -1437,7 +1437,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Sadece beş lira fazla ver, iki katı büyük al' derler. Mantıklı gelir, alırsın. Ama ihtiyacın var mıydı? Yarısını çöpe atarsın. Litre başına ucuz görünür ama toplamda daha çok ödersin, daha çok tüketirsin. Ucuza almak sandığın şey, fazla tüketmek. İhtiyacın kadarını al. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Sadece beş lira fazla ver, iki katı büyük al' derler. Mantıklı gelir, alırsın. Ama ihtiyacın var mıydı? Yarısını çöpe atarsın. Litre başına ucuz görünür ama toplamda daha çok ödersin, daha çok tüketirsin. Ucuza almak sandığın şey, fazla tüketmek. İhtiyacın kadarını al. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "büyük boy içecek",
@@ -1460,7 +1460,7 @@
         "gorsel": "price per size label closeup"
       },
       {
-        "metin": "düşünen müşteri",
+        "metin": "düşünen müşteri Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "customer deciding size closeup"
       }
     ],
@@ -1484,7 +1484,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Dokuz kahve al, onuncu bedava' derler. Kulağa hediye gibi gelir. Ama düşün: o bedava kahve için dokuz kez oraya gittin, alışkanlık oldun. Puanlar seni başka yere gitmekten alıkoyar. Bedava sandığın kahve, seni bağlamanın bedeli. Program sana değil, onlara sadakat kazandırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Dokuz kahve al, onuncu bedava' derler. Kulağa hediye gibi gelir. Ama düşün: o bedava kahve için dokuz kez oraya gittin, alışkanlık oldun. Puanlar seni başka yere gitmekten alıkoyar. Bedava sandığın kahve, seni bağlamanın bedeli. Program sana değil, onlara sadakat kazandırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "sadakat kartı",
@@ -1507,7 +1507,7 @@
         "gorsel": "regular customer at cafe closeup"
       },
       {
-        "metin": "telefon puan ekranı",
+        "metin": "telefon puan ekranı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "rewards screen on smartphone closeup"
       }
     ],
@@ -1531,7 +1531,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Markette ürünlerin yerini durmadan değiştirmeleri sinir bozucu ama kasıtlı. Aradığını bulamayınca tüm reyonları gezer, gezerken aklında olmayan şeyler alırsın. Kaybolman, onların kazancı. Listene sadık kal. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Markette ürünlerin yerini durmadan değiştirmeleri sinir bozucu ama kasıtlı. Aradığını bulamayınca tüm reyonları gezer, gezerken aklında olmayan şeyler alırsın. Kaybolman, onların kazancı. Listene sadık kal. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "değişen vitrin",
@@ -1554,7 +1554,7 @@
         "gorsel": "confused customer looking around closeup"
       },
       {
-        "metin": "alışveriş listesi",
+        "metin": "alışveriş listesi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "shopping list in hand closeup"
       }
     ],
@@ -1625,7 +1625,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Marketteki oyuncaklar tam çocuğun göz hizasında ve bu bir kaza değil. Çocuk görür, ister, ağlar, ebeveyn alır; hesaplı bir yerleşim bu. Çocuğu kullanarak aileyi hedeflerler, en yoğun an ise kasada beklerken. Bunu bilerek alışverişe çık, çocuğa önceden anlat. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Marketteki oyuncaklar tam çocuğun göz hizasında ve bu bir kaza değil. Çocuk görür, ister, ağlar, ebeveyn alır; hesaplı bir yerleşim bu. Çocuğu kullanarak aileyi hedeflerler, en yoğun an ise kasada beklerken. Bunu bilerek alışverişe çık, çocuğa önceden anlat. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "alçak şeker rafı",
@@ -1648,7 +1648,7 @@
         "gorsel": "parent with child shopping closeup"
       },
       {
-        "metin": "renkli şekerler",
+        "metin": "renkli şekerler Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "colorful candy display low shelf closeup"
       }
     ],
@@ -1672,7 +1672,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Büyük indirim günü gelir, herkes koşar. Ama bir ürünün fiyatını haftalar önce izle. Çoğu zaman kampanyadan önce fiyat yükseltilir, sonra 'yüzde elli indirim' diye eski fiyata satılır. İndirim sahte, sadece algı. Gerçek indirimi anlamak için önceden fiyat takip et. Coşkuya kapılma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Büyük indirim günü gelir, herkes koşar. Ama bir ürünün fiyatını haftalar önce izle. Çoğu zaman kampanyadan önce fiyat yükseltilir, sonra 'yüzde elli indirim' diye eski fiyata satılır. İndirim sahte, sadece algı. Gerçek indirimi anlamak için önceden fiyat takip et. Coşkuya kapılma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "indirim afişi",
@@ -1695,7 +1695,7 @@
         "gorsel": "laptop screen showing price graph closeup"
       },
       {
-        "metin": "düşünen alışverişçi",
+        "metin": "düşünen alışverişçi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "skeptical shopper at sale closeup"
       }
     ],
@@ -1719,7 +1719,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Mağazanın en değerli yeri parfüm ve makyaja ayrılır çünkü ruh halin daha kapıda ayarlanır. Güzel kokular ve parlak ışıklar seni anında iyi hissettirir, iyi hissedince daha çok harcarsın. Giriş katı bir karşılama değil, bir hazırlıktır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Mağazanın en değerli yeri parfüm ve makyaja ayrılır çünkü ruh halin daha kapıda ayarlanır. Güzel kokular ve parlak ışıklar seni anında iyi hissettirir, iyi hissedince daha çok harcarsın. Giriş katı bir karşılama değil, bir hazırlıktır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "parfüm reyonu",
@@ -1742,7 +1742,7 @@
         "gorsel": "well lit beauty section closeup"
       },
       {
-        "metin": "mutlu müşteri",
+        "metin": "mutlu müşteri Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "happy customer shopping beauty closeup"
       }
     ],
@@ -1766,7 +1766,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Site 'ücretsiz iade' der, sen de rahatça alırsın. Ama işin sırrı şu: ürün eline geçince ona alışırsın, sahiplenirsin, iade etmeye üşenirsin. Kolay iade sözü seni daha çok aldırır ama gerçekte az iade edersin. Rahatlık hissi bir tuzak. Alırken gerçekten ihtiyacın var mı diye sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Site 'ücretsiz iade' der, sen de rahatça alırsın. Ama işin sırrı şu: ürün eline geçince ona alışırsın, sahiplenirsin, iade etmeye üşenirsin. Kolay iade sözü seni daha çok aldırır ama gerçekte az iade edersin. Rahatlık hissi bir tuzak. Alırken gerçekten ihtiyacın var mı diye sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "kargo kutusu açma",
@@ -1789,7 +1789,7 @@
         "gorsel": "unused products in closet closeup"
       },
       {
-        "metin": "telefon alışveriş",
+        "metin": "telefon alışveriş Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "online shopping on phone closeup"
       }
     ],
@@ -1813,7 +1813,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Tatil sitesinde 'son dakika, bu fiyat bitiyor' yazar. Kalbin hızlanır, hemen rezervasyon yaparsın. Ama o fiyat çoğu zaman kalıcıdır, 'son dakika' sadece seni acele ettirmek için. Acele eden kişi karşılaştırma yapmaz, pazarlık etmez. Sakin ol, birkaç site karşılaştır. Gerçek fırsat kaçmaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Tatil sitesinde 'son dakika, bu fiyat bitiyor' yazar. Kalbin hızlanır, hemen rezervasyon yaparsın. Ama o fiyat çoğu zaman kalıcıdır, 'son dakika' sadece seni acele ettirmek için. Acele eden kişi karşılaştırma yapmaz, pazarlık etmez. Sakin ol, birkaç site karşılaştır. Gerçek fırsat kaçmaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "tatil sitesi",
@@ -1836,7 +1836,7 @@
         "gorsel": "booking on smartphone closeup"
       },
       {
-        "metin": "plaj tatil",
+        "metin": "plaj tatil Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "beach vacation destination closeup"
       }
     ],
@@ -1860,7 +1860,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir markada medium olan, başka markada large. Neden standart yok? Çünkü bazı markalar bedenleri kasıtlı büyük etiketler. Kendini daha ince hissedersin, mutlu olursun, o markayı seversin. Buna gurur bedeni denir. Rakam bir oyun. Numaraya değil, üstüne olup olmadığına bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir markada medium olan, başka markada large. Neden standart yok? Çünkü bazı markalar bedenleri kasıtlı büyük etiketler. Kendini daha ince hissedersin, mutlu olursun, o markayı seversin. Buna gurur bedeni denir. Rakam bir oyun. Numaraya değil, üstüne olup olmadığına bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "kıyafet etiketleri",
@@ -1883,7 +1883,7 @@
         "gorsel": "person looking in mirror closeup"
       },
       {
-        "metin": "katlanmış tişört",
+        "metin": "katlanmış tişört Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "folded t-shirts sizes closeup"
       }
     ],
@@ -1907,7 +1907,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Yazın AVM'ye girersin, buz gibi. Neden bu kadar soğutulur? Çünkü dışarıdaki sıcaktan kaçan insan içeride uzun kalır. Uzun kalırsan çok harcarsın. Ayrıca soğukta kahve, sıcak yiyecek daha cazip gelir. Konfor gibi görünen şey, seni tutmanın yolu. Sıcaklık bile satışın parçası. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Yazın AVM'ye girersin, buz gibi. Neden bu kadar soğutulur? Çünkü dışarıdaki sıcaktan kaçan insan içeride uzun kalır. Uzun kalırsan çok harcarsın. Ayrıca soğukta kahve, sıcak yiyecek daha cazip gelir. Konfor gibi görünen şey, seni tutmanın yolu. Sıcaklık bile satışın parçası. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "avm içi",
@@ -1930,7 +1930,7 @@
         "gorsel": "people lingering in mall closeup"
       },
       {
-        "metin": "sıcak içecek",
+        "metin": "sıcak içecek Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "hot coffee in cold place closeup"
       }
     ],
@@ -1954,7 +1954,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürün çıkar, anında tükenir, herkes onu arar. Bazen bu gerçek talep değil, planlı kıtlıktır. Az üretip 'tükendi' diyerek ürünü değerli gösterirler. İnsan bulamadığını daha çok ister. Sıraya girer, fazla öder. Kıtlık algısı fiyatı ve arzuyu şişirir. Bulamadığın şey her zaman değerli değildir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürün çıkar, anında tükenir, herkes onu arar. Bazen bu gerçek talep değil, planlı kıtlıktır. Az üretip 'tükendi' diyerek ürünü değerli gösterirler. İnsan bulamadığını daha çok ister. Sıraya girer, fazla öder. Kıtlık algısı fiyatı ve arzuyu şişirir. Bulamadığın şey her zaman değerli değildir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "tükendi yazısı",
@@ -1977,7 +1977,7 @@
         "gorsel": "out of stock online closeup"
       },
       {
-        "metin": "arayan müşteri",
+        "metin": "arayan müşteri Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person searching for item closeup"
       }
     ],
@@ -2001,7 +2001,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Telefon ya da beyaz eşya alırken 'ek garanti ister misiniz' derler. Korkarsın, alırsın. Ama çoğu ürün zaten garantili ve nadiren o dönemde bozulur. Ek garanti mağaza için yüksek kârlı, senin için çoğunlukla gereksiz. Korkuyla satılır. Ürünün normal garantisini oku, aceleyle ekleme yaptırma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Telefon ya da beyaz eşya alırken 'ek garanti ister misiniz' derler. Korkarsın, alırsın. Ama çoğu ürün zaten garantili ve nadiren o dönemde bozulur. Ek garanti mağaza için yüksek kârlı, senin için çoğunlukla gereksiz. Korkuyla satılır. Ürünün normal garantisini oku, aceleyle ekleme yaptırma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "elektronik mağaza",
@@ -2024,7 +2024,7 @@
         "gorsel": "customer considering offer closeup"
       },
       {
-        "metin": "imza belge",
+        "metin": "imza belge Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "signing warranty paper closeup"
       }
     ],
@@ -2048,7 +2048,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir platform 'ilk ay bedava' der. Kaydolursun, kart bilgini verirsin. Bir ay içinde alışırsın, dizilere bağlanırsın. İptal etmeyi unutursun ya da üşenirsin. İkinci ay para çekilir. Bedava ay bir hediye değil, seni bağlama planı. Kaydolurken iptal tarihini hemen not al, alarm kur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir platform 'ilk ay bedava' der. Kaydolursun, kart bilgini verirsin. Bir ay içinde alışırsın, dizilere bağlanırsın. İptal etmeyi unutursun ya da üşenirsin. İkinci ay para çekilir. Bedava ay bir hediye değil, seni bağlama planı. Kaydolurken iptal tarihini hemen not al, alarm kur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "dijital platform",
@@ -2071,7 +2071,7 @@
         "gorsel": "subscription auto renewal closeup"
       },
       {
-        "metin": "takvim hatırlatma",
+        "metin": "takvim hatırlatma Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "calendar reminder to cancel closeup"
       }
     ],
@@ -2095,7 +2095,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Pahalı restoranların menüsünde yemek fotoğrafı bulamazsın. Bunun sebebi maliyet değil, algı yönetimidir. Fotoğraf, yemeği ucuz ve sıradan gösterir. Resim yerine süslü kelimelerle anlatınca, aynı yemek daha değerli ve özel hissettirilir. Böylece daha yüksek fiyatı sorgusuz ödersin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Pahalı restoranların menüsünde yemek fotoğrafı bulamazsın. Bunun sebebi maliyet değil, algı yönetimidir. Fotoğraf, yemeği ucuz ve sıradan gösterir. Resim yerine süslü kelimelerle anlatınca, aynı yemek daha değerli ve özel hissettirilir. Böylece daha yüksek fiyatı sorgusuz ödersin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "şık menü kağıdı",
@@ -2118,7 +2118,7 @@
         "gorsel": "fine dining plate closeup"
       },
       {
-        "metin": "garson servis",
+        "metin": "garson servis Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "restaurant interior warm"
       }
     ],
@@ -2142,7 +2142,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kasadaki o uzun sıra tesadüf değil, planlı. Beklerken sıkılır, etrafına bakarsın; tam göz hizanda sakızlar, çikolatalar, dergiler durur. Planlamadığın halde birini alırsın. Amaç seni o ürünlerle baş başa bırakmak. Beklerken elini cebe atma, sadece bekle. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Kasadaki o uzun sıra tesadüf değil, planlı. Beklerken sıkılır, etrafına bakarsın; tam göz hizanda sakızlar, çikolatalar, dergiler durur. Planlamadığın halde birini alırsın. Amaç seni o ürünlerle baş başa bırakmak. Beklerken elini cebe atma, sadece bekle. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "kasa sırası",
@@ -2165,7 +2165,7 @@
         "gorsel": "magazines near cashier closeup"
       },
       {
-        "metin": "son dakika alım",
+        "metin": "son dakika alım Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "last second purchase closeup"
       }
     ],
@@ -2189,7 +2189,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Oyunlarda gerçek parayla değil, elmasla, jetonla alışveriş yaparsın. Neden? Çünkü 'yüz elmas' harcamak, 'elli lira' harcamaktan kolaydır. Sanal para gerçekliği bulandırır, acıyı yok eder. Bir de paketler garip sayılarla satılır, tam bitmez, biraz daha aldırır. Elması değil, lirayı düşün. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Oyunlarda gerçek parayla değil, elmasla, jetonla alışveriş yaparsın. Neden? Çünkü 'yüz elmas' harcamak, 'elli lira' harcamaktan kolaydır. Sanal para gerçekliği bulandırır, acıyı yok eder. Bir de paketler garip sayılarla satılır, tam bitmez, biraz daha aldırır. Elması değil, lirayı düşün. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "oyun mağazası",
@@ -2212,7 +2212,7 @@
         "gorsel": "in app purchase screen closeup"
       },
       {
-        "metin": "harcayan oyuncu",
+        "metin": "harcayan oyuncu Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person spending in game closeup"
       }
     ],
@@ -2330,7 +2330,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir uygulamaya kaydolmak on saniye sürer ama hesabını silmek neredeyse imkansız gibidir. İptal butonu özellikle gizlenir, menülerin en dibine saklanır. Bu bir aksaklık değil, bilerek zorlaştırılmıştır. Çünkü ayrılman değil, kalıp ödemeye devam etmen istenir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir uygulamaya kaydolmak on saniye sürer ama hesabını silmek neredeyse imkansız gibidir. İptal butonu özellikle gizlenir, menülerin en dibine saklanır. Bu bir aksaklık değil, bilerek zorlaştırılmıştır. Çünkü ayrılman değil, kalıp ödemeye devam etmen istenir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "hesap ayarları",
@@ -2353,7 +2353,7 @@
         "gorsel": "clicking through app menus"
       },
       {
-        "metin": "kararlı kullanıcı",
+        "metin": "kararlı kullanıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "customer service waiting"
       }
     ],
@@ -2377,7 +2377,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir şişe marka su, musluk suyundan yüzlerce kat pahalı. İçindeki çoğu zaman aynı su. Peki fark ne? Pazarlama. 'Kaynak suyu, doğal, saf' derler, şık şişeye koyarlar. Sen sağlık ve statü satın aldığını sanırsın. Ödediğin su değil, imaj. Etiketi araştır, çoğu zaman şişelenmiş musluk suyu. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir şişe marka su, musluk suyundan yüzlerce kat pahalı. İçindeki çoğu zaman aynı su. Peki fark ne? Pazarlama. 'Kaynak suyu, doğal, saf' derler, şık şişeye koyarlar. Sen sağlık ve statü satın aldığını sanırsın. Ödediğin su değil, imaj. Etiketi araştır, çoğu zaman şişelenmiş musluk suyu. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "marka su şişesi",
@@ -2400,7 +2400,7 @@
         "gorsel": "fancy water bottle design closeup"
       },
       {
-        "metin": "su içen kişi",
+        "metin": "su içen kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person drinking bottled water closeup"
       }
     ],
@@ -2424,7 +2424,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Ücretsiz keşif, bedava danışmanlık' derler. Neden bedava? Çünkü kapıdan içeri girmek istiyorlar. Bir kez zaman ayırınca, evine gelince, borçlu hissedersin, hayır demek zorlaşır. Bedava başlangıç seni satışa hazırlar. İlk adım küçüktür ama seni bağlar. Bedava olan her teklifin bir devamı vardır. Hazırlıklı ol. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Ücretsiz keşif, bedava danışmanlık' derler. Neden bedava? Çünkü kapıdan içeri girmek istiyorlar. Bir kez zaman ayırınca, evine gelince, borçlu hissedersin, hayır demek zorlaşır. Bedava başlangıç seni satışa hazırlar. İlk adım küçüktür ama seni bağlar. Bedava olan her teklifin bir devamı vardır. Hazırlıklı ol. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "danışman ev ziyareti",
@@ -2447,7 +2447,7 @@
         "gorsel": "handshake business deal closeup"
       },
       {
-        "metin": "sözleşme masası",
+        "metin": "sözleşme masası Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "contract on table closeup"
       }
     ],
@@ -2471,7 +2471,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Neredeyse her fiyat 9 ile biter. Neden 10 değil? Beynin soldan okur, 9,99'u dokuz sanır, on değil. Bir kuruş önemsiz ama algı devasa. Neden hep 9? On yıllardır işe yarıyor. Yuvarla, gerçek fiyatı gör. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Neredeyse her fiyat 9 ile biter. Neden 10 değil? Beynin soldan okur, 9,99'u dokuz sanır, on değil. Bir kuruş önemsiz ama algı devasa. Neden hep 9? On yıllardır işe yarıyor. Yuvarla, gerçek fiyatı gör. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "99 fiyat etiketi",
@@ -2494,7 +2494,7 @@
         "gorsel": "supermarket price tags closeup"
       },
       {
-        "metin": "hesaplayan kişi",
+        "metin": "hesaplayan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person calculating real price closeup"
       }
     ],
@@ -2518,7 +2518,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kutuyu açarsın, içinde küçük ürün ve bir sürü boşluk. Neden bu kadar büyük? Rafta göz doldurur, çok ürün var hissi verir. Ağırlık beklersin, değerli sanırsın, ama içi hava. Kutu neden büyük? Gramaja bak, kutuya değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Kutuyu açarsın, içinde küçük ürün ve bir sürü boşluk. Neden bu kadar büyük? Rafta göz doldurur, çok ürün var hissi verir. Ağırlık beklersin, değerli sanırsın, ama içi hava. Kutu neden büyük? Gramaja bak, kutuya değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "büyük kutu küçük ürün",
@@ -2541,7 +2541,7 @@
         "gorsel": "weight label on box closeup"
       },
       {
-        "metin": "karşılaştıran alıcı",
+        "metin": "karşılaştıran alıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "comparing box to content closeup"
       }
     ],
@@ -2565,7 +2565,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Reklam gelince sesin yükselmesi kafanda değil, gerçek. Reklamlar izin verilen en yüksek seviyede karıştırılır; amaç, başka odaya geçsen bile seni duyurup dikkatini zorla çekmek. Ses bir silaha dönüşür. Kumandayı hazır tut ya da sessize al, dikkatin senin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Reklam gelince sesin yükselmesi kafanda değil, gerçek. Reklamlar izin verilen en yüksek seviyede karıştırılır; amaç, başka odaya geçsen bile seni duyurup dikkatini zorla çekmek. Ses bir silaha dönüşür. Kumandayı hazır tut ya da sessize al, dikkatin senin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "televizyon reklam",
@@ -2588,7 +2588,7 @@
         "gorsel": "colorful commercial flashing"
       },
       {
-        "metin": "rahatsız izleyici",
+        "metin": "rahatsız izleyici Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "remote changing tv channels"
       }
     ],
@@ -2612,7 +2612,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Satıcı önce en pahalı ürünü gösterir, şaşırırsın. Sonra şu daha uygun der, ucuz gelir. Aslında o da pahalı ama ilk fiyat aklına kazındı. Buna çapalama denir. İlk gördüğün neden pahalı? Kendi bütçenle gel, sıralamaya kapılma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Satıcı önce en pahalı ürünü gösterir, şaşırırsın. Sonra şu daha uygun der, ucuz gelir. Aslında o da pahalı ama ilk fiyat aklına kazındı. Buna çapalama denir. İlk gördüğün neden pahalı? Kendi bütçenle gel, sıralamaya kapılma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "pahalı ürün gösterme",
@@ -2635,7 +2635,7 @@
         "gorsel": "customer weighing options closeup"
       },
       {
-        "metin": "etiket fiyatlar",
+        "metin": "etiket fiyatlar Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "various price tags closeup"
       }
     ],
@@ -2659,7 +2659,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Her şey dahil' sandığın tatilde çoğu şey aslında dahil değil. Bazı içecekler, özel restoran, aktiviteler hep ekstra çıkar. Üstelik tek fiyat, karşılaştırmayı bilerek zorlaştırır. Paket kolaylık satar ama hep hesaplı değildir. Kalem kalem oku, ekstraları önceden sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Her şey dahil' sandığın tatilde çoğu şey aslında dahil değil. Bazı içecekler, özel restoran, aktiviteler hep ekstra çıkar. Üstelik tek fiyat, karşılaştırmayı bilerek zorlaştırır. Paket kolaylık satar ama hep hesaplı değildir. Kalem kalem oku, ekstraları önceden sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "her şey dahil otel",
@@ -2682,7 +2682,7 @@
         "gorsel": "hotel buffet dining closeup"
       },
       {
-        "metin": "hesap yapan tatilci",
+        "metin": "hesap yapan tatilci Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "tourist checking costs closeup"
       }
     ],
@@ -2706,7 +2706,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Küçük, orta, büyük sunulur, çoğu kişi ortayı seçer. Sır şu: onlar zaten ortayı ister. Küçük çok küçük, büyük çok pahalı ayarlanır ki orta mantıklı görünsün. En kârlı odur. Neden orta alıyorsun? Boyu ihtiyacına göre seç, sunuma göre değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Küçük, orta, büyük sunulur, çoğu kişi ortayı seçer. Sır şu: onlar zaten ortayı ister. Küçük çok küçük, büyük çok pahalı ayarlanır ki orta mantıklı görünsün. En kârlı odur. Neden orta alıyorsun? Boyu ihtiyacına göre seç, sunuma göre değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "üç boy içecek",
@@ -2729,7 +2729,7 @@
         "gorsel": "person ordering drink closeup"
       },
       {
-        "metin": "bardak karşılaştırma",
+        "metin": "bardak karşılaştırma Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "cup size comparison closeup"
       }
     ],
@@ -2753,7 +2753,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O ücretsiz kargo sınırı, sana fazladan ürün aldırmak için dikkatle hesaplanır. Sepetin yüz otuz lira, bedava kargo için yüz elli gerekir; 'az kaldı' deyip bir şey daha eklersin. Kargodan kaçarken ihtiyacın olmayan şeye para verirsin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O ücretsiz kargo sınırı, sana fazladan ürün aldırmak için dikkatle hesaplanır. Sepetin yüz otuz lira, bedava kargo için yüz elli gerekir; 'az kaldı' deyip bir şey daha eklersin. Kargodan kaçarken ihtiyacın olmayan şeye para verirsin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "online sepet",
@@ -2776,7 +2776,7 @@
         "gorsel": "checkout page closeup"
       },
       {
-        "metin": "hesap yapan alıcı",
+        "metin": "hesap yapan alıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "filling cart to threshold"
       }
     ],
@@ -2800,7 +2800,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Gördüğün o parlaklık üründe değil, tasarımda. Takılar spot altında ışıldar, kıyafetler sıcak ışıkla canlanır, meyveler özel ışıkla tazelenir; evde aynısı sönük kalır. Işık ürünü olduğundan iyi gösterir. Işığın büyüsüne değil, ürünün kendisine bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Gördüğün o parlaklık üründe değil, tasarımda. Takılar spot altında ışıldar, kıyafetler sıcak ışıkla canlanır, meyveler özel ışıkla tazelenir; evde aynısı sönük kalır. Işık ürünü olduğundan iyi gösterir. Işığın büyüsüne değil, ürünün kendisine bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "mağaza spot ışık",
@@ -2823,7 +2823,7 @@
         "gorsel": "warm lit clothing display closeup"
       },
       {
-        "metin": "evde sönük ürün",
+        "metin": "evde sönük ürün Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "dull product at home closeup"
       }
     ],
@@ -2847,7 +2847,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sosyal medyada aşağı kaydırırsın, kaydırırsın ve akış hiç bitmez. Bu asla bir tesadüf değil. Buna sonsuz akış denir ve durman zorlaşsın diye tasarlanmıştır. Ne kadar çok kalırsan sana o kadar çok reklam gösterilir. Yani senin zamanın, onların gerçek ürünüdür. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Sosyal medyada aşağı kaydırırsın, kaydırırsın ve akış hiç bitmez. Bu asla bir tesadüf değil. Buna sonsuz akış denir ve durman zorlaşsın diye tasarlanmıştır. Ne kadar çok kalırsan sana o kadar çok reklam gösterilir. Yani senin zamanın, onların gerçek ürünüdür. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "telefon kaydırma",
@@ -2870,7 +2870,7 @@
         "gorsel": "social app interface fast"
       },
       {
-        "metin": "zaman kaybı",
+        "metin": "zaman kaybı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "scrolling late at night"
       }
     ],
@@ -2941,7 +2941,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "İki tişört düşün, kumaşları birebir aynı. Ama üzerinde logo olan diğerinden üç kat pahalı. Bunun sebebi kalite değil. O logo bir ürün değil, sana ait olma ve statü hissi satar. Fazladan ödediğin para kumaşa değil, o markanın imajına gider. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "İki tişört düşün, kumaşları birebir aynı. Ama üzerinde logo olan diğerinden üç kat pahalı. Bunun sebebi kalite değil. O logo bir ürün değil, sana ait olma ve statü hissi satar. Fazladan ödediğin para kumaşa değil, o markanın imajına gider. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "logolu tişört",
@@ -2964,7 +2964,7 @@
         "gorsel": "fashion boutique interior"
       },
       {
-        "metin": "kumaş detay",
+        "metin": "kumaş detay Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "folding branded clothes"
       }
     ],
@@ -2988,7 +2988,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Havaalanında bir su, bir sandviç servet. Neden? Çünkü içeri girdin, dışarı çıkamazsın, başka seçeneğin yok. Beklemek zorundasın, acıkırsın, alırsın. Bunu bilirler, fiyatı katlarlar. Güvenlikten önce bir şeyler almak ya da yanında getirmek seni kurtarır. Kapana kısıldığın her yerde fiyat yükselir. Önceden hazırlan. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Havaalanında bir su, bir sandviç servet. Neden? Çünkü içeri girdin, dışarı çıkamazsın, başka seçeneğin yok. Beklemek zorundasın, acıkırsın, alırsın. Bunu bilirler, fiyatı katlarlar. Güvenlikten önce bir şeyler almak ya da yanında getirmek seni kurtarır. Kapana kısıldığın her yerde fiyat yükselir. Önceden hazırlan. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "havaalanı kafe",
@@ -3011,7 +3011,7 @@
         "gorsel": "expensive water at airport closeup"
       },
       {
-        "metin": "terminal içi",
+        "metin": "terminal içi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "airport terminal interior closeup"
       }
     ],
@@ -3035,7 +3035,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Her yıl yeni telefon çıkar, seninki 'eski' olur. Ama gerçekte telefonun gayet iyi çalışıyor. Küçük değişiklikler büyük yenilik gibi sunulur. Eski model yavaşlatılır, güncellemeler kesilir. Buna planlı eskitme denir. Amaç, çalışan ürünü değiştirtmek. İhtiyacın mı var, yoksa yeni mi istiyorsun? Fark et. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Her yıl yeni telefon çıkar, seninki 'eski' olur. Ama gerçekte telefonun gayet iyi çalışıyor. Küçük değişiklikler büyük yenilik gibi sunulur. Eski model yavaşlatılır, güncellemeler kesilir. Buna planlı eskitme denir. Amaç, çalışan ürünü değiştirtmek. İhtiyacın mı var, yoksa yeni mi istiyorsun? Fark et. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "yeni telefon",
@@ -3058,7 +3058,7 @@
         "gorsel": "software update screen closeup"
       },
       {
-        "metin": "düşünen kullanıcı",
+        "metin": "düşünen kullanıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person considering upgrade closeup"
       }
     ],
@@ -3082,7 +3082,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "İnternet tarifelerinin bu kadar karışık olması tesadüf değil, kasıtlı. GB, dakika, gece paketi, taahhüt, ek servis... kimse tam anlamasın diye. Çünkü anlamazsan karşılaştıramazsın, karşılaştıramazsan fazla ödersin. Karmaşa bir kalkandır. İhtiyacını yaz, gereksiz eklentileri çıkart, net sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "İnternet tarifelerinin bu kadar karışık olması tesadüf değil, kasıtlı. GB, dakika, gece paketi, taahhüt, ek servis... kimse tam anlamasın diye. Çünkü anlamazsan karşılaştıramazsın, karşılaştıramazsan fazla ödersin. Karmaşa bir kalkandır. İhtiyacını yaz, gereksiz eklentileri çıkart, net sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "tarife tablosu",
@@ -3105,7 +3105,7 @@
         "gorsel": "confused person reading plans closeup"
       },
       {
-        "metin": "karşılaştırma yapan",
+        "metin": "karşılaştırma yapan Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "comparing phone plans closeup"
       }
     ],
@@ -3129,7 +3129,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir oyun bedavadır, indirir ve keyifle oynarsın. Ama bir yerde takılırsın ve karşına 'beş dakika bekle ya da hemen öde' seçeneği çıkar. Oyun ücretsiz görünür çünkü asıl para sabırsızlığından kazanılır. Beklemek istemediğin her an, onların kasasına para akıtır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir oyun bedavadır, indirir ve keyifle oynarsın. Ama bir yerde takılırsın ve karşına 'beş dakika bekle ya da hemen öde' seçeneği çıkar. Oyun ücretsiz görünür çünkü asıl para sabırsızlığından kazanılır. Beklemek istemediğin her an, onların kasasına para akıtır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "mobil oyun",
@@ -3152,7 +3152,7 @@
         "gorsel": "kid playing game frustrated"
       },
       {
-        "metin": "oynayan kişi",
+        "metin": "oynayan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "game store buy screen"
       }
     ],
@@ -3176,7 +3176,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O ünlü sevdiğin ürünü kullandığı için değil, para aldığı için övüyor. İşi güvenini satmak. Sen 'o kullanıyorsa iyidir' dersin, tam da istedikleri bu. Ünlü bir vitrin; ürünü değil imajını satar. Öneriyi değil, ürünün kendisini araştır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O ünlü sevdiğin ürünü kullandığı için değil, para aldığı için övüyor. İşi güvenini satmak. Sen 'o kullanıyorsa iyidir' dersin, tam da istedikleri bu. Ünlü bir vitrin; ürünü değil imajını satar. Öneriyi değil, ürünün kendisini araştır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "ünlü reklam",
@@ -3199,7 +3199,7 @@
         "gorsel": "fan buying endorsed product closeup"
       },
       {
-        "metin": "şüpheci izleyici",
+        "metin": "şüpheci izleyici Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "skeptical viewer watching ad closeup"
       }
     ],
@@ -3223,7 +3223,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Büyük bir markette bir şey almaya girersin, çıkışı bulamazsın. Temel ürünler hep en uzakta, en dipte. Neden? Çünkü onlara ulaşmak için tüm mağazayı gezmen gerekir. Gezerken planlamadığın onlarca şey alırsın. Labirent kasıtlı. Kaybolman satışa dönüşür. Listeni yap, sadece gerekeni al, çıkışa yönel. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Büyük bir markette bir şey almaya girersin, çıkışı bulamazsın. Temel ürünler hep en uzakta, en dipte. Neden? Çünkü onlara ulaşmak için tüm mağazayı gezmen gerekir. Gezerken planlamadığın onlarca şey alırsın. Labirent kasıtlı. Kaybolman satışa dönüşür. Listeni yap, sadece gerekeni al, çıkışa yönel. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "büyük market içi",
@@ -3246,7 +3246,7 @@
         "gorsel": "milk at far back of store closeup"
       },
       {
-        "metin": "çıkış arayan",
+        "metin": "çıkış arayan Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person looking for exit closeup"
       }
     ],
@@ -3270,7 +3270,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir yere taksiyle gidersin ve şoför hiç bilmediğin, uzun bir güzergah seçer. Bazen bu gerçekten trafik yüzündendir. Ama bazen de sırf ücreti artırmak için kasıtlı yapılır. Rotayı önceden telefonundan kontrol etmek, seni bu tuzaktan koruyan en basit yoldur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir yere taksiyle gidersin ve şoför hiç bilmediğin, uzun bir güzergah seçer. Bazen bu gerçekten trafik yüzündendir. Ama bazen de sırf ücreti artırmak için kasıtlı yapılır. Rotayı önceden telefonundan kontrol etmek, seni bu tuzaktan koruyan en basit yoldur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "taksi içi",
@@ -3293,7 +3293,7 @@
         "gorsel": "hailing a taxi street"
       },
       {
-        "metin": "yolcu arka koltuk",
+        "metin": "yolcu arka koltuk Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "gps navigation in car"
       }
     ],
@@ -3317,7 +3317,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'İkincisini yarı fiyatına al' ya da 'üç al iki öde' kampanyaları kazançlı gibi görünür, ama senin ihtiyacın tek bir üründü. İkincisini aldığında çoğu zaman ya bozulur ya da hiç kullanmazsın, yani tek ürünün maliyetinden fazlasını ödemiş olursun. Bu kampanyalar sana ihtiyacın olmayanı aldırır. İhtiyacın kadar alırsan, kampanya sana sahte bir ihtiyaç yaratamaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'İkincisini yarı fiyatına al' ya da 'üç al iki öde' kampanyaları kazançlı gibi görünür, ama senin ihtiyacın tek bir üründü. İkincisini aldığında çoğu zaman ya bozulur ya da hiç kullanmazsın, yani tek ürünün maliyetinden fazlasını ödemiş olursun. Bu kampanyalar sana ihtiyacın olmayanı aldırır. İhtiyacın kadar alırsan, kampanya sana sahte bir ihtiyaç yaratamaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "ikincisi bedava",
@@ -3340,7 +3340,7 @@
         "gorsel": "discount bundle products"
       },
       {
-        "metin": "düşünen alıcı",
+        "metin": "düşünen alıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "grabbing extra item store"
       }
     ],
@@ -3364,7 +3364,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Telefonuna düşen 'sadece size özel indirim' mesajı seni değerli hissettirir, ama aynı mesaj milyonlarca kişiye birden gönderilmiştir. 'Sana özel' sözü gerçek bir ayrıcalık değil, seni bağlamak için kurulmuş bir kalıptır. Kendini özel sandığın an, daha rahat harcarsın. Teklif herkese aynıdır. O yüzden duyguya değil, teklifin gerçek değerine bakmalısın. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Telefonuna düşen 'sadece size özel indirim' mesajı seni değerli hissettirir, ama aynı mesaj milyonlarca kişiye birden gönderilmiştir. 'Sana özel' sözü gerçek bir ayrıcalık değil, seni bağlamak için kurulmuş bir kalıptır. Kendini özel sandığın an, daha rahat harcarsın. Teklif herkese aynıdır. O yüzden duyguya değil, teklifin gerçek değerine bakmalısın. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "sana özel mesaj",
@@ -3387,7 +3387,7 @@
         "gorsel": "person reading promo text"
       },
       {
-        "metin": "şüpheci bakış",
+        "metin": "şüpheci bakış Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "exclusive deal popup"
       }
     ],
@@ -3411,7 +3411,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bankaya, galeriye ya da mağazaya girdiğinde hemen kahve ikram edilmesi tam bir cömertlik değil, düşünülmüş bir stratejidir. Kahveni içerken oturur, kalır ve konuşursun; ne kadar uzun kalırsan o kadar bağlanır, hayır demen o kadar zorlaşır. Üstelik ikram, içinde küçük bir borçluluk hissi taşır. O bedava kahve, aslında seni masada ve kararsız tutmanın yoludur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bankaya, galeriye ya da mağazaya girdiğinde hemen kahve ikram edilmesi tam bir cömertlik değil, düşünülmüş bir stratejidir. Kahveni içerken oturur, kalır ve konuşursun; ne kadar uzun kalırsan o kadar bağlanır, hayır demen o kadar zorlaşır. Üstelik ikram, içinde küçük bir borçluluk hissi taşır. O bedava kahve, aslında seni masada ve kararsız tutmanın yoludur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "bedava kahve ikram",
@@ -3434,7 +3434,7 @@
         "gorsel": "person drinking coffee cafe"
       },
       {
-        "metin": "sıcak kahve",
+        "metin": "sıcak kahve Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "espresso machine brewing"
       }
     ],
@@ -3458,7 +3458,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Ürün alırken indirim kodu ararsın, hemen bulursun. Şans mı? Hayır, bilerek dağıtılır. Çünkü kod arayan almaya kararlıdır, küçük indirim kararsızı alıcıya çevirir. Kod neden kolay bulunur? Seni kazandım hissiyle iter. İhtiyaç için al, kod için değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Ürün alırken indirim kodu ararsın, hemen bulursun. Şans mı? Hayır, bilerek dağıtılır. Çünkü kod arayan almaya kararlıdır, küçük indirim kararsızı alıcıya çevirir. Kod neden kolay bulunur? Seni kazandım hissiyle iter. İhtiyaç için al, kod için değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "indirim kodu ekran",
@@ -3481,7 +3481,7 @@
         "gorsel": "discount applied cart closeup"
       },
       {
-        "metin": "alışveriş tamamlama",
+        "metin": "alışveriş tamamlama Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "completing online purchase closeup"
       }
     ],
@@ -3505,7 +3505,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Vitrindeki o kusursuz görüntü koca bir yanılsama. Manken gerçek insan ölçülerinde değil, kıyafet arkadan toplanıp iğnelenmiş. Sen giyince farklı görünür, kötü hisseder, 'başka bir şey de alayım' dersin. Manken bir reklam; kendine değil, ürünün gerçeğine odaklan. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Vitrindeki o kusursuz görüntü koca bir yanılsama. Manken gerçek insan ölçülerinde değil, kıyafet arkadan toplanıp iğnelenmiş. Sen giyince farklı görünür, kötü hisseder, 'başka bir şey de alayım' dersin. Manken bir reklam; kendine değil, ürünün gerçeğine odaklan. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "vitrin mankeni",
@@ -3528,7 +3528,7 @@
         "gorsel": "dressed mannequin display closeup"
       },
       {
-        "metin": "ayna önünde kişi",
+        "metin": "ayna önünde kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person in front of mirror closeup"
       }
     ],
@@ -3549,7 +3549,7 @@
       "bilinç"
     ],
     "kanca": "HEPSİNE DÜŞÜYORSUN!",
-    "script": "Bugün fark etmeden en az üç tuzağa düştün. Bir: markette göz hizasındaki en pahalı ürünü aldın, ucuzlar alt raftaydı. İki: 'ayda sadece şu kadar' yazısına kandın, toplam fiyata bakmadın. Üç: kasadaki çikolatayı planlamadan sepete attın, çünkü tam oraya konmuştu. Üçü de tesadüf değil, hepsi tasarlandı. Farkında olmak ilk adım. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bugün fark etmeden en az üç tuzağa düştün. Bir: markette göz hizasındaki en pahalı ürünü aldın, ucuzlar alt raftaydı. İki: 'ayda sadece şu kadar' yazısına kandın, toplam fiyata bakmadın. Üç: kasadaki çikolatayı planlamadan sepete attın, çünkü tam oraya konmuştu. Üçü de tesadüf değil, hepsi tasarlandı. Farkında olmak ilk adım. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "göz hizası raf",
@@ -3572,7 +3572,7 @@
         "gorsel": "candy at checkout counter"
       },
       {
-        "metin": "düşünen kişi",
+        "metin": "düşünen kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person thinking shopping cart"
       }
     ],
@@ -3592,7 +3592,7 @@
       "bilinç"
     ],
     "kanca": "DÜRÜST CEVAP VER!",
-    "script": "Kendini test et. İndirim yazısını görünce ihtiyacın olmasa da bakıyor musun? 'Son ürün' yazısı seni acele ettiriyor mu? Ayda taksit rakamı sana ucuz geliyor mu? Üçüne de evet dediysen, tam hedef kitlesisin. Merak etme, bu bir kusur değil, herkesin beyni böyle çalışır. Ama fark eden kazanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Kendini test et. İndirim yazısını görünce ihtiyacın olmasa da bakıyor musun? 'Son ürün' yazısı seni acele ettiriyor mu? Ayda taksit rakamı sana ucuz geliyor mu? Üçüne de evet dediysen, tam hedef kitlesisin. Merak etme, bu bir kusur değil, herkesin beyni böyle çalışır. Ama fark eden kazanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "indirim etiketi",
@@ -3615,7 +3615,7 @@
         "gorsel": "person scratching head confused"
       },
       {
-        "metin": "anlayan kişi",
+        "metin": "anlayan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "confident person nodding"
       }
     ],
@@ -3635,7 +3635,7 @@
       "para"
     ],
     "kanca": "ÇOĞU KİŞİ BİLMİYOR",
-    "script": "Bunu çoğu kişi bilmiyor: fiyat etiketlerinde lira simgesi çoğu zaman bilerek çok küçük yazılır ya da hiç konmaz. Neden? Para birimini görmek harcamanın acısını hatırlatır. Simge yoksa o rakam sadece bir sayıya dönüşür, sen de daha kolay ödersin. Küçük bir detay ama beynini doğrudan etkiler. Etikete dikkatli bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bunu çoğu kişi bilmiyor: fiyat etiketlerinde lira simgesi çoğu zaman bilerek çok küçük yazılır ya da hiç konmaz. Neden? Para birimini görmek harcamanın acısını hatırlatır. Simge yoksa o rakam sadece bir sayıya dönüşür, sen de daha kolay ödersin. Küçük bir detay ama beynini doğrudan etkiler. Etikete dikkatli bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "fiyat etiketi",
@@ -3658,7 +3658,7 @@
         "gorsel": "number price sticker closeup"
       },
       {
-        "metin": "dikkatli bakış",
+        "metin": "dikkatli bakış Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person reading price tag"
       }
     ],
@@ -3847,7 +3847,7 @@
   {
     "baslik": "ABONELİKLERİNİ YILDA BİR SAY! 🔄",
     "kanca": "KAÇ ABONELİĞİN VAR?",
-    "script": "Dur ve say: kaç aboneliğin var? Çoğu insan bilmez. Kullanmadığın uygulama, unuttuğun üyelik, her ay sessizce hesabından çıkar. Yılda bir gün ayır, hepsini gözden geçir, kullanmadığını iptal et. Bazen aylık küçük görünen tutarlar, yılda koca bir rakam eder.",
+    "script": "Dur ve say: kaç aboneliğin var? Çoğu insan bilmez. Kullanmadığın uygulama, unuttuğun üyelik, her ay sessizce hesabından çıkar. Yılda bir gün ayır, hepsini gözden geçir, kullanmadığını iptal et. Bazen aylık küçük görünen tutarlar, yılda koca bir rakam eder. Yarın yeni bir video seni bekliyor, kaçırma.",
     "etiketler": [
       "tasarruf ipuçları",
       "abonelik iptali",
@@ -3882,7 +3882,7 @@
         "gorsel": "a finger tapping a cancel subscription button"
       },
       {
-        "metin": "biriken tasarruf",
+        "metin": "biriken tasarruf Yarın yeni bir video seni bekliyor, kaçırma.",
         "gorsel": "coins being saved into a jar"
       }
     ],
