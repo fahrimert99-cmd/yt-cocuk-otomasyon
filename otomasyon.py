@@ -218,7 +218,7 @@ def main():
         "video_id": _vid,
         "metin": (f"{veri.get('kanca','Bu tuzağı biliyor muydun?')}\n\n"
                   "Sen bu tuzağa hiç düştün mü? Yorumla \U0001F447\n"
-                  "\U0001F514 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"),
+                  "\U0001F514 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"),
     }
     # TikTok/Reels icin: videoyu + kapagi calisma dizinine kopyala.
     # NOT: Repoya COMMIT EDILMEZ — 18MB'lik mp4'ler git gecmisini sisiriyordu.

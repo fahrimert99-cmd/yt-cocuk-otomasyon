@@ -2,10 +2,11 @@ name: Gunluk Bilim Videosu
 
 on:
   schedule:
-    # Günde 2 Shorts (büyüme: her yükleme algoritmada yeni bir "atış").
-    # 12 saat arayla yayıldı; concurrency grubu çakışmayı serialize eder.
-    - cron: "0 5 * * *"    # 08:00 TR (sabah)
-    - cron: "0 17 * * *"   # 20:00 TR (akşam)
+    # Günde 2 Shorts, TR aktif saatlerine yayıldı (config.yayin_saati_utc=""
+    # olduğu için video cron anında ANINDA public olur -> cron saati = yayın saati).
+    # concurrency grubu çakışmayı serialize eder.
+    - cron: "0 9 * * *"    # 12:00 TR (öğle dalgası)
+    - cron: "0 17 * * *"   # 20:00 TR (akşam prime-time)
   workflow_dispatch:
 
 permissions:
