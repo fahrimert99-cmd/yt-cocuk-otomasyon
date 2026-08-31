@@ -10,7 +10,7 @@
       "tüketici",
       "kar"
     ],
-    "script": "Açık büfede tabaklar bilerek küçüktür ve ekmek, pilav, makarna gibi ucuz doyuranlar hep en başa konur. Amaç, seni ucuz olanla doyurup pahalı üründen uzak tutmak. Aç gitme ve önce pahalı olan yemeklerden al.",
+    "script": "Açık büfede tabaklar bilerek küçüktür ve ekmek, pilav, makarna gibi ucuz doyuranlar hep en başa konur. Amaç, seni ucuz olanla doyurup pahalı üründen uzak tutmak. Aç gitme ve önce pahalı olan yemeklerden al. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "NEDEN TABAKLAR KÜÇÜK?",
     "sahneler": [
       {
@@ -34,7 +34,7 @@
         "gorsel": "rice and pasta tray"
       },
       {
-        "metin": "Aç gitme ve önce pahalı olan yemeklerden al.",
+        "metin": "Aç gitme ve önce pahalı olan yemeklerden al. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "restaurant dining hall"
       }
     ],
@@ -51,7 +51,7 @@
       "tüketici",
       "tasarruf"
     ],
-    "script": "İlk saat ücretsiz yazısı seni içeri çekmek içindir. İçeri girdikten sonra ücret saat başı katlanarak artar ve çıkışta şaşırırsın. Girmeden önce tam tarifeyi oku ve süreni bilerek ayarla, kör girme.",
+    "script": "İlk saat ücretsiz yazısı seni içeri çekmek içindir. İçeri girdikten sonra ücret saat başı katlanarak artar ve çıkışta şaşırırsın. Girmeden önce tam tarifeyi oku ve süreni bilerek ayarla, kör girme. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "İLK SAAT NEDEN BEDAVA?",
     "sahneler": [
       {
@@ -75,7 +75,7 @@
         "gorsel": "hand taking ticket"
       },
       {
-        "metin": "Girmeden önce tam tarifeyi oku ve süreni bilerek ayarla, kör girme.",
+        "metin": "Girmeden önce tam tarifeyi oku ve süreni bilerek ayarla, kör girme. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "car exit barrier"
       }
     ],
@@ -92,7 +92,7 @@
       "tüketici",
       "psikoloji"
     ],
-    "script": "Menüdeki en pahalı yemek satılmak için değil, yanındakini sana ucuz göstermek için oradadır. Gözünü de sağ üst köşeye çekerler, çünkü orası en kârlı bölgedir. Fiyatın yönlendirmesine değil, canının çektiğine bak.",
+    "script": "Menüdeki en pahalı yemek satılmak için değil, yanındakini sana ucuz göstermek için oradadır. Gözünü de sağ üst köşeye çekerler, çünkü orası en kârlı bölgedir. Fiyatın yönlendirmesine değil, canının çektiğine bak. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "EN PAHALI YEMEK NEDEN ORADA?",
     "sahneler": [
       {
@@ -116,7 +116,7 @@
         "gorsel": "restaurant table setting"
       },
       {
-        "metin": "Fiyatın yönlendirmesine değil, canının çektiğine bak.",
+        "metin": "Fiyatın yönlendirmesine değil, canının çektiğine bak. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "hand pointing menu"
       }
     ],
@@ -133,7 +133,7 @@
       "alışveriş",
       "tüketici"
     ],
-    "script": "Üstü çizili o eski fiyat çoğu zaman hiç var olmadı bile. O yüksek rakam, indirimli fiyatı sana ucuz göstermek için konur; ürün belki o fiyattan hiç satılmadı. Sahte bir kıyas yaratırlar. Ürünün gerçek değerine bak, çizgiye değil.",
+    "script": "Üstü çizili o eski fiyat çoğu zaman hiç var olmadı bile. O yüksek rakam, indirimli fiyatı sana ucuz göstermek için konur; ürün belki o fiyattan hiç satılmadı. Sahte bir kıyas yaratırlar. Ürünün gerçek değerine bak, çizgiye değil. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "ESKİ FİYAT GERÇEK Mİ?",
     "sahneler": [
       {
@@ -157,7 +157,7 @@
         "gorsel": "hand holding tag"
       },
       {
-        "metin": "Ürünün gerçek değerine bak, çizgiye değil.",
+        "metin": "Ürünün gerçek değerine bak, çizgiye değil. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "person shopping decision"
       }
     ],
@@ -174,7 +174,7 @@
       "harcama",
       "tüketici"
     ],
-    "script": "Kuaförde ekstralar tam 'hayır' demenin en zor olduğu anda önerilir. Koltuğa oturup işlem başlayınca yıkama, maske, fön gibi eklemeleri teklif ederler; her biri küçük ücret, toplamı büyük. Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme.",
+    "script": "Kuaförde ekstralar tam 'hayır' demenin en zor olduğu anda önerilir. Koltuğa oturup işlem başlayınca yıkama, maske, fön gibi eklemeleri teklif ederler; her biri küçük ücret, toplamı büyük. Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "SEN İSTEMEDEN NASIL ARTAR?",
     "sahneler": [
       {
@@ -198,7 +198,7 @@
         "gorsel": "mirror reflection salon"
       },
       {
-        "metin": "Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme.",
+        "metin": "Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "paying at salon counter"
       }
     ],
@@ -215,7 +215,7 @@
       "alışveriş",
       "tüketici"
     ],
-    "script": "Marketlerde büyük indirim reyonu genelde tam girişte ve göz hizasında durur. Amaç, daha ihtiyacını düşünmeden sepetini doldurtmak. Göz hizasındaki ürünler en pahalı, en kârlı olanlardır; ucuzlar alt ve üst raflardadır. Eğil, bak, listene sadık kal.",
+    "script": "Marketlerde büyük indirim reyonu genelde tam girişte ve göz hizasında durur. Amaç, daha ihtiyacını düşünmeden sepetini doldurtmak. Göz hizasındaki ürünler en pahalı, en kârlı olanlardır; ucuzlar alt ve üst raflardadır. Eğil, bak, listene sadık kal. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "NEDEN GİRİŞTE DURUR?",
     "sahneler": [
       {
@@ -239,7 +239,7 @@
         "gorsel": "bottom shelf products"
       },
       {
-        "metin": "Eğil, bak, listene sadık kal.",
+        "metin": "Eğil, bak, listene sadık kal. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "person choosing product"
       }
     ],
@@ -3667,7 +3667,7 @@
   {
     "baslik": "LİSTEYLE GİT, YARISINA ÇIK! 📝",
     "kanca": "LİSTE = KALKAN",
-    "script": "Markete listesiz girme. Liste yoksa her raf sana 'beni al' der. Listeyle gidersen sadece ihtiyacını alırsın, dürtüsel harcama yarı yarıya iner. Kalemle yaz ya da telefona not et, fark etmez. Liste senin kalkanın. Bir dahaki sefere dene.",
+    "script": "Markete listesiz girme. Liste yoksa her raf sana 'beni al' der. Listeyle gidersen sadece ihtiyacını alırsın, dürtüsel harcama yarı yarıya iner. Kalemle yaz ya da telefona not et, fark etmez. Liste senin kalkanın. Bir dahaki sefere dene. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "tasarruf ipuçları",
       "alışveriş listesi",
@@ -3702,7 +3702,7 @@
         "gorsel": "a shopping list app on a smartphone screen"
       },
       {
-        "metin": "kalkan gibi liste",
+        "metin": "kalkan gibi liste Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a confident shopper walking past tempting shelves"
       }
     ],
@@ -3712,7 +3712,7 @@
   {
     "baslik": "24 SAAT BEKLE, PİŞMAN OLMA! ⏳",
     "kanca": "24 SAAT KURALI",
-    "script": "Bir şeyi çok istedin, hemen alacaksın. Dur. 24 saat bekle. Ertesi gün çoğu istek buharlaşır, çünkü o an sadece dürtüydü. Gerçekten gerekliyse yarın da istersin. Sepette beklet, uyu, sonra bak. İşte pişmanlığın panzehiri: 24 saat kuralı.",
+    "script": "Bir şeyi çok istedin, hemen alacaksın. Dur. 24 saat bekle. Ertesi gün çoğu istek buharlaşır, çünkü o an sadece dürtüydü. Gerçekten gerekliyse yarın da istersin. Sepette beklet, uyu, sonra bak. İşte pişmanlığın panzehiri: 24 saat kuralı. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "tasarruf ipuçları",
       "dürtüsel alışveriş",
@@ -3747,7 +3747,7 @@
         "gorsel": "a person sleeping peacefully at night"
       },
       {
-        "metin": "bilinçli karar",
+        "metin": "bilinçli karar Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a calm person deciding thoughtfully with phone"
       }
     ],
@@ -3757,7 +3757,7 @@
   {
     "baslik": "BÜYÜK PAKET HER ZAMAN UCUZ DEĞİL! ⚖️",
     "kanca": "RAFTAKİ KÜÇÜK YAZIYA BAK",
-    "script": "Büyük paket ucuzdur sanıyorsun. Her zaman değil. Etikette küçük bir yazı var: birim fiyat. Kilogram ya da litre başına fiyat. Bazen küçük paket birim başına daha ucuzdur. Toplam fiyata değil, o küçük yazıya bak. Bir bakışta kim kazanır belli olur.",
+    "script": "Büyük paket ucuzdur sanıyorsun. Her zaman değil. Etikette küçük bir yazı var: birim fiyat. Kilogram ya da litre başına fiyat. Bazen küçük paket birim başına daha ucuzdur. Toplam fiyata değil, o küçük yazıya bak. Bir bakışta kim kazanır belli olur. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "tasarruf ipuçları",
       "birim fiyat",
@@ -3792,7 +3792,7 @@
         "gorsel": "a calculator next to grocery products"
       },
       {
-        "metin": "doğru seçim",
+        "metin": "doğru seçim Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a hand choosing the better value product"
       }
     ],
@@ -3802,7 +3802,7 @@
   {
     "baslik": "AÇKEN MARKETE GİTME! 🍎",
     "kanca": "AÇ KARIN = DOLU SEPET",
-    "script": "Aç karnına markete girme. Aç beyin her şeyi lezzetli görür, sepet kendiliğinden dolar. Araştırmalar açken daha çok ve daha çok kalorili aldığını söylüyor. Önce bir şeyler ye, sonra çık. Küçük numara, büyük tasarruf. Aç karın, dolu sepet demektir.",
+    "script": "Aç karnına markete girme. Aç beyin her şeyi lezzetli görür, sepet kendiliğinden dolar. Araştırmalar açken daha çok ve daha çok kalorili aldığını söylüyor. Önce bir şeyler ye, sonra çık. Küçük numara, büyük tasarruf. Aç karın, dolu sepet demektir. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "tasarruf ipuçları",
       "market psikolojisi",
@@ -3837,7 +3837,7 @@
         "gorsel": "a person eating an apple before shopping"
       },
       {
-        "metin": "kontrollü alışveriş",
+        "metin": "kontrollü alışveriş Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a satisfied shopper with a light basket"
       }
     ],
@@ -3892,7 +3892,7 @@
   {
     "baslik": "KÂĞIT PARA KÂĞITTAN DEĞİL! 💵",
     "kanca": "PARA NEDEN YIRTILMAZ?",
-    "script": "Kâğıt para aslında kâğıt değildir. Çoğu banknot pamuk ve keten liflerinden yapılır. O yüzden cebinde çamaşıra girse bile kolay kolay dağılmaz. Bazı ülkeler ise plastikten para basar. Yani cebindeki para bildiğin kâğıttan çok daha dayanıklı. Şimdi bir kez daha bak ona.",
+    "script": "Kâğıt para aslında kâğıt değildir. Çoğu banknot pamuk ve keten liflerinden yapılır. O yüzden cebinde çamaşıra girse bile kolay kolay dağılmaz. Bazı ülkeler ise plastikten para basar. Yani cebindeki para bildiğin kâğıttan çok daha dayanıklı. Şimdi bir kez daha bak ona. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",
       "ilginç bilgi",
@@ -3927,7 +3927,7 @@
         "gorsel": "a modern polymer plastic banknote, transparent window"
       },
       {
-        "metin": "paraya bakış",
+        "metin": "paraya bakış Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a person examining a banknote closely in light"
       }
     ],
@@ -3937,7 +3937,7 @@
   {
     "baslik": "BOZUK PARANIN KENARI NEDEN TIRTIKLI? 🪙",
     "kanca": "O TIRTIKLARIN SIRRI",
-    "script": "Madeni paraların kenarındaki o küçük tırtıkları hiç düşündün mü? Süs değil onlar. Eskiden paralar değerli metalden yapılırdı, insanlar kenarından kazıyıp metal çalardı. Tırtıklar sayesinde kesik hemen belli oluyordu. Bugün metal değersiz ama tırtık alışkanlıktan kaldı. İşte o tırtıkların sırrı.",
+    "script": "Madeni paraların kenarındaki o küçük tırtıkları hiç düşündün mü? Süs değil onlar. Eskiden paralar değerli metalden yapılırdı, insanlar kenarından kazıyıp metal çalardı. Tırtıklar sayesinde kesik hemen belli oluyordu. Bugün metal değersiz ama tırtık alışkanlıktan kaldı. İşte o tırtıkların sırrı. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",
       "ilginç bilgi",
@@ -3972,7 +3972,7 @@
         "gorsel": "a stack of shiny coins close up"
       },
       {
-        "metin": "parayı inceleme",
+        "metin": "parayı inceleme Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a person inspecting a coin edge with fingers"
       }
     ],
@@ -3982,7 +3982,7 @@
   {
     "baslik": "KIRMIZI RENK NEDEN İŞTAH AÇAR? 🔴",
     "kanca": "RENKLER SENİ ACIKTIRIR",
-    "script": "Fast food markalarına dikkat et: neredeyse hepsi kırmızı ve sarı. Tesadüf değil. Kırmızı iştahı ve heyecanı uyarır, sarı ise dikkat çeker ve mutluluk hissi verir. Beynin bu renkleri görünce 'acıktım' der. Yani seni acıktıran sadece koku değil, renkler de. Fark et.",
+    "script": "Fast food markalarına dikkat et: neredeyse hepsi kırmızı ve sarı. Tesadüf değil. Kırmızı iştahı ve heyecanı uyarır, sarı ise dikkat çeker ve mutluluk hissi verir. Beynin bu renkleri görünce 'acıktım' der. Yani seni acıktıran sadece koku değil, renkler de. Fark et. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",
       "renk psikolojisi",
@@ -4017,7 +4017,7 @@
         "gorsel": "a colorful fast food menu board glowing"
       },
       {
-        "metin": "farkındalık",
+        "metin": "farkındalık Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a thoughtful person noticing bright branding"
       }
     ],
@@ -4027,7 +4027,7 @@
   {
     "baslik": "'BEDAVA' KELİMESİ BEYNİ NASIL KANDIRIR? 🧠",
     "kanca": "BEDAVA = DOPAMİN",
-    "script": "Bir kelime var ki beyni anında ele geçirir: bedava. Gerçekten istemesen bile, bedava duyunca beyninde küçük bir ödül sinyali patlar. Mantık susar, dürtü konuşur. Markalar bunu bilir, o yüzden 'bedava' kelimesini her yere yazar. Bir dahaki sefere gördüğünde, dur ve düşün.",
+    "script": "Bir kelime var ki beyni anında ele geçirir: bedava. Gerçekten istemesen bile, bedava duyunca beyninde küçük bir ödül sinyali patlar. Mantık susar, dürtü konuşur. Markalar bunu bilir, o yüzden 'bedava' kelimesini her yere yazar. Bir dahaki sefere gördüğünde, dur ve düşün. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",
       "para psikolojisi",
@@ -4062,7 +4062,7 @@
         "gorsel": "multiple free offer tags in a store"
       },
       {
-        "metin": "dur ve düşün",
+        "metin": "dur ve düşün Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a person pausing thoughtfully before buying"
       }
     ],
@@ -4072,7 +4072,7 @@
   {
     "baslik": "REKLAM BİNLERCE YIL ÖNCE DE VARDI! 📜",
     "kanca": "İLK REKLAM ÇOK ESKİ",
-    "script": "Reklam yeni bir şey sanıyorsun ama binlerce yıl öncesine dayanır. Antik şehirlerin duvarlarında dükkânları öven yazılar, pazarlarda bağıran satıcılar hep birer reklamdı. İnsan olduğu sürece birileri bir şey satmaya çalıştı. Değişen tek şey ekran. Yani reklam, sandığından çok daha yaşlı.",
+    "script": "Reklam yeni bir şey sanıyorsun ama binlerce yıl öncesine dayanır. Antik şehirlerin duvarlarında dükkânları öven yazılar, pazarlarda bağıran satıcılar hep birer reklamdı. İnsan olduğu sürece birileri bir şey satmaya çalıştı. Değişen tek şey ekran. Yani reklam, sandığından çok daha yaşlı. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",
       "reklam tarihi",
@@ -4107,7 +4107,7 @@
         "gorsel": "a modern digital billboard in a city"
       },
       {
-        "metin": "değişmeyen amaç",
+        "metin": "değişmeyen amaç Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "contrast of old and new advertising"
       }
     ],
@@ -4117,7 +4117,7 @@
   {
     "baslik": "GÜN SONU NEDEN KÖTÜ KARAR VERİRSİN? 🌙",
     "kanca": "KARAR YORGUNLUĞU",
-    "script": "Gün boyu yüzlerce küçük karar verirsin: ne giyeceğin, ne yiyeceğin, hangi yol. Akşama doğru beynin yorulur, buna karar yorgunluğu denir. Yorgun beyin en kolay 'evet'i seçer. İşte bu yüzden akşam alışverişinde daha çok harcarsın. Önemli kararları sabaha bırak. Sırrı bu.",
+    "script": "Gün boyu yüzlerce küçük karar verirsin: ne giyeceğin, ne yiyeceğin, hangi yol. Akşama doğru beynin yorulur, buna karar yorgunluğu denir. Yorgun beyin en kolay 'evet'i seçer. İşte bu yüzden akşam alışverişinde daha çok harcarsın. Önemli kararları sabaha bırak. Sırrı bu. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "karar yorgunluğu",
       "psikoloji",
@@ -4152,7 +4152,7 @@
         "gorsel": "late evening online shopping on a couch"
       },
       {
-        "metin": "sabaha bırak",
+        "metin": "sabaha bırak Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a fresh morning person deciding clearly"
       }
     ],
@@ -4162,7 +4162,7 @@
   {
     "baslik": "KALABALIKTA NEDEN AYNISINI YAPARSIN? 👥",
     "kanca": "SÜRÜ İÇGÜDÜSÜ",
-    "script": "İki restoran var: biri boş, biri kuyruklu. Hangisine girersin? Çoğu insan kuyruğa geçer. Buna sosyal kanıt denir; başkaları yapıyorsa doğrudur sanırız. Yorum sayısı, 'en çok satan' etiketi, kalabalık hep bu içgüdüyü kullanır. Bazen kalabalık yanılır. Kendi kararını ver.",
+    "script": "İki restoran var: biri boş, biri kuyruklu. Hangisine girersin? Çoğu insan kuyruğa geçer. Buna sosyal kanıt denir; başkaları yapıyorsa doğrudur sanırız. Yorum sayısı, 'en çok satan' etiketi, kalabalık hep bu içgüdüyü kullanır. Bazen kalabalık yanılır. Kendi kararını ver. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "sosyal kanıt",
       "psikoloji",
@@ -4197,7 +4197,7 @@
         "gorsel": "five star reviews on a phone screen"
       },
       {
-        "metin": "kendi kararın",
+        "metin": "kendi kararın Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a confident person walking their own way"
       }
     ],
@@ -4207,7 +4207,7 @@
   {
     "baslik": "TELEFONU NEDEN BOŞUNA KONTROL EDERSİN? 📱",
     "kanca": "BEKLENMEDİK ÖDÜL",
-    "script": "Telefonu elin alışkanlıkla açıyor, hiçbir bildirim yokken bile. Neden? Çünkü bazen bir mesaj, bazen bir beğeni gelir; bu 'belki vardır' hissi bağımlılık yapar. Buna değişken ödül denir, aynı kumar makinesi gibi. Uygulamalar tam da bunun için tasarlanır. Fark ettin mi?",
+    "script": "Telefonu elin alışkanlıkla açıyor, hiçbir bildirim yokken bile. Neden? Çünkü bazen bir mesaj, bazen bir beğeni gelir; bu 'belki vardır' hissi bağımlılık yapar. Buna değişken ödül denir, aynı kumar makinesi gibi. Uygulamalar tam da bunun için tasarlanır. Fark ettin mi? Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "değişken ödül",
       "telefon bağımlılığı",
@@ -4242,7 +4242,7 @@
         "gorsel": "a slot machine reels spinning, close up"
       },
       {
-        "metin": "farkındalık anı",
+        "metin": "farkındalık anı Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a person putting the phone down thoughtfully"
       }
     ],
@@ -4252,7 +4252,7 @@
   {
     "baslik": "İLK İZLENİM KAÇ SANİYEDE OLUŞUR? 👀",
     "kanca": "SANİYELER YETER",
-    "script": "Biriyle tanışırken beynin karar vermek için günlerce beklemez. İlk izlenim saniyeler içinde oluşur, hatta bazen bir bakış yeter. Duruş, ses tonu, yüz ifadesi... Beyin hızlı bir tahmin yapar ve sonra ona uygun kanıt arar. İyi haber: ilk saniyeleri sen de yönetebilirsin.",
+    "script": "Biriyle tanışırken beynin karar vermek için günlerce beklemez. İlk izlenim saniyeler içinde oluşur, hatta bazen bir bakış yeter. Duruş, ses tonu, yüz ifadesi... Beyin hızlı bir tahmin yapar ve sonra ona uygun kanıt arar. İyi haber: ilk saniyeleri sen de yönetebilirsin. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "ilk izlenim",
       "psikoloji",
@@ -4287,7 +4287,7 @@
         "gorsel": "a person observing another attentively"
       },
       {
-        "metin": "ilk saniyeler",
+        "metin": "ilk saniyeler Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a stopwatch showing just a few seconds"
       }
     ],
@@ -4297,7 +4297,7 @@
   {
     "baslik": "BEYNİN NEDEN SÜREKLİ ERTELER? ⏰",
     "kanca": "ANLIK BEYİN KAZANIR",
-    "script": "Yarın başlarım dedin, yine olmadı. Suç tembellikte değil. Beyninde iki taraf var: biri geleceği düşünür, diğeri şu anki keyfi ister. Erteleme, anlık keyfi isteyen tarafın kazanmasıdır. Çözüm: işi küçük parçala, ilk adımı iki dakikaya indir. Beyni kandır, harekete geç.",
+    "script": "Yarın başlarım dedin, yine olmadı. Suç tembellikte değil. Beyninde iki taraf var: biri geleceği düşünür, diğeri şu anki keyfi ister. Erteleme, anlık keyfi isteyen tarafın kazanmasıdır. Çözüm: işi küçük parçala, ilk adımı iki dakikaya indir. Beyni kandır, harekete geç. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "erteleme",
       "psikoloji",
@@ -4332,7 +4332,7 @@
         "gorsel": "a hand starting a small simple task"
       },
       {
-        "metin": "harekete geçme",
+        "metin": "harekete geçme Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a motivated person starting to work focused"
       }
     ],
@@ -4342,7 +4342,7 @@
   {
     "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
     "kanca": "GEMİLER NEDEN KAYBOLUYOR?",
-    "script": "Atlantik'te bir bölge var: içine giren gemiler, uçaklar bazen bir daha görünmüyor. Bermuda Şeytan Üçgeni. Dev metan kabarcıkları mı, tuhaf manyetik alanlar mı, yoksa sadece fırtına mı? Bilim tartışıyor ama kimse kesin bilmiyor. Peki gemiler gerçekten neden kayboluyor?",
+    "script": "Atlantik'te bir bölge var: içine giren gemiler, uçaklar bazen bir daha görünmüyor. Bermuda Şeytan Üçgeni. Dev metan kabarcıkları mı, tuhaf manyetik alanlar mı, yoksa sadece fırtına mı? Bilim tartışıyor ama kimse kesin bilmiyor. Peki gemiler gerçekten neden kayboluyor? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "bermuda şeytan üçgeni",
       "gizem",
@@ -4377,7 +4377,7 @@
         "gorsel": "a compass needle spinning erratically, close up"
       },
       {
-        "metin": "çözülemeyen sır",
+        "metin": "çözülemeyen sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "mysterious dark ocean horizon at dusk"
       }
     ],
@@ -4387,7 +4387,7 @@
   {
     "baslik": "PİRAMİTLER GERÇEKTE NASIL YAPILDI? 🔺",
     "kanca": "2 MİLYON TAŞI KİM TAŞIDI?",
-    "script": "Büyük Piramit, her biri tonlarca ağırlıkta 2 milyondan fazla taş bloktan yapıldı. Vinç yok, makine yok. Peki binlerce yıl önce insanlar bu devasa taşları nasıl kesip, taşıyıp üst üste koydu? Rampalar mı, kızaklar mı? Hâlâ tam olarak bilinmiyor. Sence nasıl yaptılar?",
+    "script": "Büyük Piramit, her biri tonlarca ağırlıkta 2 milyondan fazla taş bloktan yapıldı. Vinç yok, makine yok. Peki binlerce yıl önce insanlar bu devasa taşları nasıl kesip, taşıyıp üst üste koydu? Rampalar mı, kızaklar mı? Hâlâ tam olarak bilinmiyor. Sence nasıl yaptılar? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "piramitler",
       "antik mısır",
@@ -4422,7 +4422,7 @@
         "gorsel": "pyramid perfectly aligned at sunset"
       },
       {
-        "metin": "çözülemeyen sır",
+        "metin": "çözülemeyen sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "pyramids silhouette under starry sky"
       }
     ],
@@ -4432,7 +4432,7 @@
   {
     "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
     "kanca": "%95'İ HÂLÂ KEŞFEDİLMEDİ",
-    "script": "Okyanusların yüzde doksan beşi hâlâ haritalanmadı. Yani Ay'ın yüzeyini, okyanus tabanından daha iyi biliyoruz. O karanlık derinlikte kendi ışığını üreten canlılar, dev yaratıklar ve bilinmeyen türler var. En derin noktada ne yaşıyor? Kimse tam bilmiyor. Sence aşağıda ne var?",
+    "script": "Okyanusların yüzde doksan beşi hâlâ haritalanmadı. Yani Ay'ın yüzeyini, okyanus tabanından daha iyi biliyoruz. O karanlık derinlikte kendi ışığını üreten canlılar, dev yaratıklar ve bilinmeyen türler var. En derin noktada ne yaşıyor? Kimse tam bilmiyor. Sence aşağıda ne var? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "derin okyanus",
       "gizem",
@@ -4467,7 +4467,7 @@
         "gorsel": "mysterious deep sea floor with strange creatures"
       },
       {
-        "metin": "bilinmeyen derinlik",
+        "metin": "bilinmeyen derinlik Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "light fading into deep ocean abyss"
       }
     ],
@@ -4477,7 +4477,7 @@
   {
     "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
     "kanca": "11 KİLOMETRE AŞAĞIDA",
-    "script": "Dünyanın en derin noktası Mariana Çukuru: on bir kilometre aşağıda, Everest tepetaklak sığar. Orada basınç bir insanı bir anda ezer. Ama o zifiri karanlıkta hâlâ garip canlılar yaşıyor. Işık yok, güneş yok. Peki en dipte gerçekte ne var? Kimse tam bilmiyor.",
+    "script": "Dünyanın en derin noktası Mariana Çukuru: on bir kilometre aşağıda, Everest tepetaklak sığar. Orada basınç bir insanı bir anda ezer. Ama o zifiri karanlıkta hâlâ garip canlılar yaşıyor. Işık yok, güneş yok. Peki en dipte gerçekte ne var? Kimse tam bilmiyor. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "mariana çukuru",
       "derin okyanus",
@@ -4512,7 +4512,7 @@
         "gorsel": "pitch black deep ocean abyss"
       },
       {
-        "metin": "bilinmeyen dip",
+        "metin": "bilinmeyen dip Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "mysterious deep sea trench floor"
       }
     ],
@@ -4522,7 +4522,7 @@
   {
     "baslik": "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
     "kanca": "MÜRETTEBAT YOK OLDU",
-    "script": "Bazı gemiler okyanusun ortasında bulundu ama içinde tek bir insan yoktu. Yemek masada duruyor, her şey yerli yerinde, ama mürettebat sırra kadem basmış. En ünlüsü Mary Celeste gemisi. Ne fırtına vardı ne saldırı. İnsanlar nereye gitti? Bugün bile kimse açıklayamıyor.",
+    "script": "Bazı gemiler okyanusun ortasında bulundu ama içinde tek bir insan yoktu. Yemek masada duruyor, her şey yerli yerinde, ama mürettebat sırra kadem basmış. En ünlüsü Mary Celeste gemisi. Ne fırtına vardı ne saldırı. İnsanlar nereye gitti? Bugün bile kimse açıklayamıyor. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "hayalet gemi",
       "mary celeste",
@@ -4557,7 +4557,7 @@
         "gorsel": "calm vast ocean horizon eerie"
       },
       {
-        "metin": "çözülemeyen sır",
+        "metin": "çözülemeyen sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "old nautical map with compass"
       }
     ],
@@ -4567,7 +4567,7 @@
   {
     "baslik": "MEGALODON HÂLÂ YAŞIYOR OLABİLİR Mİ? 🦈",
     "kanca": "18 METRELİK CANAVAR",
-    "script": "Megalodon tarihin en büyük köpekbalığıydı: on sekiz metre, bir otobüsten uzun. Milyonlarca yıl önce yok oldu deniliyor. Ama okyanusun yüzde doksan beşi keşfedilmedi. O derin karanlıkta hâlâ dev bir şey yaşıyor olabilir mi? Bilim hayır diyor. Peki ya derinlerde bilmediğimiz bir şey varsa?",
+    "script": "Megalodon tarihin en büyük köpekbalığıydı: on sekiz metre, bir otobüsten uzun. Milyonlarca yıl önce yok oldu deniliyor. Ama okyanusun yüzde doksan beşi keşfedilmedi. O derin karanlıkta hâlâ dev bir şey yaşıyor olabilir mi? Bilim hayır diyor. Peki ya derinlerde bilmediğimiz bir şey varsa? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "megalodon",
       "köpekbalığı",
@@ -4602,7 +4602,7 @@
         "gorsel": "vast unexplored deep sea"
       },
       {
-        "metin": "gizemli gölge",
+        "metin": "gizemli gölge Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "large shadow moving in deep water"
       }
     ],
@@ -4612,7 +4612,7 @@
   {
     "baslik": "OKYANUSTAN GELEN ESRARENGİZ SES 🔊",
     "kanca": "KİMSE AÇIKLAYAMADI",
-    "script": "Bilim insanları okyanusun derinliğinden çok güçlü tuhaf bir ses kaydetti. Adı The Bloop. Ses o kadar büyüktü ki binlerce kilometreden duyuldu. Bilinen hiçbir canlı böyle bir ses çıkaramaz. Bir buzul mu, bilinmeyen bir yaratık mı? Yıllarca tartışıldı. Sence o ses neydi?",
+    "script": "Bilim insanları okyanusun derinliğinden çok güçlü tuhaf bir ses kaydetti. Adı The Bloop. Ses o kadar büyüktü ki binlerce kilometreden duyuldu. Bilinen hiçbir canlı böyle bir ses çıkaramaz. Bir buzul mu, bilinmeyen bir yaratık mı? Yıllarca tartışıldı. Sence o ses neydi? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "the bloop",
       "okyanus sesi",
@@ -4647,7 +4647,7 @@
         "gorsel": "mysterious shape in deep dark water"
       },
       {
-        "metin": "cevapsız soru",
+        "metin": "cevapsız soru Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "vast empty ocean at dusk"
       }
     ],
@@ -4657,7 +4657,7 @@
   {
     "baslik": "DENİZİN DİBİNDEKİ KAYIP ŞEHİRLER 🏛️",
     "kanca": "SU ALTINDA BİR ŞEHİR",
-    "script": "Dalgıçlar denizin dibinde koca koca yapılar buldu: sütunlar, duvarlar, hatta sokaklar. Bir zamanlar insanların yaşadığı şehirler sular altında kalmış. Kimisi depremle, kimisi yükselen denizle battı. Belki de efsanelerdeki kayıp uygarlıklar gerçekti. Aşağıda başka neler saklı? Kimse tam bilmiyor.",
+    "script": "Dalgıçlar denizin dibinde koca koca yapılar buldu: sütunlar, duvarlar, hatta sokaklar. Bir zamanlar insanların yaşadığı şehirler sular altında kalmış. Kimisi depremle, kimisi yükselen denizle battı. Belki de efsanelerdeki kayıp uygarlıklar gerçekti. Aşağıda başka neler saklı? Kimse tam bilmiyor. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "kayıp şehir",
       "sualtı",
@@ -4692,7 +4692,7 @@
         "gorsel": "underwater ruined street archaeology"
       },
       {
-        "metin": "gizemli derinlik",
+        "metin": "gizemli derinlik Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "sunlight rays into deep blue sea"
       }
     ],
@@ -4702,7 +4702,7 @@
   {
     "baslik": "CANAVAR DALGALAR NEREDEN GELİYOR? 🌊",
     "kanca": "30 METRELİK DUVAR",
-    "script": "Denizciler yıllarca anlattı ama kimse inanmadı: birden bire beliren, otuz metrelik bir su duvarı. Sonra ölçüm cihazları o dev dalgayı gerçekten kaydetti. Sakin denizde, hiçbir uyarı olmadan çıkıyorlar ve koca gemileri yutuyorlar. Bu canavar dalgalar tam olarak nereden geliyor? Bilim hâlâ araştırıyor.",
+    "script": "Denizciler yıllarca anlattı ama kimse inanmadı: birden bire beliren, otuz metrelik bir su duvarı. Sonra ölçüm cihazları o dev dalgayı gerçekten kaydetti. Sakin denizde, hiçbir uyarı olmadan çıkıyorlar ve koca gemileri yutuyorlar. Bu canavar dalgalar tam olarak nereden geliyor? Bilim hâlâ araştırıyor. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "canavar dalga",
       "rogue wave",
@@ -4737,7 +4737,7 @@
         "gorsel": "ocean wave measurement buoy data"
       },
       {
-        "metin": "cevapsız güç",
+        "metin": "cevapsız güç Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "powerful stormy ocean waves aerial"
       }
     ],
@@ -4747,7 +4747,7 @@
   {
     "baslik": "KRAKEN GERÇEK Mİ? 🦑",
     "kanca": "GEMİLERİ YUTAN CANAVAR",
-    "script": "Eski denizciler dev bir ahtapottan bahsederdi: kollarıyla gemileri sarıp denize çeken Kraken. Uzun süre masal sanıldı. Ama sonra gerçek dev mürekkep balıkları bulundu, kimi on üç metre uzunluğunda. Efsane belki de gerçek bir canlıdan doğdu. Derinlerde daha büyükleri olabilir mi? Kimse emin değil.",
+    "script": "Eski denizciler dev bir ahtapottan bahsederdi: kollarıyla gemileri sarıp denize çeken Kraken. Uzun süre masal sanıldı. Ama sonra gerçek dev mürekkep balıkları bulundu, kimi on üç metre uzunluğunda. Efsane belki de gerçek bir canlıdan doğdu. Derinlerde daha büyükleri olabilir mi? Kimse emin değil. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "kraken",
       "dev mürekkep balığı",
@@ -4782,7 +4782,7 @@
         "gorsel": "deep dark ocean water abyss"
       },
       {
-        "metin": "gizemli gölge",
+        "metin": "gizemli gölge Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "large shadow moving deep sea"
       }
     ],
@@ -4792,7 +4792,7 @@
   {
     "baslik": "DÜNYANIN EN DERİN MAVİ DELİĞİ 🕳️",
     "kanca": "DİBİ GÖRÜNMÜYOR",
-    "script": "Denizin ortasında birden koyu mavi dev bir çukur açılıyor: mavi delikler. Yüzlerce metre derinliğe iniyorlar ve dipleri neredeyse hiç görülmüyor. İçlerinde oksijen yok, o yüzden binlerce yıllık şeyler bozulmadan korunmuş. En derinlerinde ne var? Dalgıçlar bile sonuna kadar inemiyor. Merak ediyor musun?",
+    "script": "Denizin ortasında birden koyu mavi dev bir çukur açılıyor: mavi delikler. Yüzlerce metre derinliğe iniyorlar ve dipleri neredeyse hiç görülmüyor. İçlerinde oksijen yok, o yüzden binlerce yıllık şeyler bozulmadan korunmuş. En derinlerinde ne var? Dalgıçlar bile sonuna kadar inemiyor. Merak ediyor musun? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "mavi delik",
       "blue hole",
@@ -4827,7 +4827,7 @@
         "gorsel": "still deep blue water no oxygen"
       },
       {
-        "metin": "görünmeyen dip",
+        "metin": "görünmeyen dip Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "light fading into deep blue abyss"
       }
     ],
@@ -4837,7 +4837,7 @@
   {
     "baslik": "GECE PARLAYAN DENİZLERİN SIRRI ✨",
     "kanca": "DENİZ NEDEN PARLIYOR",
-    "script": "Bazı gecelerde deniz birden ışıl ışıl parlamaya başlıyor; sanki yıldızlar suya düşmüş gibi. Buna denizin aydınlanması deniyor. Sebebi milyarlarca minik canlı: dokununca ışık saçıyorlar. Kimi zaman kilometrelerce deniz süt gibi parlıyor ve uzaydan bile görülüyor. Doğanın en büyülü gizemlerinden biri. Hiç gördün mü?",
+    "script": "Bazı gecelerde deniz birden ışıl ışıl parlamaya başlıyor; sanki yıldızlar suya düşmüş gibi. Buna denizin aydınlanması deniyor. Sebebi milyarlarca minik canlı: dokununca ışık saçıyorlar. Kimi zaman kilometrelerce deniz süt gibi parlıyor ve uzaydan bile görülüyor. Doğanın en büyülü gizemlerinden biri. Hiç gördün mü? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "biyolüminesans",
       "parlayan deniz",
@@ -4872,7 +4872,7 @@
         "gorsel": "milky sea glowing ocean satellite view"
       },
       {
-        "metin": "büyülü kıyı",
+        "metin": "büyülü kıyı Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "person on beach glowing blue water"
       }
     ],
@@ -4882,7 +4882,7 @@
   {
     "baslik": "DENİZ DİBİNDEKİ ESRARENGİZ ÇEMBERLER 🌀",
     "kanca": "KİM ÇİZDİ",
-    "script": "Dalgıçlar denizin dibinde kusursuz desenli dev çemberler buldu; sanki bir sanatçı kumun üstüne çizmiş gibi. Yıllarca kimin yaptığı bilinmedi. Sonra gerçek ortaya çıktı: küçücük bir balık, günlerce yüzerek bu deseni yapıyor. Doğanın en şaşırtıcı mühendislerinden biri. Peki bunu neden yapıyor? Cevabı çok ilginç.",
+    "script": "Dalgıçlar denizin dibinde kusursuz desenli dev çemberler buldu; sanki bir sanatçı kumun üstüne çizmiş gibi. Yıllarca kimin yaptığı bilinmedi. Sonra gerçek ortaya çıktı: küçücük bir balık, günlerce yüzerek bu deseni yapıyor. Doğanın en şaşırtıcı mühendislerinden biri. Peki bunu neden yapıyor? Cevabı çok ilginç. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "deniz çemberleri",
       "balık",
@@ -4917,7 +4917,7 @@
         "gorsel": "fish making circle in sand underwater"
       },
       {
-        "metin": "doğanın sanatı",
+        "metin": "doğanın sanatı Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "detailed sand art pattern sea bottom"
       }
     ],
@@ -4927,7 +4927,7 @@
   {
     "baslik": "KAYIP KITA ATLANTİS GERÇEK Mİ? 🏛️",
     "kanca": "BİR ANDA DENİZE Mİ GÖMÜLDÜ?",
-    "script": "Binlerce yıl önce Platon, gelişmiş bir uygarlıktan bahsetti: Atlantis. Bir gecede denize gömülüp yok olmuş. Efsane mi, yoksa gerçekten batmış bir medeniyet mi? Bazıları bunun bir uyarı hikâyesi olduğunu söylüyor, bazıları hâlâ kalıntılarını arıyor. Sence Atlantis gerçek miydi?",
+    "script": "Binlerce yıl önce Platon, gelişmiş bir uygarlıktan bahsetti: Atlantis. Bir gecede denize gömülüp yok olmuş. Efsane mi, yoksa gerçekten batmış bir medeniyet mi? Bazıları bunun bir uyarı hikâyesi olduğunu söylüyor, bazıları hâlâ kalıntılarını arıyor. Sence Atlantis gerçek miydi? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "atlantis",
       "kayıp kıta",
@@ -4962,7 +4962,7 @@
         "gorsel": "stone columns underwater on sea floor"
       },
       {
-        "metin": "aranan efsane",
+        "metin": "aranan efsane Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "diver exploring mysterious underwater ruins"
       }
     ],
@@ -4972,7 +4972,7 @@
   {
     "baslik": "GÖBEKLİTEPE'NİN SIRRI 🗿",
     "kanca": "TEKERLEKTEN 7000 YIL ÖNCE",
-    "script": "Türkiye'de bir tepe, tarihi baştan yazdı: Göbeklitepe. Tekerlekten, yazıdan, hatta tarımdan binlerce yıl önce inşa edilmiş. Devasa taş sütunlar, üzerlerinde gizemli hayvan kabartmaları. Henüz avcı-toplayıcı olan insanlar bunu neden ve nasıl yaptı? Dünyanın en eski tapınağı hâlâ sırlarını koruyor.",
+    "script": "Türkiye'de bir tepe, tarihi baştan yazdı: Göbeklitepe. Tekerlekten, yazıdan, hatta tarımdan binlerce yıl önce inşa edilmiş. Devasa taş sütunlar, üzerlerinde gizemli hayvan kabartmaları. Henüz avcı-toplayıcı olan insanlar bunu neden ve nasıl yaptı? Dünyanın en eski tapınağı hâlâ sırlarını koruyor. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "göbeklitepe",
       "gizem",
@@ -5007,7 +5007,7 @@
         "gorsel": "archaeological excavation site with pillars"
       },
       {
-        "metin": "korunan sır",
+        "metin": "korunan sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "ancient temple stones at golden sunset"
       }
     ],
@@ -5017,7 +5017,7 @@
   {
     "baslik": "UZAYDAN GELEN ESRARENGİZ SİNYAL 📡",
     "kanca": "KİM GÖNDERDİ?",
-    "script": "1977'de bir teleskop, uzaydan çok güçlü, tuhaf bir sinyal yakaladı. Bilim insanı kâğıda tek kelime yazdı: 'Wow!'. Sinyal 72 saniye sürdü ve bir daha asla tekrarlanmadı. Doğal bir olay mı, yoksa başka bir şey mi? Yıllardır cevap yok. Sence o sinyali ne gönderdi?",
+    "script": "1977'de bir teleskop, uzaydan çok güçlü, tuhaf bir sinyal yakaladı. Bilim insanı kâğıda tek kelime yazdı: 'Wow!'. Sinyal 72 saniye sürdü ve bir daha asla tekrarlanmadı. Doğal bir olay mı, yoksa başka bir şey mi? Yıllardır cevap yok. Sence o sinyali ne gönderdi? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "wow sinyali",
       "uzay",
@@ -5052,7 +5052,7 @@
         "gorsel": "empty signal monitor with static"
       },
       {
-        "metin": "cevapsız soru",
+        "metin": "cevapsız soru Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "telescope pointing at starry night sky"
       }
     ],
@@ -5062,7 +5062,7 @@
   {
     "baslik": "NAZCA ÇİZGİLERİNİ KİM ÇİZDİ? 🛸",
     "kanca": "SADECE GÖKTEN GÖRÜNÜYOR",
-    "script": "Peru çölünde devasa çizimler var: kuşlar, maymunlar, geometrik şekiller. Bazıları yüzlerce metre uzunluğunda. İşin tuhafı, bu çizimler ancak gökyüzünden bakınca tam görünüyor. Peki uçak bile yokken, insanlar bunu nasıl ve kimin için çizdi? Nazca çizgileri hâlâ bir bilmece.",
+    "script": "Peru çölünde devasa çizimler var: kuşlar, maymunlar, geometrik şekiller. Bazıları yüzlerce metre uzunluğunda. İşin tuhafı, bu çizimler ancak gökyüzünden bakınca tam görünüyor. Peki uçak bile yokken, insanlar bunu nasıl ve kimin için çizdi? Nazca çizgileri hâlâ bir bilmece. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "nazca çizgileri",
       "gizem",
@@ -5097,7 +5097,7 @@
         "gorsel": "aerial drone shot of desert patterns"
       },
       {
-        "metin": "çözülemeyen bilmece",
+        "metin": "çözülemeyen bilmece Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "desert landscape at sunset wide"
       }
     ],
@@ -5107,7 +5107,7 @@
   {
     "baslik": "ANTARKTİKA'NIN ALTINDA NE VAR? ❄️",
     "kanca": "BUZUN 4 KM ALTINDA",
-    "script": "Antarktika'yı kilometrelerce kalın buz kaplıyor. Ama o buzun altında koca bir dünya saklı: yüzlerce göl, dağlar, hatta nehirler. Milyonlarca yıldır güneş görmeyen bu göllerde bilinmeyen canlılar olabilir. Buzun dört kilometre altında ne yaşıyor? Bilim daha yeni kazmaya başladı.",
+    "script": "Antarktika'yı kilometrelerce kalın buz kaplıyor. Ama o buzun altında koca bir dünya saklı: yüzlerce göl, dağlar, hatta nehirler. Milyonlarca yıldır güneş görmeyen bu göllerde bilinmeyen canlılar olabilir. Buzun dört kilometre altında ne yaşıyor? Bilim daha yeni kazmaya başladı. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "antarktika",
       "gizem",
@@ -5142,7 +5142,7 @@
         "gorsel": "ice core drilling in antarctica"
       },
       {
-        "metin": "bilinmeyen dünya",
+        "metin": "bilinmeyen dünya Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "deep blue ice cave glowing"
       }
     ],
@@ -5152,7 +5152,7 @@
   {
     "baslik": "MISIR MUMYALARININ LANETİ 🏺",
     "kanca": "MEZARI AÇANLAR ÖLDÜ MÜ?",
-    "script": "Tutankamon'un mezarı açıldıktan sonra, kazıya katılanlardan bazıları tuhaf şekilde öldü. İnsanlar 'firavunun laneti' dedi. Gerçek lanet mi, tesadüf mü, yoksa mezardaki eski bir mantar mı hastalandırdı? Bilim bir açıklama arıyor ama efsane hâlâ yaşıyor. Sence lanet gerçek miydi?",
+    "script": "Tutankamon'un mezarı açıldıktan sonra, kazıya katılanlardan bazıları tuhaf şekilde öldü. İnsanlar 'firavunun laneti' dedi. Gerçek lanet mi, tesadüf mü, yoksa mezardaki eski bir mantar mı hastalandırdı? Bilim bir açıklama arıyor ama efsane hâlâ yaşıyor. Sence lanet gerçek miydi? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "firavun laneti",
       "mumya",
@@ -5187,7 +5187,7 @@
         "gorsel": "mold spores under microscope, eerie"
       },
       {
-        "metin": "yaşayan efsane",
+        "metin": "yaşayan efsane Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "dim torchlight in ancient tomb corridor"
       }
     ],
@@ -5197,7 +5197,7 @@
   {
     "baslik": "MAYA UYGARLIĞI NEDEN YOK OLDU? 🌴",
     "kanca": "KOCA ŞEHİRLER BİR ANDA BOŞALDI",
-    "script": "Mayalar dev piramitler, astronomi ve gelişmiş bir takvim yaptı. Sonra bir şey oldu: koca şehirler bir anda terk edildi. Kuraklık mı, savaş mı, açlık mı? Milyonlarca insan nereye gitti? Ormanlar şehirleri yuttu ve cevap hâlâ toprağın altında. Sence Mayalara ne oldu?",
+    "script": "Mayalar dev piramitler, astronomi ve gelişmiş bir takvim yaptı. Sonra bir şey oldu: koca şehirler bir anda terk edildi. Kuraklık mı, savaş mı, açlık mı? Milyonlarca insan nereye gitti? Ormanlar şehirleri yuttu ve cevap hâlâ toprağın altında. Sence Mayalara ne oldu? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "maya uygarlığı",
       "gizem",
@@ -5232,7 +5232,7 @@
         "gorsel": "jungle overtaking stone temple"
       },
       {
-        "metin": "çözülemeyen çöküş",
+        "metin": "çözülemeyen çöküş Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "mayan ruins at misty sunrise"
       }
     ],
@@ -5242,7 +5242,7 @@
   {
     "baslik": "TİTANİK HAKKINDA BİLİNMEYEN 🚢",
     "kanca": "BATMAZ DENİLEN GEMİ",
-    "script": "Titanik 'batmaz' diye tanıtıldı. İlk seferinde bir buzdağına çarpıp battı. Ama daha az bilinen bir şey var: aynı gemi için yeterli cankurtaran botu bile yoktu, çünkü 'gerek yok' denmişti. Bir kibir hikâyesi mi, kötü şans mı? Titanik'in dibinde hâlâ anlatılmayanlar var.",
+    "script": "Titanik 'batmaz' diye tanıtıldı. İlk seferinde bir buzdağına çarpıp battı. Ama daha az bilinen bir şey var: aynı gemi için yeterli cankurtaran botu bile yoktu, çünkü 'gerek yok' denmişti. Bir kibir hikâyesi mi, kötü şans mı? Titanik'in dibinde hâlâ anlatılmayanlar var. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "titanik",
       "gizem",
@@ -5277,7 +5277,7 @@
         "gorsel": "ship sinking into ocean illustration"
       },
       {
-        "metin": "denizin dibi",
+        "metin": "denizin dibi Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "shipwreck on deep ocean floor"
       }
     ],
@@ -5287,7 +5287,7 @@
   {
     "baslik": "POMPEİ'NİN SON GÜNÜ 🌋",
     "kanca": "BİR ANDA KÜLLE KAPLANDI",
-    "script": "Bin dokuz yüz yıl önce Pompeii şehri, bir yanardağ patlamasıyla saatler içinde küllerin altına gömüldü. İnsanlar, hayvanlar, hatta ekmekler o an olduğu gibi dondu kaldı. Yüzyıllar sonra kazılınca şehir zamanda donmuş gibi çıktı. O son gün gerçekte ne yaşandı? Küller çok şey saklıyor.",
+    "script": "Bin dokuz yüz yıl önce Pompeii şehri, bir yanardağ patlamasıyla saatler içinde küllerin altına gömüldü. İnsanlar, hayvanlar, hatta ekmekler o an olduğu gibi dondu kaldı. Yüzyıllar sonra kazılınca şehir zamanda donmuş gibi çıktı. O son gün gerçekte ne yaşandı? Küller çok şey saklıyor. Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "pompei",
       "gizem",
@@ -5322,7 +5322,7 @@
         "gorsel": "archaeologists excavating ancient ruins"
       },
       {
-        "metin": "zamanda donmuş şehir",
+        "metin": "zamanda donmuş şehir Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "pompeii ruins with vesuvius background"
       }
     ],
@@ -5332,7 +5332,7 @@
   {
     "baslik": "AY'DA GERÇEKTE NE GÖRDÜLER? 🌙",
     "kanca": "NEDEN BİR DAHA GİTMEDİK?",
-    "script": "İnsan 1969'da Ay'a ayak bastı. Sonra birkaç görev daha yapıldı ve aniden durdu. Onlarca yıldır kimse Ay'a gitmedi. Neden? Çok mu pahalıydı, yoksa orada beklenmedik bir şey mi vardı? Astronotların anlattıkları hâlâ merak konusu. Sence neden bir daha gitmedik?",
+    "script": "İnsan 1969'da Ay'a ayak bastı. Sonra birkaç görev daha yapıldı ve aniden durdu. Onlarca yıldır kimse Ay'a gitmedi. Neden? Çok mu pahalıydı, yoksa orada beklenmedik bir şey mi vardı? Astronotların anlattıkları hâlâ merak konusu. Sence neden bir daha gitmedik? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "ay",
       "uzay",
@@ -5367,7 +5367,7 @@
         "gorsel": "full moon in dark night sky"
       },
       {
-        "metin": "cevapsız soru",
+        "metin": "cevapsız soru Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "telescope looking at the moon"
       }
     ],
@@ -5377,7 +5377,7 @@
   {
     "baslik": "KAYIP ALTIN ŞEHİR EL DORADO 💰",
     "kanca": "HERKES ARADI, KİMSE BULAMADI",
-    "script": "Yüzyıllar boyunca kâşifler bir efsanenin peşinden gitti: El Dorado, tamamen altından bir şehir. Uğruna ormanlara dalındı, haritalar çizildi, canlar verildi. Ama kimse bulamadı. Gerçek bir hazine mi, yoksa bir hayal mi? El Dorado hâlâ ormanın bir yerinde mi saklı, kim bilir?",
+    "script": "Yüzyıllar boyunca kâşifler bir efsanenin peşinden gitti: El Dorado, tamamen altından bir şehir. Uğruna ormanlara dalındı, haritalar çizildi, canlar verildi. Ama kimse bulamadı. Gerçek bir hazine mi, yoksa bir hayal mi? El Dorado hâlâ ormanın bir yerinde mi saklı, kim bilir? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "el dorado",
       "altın şehir",
@@ -5412,7 +5412,7 @@
         "gorsel": "misty jungle river deep green"
       },
       {
-        "metin": "saklı efsane",
+        "metin": "saklı efsane Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "sunlight breaking through jungle canopy"
       }
     ],
@@ -5422,7 +5422,7 @@
   {
     "baslik": "EVRENİN SONU NASIL OLACAK? 🌌",
     "kanca": "HER ŞEY BİTECEK Mİ?",
-    "script": "Evren 13,8 milyar yıl önce başladı. Peki nasıl bitecek? Bilim insanlarının birkaç teorisi var: belki sonsuza dek soğuyup kararacak, belki tekrar kendine çökecek, belki de bir anda paramparça olacak. Hangisi gerçek olacak, kimse kesin bilmiyor. Sence evrenin sonu nasıl gelecek?",
+    "script": "Evren 13,8 milyar yıl önce başladı. Peki nasıl bitecek? Bilim insanlarının birkaç teorisi var: belki sonsuza dek soğuyup kararacak, belki tekrar kendine çökecek, belki de bir anda paramparça olacak. Hangisi gerçek olacak, kimse kesin bilmiyor. Sence evrenin sonu nasıl gelecek? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "evren",
       "uzay",
@@ -5457,7 +5457,7 @@
         "gorsel": "cosmic explosion of light and matter"
       },
       {
-        "metin": "bilinmeyen son",
+        "metin": "bilinmeyen son Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "lone galaxy fading into black space"
       }
     ],
@@ -5467,7 +5467,7 @@
   {
     "baslik": "STONEHENGE'İ KİM DİKTİ? 🪨",
     "kanca": "5000 YIL ÖNCE NASIL?",
-    "script": "İngiltere'de dev taşlar bir daire çiziyor: Stonehenge. Bazıları tonlarca ağırlıkta ve kilometrelerce uzaktan getirilmiş. Beş bin yıl önce, makine yokken insanlar bu taşları nasıl taşıyıp dikti? Tapınak mı, takvim mi, mezar mı? Kimse kesin bilmiyor. Sence neden yaptılar?",
+    "script": "İngiltere'de dev taşlar bir daire çiziyor: Stonehenge. Bazıları tonlarca ağırlıkta ve kilometrelerce uzaktan getirilmiş. Beş bin yıl önce, makine yokken insanlar bu taşları nasıl taşıyıp dikti? Tapınak mı, takvim mi, mezar mı? Kimse kesin bilmiyor. Sence neden yaptılar? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "stonehenge",
       "antik",
@@ -5500,7 +5500,7 @@
         "gorsel": "misty ancient monument at dawn"
       },
       {
-        "metin": "çözülemeyen sır",
+        "metin": "çözülemeyen sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "stonehenge silhouette at sunset"
       }
     ],
@@ -5510,7 +5510,7 @@
   {
     "baslik": "PASKALYA ADASI'NIN DEV HEYKELLERİ 🗿",
     "kanca": "KİM TAŞIDI BUNLARI?",
-    "script": "Pasifik'te küçük bir ada, dev taş kafalarla dolu: Moai heykelleri. Onlarca ton ağırlığında ve adanın dört bir yanına dağılmış. Peki eski halk bu devasa heykelleri nasıl oydu ve kilometrelerce nasıl taşıdı? 'Yürüdüler' diyen efsaneler bile var. Gerçek hâlâ sır. Sence nasıl taşıdılar?",
+    "script": "Pasifik'te küçük bir ada, dev taş kafalarla dolu: Moai heykelleri. Onlarca ton ağırlığında ve adanın dört bir yanına dağılmış. Peki eski halk bu devasa heykelleri nasıl oydu ve kilometrelerce nasıl taşıdı? 'Yürüdüler' diyen efsaneler bile var. Gerçek hâlâ sır. Sence nasıl taşıdılar? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "paskalya adası",
       "moai",
@@ -5543,7 +5543,7 @@
         "gorsel": "moai statues at sunset silhouette"
       },
       {
-        "metin": "çözülemeyen sır",
+        "metin": "çözülemeyen sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "lonely stone statue under sky"
       }
     ],
@@ -5553,7 +5553,7 @@
   {
     "baslik": "KARA DELİĞİN İÇİNDE NE VAR? 🕳️",
     "kanca": "IŞIK BİLE KAÇAMAZ",
-    "script": "Evrende öyle bir yer var ki, çekimi o kadar güçlü ki ışık bile kaçamıyor: kara delik. İçine düşen her şey yok oluyor gibi görünüyor. Peki o sınırın ötesinde ne var? Zaman orada duruyor mu? Fizik bile tam cevap veremiyor. Sence içeride ne var?",
+    "script": "Evrende öyle bir yer var ki, çekimi o kadar güçlü ki ışık bile kaçamıyor: kara delik. İçine düşen her şey yok oluyor gibi görünüyor. Peki o sınırın ötesinde ne var? Zaman orada duruyor mu? Fizik bile tam cevap veremiyor. Sence içeride ne var? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "kara delik",
       "uzay",
@@ -5586,7 +5586,7 @@
         "gorsel": "deep space stars swirling"
       },
       {
-        "metin": "bilinmeyen",
+        "metin": "bilinmeyen Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "dark cosmic void with faint light"
       }
     ],
@@ -5596,7 +5596,7 @@
   {
     "baslik": "VOYNICH EL YAZMASININ SIRRI 📜",
     "kanca": "KİMSE OKUYAMIYOR",
-    "script": "600 yıllık bir kitap var ki, hiçbir dile benzemeyen bir alfabeyle yazılmış: Voynich El Yazması. İçinde tuhaf bitkiler, yıldız haritaları, bilinmeyen figürler. Dünyanın en iyi şifre çözücüleri bile deneyip başaramadı. Şaka mı, kayıp bir dil mi, yoksa gizli bir mesaj mı? Sence ne yazıyor?",
+    "script": "600 yıllık bir kitap var ki, hiçbir dile benzemeyen bir alfabeyle yazılmış: Voynich El Yazması. İçinde tuhaf bitkiler, yıldız haritaları, bilinmeyen figürler. Dünyanın en iyi şifre çözücüleri bile deneyip başaramadı. Şaka mı, kayıp bir dil mi, yoksa gizli bir mesaj mı? Sence ne yazıyor? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "voynich",
       "şifre",
@@ -5629,7 +5629,7 @@
         "gorsel": "person studying old text with magnifier"
       },
       {
-        "metin": "çözülemeyen sır",
+        "metin": "çözülemeyen sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "candle lit old book in dark"
       }
     ],
@@ -5639,7 +5639,7 @@
   {
     "baslik": "TUNGUSKA'DA NE PATLADI? 💥",
     "kanca": "2000 KM² AĞAÇ DEVRİLDİ",
-    "script": "1908'de Sibirya'da gökyüzü yarıldı: dev bir patlama, binlerce kilometrekarelik ormanı bir anda yere serdi. Ama garip olan, geriye bir krater kalmadı. Göktaşı mı, kuyruklu yıldız mı, yoksa başka bir şey mi? Yüz yıldan fazla oldu, kesin cevap yok. Sence ne patladı?",
+    "script": "1908'de Sibirya'da gökyüzü yarıldı: dev bir patlama, binlerce kilometrekarelik ormanı bir anda yere serdi. Ama garip olan, geriye bir krater kalmadı. Göktaşı mı, kuyruklu yıldız mı, yoksa başka bir şey mi? Yüz yıldan fazla oldu, kesin cevap yok. Sence ne patladı? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "tunguska",
       "sibirya",
@@ -5672,7 +5672,7 @@
         "gorsel": "meteor falling through atmosphere"
       },
       {
-        "metin": "cevapsız soru",
+        "metin": "cevapsız soru Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "desolate forest at dusk"
       }
     ],
@@ -5682,7 +5682,7 @@
   {
     "baslik": "DYATLOV GEÇİDİ ESRARI ⛰️",
     "kanca": "9 DAĞCI NEDEN KAÇTI?",
-    "script": "1959'da dokuz deneyimli dağcı, gece çadırlarını içeriden yırtıp eksi otuz derecede yarı çıplak kaçtı. Hepsi öldü, bazılarında tuhaf yaralar vardı. Çığ mı, panik mi, açıklanamayan bir şey mi? Onlarca teori var ama kesin bir cevap yok. Sence o gece ne oldu?",
+    "script": "1959'da dokuz deneyimli dağcı, gece çadırlarını içeriden yırtıp eksi otuz derecede yarı çıplak kaçtı. Hepsi öldü, bazılarında tuhaf yaralar vardı. Çığ mı, panik mi, açıklanamayan bir şey mi? Onlarca teori var ama kesin bir cevap yok. Sence o gece ne oldu? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "dyatlov",
       "dağcı",
@@ -5715,7 +5715,7 @@
         "gorsel": "snow avalanche on mountain slope"
       },
       {
-        "metin": "çözülemeyen sır",
+        "metin": "çözülemeyen sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "lonely mountain under moonlight"
       }
     ],
@@ -5725,7 +5725,7 @@
   {
     "baslik": "KAYIP KOLONİ ROANOKE 🏚️",
     "kanca": "117 KİŞİ BUHAR OLDU",
-    "script": "1590'da bir gemi Amerika'daki Roanoke kolonisine döndü ve şok oldu: yüz on yedi kişi ortadan kaybolmuştu. Ne ceset, ne kavga izi. Sadece bir ağaca kazınmış tek kelime: CROATOAN. Nereye gittiler? Yüzyıllardır kimse bilmiyor. Sence bu insanlara ne oldu?",
+    "script": "1590'da bir gemi Amerika'daki Roanoke kolonisine döndü ve şok oldu: yüz on yedi kişi ortadan kaybolmuştu. Ne ceset, ne kavga izi. Sadece bir ağaca kazınmış tek kelime: CROATOAN. Nereye gittiler? Yüzyıllardır kimse bilmiyor. Sence bu insanlara ne oldu? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "roanoke",
       "kayıp koloni",
@@ -5758,7 +5758,7 @@
         "gorsel": "deserted foggy coastline"
       },
       {
-        "metin": "çözülemeyen sır",
+        "metin": "çözülemeyen sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "misty forest at dusk eerie"
       }
     ],
@@ -5768,7 +5768,7 @@
   {
     "baslik": "2000 YILLIK BİLGİSAYAR ⚙️",
     "kanca": "ANTİKYTHERA MEKANİZMASI",
-    "script": "Bir gemi enkazından çıkan pas tutmuş çarklar, tarihi sarstı: Antikythera Mekanizması. İki bin yıl önce yapılmış ve gezegenlerin hareketini hesaplıyormuş. Yani antik dünyada, düğmeli bir tür bilgisayar vardı. Bu teknoloji nasıl kayboldu ve bin yıl geriye gitti? Şaşırtıcı değil mi?",
+    "script": "Bir gemi enkazından çıkan pas tutmuş çarklar, tarihi sarstı: Antikythera Mekanizması. İki bin yıl önce yapılmış ve gezegenlerin hareketini hesaplıyormuş. Yani antik dünyada, düğmeli bir tür bilgisayar vardı. Bu teknoloji nasıl kayboldu ve bin yıl geriye gitti? Şaşırtıcı değil mi? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "antikythera",
       "antik teknoloji",
@@ -5801,7 +5801,7 @@
         "gorsel": "ancient artifact in museum display"
       },
       {
-        "metin": "kayıp teknoloji",
+        "metin": "kayıp teknoloji Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "old bronze device dramatic light"
       }
     ],
@@ -5811,7 +5811,7 @@
   {
     "baslik": "TERRAKOTA ORDUSUNUN SIRRI 🏺",
     "kanca": "8000 ASKER, HEPSİ FARKLI",
-    "script": "Çin'de bir çiftçi kuyu kazarken tarihin en büyük sırlarından birini buldu: sekiz bin topraktan asker, atlar, savaş arabaları. Her birinin yüzü farklı, sanki gerçek insanlar. Bir imparator, ölümünden sonra korunmak için bütün bir ordu gömdürmüş. Peki mezarının içi hâlâ neden açılmıyor? Merak etmez misin?",
+    "script": "Çin'de bir çiftçi kuyu kazarken tarihin en büyük sırlarından birini buldu: sekiz bin topraktan asker, atlar, savaş arabaları. Her birinin yüzü farklı, sanki gerçek insanlar. Bir imparator, ölümünden sonra korunmak için bütün bir ordu gömdürmüş. Peki mezarının içi hâlâ neden açılmıyor? Merak etmez misin? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "terrakota",
       "çin",
@@ -5844,7 +5844,7 @@
         "gorsel": "ancient chinese tomb mound"
       },
       {
-        "metin": "kapalı sır",
+        "metin": "kapalı sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "terracotta soldiers dramatic light"
       }
     ],
@@ -5854,7 +5854,7 @@
   {
     "baslik": "MACHU PICCHU NASIL YAPILDI? 🏔️",
     "kanca": "BULUTLARIN ÜSTÜNDEKİ ŞEHİR",
-    "script": "And Dağları'nın tepesinde, bulutların arasında saklı bir şehir: Machu Picchu. Dev taş bloklar, harç kullanılmadan öyle hassas yerleştirilmiş ki araya bıçak bile girmiyor. İnkalar bu şehri bu yükseklikte nasıl inşa etti ve neden bir gün terk etti? Cevap hâlâ dağların ardında. Sence neden terk ettiler?",
+    "script": "And Dağları'nın tepesinde, bulutların arasında saklı bir şehir: Machu Picchu. Dev taş bloklar, harç kullanılmadan öyle hassas yerleştirilmiş ki araya bıçak bile girmiyor. İnkalar bu şehri bu yükseklikte nasıl inşa etti ve neden bir gün terk etti? Cevap hâlâ dağların ardında. Sence neden terk ettiler? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "machu picchu",
       "inka",
@@ -5887,7 +5887,7 @@
         "gorsel": "empty inca ruins stone"
       },
       {
-        "metin": "gizemli şehir",
+        "metin": "gizemli şehir Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "machu picchu at sunrise fog"
       }
     ],
@@ -5897,7 +5897,7 @@
   {
     "baslik": "SAHRA ESKİDEN YEŞİL MİYDİ? 🏜️",
     "kanca": "ÇÖLÜN ALTINDA NEHİRLER",
-    "script": "Bugün dünyanın en büyük çölü olan Sahra, binlerce yıl önce yemyeşilmiş: göller, nehirler, otlayan hayvanlar. Mağara duvarlarında yüzen insan çizimleri bile var. Peki koca bir cennet nasıl kavurucu bir çöle döndü? Ve bir gün yeniden yeşerir mi? Doğa bunu defalarca yapmış. Şaşırtıcı, değil mi?",
+    "script": "Bugün dünyanın en büyük çölü olan Sahra, binlerce yıl önce yemyeşilmiş: göller, nehirler, otlayan hayvanlar. Mağara duvarlarında yüzen insan çizimleri bile var. Peki koca bir cennet nasıl kavurucu bir çöle döndü? Ve bir gün yeniden yeşerir mi? Doğa bunu defalarca yapmış. Şaşırtıcı, değil mi? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "sahra",
       "çöl",
@@ -5930,7 +5930,7 @@
         "gorsel": "desert sand with buried rocks"
       },
       {
-        "metin": "değişen dünya",
+        "metin": "değişen dünya Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "sahara desert at golden sunset"
       }
     ],
@@ -5940,7 +5940,7 @@
   {
     "baslik": "LOCH NESS CANAVARI GERÇEK Mİ? 🦕",
     "kanca": "GÖLDE NE YAŞIYOR?",
-    "script": "İskoçya'da derin, karanlık bir göl var: Loch Ness. Yüzyıllardır insanlar suyun içinde uzun boyunlu dev bir yaratık gördüğünü söylüyor. Bulanık fotoğraflar, sonar kayıtları... ama kesin kanıt yok. Efsane mi, yanılsama mı, yoksa gerçekten bir şey mi var? Sen ne düşünüyorsun?",
+    "script": "İskoçya'da derin, karanlık bir göl var: Loch Ness. Yüzyıllardır insanlar suyun içinde uzun boyunlu dev bir yaratık gördüğünü söylüyor. Bulanık fotoğraflar, sonar kayıtları... ama kesin kanıt yok. Efsane mi, yanılsama mı, yoksa gerçekten bir şey mi var? Sen ne düşünüyorsun? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "loch ness",
       "canavar",
@@ -5973,7 +5973,7 @@
         "gorsel": "deep dark underwater lake"
       },
       {
-        "metin": "efsane",
+        "metin": "efsane Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "foggy scottish lake at dusk"
       }
     ],
@@ -5983,7 +5983,7 @@
   {
     "baslik": "DİNOZORLARI NE YOK ETTİ? 🦖",
     "kanca": "BİR GÜNDE HER ŞEY DEĞİŞTİ",
-    "script": "Altmış altı milyon yıl boyunca dünyaya dinozorlar hükmetti. Sonra bir gün, gökten devasa bir kaya düştü. Patlama, yangınlar, güneşi kapatan kül... Ve dev canlılar birer birer yok oldu. Ama bazıları hayatta kaldı ve bugün hâlâ aramızda: kuşlar. Şaşırtıcı, değil mi?",
+    "script": "Altmış altı milyon yıl boyunca dünyaya dinozorlar hükmetti. Sonra bir gün, gökten devasa bir kaya düştü. Patlama, yangınlar, güneşi kapatan kül... Ve dev canlılar birer birer yok oldu. Ama bazıları hayatta kaldı ve bugün hâlâ aramızda: kuşlar. Şaşırtıcı, değil mi? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "dinozor",
       "meteor",
@@ -6016,7 +6016,7 @@
         "gorsel": "dinosaur skeleton fossil in rock"
       },
       {
-        "metin": "kuşlar kaldı",
+        "metin": "kuşlar kaldı Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "bird flying at sunrise"
       }
     ],
@@ -6026,7 +6026,7 @@
   {
     "baslik": "AMELIA EARHART NEREDE KAYBOLDU? ✈️",
     "kanca": "OKYANUSTA İZ BIRAKMADAN",
-    "script": "1937'de dünyayı uçakla dolaşmaya çalışan efsane pilot Amelia Earhart, Pasifik'in ortasında bir anda kayboldu. Ne uçak, ne enkaz, ne ceset bulundu. Yakıtı mı bitti, ıssız bir adaya mı düştü? En büyük havacılık gizemlerinden biri hâlâ çözülemedi. Sence ona ne oldu?",
+    "script": "1937'de dünyayı uçakla dolaşmaya çalışan efsane pilot Amelia Earhart, Pasifik'in ortasında bir anda kayboldu. Ne uçak, ne enkaz, ne ceset bulundu. Yakıtı mı bitti, ıssız bir adaya mı düştü? En büyük havacılık gizemlerinden biri hâlâ çözülemedi. Sence ona ne oldu? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "amelia earhart",
       "kayboluş",
@@ -6059,7 +6059,7 @@
         "gorsel": "old radio equipment static"
       },
       {
-        "metin": "çözülemeyen sır",
+        "metin": "çözülemeyen sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "empty ocean horizon at dusk"
       }
     ],
@@ -6069,7 +6069,7 @@
   {
     "baslik": "İSKENDERİYE KÜTÜPHANESİ 📚",
     "kanca": "KAYIP BİLGİ HAZİNESİ",
-    "script": "Antik dünyanın en büyük kütüphanesi İskenderiye'deydi: yüz binlerce el yazması, çağının tüm bilgisi tek çatı altında. Sonra alevler her şeyi yuttu. İçinde belki de kaybolmuş icatlar, unutulmuş tarihler vardı. Yansaydı bugün bilim nerede olurdu? Düşününce ürperiyor insan. Sence ne kaybettik?",
+    "script": "Antik dünyanın en büyük kütüphanesi İskenderiye'deydi: yüz binlerce el yazması, çağının tüm bilgisi tek çatı altında. Sonra alevler her şeyi yuttu. İçinde belki de kaybolmuş icatlar, unutulmuş tarihler vardı. Yansaydı bugün bilim nerede olurdu? Düşününce ürperiyor insan. Sence ne kaybettik? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "iskenderiye",
       "kütüphane",
@@ -6102,7 +6102,7 @@
         "gorsel": "burnt paper ashes close up"
       },
       {
-        "metin": "kayıp hazine",
+        "metin": "kayıp hazine Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "empty ancient library ruins"
       }
     ],
@@ -6112,7 +6112,7 @@
   {
     "baslik": "PETRA: KAYADAN ŞEHİR 🏛️",
     "kanca": "DAĞA NASIL OYULDU?",
-    "script": "Ürdün çölünde, dev pembe kayaların içine oyulmuş bir şehir var: Petra. Tapınaklar, mezarlar, su kanalları... hepsi doğrudan kayaya işlenmiş. Binlerce yıl önce bu halk, koca bir şehri sert kayaya nasıl oydu ve neden sonunda terk etti? Çöl sırrını hâlâ saklıyor. Görmek istemez misin?",
+    "script": "Ürdün çölünde, dev pembe kayaların içine oyulmuş bir şehir var: Petra. Tapınaklar, mezarlar, su kanalları... hepsi doğrudan kayaya işlenmiş. Binlerce yıl önce bu halk, koca bir şehri sert kayaya nasıl oydu ve neden sonunda terk etti? Çöl sırrını hâlâ saklıyor. Görmek istemez misin? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "petra",
       "ürdün",
@@ -6145,7 +6145,7 @@
         "gorsel": "ancient stone water channel"
       },
       {
-        "metin": "terk edilmiş şehir",
+        "metin": "terk edilmiş şehir Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "petra ruins at golden light"
       }
     ],
@@ -6155,7 +6155,7 @@
   {
     "baslik": "BEYİN NEDEN RÜYA GÖRÜR? 💭",
     "kanca": "HER GECE BAŞKA DÜNYA",
-    "script": "Her gece uykuya daldığında beynin sana koca bir dünya yaratıyor: rüyalar. Bazen uçarsın, bazen kaçarsın, bazen tanımadığın yerlerde olursun. Peki beyin bunu neden yapıyor? Hafızayı düzenlemek için mi, korkularla başa çıkmak için mi? Bilim hâlâ tam emin değil. Sen rüyalarını hatırlıyor musun?",
+    "script": "Her gece uykuya daldığında beynin sana koca bir dünya yaratıyor: rüyalar. Bazen uçarsın, bazen kaçarsın, bazen tanımadığın yerlerde olursun. Peki beyin bunu neden yapıyor? Hafızayı düzenlemek için mi, korkularla başa çıkmak için mi? Bilim hâlâ tam emin değil. Sen rüyalarını hatırlıyor musun? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "rüya",
       "beyin",
@@ -6188,7 +6188,7 @@
         "gorsel": "abstract memory light trails"
       },
       {
-        "metin": "bilinmeyen",
+        "metin": "bilinmeyen Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "starry dreamy night sky"
       }
     ],
@@ -6198,7 +6198,7 @@
   {
     "baslik": "YILDIRIM NASIL OLUŞUR? ⚡",
     "kanca": "SANİYEDE 30 KAT DÜŞER",
-    "script": "Gökyüzü bir anda yarılır ve göz açıp kapayana kadar dev bir ışık yere iner: yıldırım. Sıcaklığı güneşin yüzeyinden bile yüksek olabilir. Bulutların içinde biriken elektrik, bir anda boşalır. Ama bilim bu kıvılcımın tam olarak nasıl başladığını hâlâ tartışıyor. İlginç değil mi?",
+    "script": "Gökyüzü bir anda yarılır ve göz açıp kapayana kadar dev bir ışık yere iner: yıldırım. Sıcaklığı güneşin yüzeyinden bile yüksek olabilir. Bulutların içinde biriken elektrik, bir anda boşalır. Ama bilim bu kıvılcımın tam olarak nasıl başladığını hâlâ tartışıyor. İlginç değil mi? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "yıldırım",
       "doğa",
@@ -6231,7 +6231,7 @@
         "gorsel": "electric sparks glowing dark"
       },
       {
-        "metin": "doğanın gücü",
+        "metin": "doğanın gücü Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "dramatic thunderstorm over landscape"
       }
     ],
@@ -6241,7 +6241,7 @@
   {
     "baslik": "KAYIP KITA MU EFSANESİ 🌏",
     "kanca": "OKYANUSA MI GÖMÜLDÜ?",
-    "script": "Bazı efsanelere göre, Pasifik'in ortasında bir zamanlar dev bir kıta vardı: Mu. Gelişmiş bir uygarlığa ev sahipliği yapmış, sonra tek bir felakette sulara gömülmüş. Bilim böyle bir kıta bulamadı, ama efsane yüzyıllardır anlatılıyor. Gerçek bir hafıza mı, yoksa sadece bir masal mı? Sence var mıydı?",
+    "script": "Bazı efsanelere göre, Pasifik'in ortasında bir zamanlar dev bir kıta vardı: Mu. Gelişmiş bir uygarlığa ev sahipliği yapmış, sonra tek bir felakette sulara gömülmüş. Bilim böyle bir kıta bulamadı, ama efsane yüzyıllardır anlatılıyor. Gerçek bir hafıza mı, yoksa sadece bir masal mı? Sence var mıydı? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "kayıp kıta",
       "mu",
@@ -6274,7 +6274,7 @@
         "gorsel": "underwater ruins deep blue"
       },
       {
-        "metin": "efsane",
+        "metin": "efsane Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "ocean horizon mysterious clouds"
       }
     ],
@@ -6284,7 +6284,7 @@
   {
     "baslik": "BÜYÜK KANYON NASIL OLUŞTU? 🏞️",
     "kanca": "BİR NEHİR MİLYONLARCA YIL",
-    "script": "Amerika'da öyle dev bir yarık var ki, uzaydan bile görünüyor: Büyük Kanyon. Bir buçuk kilometre derinliğinde ve milyonlarca yıllık kaya katmanları üst üste. İnanması zor ama bu devasa uçurumu, sabırla akan tek bir nehir oydu. Doğa, zamanla neler yapabiliyor değil mi? Şaşırtıcı, değil mi?",
+    "script": "Amerika'da öyle dev bir yarık var ki, uzaydan bile görünüyor: Büyük Kanyon. Bir buçuk kilometre derinliğinde ve milyonlarca yıllık kaya katmanları üst üste. İnanması zor ama bu devasa uçurumu, sabırla akan tek bir nehir oydu. Doğa, zamanla neler yapabiliyor değil mi? Şaşırtıcı, değil mi? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "büyük kanyon",
       "doğa",
@@ -6317,7 +6317,7 @@
         "gorsel": "eroded rock formations desert"
       },
       {
-        "metin": "doğanın gücü",
+        "metin": "doğanın gücü Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "grand canyon at sunset colors"
       }
     ],
@@ -6327,7 +6327,7 @@
   {
     "baslik": "ZAMANDA YOLCULUK MÜMKÜN MÜ? ⏳",
     "kanca": "GELECEĞE GİDİLEBİLİR",
-    "script": "Zamanda yolculuk sadece filmlerde değil; fizik aslında geleceğe gitmenin mümkün olduğunu söylüyor. Çok hızlı gidersen ya da güçlü bir çekimin yanındaysan, zaman senin için yavaşlar. Yani astronotlar minik de olsa geleceğe yolculuk eder. Peki geçmişe dönmek? İşte orası hâlâ imkânsız görünüyor. Sen hangisini isterdin?",
+    "script": "Zamanda yolculuk sadece filmlerde değil; fizik aslında geleceğe gitmenin mümkün olduğunu söylüyor. Çok hızlı gidersen ya da güçlü bir çekimin yanındaysan, zaman senin için yavaşlar. Yani astronotlar minik de olsa geleceğe yolculuk eder. Peki geçmişe dönmek? İşte orası hâlâ imkânsız görünüyor. Sen hangisini isterdin? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "zaman yolculuğu",
       "fizik",
@@ -6360,7 +6360,7 @@
         "gorsel": "surreal glowing time portal"
       },
       {
-        "metin": "bilinmeyen",
+        "metin": "bilinmeyen Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "cosmic clock among stars"
       }
     ],
@@ -6370,7 +6370,7 @@
   {
     "baslik": "UFO GÖRÜNTÜLERİ GERÇEK Mİ? 🛸",
     "kanca": "PİLOTLAR NE GÖRDÜ?",
-    "script": "Yıllardır gökyüzünde tuhaf, hızlı, açıklanamayan cisimler görülüyor. Artık sıradan insanlar değil, savaş pilotları ve resmi kayıtlar bile bunlardan bahsediyor. Gizli teknoloji mi, doğal bir olay mı, yoksa gerçekten başka bir yerden mi geliyorlar? Kimse kesin bilmiyor. Sen bir tane gördün mü hiç?",
+    "script": "Yıllardır gökyüzünde tuhaf, hızlı, açıklanamayan cisimler görülüyor. Artık sıradan insanlar değil, savaş pilotları ve resmi kayıtlar bile bunlardan bahsediyor. Gizli teknoloji mi, doğal bir olay mı, yoksa gerçekten başka bir yerden mi geliyorlar? Kimse kesin bilmiyor. Sen bir tane gördün mü hiç? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "ufo",
       "uzay",
@@ -6403,7 +6403,7 @@
         "gorsel": "mysterious craft silhouette clouds"
       },
       {
-        "metin": "cevapsız soru",
+        "metin": "cevapsız soru Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "night sky with distant lights"
       }
     ],
@@ -6413,7 +6413,7 @@
   {
     "baslik": "SFENKS'İN ALTINDA NE VAR? 🐪",
     "kanca": "GİZLİ ODALAR MI?",
-    "script": "Mısır'da, aslan gövdeli dev Sfenks binlerce yıldır çölü izliyor. Ama asıl merak edilen, altında ne olduğu. Bazı araştırmacılar, tabanında gizli odalar ve tüneller olabileceğini söylüyor. Sfenks tam olarak kaç yaşında, kimi temsil ediyor? Yüzü bile aşınmış. Çöl en büyük sırlarından birini hâlâ saklıyor. Sence altında ne var?",
+    "script": "Mısır'da, aslan gövdeli dev Sfenks binlerce yıldır çölü izliyor. Ama asıl merak edilen, altında ne olduğu. Bazı araştırmacılar, tabanında gizli odalar ve tüneller olabileceğini söylüyor. Sfenks tam olarak kaç yaşında, kimi temsil ediyor? Yüzü bile aşınmış. Çöl en büyük sırlarından birini hâlâ saklıyor. Sence altında ne var? Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
     "etiketler": [
       "sfenks",
       "mısır",
@@ -6446,7 +6446,7 @@
         "gorsel": "excavation around ancient monument"
       },
       {
-        "metin": "çözülemeyen sır",
+        "metin": "çözülemeyen sır Daha fazla gizem için abone ol, yarın yeni bir sır çözülüyor.",
         "gorsel": "sphinx silhouette at sunset"
       }
     ],

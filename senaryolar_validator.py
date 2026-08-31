@@ -99,6 +99,24 @@ class SenaryoValidator:
             w.append("emoji yok (güçlü başlıkların hepsinde sonda emoji var)")
         return w
 
+    # --- İÇERİK (SCRIPT) KALİTE DENETİMİ (bilgilendirici) ---
+    # Analiz (abone dönüşümü %0.226, sağlıklı ~%0.5-1): abone büyümüyor çünkü
+    # (1) videoların ~yarısında abone CTA'sı yok, (2) neredeyse hiçbirinde
+    # süreklilik/teaser ("yarın yeni video") yok. İzleyici geri dönmek için
+    # sebep bulamayınca abone olmuyor. Bu denetim üretimi ENGELLEMEZ.
+    ABONE_KW = ("abone", "subscribe", "kanala katıl", "takip et")
+    TEASER_KW = ("yarın", "bir sonraki", "sonraki video", "yeni video", "seri", "kaçırma")
+
+    @staticmethod
+    def script_quality(item: Dict[str, Any]) -> List[str]:
+        s = (item.get("script") or "").lower()
+        w = []
+        if not any(k in s for k in SenaryoValidator.ABONE_KW):
+            w.append("abone CTA'sı yok — dönüşüm için sonda net bir abone çağrısı ekle")
+        if not any(k in s for k in SenaryoValidator.TEASER_KW):
+            w.append("süreklilik/teaser yok — 'yarın yeni video' tarzı geri dönüş kancası ekle")
+        return w
+
     @staticmethod
     def validate_single(item: Dict[str, Any], idx: int) -> List[str]:
         """Tek bir senaryo objesini doğrula."""
@@ -219,6 +237,20 @@ if __name__ == "__main__":
             print("\n" + "-" * 70)
             print(f"ℹ Başlık kalite uyarıları ({len(uyarili)}/{len(scenarios)}) — üretimi engellemez:")
             for i, b, uy in uyarili:
+                print(f"  ⚠ [{i}] {b[:45]}")
+                for u in uy:
+                    print(f"       - {u}")
+
+        # İçerik (script) kalite uyarıları — abone dönüşümü için; CI'yı DÜŞÜRMEZ.
+        icerik = []
+        for i, s in enumerate(scenarios):
+            uy = SenaryoValidator.script_quality(s)
+            if uy:
+                icerik.append((i, s.get("baslik", ""), uy))
+        if icerik:
+            print("\n" + "-" * 70)
+            print(f"ℹ İçerik/abone uyarıları ({len(icerik)}/{len(scenarios)}) — üretimi engellemez:")
+            for i, b, uy in icerik:
                 print(f"  ⚠ [{i}] {b[:45]}")
                 for u in uy:
                     print(f"       - {u}")
