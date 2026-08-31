@@ -17,7 +17,7 @@
   "uzun_aktif": false,
   "marka_ad": "TUZAK AVCISI",
   "marka_renk": [255, 195, 30],
-  "marka_logo": "",
+  "marka_logo": "assets/marka/avatar.png",
   "marka_konum": "ust",
   "marka_slogan": "Her gün yeni bir tüketici tuzağı"
 }
