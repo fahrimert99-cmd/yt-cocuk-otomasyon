@@ -36,6 +36,10 @@ def _sonraki_konu(u):
 
 def main():
     cfg=_load(CFG_P,{})
+    # DURDURMA BAYRAGI: analiz (uzun ort. 38 izlenme vs short 750) sonrasi uzun hatti
+    # devre disi. Yeniden acmak icin config.json'da "uzun_aktif": true yapin.
+    if not cfg.get("uzun_aktif", True):
+        print("Uzun hatti devre disi (config.uzun_aktif=false) — atlaniyor."); return
     u=_load(UZUN_P,{"pending":[],"yapilan":[],"yapilan_id":[],"bekleyen_yorum":None})
     for k in ("pending","yapilan","yapilan_id"): u.setdefault(k,[])
 

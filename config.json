@@ -13,5 +13,6 @@
   "kisa_eleven": false,
   "uzun_eleven": true,
   "uzun_gizlilik": "private",
-  "uzun_gorsel_stil": "stok"
+  "uzun_gorsel_stil": "stok",
+  "uzun_aktif": false
 }

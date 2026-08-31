@@ -164,7 +164,28 @@ TUZAK_KW = ["TUZAK", "FİYAT", "MARKET", "İNDİRİM", "KART", "KREDİ", "KASA",
             "OYUNCAK", "KARGO", "TAKSİT", "SADAKAT", "KUAFÖR", "OTOPARK", "ÇİZİLİ",
             "SİNEMA", "MISIR", "SÜT", "RAF", "VİTRİN", "KUPON", "HEDİYE"]
 
+# senaryolar.json TEK DOGRULUK KAYNAGI: yayinlanan basligin havuzda kayitli
+# `tema` alanini kullan (tuzak / gizem / cesitlilik). Boylece rapordaki tema
+# etiketleri ile uretim havuzu ayni taksonomiyi konusur ve "diger temasinda
+# konu ekle" onerisi havuza birebir uygulanabilir olur. Havuzda olmayan
+# (or. eski/uzun) basliklar icin baslik anahtar kelimesine geri dusulur.
+def _pool_tema_map(_cache={}):
+    if not _cache:
+        try:
+            with open("senaryolar.json", encoding="utf-8-sig") as f:
+                for s in json.load(f):
+                    b = (s.get("baslik") or "").strip()
+                    if b:
+                        _cache[b] = s.get("tema", "tuzak")
+        except Exception:
+            _cache["__yok__"] = True
+    return _cache
+
 def _tema(baslik):
+    m = _pool_tema_map()
+    kayitli = m.get((baslik or "").strip())
+    if kayitli:
+        return kayitli
     b = (baslik or "").upper()
     g = sum(1 for k in GIZEM_KW if k in b)
     t = sum(1 for k in TUZAK_KW if k in b)

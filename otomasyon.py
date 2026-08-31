@@ -103,35 +103,22 @@ def main():
         print("✓ Tüm konular yayınlanmış! Yeni içerik için senaryolar.json'a konu ekleyin.")
         _durum_yaz(durum)
         return
-    # GİZEM GEÇİŞİ (2 hafta): Shorts DEVAM eder ama tema yavaşça "tuzak" -> "gizem"
-    # kayar (kanal, uzun videolarla aynı gizem konseptinde netleşsin).
-    #   Faz1 (gün 0-3):  2 tuzak + 1 gizem
-    #   Faz2 (gün 4-7):  yarı yarıya
-    #   Faz3 (gün 8-11): 2 gizem + 1 tuzak
-    #   Faz4 (gün 12+):  tamamen gizem
-    # Başlangıç tarihi durum.json'a BİR KEZ yazılır (kalıcı). İstenen tema havuzu
-    # boşsa diğer ana temaya düşer (crash yok).
-    from datetime import date as _date
-    if not durum.get("gizem_gecis_baslangic"):
-        durum["gizem_gecis_baslangic"] = _date.today().isoformat()
-    try:
-        _gun = (_date.today() - _date.fromisoformat(durum["gizem_gecis_baslangic"])).days
-    except Exception:
-        _gun = 0
+    # TEMA DENGESİ (veri-odaklı): Uzun (gizem) hattı DURDURULDUĞU için Shorts'u
+    # "tamamen gizem"e kaydırma planı İPTAL edildi (gerekçesi kalmadı). Analiz:
+    #   • 'tuzak' kanıtlanmış ana damar — ort. 608 izlenme, en yüksek etkileşim
+    #     %1.51, top10'un 6'sı. Kanalın motoru bu.
+    #   • 'gizem' genelde en zayıf (ort. 528) AMA okyanus/deniz alt-damarı patlıyor
+    #     (OKYANUSUN DİBİNDE 1605 = #2). Bu yüzden gizem'i azaltıp bırakmıyoruz;
+    #     aşağıdaki OKYANUS önceliği gizem seçilince en güçlü su temalı konuyu öne alır.
+    # STABİL oran: her 3 videodan 2 tuzak + 1 gizem (deterministik, sıraya bağlı).
+    # İstenen tema havuzu boşsa diğer ana temaya düşer (crash yok).
     sirada_no = len(yapilan) + 1  # bu uretilecek videonun sira numarasi (1-based)
-    if _gun <= 3:
-        istenen_tema = "gizem" if sirada_no % 3 == 0 else "tuzak"
-    elif _gun <= 7:
-        istenen_tema = "gizem" if sirada_no % 2 == 0 else "tuzak"
-    elif _gun <= 11:
-        istenen_tema = "tuzak" if sirada_no % 3 == 0 else "gizem"
-    else:
-        istenen_tema = "gizem"
+    istenen_tema = "gizem" if sirada_no % 3 == 0 else "tuzak"
     tema_havuz = [t for t in kalan if _tema(t[1]) == istenen_tema]
     if not tema_havuz:  # o tema bitmişse diğer ana temaya düş
         _diger = "tuzak" if istenen_tema != "tuzak" else "gizem"
         tema_havuz = [t for t in kalan if _tema(t[1]) == _diger] or kalan
-    print(f"      Gizem geçişi: gün {_gun}, {sirada_no}. video -> '{istenen_tema}' "
+    print(f"      Tema dengesi (2 tuzak:1 gizem): {sirada_no}. video -> '{istenen_tema}' "
           f"(gizem kalan: {sum(1 for t in kalan if _tema(t[1])=='gizem')})")
     son_kat = durum.get("son_kategori")
     # Önce bir önceki videodan FARKLI kategorideki konulara bak; yoksa tüm havuza.
