@@ -22,7 +22,7 @@ def _durum():
     if os.path.exists(DURUM):
         with open(DURUM, encoding="utf-8-sig") as f:
             return json.load(f)
-    return {"sonraki": 0}
+    return {"yapilan": []}
 
 
 def _durum_yaz(durum):
@@ -247,9 +247,8 @@ def main():
 
     yapilan.add(veri["baslik"])
     durum["yapilan"] = sorted(yapilan)
-    durum["sonraki"] = (idx + 1) % n
     _durum_yaz(durum)
-    print(f"TAMAM ✓  (yapılan: {len(yapilan)}/{n}, sıradaki: {durum['sonraki']})")
+    print(f"TAMAM ✓  (yapılan: {len(yapilan)}/{n})")
 
 
 if __name__ == "__main__":
