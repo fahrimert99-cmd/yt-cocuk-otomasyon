@@ -45,8 +45,50 @@ def _paste(base,prop,xy,ang):
     glow.paste(t,(xy[0]-p.width//2,xy[1]-p.height//2),t)
     base.alpha_composite(glow.filter(ImageFilter.GaussianBlur(24)))
     base.alpha_composite(p,(xy[0]-p.width//2,xy[1]-p.height//2))
+def _marka_ayar():
+    """config.json'dan SABIT marka kimligi ayarlarini oku (yoksa guvenli varsayilan).
+    marka_ad bos ise band cizilmez -> eski gorunum korunur (geriye uyumlu)."""
+    try:
+        import json
+        with open("config.json",encoding="utf-8-sig") as f: c=json.load(f)
+    except Exception: c={}
+    renk=c.get("marka_renk",[230,20,30])
+    try: renk=tuple(int(x) for x in renk)[:3]
+    except Exception: renk=(230,20,30)
+    return {"ad":str(c.get("marka_ad","") or "").strip(),
+            "renk":renk,
+            "logo":str(c.get("marka_logo","") or "").strip(),
+            "konum":str(c.get("marka_konum","ust") or "ust").strip().lower()}
+
+def _marka_bandi(base,ad,renk,logo_path,konum):
+    """Her kapakta SABIT marka mühürü: yari saydam serit + imza-renk cizgi +
+    (varsa) logo + kanal adi. Taninabilirlik = abone donusumu kaldiraci."""
+    if not ad and not (logo_path and os.path.exists(logo_path)):
+        return  # marka tanimli degil -> band yok (kirilma yok)
+    bh=132; konum=("alt" if konum=="alt" else "ust"); y0=0 if konum=="ust" else H-bh
+    d=ImageDraw.Draw(base,"RGBA")
+    serit=Image.new("RGBA",(W,bh),(0,0,0,150));base.alpha_composite(serit,(0,y0))
+    cizgi=8; ly=(y0+bh-cizgi) if konum=="ust" else y0
+    d.rectangle([0,ly,W,ly+cizgi],fill=renk+(255,))
+    tx0=44
+    if logo_path and os.path.exists(logo_path):
+        try:
+            lg=Image.open(logo_path).convert("RGBA");lh=bh-36;lw=max(1,int(lg.width*lh/lg.height))
+            lg=lg.resize((lw,lh),Image.LANCZOS);base.alpha_composite(lg,(44,y0+18));tx0=44+lw+28
+        except Exception: pass
+    if ad:
+        adU=_up(ad); font=ImageFont.truetype(FB,76)
+        for fs in (76,68,60,52,46):
+            font=ImageFont.truetype(FB,fs)
+            if d.textlength(adU,font=font)<=W-tx0-44: break
+        ty=y0+(bh-fs)//2-6
+        for dx in (-3,0,3):
+            for dy in (-3,0,3): d.text((tx0+dx,ty+dy),adU,font=font,fill=(0,0,0,255))
+        d.text((tx0,ty),adU,font=font,fill=(255,255,255,255))
+
 def kapak_uret(video_path,baslik,cikti="output/kapak.jpg"):
     os.makedirs(os.path.dirname(cikti) or ".",exist_ok=True)
+    marka=_marka_ayar()
     fr="/tmp/_sp.jpg"
     if not _kare(video_path,fr): Image.new("RGB",(W,H),(14,10,18)).save(fr)
     try: bg=Image.open(fr).convert("RGB")
@@ -81,7 +123,10 @@ def kapak_uret(video_path,baslik,cikti="output/kapak.jpg"):
             renk=SARI if any(word.startswith(v) or v in word for v in VURGU) else BEYAZ
             d.text((cx,ty),word,font=font,fill=renk);cx+=d.textlength(word+" ",font=font)
         ty+=lh
-    for i in range(8): d.rectangle([i,i,W-1-i,H-1-i],outline=(210,20,30))
+    # SABIT MARKA MÜHÜRÜ (config.marka_ad): her kapakta ayni yerde -> taninabilirlik
+    _marka_bandi(base,marka["ad"],marka["renk"],marka["logo"],marka["konum"])
+    # kenarlik imza rengiyle (marka_renk)
+    for i in range(8): d.rectangle([i,i,W-1-i,H-1-i],outline=marka["renk"])
     base.convert("RGB").save(cikti,quality=90);return cikti
 if __name__=="__main__":
     import sys
