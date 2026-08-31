@@ -199,5 +199,60 @@ def ImageEnhance_darken(im):
     return ImageEnhance.Brightness(im).enhance(0.42)
 
 
+def avatar(cikti="output/avatar.png", boyut=800):
+    """Profil fotoğrafı (kare, YouTube daireye kırpar). Aynı marka dili:
+    koyu zemin + altın nişangah + kırmızı play (avcı + video motifi birleşik)."""
+    cfg = _cfg()
+    altin = cfg["renk"]
+    B = boyut
+    os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
+
+    base = Image.new("RGBA", (B, B), (0, 0, 0, 0))
+    # dairesel koyu zemin (kırmızıya çalan radyal)
+    d = ImageDraw.Draw(base)
+    c = B // 2
+    for r in range(c, 0, -1):
+        f = r / c
+        col = (int(46 * (1 - f) + 12 * f), int(14 * (1 - f) + 8 * f),
+               int(16 * (1 - f) + 10 * f), 255)
+        d.ellipse([c - r, c - r, c + r, c + r], fill=col)
+    # merkez altın parıltı
+    glow = Image.new("RGBA", (B, B), (0, 0, 0, 0))
+    ImageDraw.Draw(glow).ellipse([B * 0.22, B * 0.22, B * 0.78, B * 0.78],
+                                 fill=(altin[0], altin[1], altin[2], 70))
+    base = Image.alpha_composite(base, glow.filter(ImageFilter.GaussianBlur(60)))
+
+    # altın nişangah (büyük, ortada)
+    h = _hedef(int(B * 0.72), altin)
+    base.alpha_composite(h, ((B - h.width) // 2, (B - h.height) // 2))
+
+    # merkeze kırmızı play üçgeni (video + avcı birleşik motif)
+    d = ImageDraw.Draw(base, "RGBA")
+    s = int(B * 0.14)
+    cx, cy = c + int(s * 0.12), c
+    d.polygon([(cx - s * 0.7, cy - s), (cx - s * 0.7, cy + s), (cx + s, cy)],
+              fill=(230, 20, 30, 255))
+    d.polygon([(cx - s * 0.7, cy - s), (cx - s * 0.7, cy + s), (cx + s, cy)],
+              outline=(255, 255, 255, 230))
+
+    # altın dış halka (daire kenarına)
+    ring = max(8, B // 60)
+    d.ellipse([ring // 2, ring // 2, B - ring // 2, B - ring // 2],
+              outline=altin + (255,), width=ring)
+
+    # daire dışını şeffaf yap (kare köşeler görünmesin)
+    mask = Image.new("L", (B, B), 0)
+    ImageDraw.Draw(mask).ellipse([0, 0, B - 1, B - 1], fill=255)
+    out = Image.new("RGBA", (B, B), (0, 0, 0, 0))
+    out.paste(base, (0, 0), mask)
+    out.save(cikti)
+    return cikti
+
+
 if __name__ == "__main__":
-    print(uret())
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "avatar":
+        print(avatar())
+    else:
+        print(uret())
+
