@@ -103,23 +103,19 @@ def main():
         print("✓ Tüm konular yayınlanmış! Yeni içerik için senaryolar.json'a konu ekleyin.")
         _durum_yaz(durum)
         return
-    # TEMA DENGESİ (veri-odaklı): Uzun (gizem) hattı DURDURULDUĞU için Shorts'u
-    # "tamamen gizem"e kaydırma planı İPTAL edildi (gerekçesi kalmadı). Analiz:
-    #   • 'tuzak' kanıtlanmış ana damar — ort. 608 izlenme, en yüksek etkileşim
-    #     %1.51, top10'un 6'sı. Kanalın motoru bu.
-    #   • 'gizem' genelde en zayıf (ort. 528) AMA okyanus/deniz alt-damarı patlıyor
-    #     (OKYANUSUN DİBİNDE 1605 = #2). Bu yüzden gizem'i azaltıp bırakmıyoruz;
-    #     aşağıdaki OKYANUS önceliği gizem seçilince en güçlü su temalı konuyu öne alır.
-    # STABİL oran: her 3 videodan 2 tuzak + 1 gizem (deterministik, sıraya bağlı).
-    # İstenen tema havuzu boşsa diğer ana temaya düşer (crash yok).
-    sirada_no = len(yapilan) + 1  # bu uretilecek videonun sira numarasi (1-based)
-    istenen_tema = "gizem" if sirada_no % 3 == 0 else "tuzak"
-    tema_havuz = [t for t in kalan if _tema(t[1]) == istenen_tema]
-    if not tema_havuz:  # o tema bitmişse diğer ana temaya düş
-        _diger = "tuzak" if istenen_tema != "tuzak" else "gizem"
-        tema_havuz = [t for t in kalan if _tema(t[1]) == _diger] or kalan
-    print(f"      Tema dengesi (2 tuzak:1 gizem): {sirada_no}. video -> '{istenen_tema}' "
-          f"(gizem kalan: {sum(1 for t in kalan if _tema(t[1])=='gizem')})")
+    # KANAL KİMLİĞİ = "TUZAK AVCISI": SADECE tuzak üret. Gizem içeriği hem
+    # off-brand (abone tüketici tuzağı için geldi) hem en zayıf tema (ort. 528);
+    # kanal kimliğini bozuyor. Öncelik sırası: tuzak -> (biterse) cesitlilik ->
+    # (o da biterse, havuz boş kalmasın diye en son) gizem.
+    istenen_tema = None
+    tema_havuz = kalan
+    for _t in ("tuzak", "cesitlilik", "gizem"):
+        _h = [t for t in kalan if _tema(t[1]) == _t]
+        if _h:
+            istenen_tema, tema_havuz = _t, _h
+            break
+    print(f"      Tema (marka: sadece tuzak): '{istenen_tema}' "
+          f"(tuzak kalan: {sum(1 for t in kalan if _tema(t[1])=='tuzak')})")
     son_kat = durum.get("son_kategori")
     # Önce bir önceki videodan FARKLI kategorideki konulara bak; yoksa tüm havuza.
     havuz = [t for t in tema_havuz if _kategori(t[1]["baslik"]) != son_kat] or tema_havuz
