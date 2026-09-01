@@ -26,10 +26,15 @@ CIKTI_P = "output/haber_senaryo.json"
 # değiştirilebilir). Çalışmayan feed atlanır; en az biri çalışırsa yeter.
 VARSAYILAN_KAYNAKLAR = [
     "https://www.aa.com.tr/tr/rss/default?cat=ekonomi",
-    "https://www.trthaber.com/ekonomi.rss",
     "https://www.ntv.com.tr/ekonomi.rss",
     "https://www.hurriyet.com.tr/rss/ekonomi",
     "https://www.cnnturk.com/feed/rss/ekonomi/news",
+    "https://www.sozcu.com.tr/feeds-rss-category-ekonomi",
+    "https://www.milliyet.com.tr/rss/rssnew/ekonomirss.xml",
+    "https://www.haberturk.com/rss/ekonomi.xml",
+    "https://www.sabah.com.tr/rss/ekonomi.xml",
+    "https://www.dunya.com/rss?dunya",
+    "https://www.trthaber.com/xml_mobile.php?tur=xml_genel&kategori=ekonomi",
 ]
 
 # Tüketici-tuzağı damarına uygun anahtar kelimeler (başlık+özet taranır).
@@ -88,7 +93,9 @@ def _kaynak_adi(link, feed_url):
     dom = (m.group(1) if m else "").lower()
     harita = {"aa.com.tr": "Anadolu Ajansı", "trthaber.com": "TRT Haber",
               "ntv.com.tr": "NTV", "hurriyet.com.tr": "Hürriyet",
-              "cnnturk.com": "CNN Türk"}
+              "cnnturk.com": "CNN Türk", "sozcu.com.tr": "Sözcü",
+              "milliyet.com.tr": "Milliyet", "haberturk.com": "Habertürk",
+              "sabah.com.tr": "Sabah", "dunya.com": "Dünya"}
     for k, v in harita.items():
         if k in dom:
             return v
@@ -168,33 +175,87 @@ def _korunma(item):
     return GENEL_KORUNMA
 
 
+def _akici_script(item):
+    """Haberi AKICI, konuşma diline çevirir (LLM). SADECE verilen bilgiyi
+    kullanır (uydurma yok), kaynağı belirtir. Başarısızsa None (şablona düşülür).
+    Kesik/robotik seslendirmenin sebebi ham RSS metniydi; bu, akıcı cümleler üretir."""
+    ozet = item["ozet"] or item["baslik"]
+    if len(ozet) > 400:
+        ozet = ozet[:397].rsplit(" ", 1)[0] + "..."
+    prompt = (
+        "Sen 'TUZAK AVCISI' adlı tüketici farkındalığı YouTube kanalı için metin "
+        "yazarısın. Aşağıdaki GÜNCEL HABERİ ~40 saniyelik DİKEY bir Short için "
+        "AKICI, DOĞAL, KONUŞMA DİLİNDE tek parça seslendirme metnine çevir.\n"
+        "KURALLAR:\n"
+        "- SADECE verilen bilgiyi kullan. Yeni rakam, tarih veya iddia UYDURMA.\n"
+        "- Kısa, net, akıcı cümleler kur (seslendirme kesik olmasın, vurgular doğal olsun).\n"
+        "- Akış: (1) merak uyandıran kısa açılış, (2) haberin özü sade Türkçeyle, "
+        "(3) bu tüketiciyi nasıl etkiler / ne yapmalı, (4) 'Kaynak: " + item["kaynak"] +
+        "' de, (5) kısa 'abone ol' çağrısı.\n"
+        "- Emin olmadığın ayrıntıyı 'habere göre' diyerek ver. Emoji/başlık kullanma.\n"
+        'SADECE şu JSON: {"baslik": "...", "script": "..."}\n\n'
+        "HABER BAŞLIK: " + item["baslik"] + "\nHABER ÖZET: " + ozet
+    )
+    try:
+        import ai_script, json as _json
+        gkey = os.environ.get("GEMINI_API_KEY", "").strip()
+        ckey = ai_script._claude_key()
+        ham = None
+        if gkey:
+            try: ham = ai_script._gemini(prompt, gkey)
+            except Exception: ham = None
+        if not ham and ckey:
+            ham = ai_script._claude(prompt, ckey)
+        if not ham:
+            return None
+        veri = _json.loads(ai_script._temizle(ham))
+        b = (veri.get("baslik") or item["baslik"]).strip()
+        s = re.sub(r"\s+", " ", (veri.get("script") or "")).strip()
+        if len(s.split()) < 15:
+            return None
+        return b, s
+    except Exception as e:
+        print("  [akici script atlandi]:", str(e)[:100])
+        return None
+
+
+def _bol(text, n=6):
+    """Metni n sahneye SIRALI böler (sahne süresi/gorsel için)."""
+    import math
+    cumleler = [c.strip() for c in re.split(r"(?<=[.!?])\s+", (text or "").strip()) if c.strip()]
+    if len(cumleler) < n:
+        kel = (text or "").split()
+        boyut = max(1, math.ceil(len(kel) / n))
+        cumleler = [" ".join(kel[i:i + boyut]) for i in range(0, len(kel), boyut)] or [text]
+    k = max(1, math.ceil(len(cumleler) / n))
+    gruplar = [" ".join(cumleler[i:i + k]) for i in range(0, len(cumleler), k)]
+    while len(gruplar) < n:
+        gruplar.append(gruplar[-1] if gruplar else (text or ""))
+    return gruplar[:n]
+
+
 def senaryo_yap(item):
     kaynak = item["kaynak"]
     ozet = item["ozet"] or item["baslik"]
     if len(ozet) > 240:
         ozet = ozet[:237].rsplit(" ", 1)[0] + "..."
-    korunma = _korunma(item)
-    baslik = _tr_upper(item["baslik"])[:90] + " 📰"
-
-    kanca = "Tüketiciyi ilgilendiren son gelişme!"
-    script = (
-        f"{kanca} Habere göre: {ozet} "
-        f"Peki sen ne yapmalısın? {korunma} "
-        f"Kaynak: {kaynak}. "
-        f"Böyle tüketici gelişmelerini kaçırmamak için abone ol, yarın yeni bir tuzak."
-    )
+    llm = _akici_script(item)
+    if llm:
+        ham_baslik, script = llm
+        baslik = _tr_upper(ham_baslik)[:90] + " 📰"
+    else:
+        # Yedek: LLM yoksa/başarısızsa ham-metin şablonu (kesik olabilir ama üretir)
+        korunma = _korunma(item)
+        baslik = _tr_upper(item["baslik"])[:90] + " 📰"
+        script = (f"Tüketiciyi ilgilendiren son gelişme. Habere göre: {ozet} "
+                  f"Peki sen ne yapmalısın? {korunma} Kaynak: {kaynak}. "
+                  f"Böyle gelişmeleri kaçırmamak için abone ol, yarın yeni bir tuzak.")
+    kanca = re.split(r"(?<=[.!?])\s+", script.strip())[0][:80]
     g = ["news studio breaking", "turkish lira money shopping",
          "warning sign alert red", "person shopping supermarket",
          "reading contract magnifier", "youtube subscribe bell"]
-    metinler = [
-        kanca,
-        f"Habere göre: {ozet}",
-        f"Sen ne yapmalısın? {korunma}",
-        f"Kaynak: {kaynak}.",
-        "Uyanık tüketici ol, haklarını bil.",
-        "Abone ol, yarın yeni bir tüketici tuzağı!",
-    ]
-    sahneler = [{"metin": metinler[i], "gorsel": g[i]} for i in range(6)]
+    parcalar = _bol(script, 6)
+    sahneler = [{"metin": parcalar[i], "gorsel": g[i]} for i in range(6)]
     return {
         "baslik": baslik,
         "aciklama": f"Habere göre: {ozet} (Kaynak: {kaynak})",
