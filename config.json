@@ -28,5 +28,5 @@
   "oynatma_listesi": true,
   "marka_ilk_kare": true,
   "marka_ilk_kare_sn": 1.5,
-  "haber_gizlilik": "unlisted"
+  "haber_gizlilik": "public"
 }
