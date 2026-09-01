@@ -124,6 +124,13 @@ def main():
     except Exception as e:
         print(f"      Kapak uretilemedi: {str(e)[:120]}")
 
+    # MARKALI İLK KARE (yalnizca dikey/Shorts; kapak.py ilk_kare_bas'a sahip):
+    if dikey and kapak_yolu and cfg.get("marka_ilk_kare", True):
+        try:
+            cikti = K.ilk_kare_bas(cikti, kapak_yolu, sure=float(cfg.get("marka_ilk_kare_sn", 1.0)))
+        except Exception as e:
+            print(f"      Ilk kare atlandi: {str(e)[:100]}")
+
     print("[3/3] YouTube'a yukleniyor ...")
     import youtube_yukle as YT
     YT.yukle(cikti, baslik, aciklama, etiketler, gizlilik=gizlilik, kategori=kategori,

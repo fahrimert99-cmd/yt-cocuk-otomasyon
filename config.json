@@ -21,5 +21,7 @@
   "marka_konum": "ust",
   "marka_slogan": "Her gün yeni bir tüketici tuzağı",
   "marka_handle": "@tuzakavcisitv",
-  "oynatma_listesi": true
+  "oynatma_listesi": true,
+  "marka_ilk_kare": true,
+  "marka_ilk_kare_sn": 1.0
 }

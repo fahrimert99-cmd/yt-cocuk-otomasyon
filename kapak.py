@@ -128,6 +128,41 @@ def kapak_uret(video_path,baslik,cikti="output/kapak.jpg"):
     # kenarlik imza rengiyle (marka_renk)
     for i in range(8): d.rectangle([i,i,W-1-i,H-1-i],outline=marka["renk"])
     base.convert("RGB").save(cikti,quality=90);return cikti
+
+def ilk_kare_bas(video_path, kapak_path, cikti=None, sure=1.0):
+    """MARKALI İLK KARE: kapak gorselini videonun basina ~sure sn intro karesi
+    olarak ekler. Shorts izgarasi/akisi ozel kapak yerine videodan bir KARE
+    gosterdigi icin, ilk kare markali kapak olsun (+ ilk saniyede marka/kanca).
+    Hata olursa ORIJINAL video yolu doner (yukleme asla bozulmaz)."""
+    if not (kapak_path and os.path.exists(kapak_path) and video_path and os.path.exists(video_path)):
+        return video_path
+    cikti = cikti or (os.path.splitext(video_path)[0] + "_intro.mp4")
+    w, h = "1080", "1920"
+    try:
+        r = subprocess.run(["ffprobe","-v","error","-select_streams","v:0",
+                            "-show_entries","stream=width,height","-of","csv=p=0:s=x",video_path],
+                           capture_output=True, text=True)
+        if "x" in r.stdout:
+            w, h = r.stdout.strip().split("x")[:2]
+    except Exception:
+        pass
+    vf = f"scale={w}:{h},setsar=1,fps=30,format=yuv420p"
+    cmd = ["ffmpeg","-y","-loop","1","-t",str(sure),"-i",kapak_path,"-i",video_path,
+           "-filter_complex",
+           f"[0:v]{vf}[v0];anullsrc=channel_layout=stereo:sample_rate=44100:d={sure}[a0];"
+           f"[1:v]{vf}[v1];[v0][a0][v1][1:a]concat=n=2:v=1:a=1[v][a]",
+           "-map","[v]","-map","[a]","-c:v","libx264","-preset","veryfast","-crf","20",
+           "-c:a","aac","-b:a","128k","-movflags","+faststart",cikti]
+    try:
+        p = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+        if p.returncode == 0 and os.path.exists(cikti) and os.path.getsize(cikti) > 1000:
+            print(f"      Markalı ilk kare eklendi ({sure}sn intro).")
+            return cikti
+        print("      İlk kare eklenemedi (ffmpeg), orijinal kullanılıyor:", (p.stderr or "")[-160:])
+    except Exception as e:
+        print("      İlk kare eklenemedi:", str(e)[:150])
+    return video_path
+
 if __name__=="__main__":
     import sys
     print(kapak_uret(sys.argv[1] if len(sys.argv)>1 else "in.mp4", sys.argv[2] if len(sys.argv)>2 else "OYUNLARDAKİ SATIN ALMA TUZAĞI"))

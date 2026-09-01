@@ -159,6 +159,14 @@ def main():
     except Exception as e:
         print(f"      Kapak üretilemedi: {str(e)[:120]}")
 
+    # MARKALI İLK KARE: kapağı videonun başına ~1sn intro karesi olarak ekle
+    # (Shorts özel kapak yerine kareyi gösterir -> ilk kare markalı olsun).
+    if cfg.get("marka_ilk_kare", True) and kapak_yolu:
+        try:
+            cikti = K.ilk_kare_bas(cikti, kapak_yolu, sure=float(cfg.get("marka_ilk_kare_sn", 1.0)))
+        except Exception as e:
+            print(f"      İlk kare atlandı: {str(e)[:100]}")
+
     if cfg.get("yukleme_atla"):
         print("[3/3] ÖNİZLEME MODU — yükleme atlandı (kanal kirlenmez)")
         try:
