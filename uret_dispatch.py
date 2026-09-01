@@ -22,6 +22,13 @@ def _temizle(txt):
 
 
 def _icerik_al():
+    # KISAYOL: konu alanına "FRAGMAN" (veya TANITIM/TRAILER) yazılırsa kanal
+    # fragmanı dosyasını yükle. (senaryo_dosya girdisi main'de olmadığından
+    # "Run workflow" formunda görünmüyor; bu yol mevcut 'konu' girdisiyle çalışır.)
+    _konu = os.environ.get("KONU", "").strip()
+    if _konu.upper() in ("FRAGMAN", "TANITIM", "TRAILER"):
+        with open("assets/marka/kanal_fragmani.json", encoding="utf-8-sig") as f:
+            return json.load(f)
     # Elle "Run workflow": hazır senaryo dosyası yolu (ör. kanal fragmanı).
     dosya = os.environ.get("SENARYO_DOSYA", "").strip()
     if dosya and os.path.exists(dosya):
