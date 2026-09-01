@@ -106,7 +106,8 @@ def main():
     V.uret_video(sp, cikti, ses=ses, dikey=dikey, hiz=hiz,
                  sahneler=sahneler, animasyon=animasyon, cocuk=cocuk, tonlama=tonlama,
                  gorsel_stil=str(cfg.get("gorsel_stil", "stok")), kanca=veri.get("kanca"),
-                 eleven_once=bool(cfg.get("eleven", True)),
+                 eleven_once=bool(cfg.get("kisa_eleven", True) if dikey
+                                  else cfg.get("uzun_eleven", True)),
                  eleven_voice_id=_ses_id)
     print(f"      Cikti: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
