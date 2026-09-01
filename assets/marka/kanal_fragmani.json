@@ -1,0 +1,17 @@
+{
+  "baslik": "TUZAK AVCISI'NA HOŞ GELDİN 🎯",
+  "gizlilik": "unlisted",
+  "aciklama": "Marketler, AVM'ler, bankalar ve uygulamalar seni fark ettirmeden nasıl kandırıyor? TUZAK AVCISI her gün bir tüketici tuzağını çözüyor.",
+  "etiketler": ["tüketici tuzağı", "tuzak avcısı", "para tasarrufu", "market hileleri", "farkındalık", "kanal tanıtım"],
+  "kanca": "Seni herkes kandırıyor — biz oyunu bozuyoruz.",
+  "tema": "tuzak",
+  "script": "Marketler, AVM'ler, bankalar, uygulamalar... Hepsi seni fark ettirmeden kandırıyor. Fiyat oyunları, gizli ücretler, indirim tuzakları — hepsinin arkasında bir numara var. Ben Tuzak Avcısı. Bu oyunları tek tek çözüyorum. Her gün yeni bir tüketici tuzağını açığa çıkarıyorum; sen de paranı korumayı öğreniyorsun. Uyanık bir tüketici ol, bir daha asla kanma. Abone ol — her gün 12:00 ve 20:00'de yeni bir tuzak seni bekliyor!",
+  "sahneler": [
+    {"metin": "Marketler, AVM'ler, bankalar, uygulamalar... Hepsi seni fark ettirmeden kandırıyor.", "gorsel": "crowded supermarket shopping people cart"},
+    {"metin": "Fiyat oyunları, gizli ücretler, indirim tuzakları — hepsinin arkasında bir numara var.", "gorsel": "sale discount red price tags store"},
+    {"metin": "Ben Tuzak Avcısı. Bu oyunları tek tek çözüyorum.", "gorsel": "detective magnifying glass investigation dark"},
+    {"metin": "Her gün yeni bir tüketici tuzağını açığa çıkarıyorum; sen de paranı korumayı öğreniyorsun.", "gorsel": "money savings wallet turkish lira coins"},
+    {"metin": "Uyanık bir tüketici ol, bir daha asla kanma.", "gorsel": "confident smart shopper thinking"},
+    {"metin": "Abone ol — her gün 12:00 ve 20:00'de yeni bir tuzak seni bekliyor!", "gorsel": "youtube subscribe bell notification red"}
+  ]
+}

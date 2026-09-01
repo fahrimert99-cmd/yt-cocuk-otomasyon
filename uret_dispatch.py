@@ -22,6 +22,18 @@ def _temizle(txt):
 
 
 def _icerik_al():
+    # KISAYOL: konu alanına "FRAGMAN" (veya TANITIM/TRAILER) yazılırsa kanal
+    # fragmanı dosyasını yükle. (senaryo_dosya girdisi main'de olmadığından
+    # "Run workflow" formunda görünmüyor; bu yol mevcut 'konu' girdisiyle çalışır.)
+    _konu = os.environ.get("KONU", "").strip()
+    if _konu.upper() in ("FRAGMAN", "TANITIM", "TRAILER"):
+        with open("assets/marka/kanal_fragmani.json", encoding="utf-8-sig") as f:
+            return json.load(f)
+    # Elle "Run workflow": hazır senaryo dosyası yolu (ör. kanal fragmanı).
+    dosya = os.environ.get("SENARYO_DOSYA", "").strip()
+    if dosya and os.path.exists(dosya):
+        with open(dosya, encoding="utf-8-sig") as f:
+            return json.load(f)
     b64 = os.environ.get("RAW_B64", "").strip()
     if b64:
         ham = base64.b64decode(b64).decode("utf-8")
@@ -52,8 +64,12 @@ def main():
     if not script:
         raise SystemExit("Senaryo metni bos - Make'ten icerik gelmedi.")
     baslik   = (veri.get("baslik") or "Video")[:100]
-    aciklama = veri.get("aciklama") or ""
     etiketler = veri.get("etiketler") or []
+    try:
+        import aciklama as _ACK
+        aciklama = _ACK.olustur(veri, cfg)  # SEO + marka footer
+    except Exception:
+        aciklama = veri.get("aciklama") or ""
     if isinstance(etiketler, str):
         etiketler = [e.strip() for e in etiketler.split(",") if e.strip()]
 
@@ -63,7 +79,9 @@ def main():
     if _dv:
         dikey = _dv in ("1", "true", "evet", "dikey", "yes")
     ses      = cfg.get("ses", "kadin")
-    gizlilik = cfg.get("gizlilik", "private")
+    # Senaryo kendi gizliliğini belirtebilir (ör. fragman -> "unlisted" ile
+    # önce incele, sonra public yap). Yoksa config'ten.
+    gizlilik = veri.get("gizlilik") or cfg.get("gizlilik", "private")
     kategori = str(cfg.get("kategori", "27"))
     cocuk = bool(cfg.get("cocuk_icerigi", False))
     animasyon = bool(cfg.get("animasyon", True))
@@ -105,6 +123,13 @@ def main():
         print(f"      Kapak: {kapak_yolu}")
     except Exception as e:
         print(f"      Kapak uretilemedi: {str(e)[:120]}")
+
+    # MARKALI İLK KARE (yalnizca dikey/Shorts; kapak.py ilk_kare_bas'a sahip):
+    if dikey and kapak_yolu and cfg.get("marka_ilk_kare", True):
+        try:
+            cikti = K.ilk_kare_bas(cikti, kapak_yolu, sure=float(cfg.get("marka_ilk_kare_sn", 1.0)))
+        except Exception as e:
+            print(f"      Ilk kare atlandi: {str(e)[:100]}")
 
     print("[3/3] YouTube'a yukleniyor ...")
     import youtube_yukle as YT

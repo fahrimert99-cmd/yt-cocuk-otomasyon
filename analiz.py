@@ -164,7 +164,28 @@ TUZAK_KW = ["TUZAK", "FİYAT", "MARKET", "İNDİRİM", "KART", "KREDİ", "KASA",
             "OYUNCAK", "KARGO", "TAKSİT", "SADAKAT", "KUAFÖR", "OTOPARK", "ÇİZİLİ",
             "SİNEMA", "MISIR", "SÜT", "RAF", "VİTRİN", "KUPON", "HEDİYE"]
 
+# senaryolar.json TEK DOGRULUK KAYNAGI: yayinlanan basligin havuzda kayitli
+# `tema` alanini kullan (tuzak / gizem / cesitlilik). Boylece rapordaki tema
+# etiketleri ile uretim havuzu ayni taksonomiyi konusur ve "diger temasinda
+# konu ekle" onerisi havuza birebir uygulanabilir olur. Havuzda olmayan
+# (or. eski/uzun) basliklar icin baslik anahtar kelimesine geri dusulur.
+def _pool_tema_map(_cache={}):
+    if not _cache:
+        try:
+            with open("senaryolar.json", encoding="utf-8-sig") as f:
+                for s in json.load(f):
+                    b = (s.get("baslik") or "").strip()
+                    if b:
+                        _cache[b] = s.get("tema", "tuzak")
+        except Exception:
+            _cache["__yok__"] = True
+    return _cache
+
 def _tema(baslik):
+    m = _pool_tema_map()
+    kayitli = m.get((baslik or "").strip())
+    if kayitli:
+        return kayitli
     b = (baslik or "").upper()
     g = sum(1 for k in GIZEM_KW if k in b)
     t = sum(1 for k in TUZAK_KW if k in b)
@@ -197,16 +218,29 @@ def _videolar(yt):
         vid_ids += [i["contentDetails"]["videoId"] for i in pl.get("items", [])]
         tok = pl.get("nextPageToken")
         if not tok: break
+    bugun = dt.date.today()
     videolar = []
     for i in range(0, len(vid_ids), 50):
         grup = vid_ids[i:i + 50]
         r = yt.videos().list(part="snippet,statistics,contentDetails", id=",".join(grup)).execute()
         for v in r.get("items", []):
             st = v.get("statistics", {}); sn = _sure_sn(v["contentDetails"].get("duration"))
+            yayin = v["snippet"]["publishedAt"][:10]
+            izlenme = int(st.get("viewCount", 0))
+            # YAŞA GÖRE NORMALIZE: kümülatif izlenme eski videoyu haksız öne çıkarır
+            # (yeni video daha az zaman biriktirdi). Günlük izlenme = izlenme / yaş(gün);
+            # farklı yaştaki videoları adil kıyaslar. Gerçek "48s izlenme" için
+            # yt-analytics.readonly gerekir; bu, eldeki temel veriyle en iyi vekil ölçü.
+            try:
+                yas = max(1, (bugun - dt.date.fromisoformat(yayin)).days)
+            except Exception:
+                yas = 1
             videolar.append({
                 "id": v["id"], "baslik": v["snippet"]["title"],
-                "yayin": v["snippet"]["publishedAt"][:10],
-                "izlenme": int(st.get("viewCount", 0)),
+                "yayin": yayin,
+                "izlenme": izlenme,
+                "izlenme_gunluk": round(izlenme / yas),
+                "yas_gun": yas,
                 "begeni": int(st.get("likeCount", 0)),
                 "yorum": int(st.get("commentCount", 0)),
                 "sure_sn": sn, "format": _format(sn), "tema": _tema(v["snippet"]["title"]),
@@ -228,6 +262,7 @@ def _grup_ozet(videolar, anahtar):
         out[k] = {
             "video": len(g),
             "ort_izlenme": _ort(g, "izlenme"),
+            "ort_izlenme_gunluk": _ort(g, "izlenme_gunluk"),  # yaşa göre normalize ort.
             "toplam_izlenme": toplam_izlenme,
             "etkilesim_orani": round(etk / toplam_izlenme * 100, 2) if toplam_izlenme else 0.0,
         }
@@ -376,6 +411,76 @@ def _degerlendirme(videolar, format_ozet, tema_ozet, top, yeni):
     return bulgular, aksiyonlar
 
 
+def _analytics(id2title):
+    """YouTube Analytics API (yt-analytics.readonly) ile DERİN metrikler:
+    son 28 gün retention (ort. izlenme %), CTR (kapak tıklama oranı), ort.
+    izleme süresi — kanal geneli + video bazında ilk 10. İzin/veri yoksa
+    boş döner (rapor temel metriklerle devam eder)."""
+    out = {}
+    try:
+        yta = build("youtubeAnalytics", "v2", credentials=_kimlik())
+    except Exception as e:
+        return {"hata": f"analytics istemcisi kurulamadı: {str(e)[:120]}"}
+    bit = dt.date.today()
+    bas = bit - dt.timedelta(days=28)
+
+    def _q(**kw):
+        return yta.reports().query(ids="channel==MINE", startDate=bas.isoformat(),
+                                   endDate=bit.isoformat(), **kw).execute()
+
+    def _satir(r):
+        h = [c["name"] for c in r.get("columnHeaders", [])]
+        rows = r.get("rows") or []
+        return h, rows
+
+    # 1) Kanal geneli retention + izleme süresi
+    try:
+        h, rows = _satir(_q(metrics="views,averageViewDuration,averageViewPercentage,"
+                                    "estimatedMinutesWatched,subscribersGained"))
+        m = dict(zip(h, rows[0])) if rows else {}
+        out["kanal_28g"] = {
+            "izlenme": m.get("views"),
+            "retention_yuzde": round(float(m.get("averageViewPercentage", 0)), 1),
+            "ort_izleme_sn": round(float(m.get("averageViewDuration", 0))),
+            "izlenme_dk": round(float(m.get("estimatedMinutesWatched", 0))),
+            "abone_kazanc": m.get("subscribersGained"),
+        }
+    except Exception as e:
+        out["kanal_28g_hata"] = str(e)[:160]
+
+    # 2) CTR (kapak gösterim/tıklama)
+    try:
+        h, rows = _satir(_q(metrics="impressions,impressionsClickThroughRate"))
+        m = dict(zip(h, rows[0])) if rows else {}
+        out["ctr_28g"] = {
+            "gosterim": m.get("impressions"),
+            "ctr_yuzde": round(float(m.get("impressionsClickThroughRate", 0)), 2),
+        }
+    except Exception as e:
+        out["ctr_28g_hata"] = str(e)[:160]
+
+    # 3) Video bazında (ilk 10, izlenmeye göre)
+    try:
+        h, rows = _satir(_q(dimensions="video", sort="-views", maxResults=10,
+                            metrics="views,averageViewPercentage,averageViewDuration,"
+                                    "impressionsClickThroughRate"))
+        vids = []
+        for row in rows:
+            d = dict(zip(h, row))
+            vids.append({
+                "baslik": id2title.get(d.get("video"), d.get("video")),
+                "izlenme": d.get("views"),
+                "retention_yuzde": round(float(d.get("averageViewPercentage", 0)), 1),
+                "ort_izleme_sn": round(float(d.get("averageViewDuration", 0))),
+                "ctr_yuzde": round(float(d.get("impressionsClickThroughRate", 0)), 2),
+            })
+        out["video_28g"] = vids
+    except Exception as e:
+        out["video_28g_hata"] = str(e)[:160]
+
+    return out
+
+
 def main():
     yt = build("youtube", "v3", credentials=_kimlik())
     videolar, kanal_ist = _videolar(yt)
@@ -392,16 +497,22 @@ def main():
     # verilerden yorum + somut aksiyon önerileri (API'siz)
     bulgular, aksiyonlar = _degerlendirme(videolar, format_ozet, tema_ozet, top, yeni)
 
+    # DERİN metrikler (retention/CTR) — yt-analytics.readonly izniyle
+    analytics = _analytics({v["id"]: v["baslik"] for v in videolar})
+
     rapor = {
         "tarih": bugun,
         "kanal": {"abone": kanal_ist.get("subscriberCount"),
                   "toplam_izlenme": kanal_ist.get("viewCount"),
                   "video_sayisi": kanal_ist.get("videoCount")},
+        "analytics": analytics,
         "degerlendirme": {"bulgular": bulgular, "aksiyonlar": aksiyonlar},
-        "top10": [{"baslik": v["baslik"], "izlenme": v["izlenme"], "tema": v["tema"],
+        "top10": [{"baslik": v["baslik"], "izlenme": v["izlenme"],
+                   "izlenme_gunluk": v["izlenme_gunluk"], "tema": v["tema"],
                    "format": v["format"]} for v in top],
-        "son7gun": [{"baslik": v["baslik"], "izlenme": v["izlenme"], "tema": v["tema"],
-                     "format": v["format"], "yayin": v["yayin"]} for v in yeni],
+        "son7gun": [{"baslik": v["baslik"], "izlenme": v["izlenme"],
+                     "izlenme_gunluk": v["izlenme_gunluk"], "yas_gun": v["yas_gun"],
+                     "tema": v["tema"], "format": v["format"], "yayin": v["yayin"]} for v in yeni],
         "format_ozet": format_ozet,
         "tema_ozet": tema_ozet,
     }
@@ -416,6 +527,27 @@ def main():
     L.append(f"# 📊 Kanal Denetim Raporu — {bugun}\n")
     k = rapor["kanal"]
     L.append(f"**Abone:** {k['abone']}  |  **Toplam izlenme:** {k['toplam_izlenme']}  |  **Video:** {k['video_sayisi']}\n")
+    # --- DERİN metrikler (retention/CTR, son 28 gün) ---
+    _an = rapor.get("analytics") or {}
+    _kg = _an.get("kanal_28g"); _ct = _an.get("ctr_28g")
+    if _kg or _ct:
+        L.append("## 🎯 Retention & CTR (son 28 gün)")
+        if _kg:
+            L.append(f"- **Ortalama izlenme oranı (retention): %{_kg.get('retention_yuzde')}** "
+                     f"— ort. izleme süresi {_kg.get('ort_izleme_sn')} sn")
+            L.append(f"- İzlenme: {_kg.get('izlenme')} · İzlenme süresi: {_kg.get('izlenme_dk')} dk "
+                     f"· Abone kazancı: {_kg.get('abone_kazanc')}")
+        if _ct:
+            L.append(f"- **CTR (kapak tıklama oranı): %{_ct.get('ctr_yuzde')}** "
+                     f"— {_ct.get('gosterim')} gösterim")
+        _vd = _an.get("video_28g") or []
+        if _vd:
+            L.append("\n| Başlık | İzlenme | Retention % | CTR % | Ort. sn |")
+            L.append("|--------|---------|-------------|-------|---------|")
+            for v in _vd:
+                L.append(f"| {str(v['baslik'])[:40]} | {v['izlenme']} | "
+                         f"{v['retention_yuzde']} | {v['ctr_yuzde']} | {v['ort_izleme_sn']} |")
+        L.append("")
     # --- AI danışman yorumu (varsa) en üstte, anlatısal ---
     if ai_yorum:
         L.append("## 🗣️ Danışman Yorumu (AI)")
@@ -429,15 +561,17 @@ def main():
         L.append(f"{i}. {a}")
     L.append("")
     L.append("## Format performansı (son ~50 video)")
-    L.append("| Format | Video | Ort. izlenme | Toplam izlenme | Etkileşim % |")
-    L.append("|--------|-------|--------------|----------------|-------------|")
+    L.append("| Format | Video | Ort. izlenme | Ort. günlük* | Toplam izlenme | Etkileşim % |")
+    L.append("|--------|-------|--------------|--------------|----------------|-------------|")
     for f, d in sorted(format_ozet.items()):
-        L.append(f"| {f} | {d['video']} | {d['ort_izlenme']} | {d['toplam_izlenme']} | {d['etkilesim_orani']} |")
+        L.append(f"| {f} | {d['video']} | {d['ort_izlenme']} | {d.get('ort_izlenme_gunluk','-')} | {d['toplam_izlenme']} | {d['etkilesim_orani']} |")
     L.append("\n## Tema performansı")
-    L.append("| Tema | Video | Ort. izlenme | Toplam izlenme | Etkileşim % |")
-    L.append("|------|-------|--------------|----------------|-------------|")
+    L.append("| Tema | Video | Ort. izlenme | Ort. günlük* | Toplam izlenme | Etkileşim % |")
+    L.append("|------|-------|--------------|--------------|----------------|-------------|")
     for t, d in sorted(tema_ozet.items(), key=lambda x: -x[1]["ort_izlenme"]):
-        L.append(f"| {t} | {d['video']} | {d['ort_izlenme']} | {d['toplam_izlenme']} | {d['etkilesim_orani']} |")
+        L.append(f"| {t} | {d['video']} | {d['ort_izlenme']} | {d.get('ort_izlenme_gunluk','-')} | {d['toplam_izlenme']} | {d['etkilesim_orani']} |")
+    L.append("\n> *Ort. günlük = izlenme / video yaşı (gün). Yaşa göre normalize; farklı "
+             "yaştaki videoları adil kıyaslar. Kümülatif izlenme eski videoyu şişirir.")
     L.append("\n## En çok izlenen 10 video")
     L.append("| # | Başlık | İzlenme | Tema | Format |")
     L.append("|---|--------|---------|------|--------|")
@@ -445,13 +579,22 @@ def main():
         L.append(f"| {i} | {v['baslik'][:45]} | {v['izlenme']} | {v['tema']} | {v['format']} |")
     L.append(f"\n## Son 7 günde yayınlananlar ({len(yeni)})")
     if yeni:
-        L.append("| Başlık | İzlenme | Tema | Format | Yayın |")
-        L.append("|--------|---------|------|--------|-------|")
-        for v in sorted(yeni, key=lambda x: -x["izlenme"]):
-            L.append(f"| {v['baslik'][:40]} | {v['izlenme']} | {v['tema']} | {v['format']} | {v['yayin']} |")
-    L.append("\n> Not: Retention (izlenme %) ve CTR gibi derin metrikler için "
-             "YouTube Analytics izni (yt-analytics.readonly) gerekir; şu an temel "
-             "metrikler (izlenme/beğeni/yorum) raporlanıyor.")
+        # FORMAT AYRIMI: short ve uzun farklı taban çizgisine sahip; karıştırmak
+        # yapay dalgalanma gösterir. Ayrı tablolar + yaşa göre normalize sıralama.
+        for _fmt in ("short", "uzun"):
+            _grup = [v for v in yeni if v["format"] == _fmt]
+            if not _grup:
+                continue
+            L.append(f"\n**{_fmt}** ({len(_grup)})")
+            L.append("| Başlık | İzlenme | Günlük* | Yaş (g) | Tema | Yayın |")
+            L.append("|--------|---------|---------|---------|------|-------|")
+            for v in sorted(_grup, key=lambda x: -x["izlenme_gunluk"]):
+                L.append(f"| {v['baslik'][:40]} | {v['izlenme']} | {v['izlenme_gunluk']} "
+                         f"| {v['yas_gun']} | {v['tema']} | {v['yayin']} |")
+    if _an.get("kanal_28g_hata") or _an.get("hata"):
+        L.append("\n> Not: Derin metrikler (retention/CTR) çekilemedi — "
+                 "yt-analytics.readonly izni/verisi kontrol edilmeli. "
+                 f"({_an.get('hata') or _an.get('kanal_28g_hata')})")
     md = "\n".join(L) + "\n"
     with open("analiz_rapor.md", "w", encoding="utf-8") as f:
         f.write(md)

@@ -22,7 +22,7 @@ def _durum():
     if os.path.exists(DURUM):
         with open(DURUM, encoding="utf-8-sig") as f:
             return json.load(f)
-    return {"sonraki": 0}
+    return {"yapilan": []}
 
 
 def _durum_yaz(durum):
@@ -103,36 +103,19 @@ def main():
         print("✓ Tüm konular yayınlanmış! Yeni içerik için senaryolar.json'a konu ekleyin.")
         _durum_yaz(durum)
         return
-    # GİZEM GEÇİŞİ (2 hafta): Shorts DEVAM eder ama tema yavaşça "tuzak" -> "gizem"
-    # kayar (kanal, uzun videolarla aynı gizem konseptinde netleşsin).
-    #   Faz1 (gün 0-3):  2 tuzak + 1 gizem
-    #   Faz2 (gün 4-7):  yarı yarıya
-    #   Faz3 (gün 8-11): 2 gizem + 1 tuzak
-    #   Faz4 (gün 12+):  tamamen gizem
-    # Başlangıç tarihi durum.json'a BİR KEZ yazılır (kalıcı). İstenen tema havuzu
-    # boşsa diğer ana temaya düşer (crash yok).
-    from datetime import date as _date
-    if not durum.get("gizem_gecis_baslangic"):
-        durum["gizem_gecis_baslangic"] = _date.today().isoformat()
-    try:
-        _gun = (_date.today() - _date.fromisoformat(durum["gizem_gecis_baslangic"])).days
-    except Exception:
-        _gun = 0
-    sirada_no = len(yapilan) + 1  # bu uretilecek videonun sira numarasi (1-based)
-    if _gun <= 3:
-        istenen_tema = "gizem" if sirada_no % 3 == 0 else "tuzak"
-    elif _gun <= 7:
-        istenen_tema = "gizem" if sirada_no % 2 == 0 else "tuzak"
-    elif _gun <= 11:
-        istenen_tema = "tuzak" if sirada_no % 3 == 0 else "gizem"
-    else:
-        istenen_tema = "gizem"
-    tema_havuz = [t for t in kalan if _tema(t[1]) == istenen_tema]
-    if not tema_havuz:  # o tema bitmişse diğer ana temaya düş
-        _diger = "tuzak" if istenen_tema != "tuzak" else "gizem"
-        tema_havuz = [t for t in kalan if _tema(t[1]) == _diger] or kalan
-    print(f"      Gizem geçişi: gün {_gun}, {sirada_no}. video -> '{istenen_tema}' "
-          f"(gizem kalan: {sum(1 for t in kalan if _tema(t[1])=='gizem')})")
+    # KANAL KİMLİĞİ = "TUZAK AVCISI": SADECE tuzak üret. Gizem içeriği hem
+    # off-brand (abone tüketici tuzağı için geldi) hem en zayıf tema (ort. 528);
+    # kanal kimliğini bozuyor. Öncelik sırası: tuzak -> (biterse) cesitlilik ->
+    # (o da biterse, havuz boş kalmasın diye en son) gizem.
+    istenen_tema = None
+    tema_havuz = kalan
+    for _t in ("tuzak", "cesitlilik", "gizem"):
+        _h = [t for t in kalan if _tema(t[1]) == _t]
+        if _h:
+            istenen_tema, tema_havuz = _t, _h
+            break
+    print(f"      Tema (marka: sadece tuzak): '{istenen_tema}' "
+          f"(tuzak kalan: {sum(1 for t in kalan if _tema(t[1])=='tuzak')})")
     son_kat = durum.get("son_kategori")
     # Önce bir önceki videodan FARKLI kategorideki konulara bak; yoksa tüm havuza.
     havuz = [t for t in tema_havuz if _kategori(t[1]["baslik"]) != son_kat] or tema_havuz
@@ -175,6 +158,14 @@ def main():
         print(f"      Kapak: {kapak_yolu}")
     except Exception as e:
         print(f"      Kapak üretilemedi: {str(e)[:120]}")
+
+    # MARKALI İLK KARE: kapağı videonun başına ~1sn intro karesi olarak ekle
+    # (Shorts özel kapak yerine kareyi gösterir -> ilk kare markalı olsun).
+    if cfg.get("marka_ilk_kare", True) and kapak_yolu:
+        try:
+            cikti = K.ilk_kare_bas(cikti, kapak_yolu, sure=float(cfg.get("marka_ilk_kare_sn", 1.0)))
+        except Exception as e:
+            print(f"      İlk kare atlandı: {str(e)[:100]}")
 
     if cfg.get("yukleme_atla"):
         print("[3/3] ÖNİZLEME MODU — yükleme atlandı (kanal kirlenmez)")
@@ -219,19 +210,41 @@ def main():
         except Exception as _e:
             print("! Yorum eklenemedi: " + str(_e)[:160])
 
-    _vid = YT.yukle(cikti, veri["baslik"], veri.get("aciklama", ""),
+    try:
+        import aciklama as ACK
+        _aciklama = ACK.olustur(veri, cfg)  # SEO + marka footer (CTA/saat/handle/hashtag)
+    except Exception as e:
+        print(f"      Açıklama şablonu atlandı: {str(e)[:100]}")
+        _aciklama = veri.get("aciklama", "")
+    _vid = YT.yukle(cikti, veri["baslik"], _aciklama,
              veri.get("etiketler", []),
              gizlilik=cfg.get("gizlilik", "private"),
              kategori=str(cfg.get("kategori", "28")),
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
              kapak=kapak_yolu, yayin_zamani=yayin_zamani)
+    # OYNATMA LİSTESİ: videoyu kategori/temasına göre listeye ekle (izlenme
+    # süresi/oturum uzunluğu -> algoritma sever). Hata olursa yükleme bozulmaz.
+    if cfg.get("oynatma_listesi", True):
+        _LISTE = {"market": "🛒 Market & AVM Tuzakları",
+                  "finans": "💳 Banka & Kart Tuzakları",
+                  "dijital": "📱 Dijital & Uygulama Tuzakları",
+                  "psikoloji": "🧠 Psikolojik Satış Oyunları",
+                  "yeme": "🍔 Restoran & Yeme-İçme Tuzakları",
+                  "hizmet": "🏨 Hizmet & Abonelik Tuzakları"}
+        _liste = ("🌊 Gizemler & Bilinmeyenler" if veri.get("tema") == "gizem"
+                  else _LISTE.get(durum.get("son_kategori"), "🎯 Tüm Tuzaklar"))
+        try:
+            YT.oynatma_listesine_ekle(_vid, _liste)
+            print(f"      Oynatma listesine eklendi: {_liste}")
+        except Exception as e:
+            print(f"      Oynatma listesi atlandı: {str(e)[:120]}")
     # Yorum, video public olduktan SONRA atilir (ozel videoya yorum yasak).
     # Video ID + yorum metni durum.json'a yazilir; yorum.yml 19:15'te gonderir.
     durum["bekleyen_yorum"] = {
         "video_id": _vid,
         "metin": (f"{veri.get('kanca','Bu tuzağı biliyor muydun?')}\n\n"
                   "Sen bu tuzağa hiç düştün mü? Yorumla \U0001F447\n"
-                  "\U0001F514 Her akşam 19:00'da yeni bir tüketici tuzağı — ABONE OL, kaçırma!"),
+                  "\U0001F514 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"),
     }
     # TikTok/Reels icin: videoyu + kapagi calisma dizinine kopyala.
     # NOT: Repoya COMMIT EDILMEZ — 18MB'lik mp4'ler git gecmisini sisiriyordu.
@@ -247,9 +260,8 @@ def main():
 
     yapilan.add(veri["baslik"])
     durum["yapilan"] = sorted(yapilan)
-    durum["sonraki"] = (idx + 1) % n
     _durum_yaz(durum)
-    print(f"TAMAM ✓  (yapılan: {len(yapilan)}/{n}, sıradaki: {durum['sonraki']})")
+    print(f"TAMAM ✓  (yapılan: {len(yapilan)}/{n})")
 
 
 if __name__ == "__main__":

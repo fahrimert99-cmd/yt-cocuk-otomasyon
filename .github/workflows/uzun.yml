@@ -4,8 +4,11 @@ name: Uzun Video (Otonom)
 # gizli (link ile) yüklenir — kanalda herkese açık olmaz. Kaliteyi onaylayınca
 # "private" (zamanlanmış public) yapın.
 on:
-  schedule:
-    - cron: "0 8 * * 2,6"   # Salı ve Cumartesi 08:00 UTC — haftada 2 uzun video
+  # Zamanlanmış üretim DURDURULDU (analiz: uzun ort. 38 izlenme vs short 750).
+  # Yeniden açmak için aşağıdaki schedule'ı geri ekleyin ve config.json'da
+  # "uzun_aktif": true yapın. Manuel çalıştırma workflow_dispatch ile mümkün.
+  # schedule:
+  #   - cron: "0 8 * * 2,6"   # Salı ve Cumartesi 08:00 UTC — haftada 2 uzun video
   workflow_dispatch: {}
 permissions:
   contents: write

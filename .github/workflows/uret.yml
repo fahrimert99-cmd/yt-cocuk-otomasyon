@@ -13,6 +13,14 @@ on:
         description: "Dikey (Shorts) mi? uzun/yatay icin 'hayir'"
         required: false
         default: "hayir"
+      raw_b64:
+        description: "Base64 senaryo JSON (elle tam senaryo uretimi; or. kanal fragmani)"
+        required: false
+        default: ""
+      senaryo_dosya:
+        description: "Hazir senaryo JSON yolu (or. assets/marka/kanal_fragmani.json)"
+        required: false
+        default: ""
 
 # En az yetki: bu is repoya push etmez, sadece YouTube'a yukler → read yeterli.
 permissions:
@@ -37,7 +45,8 @@ jobs:
 
       - name: Video uret ve yukle
         env:
-          RAW_B64: ${{ github.event.client_payload.b64 }}
+          RAW_B64: ${{ github.event.client_payload.b64 || github.event.inputs.raw_b64 }}
+          SENARYO_DOSYA: ${{ github.event.inputs.senaryo_dosya }}
           KONU: ${{ github.event.inputs.konu }}
           DIKEY: ${{ github.event.inputs.dikey }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}

@@ -7,11 +7,21 @@
   "cocuk_icerigi": false,
   "animasyon": true,
   "hiz": "+6%",
-  "yayin_saati_utc": "16:00",
+  "yayin_saati_utc": "",
   "gorsel_stil": "stok",
   "kisa_ses_id": "jaicbKf2LuAoprMLZ5Gd",
   "kisa_eleven": false,
   "uzun_eleven": true,
   "uzun_gizlilik": "private",
-  "uzun_gorsel_stil": "stok"
+  "uzun_gorsel_stil": "stok",
+  "uzun_aktif": false,
+  "marka_ad": "TUZAK AVCISI",
+  "marka_renk": [255, 195, 30],
+  "marka_logo": "assets/marka/avatar.png",
+  "marka_konum": "ust",
+  "marka_slogan": "Her gün yeni bir tüketici tuzağı",
+  "marka_handle": "@tuzakavcisitv",
+  "oynatma_listesi": true,
+  "marka_ilk_kare": true,
+  "marka_ilk_kare_sn": 1.0
 }

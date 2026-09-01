@@ -10,7 +10,7 @@
       "tüketici",
       "kar"
     ],
-    "script": "Açık büfede tabaklar bilerek küçüktür ve ekmek, pilav, makarna gibi ucuz doyuranlar hep en başa konur. Amaç, seni ucuz olanla doyurup pahalı üründen uzak tutmak. Aç gitme ve önce pahalı olan yemeklerden al.",
+    "script": "Açık büfede tabaklar bilerek küçüktür ve ekmek, pilav, makarna gibi ucuz doyuranlar hep en başa konur. Amaç, seni ucuz olanla doyurup pahalı üründen uzak tutmak. Aç gitme ve önce pahalı olan yemeklerden al. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "NEDEN TABAKLAR KÜÇÜK?",
     "sahneler": [
       {
@@ -34,7 +34,7 @@
         "gorsel": "rice and pasta tray"
       },
       {
-        "metin": "Aç gitme ve önce pahalı olan yemeklerden al.",
+        "metin": "Aç gitme ve önce pahalı olan yemeklerden al. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "restaurant dining hall"
       }
     ],
@@ -51,7 +51,7 @@
       "tüketici",
       "tasarruf"
     ],
-    "script": "İlk saat ücretsiz yazısı seni içeri çekmek içindir. İçeri girdikten sonra ücret saat başı katlanarak artar ve çıkışta şaşırırsın. Girmeden önce tam tarifeyi oku ve süreni bilerek ayarla, kör girme.",
+    "script": "İlk saat ücretsiz yazısı seni içeri çekmek içindir. İçeri girdikten sonra ücret saat başı katlanarak artar ve çıkışta şaşırırsın. Girmeden önce tam tarifeyi oku ve süreni bilerek ayarla, kör girme. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "İLK SAAT NEDEN BEDAVA?",
     "sahneler": [
       {
@@ -75,7 +75,7 @@
         "gorsel": "hand taking ticket"
       },
       {
-        "metin": "Girmeden önce tam tarifeyi oku ve süreni bilerek ayarla, kör girme.",
+        "metin": "Girmeden önce tam tarifeyi oku ve süreni bilerek ayarla, kör girme. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "car exit barrier"
       }
     ],
@@ -92,7 +92,7 @@
       "tüketici",
       "psikoloji"
     ],
-    "script": "Menüdeki en pahalı yemek satılmak için değil, yanındakini sana ucuz göstermek için oradadır. Gözünü de sağ üst köşeye çekerler, çünkü orası en kârlı bölgedir. Fiyatın yönlendirmesine değil, canının çektiğine bak.",
+    "script": "Menüdeki en pahalı yemek satılmak için değil, yanındakini sana ucuz göstermek için oradadır. Gözünü de sağ üst köşeye çekerler, çünkü orası en kârlı bölgedir. Fiyatın yönlendirmesine değil, canının çektiğine bak. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "EN PAHALI YEMEK NEDEN ORADA?",
     "sahneler": [
       {
@@ -116,7 +116,7 @@
         "gorsel": "restaurant table setting"
       },
       {
-        "metin": "Fiyatın yönlendirmesine değil, canının çektiğine bak.",
+        "metin": "Fiyatın yönlendirmesine değil, canının çektiğine bak. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "hand pointing menu"
       }
     ],
@@ -133,7 +133,7 @@
       "alışveriş",
       "tüketici"
     ],
-    "script": "Üstü çizili o eski fiyat çoğu zaman hiç var olmadı bile. O yüksek rakam, indirimli fiyatı sana ucuz göstermek için konur; ürün belki o fiyattan hiç satılmadı. Sahte bir kıyas yaratırlar. Ürünün gerçek değerine bak, çizgiye değil.",
+    "script": "Üstü çizili o eski fiyat çoğu zaman hiç var olmadı bile. O yüksek rakam, indirimli fiyatı sana ucuz göstermek için konur; ürün belki o fiyattan hiç satılmadı. Sahte bir kıyas yaratırlar. Ürünün gerçek değerine bak, çizgiye değil. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "ESKİ FİYAT GERÇEK Mİ?",
     "sahneler": [
       {
@@ -157,7 +157,7 @@
         "gorsel": "hand holding tag"
       },
       {
-        "metin": "Ürünün gerçek değerine bak, çizgiye değil.",
+        "metin": "Ürünün gerçek değerine bak, çizgiye değil. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "person shopping decision"
       }
     ],
@@ -174,7 +174,7 @@
       "harcama",
       "tüketici"
     ],
-    "script": "Kuaförde ekstralar tam 'hayır' demenin en zor olduğu anda önerilir. Koltuğa oturup işlem başlayınca yıkama, maske, fön gibi eklemeleri teklif ederler; her biri küçük ücret, toplamı büyük. Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme.",
+    "script": "Kuaförde ekstralar tam 'hayır' demenin en zor olduğu anda önerilir. Koltuğa oturup işlem başlayınca yıkama, maske, fön gibi eklemeleri teklif ederler; her biri küçük ücret, toplamı büyük. Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "SEN İSTEMEDEN NASIL ARTAR?",
     "sahneler": [
       {
@@ -198,7 +198,7 @@
         "gorsel": "mirror reflection salon"
       },
       {
-        "metin": "Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme.",
+        "metin": "Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "paying at salon counter"
       }
     ],
@@ -215,7 +215,7 @@
       "alışveriş",
       "tüketici"
     ],
-    "script": "Marketlerde büyük indirim reyonu genelde tam girişte ve göz hizasında durur. Amaç, daha ihtiyacını düşünmeden sepetini doldurtmak. Göz hizasındaki ürünler en pahalı, en kârlı olanlardır; ucuzlar alt ve üst raflardadır. Eğil, bak, listene sadık kal.",
+    "script": "Marketlerde büyük indirim reyonu genelde tam girişte ve göz hizasında durur. Amaç, daha ihtiyacını düşünmeden sepetini doldurtmak. Göz hizasındaki ürünler en pahalı, en kârlı olanlardır; ucuzlar alt ve üst raflardadır. Eğil, bak, listene sadık kal. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "kanca": "NEDEN GİRİŞTE DURUR?",
     "sahneler": [
       {
@@ -239,7 +239,7 @@
         "gorsel": "bottom shelf products"
       },
       {
-        "metin": "Eğil, bak, listene sadık kal.",
+        "metin": "Eğil, bak, listene sadık kal. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "person choosing product"
       }
     ],
@@ -262,7 +262,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Markete girer girmez neden meyve sebze görürsün? Çünkü renkli, taze ve sağlıklı görünür. Bu seni iyi hissettirir, savunmanı düşürür. 'Bugün sağlıklı alışveriş yapıyorum' dersin, sonra çikolata reyonuna dalarsın. Giriş bir tuzak. Seni rahatlatıp cüzdanını açtırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Markete girer girmez neden meyve sebze görürsün? Çünkü renkli, taze ve sağlıklı görünür. Bu seni iyi hissettirir, savunmanı düşürür. 'Bugün sağlıklı alışveriş yapıyorum' dersin, sonra çikolata reyonuna dalarsın. Giriş bir tuzak. Seni rahatlatıp cüzdanını açtırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "market girişi manav",
@@ -285,7 +285,7 @@
         "gorsel": "chocolate aisle in supermarket closeup"
       },
       {
-        "metin": "dolu sepet",
+        "metin": "dolu sepet Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "full shopping basket mixed items closeup"
       }
     ],
@@ -309,7 +309,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Çöpe attığın o ürün büyük ihtimalle hâlâ yenilebilirdi. Üründe iki farklı tarih var ve çoğu insan farkı bilmiyor: 'tavsiye edilen tüketim tarihi' geçince ürün bozulmaz, sadece en iyi hali geçer. Ama sen atarsın, yeniden alırsın; markalar bunu bilir. Milyonlarca sağlam ürün böyle çöpe gidiyor. Etikete iyi bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Çöpe attığın o ürün büyük ihtimalle hâlâ yenilebilirdi. Üründe iki farklı tarih var ve çoğu insan farkı bilmiyor: 'tavsiye edilen tüketim tarihi' geçince ürün bozulmaz, sadece en iyi hali geçer. Ama sen atarsın, yeniden alırsın; markalar bunu bilir. Milyonlarca sağlam ürün böyle çöpe gidiyor. Etikete iyi bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "ürün etiketi tarih",
@@ -332,7 +332,7 @@
         "gorsel": "confused person reading label closeup"
       },
       {
-        "metin": "dolu çöp kovası",
+        "metin": "dolu çöp kovası Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "full trash bin with food waste closeup"
       }
     ],
@@ -356,7 +356,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürüne defalarca baktın, fiyatı arttı mı? Yanılmıyorsun. Bazı siteler ne kadar çok istediğini anlar ve fiyatı yükseltir. Aynı ürün, farklı telefonda daha ucuz. Gizli sekmede fiyat düşebilir. İlgini gösterdikçe pahalanırsın. Bir dahaki sefere gizli modda bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürüne defalarca baktın, fiyatı arttı mı? Yanılmıyorsun. Bazı siteler ne kadar çok istediğini anlar ve fiyatı yükseltir. Aynı ürün, farklı telefonda daha ucuz. Gizli sekmede fiyat düşebilir. İlgini gösterdikçe pahalanırsın. Bir dahaki sefere gizli modda bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "telefonda alışveriş",
@@ -379,7 +379,7 @@
         "gorsel": "thoughtful online shopper closeup"
       },
       {
-        "metin": "ekranda ürün",
+        "metin": "ekranda ürün Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "product page on laptop screen closeup"
       }
     ],
@@ -387,7 +387,7 @@
     "tema": "tuzak"
   },
   {
-    "baslik": "YILDIZLI YORUMLAR SAHTE Mİ? ⭐",
+    "baslik": "YILDIZLI YORUMLARI KİM YAZIYOR? ⭐",
     "aciklama": "Beş yıldızlı ürün yorumları neden hep abartılı? Sahte yorum çiftlikleri ve satın alınan puanların işleyişi.\n\nO YORUMLAR GERÇEK Mİ?\n\nMarketler, AVM'ler, restoranlar ve uygulamaların her gün kurduğu gizli tuzakları kısa videolarla anlatıyoruz. Fark et, kanma.\n\nHer akşam 19:00'da yeni video.\n\n#sahteyorumlar #yıldızpuantuzağı #ürünyorumugüvenilirmi #gizlituzak #shorts",
     "etiketler": [
       "sahte yorumlar",
@@ -403,7 +403,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürünün binlerce beş yıldızı var ama eline geçince berbat. Neden? Çünkü o yorumların çoğu sahte. Sahte yorum çiftlikleri para karşılığı puan yazar. Gerçek yorumlar genelde üç yıldızlıdır, detaylıdır. Sadece yıldıza bakma, kötü yorumları oku. Gerçek orada. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürünün binlerce beş yıldızı var ama eline geçince berbat. Neden? Çünkü o yorumların çoğu sahte. Sahte yorum çiftlikleri para karşılığı puan yazar. Gerçek yorumlar genelde üç yıldızlıdır, detaylıdır. Sadece yıldıza bakma, kötü yorumları oku. Gerçek orada. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "yıldızlı yorum ekranı",
@@ -426,7 +426,7 @@
         "gorsel": "detailed negative review text closeup"
       },
       {
-        "metin": "telefon değerlendirme",
+        "metin": "telefon değerlendirme Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "rating stars on smartphone closeup"
       }
     ],
@@ -450,7 +450,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O çerez kutusunda 'kabul et' neden kocaman ve renkli, 'reddet' neden minik ve gri? Çünkü kabul etmeni istiyorlar. Kabul edince tüm hareketlerini izler, veri satarlar. Reddetmek hakkın; o küçük butonu ara, bul, tıkla. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O çerez kutusunda 'kabul et' neden kocaman ve renkli, 'reddet' neden minik ve gri? Çünkü kabul etmeni istiyorlar. Kabul edince tüm hareketlerini izler, veri satarlar. Reddetmek hakkın; o küçük butonu ara, bul, tıkla. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "çerez uyarısı",
@@ -473,7 +473,7 @@
         "gorsel": "grey decline button hard to see closeup"
       },
       {
-        "metin": "bilinçli kullanıcı",
+        "metin": "bilinçli kullanıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "aware person using laptop closeup"
       }
     ],
@@ -497,7 +497,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O bedava uygulamada asıl ürün sensin. Her tıklaman, her araman, her beğenin toplanıp reklamcılara satılıyor; arkasındaki şirket milyarlarca kazanıyor. Bedava dedikleri şeyin bedelini, farkında olmadan kendi verinle ödüyorsun. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O bedava uygulamada asıl ürün sensin. Her tıklaman, her araman, her beğenin toplanıp reklamcılara satılıyor; arkasındaki şirket milyarlarca kazanıyor. Bedava dedikleri şeyin bedelini, farkında olmadan kendi verinle ödüyorsun. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "telefon uygulamaları",
@@ -520,7 +520,7 @@
         "gorsel": "smartphone apps grid"
       },
       {
-        "metin": "düşünen kullanıcı",
+        "metin": "düşünen kullanıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "tapping free app install"
       }
     ],
@@ -544,7 +544,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürünün fiyatı 'ayda sadece 200 lira' diye yazar. Toplam fiyat nerede? Küçük harflerde. Çünkü 'ayda 200' kulağa ucuz gelir, '4800 lira' korkutur. Taksit, harcamanı hissettirmez. Ayda azıcık dersin, ama borcun büyür. Her zaman toplam fiyata bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürünün fiyatı 'ayda sadece 200 lira' diye yazar. Toplam fiyat nerede? Küçük harflerde. Çünkü 'ayda 200' kulağa ucuz gelir, '4800 lira' korkutur. Taksit, harcamanı hissettirmez. Ayda azıcık dersin, ama borcun büyür. Her zaman toplam fiyata bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "taksit reklamı",
@@ -567,7 +567,7 @@
         "gorsel": "hailing a taxi street"
       },
       {
-        "metin": "hesap yapan kişi",
+        "metin": "hesap yapan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "gps navigation in car"
       }
     ],
@@ -591,7 +591,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kasada 'kuruşlar kalsın' derler, sen de aldırmaz geçersin. Ama düşün: bir markette günde on bin işlem, her birinde yarım lira. Bu ayda milyonlarca lira eder. Senin için önemsiz, onlar için servet. Küçük gördüğün o para, dev bir gelir kaynağı. Üstünü iste. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Kasada 'kuruşlar kalsın' derler, sen de aldırmaz geçersin. Ama düşün: bir markette günde on bin işlem, her birinde yarım lira. Bu ayda milyonlarca lira eder. Senin için önemsiz, onlar için servet. Küçük gördüğün o para, dev bir gelir kaynağı. Üstünü iste. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "kasa bozuk para",
@@ -614,7 +614,7 @@
         "gorsel": "receipt with rounded total closeup"
       },
       {
-        "metin": "hesap makinesi",
+        "metin": "hesap makinesi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "calculator with money closeup"
       }
     ],
@@ -638,7 +638,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Faizsiz birikim' denen altın gününde son sırada olan kaybeder. Paranı bugün verirsin ama sıra sana aylar sonra gelir; o sürede enflasyon paranı eritir. İlk alan kazançlı, son alan zararlı çıkar, sistem herkese eşit değil. Matematiği iyi hesapla. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Faizsiz birikim' denen altın gününde son sırada olan kaybeder. Paranı bugün verirsin ama sıra sana aylar sonra gelir; o sürede enflasyon paranı eritir. İlk alan kazançlı, son alan zararlı çıkar, sistem herkese eşit değil. Matematiği iyi hesapla. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "altın günü",
@@ -661,7 +661,7 @@
         "gorsel": "gold bracelets close up"
       },
       {
-        "metin": "hesap yapan kadın",
+        "metin": "hesap yapan kadın Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "woman calculating savings closeup"
       }
     ],
@@ -669,7 +669,7 @@
     "tema": "tuzak"
   },
   {
-    "baslik": "KAMPANYA FAİZİ GERÇEK Mİ? 🏦",
+    "baslik": "KAMPANYA FAİZİNDEKİ GİZLİ TUZAK! 🏦",
     "aciklama": "'Sıfır faizli kredi' gerçekten sıfır mı? Dosya masrafı, sigorta ve gizli ücretlerle geri alınan faiz tuzağı.\n\nO FAİZ NEDEN DÜŞÜK?\n\nMarketler, AVM'ler, restoranlar ve uygulamaların her gün kurduğu gizli tuzakları kısa videolarla anlatıyoruz. Fark et, kanma.\n\nHer akşam 19:00'da yeni video.\n\n#sıfırfaiztuzağı #kredigizlimasraf #dosyamasrafı #gizlituzak #shorts",
     "etiketler": [
       "sıfır faiz tuzağı",
@@ -685,7 +685,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Banka 'sıfır faizli kredi' der, koşarsın. Ama dosya masrafı, hayat sigortası, hesap ücreti eklenir. Sıfır faiz, başka isimlerle geri alınır. Sonunda normal krediden farkı kalmaz. Bankalar faizi gizlemez, ismini değiştirir. Toplam geri ödemeye bak, reklama değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Banka 'sıfır faizli kredi' der, koşarsın. Ama dosya masrafı, hayat sigortası, hesap ücreti eklenir. Sıfır faiz, başka isimlerle geri alınır. Sonunda normal krediden farkı kalmaz. Bankalar faizi gizlemez, ismini değiştirir. Toplam geri ödemeye bak, reklama değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "banka kredisi",
@@ -708,7 +708,7 @@
         "gorsel": "person signing loan papers closeup"
       },
       {
-        "metin": "hesap tablosu",
+        "metin": "hesap tablosu Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "spreadsheet with numbers closeup"
       }
     ],
@@ -732,7 +732,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Berberdeki o 'bakım yapalım mı, şu ürün çok iyi' önerileri tesadüf değil, eğitim. Sadece saç kesmeye gittin ama her ek işlem küçük ücret, toplamı büyük. Çalışanlar ek satış için yönlendirilir. Hayır demek hakkın; sadece istediğini al, gerisine kapı. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Berberdeki o 'bakım yapalım mı, şu ürün çok iyi' önerileri tesadüf değil, eğitim. Sadece saç kesmeye gittin ama her ek işlem küçük ücret, toplamı büyük. Çalışanlar ek satış için yönlendirilir. Hayır demek hakkın; sadece istediğini al, gerisine kapı. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "berber koltuğu",
@@ -755,7 +755,7 @@
         "gorsel": "salon product display closeup"
       },
       {
-        "metin": "hayır diyen müşteri",
+        "metin": "hayır diyen müşteri Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "customer politely declining closeup"
       }
     ],
@@ -779,7 +779,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sinema bileti bir fiyat, mısır neredeyse aynı fiyat. Saçma değil mi? Sinemalar biletten az kazanır, asıl parayı mısır ve içecekten yapar. Bir kova mısırın maliyeti birkaç lira, sana on katına satılır. Dışarıdan yiyecek yasağı da bu yüzden. Kâr perdede değil, lobide. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Sinema bileti bir fiyat, mısır neredeyse aynı fiyat. Saçma değil mi? Sinemalar biletten az kazanır, asıl parayı mısır ve içecekten yapar. Bir kova mısırın maliyeti birkaç lira, sana on katına satılır. Dışarıdan yiyecek yasağı da bu yüzden. Kâr perdede değil, lobide. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "sinema mısır",
@@ -802,7 +802,7 @@
         "gorsel": "corn kernels cheap raw closeup"
       },
       {
-        "metin": "film izleyen kişi",
+        "metin": "film izleyen kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person watching movie eating closeup"
       }
     ],
@@ -826,7 +826,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Düğün planlarken her şey ekstra çıkar: sandalye kılıfı ekstra, ışık ekstra, pasta ekstra. Neden? Çünkü 'hayatının en önemli günü' derler, pazarlık edemezsin. Duygular devredeyken cüzdan açılır. Bunu bilirler. Baştan net paket iste, her kalemi yazdır. Duyguyla değil akılla karar ver. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Düğün planlarken her şey ekstra çıkar: sandalye kılıfı ekstra, ışık ekstra, pasta ekstra. Neden? Çünkü 'hayatının en önemli günü' derler, pazarlık edemezsin. Duygular devredeyken cüzdan açılır. Bunu bilirler. Baştan net paket iste, her kalemi yazdır. Duyguyla değil akılla karar ver. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "düğün salonu",
@@ -849,7 +849,7 @@
         "gorsel": "happy couple planning closeup"
       },
       {
-        "metin": "sözleşme imza",
+        "metin": "sözleşme imza Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "signing venue contract closeup"
       }
     ],
@@ -873,7 +873,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir mağazaya girdiğinde çoğunlukla sağa dönersin. Bu bir içgüdü ve mağazalar bunu bilir. En kârlı ürünleri sağ tarafa, saat yönünün tersine bir rota kurarlar. Sen farkında olmadan onların istediği yolu izlersin. Attığın rota bile tasarlanmış. Bilerek yürü. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir mağazaya girdiğinde çoğunlukla sağa dönersin. Bu bir içgüdü ve mağazalar bunu bilir. En kârlı ürünleri sağ tarafa, saat yönünün tersine bir rota kurarlar. Sen farkında olmadan onların istediği yolu izlersin. Attığın rota bile tasarlanmış. Bilerek yürü. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "mağaza girişi",
@@ -896,7 +896,7 @@
         "gorsel": "top view of store aisles closeup"
       },
       {
-        "metin": "yürüyen müşteri",
+        "metin": "yürüyen müşteri Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "customer walking through store closeup"
       }
     ],
@@ -920,7 +920,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir menüde ya da vitrinde çok pahalı bir ürün görürsün. Onu kimse almaz. Peki neden var? Çünkü yanındaki ürünü ucuz göstermek için. Bin liralık ürünün yanında beş yüz liralık 'uygun' gelir. Buna çapa denir. Beynin ilk gördüğü fiyata göre karar verir. Bağımsız düşün. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir menüde ya da vitrinde çok pahalı bir ürün görürsün. Onu kimse almaz. Peki neden var? Çünkü yanındaki ürünü ucuz göstermek için. Bin liralık ürünün yanında beş yüz liralık 'uygun' gelir. Buna çapa denir. Beynin ilk gördüğü fiyata göre karar verir. Bağımsız düşün. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "vitrin fiyatları",
@@ -943,7 +943,7 @@
         "gorsel": "person comparing prices closeup"
       },
       {
-        "metin": "etiket detay",
+        "metin": "etiket detay Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "price label close up"
       }
     ],
@@ -967,7 +967,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Son üç ürün kaldı' ya da 'kampanya bitmek üzere' yazıları seni panikletmek için oradadır. Oysa çoğu zaman bu bir yalandır. Sayaç sıfırlanır, stok yeniden dolar, ama sen o an düşünmeden satın alırsın. Acele ettiren o yazı, tam da mantıklı kararı vermeni engellemek için tasarlanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Son üç ürün kaldı' ya da 'kampanya bitmek üzere' yazıları seni panikletmek için oradadır. Oysa çoğu zaman bu bir yalandır. Sayaç sıfırlanır, stok yeniden dolar, ama sen o an düşünmeden satın alırsın. Acele ettiren o yazı, tam da mantıklı kararı vermeni engellemek için tasarlanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "son ürün uyarısı",
@@ -990,7 +990,7 @@
         "gorsel": "sale ending sign"
       },
       {
-        "metin": "sakin düşünen kişi",
+        "metin": "sakin düşünen kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "limited stock display"
       }
     ],
@@ -1014,7 +1014,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sana bedava bir tat ya da küçük bir hediye verdiklerinde içinde tuhaf bir borç hissi oluşur. 'Madem verdiler, ben de bir şey almalıyım' dersin. Buna karşılıklılık kuralı denir ve insan beynine işlemiştir. O küçük hediye aslında bedava değil, seni almaya mecbur hissettirmek için verilir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Sana bedava bir tat ya da küçük bir hediye verdiklerinde içinde tuhaf bir borç hissi oluşur. 'Madem verdiler, ben de bir şey almalıyım' dersin. Buna karşılıklılık kuralı denir ve insan beynine işlemiştir. O küçük hediye aslında bedava değil, seni almaya mecbur hissettirmek için verilir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "bedava numune",
@@ -1037,7 +1037,7 @@
         "gorsel": "promotional giveaway booth"
       },
       {
-        "metin": "alışveriş yapan kişi",
+        "metin": "alışveriş yapan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "sample tasting at market"
       }
     ],
@@ -1061,7 +1061,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir markette çalan müziğin hızı asla rastgele seçilmez. Yavaş müzik adımlarını yavaşlatır, reyonlarda daha çok vakit geçirmeni sağlar. Ne kadar uzun kalırsan, o kadar çok ürün sepetine girer. Duyduğun o sakin melodi, aslında daha fazla harcaman için tasarlanmış sessiz bir yönlendirmedir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir markette çalan müziğin hızı asla rastgele seçilmez. Yavaş müzik adımlarını yavaşlatır, reyonlarda daha çok vakit geçirmeni sağlar. Ne kadar uzun kalırsan, o kadar çok ürün sepetine girer. Duyduğun o sakin melodi, aslında daha fazla harcaman için tasarlanmış sessiz bir yönlendirmedir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "mağaza müziği",
@@ -1084,7 +1084,7 @@
         "gorsel": "grocery store wide shot"
       },
       {
-        "metin": "rahatlamış insan",
+        "metin": "rahatlamış insan Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "shopping calmly in market"
       }
     ],
@@ -1108,7 +1108,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O mağazadaki güzel koku tesadüf değil, seni satın almaya iten görünmez bir silah. Markalar özel kokular tasarlatır çünkü koku hafızaya en hızlı işleyen duyudur. O kokuyu her aldığında markayı hatırlar, kendini iyi hisseder, alışveriş yaparsın. En güçlü tuzaklardan biri. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O mağazadaki güzel koku tesadüf değil, seni satın almaya iten görünmez bir silah. Markalar özel kokular tasarlatır çünkü koku hafızaya en hızlı işleyen duyudur. O kokuyu her aldığında markayı hatırlar, kendini iyi hisseder, alışveriş yaparsın. En güçlü tuzaklardan biri. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "mağaza içi",
@@ -1131,7 +1131,7 @@
         "gorsel": "perfume bottle spraying mist closeup"
       },
       {
-        "metin": "alışveriş anı",
+        "metin": "alışveriş anı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person enjoying shopping closeup"
       }
     ],
@@ -1155,7 +1155,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Artık her yer 'kartla öde, temassız öde' diyor. Neden? Çünkü nakit verirken paranı hissedersin, elin titrer. Kartla bu acı yok olur, kolayca harcarsın. Araştırmalar kartla yüzde yetmiş daha fazla harcadığını gösteriyor. Nakit seni frenler. Bazen fişi elle ödemek bilinç kazandırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Artık her yer 'kartla öde, temassız öde' diyor. Neden? Çünkü nakit verirken paranı hissedersin, elin titrer. Kartla bu acı yok olur, kolayca harcarsın. Araştırmalar kartla yüzde yetmiş daha fazla harcadığını gösteriyor. Nakit seni frenler. Bazen fişi elle ödemek bilinç kazandırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "temassız ödeme",
@@ -1178,7 +1178,7 @@
         "gorsel": "open empty leather wallet closeup"
       },
       {
-        "metin": "hesap yapan kişi",
+        "metin": "hesap yapan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person reviewing spending closeup"
       }
     ],
@@ -1202,7 +1202,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürün yıllardır aynı ama üstünde hep 'yeni' ya da 'geliştirilmiş formül' yazar. Çoğu zaman değişen tek şey ambalaj. 'Yeni' kelimesi merak uyandırır, tekrar aldırır. İçerik aynı, kutu farklı. Gerçek yenilik nadirdir. Etikete değil içindekilere bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürün yıllardır aynı ama üstünde hep 'yeni' ya da 'geliştirilmiş formül' yazar. Çoğu zaman değişen tek şey ambalaj. 'Yeni' kelimesi merak uyandırır, tekrar aldırır. İçerik aynı, kutu farklı. Gerçek yenilik nadirdir. Etikete değil içindekilere bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "yeni ürün etiketi",
@@ -1225,7 +1225,7 @@
         "gorsel": "ingredients list on package closeup"
       },
       {
-        "metin": "karşılaştıran alıcı",
+        "metin": "karşılaştıran alıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "shopper comparing two products closeup"
       }
     ],
@@ -1249,7 +1249,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Aldığın hediye kartının bir kısmı büyük ihtimalle hiç harcanmayacak ve o para direkt mağazaya kâr kalıyor. Dahası, kartı kullanan genelde kart değerinden fazla harcar; üstelik parayı önceden alırlar. Sen hediye sanırsın, onlar kazanç görür. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Aldığın hediye kartının bir kısmı büyük ihtimalle hiç harcanmayacak ve o para direkt mağazaya kâr kalıyor. Dahası, kartı kullanan genelde kart değerinden fazla harcar; üstelik parayı önceden alırlar. Sen hediye sanırsın, onlar kazanç görür. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "hediye kartı",
@@ -1272,7 +1272,7 @@
         "gorsel": "gift card stand in shop closeup"
       },
       {
-        "metin": "hediye veren kişi",
+        "metin": "hediye veren kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person giving gift card closeup"
       }
     ],
@@ -1296,7 +1296,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürünü iade etmek istersin ama süreç kabusa döner: form doldur, kargola, bekle, ara. Bu tesadüf değil. İade ne kadar zor olursa, o kadar çok insan vazgeçer. Vazgeçtiğinde para onlarda kalır. Ama iade senin yasal hakkın. Zorluğa aldırma, hakkını kullan, diren. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürünü iade etmek istersin ama süreç kabusa döner: form doldur, kargola, bekle, ara. Bu tesadüf değil. İade ne kadar zor olursa, o kadar çok insan vazgeçer. Vazgeçtiğinde para onlarda kalır. Ama iade senin yasal hakkın. Zorluğa aldırma, hakkını kullan, diren. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "iade paketi",
@@ -1319,7 +1319,7 @@
         "gorsel": "person on hold customer service closeup"
       },
       {
-        "metin": "kararlı kişi",
+        "metin": "kararlı kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "determined person filing return closeup"
       }
     ],
@@ -1327,7 +1327,7 @@
     "tema": "tuzak"
   },
   {
-    "baslik": "ÜCRETSİZ WIFI BEDAVA MI? 📶",
+    "baslik": "ÜCRETSİZ WIFI'NIN BEDELİ NE? 📶",
     "aciklama": "Kafeler ve AVM'lerdeki ücretsiz wifi gerçekten bedava mı? Verini toplayıp seni takip eden bağlantı tuzağı.\n\nBEDAVA WIFI'NIN BEDELİ?\n\nMarketler, AVM'ler, restoranlar ve uygulamaların her gün kurduğu gizli tuzakları kısa videolarla anlatıyoruz. Fark et, kanma.\n\nHer akşam 19:00'da yeni video.\n\n#ücretsizwifituzağı #halkaaçıkwifi #veritoplamawifi #gizlituzak #shorts",
     "etiketler": [
       "ücretsiz wifi tuzağı",
@@ -1343,7 +1343,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O bedava wifi'ye bağlanırken aslında sen bağlanmıyorsun, onlar sana bağlanıyor. Kafedeki ücretsiz internet için mailini, numaranı ya da sosyal medya hesabını isterler. Sen internete erişirken, onlar senin bilgilerine erişir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O bedava wifi'ye bağlanırken aslında sen bağlanmıyorsun, onlar sana bağlanıyor. Kafedeki ücretsiz internet için mailini, numaranı ya da sosyal medya hesabını isterler. Sen internete erişirken, onlar senin bilgilerine erişir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "kafe wifi",
@@ -1366,7 +1366,7 @@
         "gorsel": "free wifi network screen"
       },
       {
-        "metin": "dikkatli kullanıcı",
+        "metin": "dikkatli kullanıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "people using phones cafe"
       }
     ],
@@ -1390,7 +1390,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Şık restoranların menüsünde fiyatların dağınık olması bir tasarım kazası değil, bilinçli bir karar. Yan yana görsen en ucuzu seçerdin; dağıtınca fiyatı değil yemeği düşünürsün. Böylece cebinden çıkacak parayı unutursun. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Şık restoranların menüsünde fiyatların dağınık olması bir tasarım kazası değil, bilinçli bir karar. Yan yana görsen en ucuzu seçerdin; dağıtınca fiyatı değil yemeği düşünürsün. Böylece cebinden çıkacak parayı unutursun. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "şık menü",
@@ -1413,7 +1413,7 @@
         "gorsel": "fine dining plate closeup"
       },
       {
-        "metin": "garson sipariş",
+        "metin": "garson sipariş Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "restaurant interior warm"
       }
     ],
@@ -1421,7 +1421,7 @@
     "tema": "tuzak"
   },
   {
-    "baslik": "BÜYÜK BOY GERÇEKTEN UCUZ MU? 🥤",
+    "baslik": "BÜYÜK BOY NEDEN DAHA UCUZ GÖRÜNÜR? 🥤",
     "aciklama": "'Biraz daha ver, iki katı al' teklifleri gerçekten kârlı mı? İhtiyacından fazlasını aldıran boyut tuzağı.\n\nBÜYÜK BOY MANTIKLI MI?\n\nMarketler, AVM'ler, restoranlar ve uygulamaların her gün kurduğu gizli tuzakları kısa videolarla anlatıyoruz. Fark et, kanma.\n\nHer akşam 19:00'da yeni video.\n\n#büyükboytuzağı #boyutfiyatlandırma #değeralgısı #gizlituzak #shorts",
     "etiketler": [
       "büyük boy tuzağı",
@@ -1437,7 +1437,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Sadece beş lira fazla ver, iki katı büyük al' derler. Mantıklı gelir, alırsın. Ama ihtiyacın var mıydı? Yarısını çöpe atarsın. Litre başına ucuz görünür ama toplamda daha çok ödersin, daha çok tüketirsin. Ucuza almak sandığın şey, fazla tüketmek. İhtiyacın kadarını al. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Sadece beş lira fazla ver, iki katı büyük al' derler. Mantıklı gelir, alırsın. Ama ihtiyacın var mıydı? Yarısını çöpe atarsın. Litre başına ucuz görünür ama toplamda daha çok ödersin, daha çok tüketirsin. Ucuza almak sandığın şey, fazla tüketmek. İhtiyacın kadarını al. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "büyük boy içecek",
@@ -1460,7 +1460,7 @@
         "gorsel": "price per size label closeup"
       },
       {
-        "metin": "düşünen müşteri",
+        "metin": "düşünen müşteri Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "customer deciding size closeup"
       }
     ],
@@ -1468,7 +1468,7 @@
     "tema": "tuzak"
   },
   {
-    "baslik": "SADAKAT PROGRAMI KİMİN İÇİN? 🎯",
+    "baslik": "SADAKAT PROGRAMI SENİ NASIL BAĞLIYOR? 🎯",
     "aciklama": "Kahve zincirlerinin puan ve yıldız programları gerçekten sana mı yarıyor? Seni bağlayıp geri getiren sadakat tuzağı.\n\nO YILDIZLAR KİME YARAR?\n\nMarketler, AVM'ler, restoranlar ve uygulamaların her gün kurduğu gizli tuzakları kısa videolarla anlatıyoruz. Fark et, kanma.\n\nHer akşam 19:00'da yeni video.\n\n#sadakatprogramıtuzağı #puansistemi #kahveyıldız #gizlituzak #shorts",
     "etiketler": [
       "sadakat programı tuzağı",
@@ -1484,7 +1484,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Dokuz kahve al, onuncu bedava' derler. Kulağa hediye gibi gelir. Ama düşün: o bedava kahve için dokuz kez oraya gittin, alışkanlık oldun. Puanlar seni başka yere gitmekten alıkoyar. Bedava sandığın kahve, seni bağlamanın bedeli. Program sana değil, onlara sadakat kazandırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Dokuz kahve al, onuncu bedava' derler. Kulağa hediye gibi gelir. Ama düşün: o bedava kahve için dokuz kez oraya gittin, alışkanlık oldun. Puanlar seni başka yere gitmekten alıkoyar. Bedava sandığın kahve, seni bağlamanın bedeli. Program sana değil, onlara sadakat kazandırır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "sadakat kartı",
@@ -1507,7 +1507,7 @@
         "gorsel": "regular customer at cafe closeup"
       },
       {
-        "metin": "telefon puan ekranı",
+        "metin": "telefon puan ekranı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "rewards screen on smartphone closeup"
       }
     ],
@@ -1531,7 +1531,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Markette ürünlerin yerini durmadan değiştirmeleri sinir bozucu ama kasıtlı. Aradığını bulamayınca tüm reyonları gezer, gezerken aklında olmayan şeyler alırsın. Kaybolman, onların kazancı. Listene sadık kal. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Markette ürünlerin yerini durmadan değiştirmeleri sinir bozucu ama kasıtlı. Aradığını bulamayınca tüm reyonları gezer, gezerken aklında olmayan şeyler alırsın. Kaybolman, onların kazancı. Listene sadık kal. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "değişen vitrin",
@@ -1554,7 +1554,7 @@
         "gorsel": "confused customer looking around closeup"
       },
       {
-        "metin": "alışveriş listesi",
+        "metin": "alışveriş listesi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "shopping list in hand closeup"
       }
     ],
@@ -1625,7 +1625,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Marketteki oyuncaklar tam çocuğun göz hizasında ve bu bir kaza değil. Çocuk görür, ister, ağlar, ebeveyn alır; hesaplı bir yerleşim bu. Çocuğu kullanarak aileyi hedeflerler, en yoğun an ise kasada beklerken. Bunu bilerek alışverişe çık, çocuğa önceden anlat. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Marketteki oyuncaklar tam çocuğun göz hizasında ve bu bir kaza değil. Çocuk görür, ister, ağlar, ebeveyn alır; hesaplı bir yerleşim bu. Çocuğu kullanarak aileyi hedeflerler, en yoğun an ise kasada beklerken. Bunu bilerek alışverişe çık, çocuğa önceden anlat. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "alçak şeker rafı",
@@ -1648,7 +1648,7 @@
         "gorsel": "parent with child shopping closeup"
       },
       {
-        "metin": "renkli şekerler",
+        "metin": "renkli şekerler Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "colorful candy display low shelf closeup"
       }
     ],
@@ -1656,7 +1656,7 @@
     "tema": "tuzak"
   },
   {
-    "baslik": "İNDİRİM GÜNÜ GERÇEK Mİ? 🛍️",
+    "baslik": "İNDİRİM GÜNÜNDEKİ FİYAT OYUNU! 🛍️",
     "aciklama": "Büyük indirim günlerinde fiyatlar gerçekten düşüyor mu? Önceden şişirilip sonra 'indirilen' sahte kampanya tuzağı.\n\nO İNDİRİM GERÇEK Mİ?\n\nMarketler, AVM'ler, restoranlar ve uygulamaların her gün kurduğu gizli tuzakları kısa videolarla anlatıyoruz. Fark et, kanma.\n\nHer akşam 19:00'da yeni video.\n\n#indirimgünütuzağı #sahtekampanya #fiyatşişirme #gizlituzak #shorts",
     "etiketler": [
       "indirim günü tuzağı",
@@ -1672,7 +1672,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Büyük indirim günü gelir, herkes koşar. Ama bir ürünün fiyatını haftalar önce izle. Çoğu zaman kampanyadan önce fiyat yükseltilir, sonra 'yüzde elli indirim' diye eski fiyata satılır. İndirim sahte, sadece algı. Gerçek indirimi anlamak için önceden fiyat takip et. Coşkuya kapılma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Büyük indirim günü gelir, herkes koşar. Ama bir ürünün fiyatını haftalar önce izle. Çoğu zaman kampanyadan önce fiyat yükseltilir, sonra 'yüzde elli indirim' diye eski fiyata satılır. İndirim sahte, sadece algı. Gerçek indirimi anlamak için önceden fiyat takip et. Coşkuya kapılma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "indirim afişi",
@@ -1695,7 +1695,7 @@
         "gorsel": "laptop screen showing price graph closeup"
       },
       {
-        "metin": "düşünen alışverişçi",
+        "metin": "düşünen alışverişçi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "skeptical shopper at sale closeup"
       }
     ],
@@ -1719,7 +1719,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Mağazanın en değerli yeri parfüm ve makyaja ayrılır çünkü ruh halin daha kapıda ayarlanır. Güzel kokular ve parlak ışıklar seni anında iyi hissettirir, iyi hissedince daha çok harcarsın. Giriş katı bir karşılama değil, bir hazırlıktır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Mağazanın en değerli yeri parfüm ve makyaja ayrılır çünkü ruh halin daha kapıda ayarlanır. Güzel kokular ve parlak ışıklar seni anında iyi hissettirir, iyi hissedince daha çok harcarsın. Giriş katı bir karşılama değil, bir hazırlıktır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "parfüm reyonu",
@@ -1742,7 +1742,7 @@
         "gorsel": "well lit beauty section closeup"
       },
       {
-        "metin": "mutlu müşteri",
+        "metin": "mutlu müşteri Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "happy customer shopping beauty closeup"
       }
     ],
@@ -1766,7 +1766,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Site 'ücretsiz iade' der, sen de rahatça alırsın. Ama işin sırrı şu: ürün eline geçince ona alışırsın, sahiplenirsin, iade etmeye üşenirsin. Kolay iade sözü seni daha çok aldırır ama gerçekte az iade edersin. Rahatlık hissi bir tuzak. Alırken gerçekten ihtiyacın var mı diye sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Site 'ücretsiz iade' der, sen de rahatça alırsın. Ama işin sırrı şu: ürün eline geçince ona alışırsın, sahiplenirsin, iade etmeye üşenirsin. Kolay iade sözü seni daha çok aldırır ama gerçekte az iade edersin. Rahatlık hissi bir tuzak. Alırken gerçekten ihtiyacın var mı diye sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "kargo kutusu açma",
@@ -1789,7 +1789,7 @@
         "gorsel": "unused products in closet closeup"
       },
       {
-        "metin": "telefon alışveriş",
+        "metin": "telefon alışveriş Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "online shopping on phone closeup"
       }
     ],
@@ -1813,7 +1813,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Tatil sitesinde 'son dakika, bu fiyat bitiyor' yazar. Kalbin hızlanır, hemen rezervasyon yaparsın. Ama o fiyat çoğu zaman kalıcıdır, 'son dakika' sadece seni acele ettirmek için. Acele eden kişi karşılaştırma yapmaz, pazarlık etmez. Sakin ol, birkaç site karşılaştır. Gerçek fırsat kaçmaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Tatil sitesinde 'son dakika, bu fiyat bitiyor' yazar. Kalbin hızlanır, hemen rezervasyon yaparsın. Ama o fiyat çoğu zaman kalıcıdır, 'son dakika' sadece seni acele ettirmek için. Acele eden kişi karşılaştırma yapmaz, pazarlık etmez. Sakin ol, birkaç site karşılaştır. Gerçek fırsat kaçmaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "tatil sitesi",
@@ -1836,7 +1836,7 @@
         "gorsel": "booking on smartphone closeup"
       },
       {
-        "metin": "plaj tatil",
+        "metin": "plaj tatil Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "beach vacation destination closeup"
       }
     ],
@@ -1860,7 +1860,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir markada medium olan, başka markada large. Neden standart yok? Çünkü bazı markalar bedenleri kasıtlı büyük etiketler. Kendini daha ince hissedersin, mutlu olursun, o markayı seversin. Buna gurur bedeni denir. Rakam bir oyun. Numaraya değil, üstüne olup olmadığına bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir markada medium olan, başka markada large. Neden standart yok? Çünkü bazı markalar bedenleri kasıtlı büyük etiketler. Kendini daha ince hissedersin, mutlu olursun, o markayı seversin. Buna gurur bedeni denir. Rakam bir oyun. Numaraya değil, üstüne olup olmadığına bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "kıyafet etiketleri",
@@ -1883,7 +1883,7 @@
         "gorsel": "person looking in mirror closeup"
       },
       {
-        "metin": "katlanmış tişört",
+        "metin": "katlanmış tişört Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "folded t-shirts sizes closeup"
       }
     ],
@@ -1907,7 +1907,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Yazın AVM'ye girersin, buz gibi. Neden bu kadar soğutulur? Çünkü dışarıdaki sıcaktan kaçan insan içeride uzun kalır. Uzun kalırsan çok harcarsın. Ayrıca soğukta kahve, sıcak yiyecek daha cazip gelir. Konfor gibi görünen şey, seni tutmanın yolu. Sıcaklık bile satışın parçası. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Yazın AVM'ye girersin, buz gibi. Neden bu kadar soğutulur? Çünkü dışarıdaki sıcaktan kaçan insan içeride uzun kalır. Uzun kalırsan çok harcarsın. Ayrıca soğukta kahve, sıcak yiyecek daha cazip gelir. Konfor gibi görünen şey, seni tutmanın yolu. Sıcaklık bile satışın parçası. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "avm içi",
@@ -1930,7 +1930,7 @@
         "gorsel": "people lingering in mall closeup"
       },
       {
-        "metin": "sıcak içecek",
+        "metin": "sıcak içecek Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "hot coffee in cold place closeup"
       }
     ],
@@ -1954,7 +1954,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir ürün çıkar, anında tükenir, herkes onu arar. Bazen bu gerçek talep değil, planlı kıtlıktır. Az üretip 'tükendi' diyerek ürünü değerli gösterirler. İnsan bulamadığını daha çok ister. Sıraya girer, fazla öder. Kıtlık algısı fiyatı ve arzuyu şişirir. Bulamadığın şey her zaman değerli değildir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir ürün çıkar, anında tükenir, herkes onu arar. Bazen bu gerçek talep değil, planlı kıtlıktır. Az üretip 'tükendi' diyerek ürünü değerli gösterirler. İnsan bulamadığını daha çok ister. Sıraya girer, fazla öder. Kıtlık algısı fiyatı ve arzuyu şişirir. Bulamadığın şey her zaman değerli değildir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "tükendi yazısı",
@@ -1977,7 +1977,7 @@
         "gorsel": "out of stock online closeup"
       },
       {
-        "metin": "arayan müşteri",
+        "metin": "arayan müşteri Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person searching for item closeup"
       }
     ],
@@ -1985,7 +1985,7 @@
     "tema": "tuzak"
   },
   {
-    "baslik": "GARANTİ UZATMASI GEREKLİ Mİ? 🛡️",
+    "baslik": "GARANTİ UZATMASI NEDEN GEREKSİZ? 🛡️",
     "aciklama": "Elektronik alırken sunulan 'ek garanti' gerçekten işe yarar mı? Nadir arızayı büyütüp sattırılan korku tuzağı.\n\nO GARANTİ GEREKLİ Mİ?\n\nMarketler, AVM'ler, restoranlar ve uygulamaların her gün kurduğu gizli tuzakları kısa videolarla anlatıyoruz. Fark et, kanma.\n\nHer akşam 19:00'da yeni video.\n\n#ekgarantituzağı #uzatılmışgaranti #garantisatışı #gizlituzak #shorts",
     "etiketler": [
       "ek garanti tuzağı",
@@ -2001,7 +2001,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Telefon ya da beyaz eşya alırken 'ek garanti ister misiniz' derler. Korkarsın, alırsın. Ama çoğu ürün zaten garantili ve nadiren o dönemde bozulur. Ek garanti mağaza için yüksek kârlı, senin için çoğunlukla gereksiz. Korkuyla satılır. Ürünün normal garantisini oku, aceleyle ekleme yaptırma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Telefon ya da beyaz eşya alırken 'ek garanti ister misiniz' derler. Korkarsın, alırsın. Ama çoğu ürün zaten garantili ve nadiren o dönemde bozulur. Ek garanti mağaza için yüksek kârlı, senin için çoğunlukla gereksiz. Korkuyla satılır. Ürünün normal garantisini oku, aceleyle ekleme yaptırma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "elektronik mağaza",
@@ -2024,7 +2024,7 @@
         "gorsel": "customer considering offer closeup"
       },
       {
-        "metin": "imza belge",
+        "metin": "imza belge Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "signing warranty paper closeup"
       }
     ],
@@ -2048,7 +2048,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir platform 'ilk ay bedava' der. Kaydolursun, kart bilgini verirsin. Bir ay içinde alışırsın, dizilere bağlanırsın. İptal etmeyi unutursun ya da üşenirsin. İkinci ay para çekilir. Bedava ay bir hediye değil, seni bağlama planı. Kaydolurken iptal tarihini hemen not al, alarm kur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir platform 'ilk ay bedava' der. Kaydolursun, kart bilgini verirsin. Bir ay içinde alışırsın, dizilere bağlanırsın. İptal etmeyi unutursun ya da üşenirsin. İkinci ay para çekilir. Bedava ay bir hediye değil, seni bağlama planı. Kaydolurken iptal tarihini hemen not al, alarm kur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "dijital platform",
@@ -2071,7 +2071,7 @@
         "gorsel": "subscription auto renewal closeup"
       },
       {
-        "metin": "takvim hatırlatma",
+        "metin": "takvim hatırlatma Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "calendar reminder to cancel closeup"
       }
     ],
@@ -2095,7 +2095,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Pahalı restoranların menüsünde yemek fotoğrafı bulamazsın. Bunun sebebi maliyet değil, algı yönetimidir. Fotoğraf, yemeği ucuz ve sıradan gösterir. Resim yerine süslü kelimelerle anlatınca, aynı yemek daha değerli ve özel hissettirilir. Böylece daha yüksek fiyatı sorgusuz ödersin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Pahalı restoranların menüsünde yemek fotoğrafı bulamazsın. Bunun sebebi maliyet değil, algı yönetimidir. Fotoğraf, yemeği ucuz ve sıradan gösterir. Resim yerine süslü kelimelerle anlatınca, aynı yemek daha değerli ve özel hissettirilir. Böylece daha yüksek fiyatı sorgusuz ödersin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "şık menü kağıdı",
@@ -2118,7 +2118,7 @@
         "gorsel": "fine dining plate closeup"
       },
       {
-        "metin": "garson servis",
+        "metin": "garson servis Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "restaurant interior warm"
       }
     ],
@@ -2142,7 +2142,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kasadaki o uzun sıra tesadüf değil, planlı. Beklerken sıkılır, etrafına bakarsın; tam göz hizanda sakızlar, çikolatalar, dergiler durur. Planlamadığın halde birini alırsın. Amaç seni o ürünlerle baş başa bırakmak. Beklerken elini cebe atma, sadece bekle. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Kasadaki o uzun sıra tesadüf değil, planlı. Beklerken sıkılır, etrafına bakarsın; tam göz hizanda sakızlar, çikolatalar, dergiler durur. Planlamadığın halde birini alırsın. Amaç seni o ürünlerle baş başa bırakmak. Beklerken elini cebe atma, sadece bekle. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "kasa sırası",
@@ -2165,7 +2165,7 @@
         "gorsel": "magazines near cashier closeup"
       },
       {
-        "metin": "son dakika alım",
+        "metin": "son dakika alım Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "last second purchase closeup"
       }
     ],
@@ -2189,7 +2189,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Oyunlarda gerçek parayla değil, elmasla, jetonla alışveriş yaparsın. Neden? Çünkü 'yüz elmas' harcamak, 'elli lira' harcamaktan kolaydır. Sanal para gerçekliği bulandırır, acıyı yok eder. Bir de paketler garip sayılarla satılır, tam bitmez, biraz daha aldırır. Elması değil, lirayı düşün. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Oyunlarda gerçek parayla değil, elmasla, jetonla alışveriş yaparsın. Neden? Çünkü 'yüz elmas' harcamak, 'elli lira' harcamaktan kolaydır. Sanal para gerçekliği bulandırır, acıyı yok eder. Bir de paketler garip sayılarla satılır, tam bitmez, biraz daha aldırır. Elması değil, lirayı düşün. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "oyun mağazası",
@@ -2212,7 +2212,7 @@
         "gorsel": "in app purchase screen closeup"
       },
       {
-        "metin": "harcayan oyuncu",
+        "metin": "harcayan oyuncu Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person spending in game closeup"
       }
     ],
@@ -2330,7 +2330,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir uygulamaya kaydolmak on saniye sürer ama hesabını silmek neredeyse imkansız gibidir. İptal butonu özellikle gizlenir, menülerin en dibine saklanır. Bu bir aksaklık değil, bilerek zorlaştırılmıştır. Çünkü ayrılman değil, kalıp ödemeye devam etmen istenir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir uygulamaya kaydolmak on saniye sürer ama hesabını silmek neredeyse imkansız gibidir. İptal butonu özellikle gizlenir, menülerin en dibine saklanır. Bu bir aksaklık değil, bilerek zorlaştırılmıştır. Çünkü ayrılman değil, kalıp ödemeye devam etmen istenir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "hesap ayarları",
@@ -2353,7 +2353,7 @@
         "gorsel": "clicking through app menus"
       },
       {
-        "metin": "kararlı kullanıcı",
+        "metin": "kararlı kullanıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "customer service waiting"
       }
     ],
@@ -2377,7 +2377,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir şişe marka su, musluk suyundan yüzlerce kat pahalı. İçindeki çoğu zaman aynı su. Peki fark ne? Pazarlama. 'Kaynak suyu, doğal, saf' derler, şık şişeye koyarlar. Sen sağlık ve statü satın aldığını sanırsın. Ödediğin su değil, imaj. Etiketi araştır, çoğu zaman şişelenmiş musluk suyu. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir şişe marka su, musluk suyundan yüzlerce kat pahalı. İçindeki çoğu zaman aynı su. Peki fark ne? Pazarlama. 'Kaynak suyu, doğal, saf' derler, şık şişeye koyarlar. Sen sağlık ve statü satın aldığını sanırsın. Ödediğin su değil, imaj. Etiketi araştır, çoğu zaman şişelenmiş musluk suyu. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "marka su şişesi",
@@ -2400,7 +2400,7 @@
         "gorsel": "fancy water bottle design closeup"
       },
       {
-        "metin": "su içen kişi",
+        "metin": "su içen kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person drinking bottled water closeup"
       }
     ],
@@ -2424,7 +2424,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Ücretsiz keşif, bedava danışmanlık' derler. Neden bedava? Çünkü kapıdan içeri girmek istiyorlar. Bir kez zaman ayırınca, evine gelince, borçlu hissedersin, hayır demek zorlaşır. Bedava başlangıç seni satışa hazırlar. İlk adım küçüktür ama seni bağlar. Bedava olan her teklifin bir devamı vardır. Hazırlıklı ol. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Ücretsiz keşif, bedava danışmanlık' derler. Neden bedava? Çünkü kapıdan içeri girmek istiyorlar. Bir kez zaman ayırınca, evine gelince, borçlu hissedersin, hayır demek zorlaşır. Bedava başlangıç seni satışa hazırlar. İlk adım küçüktür ama seni bağlar. Bedava olan her teklifin bir devamı vardır. Hazırlıklı ol. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "danışman ev ziyareti",
@@ -2447,7 +2447,7 @@
         "gorsel": "handshake business deal closeup"
       },
       {
-        "metin": "sözleşme masası",
+        "metin": "sözleşme masası Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "contract on table closeup"
       }
     ],
@@ -2471,7 +2471,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Neredeyse her fiyat 9 ile biter. Neden 10 değil? Beynin soldan okur, 9,99'u dokuz sanır, on değil. Bir kuruş önemsiz ama algı devasa. Neden hep 9? On yıllardır işe yarıyor. Yuvarla, gerçek fiyatı gör. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Neredeyse her fiyat 9 ile biter. Neden 10 değil? Beynin soldan okur, 9,99'u dokuz sanır, on değil. Bir kuruş önemsiz ama algı devasa. Neden hep 9? On yıllardır işe yarıyor. Yuvarla, gerçek fiyatı gör. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "99 fiyat etiketi",
@@ -2494,7 +2494,7 @@
         "gorsel": "supermarket price tags closeup"
       },
       {
-        "metin": "hesaplayan kişi",
+        "metin": "hesaplayan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person calculating real price closeup"
       }
     ],
@@ -2518,7 +2518,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Kutuyu açarsın, içinde küçük ürün ve bir sürü boşluk. Neden bu kadar büyük? Rafta göz doldurur, çok ürün var hissi verir. Ağırlık beklersin, değerli sanırsın, ama içi hava. Kutu neden büyük? Gramaja bak, kutuya değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Kutuyu açarsın, içinde küçük ürün ve bir sürü boşluk. Neden bu kadar büyük? Rafta göz doldurur, çok ürün var hissi verir. Ağırlık beklersin, değerli sanırsın, ama içi hava. Kutu neden büyük? Gramaja bak, kutuya değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "büyük kutu küçük ürün",
@@ -2541,7 +2541,7 @@
         "gorsel": "weight label on box closeup"
       },
       {
-        "metin": "karşılaştıran alıcı",
+        "metin": "karşılaştıran alıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "comparing box to content closeup"
       }
     ],
@@ -2565,7 +2565,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Reklam gelince sesin yükselmesi kafanda değil, gerçek. Reklamlar izin verilen en yüksek seviyede karıştırılır; amaç, başka odaya geçsen bile seni duyurup dikkatini zorla çekmek. Ses bir silaha dönüşür. Kumandayı hazır tut ya da sessize al, dikkatin senin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Reklam gelince sesin yükselmesi kafanda değil, gerçek. Reklamlar izin verilen en yüksek seviyede karıştırılır; amaç, başka odaya geçsen bile seni duyurup dikkatini zorla çekmek. Ses bir silaha dönüşür. Kumandayı hazır tut ya da sessize al, dikkatin senin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "televizyon reklam",
@@ -2588,7 +2588,7 @@
         "gorsel": "colorful commercial flashing"
       },
       {
-        "metin": "rahatsız izleyici",
+        "metin": "rahatsız izleyici Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "remote changing tv channels"
       }
     ],
@@ -2612,7 +2612,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Satıcı önce en pahalı ürünü gösterir, şaşırırsın. Sonra şu daha uygun der, ucuz gelir. Aslında o da pahalı ama ilk fiyat aklına kazındı. Buna çapalama denir. İlk gördüğün neden pahalı? Kendi bütçenle gel, sıralamaya kapılma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Satıcı önce en pahalı ürünü gösterir, şaşırırsın. Sonra şu daha uygun der, ucuz gelir. Aslında o da pahalı ama ilk fiyat aklına kazındı. Buna çapalama denir. İlk gördüğün neden pahalı? Kendi bütçenle gel, sıralamaya kapılma. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "pahalı ürün gösterme",
@@ -2635,7 +2635,7 @@
         "gorsel": "customer weighing options closeup"
       },
       {
-        "metin": "etiket fiyatlar",
+        "metin": "etiket fiyatlar Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "various price tags closeup"
       }
     ],
@@ -2643,7 +2643,7 @@
     "tema": "tuzak"
   },
   {
-    "baslik": "PAKET TATİL GERÇEKTEN UCUZ MU? 🏖️",
+    "baslik": "PAKET TATİLDEKİ GİZLİ MALİYET! 🏖️",
     "aciklama": "Her şey dahil paket tatiller gerçekten hesaplı mı? Ekstralar ve kısıtlarla gizli maliyet barındıran paket tuzağı.\n\nPAKET NEDEN CAZİP?\n\nMarketler, AVM'ler, restoranlar ve uygulamaların her gün kurduğu gizli tuzakları kısa videolarla anlatıyoruz. Fark et, kanma.\n\nHer akşam 19:00'da yeni video.\n\n#pakettatiltuzağı #herşeydahil #gizlimaliyettatil #gizlituzak #shorts",
     "etiketler": [
       "paket tatil tuzağı",
@@ -2659,7 +2659,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'Her şey dahil' sandığın tatilde çoğu şey aslında dahil değil. Bazı içecekler, özel restoran, aktiviteler hep ekstra çıkar. Üstelik tek fiyat, karşılaştırmayı bilerek zorlaştırır. Paket kolaylık satar ama hep hesaplı değildir. Kalem kalem oku, ekstraları önceden sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'Her şey dahil' sandığın tatilde çoğu şey aslında dahil değil. Bazı içecekler, özel restoran, aktiviteler hep ekstra çıkar. Üstelik tek fiyat, karşılaştırmayı bilerek zorlaştırır. Paket kolaylık satar ama hep hesaplı değildir. Kalem kalem oku, ekstraları önceden sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "her şey dahil otel",
@@ -2682,7 +2682,7 @@
         "gorsel": "hotel buffet dining closeup"
       },
       {
-        "metin": "hesap yapan tatilci",
+        "metin": "hesap yapan tatilci Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "tourist checking costs closeup"
       }
     ],
@@ -2706,7 +2706,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Küçük, orta, büyük sunulur, çoğu kişi ortayı seçer. Sır şu: onlar zaten ortayı ister. Küçük çok küçük, büyük çok pahalı ayarlanır ki orta mantıklı görünsün. En kârlı odur. Neden orta alıyorsun? Boyu ihtiyacına göre seç, sunuma göre değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Küçük, orta, büyük sunulur, çoğu kişi ortayı seçer. Sır şu: onlar zaten ortayı ister. Küçük çok küçük, büyük çok pahalı ayarlanır ki orta mantıklı görünsün. En kârlı odur. Neden orta alıyorsun? Boyu ihtiyacına göre seç, sunuma göre değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "üç boy içecek",
@@ -2729,7 +2729,7 @@
         "gorsel": "person ordering drink closeup"
       },
       {
-        "metin": "bardak karşılaştırma",
+        "metin": "bardak karşılaştırma Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "cup size comparison closeup"
       }
     ],
@@ -2753,7 +2753,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O ücretsiz kargo sınırı, sana fazladan ürün aldırmak için dikkatle hesaplanır. Sepetin yüz otuz lira, bedava kargo için yüz elli gerekir; 'az kaldı' deyip bir şey daha eklersin. Kargodan kaçarken ihtiyacın olmayan şeye para verirsin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O ücretsiz kargo sınırı, sana fazladan ürün aldırmak için dikkatle hesaplanır. Sepetin yüz otuz lira, bedava kargo için yüz elli gerekir; 'az kaldı' deyip bir şey daha eklersin. Kargodan kaçarken ihtiyacın olmayan şeye para verirsin. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "online sepet",
@@ -2776,7 +2776,7 @@
         "gorsel": "checkout page closeup"
       },
       {
-        "metin": "hesap yapan alıcı",
+        "metin": "hesap yapan alıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "filling cart to threshold"
       }
     ],
@@ -2800,7 +2800,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Gördüğün o parlaklık üründe değil, tasarımda. Takılar spot altında ışıldar, kıyafetler sıcak ışıkla canlanır, meyveler özel ışıkla tazelenir; evde aynısı sönük kalır. Işık ürünü olduğundan iyi gösterir. Işığın büyüsüne değil, ürünün kendisine bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Gördüğün o parlaklık üründe değil, tasarımda. Takılar spot altında ışıldar, kıyafetler sıcak ışıkla canlanır, meyveler özel ışıkla tazelenir; evde aynısı sönük kalır. Işık ürünü olduğundan iyi gösterir. Işığın büyüsüne değil, ürünün kendisine bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "mağaza spot ışık",
@@ -2823,7 +2823,7 @@
         "gorsel": "warm lit clothing display closeup"
       },
       {
-        "metin": "evde sönük ürün",
+        "metin": "evde sönük ürün Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "dull product at home closeup"
       }
     ],
@@ -2847,7 +2847,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sosyal medyada aşağı kaydırırsın, kaydırırsın ve akış hiç bitmez. Bu asla bir tesadüf değil. Buna sonsuz akış denir ve durman zorlaşsın diye tasarlanmıştır. Ne kadar çok kalırsan sana o kadar çok reklam gösterilir. Yani senin zamanın, onların gerçek ürünüdür. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Sosyal medyada aşağı kaydırırsın, kaydırırsın ve akış hiç bitmez. Bu asla bir tesadüf değil. Buna sonsuz akış denir ve durman zorlaşsın diye tasarlanmıştır. Ne kadar çok kalırsan sana o kadar çok reklam gösterilir. Yani senin zamanın, onların gerçek ürünüdür. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "telefon kaydırma",
@@ -2870,7 +2870,7 @@
         "gorsel": "social app interface fast"
       },
       {
-        "metin": "zaman kaybı",
+        "metin": "zaman kaybı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "scrolling late at night"
       }
     ],
@@ -2941,7 +2941,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "İki tişört düşün, kumaşları birebir aynı. Ama üzerinde logo olan diğerinden üç kat pahalı. Bunun sebebi kalite değil. O logo bir ürün değil, sana ait olma ve statü hissi satar. Fazladan ödediğin para kumaşa değil, o markanın imajına gider. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "İki tişört düşün, kumaşları birebir aynı. Ama üzerinde logo olan diğerinden üç kat pahalı. Bunun sebebi kalite değil. O logo bir ürün değil, sana ait olma ve statü hissi satar. Fazladan ödediğin para kumaşa değil, o markanın imajına gider. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "logolu tişört",
@@ -2964,7 +2964,7 @@
         "gorsel": "fashion boutique interior"
       },
       {
-        "metin": "kumaş detay",
+        "metin": "kumaş detay Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "folding branded clothes"
       }
     ],
@@ -2988,7 +2988,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Havaalanında bir su, bir sandviç servet. Neden? Çünkü içeri girdin, dışarı çıkamazsın, başka seçeneğin yok. Beklemek zorundasın, acıkırsın, alırsın. Bunu bilirler, fiyatı katlarlar. Güvenlikten önce bir şeyler almak ya da yanında getirmek seni kurtarır. Kapana kısıldığın her yerde fiyat yükselir. Önceden hazırlan. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Havaalanında bir su, bir sandviç servet. Neden? Çünkü içeri girdin, dışarı çıkamazsın, başka seçeneğin yok. Beklemek zorundasın, acıkırsın, alırsın. Bunu bilirler, fiyatı katlarlar. Güvenlikten önce bir şeyler almak ya da yanında getirmek seni kurtarır. Kapana kısıldığın her yerde fiyat yükselir. Önceden hazırlan. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "havaalanı kafe",
@@ -3011,7 +3011,7 @@
         "gorsel": "expensive water at airport closeup"
       },
       {
-        "metin": "terminal içi",
+        "metin": "terminal içi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "airport terminal interior closeup"
       }
     ],
@@ -3035,7 +3035,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Her yıl yeni telefon çıkar, seninki 'eski' olur. Ama gerçekte telefonun gayet iyi çalışıyor. Küçük değişiklikler büyük yenilik gibi sunulur. Eski model yavaşlatılır, güncellemeler kesilir. Buna planlı eskitme denir. Amaç, çalışan ürünü değiştirtmek. İhtiyacın mı var, yoksa yeni mi istiyorsun? Fark et. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Her yıl yeni telefon çıkar, seninki 'eski' olur. Ama gerçekte telefonun gayet iyi çalışıyor. Küçük değişiklikler büyük yenilik gibi sunulur. Eski model yavaşlatılır, güncellemeler kesilir. Buna planlı eskitme denir. Amaç, çalışan ürünü değiştirtmek. İhtiyacın mı var, yoksa yeni mi istiyorsun? Fark et. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "yeni telefon",
@@ -3058,7 +3058,7 @@
         "gorsel": "software update screen closeup"
       },
       {
-        "metin": "düşünen kullanıcı",
+        "metin": "düşünen kullanıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person considering upgrade closeup"
       }
     ],
@@ -3082,7 +3082,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "İnternet tarifelerinin bu kadar karışık olması tesadüf değil, kasıtlı. GB, dakika, gece paketi, taahhüt, ek servis... kimse tam anlamasın diye. Çünkü anlamazsan karşılaştıramazsın, karşılaştıramazsan fazla ödersin. Karmaşa bir kalkandır. İhtiyacını yaz, gereksiz eklentileri çıkart, net sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "İnternet tarifelerinin bu kadar karışık olması tesadüf değil, kasıtlı. GB, dakika, gece paketi, taahhüt, ek servis... kimse tam anlamasın diye. Çünkü anlamazsan karşılaştıramazsın, karşılaştıramazsan fazla ödersin. Karmaşa bir kalkandır. İhtiyacını yaz, gereksiz eklentileri çıkart, net sor. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "tarife tablosu",
@@ -3105,7 +3105,7 @@
         "gorsel": "confused person reading plans closeup"
       },
       {
-        "metin": "karşılaştırma yapan",
+        "metin": "karşılaştırma yapan Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "comparing phone plans closeup"
       }
     ],
@@ -3113,7 +3113,7 @@
     "tema": "tuzak"
   },
   {
-    "baslik": "BEDAVA OYUN GERÇEKTEN BEDAVA MI? 🕹️",
+    "baslik": "BEDAVA OYUN PARANI NASIL ALIR? 🕹️",
     "aciklama": "Ücretsiz mobil oyunlar nasıl milyonlar kazanır? Seni yavaşça harcamaya çeken bekleme ve kolaylık tuzağı.\n\nBEDAVA NASIL KAZANIR?\n\nMarketler, AVM'ler, restoranlar ve uygulamaların her gün kurduğu gizli tuzakları kısa videolarla anlatıyoruz. Fark et, kanma.\n\nHer akşam 19:00'da yeni video.\n\n#bedavaoyuntuzağı #oyuniçisatınalma #beklemetuzağı #gizlituzak #shorts",
     "etiketler": [
       "bedava oyun tuzağı",
@@ -3129,7 +3129,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir oyun bedavadır, indirir ve keyifle oynarsın. Ama bir yerde takılırsın ve karşına 'beş dakika bekle ya da hemen öde' seçeneği çıkar. Oyun ücretsiz görünür çünkü asıl para sabırsızlığından kazanılır. Beklemek istemediğin her an, onların kasasına para akıtır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir oyun bedavadır, indirir ve keyifle oynarsın. Ama bir yerde takılırsın ve karşına 'beş dakika bekle ya da hemen öde' seçeneği çıkar. Oyun ücretsiz görünür çünkü asıl para sabırsızlığından kazanılır. Beklemek istemediğin her an, onların kasasına para akıtır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "mobil oyun",
@@ -3152,7 +3152,7 @@
         "gorsel": "kid playing game frustrated"
       },
       {
-        "metin": "oynayan kişi",
+        "metin": "oynayan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "game store buy screen"
       }
     ],
@@ -3176,7 +3176,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "O ünlü sevdiğin ürünü kullandığı için değil, para aldığı için övüyor. İşi güvenini satmak. Sen 'o kullanıyorsa iyidir' dersin, tam da istedikleri bu. Ünlü bir vitrin; ürünü değil imajını satar. Öneriyi değil, ürünün kendisini araştır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "O ünlü sevdiğin ürünü kullandığı için değil, para aldığı için övüyor. İşi güvenini satmak. Sen 'o kullanıyorsa iyidir' dersin, tam da istedikleri bu. Ünlü bir vitrin; ürünü değil imajını satar. Öneriyi değil, ürünün kendisini araştır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "ünlü reklam",
@@ -3199,7 +3199,7 @@
         "gorsel": "fan buying endorsed product closeup"
       },
       {
-        "metin": "şüpheci izleyici",
+        "metin": "şüpheci izleyici Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "skeptical viewer watching ad closeup"
       }
     ],
@@ -3223,7 +3223,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Büyük bir markette bir şey almaya girersin, çıkışı bulamazsın. Temel ürünler hep en uzakta, en dipte. Neden? Çünkü onlara ulaşmak için tüm mağazayı gezmen gerekir. Gezerken planlamadığın onlarca şey alırsın. Labirent kasıtlı. Kaybolman satışa dönüşür. Listeni yap, sadece gerekeni al, çıkışa yönel. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Büyük bir markette bir şey almaya girersin, çıkışı bulamazsın. Temel ürünler hep en uzakta, en dipte. Neden? Çünkü onlara ulaşmak için tüm mağazayı gezmen gerekir. Gezerken planlamadığın onlarca şey alırsın. Labirent kasıtlı. Kaybolman satışa dönüşür. Listeni yap, sadece gerekeni al, çıkışa yönel. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "büyük market içi",
@@ -3246,7 +3246,7 @@
         "gorsel": "milk at far back of store closeup"
       },
       {
-        "metin": "çıkış arayan",
+        "metin": "çıkış arayan Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person looking for exit closeup"
       }
     ],
@@ -3270,7 +3270,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bir yere taksiyle gidersin ve şoför hiç bilmediğin, uzun bir güzergah seçer. Bazen bu gerçekten trafik yüzündendir. Ama bazen de sırf ücreti artırmak için kasıtlı yapılır. Rotayı önceden telefonundan kontrol etmek, seni bu tuzaktan koruyan en basit yoldur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bir yere taksiyle gidersin ve şoför hiç bilmediğin, uzun bir güzergah seçer. Bazen bu gerçekten trafik yüzündendir. Ama bazen de sırf ücreti artırmak için kasıtlı yapılır. Rotayı önceden telefonundan kontrol etmek, seni bu tuzaktan koruyan en basit yoldur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "taksi içi",
@@ -3293,7 +3293,7 @@
         "gorsel": "hailing a taxi street"
       },
       {
-        "metin": "yolcu arka koltuk",
+        "metin": "yolcu arka koltuk Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "gps navigation in car"
       }
     ],
@@ -3301,7 +3301,7 @@
     "tema": "tuzak"
   },
   {
-    "baslik": "İKİNCİ ÜRÜN BEDAVA MI? 🎁",
+    "baslik": "İKİNCİ ÜRÜN NEDEN 'BEDAVA'? 🎁",
     "aciklama": "'İkincisi bedava, ikinci ürüne yüzde elli' kampanyaları kârlı mı? İhtiyacından fazlasını aldıran çoklu alım tuzağı.\n\nİKİNCİSİ NEDEN BEDAVA?\n\nMarketler, AVM'ler, restoranlar ve uygulamaların her gün kurduğu gizli tuzakları kısa videolarla anlatıyoruz. Fark et, kanma.\n\nHer akşam 19:00'da yeni video.\n\n#ikincisibedava #çoklualımtuzağı #kampanyafazlası #gizlituzak #shorts",
     "etiketler": [
       "ikincisi bedava",
@@ -3317,7 +3317,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'İkincisini yarı fiyatına al' ya da 'üç al iki öde' kampanyaları kazançlı gibi görünür, ama senin ihtiyacın tek bir üründü. İkincisini aldığında çoğu zaman ya bozulur ya da hiç kullanmazsın, yani tek ürünün maliyetinden fazlasını ödemiş olursun. Bu kampanyalar sana ihtiyacın olmayanı aldırır. İhtiyacın kadar alırsan, kampanya sana sahte bir ihtiyaç yaratamaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "'İkincisini yarı fiyatına al' ya da 'üç al iki öde' kampanyaları kazançlı gibi görünür, ama senin ihtiyacın tek bir üründü. İkincisini aldığında çoğu zaman ya bozulur ya da hiç kullanmazsın, yani tek ürünün maliyetinden fazlasını ödemiş olursun. Bu kampanyalar sana ihtiyacın olmayanı aldırır. İhtiyacın kadar alırsan, kampanya sana sahte bir ihtiyaç yaratamaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "ikincisi bedava",
@@ -3340,7 +3340,7 @@
         "gorsel": "discount bundle products"
       },
       {
-        "metin": "düşünen alıcı",
+        "metin": "düşünen alıcı Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "grabbing extra item store"
       }
     ],
@@ -3364,7 +3364,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Telefonuna düşen 'sadece size özel indirim' mesajı seni değerli hissettirir, ama aynı mesaj milyonlarca kişiye birden gönderilmiştir. 'Sana özel' sözü gerçek bir ayrıcalık değil, seni bağlamak için kurulmuş bir kalıptır. Kendini özel sandığın an, daha rahat harcarsın. Teklif herkese aynıdır. O yüzden duyguya değil, teklifin gerçek değerine bakmalısın. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Telefonuna düşen 'sadece size özel indirim' mesajı seni değerli hissettirir, ama aynı mesaj milyonlarca kişiye birden gönderilmiştir. 'Sana özel' sözü gerçek bir ayrıcalık değil, seni bağlamak için kurulmuş bir kalıptır. Kendini özel sandığın an, daha rahat harcarsın. Teklif herkese aynıdır. O yüzden duyguya değil, teklifin gerçek değerine bakmalısın. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "sana özel mesaj",
@@ -3387,7 +3387,7 @@
         "gorsel": "person reading promo text"
       },
       {
-        "metin": "şüpheci bakış",
+        "metin": "şüpheci bakış Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "exclusive deal popup"
       }
     ],
@@ -3411,7 +3411,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Bankaya, galeriye ya da mağazaya girdiğinde hemen kahve ikram edilmesi tam bir cömertlik değil, düşünülmüş bir stratejidir. Kahveni içerken oturur, kalır ve konuşursun; ne kadar uzun kalırsan o kadar bağlanır, hayır demen o kadar zorlaşır. Üstelik ikram, içinde küçük bir borçluluk hissi taşır. O bedava kahve, aslında seni masada ve kararsız tutmanın yoludur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bankaya, galeriye ya da mağazaya girdiğinde hemen kahve ikram edilmesi tam bir cömertlik değil, düşünülmüş bir stratejidir. Kahveni içerken oturur, kalır ve konuşursun; ne kadar uzun kalırsan o kadar bağlanır, hayır demen o kadar zorlaşır. Üstelik ikram, içinde küçük bir borçluluk hissi taşır. O bedava kahve, aslında seni masada ve kararsız tutmanın yoludur. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "bedava kahve ikram",
@@ -3434,7 +3434,7 @@
         "gorsel": "person drinking coffee cafe"
       },
       {
-        "metin": "sıcak kahve",
+        "metin": "sıcak kahve Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "espresso machine brewing"
       }
     ],
@@ -3458,7 +3458,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Ürün alırken indirim kodu ararsın, hemen bulursun. Şans mı? Hayır, bilerek dağıtılır. Çünkü kod arayan almaya kararlıdır, küçük indirim kararsızı alıcıya çevirir. Kod neden kolay bulunur? Seni kazandım hissiyle iter. İhtiyaç için al, kod için değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Ürün alırken indirim kodu ararsın, hemen bulursun. Şans mı? Hayır, bilerek dağıtılır. Çünkü kod arayan almaya kararlıdır, küçük indirim kararsızı alıcıya çevirir. Kod neden kolay bulunur? Seni kazandım hissiyle iter. İhtiyaç için al, kod için değil. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "indirim kodu ekran",
@@ -3481,7 +3481,7 @@
         "gorsel": "discount applied cart closeup"
       },
       {
-        "metin": "alışveriş tamamlama",
+        "metin": "alışveriş tamamlama Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "completing online purchase closeup"
       }
     ],
@@ -3505,7 +3505,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Vitrindeki o kusursuz görüntü koca bir yanılsama. Manken gerçek insan ölçülerinde değil, kıyafet arkadan toplanıp iğnelenmiş. Sen giyince farklı görünür, kötü hisseder, 'başka bir şey de alayım' dersin. Manken bir reklam; kendine değil, ürünün gerçeğine odaklan. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Vitrindeki o kusursuz görüntü koca bir yanılsama. Manken gerçek insan ölçülerinde değil, kıyafet arkadan toplanıp iğnelenmiş. Sen giyince farklı görünür, kötü hisseder, 'başka bir şey de alayım' dersin. Manken bir reklam; kendine değil, ürünün gerçeğine odaklan. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "vitrin mankeni",
@@ -3528,7 +3528,7 @@
         "gorsel": "dressed mannequin display closeup"
       },
       {
-        "metin": "ayna önünde kişi",
+        "metin": "ayna önünde kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person in front of mirror closeup"
       }
     ],
@@ -3549,7 +3549,7 @@
       "bilinç"
     ],
     "kanca": "HEPSİNE DÜŞÜYORSUN!",
-    "script": "Bugün fark etmeden en az üç tuzağa düştün. Bir: markette göz hizasındaki en pahalı ürünü aldın, ucuzlar alt raftaydı. İki: 'ayda sadece şu kadar' yazısına kandın, toplam fiyata bakmadın. Üç: kasadaki çikolatayı planlamadan sepete attın, çünkü tam oraya konmuştu. Üçü de tesadüf değil, hepsi tasarlandı. Farkında olmak ilk adım. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bugün fark etmeden en az üç tuzağa düştün. Bir: markette göz hizasındaki en pahalı ürünü aldın, ucuzlar alt raftaydı. İki: 'ayda sadece şu kadar' yazısına kandın, toplam fiyata bakmadın. Üç: kasadaki çikolatayı planlamadan sepete attın, çünkü tam oraya konmuştu. Üçü de tesadüf değil, hepsi tasarlandı. Farkında olmak ilk adım. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "göz hizası raf",
@@ -3572,14 +3572,14 @@
         "gorsel": "candy at checkout counter"
       },
       {
-        "metin": "düşünen kişi",
+        "metin": "düşünen kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person thinking shopping cart"
       }
     ],
     "tema": "tuzak"
   },
   {
-    "baslik": "BU TUZAĞA DÜŞÜYOR MUSUN? 🧠",
+    "baslik": "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠",
     "aciklama": "Kendini test et: pazarlama tuzaklarına ne kadar açıksın? Dürüst cevap ver.",
     "etiketler": [
       "test",
@@ -3592,7 +3592,7 @@
       "bilinç"
     ],
     "kanca": "DÜRÜST CEVAP VER!",
-    "script": "Kendini test et. İndirim yazısını görünce ihtiyacın olmasa da bakıyor musun? 'Son ürün' yazısı seni acele ettiriyor mu? Ayda taksit rakamı sana ucuz geliyor mu? Üçüne de evet dediysen, tam hedef kitlesisin. Merak etme, bu bir kusur değil, herkesin beyni böyle çalışır. Ama fark eden kazanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Kendini test et. İndirim yazısını görünce ihtiyacın olmasa da bakıyor musun? 'Son ürün' yazısı seni acele ettiriyor mu? Ayda taksit rakamı sana ucuz geliyor mu? Üçüne de evet dediysen, tam hedef kitlesisin. Merak etme, bu bir kusur değil, herkesin beyni böyle çalışır. Ama fark eden kazanır. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "indirim etiketi",
@@ -3615,14 +3615,14 @@
         "gorsel": "person scratching head confused"
       },
       {
-        "metin": "anlayan kişi",
+        "metin": "anlayan kişi Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "confident person nodding"
       }
     ],
     "tema": "tuzak"
   },
   {
-    "baslik": "BUNU BİLİYOR MUYDUN? 🤯",
+    "baslik": "ÇOĞU KİŞİNİN BİLMEDİĞİ GERÇEK! 🤯",
     "aciklama": "Fiyat etiketlerindeki çoğu kişinin bilmediği küçük ama etkili bir tuzak.",
     "etiketler": [
       "biliyormuydun",
@@ -3635,7 +3635,7 @@
       "para"
     ],
     "kanca": "ÇOĞU KİŞİ BİLMİYOR",
-    "script": "Bunu çoğu kişi bilmiyor: fiyat etiketlerinde lira simgesi çoğu zaman bilerek çok küçük yazılır ya da hiç konmaz. Neden? Para birimini görmek harcamanın acısını hatırlatır. Simge yoksa o rakam sadece bir sayıya dönüşür, sen de daha kolay ödersin. Küçük bir detay ama beynini doğrudan etkiler. Etikete dikkatli bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal.",
+    "script": "Bunu çoğu kişi bilmiyor: fiyat etiketlerinde lira simgesi çoğu zaman bilerek çok küçük yazılır ya da hiç konmaz. Neden? Para birimini görmek harcamanın acısını hatırlatır. Simge yoksa o rakam sadece bir sayıya dönüşür, sen de daha kolay ödersin. Küçük bir detay ama beynini doğrudan etkiler. Etikete dikkatli bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "fiyat etiketi",
@@ -3658,7 +3658,7 @@
         "gorsel": "number price sticker closeup"
       },
       {
-        "metin": "dikkatli bakış",
+        "metin": "dikkatli bakış Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
         "gorsel": "person reading price tag"
       }
     ],
@@ -3667,7 +3667,7 @@
   {
     "baslik": "LİSTEYLE GİT, YARISINA ÇIK! 📝",
     "kanca": "LİSTE = KALKAN",
-    "script": "Markete listesiz girme. Liste yoksa her raf sana 'beni al' der. Listeyle gidersen sadece ihtiyacını alırsın, dürtüsel harcama yarı yarıya iner. Kalemle yaz ya da telefona not et, fark etmez. Liste senin kalkanın. Bir dahaki sefere dene.",
+    "script": "Markete listesiz girme. Liste yoksa her raf sana 'beni al' der. Listeyle gidersen sadece ihtiyacını alırsın, dürtüsel harcama yarı yarıya iner. Kalemle yaz ya da telefona not et, fark etmez. Liste senin kalkanın. Bir dahaki sefere dene. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "tasarruf ipuçları",
       "alışveriş listesi",
@@ -3702,7 +3702,7 @@
         "gorsel": "a shopping list app on a smartphone screen"
       },
       {
-        "metin": "kalkan gibi liste",
+        "metin": "kalkan gibi liste Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a confident shopper walking past tempting shelves"
       }
     ],
@@ -3712,7 +3712,7 @@
   {
     "baslik": "24 SAAT BEKLE, PİŞMAN OLMA! ⏳",
     "kanca": "24 SAAT KURALI",
-    "script": "Bir şeyi çok istedin, hemen alacaksın. Dur. 24 saat bekle. Ertesi gün çoğu istek buharlaşır, çünkü o an sadece dürtüydü. Gerçekten gerekliyse yarın da istersin. Sepette beklet, uyu, sonra bak. İşte pişmanlığın panzehiri: 24 saat kuralı.",
+    "script": "Bir şeyi çok istedin, hemen alacaksın. Dur. 24 saat bekle. Ertesi gün çoğu istek buharlaşır, çünkü o an sadece dürtüydü. Gerçekten gerekliyse yarın da istersin. Sepette beklet, uyu, sonra bak. İşte pişmanlığın panzehiri: 24 saat kuralı. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "tasarruf ipuçları",
       "dürtüsel alışveriş",
@@ -3747,7 +3747,7 @@
         "gorsel": "a person sleeping peacefully at night"
       },
       {
-        "metin": "bilinçli karar",
+        "metin": "bilinçli karar Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a calm person deciding thoughtfully with phone"
       }
     ],
@@ -3757,7 +3757,7 @@
   {
     "baslik": "BÜYÜK PAKET HER ZAMAN UCUZ DEĞİL! ⚖️",
     "kanca": "RAFTAKİ KÜÇÜK YAZIYA BAK",
-    "script": "Büyük paket ucuzdur sanıyorsun. Her zaman değil. Etikette küçük bir yazı var: birim fiyat. Kilogram ya da litre başına fiyat. Bazen küçük paket birim başına daha ucuzdur. Toplam fiyata değil, o küçük yazıya bak. Bir bakışta kim kazanır belli olur.",
+    "script": "Büyük paket ucuzdur sanıyorsun. Her zaman değil. Etikette küçük bir yazı var: birim fiyat. Kilogram ya da litre başına fiyat. Bazen küçük paket birim başına daha ucuzdur. Toplam fiyata değil, o küçük yazıya bak. Bir bakışta kim kazanır belli olur. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "tasarruf ipuçları",
       "birim fiyat",
@@ -3792,7 +3792,7 @@
         "gorsel": "a calculator next to grocery products"
       },
       {
-        "metin": "doğru seçim",
+        "metin": "doğru seçim Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a hand choosing the better value product"
       }
     ],
@@ -3802,7 +3802,7 @@
   {
     "baslik": "AÇKEN MARKETE GİTME! 🍎",
     "kanca": "AÇ KARIN = DOLU SEPET",
-    "script": "Aç karnına markete girme. Aç beyin her şeyi lezzetli görür, sepet kendiliğinden dolar. Araştırmalar açken daha çok ve daha çok kalorili aldığını söylüyor. Önce bir şeyler ye, sonra çık. Küçük numara, büyük tasarruf. Aç karın, dolu sepet demektir.",
+    "script": "Aç karnına markete girme. Aç beyin her şeyi lezzetli görür, sepet kendiliğinden dolar. Araştırmalar açken daha çok ve daha çok kalorili aldığını söylüyor. Önce bir şeyler ye, sonra çık. Küçük numara, büyük tasarruf. Aç karın, dolu sepet demektir. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "tasarruf ipuçları",
       "market psikolojisi",
@@ -3837,7 +3837,7 @@
         "gorsel": "a person eating an apple before shopping"
       },
       {
-        "metin": "kontrollü alışveriş",
+        "metin": "kontrollü alışveriş Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a satisfied shopper with a light basket"
       }
     ],
@@ -3847,7 +3847,7 @@
   {
     "baslik": "ABONELİKLERİNİ YILDA BİR SAY! 🔄",
     "kanca": "KAÇ ABONELİĞİN VAR?",
-    "script": "Dur ve say: kaç aboneliğin var? Çoğu insan bilmez. Kullanmadığın uygulama, unuttuğun üyelik, her ay sessizce hesabından çıkar. Yılda bir gün ayır, hepsini gözden geçir, kullanmadığını iptal et. Bazen aylık küçük görünen tutarlar, yılda koca bir rakam eder.",
+    "script": "Dur ve say: kaç aboneliğin var? Çoğu insan bilmez. Kullanmadığın uygulama, unuttuğun üyelik, her ay sessizce hesabından çıkar. Yılda bir gün ayır, hepsini gözden geçir, kullanmadığını iptal et. Bazen aylık küçük görünen tutarlar, yılda koca bir rakam eder. Yarın yeni bir video seni bekliyor, kaçırma.",
     "etiketler": [
       "tasarruf ipuçları",
       "abonelik iptali",
@@ -3882,7 +3882,7 @@
         "gorsel": "a finger tapping a cancel subscription button"
       },
       {
-        "metin": "biriken tasarruf",
+        "metin": "biriken tasarruf Yarın yeni bir video seni bekliyor, kaçırma.",
         "gorsel": "coins being saved into a jar"
       }
     ],
@@ -3892,7 +3892,7 @@
   {
     "baslik": "KÂĞIT PARA KÂĞITTAN DEĞİL! 💵",
     "kanca": "PARA NEDEN YIRTILMAZ?",
-    "script": "Kâğıt para aslında kâğıt değildir. Çoğu banknot pamuk ve keten liflerinden yapılır. O yüzden cebinde çamaşıra girse bile kolay kolay dağılmaz. Bazı ülkeler ise plastikten para basar. Yani cebindeki para bildiğin kâğıttan çok daha dayanıklı. Şimdi bir kez daha bak ona.",
+    "script": "Kâğıt para aslında kâğıt değildir. Çoğu banknot pamuk ve keten liflerinden yapılır. O yüzden cebinde çamaşıra girse bile kolay kolay dağılmaz. Bazı ülkeler ise plastikten para basar. Yani cebindeki para bildiğin kâğıttan çok daha dayanıklı. Şimdi bir kez daha bak ona. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",
       "ilginç bilgi",
@@ -3927,7 +3927,7 @@
         "gorsel": "a modern polymer plastic banknote, transparent window"
       },
       {
-        "metin": "paraya bakış",
+        "metin": "paraya bakış Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a person examining a banknote closely in light"
       }
     ],
@@ -3937,7 +3937,7 @@
   {
     "baslik": "BOZUK PARANIN KENARI NEDEN TIRTIKLI? 🪙",
     "kanca": "O TIRTIKLARIN SIRRI",
-    "script": "Madeni paraların kenarındaki o küçük tırtıkları hiç düşündün mü? Süs değil onlar. Eskiden paralar değerli metalden yapılırdı, insanlar kenarından kazıyıp metal çalardı. Tırtıklar sayesinde kesik hemen belli oluyordu. Bugün metal değersiz ama tırtık alışkanlıktan kaldı. İşte o tırtıkların sırrı.",
+    "script": "Madeni paraların kenarındaki o küçük tırtıkları hiç düşündün mü? Süs değil onlar. Eskiden paralar değerli metalden yapılırdı, insanlar kenarından kazıyıp metal çalardı. Tırtıklar sayesinde kesik hemen belli oluyordu. Bugün metal değersiz ama tırtık alışkanlıktan kaldı. İşte o tırtıkların sırrı. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",
       "ilginç bilgi",
@@ -3972,7 +3972,7 @@
         "gorsel": "a stack of shiny coins close up"
       },
       {
-        "metin": "parayı inceleme",
+        "metin": "parayı inceleme Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a person inspecting a coin edge with fingers"
       }
     ],
@@ -3982,7 +3982,7 @@
   {
     "baslik": "KIRMIZI RENK NEDEN İŞTAH AÇAR? 🔴",
     "kanca": "RENKLER SENİ ACIKTIRIR",
-    "script": "Fast food markalarına dikkat et: neredeyse hepsi kırmızı ve sarı. Tesadüf değil. Kırmızı iştahı ve heyecanı uyarır, sarı ise dikkat çeker ve mutluluk hissi verir. Beynin bu renkleri görünce 'acıktım' der. Yani seni acıktıran sadece koku değil, renkler de. Fark et.",
+    "script": "Fast food markalarına dikkat et: neredeyse hepsi kırmızı ve sarı. Tesadüf değil. Kırmızı iştahı ve heyecanı uyarır, sarı ise dikkat çeker ve mutluluk hissi verir. Beynin bu renkleri görünce 'acıktım' der. Yani seni acıktıran sadece koku değil, renkler de. Fark et. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",
       "renk psikolojisi",
@@ -4017,7 +4017,7 @@
         "gorsel": "a colorful fast food menu board glowing"
       },
       {
-        "metin": "farkındalık",
+        "metin": "farkındalık Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a thoughtful person noticing bright branding"
       }
     ],
@@ -4027,7 +4027,7 @@
   {
     "baslik": "'BEDAVA' KELİMESİ BEYNİ NASIL KANDIRIR? 🧠",
     "kanca": "BEDAVA = DOPAMİN",
-    "script": "Bir kelime var ki beyni anında ele geçirir: bedava. Gerçekten istemesen bile, bedava duyunca beyninde küçük bir ödül sinyali patlar. Mantık susar, dürtü konuşur. Markalar bunu bilir, o yüzden 'bedava' kelimesini her yere yazar. Bir dahaki sefere gördüğünde, dur ve düşün.",
+    "script": "Bir kelime var ki beyni anında ele geçirir: bedava. Gerçekten istemesen bile, bedava duyunca beyninde küçük bir ödül sinyali patlar. Mantık susar, dürtü konuşur. Markalar bunu bilir, o yüzden 'bedava' kelimesini her yere yazar. Bir dahaki sefere gördüğünde, dur ve düşün. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",
       "para psikolojisi",
@@ -4062,7 +4062,7 @@
         "gorsel": "multiple free offer tags in a store"
       },
       {
-        "metin": "dur ve düşün",
+        "metin": "dur ve düşün Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a person pausing thoughtfully before buying"
       }
     ],
@@ -4072,7 +4072,7 @@
   {
     "baslik": "REKLAM BİNLERCE YIL ÖNCE DE VARDI! 📜",
     "kanca": "İLK REKLAM ÇOK ESKİ",
-    "script": "Reklam yeni bir şey sanıyorsun ama binlerce yıl öncesine dayanır. Antik şehirlerin duvarlarında dükkânları öven yazılar, pazarlarda bağıran satıcılar hep birer reklamdı. İnsan olduğu sürece birileri bir şey satmaya çalıştı. Değişen tek şey ekran. Yani reklam, sandığından çok daha yaşlı.",
+    "script": "Reklam yeni bir şey sanıyorsun ama binlerce yıl öncesine dayanır. Antik şehirlerin duvarlarında dükkânları öven yazılar, pazarlarda bağıran satıcılar hep birer reklamdı. İnsan olduğu sürece birileri bir şey satmaya çalıştı. Değişen tek şey ekran. Yani reklam, sandığından çok daha yaşlı. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",
       "reklam tarihi",
@@ -4107,7 +4107,7 @@
         "gorsel": "a modern digital billboard in a city"
       },
       {
-        "metin": "değişmeyen amaç",
+        "metin": "değişmeyen amaç Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "contrast of old and new advertising"
       }
     ],
@@ -4117,7 +4117,7 @@
   {
     "baslik": "GÜN SONU NEDEN KÖTÜ KARAR VERİRSİN? 🌙",
     "kanca": "KARAR YORGUNLUĞU",
-    "script": "Gün boyu yüzlerce küçük karar verirsin: ne giyeceğin, ne yiyeceğin, hangi yol. Akşama doğru beynin yorulur, buna karar yorgunluğu denir. Yorgun beyin en kolay 'evet'i seçer. İşte bu yüzden akşam alışverişinde daha çok harcarsın. Önemli kararları sabaha bırak. Sırrı bu.",
+    "script": "Gün boyu yüzlerce küçük karar verirsin: ne giyeceğin, ne yiyeceğin, hangi yol. Akşama doğru beynin yorulur, buna karar yorgunluğu denir. Yorgun beyin en kolay 'evet'i seçer. İşte bu yüzden akşam alışverişinde daha çok harcarsın. Önemli kararları sabaha bırak. Sırrı bu. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "karar yorgunluğu",
       "psikoloji",
@@ -4152,7 +4152,7 @@
         "gorsel": "late evening online shopping on a couch"
       },
       {
-        "metin": "sabaha bırak",
+        "metin": "sabaha bırak Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a fresh morning person deciding clearly"
       }
     ],
@@ -4162,7 +4162,7 @@
   {
     "baslik": "KALABALIKTA NEDEN AYNISINI YAPARSIN? 👥",
     "kanca": "SÜRÜ İÇGÜDÜSÜ",
-    "script": "İki restoran var: biri boş, biri kuyruklu. Hangisine girersin? Çoğu insan kuyruğa geçer. Buna sosyal kanıt denir; başkaları yapıyorsa doğrudur sanırız. Yorum sayısı, 'en çok satan' etiketi, kalabalık hep bu içgüdüyü kullanır. Bazen kalabalık yanılır. Kendi kararını ver.",
+    "script": "İki restoran var: biri boş, biri kuyruklu. Hangisine girersin? Çoğu insan kuyruğa geçer. Buna sosyal kanıt denir; başkaları yapıyorsa doğrudur sanırız. Yorum sayısı, 'en çok satan' etiketi, kalabalık hep bu içgüdüyü kullanır. Bazen kalabalık yanılır. Kendi kararını ver. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "sosyal kanıt",
       "psikoloji",
@@ -4197,7 +4197,7 @@
         "gorsel": "five star reviews on a phone screen"
       },
       {
-        "metin": "kendi kararın",
+        "metin": "kendi kararın Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a confident person walking their own way"
       }
     ],
@@ -4207,7 +4207,7 @@
   {
     "baslik": "TELEFONU NEDEN BOŞUNA KONTROL EDERSİN? 📱",
     "kanca": "BEKLENMEDİK ÖDÜL",
-    "script": "Telefonu elin alışkanlıkla açıyor, hiçbir bildirim yokken bile. Neden? Çünkü bazen bir mesaj, bazen bir beğeni gelir; bu 'belki vardır' hissi bağımlılık yapar. Buna değişken ödül denir, aynı kumar makinesi gibi. Uygulamalar tam da bunun için tasarlanır. Fark ettin mi?",
+    "script": "Telefonu elin alışkanlıkla açıyor, hiçbir bildirim yokken bile. Neden? Çünkü bazen bir mesaj, bazen bir beğeni gelir; bu 'belki vardır' hissi bağımlılık yapar. Buna değişken ödül denir, aynı kumar makinesi gibi. Uygulamalar tam da bunun için tasarlanır. Fark ettin mi? Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "değişken ödül",
       "telefon bağımlılığı",
@@ -4242,7 +4242,7 @@
         "gorsel": "a slot machine reels spinning, close up"
       },
       {
-        "metin": "farkındalık anı",
+        "metin": "farkındalık anı Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a person putting the phone down thoughtfully"
       }
     ],
@@ -4252,7 +4252,7 @@
   {
     "baslik": "İLK İZLENİM KAÇ SANİYEDE OLUŞUR? 👀",
     "kanca": "SANİYELER YETER",
-    "script": "Biriyle tanışırken beynin karar vermek için günlerce beklemez. İlk izlenim saniyeler içinde oluşur, hatta bazen bir bakış yeter. Duruş, ses tonu, yüz ifadesi... Beyin hızlı bir tahmin yapar ve sonra ona uygun kanıt arar. İyi haber: ilk saniyeleri sen de yönetebilirsin.",
+    "script": "Biriyle tanışırken beynin karar vermek için günlerce beklemez. İlk izlenim saniyeler içinde oluşur, hatta bazen bir bakış yeter. Duruş, ses tonu, yüz ifadesi... Beyin hızlı bir tahmin yapar ve sonra ona uygun kanıt arar. İyi haber: ilk saniyeleri sen de yönetebilirsin. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "ilk izlenim",
       "psikoloji",
@@ -4287,7 +4287,7 @@
         "gorsel": "a person observing another attentively"
       },
       {
-        "metin": "ilk saniyeler",
+        "metin": "ilk saniyeler Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a stopwatch showing just a few seconds"
       }
     ],
@@ -4297,7 +4297,7 @@
   {
     "baslik": "BEYNİN NEDEN SÜREKLİ ERTELER? ⏰",
     "kanca": "ANLIK BEYİN KAZANIR",
-    "script": "Yarın başlarım dedin, yine olmadı. Suç tembellikte değil. Beyninde iki taraf var: biri geleceği düşünür, diğeri şu anki keyfi ister. Erteleme, anlık keyfi isteyen tarafın kazanmasıdır. Çözüm: işi küçük parçala, ilk adımı iki dakikaya indir. Beyni kandır, harekete geç.",
+    "script": "Yarın başlarım dedin, yine olmadı. Suç tembellikte değil. Beyninde iki taraf var: biri geleceği düşünür, diğeri şu anki keyfi ister. Erteleme, anlık keyfi isteyen tarafın kazanmasıdır. Çözüm: işi küçük parçala, ilk adımı iki dakikaya indir. Beyni kandır, harekete geç. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "erteleme",
       "psikoloji",
@@ -4332,2125 +4332,11 @@
         "gorsel": "a hand starting a small simple task"
       },
       {
-        "metin": "harekete geçme",
+        "metin": "harekete geçme Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
         "gorsel": "a motivated person starting to work focused"
       }
     ],
     "aciklama": "Erteleme tembellik değil, beynin anlık keyfi isteyen tarafının kazanmasıdır. İşi küçük parçala, ilk adımı kolaylaştır.\n\nANLIK BEYİN KAZANIR\n\nPara, alışveriş ve günlük hayatın şaşırtıcı gerçeklerini kısa videolarla anlatıyoruz. Öğren, fark et.\n\nHer akşam 19:00'da yeni video.\n\n#psikoloji #erteleme #kişiselgelişim #shorts",
     "tema": "cesitlilik"
-  },
-  {
-    "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
-    "kanca": "GEMİLER NEDEN KAYBOLUYOR?",
-    "script": "Atlantik'te bir bölge var: içine giren gemiler, uçaklar bazen bir daha görünmüyor. Bermuda Şeytan Üçgeni. Dev metan kabarcıkları mı, tuhaf manyetik alanlar mı, yoksa sadece fırtına mı? Bilim tartışıyor ama kimse kesin bilmiyor. Peki gemiler gerçekten neden kayboluyor?",
-    "etiketler": [
-      "bermuda şeytan üçgeni",
-      "gizem",
-      "çözülemeyen gizemler",
-      "kayıp gemiler",
-      "ilginç bilgi",
-      "merak",
-      "okyanus gizemi",
-      "şaşırtıcı gerçekler",
-      "keşif",
-      "gizemli olaylar"
-    ],
-    "sahneler": [
-      {
-        "metin": "okyanus haritası",
-        "gorsel": "atlantic ocean map with marked triangle area"
-      },
-      {
-        "metin": "kaybolan gemi",
-        "gorsel": "a ship sailing into stormy ocean fog"
-      },
-      {
-        "metin": "kaybolan uçak",
-        "gorsel": "small airplane over vast ocean, aerial"
-      },
-      {
-        "metin": "metan kabarcıkları",
-        "gorsel": "gas bubbles rising in deep ocean water"
-      },
-      {
-        "metin": "pusula sapması",
-        "gorsel": "a compass needle spinning erratically, close up"
-      },
-      {
-        "metin": "çözülemeyen sır",
-        "gorsel": "mysterious dark ocean horizon at dusk"
-      }
-    ],
-    "aciklama": "Bermuda Şeytan Üçgeni'nde gemiler ve uçaklar neden kayboluyor? Teoriler ve gerçekler.\n\nGEMİLER NEDEN KAYBOLUYOR?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#bermuda #gizem #çözülemeyengizemler #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "PİRAMİTLER GERÇEKTE NASIL YAPILDI? 🔺",
-    "kanca": "2 MİLYON TAŞI KİM TAŞIDI?",
-    "script": "Büyük Piramit, her biri tonlarca ağırlıkta 2 milyondan fazla taş bloktan yapıldı. Vinç yok, makine yok. Peki binlerce yıl önce insanlar bu devasa taşları nasıl kesip, taşıyıp üst üste koydu? Rampalar mı, kızaklar mı? Hâlâ tam olarak bilinmiyor. Sence nasıl yaptılar?",
-    "etiketler": [
-      "piramitler",
-      "antik mısır",
-      "gizem",
-      "tarih",
-      "nasıl yapıldı",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "arkeoloji",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "büyük piramit",
-        "gorsel": "great pyramid of giza wide shot, desert"
-      },
-      {
-        "metin": "dev taş bloklar",
-        "gorsel": "massive ancient stone blocks close up"
-      },
-      {
-        "metin": "taş taşıma",
-        "gorsel": "ancient egyptians moving huge stones illustration"
-      },
-      {
-        "metin": "rampa teorisi",
-        "gorsel": "construction ramp against a pyramid, sand"
-      },
-      {
-        "metin": "hizalanmış yapı",
-        "gorsel": "pyramid perfectly aligned at sunset"
-      },
-      {
-        "metin": "çözülemeyen sır",
-        "gorsel": "pyramids silhouette under starry sky"
-      }
-    ],
-    "aciklama": "Milyonlarca dev taş bloğu makine olmadan nasıl taşıdılar? Piramitlerin inşa gizemi.\n\n2 MİLYON TAŞI KİM TAŞIDI?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#piramitler #antikmısır #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
-    "kanca": "%95'İ HÂLÂ KEŞFEDİLMEDİ",
-    "script": "Okyanusların yüzde doksan beşi hâlâ haritalanmadı. Yani Ay'ın yüzeyini, okyanus tabanından daha iyi biliyoruz. O karanlık derinlikte kendi ışığını üreten canlılar, dev yaratıklar ve bilinmeyen türler var. En derin noktada ne yaşıyor? Kimse tam bilmiyor. Sence aşağıda ne var?",
-    "etiketler": [
-      "derin okyanus",
-      "gizem",
-      "deniz canlıları",
-      "keşif",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "okyanus gizemi",
-      "bilim",
-      "doğa"
-    ],
-    "sahneler": [
-      {
-        "metin": "uçsuz okyanus",
-        "gorsel": "vast open ocean surface aerial view"
-      },
-      {
-        "metin": "karanlık derinlik",
-        "gorsel": "deep dark ocean underwater descending"
-      },
-      {
-        "metin": "ışık üreten canlı",
-        "gorsel": "bioluminescent jellyfish glowing in dark water"
-      },
-      {
-        "metin": "dev yaratık",
-        "gorsel": "giant squid silhouette in deep sea"
-      },
-      {
-        "metin": "okyanus tabanı",
-        "gorsel": "mysterious deep sea floor with strange creatures"
-      },
-      {
-        "metin": "bilinmeyen derinlik",
-        "gorsel": "light fading into deep ocean abyss"
-      }
-    ],
-    "aciklama": "Okyanusun %95'i keşfedilmedi. O karanlık derinlikte neler yaşıyor?\n\n%95'İ HÂLÂ KEŞFEDİLMEDİ\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#derinokyanus #gizem #keşif #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
-    "kanca": "11 KİLOMETRE AŞAĞIDA",
-    "script": "Dünyanın en derin noktası Mariana Çukuru: on bir kilometre aşağıda, Everest tepetaklak sığar. Orada basınç bir insanı bir anda ezer. Ama o zifiri karanlıkta hâlâ garip canlılar yaşıyor. Işık yok, güneş yok. Peki en dipte gerçekte ne var? Kimse tam bilmiyor.",
-    "etiketler": [
-      "mariana çukuru",
-      "derin okyanus",
-      "gizem",
-      "deniz canlıları",
-      "keşif",
-      "merak",
-      "ilginç bilgi",
-      "şaşırtıcı gerçekler",
-      "okyanus gizemi",
-      "bilim"
-    ],
-    "sahneler": [
-      {
-        "metin": "derin okyanus",
-        "gorsel": "deep ocean surface dark blue water aerial"
-      },
-      {
-        "metin": "dibe iniş",
-        "gorsel": "submersible descending into deep dark ocean"
-      },
-      {
-        "metin": "ezici basınç",
-        "gorsel": "deep sea pressure gauge submarine window"
-      },
-      {
-        "metin": "garip canlı",
-        "gorsel": "strange deep sea anglerfish glowing"
-      },
-      {
-        "metin": "zifiri karanlık",
-        "gorsel": "pitch black deep ocean abyss"
-      },
-      {
-        "metin": "bilinmeyen dip",
-        "gorsel": "mysterious deep sea trench floor"
-      }
-    ],
-    "aciklama": "Dünyanın en derin noktası Mariana Çukuru'nun dibinde ne var?\n\n11 KİLOMETRE AŞAĞIDA\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#mariana #derinokyanus #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
-    "kanca": "MÜRETTEBAT YOK OLDU",
-    "script": "Bazı gemiler okyanusun ortasında bulundu ama içinde tek bir insan yoktu. Yemek masada duruyor, her şey yerli yerinde, ama mürettebat sırra kadem basmış. En ünlüsü Mary Celeste gemisi. Ne fırtına vardı ne saldırı. İnsanlar nereye gitti? Bugün bile kimse açıklayamıyor.",
-    "etiketler": [
-      "hayalet gemi",
-      "mary celeste",
-      "gizem",
-      "deniz",
-      "kayboluş",
-      "merak",
-      "ilginç bilgi",
-      "şaşırtıcı gerçekler",
-      "okyanus gizemi",
-      "tarih"
-    ],
-    "sahneler": [
-      {
-        "metin": "terk edilmiş gemi",
-        "gorsel": "abandoned old sailing ship on ocean"
-      },
-      {
-        "metin": "boş güverte",
-        "gorsel": "empty ship deck creaking at sea"
-      },
-      {
-        "metin": "duran yemek",
-        "gorsel": "untouched meal on old wooden table"
-      },
-      {
-        "metin": "sessiz kamara",
-        "gorsel": "empty dark ship cabin interior"
-      },
-      {
-        "metin": "sakin okyanus",
-        "gorsel": "calm vast ocean horizon eerie"
-      },
-      {
-        "metin": "çözülemeyen sır",
-        "gorsel": "old nautical map with compass"
-      }
-    ],
-    "aciklama": "Mürettebatı sırra kadem basan hayalet gemilerin sırrı.\n\nMÜRETTEBAT YOK OLDU\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#hayaletgemi #gizem #deniz #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "MEGALODON HÂLÂ YAŞIYOR OLABİLİR Mİ? 🦈",
-    "kanca": "18 METRELİK CANAVAR",
-    "script": "Megalodon tarihin en büyük köpekbalığıydı: on sekiz metre, bir otobüsten uzun. Milyonlarca yıl önce yok oldu deniliyor. Ama okyanusun yüzde doksan beşi keşfedilmedi. O derin karanlıkta hâlâ dev bir şey yaşıyor olabilir mi? Bilim hayır diyor. Peki ya derinlerde bilmediğimiz bir şey varsa?",
-    "etiketler": [
-      "megalodon",
-      "köpekbalığı",
-      "derin okyanus",
-      "gizem",
-      "deniz canavarı",
-      "merak",
-      "ilginç bilgi",
-      "şaşırtıcı gerçekler",
-      "bilim",
-      "doğa"
-    ],
-    "sahneler": [
-      {
-        "metin": "dev köpekbalığı",
-        "gorsel": "giant shark silhouette deep ocean"
-      },
-      {
-        "metin": "kocaman diş",
-        "gorsel": "huge fossil shark tooth in hand"
-      },
-      {
-        "metin": "boyut karşılaştırma",
-        "gorsel": "large shark next to small boat underwater"
-      },
-      {
-        "metin": "karanlık derinlik",
-        "gorsel": "dark deep ocean water fading light"
-      },
-      {
-        "metin": "keşfedilmemiş su",
-        "gorsel": "vast unexplored deep sea"
-      },
-      {
-        "metin": "gizemli gölge",
-        "gorsel": "large shadow moving in deep water"
-      }
-    ],
-    "aciklama": "Tarihin en büyük köpekbalığı Megalodon derinlerde hâlâ yaşıyor olabilir mi?\n\n18 METRELİK CANAVAR\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#megalodon #köpekbalığı #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "OKYANUSTAN GELEN ESRARENGİZ SES 🔊",
-    "kanca": "KİMSE AÇIKLAYAMADI",
-    "script": "Bilim insanları okyanusun derinliğinden çok güçlü tuhaf bir ses kaydetti. Adı The Bloop. Ses o kadar büyüktü ki binlerce kilometreden duyuldu. Bilinen hiçbir canlı böyle bir ses çıkaramaz. Bir buzul mu, bilinmeyen bir yaratık mı? Yıllarca tartışıldı. Sence o ses neydi?",
-    "etiketler": [
-      "the bloop",
-      "okyanus sesi",
-      "gizem",
-      "deniz",
-      "esrarengiz",
-      "merak",
-      "ilginç bilgi",
-      "şaşırtıcı gerçekler",
-      "okyanus gizemi",
-      "bilim"
-    ],
-    "sahneler": [
-      {
-        "metin": "derin okyanus",
-        "gorsel": "deep ocean underwater dark blue"
-      },
-      {
-        "metin": "ses dalgası",
-        "gorsel": "sound wave audio spectrogram screen"
-      },
-      {
-        "metin": "dinleyen bilim insanı",
-        "gorsel": "scientist with headphones at sonar station"
-      },
-      {
-        "metin": "buzul çatlağı",
-        "gorsel": "large iceberg cracking in ocean"
-      },
-      {
-        "metin": "gizemli gölge",
-        "gorsel": "mysterious shape in deep dark water"
-      },
-      {
-        "metin": "cevapsız soru",
-        "gorsel": "vast empty ocean at dusk"
-      }
-    ],
-    "aciklama": "Okyanusun derinliğinden gelen ve kimsenin açıklayamadığı ses: The Bloop.\n\nKİMSE AÇIKLAYAMADI\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#thebloop #okyanus #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "DENİZİN DİBİNDEKİ KAYIP ŞEHİRLER 🏛️",
-    "kanca": "SU ALTINDA BİR ŞEHİR",
-    "script": "Dalgıçlar denizin dibinde koca koca yapılar buldu: sütunlar, duvarlar, hatta sokaklar. Bir zamanlar insanların yaşadığı şehirler sular altında kalmış. Kimisi depremle, kimisi yükselen denizle battı. Belki de efsanelerdeki kayıp uygarlıklar gerçekti. Aşağıda başka neler saklı? Kimse tam bilmiyor.",
-    "etiketler": [
-      "kayıp şehir",
-      "sualtı",
-      "gizem",
-      "deniz",
-      "arkeoloji",
-      "merak",
-      "ilginç bilgi",
-      "şaşırtıcı gerçekler",
-      "okyanus gizemi",
-      "tarih"
-    ],
-    "sahneler": [
-      {
-        "metin": "dalan dalgıç",
-        "gorsel": "scuba diver descending clear blue water"
-      },
-      {
-        "metin": "sualtı sütunları",
-        "gorsel": "underwater ancient stone ruins columns"
-      },
-      {
-        "metin": "batık duvarlar",
-        "gorsel": "submerged old city walls underwater"
-      },
-      {
-        "metin": "yosunlu taşlar",
-        "gorsel": "algae covered ancient stones underwater"
-      },
-      {
-        "metin": "eski sokak",
-        "gorsel": "underwater ruined street archaeology"
-      },
-      {
-        "metin": "gizemli derinlik",
-        "gorsel": "sunlight rays into deep blue sea"
-      }
-    ],
-    "aciklama": "Denizin dibinde bulunan kayıp şehirlerin ve sular altında kalan uygarlıkların sırrı.\n\nSU ALTINDA BİR ŞEHİR\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#kayıpşehir #sualtı #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "CANAVAR DALGALAR NEREDEN GELİYOR? 🌊",
-    "kanca": "30 METRELİK DUVAR",
-    "script": "Denizciler yıllarca anlattı ama kimse inanmadı: birden bire beliren, otuz metrelik bir su duvarı. Sonra ölçüm cihazları o dev dalgayı gerçekten kaydetti. Sakin denizde, hiçbir uyarı olmadan çıkıyorlar ve koca gemileri yutuyorlar. Bu canavar dalgalar tam olarak nereden geliyor? Bilim hâlâ araştırıyor.",
-    "etiketler": [
-      "canavar dalga",
-      "rogue wave",
-      "deniz",
-      "gizem",
-      "okyanus",
-      "merak",
-      "ilginç bilgi",
-      "şaşırtıcı gerçekler",
-      "doğa",
-      "bilim"
-    ],
-    "sahneler": [
-      {
-        "metin": "sakin deniz",
-        "gorsel": "calm ocean horizon before storm"
-      },
-      {
-        "metin": "beliren dev dalga",
-        "gorsel": "giant rogue wave rising at sea"
-      },
-      {
-        "metin": "su duvarı",
-        "gorsel": "huge wall of water massive wave"
-      },
-      {
-        "metin": "sallanan gemi",
-        "gorsel": "cargo ship in rough giant waves"
-      },
-      {
-        "metin": "ölçüm cihazı",
-        "gorsel": "ocean wave measurement buoy data"
-      },
-      {
-        "metin": "cevapsız güç",
-        "gorsel": "powerful stormy ocean waves aerial"
-      }
-    ],
-    "aciklama": "Sakin denizde aniden beliren ve gemileri yutan canavar dalgaların sırrı.\n\n30 METRELİK DUVAR\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#canavardalga #deniz #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "KRAKEN GERÇEK Mİ? 🦑",
-    "kanca": "GEMİLERİ YUTAN CANAVAR",
-    "script": "Eski denizciler dev bir ahtapottan bahsederdi: kollarıyla gemileri sarıp denize çeken Kraken. Uzun süre masal sanıldı. Ama sonra gerçek dev mürekkep balıkları bulundu, kimi on üç metre uzunluğunda. Efsane belki de gerçek bir canlıdan doğdu. Derinlerde daha büyükleri olabilir mi? Kimse emin değil.",
-    "etiketler": [
-      "kraken",
-      "dev mürekkep balığı",
-      "deniz canavarı",
-      "gizem",
-      "okyanus",
-      "merak",
-      "ilginç bilgi",
-      "şaşırtıcı gerçekler",
-      "efsane",
-      "bilim"
-    ],
-    "sahneler": [
-      {
-        "metin": "eski efsane",
-        "gorsel": "old engraving giant octopus attacking ship"
-      },
-      {
-        "metin": "fırtınalı deniz",
-        "gorsel": "stormy sea old wooden ship"
-      },
-      {
-        "metin": "dev mürekkep balığı",
-        "gorsel": "giant squid deep ocean tentacles"
-      },
-      {
-        "metin": "uzun kollar",
-        "gorsel": "squid tentacles underwater dark"
-      },
-      {
-        "metin": "derin karanlık",
-        "gorsel": "deep dark ocean water abyss"
-      },
-      {
-        "metin": "gizemli gölge",
-        "gorsel": "large shadow moving deep sea"
-      }
-    ],
-    "aciklama": "Gemileri yutan efsanevi deniz canavarı Kraken gerçek mi?\n\nGEMİLERİ YUTAN CANAVAR\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#kraken #denizcanavarı #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "DÜNYANIN EN DERİN MAVİ DELİĞİ 🕳️",
-    "kanca": "DİBİ GÖRÜNMÜYOR",
-    "script": "Denizin ortasında birden koyu mavi dev bir çukur açılıyor: mavi delikler. Yüzlerce metre derinliğe iniyorlar ve dipleri neredeyse hiç görülmüyor. İçlerinde oksijen yok, o yüzden binlerce yıllık şeyler bozulmadan korunmuş. En derinlerinde ne var? Dalgıçlar bile sonuna kadar inemiyor. Merak ediyor musun?",
-    "etiketler": [
-      "mavi delik",
-      "blue hole",
-      "deniz",
-      "gizem",
-      "derin",
-      "merak",
-      "ilginç bilgi",
-      "şaşırtıcı gerçekler",
-      "okyanus gizemi",
-      "doğa"
-    ],
-    "sahneler": [
-      {
-        "metin": "mavi delik",
-        "gorsel": "great blue hole ocean aerial view"
-      },
-      {
-        "metin": "koyu çukur",
-        "gorsel": "deep dark blue hole from above"
-      },
-      {
-        "metin": "dalan dalgıç",
-        "gorsel": "scuba diver descending into blue hole"
-      },
-      {
-        "metin": "karanlık dip",
-        "gorsel": "dark bottom of underwater sinkhole"
-      },
-      {
-        "metin": "sessiz derinlik",
-        "gorsel": "still deep blue water no oxygen"
-      },
-      {
-        "metin": "görünmeyen dip",
-        "gorsel": "light fading into deep blue abyss"
-      }
-    ],
-    "aciklama": "Denizin ortasında açılan ve dibi görünmeyen mavi deliklerin sırrı.\n\nDİBİ GÖRÜNMÜYOR\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#mavidelik #deniz #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "GECE PARLAYAN DENİZLERİN SIRRI ✨",
-    "kanca": "DENİZ NEDEN PARLIYOR",
-    "script": "Bazı gecelerde deniz birden ışıl ışıl parlamaya başlıyor; sanki yıldızlar suya düşmüş gibi. Buna denizin aydınlanması deniyor. Sebebi milyarlarca minik canlı: dokununca ışık saçıyorlar. Kimi zaman kilometrelerce deniz süt gibi parlıyor ve uzaydan bile görülüyor. Doğanın en büyülü gizemlerinden biri. Hiç gördün mü?",
-    "etiketler": [
-      "biyolüminesans",
-      "parlayan deniz",
-      "gizem",
-      "doğa",
-      "okyanus",
-      "merak",
-      "ilginç bilgi",
-      "şaşırtıcı gerçekler",
-      "deniz",
-      "bilim"
-    ],
-    "sahneler": [
-      {
-        "metin": "karanlık kıyı",
-        "gorsel": "dark night beach shoreline"
-      },
-      {
-        "metin": "parlayan dalga",
-        "gorsel": "bioluminescent glowing blue waves at night"
-      },
-      {
-        "metin": "ışıl ışıl deniz",
-        "gorsel": "glowing plankton in ocean water night"
-      },
-      {
-        "metin": "minik canlılar",
-        "gorsel": "bioluminescent plankton microscopic glow"
-      },
-      {
-        "metin": "süt deniz",
-        "gorsel": "milky sea glowing ocean satellite view"
-      },
-      {
-        "metin": "büyülü kıyı",
-        "gorsel": "person on beach glowing blue water"
-      }
-    ],
-    "aciklama": "Gece birden ışıl ışıl parlayan denizlerin arkasındaki büyülü sır.\n\nDENİZ NEDEN PARLIYOR\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#parlayandeniz #biyolüminesans #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "DENİZ DİBİNDEKİ ESRARENGİZ ÇEMBERLER 🌀",
-    "kanca": "KİM ÇİZDİ",
-    "script": "Dalgıçlar denizin dibinde kusursuz desenli dev çemberler buldu; sanki bir sanatçı kumun üstüne çizmiş gibi. Yıllarca kimin yaptığı bilinmedi. Sonra gerçek ortaya çıktı: küçücük bir balık, günlerce yüzerek bu deseni yapıyor. Doğanın en şaşırtıcı mühendislerinden biri. Peki bunu neden yapıyor? Cevabı çok ilginç.",
-    "etiketler": [
-      "deniz çemberleri",
-      "balık",
-      "gizem",
-      "doğa",
-      "okyanus",
-      "merak",
-      "ilginç bilgi",
-      "şaşırtıcı gerçekler",
-      "deniz",
-      "bilim"
-    ],
-    "sahneler": [
-      {
-        "metin": "kumlu deniz dibi",
-        "gorsel": "sandy sea floor underwater"
-      },
-      {
-        "metin": "kusursuz çember",
-        "gorsel": "perfect circle pattern on ocean sand floor"
-      },
-      {
-        "metin": "geometrik desen",
-        "gorsel": "intricate geometric pattern underwater sand"
-      },
-      {
-        "metin": "minik balık",
-        "gorsel": "small pufferfish swimming near sea floor"
-      },
-      {
-        "metin": "desen yapımı",
-        "gorsel": "fish making circle in sand underwater"
-      },
-      {
-        "metin": "doğanın sanatı",
-        "gorsel": "detailed sand art pattern sea bottom"
-      }
-    ],
-    "aciklama": "Denizin dibindeki kusursuz çemberleri kim çiziyor? Cevabı çok şaşırtıcı.\n\nKİM ÇİZDİ\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#denizçemberleri #gizem #doğa #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "KAYIP KITA ATLANTİS GERÇEK Mİ? 🏛️",
-    "kanca": "BİR ANDA DENİZE Mİ GÖMÜLDÜ?",
-    "script": "Binlerce yıl önce Platon, gelişmiş bir uygarlıktan bahsetti: Atlantis. Bir gecede denize gömülüp yok olmuş. Efsane mi, yoksa gerçekten batmış bir medeniyet mi? Bazıları bunun bir uyarı hikâyesi olduğunu söylüyor, bazıları hâlâ kalıntılarını arıyor. Sence Atlantis gerçek miydi?",
-    "etiketler": [
-      "atlantis",
-      "kayıp kıta",
-      "gizem",
-      "efsane",
-      "tarih",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "medeniyet",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "antik harita",
-        "gorsel": "old antique map of unknown land"
-      },
-      {
-        "metin": "görkemli şehir",
-        "gorsel": "ancient advanced city illustration, majestic"
-      },
-      {
-        "metin": "batan şehir",
-        "gorsel": "underwater ruins of an ancient city"
-      },
-      {
-        "metin": "dev dalga",
-        "gorsel": "giant ocean wave crashing dramatic"
-      },
-      {
-        "metin": "deniz altı kalıntı",
-        "gorsel": "stone columns underwater on sea floor"
-      },
-      {
-        "metin": "aranan efsane",
-        "gorsel": "diver exploring mysterious underwater ruins"
-      }
-    ],
-    "aciklama": "Platon'un anlattığı kayıp uygarlık Atlantis efsane mi, gerçek mi?\n\nBİR ANDA DENİZE Mİ GÖMÜLDÜ?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#atlantis #gizem #tarih #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "GÖBEKLİTEPE'NİN SIRRI 🗿",
-    "kanca": "TEKERLEKTEN 7000 YIL ÖNCE",
-    "script": "Türkiye'de bir tepe, tarihi baştan yazdı: Göbeklitepe. Tekerlekten, yazıdan, hatta tarımdan binlerce yıl önce inşa edilmiş. Devasa taş sütunlar, üzerlerinde gizemli hayvan kabartmaları. Henüz avcı-toplayıcı olan insanlar bunu neden ve nasıl yaptı? Dünyanın en eski tapınağı hâlâ sırlarını koruyor.",
-    "etiketler": [
-      "göbeklitepe",
-      "gizem",
-      "tarih",
-      "arkeoloji",
-      "türkiye",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "antik",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "antik tepe",
-        "gorsel": "ancient stone temple ruins on a hill"
-      },
-      {
-        "metin": "dev taş sütun",
-        "gorsel": "massive carved stone pillar close up"
-      },
-      {
-        "metin": "hayvan kabartması",
-        "gorsel": "ancient animal carving on stone relief"
-      },
-      {
-        "metin": "avcı toplayıcı",
-        "gorsel": "prehistoric people illustration around fire"
-      },
-      {
-        "metin": "kazı alanı",
-        "gorsel": "archaeological excavation site with pillars"
-      },
-      {
-        "metin": "korunan sır",
-        "gorsel": "ancient temple stones at golden sunset"
-      }
-    ],
-    "aciklama": "Tekerlekten binlerce yıl önce inşa edilen dünyanın en eski tapınağı Göbeklitepe.\n\nTEKERLEKTEN 7000 YIL ÖNCE\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#göbeklitepe #gizem #tarih #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "UZAYDAN GELEN ESRARENGİZ SİNYAL 📡",
-    "kanca": "KİM GÖNDERDİ?",
-    "script": "1977'de bir teleskop, uzaydan çok güçlü, tuhaf bir sinyal yakaladı. Bilim insanı kâğıda tek kelime yazdı: 'Wow!'. Sinyal 72 saniye sürdü ve bir daha asla tekrarlanmadı. Doğal bir olay mı, yoksa başka bir şey mi? Yıllardır cevap yok. Sence o sinyali ne gönderdi?",
-    "etiketler": [
-      "wow sinyali",
-      "uzay",
-      "gizem",
-      "dünya dışı",
-      "evren",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "bilim",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "radyo teleskobu",
-        "gorsel": "large radio telescope dish at night"
-      },
-      {
-        "metin": "gelen sinyal",
-        "gorsel": "radio signal waveform on a screen"
-      },
-      {
-        "metin": "kâğıda yazı",
-        "gorsel": "handwriting on old printout paper close up"
-      },
-      {
-        "metin": "derin uzay",
-        "gorsel": "deep space stars and distant galaxy"
-      },
-      {
-        "metin": "tekrarlanmayan sinyal",
-        "gorsel": "empty signal monitor with static"
-      },
-      {
-        "metin": "cevapsız soru",
-        "gorsel": "telescope pointing at starry night sky"
-      }
-    ],
-    "aciklama": "1977'deki 'Wow!' sinyali uzaydan geldi, 72 saniye sürdü, bir daha tekrarlanmadı. Kim gönderdi?\n\nKİM GÖNDERDİ?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#uzay #wowsinyali #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "NAZCA ÇİZGİLERİNİ KİM ÇİZDİ? 🛸",
-    "kanca": "SADECE GÖKTEN GÖRÜNÜYOR",
-    "script": "Peru çölünde devasa çizimler var: kuşlar, maymunlar, geometrik şekiller. Bazıları yüzlerce metre uzunluğunda. İşin tuhafı, bu çizimler ancak gökyüzünden bakınca tam görünüyor. Peki uçak bile yokken, insanlar bunu nasıl ve kimin için çizdi? Nazca çizgileri hâlâ bir bilmece.",
-    "etiketler": [
-      "nazca çizgileri",
-      "gizem",
-      "peru",
-      "antik",
-      "arkeoloji",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "keşif",
-      "tarih"
-    ],
-    "sahneler": [
-      {
-        "metin": "çöl düzlüğü",
-        "gorsel": "vast desert plain aerial view peru"
-      },
-      {
-        "metin": "dev çizim",
-        "gorsel": "giant nazca line drawing from above"
-      },
-      {
-        "metin": "kuş figürü",
-        "gorsel": "aerial view of large ground drawing bird shape"
-      },
-      {
-        "metin": "geometrik şekil",
-        "gorsel": "straight geometric lines across desert aerial"
-      },
-      {
-        "metin": "gökten görünüm",
-        "gorsel": "aerial drone shot of desert patterns"
-      },
-      {
-        "metin": "çözülemeyen bilmece",
-        "gorsel": "desert landscape at sunset wide"
-      }
-    ],
-    "aciklama": "Sadece gökyüzünden görünen dev Nazca çizimlerini uçak bile yokken kim, nasıl çizdi?\n\nSADECE GÖKTEN GÖRÜNÜYOR\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#nazca #gizem #peru #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "ANTARKTİKA'NIN ALTINDA NE VAR? ❄️",
-    "kanca": "BUZUN 4 KM ALTINDA",
-    "script": "Antarktika'yı kilometrelerce kalın buz kaplıyor. Ama o buzun altında koca bir dünya saklı: yüzlerce göl, dağlar, hatta nehirler. Milyonlarca yıldır güneş görmeyen bu göllerde bilinmeyen canlılar olabilir. Buzun dört kilometre altında ne yaşıyor? Bilim daha yeni kazmaya başladı.",
-    "etiketler": [
-      "antarktika",
-      "gizem",
-      "buzul",
-      "keşif",
-      "bilim",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "doğa",
-      "kutup"
-    ],
-    "sahneler": [
-      {
-        "metin": "buz kıtası",
-        "gorsel": "vast antarctic ice landscape aerial"
-      },
-      {
-        "metin": "kalın buz katmanı",
-        "gorsel": "thick glacier ice cross section"
-      },
-      {
-        "metin": "buz altı göl",
-        "gorsel": "subglacial lake illustration under ice"
-      },
-      {
-        "metin": "gizli canlı",
-        "gorsel": "strange microorganism under microscope"
-      },
-      {
-        "metin": "buz sondajı",
-        "gorsel": "ice core drilling in antarctica"
-      },
-      {
-        "metin": "bilinmeyen dünya",
-        "gorsel": "deep blue ice cave glowing"
-      }
-    ],
-    "aciklama": "Antarktika buzunun kilometrelerce altında göller ve bilinmeyen canlılar olabilir.\n\nBUZUN 4 KM ALTINDA\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#antarktika #gizem #keşif #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "MISIR MUMYALARININ LANETİ 🏺",
-    "kanca": "MEZARI AÇANLAR ÖLDÜ MÜ?",
-    "script": "Tutankamon'un mezarı açıldıktan sonra, kazıya katılanlardan bazıları tuhaf şekilde öldü. İnsanlar 'firavunun laneti' dedi. Gerçek lanet mi, tesadüf mü, yoksa mezardaki eski bir mantar mı hastalandırdı? Bilim bir açıklama arıyor ama efsane hâlâ yaşıyor. Sence lanet gerçek miydi?",
-    "etiketler": [
-      "firavun laneti",
-      "mumya",
-      "antik mısır",
-      "gizem",
-      "tutankamon",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "tarih",
-      "efsane"
-    ],
-    "sahneler": [
-      {
-        "metin": "mısır mezarı",
-        "gorsel": "ancient egyptian tomb entrance dark"
-      },
-      {
-        "metin": "altın lahit",
-        "gorsel": "golden pharaoh sarcophagus close up"
-      },
-      {
-        "metin": "mumya",
-        "gorsel": "ancient wrapped mummy in a tomb"
-      },
-      {
-        "metin": "hiyeroglif uyarı",
-        "gorsel": "egyptian hieroglyphs on tomb wall"
-      },
-      {
-        "metin": "eski mantar",
-        "gorsel": "mold spores under microscope, eerie"
-      },
-      {
-        "metin": "yaşayan efsane",
-        "gorsel": "dim torchlight in ancient tomb corridor"
-      }
-    ],
-    "aciklama": "Tutankamon'un mezarını açanlar neden öldü? Firavun laneti gerçek mi, tesadüf mü?\n\nMEZARI AÇANLAR ÖLDÜ MÜ?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#firavunlaneti #mumya #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "MAYA UYGARLIĞI NEDEN YOK OLDU? 🌴",
-    "kanca": "KOCA ŞEHİRLER BİR ANDA BOŞALDI",
-    "script": "Mayalar dev piramitler, astronomi ve gelişmiş bir takvim yaptı. Sonra bir şey oldu: koca şehirler bir anda terk edildi. Kuraklık mı, savaş mı, açlık mı? Milyonlarca insan nereye gitti? Ormanlar şehirleri yuttu ve cevap hâlâ toprağın altında. Sence Mayalara ne oldu?",
-    "etiketler": [
-      "maya uygarlığı",
-      "gizem",
-      "tarih",
-      "arkeoloji",
-      "çöküş",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "antik",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "maya piramidi",
-        "gorsel": "mayan pyramid temple in jungle"
-      },
-      {
-        "metin": "antik şehir",
-        "gorsel": "ancient mayan city ruins wide"
-      },
-      {
-        "metin": "terk edilmiş yapı",
-        "gorsel": "overgrown ruins covered by jungle"
-      },
-      {
-        "metin": "kuraklık",
-        "gorsel": "cracked dry earth drought landscape"
-      },
-      {
-        "metin": "ormanın yuttuğu şehir",
-        "gorsel": "jungle overtaking stone temple"
-      },
-      {
-        "metin": "çözülemeyen çöküş",
-        "gorsel": "mayan ruins at misty sunrise"
-      }
-    ],
-    "aciklama": "Gelişmiş Maya şehirleri neden bir anda terk edildi? Milyonlarca insan nereye gitti?\n\nKOCA ŞEHİRLER BİR ANDA BOŞALDI\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#maya #gizem #tarih #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "TİTANİK HAKKINDA BİLİNMEYEN 🚢",
-    "kanca": "BATMAZ DENİLEN GEMİ",
-    "script": "Titanik 'batmaz' diye tanıtıldı. İlk seferinde bir buzdağına çarpıp battı. Ama daha az bilinen bir şey var: aynı gemi için yeterli cankurtaran botu bile yoktu, çünkü 'gerek yok' denmişti. Bir kibir hikâyesi mi, kötü şans mı? Titanik'in dibinde hâlâ anlatılmayanlar var.",
-    "etiketler": [
-      "titanik",
-      "gizem",
-      "tarih",
-      "gerçek olay",
-      "felaket",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "gemi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "görkemli gemi",
-        "gorsel": "large ocean liner ship vintage"
-      },
-      {
-        "metin": "buzdağı",
-        "gorsel": "massive iceberg in dark ocean night"
-      },
-      {
-        "metin": "çarpışma",
-        "gorsel": "ship hull scraping ice, dramatic"
-      },
-      {
-        "metin": "yetersiz bot",
-        "gorsel": "empty lifeboat on rough sea"
-      },
-      {
-        "metin": "batan gemi",
-        "gorsel": "ship sinking into ocean illustration"
-      },
-      {
-        "metin": "denizin dibi",
-        "gorsel": "shipwreck on deep ocean floor"
-      }
-    ],
-    "aciklama": "'Batmaz' denilen Titanik neden battı ve neden yeterli cankurtaran botu yoktu?\n\nBATMAZ DENİLEN GEMİ\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#titanik #gizem #tarih #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "POMPEİ'NİN SON GÜNÜ 🌋",
-    "kanca": "BİR ANDA KÜLLE KAPLANDI",
-    "script": "Bin dokuz yüz yıl önce Pompeii şehri, bir yanardağ patlamasıyla saatler içinde küllerin altına gömüldü. İnsanlar, hayvanlar, hatta ekmekler o an olduğu gibi dondu kaldı. Yüzyıllar sonra kazılınca şehir zamanda donmuş gibi çıktı. O son gün gerçekte ne yaşandı? Küller çok şey saklıyor.",
-    "etiketler": [
-      "pompei",
-      "gizem",
-      "tarih",
-      "yanardağ",
-      "gerçek olay",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "antik",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "antik roma şehri",
-        "gorsel": "ancient roman city ruins pompeii"
-      },
-      {
-        "metin": "yanardağ patlaması",
-        "gorsel": "volcano erupting with ash cloud"
-      },
-      {
-        "metin": "küle gömülme",
-        "gorsel": "ash falling over ancient street"
-      },
-      {
-        "metin": "donmuş an",
-        "gorsel": "plaster cast of pompeii victim"
-      },
-      {
-        "metin": "kazı",
-        "gorsel": "archaeologists excavating ancient ruins"
-      },
-      {
-        "metin": "zamanda donmuş şehir",
-        "gorsel": "pompeii ruins with vesuvius background"
-      }
-    ],
-    "aciklama": "Pompeii bir yanardağ patlamasıyla saatler içinde küle gömüldü. O son gün ne yaşandı?\n\nBİR ANDA KÜLLE KAPLANDI\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#pompei #gizem #tarih #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "AY'DA GERÇEKTE NE GÖRDÜLER? 🌙",
-    "kanca": "NEDEN BİR DAHA GİTMEDİK?",
-    "script": "İnsan 1969'da Ay'a ayak bastı. Sonra birkaç görev daha yapıldı ve aniden durdu. Onlarca yıldır kimse Ay'a gitmedi. Neden? Çok mu pahalıydı, yoksa orada beklenmedik bir şey mi vardı? Astronotların anlattıkları hâlâ merak konusu. Sence neden bir daha gitmedik?",
-    "etiketler": [
-      "ay",
-      "uzay",
-      "gizem",
-      "apollo",
-      "astronot",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "bilim",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "ay yüzeyi",
-        "gorsel": "moon surface with craters close up"
-      },
-      {
-        "metin": "astronot",
-        "gorsel": "astronaut standing on the moon"
-      },
-      {
-        "metin": "dünya manzarası",
-        "gorsel": "earth rising over moon horizon"
-      },
-      {
-        "metin": "terk edilen görev",
-        "gorsel": "lunar module on moon surface"
-      },
-      {
-        "metin": "boş gökyüzü",
-        "gorsel": "full moon in dark night sky"
-      },
-      {
-        "metin": "cevapsız soru",
-        "gorsel": "telescope looking at the moon"
-      }
-    ],
-    "aciklama": "İnsan 1969'da Ay'a gitti, sonra durdu. Onlarca yıldır neden bir daha gitmedik?\n\nNEDEN BİR DAHA GİTMEDİK?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#ay #uzay #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "KAYIP ALTIN ŞEHİR EL DORADO 💰",
-    "kanca": "HERKES ARADI, KİMSE BULAMADI",
-    "script": "Yüzyıllar boyunca kâşifler bir efsanenin peşinden gitti: El Dorado, tamamen altından bir şehir. Uğruna ormanlara dalındı, haritalar çizildi, canlar verildi. Ama kimse bulamadı. Gerçek bir hazine mi, yoksa bir hayal mi? El Dorado hâlâ ormanın bir yerinde mi saklı, kim bilir?",
-    "etiketler": [
-      "el dorado",
-      "altın şehir",
-      "gizem",
-      "efsane",
-      "hazine",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "keşif",
-      "tarih"
-    ],
-    "sahneler": [
-      {
-        "metin": "eski hazine haritası",
-        "gorsel": "old treasure map with jungle"
-      },
-      {
-        "metin": "altın şehir hayali",
-        "gorsel": "golden city illustration glowing"
-      },
-      {
-        "metin": "orman keşfi",
-        "gorsel": "explorer walking through dense jungle"
-      },
-      {
-        "metin": "altın eşyalar",
-        "gorsel": "ancient golden artifacts close up"
-      },
-      {
-        "metin": "kayıp iz",
-        "gorsel": "misty jungle river deep green"
-      },
-      {
-        "metin": "saklı efsane",
-        "gorsel": "sunlight breaking through jungle canopy"
-      }
-    ],
-    "aciklama": "Tamamen altından şehir El Dorado'yu herkes aradı, kimse bulamadı. Gerçek mi, hayal mi?\n\nHERKES ARADI, KİMSE BULAMADI\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#eldorado #gizem #hazine #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "EVRENİN SONU NASIL OLACAK? 🌌",
-    "kanca": "HER ŞEY BİTECEK Mİ?",
-    "script": "Evren 13,8 milyar yıl önce başladı. Peki nasıl bitecek? Bilim insanlarının birkaç teorisi var: belki sonsuza dek soğuyup kararacak, belki tekrar kendine çökecek, belki de bir anda paramparça olacak. Hangisi gerçek olacak, kimse kesin bilmiyor. Sence evrenin sonu nasıl gelecek?",
-    "etiketler": [
-      "evren",
-      "uzay",
-      "gizem",
-      "bilim",
-      "evrenin sonu",
-      "ilginç bilgi",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "kozmoloji",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "genişleyen evren",
-        "gorsel": "expanding universe galaxies illustration"
-      },
-      {
-        "metin": "yıldızlar",
-        "gorsel": "field of stars in deep space"
-      },
-      {
-        "metin": "soğuyan evren",
-        "gorsel": "dying dim red star in dark space"
-      },
-      {
-        "metin": "çöken evren",
-        "gorsel": "galaxies collapsing illustration cosmic"
-      },
-      {
-        "metin": "büyük yırtılma",
-        "gorsel": "cosmic explosion of light and matter"
-      },
-      {
-        "metin": "bilinmeyen son",
-        "gorsel": "lone galaxy fading into black space"
-      }
-    ],
-    "aciklama": "Evren nasıl bitecek? Soğuma, çökme ya da büyük yırtılma; bilim tartışıyor.\n\nHER ŞEY BİTECEK Mİ?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#evren #uzay #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "STONEHENGE'İ KİM DİKTİ? 🪨",
-    "kanca": "5000 YIL ÖNCE NASIL?",
-    "script": "İngiltere'de dev taşlar bir daire çiziyor: Stonehenge. Bazıları tonlarca ağırlıkta ve kilometrelerce uzaktan getirilmiş. Beş bin yıl önce, makine yokken insanlar bu taşları nasıl taşıyıp dikti? Tapınak mı, takvim mi, mezar mı? Kimse kesin bilmiyor. Sence neden yaptılar?",
-    "etiketler": [
-      "stonehenge",
-      "antik",
-      "tarih",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "taş daire",
-        "gorsel": "stonehenge stone circle wide shot"
-      },
-      {
-        "metin": "dev taşlar",
-        "gorsel": "massive standing stones close up"
-      },
-      {
-        "metin": "uzaktan taşıma",
-        "gorsel": "ancient people dragging huge stone"
-      },
-      {
-        "metin": "gün doğumu hizası",
-        "gorsel": "sun rising between standing stones"
-      },
-      {
-        "metin": "gizemli tören",
-        "gorsel": "misty ancient monument at dawn"
-      },
-      {
-        "metin": "çözülemeyen sır",
-        "gorsel": "stonehenge silhouette at sunset"
-      }
-    ],
-    "aciklama": "İngiltere'deki Stonehenge'i beş bin yıl önce makine olmadan kim, nasıl ve neden dikti?\n\n5000 YIL ÖNCE NASIL?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#stonehenge #gizem #tarih #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "PASKALYA ADASI'NIN DEV HEYKELLERİ 🗿",
-    "kanca": "KİM TAŞIDI BUNLARI?",
-    "script": "Pasifik'te küçük bir ada, dev taş kafalarla dolu: Moai heykelleri. Onlarca ton ağırlığında ve adanın dört bir yanına dağılmış. Peki eski halk bu devasa heykelleri nasıl oydu ve kilometrelerce nasıl taşıdı? 'Yürüdüler' diyen efsaneler bile var. Gerçek hâlâ sır. Sence nasıl taşıdılar?",
-    "etiketler": [
-      "paskalya adası",
-      "moai",
-      "gizem",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "dev heykeller",
-        "gorsel": "easter island moai statues row"
-      },
-      {
-        "metin": "taş kafa",
-        "gorsel": "giant stone head close up"
-      },
-      {
-        "metin": "ada manzarası",
-        "gorsel": "easter island grassy coast"
-      },
-      {
-        "metin": "heykel taşıma",
-        "gorsel": "ancient people moving large statue"
-      },
-      {
-        "metin": "sıra sıra moai",
-        "gorsel": "moai statues at sunset silhouette"
-      },
-      {
-        "metin": "çözülemeyen sır",
-        "gorsel": "lonely stone statue under sky"
-      }
-    ],
-    "aciklama": "Paskalya Adası'ndaki onlarca tonluk Moai heykellerini eski halk nasıl oyup taşıdı?\n\nKİM TAŞIDI BUNLARI?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#paskalyaadası #moai #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "KARA DELİĞİN İÇİNDE NE VAR? 🕳️",
-    "kanca": "IŞIK BİLE KAÇAMAZ",
-    "script": "Evrende öyle bir yer var ki, çekimi o kadar güçlü ki ışık bile kaçamıyor: kara delik. İçine düşen her şey yok oluyor gibi görünüyor. Peki o sınırın ötesinde ne var? Zaman orada duruyor mu? Fizik bile tam cevap veremiyor. Sence içeride ne var?",
-    "etiketler": [
-      "kara delik",
-      "uzay",
-      "evren",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "kara delik",
-        "gorsel": "black hole in space illustration"
-      },
-      {
-        "metin": "ışığın bükülmesi",
-        "gorsel": "light bending around black hole"
-      },
-      {
-        "metin": "yutulan yıldız",
-        "gorsel": "star being pulled into black hole"
-      },
-      {
-        "metin": "olay ufku",
-        "gorsel": "glowing accretion disk of black hole"
-      },
-      {
-        "metin": "derin uzay",
-        "gorsel": "deep space stars swirling"
-      },
-      {
-        "metin": "bilinmeyen",
-        "gorsel": "dark cosmic void with faint light"
-      }
-    ],
-    "aciklama": "Kara deliğin çekimi ışığı bile yutuyor. O sınırın ötesinde ne var, zaman durur mu?\n\nIŞIK BİLE KAÇAMAZ\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#karadelik #uzay #gizem #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "VOYNICH EL YAZMASININ SIRRI 📜",
-    "kanca": "KİMSE OKUYAMIYOR",
-    "script": "600 yıllık bir kitap var ki, hiçbir dile benzemeyen bir alfabeyle yazılmış: Voynich El Yazması. İçinde tuhaf bitkiler, yıldız haritaları, bilinmeyen figürler. Dünyanın en iyi şifre çözücüleri bile deneyip başaramadı. Şaka mı, kayıp bir dil mi, yoksa gizli bir mesaj mı? Sence ne yazıyor?",
-    "etiketler": [
-      "voynich",
-      "şifre",
-      "el yazması",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "eski kitap",
-        "gorsel": "ancient mysterious manuscript pages"
-      },
-      {
-        "metin": "tuhaf yazı",
-        "gorsel": "unknown script handwriting close up"
-      },
-      {
-        "metin": "garip bitkiler",
-        "gorsel": "strange plant drawings old book"
-      },
-      {
-        "metin": "yıldız haritası",
-        "gorsel": "antique astronomical star chart"
-      },
-      {
-        "metin": "şifre çözme",
-        "gorsel": "person studying old text with magnifier"
-      },
-      {
-        "metin": "çözülemeyen sır",
-        "gorsel": "candle lit old book in dark"
-      }
-    ],
-    "aciklama": "600 yıllık Voynich El Yazması, bilinmeyen bir alfabeyle yazılı; kimse okuyamadı. Ne yazıyor?\n\nKİMSE OKUYAMIYOR\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#voynich #gizem #şifre #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "TUNGUSKA'DA NE PATLADI? 💥",
-    "kanca": "2000 KM² AĞAÇ DEVRİLDİ",
-    "script": "1908'de Sibirya'da gökyüzü yarıldı: dev bir patlama, binlerce kilometrekarelik ormanı bir anda yere serdi. Ama garip olan, geriye bir krater kalmadı. Göktaşı mı, kuyruklu yıldız mı, yoksa başka bir şey mi? Yüz yıldan fazla oldu, kesin cevap yok. Sence ne patladı?",
-    "etiketler": [
-      "tunguska",
-      "sibirya",
-      "patlama",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "sibirya ormanı",
-        "gorsel": "vast siberian forest aerial"
-      },
-      {
-        "metin": "gökyüzü patlaması",
-        "gorsel": "bright explosion in the sky"
-      },
-      {
-        "metin": "devrilen ağaçlar",
-        "gorsel": "flattened forest trees fallen"
-      },
-      {
-        "metin": "krater yok",
-        "gorsel": "empty forest ground no crater"
-      },
-      {
-        "metin": "göktaşı teorisi",
-        "gorsel": "meteor falling through atmosphere"
-      },
-      {
-        "metin": "cevapsız soru",
-        "gorsel": "desolate forest at dusk"
-      }
-    ],
-    "aciklama": "1908'de Sibirya Tunguska'da dev bir patlama ormanı düzledi ama krater yok. Ne patladı?\n\n2000 KM² AĞAÇ DEVRİLDİ\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#tunguska #gizem #sibirya #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "DYATLOV GEÇİDİ ESRARI ⛰️",
-    "kanca": "9 DAĞCI NEDEN KAÇTI?",
-    "script": "1959'da dokuz deneyimli dağcı, gece çadırlarını içeriden yırtıp eksi otuz derecede yarı çıplak kaçtı. Hepsi öldü, bazılarında tuhaf yaralar vardı. Çığ mı, panik mi, açıklanamayan bir şey mi? Onlarca teori var ama kesin bir cevap yok. Sence o gece ne oldu?",
-    "etiketler": [
-      "dyatlov",
-      "dağcı",
-      "gerçek olay",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "karlı geçit",
-        "gorsel": "snowy mountain pass at night"
-      },
-      {
-        "metin": "yırtık çadır",
-        "gorsel": "torn tent in deep snow"
-      },
-      {
-        "metin": "karda ayak izi",
-        "gorsel": "footprints in snow leading away"
-      },
-      {
-        "metin": "donmuş orman",
-        "gorsel": "frozen forest dark and cold"
-      },
-      {
-        "metin": "çığ teorisi",
-        "gorsel": "snow avalanche on mountain slope"
-      },
-      {
-        "metin": "çözülemeyen sır",
-        "gorsel": "lonely mountain under moonlight"
-      }
-    ],
-    "aciklama": "1959 Dyatlov Geçidi: 9 dağcı çadırı içeriden yırtıp kaçtı ve öldü. O gece ne oldu?\n\n9 DAĞCI NEDEN KAÇTI?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#dyatlov #gizem #gerçekolay #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "KAYIP KOLONİ ROANOKE 🏚️",
-    "kanca": "117 KİŞİ BUHAR OLDU",
-    "script": "1590'da bir gemi Amerika'daki Roanoke kolonisine döndü ve şok oldu: yüz on yedi kişi ortadan kaybolmuştu. Ne ceset, ne kavga izi. Sadece bir ağaca kazınmış tek kelime: CROATOAN. Nereye gittiler? Yüzyıllardır kimse bilmiyor. Sence bu insanlara ne oldu?",
-    "etiketler": [
-      "roanoke",
-      "kayıp koloni",
-      "tarih",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "terk edilmiş köy",
-        "gorsel": "abandoned colonial village empty"
-      },
-      {
-        "metin": "boş evler",
-        "gorsel": "empty wooden houses overgrown"
-      },
-      {
-        "metin": "ağaçtaki yazı",
-        "gorsel": "word carved into tree bark close up"
-      },
-      {
-        "metin": "gelen gemi",
-        "gorsel": "old sailing ship approaching shore"
-      },
-      {
-        "metin": "boş kıyı",
-        "gorsel": "deserted foggy coastline"
-      },
-      {
-        "metin": "çözülemeyen sır",
-        "gorsel": "misty forest at dusk eerie"
-      }
-    ],
-    "aciklama": "1590'da Roanoke kolonisindeki 117 kişi izsiz kayboldu; geriye tek kelime kaldı: CROATOAN.\n\n117 KİŞİ BUHAR OLDU\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#roanoke #gizem #tarih #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "2000 YILLIK BİLGİSAYAR ⚙️",
-    "kanca": "ANTİKYTHERA MEKANİZMASI",
-    "script": "Bir gemi enkazından çıkan pas tutmuş çarklar, tarihi sarstı: Antikythera Mekanizması. İki bin yıl önce yapılmış ve gezegenlerin hareketini hesaplıyormuş. Yani antik dünyada, düğmeli bir tür bilgisayar vardı. Bu teknoloji nasıl kayboldu ve bin yıl geriye gitti? Şaşırtıcı değil mi?",
-    "etiketler": [
-      "antikythera",
-      "antik teknoloji",
-      "tarih",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "paslı çark",
-        "gorsel": "ancient corroded bronze gears"
-      },
-      {
-        "metin": "gemi enkazı",
-        "gorsel": "underwater shipwreck artifacts"
-      },
-      {
-        "metin": "karmaşık mekanizma",
-        "gorsel": "intricate clockwork mechanism close up"
-      },
-      {
-        "metin": "gezegen hesabı",
-        "gorsel": "antique astronomical model gears"
-      },
-      {
-        "metin": "müze vitrini",
-        "gorsel": "ancient artifact in museum display"
-      },
-      {
-        "metin": "kayıp teknoloji",
-        "gorsel": "old bronze device dramatic light"
-      }
-    ],
-    "aciklama": "2000 yıl önce yapılan Antikythera Mekanizması gezegenleri hesaplıyordu. Bu teknoloji nasıl kayboldu?\n\nANTİKYTHERA MEKANİZMASI\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#antikythera #gizem #teknoloji #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "TERRAKOTA ORDUSUNUN SIRRI 🏺",
-    "kanca": "8000 ASKER, HEPSİ FARKLI",
-    "script": "Çin'de bir çiftçi kuyu kazarken tarihin en büyük sırlarından birini buldu: sekiz bin topraktan asker, atlar, savaş arabaları. Her birinin yüzü farklı, sanki gerçek insanlar. Bir imparator, ölümünden sonra korunmak için bütün bir ordu gömdürmüş. Peki mezarının içi hâlâ neden açılmıyor? Merak etmez misin?",
-    "etiketler": [
-      "terrakota",
-      "çin",
-      "antik",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "toprak askerler",
-        "gorsel": "terracotta army soldiers rows"
-      },
-      {
-        "metin": "asker yüzü",
-        "gorsel": "terracotta warrior face close up"
-      },
-      {
-        "metin": "kazı alanı",
-        "gorsel": "terracotta army excavation pit"
-      },
-      {
-        "metin": "savaş arabası",
-        "gorsel": "ancient clay horse and chariot"
-      },
-      {
-        "metin": "imparator mezarı",
-        "gorsel": "ancient chinese tomb mound"
-      },
-      {
-        "metin": "kapalı sır",
-        "gorsel": "terracotta soldiers dramatic light"
-      }
-    ],
-    "aciklama": "Çin'de bulunan 8000 topraktan askerin her yüzü farklı. İmparatorun mezarı neden hâlâ açılmıyor?\n\n8000 ASKER, HEPSİ FARKLI\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#terrakota #gizem #çin #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "MACHU PICCHU NASIL YAPILDI? 🏔️",
-    "kanca": "BULUTLARIN ÜSTÜNDEKİ ŞEHİR",
-    "script": "And Dağları'nın tepesinde, bulutların arasında saklı bir şehir: Machu Picchu. Dev taş bloklar, harç kullanılmadan öyle hassas yerleştirilmiş ki araya bıçak bile girmiyor. İnkalar bu şehri bu yükseklikte nasıl inşa etti ve neden bir gün terk etti? Cevap hâlâ dağların ardında. Sence neden terk ettiler?",
-    "etiketler": [
-      "machu picchu",
-      "inka",
-      "antik",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "dağ şehri",
-        "gorsel": "machu picchu mountain city wide"
-      },
-      {
-        "metin": "taş duvarlar",
-        "gorsel": "inca stone wall precise fit close up"
-      },
-      {
-        "metin": "bulutlu zirve",
-        "gorsel": "misty andes mountain peaks"
-      },
-      {
-        "metin": "teraslar",
-        "gorsel": "ancient stone agricultural terraces"
-      },
-      {
-        "metin": "terk edilmiş yapı",
-        "gorsel": "empty inca ruins stone"
-      },
-      {
-        "metin": "gizemli şehir",
-        "gorsel": "machu picchu at sunrise fog"
-      }
-    ],
-    "aciklama": "İnkalar Machu Picchu'yu bulutların üstünde harç kullanmadan nasıl inşa etti ve neden terk etti?\n\nBULUTLARIN ÜSTÜNDEKİ ŞEHİR\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#machupicchu #gizem #inka #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "SAHRA ESKİDEN YEŞİL MİYDİ? 🏜️",
-    "kanca": "ÇÖLÜN ALTINDA NEHİRLER",
-    "script": "Bugün dünyanın en büyük çölü olan Sahra, binlerce yıl önce yemyeşilmiş: göller, nehirler, otlayan hayvanlar. Mağara duvarlarında yüzen insan çizimleri bile var. Peki koca bir cennet nasıl kavurucu bir çöle döndü? Ve bir gün yeniden yeşerir mi? Doğa bunu defalarca yapmış. Şaşırtıcı, değil mi?",
-    "etiketler": [
-      "sahra",
-      "çöl",
-      "iklim",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "uçsuz çöl",
-        "gorsel": "vast sahara desert dunes"
-      },
-      {
-        "metin": "eski göl izi",
-        "gorsel": "dry cracked lake bed desert"
-      },
-      {
-        "metin": "mağara çizimi",
-        "gorsel": "ancient cave painting of animals"
-      },
-      {
-        "metin": "yeşil geçmiş",
-        "gorsel": "green savanna with river illustration"
-      },
-      {
-        "metin": "kumun altında",
-        "gorsel": "desert sand with buried rocks"
-      },
-      {
-        "metin": "değişen dünya",
-        "gorsel": "sahara desert at golden sunset"
-      }
-    ],
-    "aciklama": "Bugün çöl olan Sahra binlerce yıl önce göller ve nehirlerle yemyeşildi. Nasıl çöle döndü?\n\nÇÖLÜN ALTINDA NEHİRLER\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#sahra #gizem #çöl #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "LOCH NESS CANAVARI GERÇEK Mİ? 🦕",
-    "kanca": "GÖLDE NE YAŞIYOR?",
-    "script": "İskoçya'da derin, karanlık bir göl var: Loch Ness. Yüzyıllardır insanlar suyun içinde uzun boyunlu dev bir yaratık gördüğünü söylüyor. Bulanık fotoğraflar, sonar kayıtları... ama kesin kanıt yok. Efsane mi, yanılsama mı, yoksa gerçekten bir şey mi var? Sen ne düşünüyorsun?",
-    "etiketler": [
-      "loch ness",
-      "canavar",
-      "efsane",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "karanlık göl",
-        "gorsel": "dark misty loch ness lake"
-      },
-      {
-        "metin": "su yüzeyi",
-        "gorsel": "ripples on dark lake water"
-      },
-      {
-        "metin": "bulanık görüntü",
-        "gorsel": "blurry shape in lake water"
-      },
-      {
-        "metin": "sonar taraması",
-        "gorsel": "sonar screen scanning depth"
-      },
-      {
-        "metin": "derin su",
-        "gorsel": "deep dark underwater lake"
-      },
-      {
-        "metin": "efsane",
-        "gorsel": "foggy scottish lake at dusk"
-      }
-    ],
-    "aciklama": "İskoçya'daki Loch Ness gölünde yüzyıllardır görülen dev yaratık efsane mi, gerçek mi?\n\nGÖLDE NE YAŞIYOR?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#lochness #gizem #efsane #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "DİNOZORLARI NE YOK ETTİ? 🦖",
-    "kanca": "BİR GÜNDE HER ŞEY DEĞİŞTİ",
-    "script": "Altmış altı milyon yıl boyunca dünyaya dinozorlar hükmetti. Sonra bir gün, gökten devasa bir kaya düştü. Patlama, yangınlar, güneşi kapatan kül... Ve dev canlılar birer birer yok oldu. Ama bazıları hayatta kaldı ve bugün hâlâ aramızda: kuşlar. Şaşırtıcı, değil mi?",
-    "etiketler": [
-      "dinozor",
-      "meteor",
-      "kitlesel yok oluş",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "dinozorlar",
-        "gorsel": "dinosaurs in prehistoric landscape"
-      },
-      {
-        "metin": "düşen göktaşı",
-        "gorsel": "giant asteroid falling to earth"
-      },
-      {
-        "metin": "dev çarpma",
-        "gorsel": "massive impact explosion illustration"
-      },
-      {
-        "metin": "kararan gökyüzü",
-        "gorsel": "dark ash filled sky apocalyptic"
-      },
-      {
-        "metin": "yok oluş",
-        "gorsel": "dinosaur skeleton fossil in rock"
-      },
-      {
-        "metin": "kuşlar kaldı",
-        "gorsel": "bird flying at sunrise"
-      }
-    ],
-    "aciklama": "66 milyon yıl önce gökten düşen dev bir kaya dinozorları yok etti. Ama bazıları hayatta kaldı.\n\nBİR GÜNDE HER ŞEY DEĞİŞTİ\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#dinozor #gizem #meteor #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "AMELIA EARHART NEREDE KAYBOLDU? ✈️",
-    "kanca": "OKYANUSTA İZ BIRAKMADAN",
-    "script": "1937'de dünyayı uçakla dolaşmaya çalışan efsane pilot Amelia Earhart, Pasifik'in ortasında bir anda kayboldu. Ne uçak, ne enkaz, ne ceset bulundu. Yakıtı mı bitti, ıssız bir adaya mı düştü? En büyük havacılık gizemlerinden biri hâlâ çözülemedi. Sence ona ne oldu?",
-    "etiketler": [
-      "amelia earhart",
-      "kayboluş",
-      "havacılık",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "eski uçak",
-        "gorsel": "vintage propeller airplane 1930s"
-      },
-      {
-        "metin": "pasifik okyanusu",
-        "gorsel": "vast pacific ocean from above"
-      },
-      {
-        "metin": "kadın pilot",
-        "gorsel": "vintage female pilot silhouette"
-      },
-      {
-        "metin": "ıssız ada",
-        "gorsel": "remote deserted tropical island aerial"
-      },
-      {
-        "metin": "kaybolan sinyal",
-        "gorsel": "old radio equipment static"
-      },
-      {
-        "metin": "çözülemeyen sır",
-        "gorsel": "empty ocean horizon at dusk"
-      }
-    ],
-    "aciklama": "1937'de pilot Amelia Earhart Pasifik'in ortasında izsiz kayboldu. Ona ne oldu?\n\nOKYANUSTA İZ BIRAKMADAN\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#ameliaearhart #gizem #havacılık #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "İSKENDERİYE KÜTÜPHANESİ 📚",
-    "kanca": "KAYIP BİLGİ HAZİNESİ",
-    "script": "Antik dünyanın en büyük kütüphanesi İskenderiye'deydi: yüz binlerce el yazması, çağının tüm bilgisi tek çatı altında. Sonra alevler her şeyi yuttu. İçinde belki de kaybolmuş icatlar, unutulmuş tarihler vardı. Yansaydı bugün bilim nerede olurdu? Düşününce ürperiyor insan. Sence ne kaybettik?",
-    "etiketler": [
-      "iskenderiye",
-      "kütüphane",
-      "tarih",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "antik kütüphane",
-        "gorsel": "ancient grand library illustration"
-      },
-      {
-        "metin": "el yazmaları",
-        "gorsel": "ancient scrolls on shelves"
-      },
-      {
-        "metin": "yanan kitaplar",
-        "gorsel": "burning scrolls and flames"
-      },
-      {
-        "metin": "alevler",
-        "gorsel": "large fire consuming a building night"
-      },
-      {
-        "metin": "küle dönen bilgi",
-        "gorsel": "burnt paper ashes close up"
-      },
-      {
-        "metin": "kayıp hazine",
-        "gorsel": "empty ancient library ruins"
-      }
-    ],
-    "aciklama": "Antik dünyanın en büyük kütüphanesi İskenderiye yandı. İçindeki kayıp bilgiyle bugün nerede olurduk?\n\nKAYIP BİLGİ HAZİNESİ\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#iskenderiye #gizem #tarih #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "PETRA: KAYADAN ŞEHİR 🏛️",
-    "kanca": "DAĞA NASIL OYULDU?",
-    "script": "Ürdün çölünde, dev pembe kayaların içine oyulmuş bir şehir var: Petra. Tapınaklar, mezarlar, su kanalları... hepsi doğrudan kayaya işlenmiş. Binlerce yıl önce bu halk, koca bir şehri sert kayaya nasıl oydu ve neden sonunda terk etti? Çöl sırrını hâlâ saklıyor. Görmek istemez misin?",
-    "etiketler": [
-      "petra",
-      "ürdün",
-      "antik",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "kayadan tapınak",
-        "gorsel": "petra treasury carved rock facade"
-      },
-      {
-        "metin": "pembe kayalar",
-        "gorsel": "red sandstone canyon walls"
-      },
-      {
-        "metin": "oyulmuş mezar",
-        "gorsel": "ancient tomb carved into cliff"
-      },
-      {
-        "metin": "dar geçit",
-        "gorsel": "narrow canyon path petra"
-      },
-      {
-        "metin": "su kanalları",
-        "gorsel": "ancient stone water channel"
-      },
-      {
-        "metin": "terk edilmiş şehir",
-        "gorsel": "petra ruins at golden light"
-      }
-    ],
-    "aciklama": "Ürdün'deki Petra şehri dev kayalara oyulmuş. Bu halk sert kayayı nasıl işledi ve neden terk etti?\n\nDAĞA NASIL OYULDU?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#petra #gizem #antik #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "BEYİN NEDEN RÜYA GÖRÜR? 💭",
-    "kanca": "HER GECE BAŞKA DÜNYA",
-    "script": "Her gece uykuya daldığında beynin sana koca bir dünya yaratıyor: rüyalar. Bazen uçarsın, bazen kaçarsın, bazen tanımadığın yerlerde olursun. Peki beyin bunu neden yapıyor? Hafızayı düzenlemek için mi, korkularla başa çıkmak için mi? Bilim hâlâ tam emin değil. Sen rüyalarını hatırlıyor musun?",
-    "etiketler": [
-      "rüya",
-      "beyin",
-      "psikoloji",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "uyuyan insan",
-        "gorsel": "person sleeping peacefully at night"
-      },
-      {
-        "metin": "rüya dünyası",
-        "gorsel": "surreal dreamlike floating landscape"
-      },
-      {
-        "metin": "beyin aktivitesi",
-        "gorsel": "glowing brain neurons illustration"
-      },
-      {
-        "metin": "uçma hissi",
-        "gorsel": "person floating in surreal sky"
-      },
-      {
-        "metin": "hafıza",
-        "gorsel": "abstract memory light trails"
-      },
-      {
-        "metin": "bilinmeyen",
-        "gorsel": "starry dreamy night sky"
-      }
-    ],
-    "aciklama": "Beyin her gece neden rüya yaratıyor? Hafıza düzenlemek mi, korkularla baş etmek mi?\n\nHER GECE BAŞKA DÜNYA\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#rüya #gizem #beyin #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "YILDIRIM NASIL OLUŞUR? ⚡",
-    "kanca": "SANİYEDE 30 KAT DÜŞER",
-    "script": "Gökyüzü bir anda yarılır ve göz açıp kapayana kadar dev bir ışık yere iner: yıldırım. Sıcaklığı güneşin yüzeyinden bile yüksek olabilir. Bulutların içinde biriken elektrik, bir anda boşalır. Ama bilim bu kıvılcımın tam olarak nasıl başladığını hâlâ tartışıyor. İlginç değil mi?",
-    "etiketler": [
-      "yıldırım",
-      "doğa",
-      "bilim",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "şimşek",
-        "gorsel": "lightning bolt striking at night"
-      },
-      {
-        "metin": "fırtına bulutu",
-        "gorsel": "dark storm clouds gathering"
-      },
-      {
-        "metin": "gökyüzü yarılıyor",
-        "gorsel": "lightning splitting the sky"
-      },
-      {
-        "metin": "yere inen ışık",
-        "gorsel": "lightning hitting ground horizon"
-      },
-      {
-        "metin": "elektrik",
-        "gorsel": "electric sparks glowing dark"
-      },
-      {
-        "metin": "doğanın gücü",
-        "gorsel": "dramatic thunderstorm over landscape"
-      }
-    ],
-    "aciklama": "Yıldırım güneşten sıcak olabilir ve bir anda yere iner. Bu kıvılcım tam olarak nasıl başlar?\n\nSANİYEDE 30 KAT DÜŞER\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#yıldırım #gizem #doğa #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "KAYIP KITA MU EFSANESİ 🌏",
-    "kanca": "OKYANUSA MI GÖMÜLDÜ?",
-    "script": "Bazı efsanelere göre, Pasifik'in ortasında bir zamanlar dev bir kıta vardı: Mu. Gelişmiş bir uygarlığa ev sahipliği yapmış, sonra tek bir felakette sulara gömülmüş. Bilim böyle bir kıta bulamadı, ama efsane yüzyıllardır anlatılıyor. Gerçek bir hafıza mı, yoksa sadece bir masal mı? Sence var mıydı?",
-    "etiketler": [
-      "kayıp kıta",
-      "mu",
-      "efsane",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "okyanus ortası",
-        "gorsel": "vast empty pacific ocean"
-      },
-      {
-        "metin": "efsane kıta",
-        "gorsel": "ancient continent map illustration"
-      },
-      {
-        "metin": "gelişmiş uygarlık",
-        "gorsel": "ancient advanced city concept art"
-      },
-      {
-        "metin": "batan kara",
-        "gorsel": "land sinking into ocean waves"
-      },
-      {
-        "metin": "deniz altı",
-        "gorsel": "underwater ruins deep blue"
-      },
-      {
-        "metin": "efsane",
-        "gorsel": "ocean horizon mysterious clouds"
-      }
-    ],
-    "aciklama": "Efsaneye göre Pasifik'te dev bir kıta olan Mu bir felakette sulara gömüldü. Gerçek miydi?\n\nOKYANUSA MI GÖMÜLDÜ?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#kayıpkıta #gizem #efsane #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "BÜYÜK KANYON NASIL OLUŞTU? 🏞️",
-    "kanca": "BİR NEHİR MİLYONLARCA YIL",
-    "script": "Amerika'da öyle dev bir yarık var ki, uzaydan bile görünüyor: Büyük Kanyon. Bir buçuk kilometre derinliğinde ve milyonlarca yıllık kaya katmanları üst üste. İnanması zor ama bu devasa uçurumu, sabırla akan tek bir nehir oydu. Doğa, zamanla neler yapabiliyor değil mi? Şaşırtıcı, değil mi?",
-    "etiketler": [
-      "büyük kanyon",
-      "doğa",
-      "jeoloji",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "dev kanyon",
-        "gorsel": "grand canyon vast aerial view"
-      },
-      {
-        "metin": "kaya katmanları",
-        "gorsel": "layered canyon rock walls"
-      },
-      {
-        "metin": "akan nehir",
-        "gorsel": "river flowing through deep canyon"
-      },
-      {
-        "metin": "derin uçurum",
-        "gorsel": "steep canyon cliff edge"
-      },
-      {
-        "metin": "milyon yıl",
-        "gorsel": "eroded rock formations desert"
-      },
-      {
-        "metin": "doğanın gücü",
-        "gorsel": "grand canyon at sunset colors"
-      }
-    ],
-    "aciklama": "Uzaydan görünen Büyük Kanyon'u milyonlarca yıl boyunca akan tek bir nehir oydu.\n\nBİR NEHİR MİLYONLARCA YIL\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#büyükkanyon #gizem #doğa #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "ZAMANDA YOLCULUK MÜMKÜN MÜ? ⏳",
-    "kanca": "GELECEĞE GİDİLEBİLİR",
-    "script": "Zamanda yolculuk sadece filmlerde değil; fizik aslında geleceğe gitmenin mümkün olduğunu söylüyor. Çok hızlı gidersen ya da güçlü bir çekimin yanındaysan, zaman senin için yavaşlar. Yani astronotlar minik de olsa geleceğe yolculuk eder. Peki geçmişe dönmek? İşte orası hâlâ imkânsız görünüyor. Sen hangisini isterdin?",
-    "etiketler": [
-      "zaman yolculuğu",
-      "fizik",
-      "evren",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "zaman kavramı",
-        "gorsel": "abstract clock and space swirl"
-      },
-      {
-        "metin": "hızlı hareket",
-        "gorsel": "light streaks fast motion space"
-      },
-      {
-        "metin": "güçlü çekim",
-        "gorsel": "warped space time illustration"
-      },
-      {
-        "metin": "astronot",
-        "gorsel": "astronaut floating in space"
-      },
-      {
-        "metin": "geçmiş kapısı",
-        "gorsel": "surreal glowing time portal"
-      },
-      {
-        "metin": "bilinmeyen",
-        "gorsel": "cosmic clock among stars"
-      }
-    ],
-    "aciklama": "Fizik geleceğe zaman yolculuğunun mümkün olduğunu söylüyor. Peki geçmişe dönmek?\n\nGELECEĞE GİDİLEBİLİR\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#zamanyolculuğu #gizem #fizik #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "UFO GÖRÜNTÜLERİ GERÇEK Mİ? 🛸",
-    "kanca": "PİLOTLAR NE GÖRDÜ?",
-    "script": "Yıllardır gökyüzünde tuhaf, hızlı, açıklanamayan cisimler görülüyor. Artık sıradan insanlar değil, savaş pilotları ve resmi kayıtlar bile bunlardan bahsediyor. Gizli teknoloji mi, doğal bir olay mı, yoksa gerçekten başka bir yerden mi geliyorlar? Kimse kesin bilmiyor. Sen bir tane gördün mü hiç?",
-    "etiketler": [
-      "ufo",
-      "uzay",
-      "gizem",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "gökyüzünde cisim",
-        "gorsel": "strange light in night sky"
-      },
-      {
-        "metin": "hızlı hareket",
-        "gorsel": "fast moving light over horizon"
-      },
-      {
-        "metin": "pilot kaydı",
-        "gorsel": "fighter jet cockpit view sky"
-      },
-      {
-        "metin": "radar ekranı",
-        "gorsel": "radar screen with unknown blip"
-      },
-      {
-        "metin": "gizli teknoloji",
-        "gorsel": "mysterious craft silhouette clouds"
-      },
-      {
-        "metin": "cevapsız soru",
-        "gorsel": "night sky with distant lights"
-      }
-    ],
-    "aciklama": "Savaş pilotları ve resmi kayıtlar bile açıklanamayan hava cisimlerinden bahsediyor. Gerçek mi?\n\nPİLOTLAR NE GÖRDÜ?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#ufo #gizem #uzay #shorts",
-    "tema": "gizem"
-  },
-  {
-    "baslik": "SFENKS'İN ALTINDA NE VAR? 🐪",
-    "kanca": "GİZLİ ODALAR MI?",
-    "script": "Mısır'da, aslan gövdeli dev Sfenks binlerce yıldır çölü izliyor. Ama asıl merak edilen, altında ne olduğu. Bazı araştırmacılar, tabanında gizli odalar ve tüneller olabileceğini söylüyor. Sfenks tam olarak kaç yaşında, kimi temsil ediyor? Yüzü bile aşınmış. Çöl en büyük sırlarından birini hâlâ saklıyor. Sence altında ne var?",
-    "etiketler": [
-      "sfenks",
-      "mısır",
-      "antik",
-      "gizem",
-      "merak",
-      "şaşırtıcı gerçekler",
-      "ilginç bilgi",
-      "keşif"
-    ],
-    "sahneler": [
-      {
-        "metin": "dev sfenks",
-        "gorsel": "great sphinx of giza wide shot"
-      },
-      {
-        "metin": "aşınmış yüz",
-        "gorsel": "sphinx face close up weathered"
-      },
-      {
-        "metin": "çöl bekçisi",
-        "gorsel": "sphinx and pyramid desert"
-      },
-      {
-        "metin": "gizli tünel",
-        "gorsel": "dark underground stone tunnel"
-      },
-      {
-        "metin": "kum altında",
-        "gorsel": "excavation around ancient monument"
-      },
-      {
-        "metin": "çözülemeyen sır",
-        "gorsel": "sphinx silhouette at sunset"
-      }
-    ],
-    "aciklama": "Mısır Sfenksi'nin altında gizli odalar mı var? Kaç yaşında ve kimi temsil ediyor?\n\nGİZLİ ODALAR MI?\n\nDünyanın ve evrenin en büyük gizemlerini kısa videolarla anlatıyoruz. Merak et, keşfet.\n\nHer akşam yeni bir gizem.\n\n#sfenks #gizem #mısır #shorts",
-    "tema": "gizem"
   }
 ]

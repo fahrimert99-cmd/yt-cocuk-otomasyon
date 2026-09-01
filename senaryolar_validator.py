@@ -7,6 +7,7 @@ Repo'ya push edilecek: yt-cocuk-otomasyon/senaryolar_validator.py
 import json
 import os
 import re
+import unicodedata
 from typing import List, Dict, Any, Tuple
 
 class SenaryoValidator:
@@ -52,6 +53,86 @@ class SenaryoValidator:
         
         return issues
     
+    # --- BAŞLIK KALİTE DENETİMİ (bilgilendirici) ---
+    # Analiz (izlenme dalgalanması) verisinden çıkan 3 kaldıraç: en çok izlenen
+    # başlıklar (1) AÇIK merak boşluğu içeriyor ("...NE VAR?", "...NEDEN?") — kapalı
+    # evet/hayır sorularından ("...GERÇEK Mİ?") daha iyi tutuyor; (2) BÜYÜK HARF;
+    # (3) sonda EMOJI. Bunlar üretimi ENGELLEMEZ, yalnızca uyarı üretir.
+    TITLE_WH = {"NE", "NEDEN", "NASIL", "KİM", "KIM", "NEREDE", "NEREDEN", "NEREYE",
+                "HANGİ", "HANGI", "KAÇ", "KAC", "NİYE", "NIYE", "KAÇTA", "NEYİN"}
+
+    @staticmethod
+    def _emoji_var(s: str) -> bool:
+        for c in s:
+            o = ord(c)
+            # 0x1F000+: emoji blokları; 'So': sembol; 0xFE0F: emoji varyasyon
+            # seçici; 0x20E3: keycap birleştirici (ör. 9️⃣). Bunlardan biri -> emoji.
+            if o >= 0x1F000 or o in (0xFE0F, 0x20E3) or unicodedata.category(c) == "So":
+                return True
+        return False
+
+    @staticmethod
+    def _buyuk_harf_orani(s: str) -> float:
+        harf = [c for c in s if c.isalpha()]
+        if not harf:
+            return 1.0
+        return sum(1 for c in harf if c.isupper()) / len(harf)
+
+    @staticmethod
+    def _kapali_soru(s: str) -> bool:
+        """Soru işareti var ama açık soru kelimesi (NE/NASIL/...) yoksa -> kapalı
+        (evet/hayır) soru sayılır. Soru işareti hiç yoksa (ünlem tipi) kapsanmaz."""
+        if "?" not in s:
+            return False
+        kelimeler = set(re.findall(r"[A-ZÇĞİÖŞÜ]+", s.upper()))
+        return not (kelimeler & SenaryoValidator.TITLE_WH)
+
+    @staticmethod
+    def title_quality(baslik: str) -> List[str]:
+        b = baslik or ""
+        w = []
+        if SenaryoValidator._kapali_soru(b):
+            w.append("kapalı (evet/hayır) soru — açık merak boşluğu (NE/NASIL/NEDEN...) daha çok tutuyor")
+        if SenaryoValidator._buyuk_harf_orani(b) < 0.7:
+            w.append("çoğunlukla BÜYÜK HARF değil (veri: büyük harf başlıklar daha çok izleniyor)")
+        if not SenaryoValidator._emoji_var(b):
+            w.append("emoji yok (güçlü başlıkların hepsinde sonda emoji var)")
+        return w
+
+    # --- İÇERİK (SCRIPT) KALİTE DENETİMİ (bilgilendirici) ---
+    # Analiz (abone dönüşümü %0.226, sağlıklı ~%0.5-1): abone büyümüyor çünkü
+    # (1) videoların ~yarısında abone CTA'sı yok, (2) neredeyse hiçbirinde
+    # süreklilik/teaser ("yarın yeni video") yok. İzleyici geri dönmek için
+    # sebep bulamayınca abone olmuyor. Bu denetim üretimi ENGELLEMEZ.
+    ABONE_KW = ("abone", "subscribe", "kanala katıl", "takip et")
+    TEASER_KW = ("yarın", "bir sonraki", "sonraki video", "yeni video", "seri", "kaçırma")
+
+    # İlk cümle (sözlü açılış) Shorts'ta ilk 2-3 saniyeyi ve retention'ı belirler.
+    # Punchy bir kanca kısa olur; uzun/yavaş açılış izleyiciyi kaydırtır.
+    HOOK_MAX_KELIME = 14
+
+    @staticmethod
+    def _ilk_cumle(script: str) -> str:
+        s = (script or "").strip()
+        if not s:
+            return ""
+        m = re.split(r"(?<=[.!?])\s+", s, maxsplit=1)
+        return m[0] if m else s
+
+    @staticmethod
+    def script_quality(item: Dict[str, Any]) -> List[str]:
+        s = (item.get("script") or "").lower()
+        w = []
+        if not any(k in s for k in SenaryoValidator.ABONE_KW):
+            w.append("abone CTA'sı yok — dönüşüm için sonda net bir abone çağrısı ekle")
+        if not any(k in s for k in SenaryoValidator.TEASER_KW):
+            w.append("süreklilik/teaser yok — 'yarın yeni video' tarzı geri dönüş kancası ekle")
+        ilk = SenaryoValidator._ilk_cumle(item.get("script") or "")
+        n = len(ilk.split())
+        if n > SenaryoValidator.HOOK_MAX_KELIME:
+            w.append(f"açılış kancası uzun ({n} kelime) — ilk cümleyi kısalt, ilk 2 saniyede vur")
+        return w
+
     @staticmethod
     def validate_single(item: Dict[str, Any], idx: int) -> List[str]:
         """Tek bir senaryo objesini doğrula."""
@@ -161,6 +242,34 @@ if __name__ == "__main__":
         print(f"✓ Validated {len(scenarios)} scenarios")
         for i, s in enumerate(scenarios):
             print(f"  [{i}] {s['baslik'][:50]}")
+
+        # Başlık kalite uyarıları — bilgilendirici, CI'yı DÜŞÜRMEZ (exit 0).
+        uyarili = []
+        for i, s in enumerate(scenarios):
+            uy = SenaryoValidator.title_quality(s.get("baslik", ""))
+            if uy:
+                uyarili.append((i, s.get("baslik", ""), uy))
+        if uyarili:
+            print("\n" + "-" * 70)
+            print(f"ℹ Başlık kalite uyarıları ({len(uyarili)}/{len(scenarios)}) — üretimi engellemez:")
+            for i, b, uy in uyarili:
+                print(f"  ⚠ [{i}] {b[:45]}")
+                for u in uy:
+                    print(f"       - {u}")
+
+        # İçerik (script) kalite uyarıları — abone dönüşümü için; CI'yı DÜŞÜRMEZ.
+        icerik = []
+        for i, s in enumerate(scenarios):
+            uy = SenaryoValidator.script_quality(s)
+            if uy:
+                icerik.append((i, s.get("baslik", ""), uy))
+        if icerik:
+            print("\n" + "-" * 70)
+            print(f"ℹ İçerik/abone uyarıları ({len(icerik)}/{len(scenarios)}) — üretimi engellemez:")
+            for i, b, uy in icerik:
+                print(f"  ⚠ [{i}] {b[:45]}")
+                for u in uy:
+                    print(f"       - {u}")
     except Exception as e:
         print(f"✗ Error: {e}")
         sys.exit(1)
