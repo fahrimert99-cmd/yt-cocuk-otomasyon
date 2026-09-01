@@ -217,7 +217,12 @@ def _akici_script(item):
         "  (3) nasıl korunmalı (somut ipucu), (4) 'Kaynak: " + item["kaynak"] + "' de, "
         "  (5) kısa 'abone ol' çağrısı.\n"
         "- Doğal, akıcı, konuşma dili. Emoji/başlık/parantez kullanma.\n"
-        'SADECE şu JSON: {"baslik": "...", "script": "..."}\n\n'
+        "- 'gorseller': KONUYLA İLGİLİ 6 kısa İNGİLİZCE stok video arama terimi ver "
+        "  (her sahne için biri; son terim abone/bildirim temalı olsun). "
+        "  Örn kredi kartı için: [\"credit card debt\",\"bank interest rate\","
+        "\"person paying bills worried\",\"financial calculator\","
+        "\"cutting credit card\",\"youtube subscribe bell\"].\n"
+        'SADECE şu JSON: {"baslik":"...","script":"...","gorseller":["...","...","...","...","...","..."]}\n\n'
         "HABER BAŞLIK: " + item["baslik"] + "\nHABER ÖZET: " + ozet
     )
     try:
@@ -244,7 +249,14 @@ def _akici_script(item):
             parcalar = re.split(r"(?<=[.!?])\s+", s)
             if len(parcalar) > 1:
                 s = " ".join(parcalar[:-1]).strip()
-        return b, s
+        gorseller = veri.get("gorseller")
+        if isinstance(gorseller, list):
+            gorseller = [str(x).strip() for x in gorseller if str(x).strip()][:6]
+            if len(gorseller) < 6:
+                gorseller = None
+        else:
+            gorseller = None
+        return b, s, gorseller
     except Exception as e:
         print("  [akici script atlandi]:", str(e)[:100])
         return None
@@ -265,14 +277,46 @@ def _bol(text, n=6):
     return gruplar[:n]
 
 
+# Konu anahtar kelimesine göre KONUYLA İLGİLİ görsel sorguları (LLM yoksa).
+GORSEL_KONU = [
+    (("kredi", "kart", "faiz", "banka", "borç", "taksit"),
+     ["credit card debt", "bank interest rate", "person paying bills worried",
+      "financial calculator money", "cutting credit card scissors", "youtube subscribe bell"]),
+    (("zam", "fiyat", "enflasyon", "akaryak", "motorin", "benzin", "mazot", "fahiş"),
+     ["gas station fuel pump", "turkish lira inflation", "supermarket price tags",
+      "empty wallet money", "shopping receipt long", "youtube subscribe bell"]),
+    (("dolandırıc", "sahte", "hile", "kandır", "aldat", "siber"),
+     ["phone scam fraud alert", "hacker cyber security", "fake sms message phone",
+      "warning sign red alert", "protecting personal data", "youtube subscribe bell"]),
+    (("market", "alışveriş", "etiket", "raf", "stok", "indirim", "kampanya"),
+     ["supermarket shopping cart", "price tag shelf store", "checkout cashier",
+      "grocery receipt", "reading label magnifier", "youtube subscribe bell"]),
+    (("abonelik", "ücret", "sözleşme", "fatura"),
+     ["subscription cancel phone", "hidden fees contract", "reading fine print magnifier",
+      "money leaving wallet", "calendar reminder phone", "youtube subscribe bell"]),
+]
+GORSEL_VARSAYILAN = ["news studio breaking", "turkish lira money shopping",
+                     "warning sign alert red", "person shopping supermarket",
+                     "reading contract magnifier", "youtube subscribe bell"]
+
+
+def _gorseller_konu(item):
+    metin = (item["baslik"] + " " + item["ozet"]).lower()
+    for kelimeler, gorseller in GORSEL_KONU:
+        if any(k in metin for k in kelimeler):
+            return gorseller
+    return GORSEL_VARSAYILAN
+
+
 def senaryo_yap(item):
     kaynak = item["kaynak"]
     ozet = item["ozet"] or item["baslik"]
     if len(ozet) > 240:
         ozet = ozet[:237].rsplit(" ", 1)[0] + "..."
     llm = _akici_script(item)
+    llm_gorseller = None
     if llm:
-        ham_baslik, script = llm
+        ham_baslik, script, llm_gorseller = llm
         baslik = _tr_upper(ham_baslik)[:90] + " 📰"
     else:
         # Yedek: LLM yoksa/başarısızsa ham-metin şablonu (kesik olabilir ama üretir)
@@ -282,11 +326,11 @@ def senaryo_yap(item):
                   f"Peki sen ne yapmalısın? {korunma} Kaynak: {kaynak}. "
                   f"Böyle gelişmeleri kaçırmamak için abone ol, yarın yeni bir tuzak.")
     kanca = re.split(r"(?<=[.!?])\s+", script.strip())[0][:80]
-    g = ["news studio breaking", "turkish lira money shopping",
-         "warning sign alert red", "person shopping supermarket",
-         "reading contract magnifier", "youtube subscribe bell"]
+    # Görsel: (1) LLM'in verdiği konu-uyumlu sorgular, yoksa (2) anahtar-kelime
+    # eşlemesi, yoksa (3) jenerik. Böylece her haber KONUSUNA göre görsel alır.
+    g = llm_gorseller or _gorseller_konu(item)
     parcalar = _bol(script, 6)
-    sahneler = [{"metin": parcalar[i], "gorsel": g[i]} for i in range(6)]
+    sahneler = [{"metin": parcalar[i], "gorsel": g[i % len(g)]} for i in range(6)]
     return {
         "baslik": baslik,
         "aciklama": f"Habere göre: {ozet} (Kaynak: {kaynak})",
