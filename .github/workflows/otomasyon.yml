@@ -7,6 +7,10 @@ on:
     # concurrency grubu çakışmayı serialize eder.
     - cron: "0 9 * * *"    # 12:00 TR (öğle dalgası)
     - cron: "0 17 * * *"   # 20:00 TR (akşam prime-time)
+  # GARANTİLİ TETİK: GitHub'ın kendi cron'u gecikebilir/atlayabilir; dıştan bir
+  # zamanlayıcı (ör. cron-job.org) repository_dispatch ile bunu tetikler.
+  repository_dispatch:
+    types: [uret-short]
   workflow_dispatch:
 
 permissions:

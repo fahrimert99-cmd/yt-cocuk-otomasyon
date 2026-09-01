@@ -6,6 +6,9 @@ name: Guncel Tuketici Haberi (Short)
 on:
   schedule:
     - cron: "0 11 * * 1,4"   # Pazartesi & Perşembe 14:00 TR
+  # GARANTİLİ TETİK: dıştan zamanlayıcı (cron-job.org) repository_dispatch ile.
+  repository_dispatch:
+    types: [uret-haber]
   workflow_dispatch: {}
 permissions:
   contents: write
