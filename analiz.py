@@ -411,6 +411,76 @@ def _degerlendirme(videolar, format_ozet, tema_ozet, top, yeni):
     return bulgular, aksiyonlar
 
 
+def _analytics(id2title):
+    """YouTube Analytics API (yt-analytics.readonly) ile DERİN metrikler:
+    son 28 gün retention (ort. izlenme %), CTR (kapak tıklama oranı), ort.
+    izleme süresi — kanal geneli + video bazında ilk 10. İzin/veri yoksa
+    boş döner (rapor temel metriklerle devam eder)."""
+    out = {}
+    try:
+        yta = build("youtubeAnalytics", "v2", credentials=_kimlik())
+    except Exception as e:
+        return {"hata": f"analytics istemcisi kurulamadı: {str(e)[:120]}"}
+    bit = dt.date.today()
+    bas = bit - dt.timedelta(days=28)
+
+    def _q(**kw):
+        return yta.reports().query(ids="channel==MINE", startDate=bas.isoformat(),
+                                   endDate=bit.isoformat(), **kw).execute()
+
+    def _satir(r):
+        h = [c["name"] for c in r.get("columnHeaders", [])]
+        rows = r.get("rows") or []
+        return h, rows
+
+    # 1) Kanal geneli retention + izleme süresi
+    try:
+        h, rows = _satir(_q(metrics="views,averageViewDuration,averageViewPercentage,"
+                                    "estimatedMinutesWatched,subscribersGained"))
+        m = dict(zip(h, rows[0])) if rows else {}
+        out["kanal_28g"] = {
+            "izlenme": m.get("views"),
+            "retention_yuzde": round(float(m.get("averageViewPercentage", 0)), 1),
+            "ort_izleme_sn": round(float(m.get("averageViewDuration", 0))),
+            "izlenme_dk": round(float(m.get("estimatedMinutesWatched", 0))),
+            "abone_kazanc": m.get("subscribersGained"),
+        }
+    except Exception as e:
+        out["kanal_28g_hata"] = str(e)[:160]
+
+    # 2) CTR (kapak gösterim/tıklama)
+    try:
+        h, rows = _satir(_q(metrics="impressions,impressionsClickThroughRate"))
+        m = dict(zip(h, rows[0])) if rows else {}
+        out["ctr_28g"] = {
+            "gosterim": m.get("impressions"),
+            "ctr_yuzde": round(float(m.get("impressionsClickThroughRate", 0)), 2),
+        }
+    except Exception as e:
+        out["ctr_28g_hata"] = str(e)[:160]
+
+    # 3) Video bazında (ilk 10, izlenmeye göre)
+    try:
+        h, rows = _satir(_q(dimensions="video", sort="-views", maxResults=10,
+                            metrics="views,averageViewPercentage,averageViewDuration,"
+                                    "impressionsClickThroughRate"))
+        vids = []
+        for row in rows:
+            d = dict(zip(h, row))
+            vids.append({
+                "baslik": id2title.get(d.get("video"), d.get("video")),
+                "izlenme": d.get("views"),
+                "retention_yuzde": round(float(d.get("averageViewPercentage", 0)), 1),
+                "ort_izleme_sn": round(float(d.get("averageViewDuration", 0))),
+                "ctr_yuzde": round(float(d.get("impressionsClickThroughRate", 0)), 2),
+            })
+        out["video_28g"] = vids
+    except Exception as e:
+        out["video_28g_hata"] = str(e)[:160]
+
+    return out
+
+
 def main():
     yt = build("youtube", "v3", credentials=_kimlik())
     videolar, kanal_ist = _videolar(yt)
@@ -427,11 +497,15 @@ def main():
     # verilerden yorum + somut aksiyon önerileri (API'siz)
     bulgular, aksiyonlar = _degerlendirme(videolar, format_ozet, tema_ozet, top, yeni)
 
+    # DERİN metrikler (retention/CTR) — yt-analytics.readonly izniyle
+    analytics = _analytics({v["id"]: v["baslik"] for v in videolar})
+
     rapor = {
         "tarih": bugun,
         "kanal": {"abone": kanal_ist.get("subscriberCount"),
                   "toplam_izlenme": kanal_ist.get("viewCount"),
                   "video_sayisi": kanal_ist.get("videoCount")},
+        "analytics": analytics,
         "degerlendirme": {"bulgular": bulgular, "aksiyonlar": aksiyonlar},
         "top10": [{"baslik": v["baslik"], "izlenme": v["izlenme"],
                    "izlenme_gunluk": v["izlenme_gunluk"], "tema": v["tema"],
@@ -453,6 +527,27 @@ def main():
     L.append(f"# 📊 Kanal Denetim Raporu — {bugun}\n")
     k = rapor["kanal"]
     L.append(f"**Abone:** {k['abone']}  |  **Toplam izlenme:** {k['toplam_izlenme']}  |  **Video:** {k['video_sayisi']}\n")
+    # --- DERİN metrikler (retention/CTR, son 28 gün) ---
+    _an = rapor.get("analytics") or {}
+    _kg = _an.get("kanal_28g"); _ct = _an.get("ctr_28g")
+    if _kg or _ct:
+        L.append("## 🎯 Retention & CTR (son 28 gün)")
+        if _kg:
+            L.append(f"- **Ortalama izlenme oranı (retention): %{_kg.get('retention_yuzde')}** "
+                     f"— ort. izleme süresi {_kg.get('ort_izleme_sn')} sn")
+            L.append(f"- İzlenme: {_kg.get('izlenme')} · İzlenme süresi: {_kg.get('izlenme_dk')} dk "
+                     f"· Abone kazancı: {_kg.get('abone_kazanc')}")
+        if _ct:
+            L.append(f"- **CTR (kapak tıklama oranı): %{_ct.get('ctr_yuzde')}** "
+                     f"— {_ct.get('gosterim')} gösterim")
+        _vd = _an.get("video_28g") or []
+        if _vd:
+            L.append("\n| Başlık | İzlenme | Retention % | CTR % | Ort. sn |")
+            L.append("|--------|---------|-------------|-------|---------|")
+            for v in _vd:
+                L.append(f"| {str(v['baslik'])[:40]} | {v['izlenme']} | "
+                         f"{v['retention_yuzde']} | {v['ctr_yuzde']} | {v['ort_izleme_sn']} |")
+        L.append("")
     # --- AI danışman yorumu (varsa) en üstte, anlatısal ---
     if ai_yorum:
         L.append("## 🗣️ Danışman Yorumu (AI)")
@@ -496,9 +591,10 @@ def main():
             for v in sorted(_grup, key=lambda x: -x["izlenme_gunluk"]):
                 L.append(f"| {v['baslik'][:40]} | {v['izlenme']} | {v['izlenme_gunluk']} "
                          f"| {v['yas_gun']} | {v['tema']} | {v['yayin']} |")
-    L.append("\n> Not: Retention (izlenme %) ve CTR gibi derin metrikler için "
-             "YouTube Analytics izni (yt-analytics.readonly) gerekir; şu an temel "
-             "metrikler (izlenme/beğeni/yorum) raporlanıyor.")
+    if _an.get("kanal_28g_hata") or _an.get("hata"):
+        L.append("\n> Not: Derin metrikler (retention/CTR) çekilemedi — "
+                 "yt-analytics.readonly izni/verisi kontrol edilmeli. "
+                 f"({_an.get('hata') or _an.get('kanal_28g_hata')})")
     md = "\n".join(L) + "\n"
     with open("analiz_rapor.md", "w", encoding="utf-8") as f:
         f.write(md)
