@@ -231,6 +231,9 @@ def main():
     sec = uygun[0]
     print(f"      Seçilen: {sec['baslik'][:70]}  [{sec['kaynak']}]")
     sen = senaryo_yap(sec)
+    # Haber gizliliği config'ten (ilk testlerde 'unlisted' -> önce incele,
+    # beğenince config.haber_gizlilik'i 'public' yap).
+    sen["gizlilik"] = str(cfg.get("haber_gizlilik", "unlisted") or "unlisted").strip()
     os.makedirs(os.path.dirname(CIKTI_P) or ".", exist_ok=True)
     with open(CIKTI_P, "w", encoding="utf-8") as f:
         json.dump(sen, f, ensure_ascii=False, indent=2)

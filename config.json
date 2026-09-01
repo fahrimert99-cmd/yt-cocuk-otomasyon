@@ -23,5 +23,6 @@
   "marka_handle": "@tuzakavcisitv",
   "oynatma_listesi": true,
   "marka_ilk_kare": true,
-  "marka_ilk_kare_sn": 1.0
+  "marka_ilk_kare_sn": 1.0,
+  "haber_gizlilik": "unlisted"
 }
