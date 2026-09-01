@@ -175,6 +175,24 @@ def _korunma(item):
     return GENEL_KORUNMA
 
 
+_KISALTMA = {
+    "TCMB": "Merkez Bankası", "ÖTV": "Özel Tüketim Vergisi",
+    "KDV": "Katma Değer Vergisi", "TÜİK": "Türkiye İstatistik Kurumu",
+    "SGK": "Sosyal Güvenlik Kurumu", "BDDK": "Bankacılık Düzenleme ve Denetleme Kurumu",
+    "TÜFE": "tüketici enflasyonu", "ÜFE": "üretici enflasyonu",
+    "EYT": "emeklilikte yaşa takılanlar", "AVM": "alışveriş merkezi",
+}
+
+
+def _kisaltma_ac(text):
+    """Seslendirmede kötü okunan kısaltmaları aç (TCMB -> Merkez Bankası)."""
+    if not text:
+        return text
+    for k, v in _KISALTMA.items():
+        text = re.sub(r"\b" + re.escape(k) + r"\b", v, text)
+    return text
+
+
 def _akici_script(item):
     """Haberi AKICI, konuşma diline çevirir (LLM). SADECE verilen bilgiyi
     kullanır (uydurma yok), kaynağı belirtir. Başarısızsa None (şablona düşülür).
@@ -184,15 +202,21 @@ def _akici_script(item):
         ozet = ozet[:397].rsplit(" ", 1)[0] + "..."
     prompt = (
         "Sen 'TUZAK AVCISI' adlı tüketici farkındalığı YouTube kanalı için metin "
-        "yazarısın. Aşağıdaki GÜNCEL HABERİ ~40 saniyelik DİKEY bir Short için "
-        "AKICI, DOĞAL, KONUŞMA DİLİNDE tek parça seslendirme metnine çevir.\n"
+        "yazarısın. Aşağıdaki GÜNCEL HABERİ bir GİRİŞ/kanca olarak kullan; sonra o "
+        "konuda tüketiciyi bilinçlendiren NET ve EKSİKSİZ bir Short metni yaz "
+        "(~40 saniye, yaklaşık 80-110 kelime, DİKEY Short, tek parça seslendirme).\n"
         "KURALLAR:\n"
-        "- SADECE verilen bilgiyi kullan. Yeni rakam, tarih veya iddia UYDURMA.\n"
-        "- Kısa, net, akıcı cümleler kur (seslendirme kesik olmasın, vurgular doğal olsun).\n"
-        "- Akış: (1) merak uyandıran kısa açılış, (2) haberin özü sade Türkçeyle, "
-        "(3) bu tüketiciyi nasıl etkiler / ne yapmalı, (4) 'Kaynak: " + item["kaynak"] +
-        "' de, (5) kısa 'abone ol' çağrısı.\n"
-        "- Emin olmadığın ayrıntıyı 'habere göre' diyerek ver. Emoji/başlık kullanma.\n"
+        "- Haberin KENDİSİ hakkında yeni RAKAM/TARİH/oran UYDURMA. Kesin veri yoksa "
+        "  rakam verme; 'habere göre ... gündemde' gibi söyle.\n"
+        "- AMA konuyu (ör. kredi kartı faizi, zam, dolandırıcılık, abonelik) GENEL ve "
+        "  DOĞRU bilgiyle AÇIKLA — izleyici somut bir şey ÖĞRENSİN. CÜMLELERİ ASLA "
+        "  YARIM BIRAKMA, metni tamamla.\n"
+        "- KISALTMA KULLANMA, açık yaz: 'TCMB' yerine 'Merkez Bankası', 'ÖTV' yerine "
+        "  'Özel Tüketim Vergisi', 'KDV' yerine 'Katma Değer Vergisi' gibi.\n"
+        "- Akış: (1) haber-kancası, (2) bu konu tüketiciyi nasıl etkiler (net açıklama), "
+        "  (3) nasıl korunmalı (somut ipucu), (4) 'Kaynak: " + item["kaynak"] + "' de, "
+        "  (5) kısa 'abone ol' çağrısı.\n"
+        "- Doğal, akıcı, konuşma dili. Emoji/başlık/parantez kullanma.\n"
         'SADECE şu JSON: {"baslik": "...", "script": "..."}\n\n'
         "HABER BAŞLIK: " + item["baslik"] + "\nHABER ÖZET: " + ozet
     )
@@ -209,10 +233,17 @@ def _akici_script(item):
         if not ham:
             return None
         veri = _json.loads(ai_script._temizle(ham))
-        b = (veri.get("baslik") or item["baslik"]).strip()
-        s = re.sub(r"\s+", " ", (veri.get("script") or "")).strip()
-        if len(s.split()) < 15:
+        b = _kisaltma_ac((veri.get("baslik") or item["baslik"]).strip())
+        s = _kisaltma_ac(re.sub(r"\s+", " ", (veri.get("script") or "")).strip())
+        # Çok kısa (eksik) script'i kabul etme -> yeniden/şablona düşsün
+        if len(s.split()) < 40:
+            print("  [akici script cok kisa, atlandi]:", len(s.split()), "kelime")
             return None
+        # Yarım bitmişse son eksik cümleyi at (tam cümlede bitsin)
+        if s[-1:] not in ".!?":
+            parcalar = re.split(r"(?<=[.!?])\s+", s)
+            if len(parcalar) > 1:
+                s = " ".join(parcalar[:-1]).strip()
         return b, s
     except Exception as e:
         print("  [akici script atlandi]:", str(e)[:100])
