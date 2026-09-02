@@ -8,6 +8,10 @@
   "animasyon": true,
   "hiz": "+6%",
   "yayin_saati_utc": "",
+  "yayin_saatleri_utc": [
+    "09:00",
+    "17:00"
+  ],
   "gorsel_stil": "stok",
   "kisa_ses_id": "jaicbKf2LuAoprMLZ5Gd",
   "kisa_eleven": true,
