@@ -1,0 +1,31 @@
+name: Oynatma Listesi Duzenle (mevcut videolar)
+# Elle çalıştırılır. Kanaldaki MEVCUT videoları konusuna göre ayıklayıp doğru
+# oynatma listelerine yerleştirir (idempotent: zaten listede olan atlanır).
+# Video YÜKLEMEZ; yalnızca oynatma listelerini düzenler.
+on:
+  workflow_dispatch:
+    inputs:
+      sadece_public:
+        description: "Yalnızca herkese açık videolar mı? (evet/hayır — boş = hepsi)"
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  duzenle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Videolari listelere yerlestir
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          SADECE_PUBLIC: ${{ github.event.inputs.sadece_public }}
+        run: python3 oynatma_duzenle.py
