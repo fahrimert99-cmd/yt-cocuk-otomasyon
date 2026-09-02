@@ -302,9 +302,14 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
                    "\\t(430,900,\\fscx105\\fscy105)\\t(900,1400,\\fscx100\\fscy100)")
             f.write(f"Dialogue: 1,0:00:00.00,0:00:03.20,Kanca,,0,0,0,,"
                     f"{{\\fad(80,300){pop}}}{k}\n")
+        # Her alt yazı satırı küçük bir 'pop' ile girer (110%->100%, ~0.24sn) +
+        # yumuşak fade -> enerjik/modern Shorts hissi, okunurluğu bozmadan.
+        pop_c = ("\\fad(50,50)\\t(0,110,\\fscx110\\fscy110)"
+                 "\\t(110,240,\\fscx100\\fscy100)")
         for c in cues:
             txt = c["text"].replace("\n", " ")
-            f.write(f"Dialogue: 0,{_ass_zaman(c['start'])},{_ass_zaman(c['end'])},Def,,0,0,0,,{txt}\n")
+            f.write(f"Dialogue: 0,{_ass_zaman(c['start'])},{_ass_zaman(c['end'])},Def,,0,0,0,,"
+                    f"{{{pop_c}}}{txt}\n")
         # --- ABONE OL: parlayan sarı buton (orta + son), seslendirmeye dokunmaz ---
         if cues:
             son = cues[-1]["end"]
@@ -966,7 +971,7 @@ def _sahne_sureleri(sahneler, boundaries, toplam):
     return sureler
 
 
-def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
+def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.28,
                          max_sahne_sn=3.5, sahne_sureleri=None):
     import math
     W, H = boyut
@@ -992,8 +997,11 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
             for _ in range(per):
                 klip_gorsel.append(gorseller[i]); klip_sure.append(None)
     else:
-        # SHORTS (dikey): mevcut davranış - DEĞİŞMEDİ (döngü ile doldur)
-        seg = max(n0, math.ceil(toplam / max_sahne_sn))
+        # SHORTS (dikey): ENERJİK TEMPO -> daha sık kesme (retention). Sahne
+        # başına ~2.6 sn hedef; görsel havuzu döngüyle doldurulur (tekrar eden
+        # kliplerde Ken Burns yönü index'e bağlı değiştiği için aynı görünmez).
+        hedef_sn = 2.6
+        seg = max(n0, math.ceil(toplam / hedef_sn))
         for i in range(seg):
             klip_gorsel.append(gorseller[i % n0]); klip_sure.append(None)
     n = len(klip_gorsel)
@@ -1025,9 +1033,9 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
                             "-crf", "22", seg], check=True, capture_output=True)
         klipler.append(seg)
 
-    # çeşitli sinematik geçişler (sahneler arasında dönüşümlü)
-    GECISLER = ["smoothleft", "smoothright", "fade", "slideup",
-                "circleopen", "wiperight", "dissolve", "smoothup"]
+    # MODERN geçiş seti: hızlı/temiz olanlar (dated 'circleopen/wiperight' çıkarıldı).
+    # Kısa süreli (gecis) uygulanınca snappy his verir.
+    GECISLER = ["fade", "dissolve", "smoothleft", "smoothright", "slideup", "smoothup"]
 
     tmpv = os.path.join(tmp, "gorsel.mp4")
     if n == 1:
@@ -1054,7 +1062,8 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.40,
 
     # alt yazı göm + hafif sinematik renk düzeltmesi (canlılık + yumuşak vinyet) + ses
     ass_esc = ass.replace("\\", "/").replace(":", "\\:")
-    grade = "eq=saturation=1.12:contrast=1.04:brightness=0.01,vignette=angle=PI/6"
+    grade = ("eq=saturation=1.20:contrast=1.07:brightness=0.012,"
+             "unsharp=5:5:0.5:5:5:0.0,vignette=angle=PI/6")
     subprocess.run(["ffmpeg", "-y", "-i", tmpv, "-i", mp3,
                     "-vf", f"subtitles='{ass_esc}',{grade}",
                     # SES: kırpılma (clipping) çıtırtısını önle -> sabit örnekleme + tepe sınırlayıcı

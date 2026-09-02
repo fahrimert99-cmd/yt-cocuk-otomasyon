@@ -1,0 +1,45 @@
+name: Kurgu ONIZLEME (YUKLEMEZ)
+# Elle çalıştırılır. Gerçek montajı (stok video + ElevenLabs ses + arka fon
+# müziği + güncel kurgu) kullanarak TAM bir Short üretir, ARTIFACT olarak sunar.
+# YouTube secret'ları BİLEREK verilmez -> kanala video YÜKLEYEMEZ.
+on:
+  workflow_dispatch:
+    inputs:
+      konu:
+        description: "Belirli bir başlık denemek istersen (boş = rastgele tuzak senaryosu)."
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  onizle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: FFmpeg kur
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Onizleme uret (YouTube'a YUKLENMEZ)
+        env:
+          # YT secret'lari BILEREK yok -> yukleme imkansiz.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
+          KONU: ${{ github.event.inputs.konu }}
+        run: python3 onizleme.py
+      - name: Onizleme videosunu artifact yap
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: onizleme
+          path: output/onizleme.mp4
+          if-no-files-found: warn
+          retention-days: 7
