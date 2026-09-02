@@ -41,20 +41,23 @@ ANAHTAR = {
                "gıda", "ürün yerleş", "son kullanma", "gramaj", "birim fiyat",
                "zincir market", "reyon", "bakkal", "ambalaj"],
     "yeme": ["restoran", "menü", "yemek", "kafe", "içecek", "porsiyon", "garson",
-             "açık büfe", "büfe", "fast food", "kola", "tatlı", "bahşiş",
+             "açık büfe", "büfe", "fast food", "tatlı", "bahşiş",
              "sınırsız", "paket servis", "lokanta", "mönü", "kahve", "sipariş"],
     "hizmet": ["otel", "abonelik", "üyelik", "spor salon", "gym", "sigorta",
                "kargo", "tatil", "rezervasyon", "sözleşme", "iptal", "fatura",
-               "tarife", "operatör", "hizmet bedel", "üye ol", "paket tarife",
-               "internet paket", "gsm", "hat", "ulaşım"],
-    "dijital": ["uygulama", " app", "dijital", "online", "internet sitesi",
-                "reklam", "oyun", "indir", "bildirim", "veri", "ücretsiz uygulama",
-                "otomatik yenile", "site", "çerez", "ücretsiz deneme", "premium",
-                "in-app", "mikro ödeme", "steam", "mobil", "ekran"],
-    "psikoloji": ["psikoloji", "algı", "99", "kıtlık", "aciliyet", "yanılsama",
-                  "renk", "koku", "müzik", "fiyat oyun", "çapa", "indirim yanılsama",
-                  "kısıtlı süre", "son x", "beyin", "dürtü", "vitrin", "manken",
-                  "ışık", "his", "manipül"],
+               "tarife", "operatör", "hizmet bedel", "paket tarife",
+               "internet paket", "gsm hat", "kuaför", "otopark", "düğün salon"],
+    # NOT: kısa/açgözlü kelimeler ('indir'->'indirim', 'mobil'->'mobilya',
+    # 'hat'->'hata', 'oyun'->'fiyat oyunu') çıkarıldı -> yanlış eşleşme önlenir.
+    "dijital": ["uygulama", " app ", "dijital", "online", "internet sitesi",
+                "reklam", "bildirim", "ücretsiz uygulama", "otomatik yenile",
+                "çerez", "ücretsiz deneme", "premium abone", "in-app",
+                "mikro ödeme", "steam", "abonelik uygulama", "e-ticaret",
+                "kargo bedava", "sanal"],
+    "psikoloji": ["psikoloji", "algı", "kıtlık", "aciliyet", "yanılsama",
+                  "koku", "mağaza müzik", "fiyat oyun", "çapa fiyat",
+                  "indirim yanılsama", "kısıtlı süre", "beyin", "dürtü",
+                  "vitrin", "manken", "mağaza ışığ", "manipül", "üstü çizili"],
 }
 
 
@@ -100,10 +103,17 @@ def _tum_videolar(yt, sadece_public):
 
 
 def _liste_video_idleri(yt, pid):
+    from googleapiclient.errors import HttpError
     ids, tok = set(), None
     while True:
-        r = yt.playlistItems().list(part="contentDetails", playlistId=pid,
-                                    maxResults=50, pageToken=tok).execute()
+        try:
+            r = yt.playlistItems().list(part="contentDetails", playlistId=pid,
+                                        maxResults=50, pageToken=tok).execute()
+        except HttpError as e:
+            # Yeni oluşturulan liste henüz sorgulanamıyor (propagation) -> boş kabul et.
+            if getattr(e, "resp", None) is not None and e.resp.status == 404:
+                return ids
+            raise
         for it in r.get("items", []):
             ids.add(it["contentDetails"]["videoId"])
         tok = r.get("nextPageToken")
