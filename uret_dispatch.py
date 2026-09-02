@@ -103,12 +103,15 @@ def main():
     # da HER ZAMAN ayni sesle uretilir (otomasyon.py ile ayni davranis).
     _ses_id = (str(cfg.get("kisa_ses_id", "")).strip() if dikey
                else str(cfg.get("uzun_ses_id", "")).strip()) or None
+    # Arka fon müziği teması: haber senaryosu -> "haber" havuzu, diğerleri "genel".
+    _dosya = os.environ.get("SENARYO_DOSYA", "").lower()
+    _muzik_tema = "haber" if "haber" in _dosya else "genel"
     V.uret_video(sp, cikti, ses=ses, dikey=dikey, hiz=hiz,
                  sahneler=sahneler, animasyon=animasyon, cocuk=cocuk, tonlama=tonlama,
                  gorsel_stil=str(cfg.get("gorsel_stil", "stok")), kanca=veri.get("kanca"),
                  eleven_once=bool(cfg.get("kisa_eleven", True) if dikey
                                   else cfg.get("uzun_eleven", True)),
-                 eleven_voice_id=_ses_id)
+                 eleven_voice_id=_ses_id, muzik_tema=_muzik_tema)
     print(f"      Cikti: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
     # Carpici kapak uret (dikey->kapak.py, yatay/uzun->kapak_uzun.py).

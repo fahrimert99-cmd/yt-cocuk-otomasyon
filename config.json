@@ -32,5 +32,21 @@
   "oynatma_listesi": true,
   "marka_ilk_kare": true,
   "marka_ilk_kare_sn": 1.5,
-  "haber_gizlilik": "public"
+  "haber_gizlilik": "public",
+  "arka_muzik": true,
+  "arka_muzik_ses": 0.11,
+  "arka_muzik_kaynaklar": {
+    "genel": [
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/HoliznaCC0%20-%20Tension%20In%20The%20Air.mp3",
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/HoliznaCC0%20-%20SomeWhere%20In%20The%20Dark.mp3",
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/HoliznaCC0%20-%20Drama.mp3"
+    ],
+    "merak": [
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/John%20Bartmann%20-%20profound-mystery-master.mp3",
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/John%20Bartmann%20-%20broken-suspense-master.mp3"
+    ],
+    "haber": [
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/HoliznaCC0%20-%20The%20News%20Tonight.mp3"
+    ]
+  }
 }
