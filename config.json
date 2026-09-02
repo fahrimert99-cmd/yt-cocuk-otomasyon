@@ -37,16 +37,18 @@
   "arka_muzik_ses": 0.16,
   "arka_muzik_kaynaklar": {
     "genel": [
-      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/HoliznaCC0%20-%20Tension%20In%20The%20Air.mp3",
-      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/HoliznaCC0%20-%20SomeWhere%20In%20The%20Dark.mp3",
-      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/HoliznaCC0%20-%20Drama.mp3"
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Asking%20Questions.mp3",
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Hidden%20Truth.mp3",
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Desert%20Fox%20Underscore.mp3",
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Cornfield%20Chase.mp3"
     ],
     "merak": [
-      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/John%20Bartmann%20-%20profound-mystery-master.mp3",
-      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/John%20Bartmann%20-%20broken-suspense-master.mp3"
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Attic%20Secrets.mp3",
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Mysterious%20Lights.mp3"
     ],
     "haber": [
-      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freemusicarchive.org/HoliznaCC0%20-%20The%20News%20Tonight.mp3"
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Hidden%20Truth.mp3",
+      "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Deep%20Tones.mp3"
     ]
   }
 }
