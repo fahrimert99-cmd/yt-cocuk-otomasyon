@@ -9,6 +9,10 @@ on:
         description: "Yalnızca herkese açık videolar mı? (evet/hayır — boş = hepsi)"
         required: false
         default: ""
+      temizle:
+        description: "Yanlış listedeki videoyu doğru listeye TAŞI (çıkar+ekle)? (boş/evet = açık, hayır = sadece ekle)"
+        required: false
+        default: ""
 permissions:
   contents: read
 jobs:
@@ -28,4 +32,5 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           SADECE_PUBLIC: ${{ github.event.inputs.sadece_public }}
+          TEMIZLE: ${{ github.event.inputs.temizle }}
         run: python3 oynatma_duzenle.py
