@@ -1073,6 +1073,79 @@ def sure_al(mp3):
                          capture_output=True, text=True)
     return float(out.stdout.strip())
 
+
+# ----------------------------------------------------------
+# ARKA FON MÜZİĞİ (telifsiz / CC0) — konuşma altında otomatik kısılma (ducking)
+# ----------------------------------------------------------
+def _muzik_cfg():
+    """config.json'dan arka fon müziği ayarlarını okur (yoksa güvenli varsayılan)."""
+    cfg = {}
+    try:
+        with open("config.json", encoding="utf-8") as f:
+            cfg = json.load(f)
+    except Exception:
+        pass
+    return {
+        "acik": bool(cfg.get("arka_muzik", False)),
+        "ses": float(cfg.get("arka_muzik_ses", 0.11)),
+        "kaynaklar": cfg.get("arka_muzik_kaynaklar") or {},
+    }
+
+
+def _muzik_sec(kaynaklar, tema):
+    """Temaya uygun bir CC0 müzik URL'si seçer (yoksa 'genel' havuzuna düşer)."""
+    import random
+    if isinstance(kaynaklar, list):        # düz liste de desteklenir
+        return random.choice(kaynaklar) if kaynaklar else None
+    havuz = kaynaklar.get(tema) or kaynaklar.get("genel") or []
+    # tek string verilmişse listeye çevir
+    if isinstance(havuz, str):
+        havuz = [havuz]
+    return random.choice(havuz) if havuz else None
+
+
+def _muzik_ekle(narration_mp3, tmp, tema=None):
+    """Anlatım sesine telifsiz (CC0) arka fon müziğini DUCKING ile karıştırır.
+    Müzik konuşma varken otomatik kısılır (sidechaincompress), konuşma bitince
+    hafifçe yükselir. Herhangi bir hata olursa orijinal anlatım sesi aynen
+    döner (video akışı asla bozulmaz).
+    Dönüş: karıştırılmış mp3 yolu (veya değişmeden narration_mp3)."""
+    mc = _muzik_cfg()
+    if not mc["acik"]:
+        return narration_mp3
+    url = _muzik_sec(mc["kaynaklar"], tema or "genel")
+    if not url:
+        return narration_mp3
+    try:
+        import urllib.request
+        muzik_ham = os.path.join(tmp, "bgm_src.mp3")
+        req = urllib.request.Request(url, headers={"User-Agent": "yt-otomasyon/1.0"})
+        with urllib.request.urlopen(req, timeout=60) as r, open(muzik_ham, "wb") as f:
+            shutil.copyfileobj(r, f)
+        if os.path.getsize(muzik_ham) < 20000:      # bozuk/boş indirme
+            return narration_mp3
+        vol = max(0.02, min(0.5, mc["ses"]))
+        out = os.path.join(tmp, "narration_muzikli.mp3")
+        # narration = 0:a: asplit ile ikiye ayrılır -> [v0] mikse, [sc] yan-zincir
+        # tetiğe (aynı pad iki filtreye doğrudan giremez). müzik = 1:a (sonsuz
+        # döngü -> anlatım boyunca sürer, amix duration=first ile kesilir).
+        fc = (f"[0:a]asplit=2[v0][sc];"
+              f"[1:a]volume={vol:.3f},highpass=f=90,lowpass=f=12000[m];"
+              f"[m][sc]sidechaincompress=threshold=0.04:ratio=6:attack=15:release=380:makeup=1[md];"
+              f"[v0][md]amix=inputs=2:duration=first:normalize=0,"
+              f"aresample=44100,alimiter=limit=0.95[a]")
+        subprocess.run(
+            ["ffmpeg", "-y", "-i", narration_mp3, "-stream_loop", "-1", "-i", muzik_ham,
+             "-filter_complex", fc, "-map", "[a]",
+             "-ac", "2", "-ar", "44100", "-b:a", "192k", out],
+            check=True, capture_output=True)
+        if os.path.exists(out) and os.path.getsize(out) > 20000:
+            print(f"      Arka fon müziği eklendi (CC0, ses %{int(vol*100)}, ducking).")
+            return out
+    except Exception as e:
+        print(f"      Arka fon müziği atlandı: {str(e)[:120]}")
+    return narration_mp3
+
 def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
     W, H = boyut
     toplam = sure_al(mp3)
@@ -1120,7 +1193,8 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
 # ----------------------------------------------------------
 def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
                sahneler=None, animasyon=True, cocuk=True, tonlama="+0Hz",
-               gorsel_stil="stok", kanca=None, eleven_once=False, eleven_voice_id=None):
+               gorsel_stil="stok", kanca=None, eleven_once=False, eleven_voice_id=None,
+               muzik_tema=None):
     """Orkestratör tarafından çağrılır: script -> mp4.
     sahneler verilirse (Gemini'den), her sahne için AI görsel üretir ve
     Ken Burns + çapraz geçişle animasyonlu montaj yapar.
@@ -1170,6 +1244,10 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     ass = os.path.join(tmp, "sub.ass")
     ass_yaz(cues, ass, CONFIG, dikey, kanca=kanca)
     os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
+    # ARKA FON MÜZİĞİ: anlatım sesine CC0 müzik (ducking ile) karıştır. Alt yazı
+    # zamanlaması yukarıda GERÇEK anlatım sesinden çıkarıldığı için müziği burada
+    # ekliyoruz (senkron bozulmaz). Kapalıysa/başarısızsa mp3 değişmeden döner.
+    mp3 = _muzik_ekle(mp3, tmp, muzik_tema)
     if animasyon:
         gorseller = sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp,
                                              cocuk=cocuk, stil=gorsel_stil)
