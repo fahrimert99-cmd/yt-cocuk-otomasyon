@@ -645,8 +645,10 @@ def _eleven_seslendir(text, mp3_path, voice_id=None):
     voice_id = (voice_id or "").strip() or os.environ.get("ELEVEN_VOICE_ID", "").strip() or "dDcfsSsiSzmphdMGCECb"
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
     body = {"text": text, "model_id": "eleven_multilingual_v2",
-            "voice_settings": {"stability": 0.45, "similarity_boost": 0.8,
-                               "style": 0.2, "use_speaker_boost": True}}
+            # Daha PÜRÜZSÜZ ses: speaker_boost kapalı + style=0 (tiz/cızırtı
+            # artefaktlarını azaltır), stability biraz yüksek, similarity ölçülü.
+            "voice_settings": {"stability": 0.50, "similarity_boost": 0.75,
+                               "style": 0.0, "use_speaker_boost": False}}
     req = urllib.request.Request(url, data=json.dumps(body).encode(),
                                  headers={"xi-api-key": key, "Content-Type": "application/json"})
     try:
@@ -1163,11 +1165,14 @@ def _muzik_ekle(narration_mp3, tmp, tema=None):
         # narration = 0:a: asplit ile ikiye ayrılır -> [v0] mikse, [sc] yan-zincir
         # tetiğe (aynı pad iki filtreye doğrudan giremez). müzik = 1:a (sonsuz
         # döngü -> anlatım boyunca sürer, amix duration=first ile kesilir).
+        # Gain-staging: müzik makeup düşük + miks çıkışı 0.89'a sınırlanır (final
+        # mux'taki 0.95 limiter'ın ALTINDA -> çift limitleme/cızırtı önlenir).
+        # Müzikte lowpass 11k: konuşma tizinde yer açar (netlik).
         fc = (f"[0:a]asplit=2[v0][sc];"
-              f"[1:a]volume={vol:.3f},highpass=f=90,lowpass=f=12000[m];"
-              f"[m][sc]sidechaincompress=threshold=0.09:ratio=2.5:attack=25:release=240:makeup=2[md];"
+              f"[1:a]volume={vol:.3f},highpass=f=90,lowpass=f=11000[m];"
+              f"[m][sc]sidechaincompress=threshold=0.09:ratio=2.5:attack=25:release=240:makeup=1[md];"
               f"[v0][md]amix=inputs=2:duration=first:normalize=0,"
-              f"aresample=44100,alimiter=limit=0.95[a]")
+              f"aresample=44100,alimiter=limit=0.89[a]")
         subprocess.run(
             ["ffmpeg", "-y", "-i", narration_mp3, "-stream_loop", "-1", "-i", muzik_ham,
              "-filter_complex", fc, "-map", "[a]",
