@@ -39,30 +39,42 @@ ANAHTAR = {
     "market": ["market", "avm", "raf", "kasa", "süpermarket", "indirim etiket",
                "fiyat etiket", "alışveriş", "sepet", "kampanya", "büyük boy",
                "gıda", "ürün yerleş", "son kullanma", "gramaj", "birim fiyat",
-               "zincir market", "reyon", "bakkal", "ambalaj"],
+               "zincir market", "reyon", "bakkal", "ambalaj", "organik",
+               "paket küçül", "market araba", "büyük paket"],
     "yeme": ["restoran", "menü", "yemek", "kafe", "içecek", "porsiyon", "garson",
              "açık büfe", "büfe", "fast food", "tatlı", "bahşiş",
              "sınırsız", "paket servis", "lokanta", "mönü", "kahve", "sipariş"],
     "hizmet": ["otel", "abonelik", "üyelik", "spor salon", "gym", "sigorta",
                "kargo", "tatil", "rezervasyon", "sözleşme", "iptal", "fatura",
                "tarife", "operatör", "hizmet bedel", "paket tarife",
-               "internet paket", "gsm hat", "kuaför", "otopark", "düğün salon"],
+               "internet paket", "gsm hat", "kuaför", "otopark", "düğün salon",
+               "uçak", "bilet", "telefon fatura"],
     # NOT: kısa/açgözlü kelimeler ('indir'->'indirim', 'mobil'->'mobilya',
     # 'hat'->'hata', 'oyun'->'fiyat oyunu') çıkarıldı -> yanlış eşleşme önlenir.
     "dijital": ["uygulama", " app ", "dijital", "online", "internet sitesi",
                 "reklam", "bildirim", "ücretsiz uygulama", "otomatik yenile",
                 "çerez", "ücretsiz deneme", "premium abone", "in-app",
                 "mikro ödeme", "steam", "abonelik uygulama", "e-ticaret",
-                "kargo bedava", "sanal"],
+                "sanal", "aldatıcı buton", "buton", "site tasarım"],
     "psikoloji": ["psikoloji", "algı", "kıtlık", "aciliyet", "yanılsama",
                   "koku", "mağaza müzik", "fiyat oyun", "çapa fiyat",
                   "indirim yanılsama", "kısıtlı süre", "beyin", "dürtü",
-                  "vitrin", "manken", "mağaza ışığ", "manipül", "üstü çizili"],
+                  "vitrin", "manken", "mağaza ışığ", "manipül", "üstü çizili",
+                  "99 kuruş", "99 tl", "kumar", "sadakat kart"],
 }
 
 
+# Türkçe-doğru küçültme: "İ".lower() Python'da üstü-noktalı bileşik karakter
+# üretip alt-dize eşleşmesini bozar. İ->i, I->ı önce yapılır, sonra lower().
+_TR = str.maketrans("İIŞĞÜÖÇ", "iışğüöç")
+
+
+def _norm(s):
+    return (s or "").translate(_TR).lower()
+
+
 def _kategori(baslik, aciklama=""):
-    t = (baslik + "  " + (aciklama or "")).lower()
+    t = _norm(baslik + "  " + (aciklama or ""))
     skor = {k: 0 for k in ANAHTAR}
     for k, kelimeler in ANAHTAR.items():
         for w in kelimeler:
@@ -102,66 +114,89 @@ def _tum_videolar(yt, sadece_public):
     return vids
 
 
-def _liste_video_idleri(yt, pid):
+def _liste_ogeleri(yt, pid):
+    """Listedeki {videoId: playlistItemId} eşlemesini döner (öge silmek için
+    itemId lazım). Yeni liste henüz sorgulanamıyorsa (404) boş döner."""
     from googleapiclient.errors import HttpError
-    ids, tok = set(), None
+    ogeler, tok = {}, None
     while True:
         try:
             r = yt.playlistItems().list(part="contentDetails", playlistId=pid,
                                         maxResults=50, pageToken=tok).execute()
         except HttpError as e:
-            # Yeni oluşturulan liste henüz sorgulanamıyor (propagation) -> boş kabul et.
             if getattr(e, "resp", None) is not None and e.resp.status == 404:
-                return ids
+                return ogeler
             raise
         for it in r.get("items", []):
-            ids.add(it["contentDetails"]["videoId"])
+            ogeler[it["contentDetails"]["videoId"]] = it["id"]
         tok = r.get("nextPageToken")
         if not tok:
             break
-    return ids
+    return ogeler
 
 
 def main():
     sadece_public = os.environ.get("SADECE_PUBLIC", "").strip() in ("1", "true", "evet")
+    # TEMIZLE=0 -> yalnızca ekle (taşıma yok). Varsayılan: kendi kendini düzelt
+    # (video yanlış yönetilen listedeyse oradan çıkar, doğru listeye taşı).
+    temizle = os.environ.get("TEMIZLE", "1").strip() not in ("0", "false", "hayir", "hayır")
+
     yt = build("youtube", "v3", credentials=YT._kimlik())
     videolar = _tum_videolar(yt, sadece_public)
     print(f"Kanalda işlenecek {len(videolar)} video bulundu"
-          f"{' (yalnızca public)' if sadece_public else ''}.")
+          f"{' (yalnızca public)' if sadece_public else ''}. TEMIZLE={'açık' if temizle else 'kapalı'}")
 
-    liste_pid, liste_ids = {}, {}
+    # YÖNETİLEN listeler (yalnızca bunlara dokunulur; kullanıcının diğer listeleri
+    # ASLA değiştirilmez). Hepsi önden hazırlanır: id + {videoId: itemId} haritası.
+    YONETILEN = list(LISTE_AD.values()) + [VARSAYILAN]
+    pid_ad, oge_ad = {}, {}
+    for ad in YONETILEN:
+        pid = YT._oynatma_listesi_bul_veya_olustur(yt, ad)
+        pid_ad[ad] = pid
+        oge_ad[ad] = _liste_ogeleri(yt, pid)
+        print(f"  · liste hazır: {ad} (mevcut {len(oge_ad[ad])} video)")
 
-    def hedef(ad):
-        if ad not in liste_pid:
-            pid = YT._oynatma_listesi_bul_veya_olustur(yt, ad)
-            liste_pid[ad] = pid
-            liste_ids[ad] = _liste_video_idleri(yt, pid)
-            print(f"  · liste hazır: {ad} (mevcut {len(liste_ids[ad])} video)")
-        return liste_pid[ad], liste_ids[ad]
-
-    eklendi = atlandi = 0
+    eklendi = atlandi = tasindi = 0
     dagilim = {}
     for v in videolar:
-        kat = _kategori(v["baslik"], v["aciklama"])
-        ad = LISTE_AD.get(kat, VARSAYILAN)
-        pid, ids = hedef(ad)
-        if v["id"] in ids:
-            atlandi += 1
-            continue
-        try:
-            yt.playlistItems().insert(part="snippet", body={"snippet": {
-                "playlistId": pid,
-                "resourceId": {"kind": "youtube#video", "videoId": v["id"]}}}).execute()
-            ids.add(v["id"])
-            eklendi += 1
-            dagilim[ad] = dagilim.get(ad, 0) + 1
-            print(f"  + [{ad}] {v['baslik'][:60]}")
-        except Exception as e:
-            print(f"  ! eklenemedi ({v['id']}): {str(e)[:120]}")
+        kat = _kategori(v["baslik"])          # YALNIZCA başlık (açıklama footer'ı gürültü)
+        dogru = LISTE_AD.get(kat, VARSAYILAN)
 
-    print(f"\nTAMAM ✓  {eklendi} video eklendi, {atlandi} zaten listedeydi.")
-    for ad, c in sorted(dagilim.items()):
-        print(f"  {ad}: +{c}")
+        # 1) Doğru listede değilse ekle
+        if v["id"] in oge_ad[dogru]:
+            atlandi += 1
+        else:
+            try:
+                r = yt.playlistItems().insert(part="snippet", body={"snippet": {
+                    "playlistId": pid_ad[dogru],
+                    "resourceId": {"kind": "youtube#video", "videoId": v["id"]}}}).execute()
+                oge_ad[dogru][v["id"]] = r["id"]
+                eklendi += 1
+                dagilim[dogru] = dagilim.get(dogru, 0) + 1
+                print(f"  + [{dogru}] {v['baslik'][:58]}")
+            except Exception as e:
+                print(f"  ! eklenemedi ({v['id']}): {str(e)[:110]}")
+
+        # 2) TEMIZLE: aynı videoyu DİĞER yönetilen listelerden çıkar (yanlış yer)
+        if temizle:
+            for ad in YONETILEN:
+                if ad == dogru:
+                    continue
+                itemid = oge_ad[ad].get(v["id"])
+                if itemid:
+                    try:
+                        yt.playlistItems().delete(id=itemid).execute()
+                        del oge_ad[ad][v["id"]]
+                        tasindi += 1
+                        print(f"  - [{ad}] çıkarıldı: {v['baslik'][:50]}")
+                    except Exception as e:
+                        print(f"  ! çıkarılamadı ({v['id']} / {ad}): {str(e)[:90]}")
+
+    print(f"\nTAMAM ✓  {eklendi} eklendi, {atlandi} zaten doğru listedeydi, "
+          f"{tasindi} yanlış listeden çıkarıldı.")
+    print("Güncel dağılım (yönetilen listeler):")
+    for ad in YONETILEN:
+        print(f"  {ad}: {len(oge_ad[ad])} video")
 
 
 if __name__ == "__main__":
