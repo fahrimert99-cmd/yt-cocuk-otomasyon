@@ -1,0 +1,52 @@
+name: Arka Muzik URET (ElevenLabs, tek seferlik)
+# Elle çalıştırılır. ElevenLabs Music API ile arka fon müziği SETİ üretir,
+# assets/muzik/<tema>.mp3 olarak COMMIT eder (pipeline yerel kaynak olarak
+# kullanır -> her videoda yeniden üretim olmaz, kredi korunur) ve ayrıca
+# ARTIFACT olarak sunar (çıplak parçaları hemen dinlemek için).
+# Music API planda kapalıysa betik hata verir; pipeline FreePD (CC0) yedeğiyle
+# çalışmaya devam eder.
+on:
+  workflow_dispatch:
+    inputs:
+      muzik_sn:
+        description: "Parça uzunluğu (saniye, 10-180). Boş = 45."
+        required: false
+        default: ""
+permissions:
+  contents: write
+jobs:
+  uret:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Muzik seti uret (ElevenLabs)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          MUZIK_SN: ${{ github.event.inputs.muzik_sn }}
+        run: python3 muzik_uret.py
+      - name: Ciplak parcalari artifact yap (dinlemek icin)
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: muzik-seti
+          path: assets/muzik/*.mp3
+          if-no-files-found: warn
+          retention-days: 14
+      - name: assets/muzik'i commit et (pipeline yerel kaynagi)
+        if: always()
+        run: |
+          git config user.name "muzik-bot"
+          git config user.email "muzik-bot@users.noreply.github.com"
+          git add assets/muzik/*.mp3 || true
+          git commit -m "muzik: ElevenLabs arka fon seti (uret)" || { echo "degisiklik yok"; exit 0; }
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "push tamam (deneme $i)"; exit 0
+            fi
+            echo "push denemesi $i basarisiz"; sleep $((2 ** i))
+          done
+          echo "push atlandi"; exit 0

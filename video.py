@@ -1104,8 +1104,26 @@ def _muzik_sec(kaynaklar, tema):
     return random.choice(havuz) if havuz else None
 
 
+def _muzik_yerel_sec(tema):
+    """assets/muzik/ içindeki YEREL parçalardan (ör. ElevenLabs ile üretilmiş
+    set) temaya uygun birini seçer. Öncelik: <tema>*.mp3 -> genel*.mp3 -> *.mp3.
+    Yoksa None (o zaman URL'den indirilir)."""
+    import glob, random
+    d = "assets/muzik"
+    if not os.path.isdir(d):
+        return None
+    for pat in (f"{tema}*", "genel*", "*"):
+        hits = sorted(glob.glob(os.path.join(d, pat + ".mp3")) +
+                      glob.glob(os.path.join(d, pat + ".MP3")))
+        if hits:
+            return random.choice(hits)
+    return None
+
+
 def _muzik_ekle(narration_mp3, tmp, tema=None):
-    """Anlatım sesine telifsiz (CC0) arka fon müziğini DUCKING ile karıştırır.
+    """Anlatım sesine arka fon müziğini DUCKING ile karıştırır.
+    Kaynak önceliği: (1) YEREL assets/muzik/ (ElevenLabs ile üretilmiş set,
+    indirme yok), (2) config.arka_muzik_kaynaklar'daki telifsiz (CC0) URL.
     Müzik konuşma varken otomatik kısılır (sidechaincompress), konuşma bitince
     hafifçe yükselir. Herhangi bir hata olursa orijinal anlatım sesi aynen
     döner (video akışı asla bozulmaz).
@@ -1113,16 +1131,23 @@ def _muzik_ekle(narration_mp3, tmp, tema=None):
     mc = _muzik_cfg()
     if not mc["acik"]:
         return narration_mp3
-    url = _muzik_sec(mc["kaynaklar"], tema or "genel")
-    if not url:
-        return narration_mp3
+    tema = tema or "genel"
     try:
-        import urllib.request
-        muzik_ham = os.path.join(tmp, "bgm_src.mp3")
-        req = urllib.request.Request(url, headers={"User-Agent": "yt-otomasyon/1.0"})
-        with urllib.request.urlopen(req, timeout=60) as r, open(muzik_ham, "wb") as f:
-            shutil.copyfileobj(r, f)
-        if os.path.getsize(muzik_ham) < 20000:      # bozuk/boş indirme
+        # 1) YEREL set (ElevenLabs) — indirme yok
+        muzik_ham = _muzik_yerel_sec(tema)
+        kaynak = "yerel"
+        # 2) Yereli yoksa CC0 URL'den indir
+        if not muzik_ham:
+            url = _muzik_sec(mc["kaynaklar"], tema)
+            if not url:
+                return narration_mp3
+            import urllib.request
+            muzik_ham = os.path.join(tmp, "bgm_src.mp3")
+            req = urllib.request.Request(url, headers={"User-Agent": "yt-otomasyon/1.0"})
+            with urllib.request.urlopen(req, timeout=60) as r, open(muzik_ham, "wb") as f:
+                shutil.copyfileobj(r, f)
+            kaynak = "CC0-URL"
+        if not os.path.exists(muzik_ham) or os.path.getsize(muzik_ham) < 20000:
             return narration_mp3
         vol = max(0.02, min(0.5, mc["ses"]))
         out = os.path.join(tmp, "narration_muzikli.mp3")
@@ -1140,7 +1165,8 @@ def _muzik_ekle(narration_mp3, tmp, tema=None):
              "-ac", "2", "-ar", "44100", "-b:a", "192k", out],
             check=True, capture_output=True)
         if os.path.exists(out) and os.path.getsize(out) > 20000:
-            print(f"      Arka fon müziği eklendi (CC0, ses %{int(vol*100)}, ducking).")
+            print(f"      Arka fon müziği eklendi ({kaynak}: {os.path.basename(muzik_ham)}, "
+                  f"ses %{int(vol*100)}, ducking).")
             return out
     except Exception as e:
         print(f"      Arka fon müziği atlandı: {str(e)[:120]}")
