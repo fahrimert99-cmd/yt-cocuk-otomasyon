@@ -1,0 +1,43 @@
+name: Arka Muzik Testi (YUKLEMEZ)
+# Sadece elle (workflow_dispatch). Sesli + CC0 arka fon müziği + ducking'li kısa
+# bir test klibi üretir ve ARTIFACT olarak sunar. YouTube secret'ları BİLEREK
+# verilmez -> bu iş kanala video YÜKLEYEMEZ. Müziği indirip dinlemek içindir.
+on:
+  workflow_dispatch:
+    inputs:
+      muzik_ses:
+        description: "Müzik sesi (0.05-0.30). Boş bırakırsan config'teki 0.11 kullanılır."
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: FFmpeg kur
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Test klibi uret (YouTube'a YUKLENMEZ)
+        env:
+          # YT secret'lari BILEREK yok -> yukleme imkansiz. Sadece ses + muzik.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
+          MUZIK_SES: ${{ github.event.inputs.muzik_ses }}
+        run: python3 muzik_test.py
+      - name: Test videosunu artifact yap
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: test-muzik
+          path: output/test_muzik.mp4
+          if-no-files-found: warn
+          retention-days: 7
