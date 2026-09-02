@@ -186,17 +186,32 @@ def main():
         print("TANI TAMAM ✓")
         return
 
+    # PLANLI YAYIN: video 'private' yuklenir, en yakin gelecek slotta (publishAt)
+    # otomatik public olur -> Studio'da "Planlanan"da gorunur, tam saatinde cikar.
+    # yayin_saatleri_utc (liste) onceliklidir; yoksa tekil yayin_saati_utc; o da
+    # yoksa aninda public. Cron slottan ~2 saat once uretir (gecikme payi).
     yayin_zamani = None
-    saat = cfg.get("yayin_saati_utc")
-    if saat:
+    saatler = cfg.get("yayin_saatleri_utc")
+    if not saatler:
+        _tek = cfg.get("yayin_saati_utc")
+        saatler = [_tek] if _tek else []
+    if saatler:
         from datetime import datetime, timezone, timedelta
-        hh, mm = map(int, str(saat).split(":"))
         now = datetime.now(timezone.utc)
-        hedef = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
-        if hedef <= now + timedelta(minutes=10):
-            hedef += timedelta(days=1)
-        yayin_zamani = hedef.strftime("%Y-%m-%dT%H:%M:%SZ")
-        print(f"      Prime time yayın: {yayin_zamani} UTC")
+        adaylar = []
+        for _s in saatler:
+            try:
+                hh, mm = map(int, str(_s).split(":"))
+            except Exception:
+                continue
+            h = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
+            if h <= now + timedelta(minutes=10):
+                h += timedelta(days=1)   # slot gecti -> ertesi gune kaydir
+            adaylar.append(h)
+        if adaylar:
+            hedef = min(adaylar)         # en yakin gelecek slot
+            yayin_zamani = hedef.strftime("%Y-%m-%dT%H:%M:%SZ")
+            print(f"      Planlı yayın: {yayin_zamani} UTC")
 
     print("[3/3] YouTube'a yükleniyor ...")
     import youtube_yukle as YT

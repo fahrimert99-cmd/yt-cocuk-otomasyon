@@ -2,11 +2,13 @@ name: Gunluk Bilim Videosu
 
 on:
   schedule:
-    # Günde 2 Shorts, TR aktif saatlerine yayıldı (config.yayin_saati_utc=""
-    # olduğu için video cron anında ANINDA public olur -> cron saati = yayın saati).
+    # PLANLI YAYIN: cron videoyu SLOTTAN ~2 saat ÖNCE üretir; video 'private +
+    # publishAt' ile yüklenip Studio'da "Planlanan"a düşer ve tam yayın saatinde
+    # (config.yayin_saatleri_utc = 09:00 & 17:00 UTC = 12:00 & 20:00 TR) otomatik
+    # public olur. Erken üretim, GitHub cron'unun gecikmesine karşı tampon sağlar.
     # concurrency grubu çakışmayı serialize eder.
-    - cron: "0 9 * * *"    # 12:00 TR (öğle dalgası)
-    - cron: "0 17 * * *"   # 20:00 TR (akşam prime-time)
+    - cron: "0 7 * * *"    # üretim -> 12:00 TR yayını (09:00 UTC publishAt)
+    - cron: "0 15 * * *"   # üretim -> 20:00 TR yayını (17:00 UTC publishAt)
   # GARANTİLİ TETİK: GitHub'ın kendi cron'u gecikebilir/atlayabilir; dıştan bir
   # zamanlayıcı (ör. cron-job.org) repository_dispatch ile bunu tetikler.
   repository_dispatch:
