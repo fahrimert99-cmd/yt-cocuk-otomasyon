@@ -1165,7 +1165,7 @@ def _muzik_ekle(narration_mp3, tmp, tema=None):
         # döngü -> anlatım boyunca sürer, amix duration=first ile kesilir).
         fc = (f"[0:a]asplit=2[v0][sc];"
               f"[1:a]volume={vol:.3f},highpass=f=90,lowpass=f=12000[m];"
-              f"[m][sc]sidechaincompress=threshold=0.06:ratio=4:attack=20:release=300:makeup=2[md];"
+              f"[m][sc]sidechaincompress=threshold=0.09:ratio=2.5:attack=25:release=240:makeup=2[md];"
               f"[v0][md]amix=inputs=2:duration=first:normalize=0,"
               f"aresample=44100,alimiter=limit=0.95[a]")
         subprocess.run(
