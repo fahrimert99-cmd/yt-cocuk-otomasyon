@@ -89,7 +89,11 @@ def uret_bir(tema, prompt, sure_ms):
 
 def main():
     os.makedirs(os.path.join("assets", "muzik"), exist_ok=True)
-    sure_ms = int(float(os.environ.get("MUZIK_SN", "45")) * 1000)
+    _sn = (os.environ.get("MUZIK_SN") or "").strip() or "45"  # boş girdi -> 45
+    try:
+        sure_ms = int(float(_sn) * 1000)
+    except ValueError:
+        sure_ms = 45000
     sure_ms = max(10000, min(180000, sure_ms))
     ok = 0
     for tema, prompt in SET:
