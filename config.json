@@ -34,7 +34,7 @@
   "marka_ilk_kare_sn": 1.5,
   "haber_gizlilik": "public",
   "arka_muzik": true,
-  "arka_muzik_ses": 0.16,
+  "arka_muzik_ses": 0.20,
   "arka_muzik_kaynaklar": {
     "genel": [
       "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Asking%20Questions.mp3",
