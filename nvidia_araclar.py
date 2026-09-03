@@ -268,35 +268,36 @@ TASK: Write ONE vivid, PHOTOREALISTIC, cinematic image prompt (in English) for a
 thumbnail background that CLEARLY SHOWS the real subject/setting of THIS specific consumer trap.
 
 CRITICAL RULES:
-- The image MUST DEPICT the concrete real-world scene/objects of the topic, so a viewer instantly
-  gets what it is about. Examples of mapping topic -> scene:
-  buffet/restaurant -> a lavish restaurant buffet table full of plates and food under dramatic light;
-  supermarket/market -> close-up of grocery shelves and products, a shopping cart full of items;
-  bank/credit card -> close-up of credit cards, coins and cash on a dark table, an ATM keypad;
-  subscription/app -> a smartphone glowing in the dark showing colorful app icons (NO readable words);
-  discount/sale -> blank red price stickers and tags (NO readable words).
-  Pick the scene that matches THIS title.
+- MUST be an EXTREME CLOSE-UP / MACRO shot that FILLS THE FRAME with the physical OBJECTS of the
+  topic. Shallow depth of field, dramatic light. This leaves NO room for any sign or wall.
+  Topic -> close-up object scene:
+  buffet/restaurant -> overhead extreme close-up of plates piled with food on a table;
+  supermarket/market -> macro close-up of grocery products packed on a shelf, or a cart full of items;
+  bank/credit card -> extreme close-up of credit cards fanned out with coins and cash on a dark table;
+  subscription/app -> close-up of a hand holding a smartphone whose screen glows with colorful app icons;
+  discount/sale -> macro close-up of blank red price tags and stickers on products.
+  Pick the close-up that matches THIS title.
 - Photorealistic, high detail, dramatic cinematic lighting, high contrast, moody, a subtle sense
   of a hidden trap/deception. Eye-catching for a thumbnail.
-- ABSOLUTELY NO hooded figures, no ghosts, no random mysterious silhouettes, no abstract mood-only art.
-- DO NOT describe ANY signs, storefront signage, neon signs, billboards, banners, menus, posters,
-  screens with words, or any object bearing readable letters/numbers. Prefer a tight scene of
-  physical objects (food, products, cards, coins, hands) instead of a shop entrance/sign.
-- Keep the TOP THIRD of the frame dark, empty and uncluttered (a title will be overlaid on top).
-- NO text, no words, no letters, no logos, no watermark anywhere in the image.
-Return ONLY JSON: {{"prompt":"detailed photorealistic cinematic english image prompt, shows the topic, physical objects only, absolutely no text or signage"}}""",
+- ABSOLUTELY FORBIDDEN: any storefront, shop entrance, building facade, wall, glass door, room
+  interior wide shot, sign, signboard, neon sign, billboard, banner, menu board, poster, or any
+  flat surface that could carry writing. NO hooded figures, ghosts or mysterious silhouettes.
+- NO text, words, letters, numbers, logos or watermark anywhere. Do NOT put the title on a sign.
+- Keep the very TOP of the frame darker so an overlaid title stays readable.
+Return ONLY JSON: {{"prompt":"extreme close-up photorealistic cinematic image prompt filling the frame with the topic's objects, shallow depth of field, absolutely no signs walls text or storefront"}}""",
         model=A.NVIDIA_MODEL)
     gpr = ""
     if isinstance(pr, dict):
         gpr = (pr.get("prompt") or "").strip()
     if not gpr:
-        gpr = (f"photorealistic cinematic vertical thumbnail showing the real scene of a consumer "
-               f"trap, dramatic high-contrast lighting, moody, detailed, eye-catching, relevant "
-               f"real-world objects, no people close-up, theme: {baslik}")
-    # güvenlik: konuyu göster + yazı/tabela yok kurallarını pekiştir (flux yazı ekleme
-    # eğilimini bastır), üst alanı boş tut, soyut figürleri engelle.
-    gpr += (", photorealistic, cinematic dramatic lighting, high detail, 9:16 vertical, "
-            "dark empty space at the top, "
+        gpr = (f"extreme close-up macro photo filling the frame with the objects of a consumer "
+               f"trap, shallow depth of field, dramatic high-contrast lighting, moody, detailed, "
+               f"no storefront, no wall, no sign, theme: {baslik}")
+    # güvenlik: MAKRO/yakın-çekim + yazı/tabela/vitrin yok (flux yazı ekleme eğilimini
+    # yapısal olarak engelle: kadrajı nesne doldursun, düz yüzey/tabela kalmasın).
+    gpr += (", extreme close-up, macro shot, fills the frame, shallow depth of field, "
+            "photorealistic, cinematic dramatic lighting, high detail, 9:16 vertical, "
+            "no storefront, no shop entrance, no building, no wall, no glass door, "
             "no text, no words, no letters, no numbers, no signage, no signboard, no neon sign, "
             "no billboard, no banner, no poster, no menu board, no logo, no watermark, "
             "no hooded figure, no ghost, no random silhouette")
