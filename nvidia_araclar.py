@@ -270,18 +270,21 @@ thumbnail background that CLEARLY SHOWS the real subject/setting of THIS specifi
 CRITICAL RULES:
 - The image MUST DEPICT the concrete real-world scene/objects of the topic, so a viewer instantly
   gets what it is about. Examples of mapping topic -> scene:
-  buffet/restaurant -> a lavish restaurant buffet table with plates and food under dramatic light;
-  supermarket/market -> supermarket shelves, price tags, a shopping cart;
-  bank/credit card -> close-up of credit cards, money, an ATM;
-  subscription/app -> a smartphone screen glowing in the dark with app icons;
-  discount/sale -> red discount tags and price stickers.
+  buffet/restaurant -> a lavish restaurant buffet table full of plates and food under dramatic light;
+  supermarket/market -> close-up of grocery shelves and products, a shopping cart full of items;
+  bank/credit card -> close-up of credit cards, coins and cash on a dark table, an ATM keypad;
+  subscription/app -> a smartphone glowing in the dark showing colorful app icons (NO readable words);
+  discount/sale -> blank red price stickers and tags (NO readable words).
   Pick the scene that matches THIS title.
 - Photorealistic, high detail, dramatic cinematic lighting, high contrast, moody, a subtle sense
   of a hidden trap/deception. Eye-catching for a thumbnail.
 - ABSOLUTELY NO hooded figures, no ghosts, no random mysterious silhouettes, no abstract mood-only art.
-- NO text, no words, no letters, no logos, no watermark. Keep the TOP-CENTER area relatively clean
-  and uncluttered (title text will be overlaid there).
-Return ONLY JSON: {{"prompt":"detailed photorealistic cinematic english image prompt, shows the topic, no text"}}""",
+- DO NOT describe ANY signs, storefront signage, neon signs, billboards, banners, menus, posters,
+  screens with words, or any object bearing readable letters/numbers. Prefer a tight scene of
+  physical objects (food, products, cards, coins, hands) instead of a shop entrance/sign.
+- Keep the TOP THIRD of the frame dark, empty and uncluttered (a title will be overlaid on top).
+- NO text, no words, no letters, no logos, no watermark anywhere in the image.
+Return ONLY JSON: {{"prompt":"detailed photorealistic cinematic english image prompt, shows the topic, physical objects only, absolutely no text or signage"}}""",
         model=A.NVIDIA_MODEL)
     gpr = ""
     if isinstance(pr, dict):
@@ -290,9 +293,12 @@ Return ONLY JSON: {{"prompt":"detailed photorealistic cinematic english image pr
         gpr = (f"photorealistic cinematic vertical thumbnail showing the real scene of a consumer "
                f"trap, dramatic high-contrast lighting, moody, detailed, eye-catching, relevant "
                f"real-world objects, no people close-up, theme: {baslik}")
-    # güvenlik: konuyu göster + yazı yok kurallarını pekiştir (soyut figürleri engelle)
+    # güvenlik: konuyu göster + yazı/tabela yok kurallarını pekiştir (flux yazı ekleme
+    # eğilimini bastır), üst alanı boş tut, soyut figürleri engelle.
     gpr += (", photorealistic, cinematic dramatic lighting, high detail, 9:16 vertical, "
-            "no text, no words, no letters, no watermark, "
+            "dark empty space at the top, "
+            "no text, no words, no letters, no numbers, no signage, no signboard, no neon sign, "
+            "no billboard, no banner, no poster, no menu board, no logo, no watermark, "
             "no hooded figure, no ghost, no random silhouette")
     return gorsel_uret(gpr, cikti, genislik=768, yukseklik=1344)
 
