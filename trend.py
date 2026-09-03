@@ -77,9 +77,12 @@ def _gemini_call(prompt, key, model):
     import urllib.request, urllib.error
     url = (f"https://generativelanguage.googleapis.com/v1beta/models/{model}"
            f":generateContent?key={key}")
-    body = {"contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.9, "maxOutputTokens": 4096,
-                                 "responseMimeType": "application/json"}}
+    gen = {"temperature": 0.85, "maxOutputTokens": 8192,
+           "responseMimeType": "application/json"}
+    if model.startswith("gemini-2.5"):
+        # 2.5 varsayılan 'thinking' çıktı token bütçesini yiyip JSON'u kesebiliyor.
+        gen["thinkingConfig"] = {"thinkingBudget": 0}
+    body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": gen}
     req = urllib.request.Request(url, data=json.dumps(body).encode(),
                                  headers={"Content-Type": "application/json"})
     try:
@@ -87,7 +90,8 @@ def _gemini_call(prompt, key, model):
             d = json.loads(r.read().decode())
     except urllib.error.HTTPError as he:
         raise RuntimeError(f"{he.code}: {he.read().decode()[:160]}")
-    return d["candidates"][0]["content"]["parts"][0]["text"]
+    cand = (d.get("candidates") or [{}])[0]
+    return "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", []))
 
 
 def _llm(prompt):
@@ -130,9 +134,21 @@ def _llm(prompt):
     raise RuntimeError("LLM üretilemedi | " + " || ".join(hatalar))
 
 
+def _llm_json(prompt, tries=3):
+    """LLM'den JSON alır; kesik/bozuk gelirse (LLM bazen yapar) TEKRAR dener.
+    Ayrıca kaba bir kurtarma: son kapanmamış diziyi/nesneyi kapatmayı dener."""
+    son = ""
+    for k in range(tries):
+        try:
+            return json.loads(A._temizle(_llm(prompt)))
+        except Exception as e:
+            son = f"{type(e).__name__}: {str(e)[:80]}"
+    raise RuntimeError(f"JSON çözülemedi ({tries} deneme): {son}")
+
+
 def _fikir_uret(populer, mevcut_basliklar, sayi):
     ozet = "\n".join(f"- {v['izlenme']:>9,} izlenme | {v['baslik'][:80]}"
-                     for v in populer[:30])
+                     for v in populer[:20])
     mevcut = "\n".join(f"- {b}" for b in mevcut_basliklar)
     prompt = f"""Sen "TUZAK AVCISI" adlı Türk YouTube Shorts kanalının içerik stratejistisin.
 Kanal TEK KONU: tüketici tuzakları (market, banka/kart, restoran, dijital/uygulama,
@@ -154,8 +170,7 @@ SADECE geçerli JSON döndür, başka hiçbir şey yazma:
 {{"trend":"1-2 cümle trend özeti","hook_kaliplari":["kalıp1","kalıp2","kalıp3"],
 "fikirler":[{{"baslik":"BÜYÜK HARF MERAK BAŞLIĞI + emoji","kanca":"2-3 KELİME"}}]}}
 Türkçe harfleri (ç,ğ,ı,İ,ö,ş,ü) eksiksiz kullan."""
-    ham = _llm(prompt)
-    return json.loads(A._temizle(ham))
+    return _llm_json(prompt)
 
 
 SENARYO_PROMPT = """Sen "TUZAK AVCISI" Türk YouTube Shorts kanalı için senaryo yazarısın.
@@ -180,8 +195,7 @@ SADECE geçerli JSON döndür, başka hiçbir şey yazma:
 
 
 def _senaryo_uret(baslik, kanca):
-    ham = _llm(SENARYO_PROMPT.format(baslik=baslik, kanca=kanca))
-    d = json.loads(A._temizle(ham))
+    d = _llm_json(SENARYO_PROMPT.format(baslik=baslik, kanca=kanca))
     # şema güvenceleri
     d.setdefault("baslik", baslik)
     d.setdefault("kanca", kanca)
@@ -224,7 +238,7 @@ def main():
     with open("senaryolar.json", encoding="utf-8") as f:
         havuz = json.load(f)
     mevcut_norm = {_norm(s.get("baslik", "")) for s in havuz}
-    mevcut_basliklar = [s.get("baslik", "") for s in havuz][-60:]  # son 60 (prompt kısa kalsın)
+    mevcut_basliklar = [s.get("baslik", "") for s in havuz][-45:]  # son 45 (prompt kısa kalsın)
 
     print(f"[2/4] LLM ile trend analizi + {sayi} yeni fikir üretiliyor ...")
     analiz = _fikir_uret(populer, mevcut_basliklar, sayi)
