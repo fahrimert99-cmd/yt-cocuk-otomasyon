@@ -22,10 +22,17 @@ import youtube_yukle as YT
 import ai_script as A
 
 ARAMALAR = [
-    "tüketici tuzağı", "market tuzağı", "gizli ücret", "tüketici kandırıyor",
-    "para tuzağı", "indirim tuzağı", "market oyunları", "abonelik tuzağı",
-    "bankalar nasıl kazanıyor", "alışveriş tuzağı",
+    "tüketici tuzağı", "market fiyat tuzağı", "gizli ücret tüketici",
+    "market bizi nasıl kandırıyor", "indirim yalanı", "kargo ücreti tuzağı",
+    "abonelik iptal tuzağı", "bankalar gizli ücret", "kredi kartı tuzağı",
+    "market psikolojisi satış", "restoran menü tuzağı", "tüketici hakları aldatıcı",
 ]
+
+# Alakasız (oyun/vlog vb.) sonuçları elemek için: başlıkta bunlardan biri geçmeli.
+ALAKA = ["tuzak", "tüketici", "kandır", "aldat", "dolandır", "gizli ücret", "ücret",
+         "indirim", "fiyat", "market", "banka", "kart", "faiz", "komisyon", "abonelik",
+         "zam", "kâr", "kar ", "satış", "psikoloji", "hile", "kandırıyor", "menü",
+         "kargo", "fatura", "hak", "para tuza", "kredi"]
 
 
 def _norm(s):
@@ -59,7 +66,9 @@ def _populer_videolar(yt, gun=90, k_basina=15):
                             "izlenme": int(st.get("viewCount", 0) or 0),
                             "kanal": it["snippet"].get("channelTitle", "")})
     veriler.sort(key=lambda x: x["izlenme"], reverse=True)
-    return veriler
+    # ALAKA filtresi: başlığı tüketici-tuzağı kelimesi içerenleri tut (oyun/vlog ele).
+    alakali = [v for v in veriler if any(a in _norm(v["baslik"]) for a in ALAKA)]
+    return alakali if len(alakali) >= 5 else veriler
 
 
 def _llm(prompt):
@@ -68,8 +77,11 @@ def _llm(prompt):
     Gemini anahtarı GEMINI_API_KEY veya GEMINI_KEY'den okunur (repo ikisini de
     kullanıyor); 429'da bir kez tekrar dener."""
     import time as _t
-    gkey = (os.environ.get("GEMINI_API_KEY") or os.environ.get("GEMINI_KEY") or "").strip()
-    ckey = A._claude_key()
+    # Anahtarlardan TÜM boşluk/kontrol karakterlerini temizle (secret'a kopyalarken
+    # araya giren \n / boşluk 'URL can't contain control characters' hatası veriyordu).
+    _clean = lambda s: re.sub(r"\s", "", s or "")
+    gkey = _clean(os.environ.get("GEMINI_API_KEY") or os.environ.get("GEMINI_KEY"))
+    ckey = _clean(A._claude_key())
     hatalar = []
     if gkey:
         for mdl in ("gemini-2.0-flash", "gemini-1.5-flash"):
