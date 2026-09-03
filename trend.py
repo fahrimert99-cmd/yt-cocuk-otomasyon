@@ -249,8 +249,9 @@ def main():
     print(f"      Fikir sayısı: {len(fikirler)}")
 
     print("[3/4] Yeni fikirler için tam senaryo üretiliyor ...")
+    import time
     eklenen = []
-    for fk in fikirler:
+    for _i, fk in enumerate(fikirler):
         bas = (fk.get("baslik") or "").strip()
         knc = (fk.get("kanca") or "").strip()
         if not bas:
@@ -258,6 +259,8 @@ def main():
         if _norm(bas) in mevcut_norm:
             print(f"      · atlandı (zaten var): {bas[:60]}")
             continue
+        if _i:                     # Gemini ücretsiz kota: çağrılar arası bekle
+            time.sleep(6)
         try:
             sen = _senaryo_uret(bas, knc)
         except Exception as e:
