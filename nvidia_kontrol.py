@@ -73,10 +73,17 @@ def main():
         gorsel = bul("flux", "sdxl", "stable-diffusion", "sana", "consistory", "image", "sd3", "kandinsky", "picasso")
         embed = bul("embed", "embedqa")
         vision = bul("vila", "vision", "neva", "llava", "phi-3-vision", "nvila", "cosmos")
+        # SOHBET/CHAT adayları: instruct/nemotron/chat/llama/qwen/mistral/mixtral/gemma
+        chat = bul("instruct", "nemotron", "-chat", "llama-3", "qwen", "mistral",
+                   "mixtral", "gemma", "deepseek", "phi-4")
+        chat = [c for c in chat if c not in vision]   # görselleri ayıkla
         _o(f"Toplam erişilebilir model: {len(ids)} (tam liste artifact'ta: nvidia_modeller.txt)")
-        _o(f"  GÖRSEL adayları ({len(gorsel)}): {', '.join(gorsel[:12]) or 'YOK'}")
+        _o(f"  SOHBET/LLM ({len(chat)}):")
+        for c in chat[:30]:
+            _o(f"      - {c}")
         _o(f"  EMBEDDING ({len(embed)}): {', '.join(embed[:6]) or 'YOK'}")
         _o(f"  VISION ({len(vision)}): {', '.join(vision[:8]) or 'YOK'}")
+        _o(f"  GÖRSEL adayları /v1/models içinde ({len(gorsel)}): {', '.join(gorsel[:12]) or 'YOK (genai ayrı)'}")
         # kullandığımız LLM'ler listede mi
         istedigimiz = ["meta/llama-3.3-70b-instruct", "deepseek-ai/deepseek-v3",
                        "qwen/qwen2.5-72b-instruct", "meta/llama-3.1-70b-instruct"]
@@ -100,14 +107,18 @@ def main():
         "stabilityai/sdxl-turbo",
         "bria/bria-2.3",
     ]
-    _o("GÖRSEL endpoint yoklaması (ai.api.nvidia.com/v1/genai):")
+    def _gorsel_govde(m):
+        if "flux" in m:                      # FLUX: sade prompt gövdesi
+            return {"prompt": "a red apple on a table", "width": 1024,
+                    "height": 1024, "steps": 4, "seed": 0}
+        return {"text_prompts": [{"text": "a red apple on a table", "weight": 1}],
+                "cfg_scale": 5, "sampler": "K_EULER_ANCESTRAL", "seed": 0,
+                "steps": 25, "width": 1024, "height": 1024}
+    _o("GÖRSEL endpoint yoklaması (ai.api.nvidia.com/v1/genai, 1024x1024):")
     for m in gorsel_adaylar:
         durum = _durum(lambda mm=m: _post(
-            f"https://ai.api.nvidia.com/v1/genai/{mm}",
-            {"prompt": "a red apple", "width": 1024, "height": 1024, "steps": 4,
-             "seed": 0, "text_prompts": [{"text": "a red apple", "weight": 1}],
-             "cfg_scale": 5, "sampler": "K_EULER_ANCESTRAL"}, timeout=20))
-        _o(f"  {durum:<28} {m}")
+            f"https://ai.api.nvidia.com/v1/genai/{mm}", _gorsel_govde(mm), timeout=20))
+        _o(f"  {durum:<34} {m}")
 
     print("\n===== NVIDIA MODEL ERISIM OZETI =====")
     for s in OZET:
