@@ -5,7 +5,7 @@ AI Senaryo Üretici (GitHub-native, sağlam).
 GEMINI_API_KEY varsa Gemini (en kaliteli/güvenilir); yoksa anahtarsız Pollinations
 (POST /openai -> GET fallback). Her yol için tekrar denemeli + esnek JSON ayrıştırma.
 """
-import os, re, json, time, urllib.parse, urllib.request
+import os, re, json, time, urllib.parse, urllib.request, urllib.error
 
 PROMPT = """Sen Veritasium tarzında bilim içeriği üreten bir YouTube yazarısın.
 BAŞLIK: {baslik}
@@ -64,6 +64,36 @@ def _claude(prompt, key, model=None, max_tokens=8192):
     return "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
 
 
+# --- NVIDIA NIM (build.nvidia.com) — OpenAI-uyumlu, ~260 ucretsiz model --------
+# Anahtar NVIDIA_API_KEY ile gelir. Varsayilan model NVIDIA_MODEL ile degistirilebilir.
+# Llama 3.3 70B: Turkcesi iyi, JSON'a sadik, ucretsiz kotasi haftalik cron icin bol.
+NVIDIA_MODEL = os.environ.get("NVIDIA_MODEL", "").strip() or "meta/llama-3.3-70b-instruct"
+
+
+def _nvidia_key():
+    return re.sub(r"\s", "", os.environ.get("NVIDIA_API_KEY") or "")
+
+
+def _nvidia(prompt, key, model=None):
+    """NVIDIA NIM chat/completions (OpenAI-uyumlu). Hata govdesini okur."""
+    import urllib.error
+    model = model or NVIDIA_MODEL
+    url = "https://integrate.api.nvidia.com/v1/chat/completions"
+    body = {"model": model, "temperature": 0.85, "max_tokens": 4096,
+            "messages": [{"role": "system", "content": "Yalnizca gecerli JSON dondur."},
+                         {"role": "user", "content": prompt}]}
+    req = urllib.request.Request(
+        url, data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json", "Accept": "application/json",
+                 "Authorization": f"Bearer {key}"})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            d = json.loads(r.read().decode())
+    except urllib.error.HTTPError as he:
+        raise RuntimeError(f"{he.code}: {he.read().decode()[:160]}")
+    return d["choices"][0]["message"]["content"]
+
+
 def _poll_post(prompt):
     url = "https://text.pollinations.ai/openai"
     body = {"model": "openai", "temperature": 0.9,
@@ -88,7 +118,10 @@ def uret(baslik):
     prompt = PROMPT.format(baslik=baslik)
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     ckey = _claude_key()
+    nkey = _nvidia_key()
     yollar = []
+    if nkey:
+        yollar.append(("nvidia", lambda: _nvidia(prompt, nkey)))
     if ckey:
         yollar.append(("claude", lambda: _claude(prompt, ckey)))
     if key:
@@ -98,7 +131,7 @@ def uret(baslik):
 
     hatalar = []
     for ad, yol in yollar:
-        denemeler = 4 if ad in ("gemini", "claude") else 1
+        denemeler = 4 if ad in ("gemini", "claude", "nvidia") else 1
         for k in range(denemeler):
             try:
                 ham = yol()

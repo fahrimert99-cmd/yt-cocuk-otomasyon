@@ -95,12 +95,26 @@ def _gemini_call(prompt, key, model):
 
 
 def _llm(prompt):
-    """Gemini (öncelik) -> Claude -> Pollinations, ham metin döner. Tüm yollar
-    hata-korumalı; hepsi başarısızsa nedenleri toplayıp net hata verir.
-    HER İKİ Gemini anahtarı da denenir (GEMINI_KEY video vision'da çalışıyor;
-    GEMINI_API_KEY geçersizse diğerine geçilir). 429'da bir kez tekrar dener."""
+    """NVIDIA NIM (öncelik) -> Gemini -> Claude -> Pollinations, ham metin döner.
+    Tüm yollar hata-korumalı; hepsi başarısızsa nedenleri toplayıp net hata verir.
+    NVIDIA (build.nvidia.com) ücretsiz ~260 model sunar; Gemini free kotası dolsa
+    da çalışır. HER İKİ Gemini anahtarı da denenir. 429'da bir kez tekrar dener."""
     import time as _t
     _clean = lambda s: re.sub(r"\s", "", s or "")
+    hatalar = []
+    # 0) NVIDIA NIM — en güvenilir ücretsiz sağlayıcı (kota dolmadan çalışır).
+    nkey = A._nvidia_key()
+    if nkey:
+        for deneme in range(2):
+            try:
+                return A._nvidia(prompt, nkey)
+            except Exception as e:
+                msg = str(e)
+                hatalar.append(f"nvidia#{deneme+1}: {msg[:80]}")
+                if "429" in msg and deneme == 0:
+                    _t.sleep(15)
+                else:
+                    break
     # Aday Gemini anahtarları: önce GEMINI_KEY (vision'da kanıtlı), sonra GEMINI_API_KEY.
     gkeys, gorulen = [], set()
     for k in (os.environ.get("GEMINI_KEY"), os.environ.get("GEMINI_API_KEY")):
@@ -109,7 +123,6 @@ def _llm(prompt):
             gorulen.add(ck)
             gkeys.append(ck)
     ckey = _clean(A._claude_key())
-    hatalar = []
     for gi, gkey in enumerate(gkeys):
         for mdl in ("gemini-2.0-flash", "gemini-2.5-flash", "gemini-1.5-flash"):
             for deneme in range(2):
