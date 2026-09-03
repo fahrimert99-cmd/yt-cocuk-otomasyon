@@ -29,7 +29,7 @@ jobs:
           # YT secret'lari BILEREK yok -> yukleme imkansiz.
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           NVIDIA_GORSEL_MODEL: ${{ secrets.NVIDIA_GORSEL_MODEL }}
-          NVIDIA_GORSEL_TIMEOUT: "90"   # test: hızlı başarısızlık + teşhis
+          NVIDIA_GORSEL_TIMEOUT: "180"  # flux.1-dev 50 adım: üretim payı
           BASLIK: ${{ github.event.inputs.baslik }}
         run: python3 kapak_test.py
       - name: Kapaklari artifact yap

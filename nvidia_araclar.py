@@ -12,17 +12,17 @@ Araçlar:
   benzer_var_mi(baslik, mevcut) -> embedding ile ANLAMSAL tekrar tespiti (bool).
 
 Env (opsiyonel):
-  NVIDIA_KRITIK_MODEL  varsayılan deepseek-ai/deepseek-v3 (senaryo eleştirisi)
-  NVIDIA_EMBED_MODEL   varsayılan nvidia/nv-embedqa-e5-v5  (anlamsal benzerlik)
+  NVIDIA_KRITIK_MODEL  varsayılan mistralai/mistral-large-2-instruct (senaryo eleştirisi)
+  NVIDIA_EMBED_MODEL   varsayılan nvidia/nv-embedqa-mistral-7b-v2 (anlamsal benzerlik)
   NVIDIA_BENZERLIK_ESIK varsayılan 0.90 (bu ve üstü kosinüs -> tekrar say)
 """
 import os, re, json, math, urllib.request, urllib.error
 import ai_script as A
 
 # Senaryo eleştirisi için buffet'ten güçlü bir reasoning modeli.
-KRITIK_MODEL = os.environ.get("NVIDIA_KRITIK_MODEL", "").strip() or "deepseek-ai/deepseek-v3"
+KRITIK_MODEL = os.environ.get("NVIDIA_KRITIK_MODEL", "").strip() or "mistralai/mistral-large-2-instruct"
 # Anlamsal benzerlik için embedding modeli.
-EMBED_MODEL = os.environ.get("NVIDIA_EMBED_MODEL", "").strip() or "nvidia/nv-embedqa-e5-v5"
+EMBED_MODEL = os.environ.get("NVIDIA_EMBED_MODEL", "").strip() or "nvidia/nv-embedqa-mistral-7b-v2"
 
 
 def _nvidia_json(prompt, model=None):
@@ -131,9 +131,9 @@ def benzer_var_mi(baslik, mevcut_basliklar, esik=None):
 
 # ---- Görsel üretim (image-gen: SDXL / FLUX) ---------------------------------
 # NVIDIA genai görsel endpoint'i. Model NVIDIA_GORSEL_MODEL ile değiştirilebilir.
-# Varsayılan SDXL: en çok kullanılan, genelde SICAK tutulan model -> hızlı yanıt.
-# (flux.1-schnell bu hesapta ağır soğuk-başlangıç yapıp POST'ta timeout veriyordu.)
-GORSEL_MODEL = os.environ.get("NVIDIA_GORSEL_MODEL", "").strip() or "stabilityai/stable-diffusion-xl"
+# Varsayılan flux.1-dev: hesap kontrolünde ERİŞİLEBİLİR çıkan tek görsel model
+# (SDXL/SD3/turbo -> 404, schnell -> timeout). flux-dev daha çok adım ister (>=~30).
+GORSEL_MODEL = os.environ.get("NVIDIA_GORSEL_MODEL", "").strip() or "black-forest-labs/flux.1-dev"
 
 
 def _base64_cikar(d):
@@ -199,8 +199,9 @@ def _gorsel_govde(model, prompt, w, h):
         return {"text_prompts": [{"text": prompt, "weight": 1}],
                 "cfg_scale": 5, "sampler": "K_EULER_ANCESTRAL", "seed": 0,
                 "steps": 25, "width": w, "height": h}
-    # FLUX schnell: guidance-distilled, cfg yok, 4 adım. Sade gövde = az hata.
-    return {"prompt": prompt, "width": w, "height": h, "steps": 4, "seed": 0}
+    # FLUX: schnell guidance-distilled (4 adım); dev daha çok adım ister (>=~30).
+    adim = 4 if "schnell" in m else 50
+    return {"prompt": prompt, "width": w, "height": h, "steps": adim, "seed": 0}
 
 
 def gorsel_uret(prompt, cikti, genislik=768, yukseklik=1344, timeout=None):

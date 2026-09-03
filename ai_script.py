@@ -67,7 +67,7 @@ def _claude(prompt, key, model=None, max_tokens=8192):
 # --- NVIDIA NIM (build.nvidia.com) — OpenAI-uyumlu, ~260 ucretsiz model --------
 # Anahtar NVIDIA_API_KEY ile gelir. Varsayilan model NVIDIA_MODEL ile degistirilebilir.
 # Llama 3.3 70B: Turkcesi iyi, JSON'a sadik, ucretsiz kotasi haftalik cron icin bol.
-NVIDIA_MODEL = os.environ.get("NVIDIA_MODEL", "").strip() or "meta/llama-3.3-70b-instruct"
+NVIDIA_MODEL = os.environ.get("NVIDIA_MODEL", "").strip() or "nvidia/llama-3.1-nemotron-70b-instruct"
 
 
 def _nvidia_key():
