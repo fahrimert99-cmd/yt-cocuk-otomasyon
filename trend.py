@@ -71,26 +71,49 @@ def _populer_videolar(yt, gun=90, k_basina=15):
     return alakali if len(alakali) >= 5 else veriler
 
 
+def _gemini_call(prompt, key, model):
+    """Gemini generateContent — HATA GÖVDESİNİ okur (400'ün gerçek sebebini görmek
+    için: 'API key not valid' vb.)."""
+    import urllib.request, urllib.error
+    url = (f"https://generativelanguage.googleapis.com/v1beta/models/{model}"
+           f":generateContent?key={key}")
+    body = {"contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"temperature": 0.9, "maxOutputTokens": 4096,
+                                 "responseMimeType": "application/json"}}
+    req = urllib.request.Request(url, data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=90) as r:
+            d = json.loads(r.read().decode())
+    except urllib.error.HTTPError as he:
+        raise RuntimeError(f"{he.code}: {he.read().decode()[:160]}")
+    return d["candidates"][0]["content"]["parts"][0]["text"]
+
+
 def _llm(prompt):
     """Gemini (öncelik) -> Claude -> Pollinations, ham metin döner. Tüm yollar
     hata-korumalı; hepsi başarısızsa nedenleri toplayıp net hata verir.
-    Gemini anahtarı GEMINI_API_KEY veya GEMINI_KEY'den okunur (repo ikisini de
-    kullanıyor); 429'da bir kez tekrar dener."""
+    HER İKİ Gemini anahtarı da denenir (GEMINI_KEY video vision'da çalışıyor;
+    GEMINI_API_KEY geçersizse diğerine geçilir). 429'da bir kez tekrar dener."""
     import time as _t
-    # Anahtarlardan TÜM boşluk/kontrol karakterlerini temizle (secret'a kopyalarken
-    # araya giren \n / boşluk 'URL can't contain control characters' hatası veriyordu).
     _clean = lambda s: re.sub(r"\s", "", s or "")
-    gkey = _clean(os.environ.get("GEMINI_API_KEY") or os.environ.get("GEMINI_KEY"))
+    # Aday Gemini anahtarları: önce GEMINI_KEY (vision'da kanıtlı), sonra GEMINI_API_KEY.
+    gkeys, gorulen = [], set()
+    for k in (os.environ.get("GEMINI_KEY"), os.environ.get("GEMINI_API_KEY")):
+        ck = _clean(k)
+        if ck and ck not in gorulen:
+            gorulen.add(ck)
+            gkeys.append(ck)
     ckey = _clean(A._claude_key())
     hatalar = []
-    if gkey:
-        for mdl in ("gemini-2.0-flash", "gemini-1.5-flash"):
+    for gi, gkey in enumerate(gkeys):
+        for mdl in ("gemini-2.0-flash", "gemini-2.5-flash", "gemini-1.5-flash"):
             for deneme in range(2):
                 try:
-                    return A._gemini(prompt, gkey, model=mdl)
+                    return _gemini_call(prompt, gkey, mdl)
                 except Exception as e:
                     msg = str(e)
-                    hatalar.append(f"gemini/{mdl}#{deneme+1}: {msg[:70]}")
+                    hatalar.append(f"gemini{gi}/{mdl}: {msg[:80]}")
                     if "429" in msg and deneme == 0:
                         _t.sleep(20)
                     else:
@@ -99,11 +122,11 @@ def _llm(prompt):
         try:
             return A._claude(prompt, ckey)
         except Exception as e:
-            hatalar.append(f"claude: {str(e)[:70]}")
+            hatalar.append(f"claude: {str(e)[:80]}")
     try:
         return A._poll_post(prompt)
     except Exception as e:
-        hatalar.append(f"poll: {str(e)[:70]}")
+        hatalar.append(f"poll: {str(e)[:80]}")
     raise RuntimeError("LLM üretilemedi | " + " || ".join(hatalar))
 
 
