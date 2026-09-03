@@ -1,105 +1,123 @@
 {
-  "tarih": "2026-09-02",
+  "tarih": "2026-09-03",
   "kanal": {
     "abone": "86",
-    "toplam_izlenme": "38923",
-    "video_sayisi": "43"
+    "toplam_izlenme": "38952",
+    "video_sayisi": "45"
   },
   "analytics": {
-    "kanal_28g_hata": "<HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-08-05&endDate=2026-09-02&metrics=views%2C",
-    "ctr_28g_hata": "<HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-08-05&endDate=2026-09-02&metrics=impressi",
-    "video_28g_hata": "<HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-08-05&endDate=2026-09-02&dimensions=video"
+    "kanal_28g_hata": "<HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-08-06&endDate=2026-09-03&metrics=views%2C",
+    "ctr_28g_hata": "<HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-08-06&endDate=2026-09-03&metrics=impressi",
+    "video_28g_hata": "<HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-08-06&endDate=2026-09-03&dimensions=video"
   },
   "degerlendirme": {
     "bulgular": [
-      "- 🎯 **En çok tutan tema: gizem** — ort. 1248 izlenme (4 video). Bu damardan daha çok konu üret.",
+      "- 🎯 **En çok tutan tema: gizem** — ort. 1250 izlenme (4 video). Bu damardan daha çok konu üret.",
       "- 💬 **En yüksek etkileşim: diger** (%1.45). İzleyici en çok burada yorum/beğeni bırakıyor — CTA'yı bu içerikte koru.",
       "- 🏆 En çok izlenen 10 videonun **6'i tuzak** teması — kanıtlanmış damar, önceliklendir.",
-      "- 📉 **Dikkat:** son 7 gün ort. 636 < genel ort. 893. Son üretimleri gözden geçir (başlık/kapak/tema seçimi)."
+      "- 📉 **Dikkat:** son 7 gün ort. 471 < genel ort. 864. Son üretimleri gözden geçir (başlık/kapak/tema seçimi)."
     ],
     "aksiyonlar": [
       "`senaryolar.json`'a **gizem** temasında yeni konular ekle (en çok izlenen damar).",
       "Son 7 günün düşük performansını incele: başlık kancası ve kapak yeterince çarpıcı mı?"
     ],
-    "ai_yorum": "Kanalınızın genel performansına baktığımızda, 43 video ile 38.923 toplam izlenmeye ulaşmanız oldukça başarılı bir başlangıç. Shorts formatının gücünü net bir şekilde kullanıyorsunuz ve ortalama 893 izlenme ile bu alanda iyi bir potansiyel sergiliyorsunuz. Özellikle 'gizem' temalı videolarınız, ortalama 1248 izlenme ile açık ara en çok tutan içerikleriniz olarak öne çıkıyor; bu tema, izleyici ilgisini yüksek oranda çekmeyi başarıyor. 'Tuzak' teması ise toplamda en çok video ürettiğiniz alan ve en çok izlenen 10 videonun 6'sının bu temadan olması, bu konunun da kanalınız için kanıtlanmış bir damar olduğunu gösteriyor. Ayrıca 'diger' temalı içeriklerinizdeki %1.45'lik etkileşim oranı, bu konuların izleyiciyle güçlü bir bağ kurduğunu ve yorum/beğeni açısından değerli olduğunu işaret ediyor.\n\nAncak bazı endişe verici noktalar da mevcut. Kanalınızın 86 abone sayısı, yaklaşık 39 bin toplam izlenmeye kıyasla oldukça düşük kalmış durumda. Bu, izleyicileri aboneye dönüştürme konusunda daha fazla strateji geliştirmeniz gerektiğini düşündürüyor. Daha da önemlisi, son 7 gün içindeki ortalama izlenme sayınızın (636), genel ortalamanın (893) altına düşmüş olması dikkat çekici. Özellikle 'SES REKLAMLARI NEDEN YÜKSEK? 🔊' gibi bazı yeni videoların neredeyse hiç izlenmemesi veya diğer yeni içeriklerin günlük izlenmelerinin potansiyellerinin altında kalması, son üretimlerinizin performansını ciddi şekilde gözden geçirmeniz gerektiğini gösteriyor.\n\nÖnümüzdeki hafta için somut adımlarımız net: Öncelikle, ortalama izlenme potansiyeli en yüksek olan 'gizem' temasında yeni konular üretmeye ağırlık vermelisiniz. Bu, izlenme sayılarınızı hızla artırmanın en etkili yolu olacaktır. İkinci olarak, son 7 gündeki düşük performansı tersine çevirmek adına yeni yüklediğiniz veya yükleyeceğiniz videoların başlık kancalarını ve kapak görsellerini çok daha çarpıcı hale getirmelisiniz. 'Kasa sırası neden uzun?' veya 'Kargo kadar bekletmek neden?' gibi konularda güçlü potansiyel varken, başlık ve kapak seçimleri izleyiciyi videoya çekmede yetersiz kalmış olabilir. Mevcut 'tuzak' temalı içeriklerinizi de sürdürerek, bu kanıtlanmış damardan istikrarlı izleyici çekmeye devam edin ve 'diger' temalı videolardaki yüksek etkileşimi koruyarak izleyicilerinizle bağınızı güçlendirin."
+    "ai_yorum": "Genel olarak kanalınızın 45 short video ile 38 binin üzerinde izlenme elde etmesi oldukça iyi bir başlangıç potansiyeli gösteriyor. Özellikle \"gizem\" temalı videolarınız ortalama 1250 izlenme ile en yüksek performansı sergiliyor ve bu alanda önemli bir büyüme fırsatı olduğunu görüyoruz. Top 10 videonun altısının \"tuzak\" temalı olması da bu konunun izleyici nezdinde ne kadar karşılık bulduğunu kanıtlıyor. Ayrıca \"diğer\" temalı içerikleriniz %1.45'lik etkileşim oranıyla izleyicilerinizin en çok tepki verdiği alan, bu da içeriklerinizle bağ kurma potansiyellerini gösteriyor.\n\nAncak dikkat etmemiz gereken bazı önemli noktalar var. 86 abone sayısı, toplam izlenme potansiyelinize göre oldukça düşük kalmış durumda ve bu da izleyicilerinizi abone olmaya teşvik etme konusunda iyileştirme ihtiyacına işaret ediyor. Daha da önemlisi, son 7 gündeki videolarınızın ortalama izlenme sayısı (471), kanal genel ortalamasının (864) belirgin şekilde altında seyrediyor. Bu durum, yeni içeriklerinizin ilk kancalama ve yayılma performansında düşüş yaşandığını gösteriyor ve acil müdahale gerektiriyor.\n\nÖnümüzdeki hafta için somut olarak şu adımlara odaklanmanızı öneriyorum: Birincisi, en yüksek ortalama izlenmeye sahip \"gizem\" temasında daha fazla yeni konu ve içerik üretimine öncelik verin. İkincisi, son 7 günde yayınladığınız ve performans düşüklüğü gösteren videolarınızı detaylıca inceleyin. Özellikle başlık kancalarının ve kapak görsellerinin yeterince dikkat çekici olup olmadığını gözden geçirin. Bu iki temel aksiyon, hem kanalınızın güçlü yönlerini pekiştirecek hem de son dönemdeki düşüşü tersine çevirmek için kritik olacaktır."
   },
   "top10": [
     {
       "baslik": "OYUNCAK NEDEN KASADA? 🧸",
       "izlenme": 1847,
-      "izlenme_gunluk": 115,
+      "izlenme_gunluk": 109,
       "tema": "tuzak",
       "format": "short"
     },
     {
       "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1612,
-      "izlenme_gunluk": 179,
+      "izlenme": 1613,
+      "izlenme_gunluk": 161,
       "tema": "gizem",
       "format": "short"
     },
     {
       "baslik": "MARKET KOKUSU BİLE TUZAK! 👃",
       "izlenme": 1550,
-      "izlenme_gunluk": 35,
+      "izlenme_gunluk": 34,
       "tema": "tuzak",
       "format": "short"
     },
     {
       "baslik": "OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨",
       "izlenme": 1295,
-      "izlenme_gunluk": 31,
+      "izlenme_gunluk": 30,
       "tema": "diger",
       "format": "short"
     },
     {
       "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1288,
-      "izlenme_gunluk": 184,
+      "izlenme": 1291,
+      "izlenme_gunluk": 161,
       "tema": "diger",
       "format": "short"
     },
     {
       "baslik": "SİNEMADA MISIR NEDEN PAHALI? 🍿",
-      "izlenme": 1254,
-      "izlenme_gunluk": 60,
+      "izlenme": 1256,
+      "izlenme_gunluk": 57,
       "tema": "tuzak",
       "format": "short"
     },
     {
       "baslik": "REKLAMLAR BEYNİNİ BÖYLE KANDIRIYOR! 📺",
-      "izlenme": 1165,
-      "izlenme_gunluk": 31,
+      "izlenme": 1167,
+      "izlenme_gunluk": 30,
       "tema": "tuzak",
       "format": "short"
     },
     {
       "baslik": "DUTY FREE GERÇEKTEN UCUZ MU? ✈️",
-      "izlenme": 1158,
-      "izlenme_gunluk": 58,
+      "izlenme": 1162,
+      "izlenme_gunluk": 55,
       "tema": "gizem",
       "format": "short"
     },
     {
       "baslik": "KASADAKİ ÇİKOLATA TUZAĞI! 🍫",
       "izlenme": 1158,
-      "izlenme_gunluk": 27,
+      "izlenme_gunluk": 26,
       "tema": "tuzak",
       "format": "short"
     },
     {
       "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
-      "izlenme": 1150,
-      "izlenme_gunluk": 105,
+      "izlenme": 1152,
+      "izlenme_gunluk": 96,
       "tema": "tuzak",
       "format": "short"
     }
   ],
   "son7gun": [
     {
+      "baslik": "ÜCRETSİZ KARGO EŞİĞİ NEDEN VAR? 🚚",
+      "izlenme": 7,
+      "izlenme_gunluk": 7,
+      "yas_gun": 1,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-03"
+    },
+    {
+      "baslik": "PAKET TATİLDEKİ GİZLİ MALİYET! 🏖️",
+      "izlenme": 210,
+      "izlenme_gunluk": 210,
+      "yas_gun": 1,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-02"
+    },
+    {
       "baslik": "SES REKLAMLARI NEDEN YÜKSEK? 🔊",
-      "izlenme": 1,
-      "izlenme_gunluk": 1,
+      "izlenme": 197,
+      "izlenme_gunluk": 197,
       "yas_gun": 1,
       "tema": "tuzak",
       "format": "short",
@@ -107,36 +125,36 @@
     },
     {
       "baslik": "İNDİRİM GÜNÜNDEKİ FİYAT OYUNU! 🛍️",
-      "izlenme": 129,
-      "izlenme_gunluk": 129,
-      "yas_gun": 1,
+      "izlenme": 130,
+      "izlenme_gunluk": 65,
+      "yas_gun": 2,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-09-01"
     },
     {
       "baslik": "İSVEÇLİ MOBİLYA DEVİ 1500 ÜRÜNDE İNDİRİME GİDECEK 📰",
-      "izlenme": 317,
-      "izlenme_gunluk": 317,
-      "yas_gun": 1,
+      "izlenme": 320,
+      "izlenme_gunluk": 160,
+      "yas_gun": 2,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-09-01"
     },
     {
       "baslik": "TUZAK AVCISI'NA HOŞ GELDİN 🎯",
-      "izlenme": 858,
-      "izlenme_gunluk": 858,
-      "yas_gun": 1,
+      "izlenme": 860,
+      "izlenme_gunluk": 430,
+      "yas_gun": 2,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-09-01"
     },
     {
       "baslik": "KASA SIRASI NEDEN UZUN? 🧾",
-      "izlenme": 1024,
-      "izlenme_gunluk": 341,
-      "yas_gun": 3,
+      "izlenme": 1042,
+      "izlenme_gunluk": 260,
+      "yas_gun": 4,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-30"
@@ -144,67 +162,58 @@
     {
       "baslik": "KARGO KADAR BEKLETMEK NEDEN? ⏰",
       "izlenme": 347,
-      "izlenme_gunluk": 87,
-      "yas_gun": 4,
+      "izlenme_gunluk": 69,
+      "yas_gun": 5,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-08-29"
     },
     {
       "baslik": "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
-      "izlenme": 1122,
-      "izlenme_gunluk": 187,
-      "yas_gun": 6,
+      "izlenme": 1124,
+      "izlenme_gunluk": 161,
+      "yas_gun": 7,
       "tema": "gizem",
       "format": "short",
       "yayin": "2026-08-27"
-    },
-    {
-      "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1288,
-      "izlenme_gunluk": 184,
-      "yas_gun": 7,
-      "tema": "diger",
-      "format": "short",
-      "yayin": "2026-08-26"
     }
   ],
   "format_ozet": {
     "short": {
-      "video": 43,
-      "ort_izlenme": 893,
-      "ort_izlenme_gunluk": 86,
-      "toplam_izlenme": 38407,
-      "etkilesim_orani": 1.26
+      "video": 45,
+      "ort_izlenme": 864,
+      "ort_izlenme_gunluk": 71,
+      "toplam_izlenme": 38868,
+      "etkilesim_orani": 1.27
     }
   },
   "tema_ozet": {
     "tuzak": {
-      "video": 26,
-      "ort_izlenme": 838,
-      "ort_izlenme_gunluk": 103,
-      "toplam_izlenme": 21792,
-      "etkilesim_orani": 1.24
+      "video": 28,
+      "ort_izlenme": 794,
+      "ort_izlenme_gunluk": 81,
+      "toplam_izlenme": 22238,
+      "etkilesim_orani": 1.25
     },
     "gizem": {
       "video": 4,
-      "ort_izlenme": 1248,
-      "ort_izlenme_gunluk": 129,
-      "toplam_izlenme": 4992,
+      "ort_izlenme": 1250,
+      "ort_izlenme_gunluk": 116,
+      "toplam_izlenme": 4999,
       "etkilesim_orani": 1.0
     },
     "diger": {
       "video": 12,
-      "ort_izlenme": 906,
-      "ort_izlenme_gunluk": 37,
-      "toplam_izlenme": 10876,
+      "ort_izlenme": 907,
+      "ort_izlenme_gunluk": 35,
+      "toplam_izlenme": 10883,
       "etkilesim_orani": 1.45
     },
     "cesitlilik": {
       "video": 1,
-      "ort_izlenme": 747,
-      "ort_izlenme_gunluk": 50,
-      "toplam_izlenme": 747,
+      "ort_izlenme": 748,
+      "ort_izlenme_gunluk": 47,
+      "toplam_izlenme": 748,
       "etkilesim_orani": 0.94
     }
   }
