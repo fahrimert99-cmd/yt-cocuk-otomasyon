@@ -3,6 +3,8 @@ name: Trend & Senaryo Besleme
 # videolarını analiz edip yeni senaryo fikirleri üretir ve senaryolar.json'a ekler.
 # Video YÜKLEMEZ; yalnızca senaryo havuzunu büyütür + trend_rapor.md yazar.
 on:
+  schedule:
+    - cron: "0 6 * * 0"   # HAFTALIK: her Pazar 09:00 TR — otomatik trend + senaryo
   workflow_dispatch:
     inputs:
       sayi:
