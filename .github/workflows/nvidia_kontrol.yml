@@ -1,0 +1,28 @@
+name: NVIDIA Model Erisim Kontrolu (YUKLEMEZ)
+# Sadece elle. NVIDIA hesabinin hangi modellere eristigini raporlar:
+# tum model listesi + LLM canli test + gorsel endpoint yoklamasi. Kanala DOKUNMAZ.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: NVIDIA erisim raporu
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+        run: python3 nvidia_kontrol.py
+      - name: Tam model listesi artifact
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: nvidia-modeller
+          path: output/nvidia_modeller.txt
+          if-no-files-found: warn
+          retention-days: 7
