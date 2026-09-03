@@ -47,6 +47,11 @@ def main():
     print(f"✓ Nihai kapak: {cikti} ({os.path.getsize(cikti)//1024} KB)")
     print("\nArtifact'ı indirip output/kapak_test.jpg'e bak. Beğenirsen "
           "config.json -> \"ai_kapak\": true yaparız; canlıda otomatik devreye girer.")
+    # TEŞHİS SON: log aracı yalnızca çıktının SONUNU döndürüyor -> en sona bas.
+    print("\n===== NVIDIA GORSEL TESHIS =====")
+    for satir in NA.SON_TESHIS:
+        print("  " + satir)
+    print("================================")
 
 
 if __name__ == "__main__":
