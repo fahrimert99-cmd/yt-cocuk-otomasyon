@@ -156,6 +156,15 @@ def _base64_cikar(d):
         return None
 
 
+# Teşhis kayıtları — kapak_test.py bunları EN SON basar (log aracı yalnızca son
+# pencereyi döndürüyor; erken basılan hatalar kesiliyordu).
+SON_TESHIS = []
+
+
+def _log(m):
+    SON_TESHIS.append(str(m))
+
+
 def _nvcf_iste(url, data, hdr, timeout):
     """NVIDIA genai POST — SENKRON (200) ya da ASYNC (202 + NVCF-REQID -> poll)
     yanıtı işler. cold-start'ta endpoint 202 döner; status endpoint'i sonuç
@@ -166,14 +175,19 @@ def _nvcf_iste(url, data, hdr, timeout):
         status = getattr(r, "status", 200)
         reqid = r.headers.get("NVCF-REQID") or r.headers.get("nvcf-reqid")
         govde = r.read().decode()
+    _log(f"POST status={status} reqid={'var' if reqid else 'yok'} "
+         f"govde_uzunluk={len(govde)} bas={govde[:70]!r}")
     son = _t.time() + timeout
+    yoklama = 0
     while status == 202 and reqid and _t.time() < son:
         _t.sleep(5)
+        yoklama += 1
         s = urllib.request.Request(
             f"https://api.nvidia.com/v2/nvcf/exec/status/{reqid}", headers=hdr)
         with urllib.request.urlopen(s, timeout=timeout) as sr:
             status = getattr(sr, "status", 200)
             govde = sr.read().decode()
+        _log(f"poll#{yoklama} status={status} govde_uzunluk={len(govde)}")
     return json.loads(govde)
 
 
@@ -188,7 +202,7 @@ def _gorsel_govde(model, prompt, w, h):
     return {"prompt": prompt, "width": w, "height": h, "steps": 4, "seed": 0}
 
 
-def gorsel_uret(prompt, cikti, genislik=768, yukseklik=1344, timeout=300):
+def gorsel_uret(prompt, cikti, genislik=768, yukseklik=1344, timeout=None):
     # NOT: FLUX schnell yalnızca şu boyutları kabul eder: 768,832,896,960,1024,
     # 1088,1152,1216,1280,1344. 768x1344 = dikey 9:16'ya en yakın izinli oran.
     """NVIDIA image-gen ile görsel üretip `cikti`ya kaydeder. Yol|None döner
@@ -196,21 +210,36 @@ def gorsel_uret(prompt, cikti, genislik=768, yukseklik=1344, timeout=300):
     key = A._nvidia_key()
     if not key or not prompt:
         return None
+    if timeout is None:
+        try:
+            timeout = int(os.environ.get("NVIDIA_GORSEL_TIMEOUT", "300") or "300")
+        except Exception:
+            timeout = 300
     url = f"https://ai.api.nvidia.com/v1/genai/{GORSEL_MODEL}"
     body = _gorsel_govde(GORSEL_MODEL, prompt, genislik, yukseklik)
     hdr = {"Content-Type": "application/json", "Accept": "application/json",
            "Authorization": f"Bearer {key}"}
+    _log(f"model={GORSEL_MODEL} boyut={genislik}x{yukseklik} timeout={timeout}")
     try:
         d = _nvcf_iste(url, json.dumps(body).encode(), hdr, timeout)
     except urllib.error.HTTPError as he:
-        print(f"      (NVIDIA görsel HTTP {he.code}: {he.read().decode()[:160]})")
+        govde = ""
+        try:
+            govde = he.read().decode()[:200]
+        except Exception:
+            pass
+        _log(f"HTTP {he.code}: {govde}")
+        print(f"      (NVIDIA görsel HTTP {he.code}: {govde[:160]})")
         return None
     except Exception as e:
+        _log(f"HATA {type(e).__name__}: {str(e)[:140]}")
         print(f"      (NVIDIA görsel atlandı: {str(e)[:140]})")
         return None
     ham = _base64_cikar(d)
     if not ham:
+        _log(f"base64 bulunamadı. yanıt anahtarları={list(d)[:8] if isinstance(d, dict) else type(d).__name__}")
         return None
+    _log(f"BAŞARILI: {len(ham)} bayt görsel çözüldü")
     try:
         os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
         with open(cikti, "wb") as f:
