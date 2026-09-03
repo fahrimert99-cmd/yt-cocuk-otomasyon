@@ -129,6 +129,92 @@ def benzer_var_mi(baslik, mevcut_basliklar, esik=None):
     return any(_kosinus(aday, v) >= esik for v in digerleri)
 
 
+# ---- Görsel üretim (image-gen: FLUX / SDXL) ---------------------------------
+# NVIDIA genai görsel endpoint'i. Model NVIDIA_GORSEL_MODEL ile değiştirilebilir
+# (ör. stabilityai/stable-diffusion-xl). FLUX schnell hızlı + ücretsiz.
+GORSEL_MODEL = os.environ.get("NVIDIA_GORSEL_MODEL", "").strip() or "black-forest-labs/flux.1-schnell"
+
+
+def _base64_cikar(d):
+    """NVIDIA görsel yanıtının farklı şemalarından base64 metnini çıkarır."""
+    import base64
+    aday = None
+    if isinstance(d, dict):
+        if isinstance(d.get("artifacts"), list) and d["artifacts"]:
+            aday = d["artifacts"][0].get("base64") or d["artifacts"][0].get("b64_json")
+        elif isinstance(d.get("data"), list) and d["data"]:
+            aday = d["data"][0].get("b64_json") or d["data"][0].get("base64")
+        else:
+            aday = d.get("image") or d.get("b64_json") or d.get("base64")
+    if not aday or not isinstance(aday, str):
+        return None
+    if "," in aday and aday.strip().startswith("data:"):
+        aday = aday.split(",", 1)[1]      # "data:image/png;base64,...." önekini at
+    try:
+        return base64.b64decode(aday)
+    except Exception:
+        return None
+
+
+def gorsel_uret(prompt, cikti, genislik=1024, yukseklik=1792):
+    """NVIDIA image-gen ile görsel üretip `cikti`ya kaydeder. Yol|None döner
+    (her hata/erişim sorunu None -> çağıran mevcut kapağa düşer)."""
+    key = A._nvidia_key()
+    if not key or not prompt:
+        return None
+    url = f"https://ai.api.nvidia.com/v1/genai/{GORSEL_MODEL}"
+    body = {"prompt": prompt, "width": genislik, "height": yukseklik,
+            "mode": "base", "steps": 4, "cfg_scale": 3.5, "seed": 0}
+    req = urllib.request.Request(
+        url, data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json", "Accept": "application/json",
+                 "Authorization": f"Bearer {key}"})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            d = json.loads(r.read().decode())
+    except Exception as e:
+        print(f"      (NVIDIA görsel atlandı: {str(e)[:120]})")
+        return None
+    ham = _base64_cikar(d)
+    if not ham:
+        return None
+    try:
+        os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
+        with open(cikti, "wb") as f:
+            f.write(ham)
+        return cikti if os.path.getsize(cikti) > 1000 else None
+    except Exception:
+        return None
+
+
+def kapak_arkaplani(baslik, kanca="", cikti="output/ai_kapak_bg.jpg"):
+    """Türkçe başlıktan sinematik İngilizce bir görsel prompt üretip (LLM),
+    NVIDIA image-gen ile dikey (9:16) kapak ARKA PLANI oluşturur. Yol|None.
+    Metin/marka üstüne kapak.py tarafından basılır -> görsel sade/dramatik olmalı."""
+    key = A._nvidia_key()
+    if not key:
+        return None
+    # 1) Başlıktan güçlü bir görsel prompt kur (metin/yazı İÇERMESİN; kapak.py yazar).
+    pr = _nvidia_json(
+        f"""Bir Türk tüketici-tuzağı YouTube Shorts videosu için DİKEY (9:16) çarpıcı,
+sinematik bir KAPAK ARKA PLANI görseli tarif et. Başlık: "{baslik}". Kanca: "{kanca}".
+Görsel dramatik, yüksek kontrast, tek net odak, koyu sinematik ışık olsun; İZLEYİCİDE
+merak/tedirginlik uyandırsın. Görselde YAZI/METİN/LOGO/insan yüzü yakın çekimi OLMASIN
+(üstüne yazı basılacak, üst-orta alan sade kalsın).
+SADECE JSON döndür: {{"prompt":"detailed cinematic english image prompt, no text, no words"}}""",
+        model=A.NVIDIA_MODEL)
+    gpr = ""
+    if isinstance(pr, dict):
+        gpr = (pr.get("prompt") or "").strip()
+    if not gpr:
+        gpr = (f"cinematic dramatic vertical poster background about a consumer scam/trap, "
+               f"high contrast, dark moody lighting, single clear subject, ominous mood, "
+               f"no text, no words, no letters — theme: {baslik}")
+    # güvenlik: modele "yazı yok" kuralını pekiştir
+    gpr += ", no text, no watermark, no captions, cinematic, 9:16 vertical"
+    return gorsel_uret(gpr, cikti, genislik=1024, yukseklik=1792)
+
+
 if __name__ == "__main__":
     print("KRITIK_MODEL:", KRITIK_MODEL, "| EMBED_MODEL:", EMBED_MODEL,
-          "| NVIDIA key:", bool(A._nvidia_key()))
+          "| GORSEL_MODEL:", GORSEL_MODEL, "| NVIDIA key:", bool(A._nvidia_key()))

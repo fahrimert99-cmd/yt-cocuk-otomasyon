@@ -86,11 +86,19 @@ def _marka_bandi(base,ad,renk,logo_path,konum):
             for dy in (-3,0,3): d.text((tx0+dx,ty+dy),adU,font=font,fill=(0,0,0,255))
         d.text((tx0,ty),adU,font=font,fill=(255,255,255,255))
 
-def kapak_uret(video_path,baslik,cikti="output/kapak.jpg"):
+def kapak_uret(video_path,baslik,cikti="output/kapak.jpg",arka_plan=None):
+    # arka_plan: (opsiyonel) AI ile üretilmiş kapak arka planı. Verilir ve
+    # okunabilirse videodan kare çıkarmak YERİNE bu görsel zemin olur; metin/marka
+    # aynı dramatik boru hattıyla üstüne basılır. Yoksa/bozuksa -> eski davranış.
     os.makedirs(os.path.dirname(cikti) or ".",exist_ok=True)
     marka=_marka_ayar()
     fr="/tmp/_sp.jpg"
-    if not _kare(video_path,fr): Image.new("RGB",(W,H),(14,10,18)).save(fr)
+    if arka_plan and os.path.exists(arka_plan):
+        try:
+            Image.open(arka_plan).convert("RGB").save(fr);
+        except Exception: arka_plan=None
+    if not (arka_plan and os.path.exists(fr)):
+        if not _kare(video_path,fr): Image.new("RGB",(W,H),(14,10,18)).save(fr)
     try: bg=Image.open(fr).convert("RGB")
     except: bg=Image.new("RGB",(W,H),(14,10,18))
     sc=max(W/bg.width,H/bg.height);bg=bg.resize((int(bg.width*sc),int(bg.height*sc)),Image.LANCZOS)

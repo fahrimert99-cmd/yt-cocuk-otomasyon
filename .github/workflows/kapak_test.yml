@@ -1,0 +1,43 @@
+name: AI Kapak Onizleme (YUKLEMEZ)
+# Sadece elle (workflow_dispatch). NVIDIA image-gen ile ornek bir kapak uretir ve
+# ARTIFACT olarak sunar. YouTube secret'lari BILEREK verilmez -> kanala DOKUNAMAZ.
+# Kaliteyi gorup begenirsen config.json -> "ai_kapak": true yapariz.
+on:
+  workflow_dispatch:
+    inputs:
+      baslik:
+        description: "Ornek kapak basligi (bos = senaryolar.json'daki ilk baslik)"
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  onizleme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Fontlar + ffmpeg (AI basarisizsa kare-yedegi icin)
+        run: sudo apt-get update && sudo apt-get install -y fonts-dejavu ffmpeg
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: AI kapak uret (YouTube'a YUKLENMEZ)
+        env:
+          # YT secret'lari BILEREK yok -> yukleme imkansiz.
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_GORSEL_MODEL: ${{ secrets.NVIDIA_GORSEL_MODEL }}
+          BASLIK: ${{ github.event.inputs.baslik }}
+        run: python3 kapak_test.py
+      - name: Kapaklari artifact yap
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: ai-kapak-onizleme
+          path: |
+            output/kapak_test.jpg
+            output/ai_kapak_bg.jpg
+          if-no-files-found: warn
+          retention-days: 7
