@@ -258,24 +258,42 @@ def kapak_arkaplani(baslik, kanca="", cikti="output/ai_kapak_bg.jpg"):
     key = A._nvidia_key()
     if not key:
         return None
-    # 1) Başlıktan güçlü bir görsel prompt kur (metin/yazı İÇERMESİN; kapak.py yazar).
+    # 1) Başlıktan güçlü bir görsel prompt kur. EN ÖNEMLİ KURAL: görsel KONUYU
+    #    GÖSTERSİN (soyut/gizemli figür DEĞİL). Metin/yazı içermesin; kapak.py yazar.
     pr = _nvidia_json(
-        f"""Bir Türk tüketici-tuzağı YouTube Shorts videosu için DİKEY (9:16) çarpıcı,
-sinematik bir KAPAK ARKA PLANI görseli tarif et. Başlık: "{baslik}". Kanca: "{kanca}".
-Görsel dramatik, yüksek kontrast, tek net odak, koyu sinematik ışık olsun; İZLEYİCİDE
-merak/tedirginlik uyandırsın. Görselde YAZI/METİN/LOGO/insan yüzü yakın çekimi OLMASIN
-(üstüne yazı basılacak, üst-orta alan sade kalsın).
-SADECE JSON döndür: {{"prompt":"detailed cinematic english image prompt, no text, no words"}}""",
+        f"""You write image-generation prompts for a Turkish consumer-TRAP YouTube Shorts channel.
+Video title (Turkish): "{baslik}". Hook: "{kanca}".
+
+TASK: Write ONE vivid, PHOTOREALISTIC, cinematic image prompt (in English) for a VERTICAL (9:16)
+thumbnail background that CLEARLY SHOWS the real subject/setting of THIS specific consumer trap.
+
+CRITICAL RULES:
+- The image MUST DEPICT the concrete real-world scene/objects of the topic, so a viewer instantly
+  gets what it is about. Examples of mapping topic -> scene:
+  buffet/restaurant -> a lavish restaurant buffet table with plates and food under dramatic light;
+  supermarket/market -> supermarket shelves, price tags, a shopping cart;
+  bank/credit card -> close-up of credit cards, money, an ATM;
+  subscription/app -> a smartphone screen glowing in the dark with app icons;
+  discount/sale -> red discount tags and price stickers.
+  Pick the scene that matches THIS title.
+- Photorealistic, high detail, dramatic cinematic lighting, high contrast, moody, a subtle sense
+  of a hidden trap/deception. Eye-catching for a thumbnail.
+- ABSOLUTELY NO hooded figures, no ghosts, no random mysterious silhouettes, no abstract mood-only art.
+- NO text, no words, no letters, no logos, no watermark. Keep the TOP-CENTER area relatively clean
+  and uncluttered (title text will be overlaid there).
+Return ONLY JSON: {{"prompt":"detailed photorealistic cinematic english image prompt, shows the topic, no text"}}""",
         model=A.NVIDIA_MODEL)
     gpr = ""
     if isinstance(pr, dict):
         gpr = (pr.get("prompt") or "").strip()
     if not gpr:
-        gpr = (f"cinematic dramatic vertical poster background about a consumer scam/trap, "
-               f"high contrast, dark moody lighting, single clear subject, ominous mood, "
-               f"no text, no words, no letters — theme: {baslik}")
-    # güvenlik: modele "yazı yok" kuralını pekiştir
-    gpr += ", no text, no watermark, no captions, cinematic, 9:16 vertical"
+        gpr = (f"photorealistic cinematic vertical thumbnail showing the real scene of a consumer "
+               f"trap, dramatic high-contrast lighting, moody, detailed, eye-catching, relevant "
+               f"real-world objects, no people close-up, theme: {baslik}")
+    # güvenlik: konuyu göster + yazı yok kurallarını pekiştir (soyut figürleri engelle)
+    gpr += (", photorealistic, cinematic dramatic lighting, high detail, 9:16 vertical, "
+            "no text, no words, no letters, no watermark, "
+            "no hooded figure, no ghost, no random silhouette")
     return gorsel_uret(gpr, cikti, genislik=768, yukseklik=1344)
 
 
