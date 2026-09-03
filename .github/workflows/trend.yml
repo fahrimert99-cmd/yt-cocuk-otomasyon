@@ -1,0 +1,57 @@
+name: Trend & Senaryo Besleme
+# Elle çalıştırılır (workflow_dispatch). YouTube'daki popüler tüketici-tuzağı
+# videolarını analiz edip yeni senaryo fikirleri üretir ve senaryolar.json'a ekler.
+# Video YÜKLEMEZ; yalnızca senaryo havuzunu büyütür + trend_rapor.md yazar.
+on:
+  workflow_dispatch:
+    inputs:
+      sayi:
+        description: "Eklenecek yeni senaryo sayısı (1-10, boş = 4)"
+        required: false
+        default: ""
+      gun:
+        description: "Kaç günlük pencere (boş = 90)"
+        required: false
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: kisa-video          # senaryolar.json/durum çakışmasını serialize et
+  cancel-in-progress: false
+jobs:
+  trend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Trend analizi + senaryo uret
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
+          SAYI: ${{ github.event.inputs.sayi }}
+          GUN: ${{ github.event.inputs.gun }}
+        run: python3 trend.py
+      - name: Yeni senaryolari commit et
+        if: always()
+        run: |
+          git config user.name "trend-bot"
+          git config user.email "trend-bot@users.noreply.github.com"
+          git add senaryolar.json trend_rapor.md || true
+          git commit -m "trend: yeni senaryolar + rapor" || { echo "degisiklik yok"; exit 0; }
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "push tamam (deneme $i)"; exit 0
+            fi
+            echo "push denemesi $i basarisiz"; sleep $((2 ** i))
+          done
+          echo "push atlandi"; exit 0
