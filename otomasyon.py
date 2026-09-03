@@ -154,7 +154,19 @@ def main():
     kapak_yolu = None
     try:
         import kapak as K
-        kapak_yolu = K.kapak_uret(cikti, veri["baslik"], "output/kapak.jpg")
+        # AI KAPAK (opsiyonel, config.ai_kapak): NVIDIA image-gen ile özel dramatik
+        # arka plan üret; başarısızsa None -> kapak videodan kare çıkarır (eski hal).
+        ai_bg = None
+        if cfg.get("ai_kapak"):
+            try:
+                import nvidia_araclar as NA
+                ai_bg = NA.kapak_arkaplani(veri["baslik"], veri.get("kanca", ""),
+                                           "output/ai_kapak_bg.jpg")
+                if ai_bg:
+                    print(f"      AI kapak arka planı üretildi ({NA.GORSEL_MODEL})")
+            except Exception as e:
+                print(f"      AI kapak atlandı: {str(e)[:100]}")
+        kapak_yolu = K.kapak_uret(cikti, veri["baslik"], "output/kapak.jpg", arka_plan=ai_bg)
         print(f"      Kapak: {kapak_yolu}")
     except Exception as e:
         print(f"      Kapak üretilemedi: {str(e)[:120]}")
