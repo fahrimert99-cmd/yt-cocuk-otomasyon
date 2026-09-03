@@ -156,24 +156,55 @@ def _base64_cikar(d):
         return None
 
 
-def gorsel_uret(prompt, cikti, genislik=1024, yukseklik=1792):
+def _nvcf_iste(url, data, hdr, timeout):
+    """NVIDIA genai POST — SENKRON (200) ya da ASYNC (202 + NVCF-REQID -> poll)
+    yanıtı işler. cold-start'ta endpoint 202 döner; status endpoint'i sonuç
+    hazır olana dek yoklanır. JSON döner (hata fırlatır -> çağıran yakalar)."""
+    import time as _t
+    req = urllib.request.Request(url, data=data, headers=hdr)
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        status = getattr(r, "status", 200)
+        reqid = r.headers.get("NVCF-REQID") or r.headers.get("nvcf-reqid")
+        govde = r.read().decode()
+    son = _t.time() + timeout
+    while status == 202 and reqid and _t.time() < son:
+        _t.sleep(5)
+        s = urllib.request.Request(
+            f"https://api.nvidia.com/v2/nvcf/exec/status/{reqid}", headers=hdr)
+        with urllib.request.urlopen(s, timeout=timeout) as sr:
+            status = getattr(sr, "status", 200)
+            govde = sr.read().decode()
+    return json.loads(govde)
+
+
+def _gorsel_govde(model, prompt, w, h):
+    """Model ailesine göre istek gövdesi. SDXL -> text_prompts; FLUX -> prompt."""
+    m = model.lower()
+    if "stable-diffusion" in m or "sdxl" in m:
+        return {"text_prompts": [{"text": prompt, "weight": 1}],
+                "cfg_scale": 5, "sampler": "K_EULER_ANCESTRAL", "seed": 0,
+                "steps": 25, "width": w, "height": h}
+    # FLUX schnell: guidance-distilled, cfg yok, 4 adım. Sade gövde = az hata.
+    return {"prompt": prompt, "width": w, "height": h, "steps": 4, "seed": 0}
+
+
+def gorsel_uret(prompt, cikti, genislik=1024, yukseklik=1792, timeout=300):
     """NVIDIA image-gen ile görsel üretip `cikti`ya kaydeder. Yol|None döner
     (her hata/erişim sorunu None -> çağıran mevcut kapağa düşer)."""
     key = A._nvidia_key()
     if not key or not prompt:
         return None
     url = f"https://ai.api.nvidia.com/v1/genai/{GORSEL_MODEL}"
-    body = {"prompt": prompt, "width": genislik, "height": yukseklik,
-            "mode": "base", "steps": 4, "cfg_scale": 3.5, "seed": 0}
-    req = urllib.request.Request(
-        url, data=json.dumps(body).encode(),
-        headers={"Content-Type": "application/json", "Accept": "application/json",
-                 "Authorization": f"Bearer {key}"})
+    body = _gorsel_govde(GORSEL_MODEL, prompt, genislik, yukseklik)
+    hdr = {"Content-Type": "application/json", "Accept": "application/json",
+           "Authorization": f"Bearer {key}"}
     try:
-        with urllib.request.urlopen(req, timeout=120) as r:
-            d = json.loads(r.read().decode())
+        d = _nvcf_iste(url, json.dumps(body).encode(), hdr, timeout)
+    except urllib.error.HTTPError as he:
+        print(f"      (NVIDIA görsel HTTP {he.code}: {he.read().decode()[:160]})")
+        return None
     except Exception as e:
-        print(f"      (NVIDIA görsel atlandı: {str(e)[:120]})")
+        print(f"      (NVIDIA görsel atlandı: {str(e)[:140]})")
         return None
     ham = _base64_cikar(d)
     if not ham:
