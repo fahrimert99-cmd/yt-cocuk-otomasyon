@@ -63,20 +63,36 @@ def _populer_videolar(yt, gun=90, k_basina=15):
 
 
 def _llm(prompt):
-    """Claude (öncelik) -> Gemini -> Pollinations, ham metin döner."""
+    """Gemini (öncelik) -> Claude -> Pollinations, ham metin döner. Tüm yollar
+    hata-korumalı; hepsi başarısızsa nedenleri toplayıp net hata verir.
+    Gemini anahtarı GEMINI_API_KEY veya GEMINI_KEY'den okunur (repo ikisini de
+    kullanıyor); 429'da bir kez tekrar dener."""
+    import time as _t
+    gkey = (os.environ.get("GEMINI_API_KEY") or os.environ.get("GEMINI_KEY") or "").strip()
     ckey = A._claude_key()
-    gkey = os.environ.get("GEMINI_API_KEY", "").strip()
+    hatalar = []
+    if gkey:
+        for mdl in ("gemini-2.0-flash", "gemini-1.5-flash"):
+            for deneme in range(2):
+                try:
+                    return A._gemini(prompt, gkey, model=mdl)
+                except Exception as e:
+                    msg = str(e)
+                    hatalar.append(f"gemini/{mdl}#{deneme+1}: {msg[:70]}")
+                    if "429" in msg and deneme == 0:
+                        _t.sleep(20)
+                    else:
+                        break
     if ckey:
         try:
             return A._claude(prompt, ckey)
         except Exception as e:
-            print(f"  ! claude hata: {str(e)[:90]}")
-    if gkey:
-        try:
-            return A._gemini(prompt, gkey)
-        except Exception as e:
-            print(f"  ! gemini hata: {str(e)[:90]}")
-    return A._poll_post(prompt)
+            hatalar.append(f"claude: {str(e)[:70]}")
+    try:
+        return A._poll_post(prompt)
+    except Exception as e:
+        hatalar.append(f"poll: {str(e)[:70]}")
+    raise RuntimeError("LLM üretilemedi | " + " || ".join(hatalar))
 
 
 def _fikir_uret(populer, mevcut_basliklar, sayi):
