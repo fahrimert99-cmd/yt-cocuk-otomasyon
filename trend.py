@@ -20,6 +20,7 @@ import os, re, json, datetime
 from googleapiclient.discovery import build
 import youtube_yukle as YT
 import ai_script as A
+import nvidia_araclar as NA   # NVIDIA NIM kalite araçları (hepsi non-fatal)
 
 ARAMALAR = [
     "tüketici tuzağı", "market fiyat tuzağı", "gizli ücret tüketici",
@@ -284,10 +285,22 @@ def main():
         if not _gecerli(sen):
             print(f"      ! kalite/şema geçmedi, atlandı: {bas[:50]}")
             continue
+        # NVIDIA ÖZ-İYİLEŞTİRME: senaryoyu güçlü bir modele eleştirtip güçlendir.
+        # Sadece dönen sürüm geçerliyse kullan; değilse orijinalde kal (non-fatal).
+        gelismis = NA.senaryo_iyilestir(sen)
+        if gelismis and _gecerli(gelismis) and _norm(gelismis.get("baslik", "")) not in (
+                mevcut_norm - {_norm(bas)}):
+            sen = gelismis
+            print(f"      ✎ senaryo güçlendirildi (NVIDIA/{NA.KRITIK_MODEL})")
         if _norm(sen.get("baslik", "")) in mevcut_norm:
+            continue
+        # ANLAMSAL TEKRAR: farklı kelime ama aynı konu -> ele (embedding, non-fatal).
+        if NA.benzer_var_mi(sen.get("baslik", ""), mevcut_basliklar):
+            print(f"      · atlandı (anlamsal tekrar): {sen.get('baslik','')[:55]}")
             continue
         havuz.append(sen)
         mevcut_norm.add(_norm(sen.get("baslik", "")))
+        mevcut_basliklar.append(sen.get("baslik", ""))
         eklenen.append(sen)
         print(f"      + eklendi: {sen['baslik'][:60]}")
 
