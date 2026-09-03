@@ -188,7 +188,9 @@ def _gorsel_govde(model, prompt, w, h):
     return {"prompt": prompt, "width": w, "height": h, "steps": 4, "seed": 0}
 
 
-def gorsel_uret(prompt, cikti, genislik=1024, yukseklik=1792, timeout=300):
+def gorsel_uret(prompt, cikti, genislik=768, yukseklik=1344, timeout=300):
+    # NOT: FLUX schnell yalnızca şu boyutları kabul eder: 768,832,896,960,1024,
+    # 1088,1152,1216,1280,1344. 768x1344 = dikey 9:16'ya en yakın izinli oran.
     """NVIDIA image-gen ile görsel üretip `cikti`ya kaydeder. Yol|None döner
     (her hata/erişim sorunu None -> çağıran mevcut kapağa düşer)."""
     key = A._nvidia_key()
@@ -243,7 +245,7 @@ SADECE JSON döndür: {{"prompt":"detailed cinematic english image prompt, no te
                f"no text, no words, no letters — theme: {baslik}")
     # güvenlik: modele "yazı yok" kuralını pekiştir
     gpr += ", no text, no watermark, no captions, cinematic, 9:16 vertical"
-    return gorsel_uret(gpr, cikti, genislik=1024, yukseklik=1792)
+    return gorsel_uret(gpr, cikti, genislik=768, yukseklik=1344)
 
 
 if __name__ == "__main__":
