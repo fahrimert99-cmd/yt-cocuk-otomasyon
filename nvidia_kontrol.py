@@ -81,9 +81,13 @@ def main():
         _o(f"  SOHBET/LLM ({len(chat)}):")
         for c in chat[:30]:
             _o(f"      - {c}")
+        # VIDEO üretim adayları (isim sezgisi)
+        video = bul("video", "svd", "cosmos-predict", "cosmos-transfer", "sora", "ltx",
+                    "mochi", "hunyuan-video", "gen-3", "wan", "runway")
         _o(f"  EMBEDDING ({len(embed)}): {', '.join(embed[:6]) or 'YOK'}")
         _o(f"  VISION ({len(vision)}): {', '.join(vision[:8]) or 'YOK'}")
         _o(f"  GÖRSEL adayları /v1/models içinde ({len(gorsel)}): {', '.join(gorsel[:12]) or 'YOK (genai ayrı)'}")
+        _o(f"  VIDEO adayları /v1/models içinde ({len(video)}): {', '.join(video[:12]) or 'YOK'}")
         # kullandığımız LLM'ler listede mi
         istedigimiz = ["meta/llama-3.3-70b-instruct", "deepseek-ai/deepseek-v3",
                        "qwen/qwen2.5-72b-instruct", "meta/llama-3.1-70b-instruct"]
@@ -118,6 +122,24 @@ def main():
     for m in gorsel_adaylar:
         durum = _durum(lambda mm=m: _post(
             f"https://ai.api.nvidia.com/v1/genai/{mm}", _gorsel_govde(mm), timeout=20))
+        _o(f"  {durum:<34} {m}")
+
+    # 4) VIDEO üretim endpoint'lerini yokla (bilinen NVIDIA genai video modelleri).
+    #    404 = hesapta yok, 422 = erişilebilir (parametre), timeout = ağır/cold.
+    video_adaylar = [
+        "stabilityai/stable-video-diffusion",
+        "nvidia/cosmos-predict1-7b",
+        "nvidia/cosmos-predict2-2b",
+        "nvidia/cosmos-1.0-7b-text2world",
+        "genmo/mochi-1-preview",
+        "lightricks/ltx-video",
+        "tencent/hunyuan-video",
+    ]
+    _o("VIDEO endpoint yoklaması (ai.api.nvidia.com/v1/genai):")
+    for m in video_adaylar:
+        durum = _durum(lambda mm=m: _post(
+            f"https://ai.api.nvidia.com/v1/genai/{mm}",
+            {"prompt": "a red apple on a table", "image": ""}, timeout=20))
         _o(f"  {durum:<34} {m}")
 
     print("\n===== NVIDIA MODEL ERISIM OZETI =====")
