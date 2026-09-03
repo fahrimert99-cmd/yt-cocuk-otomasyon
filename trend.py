@@ -135,14 +135,16 @@ def _llm(prompt):
 
 
 def _llm_json(prompt, tries=3):
-    """LLM'den JSON alır; kesik/bozuk gelirse (LLM bazen yapar) TEKRAR dener.
-    Ayrıca kaba bir kurtarma: son kapanmamış diziyi/nesneyi kapatmayı dener."""
+    """LLM'den JSON alır. YALNIZCA JSON kesik/bozuk gelirse tekrar dener; LLM
+    sağlayıcısı çökerse (404/429/kota) HEMEN durur (tekrar denemek kotayı boşa
+    yakar). Böylece kota hatasında 3x israf olmaz."""
     son = ""
     for k in range(tries):
+        ham = _llm(prompt)                 # sağlayıcı hatası -> yukarı fırlar (retry yok)
         try:
-            return json.loads(A._temizle(_llm(prompt)))
+            return json.loads(A._temizle(ham))
         except Exception as e:
-            son = f"{type(e).__name__}: {str(e)[:80]}"
+            son = f"{type(e).__name__}: {str(e)[:90]}"   # sadece JSON parse -> tekrar
     raise RuntimeError(f"JSON çözülemedi ({tries} deneme): {son}")
 
 
