@@ -10,7 +10,7 @@ on:
         required: false
         default: ""
 permissions:
-  contents: read
+  contents: write
 jobs:
   onizleme:
     runs-on: ubuntu-latest
@@ -42,3 +42,18 @@ jobs:
             output/ai_kapak_bg.jpg
           if-no-files-found: warn
           retention-days: 7
+      # Gorselleri 'ai-kapak-onizleme' dalina yayinla (orphan) -> asistan cekip
+      # kullaniciya dogrudan gosterebilsin. main'e DOKUNMAZ.
+      - name: Onizleme gorsellerini dala yayinla
+        if: always()
+        run: |
+          test -f output/kapak_test.jpg || exit 0
+          cp output/kapak_test.jpg output/ai_kapak_bg.jpg /tmp/ 2>/dev/null || true
+          git config user.name "onizleme-bot"
+          git config user.email "onizleme-bot@users.noreply.github.com"
+          git checkout --orphan onizleme_yayin
+          git rm -rf . >/dev/null 2>&1 || true
+          cp /tmp/kapak_test.jpg /tmp/ai_kapak_bg.jpg . 2>/dev/null || true
+          git add kapak_test.jpg ai_kapak_bg.jpg
+          git commit -m "AI kapak onizleme gorselleri" || exit 0
+          git push -f origin onizleme_yayin:ai-kapak-onizleme || echo "push atlandi"
