@@ -129,10 +129,11 @@ def benzer_var_mi(baslik, mevcut_basliklar, esik=None):
     return any(_kosinus(aday, v) >= esik for v in digerleri)
 
 
-# ---- Görsel üretim (image-gen: FLUX / SDXL) ---------------------------------
-# NVIDIA genai görsel endpoint'i. Model NVIDIA_GORSEL_MODEL ile değiştirilebilir
-# (ör. stabilityai/stable-diffusion-xl). FLUX schnell hızlı + ücretsiz.
-GORSEL_MODEL = os.environ.get("NVIDIA_GORSEL_MODEL", "").strip() or "black-forest-labs/flux.1-schnell"
+# ---- Görsel üretim (image-gen: SDXL / FLUX) ---------------------------------
+# NVIDIA genai görsel endpoint'i. Model NVIDIA_GORSEL_MODEL ile değiştirilebilir.
+# Varsayılan SDXL: en çok kullanılan, genelde SICAK tutulan model -> hızlı yanıt.
+# (flux.1-schnell bu hesapta ağır soğuk-başlangıç yapıp POST'ta timeout veriyordu.)
+GORSEL_MODEL = os.environ.get("NVIDIA_GORSEL_MODEL", "").strip() or "stabilityai/stable-diffusion-xl"
 
 
 def _base64_cikar(d):
