@@ -12,7 +12,7 @@ Araçlar:
   benzer_var_mi(baslik, mevcut) -> embedding ile ANLAMSAL tekrar tespiti (bool).
 
 Env (opsiyonel):
-  NVIDIA_KRITIK_MODEL  varsayılan deepseek-ai/deepseek-v4-pro-0813 (senaryo eleştirisi)
+  NVIDIA_KRITIK_MODEL  varsayılan deepseek-ai/deepseek-v4-flash-0731 (senaryo eleştirisi)
   NVIDIA_EMBED_MODEL   varsayılan nvidia/nv-embedqa-mistral-7b-v2 (anlamsal benzerlik)
   NVIDIA_BENZERLIK_ESIK varsayılan 0.90 (bu ve üstü kosinüs -> tekrar say)
 """
@@ -21,7 +21,9 @@ import ai_script as A
 
 # Senaryo eleştirisi için buffet'ten güçlü bir reasoning modeli.
 # DeepSeek-v4-pro: güçlü akıl yürütme -> senaryo eleştirisi/güçlendirmesi için ideal.
-KRITIK_MODEL = os.environ.get("NVIDIA_KRITIK_MODEL", "").strip() or "deepseek-ai/deepseek-v4-pro-0813"
+# deepseek-v4-flash: pro kadar güçlü akıl yürütme ama ~2x hızlı -> senaryo başına
+# eleştiri/güçlendirme süresi yarıya iner (pro'ya NVIDIA_KRITIK_MODEL ile dönülebilir).
+KRITIK_MODEL = os.environ.get("NVIDIA_KRITIK_MODEL", "").strip() or "deepseek-ai/deepseek-v4-flash-0731"
 # Anlamsal benzerlik için embedding modeli.
 EMBED_MODEL = os.environ.get("NVIDIA_EMBED_MODEL", "").strip() or "nvidia/nv-embedqa-mistral-7b-v2"
 
@@ -76,8 +78,11 @@ def senaryo_iyilestir(sen):
     d["baslik"] = sen.get("baslik") or d.get("baslik")
     d["kanca"] = sen.get("kanca") or d.get("kanca")
     d["tema"] = "tuzak"
+    # None-güvenli: iyileştirilmiş sürüm etiketleri düşürürse orijinaldekini KORU
+    # (sen.get(..., default) None değeri varken default'u DÖNMEZ -> or ile çözülür).
     if not isinstance(d.get("etiketler"), list) or not d["etiketler"]:
-        d["etiketler"] = sen.get("etiketler", ["tuzak", "tüketici"])
+        d["etiketler"] = (sen.get("etiketler") if isinstance(sen.get("etiketler"), list)
+                          and sen.get("etiketler") else ["tuzak", "tüketici"])
     return d
 
 

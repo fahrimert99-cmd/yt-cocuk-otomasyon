@@ -218,10 +218,17 @@ def _senaryo_uret(baslik, kanca):
     d.setdefault("baslik", baslik)
     d.setdefault("kanca", kanca)
     d["tema"] = "tuzak"
-    if isinstance(d.get("etiketler"), list):
-        for z in ("tuzak", "tüketici"):
-            if z not in d["etiketler"]:
-                d["etiketler"].append(z)
+    # ETİKETLER GARANTİSİ: model null/eksik döndürse de her zaman geçerli, dolu
+    # bir liste olsun (SEO tag'leri boş kalmasın).
+    et = d.get("etiketler")
+    if not isinstance(et, list):
+        et = []
+    et = [str(x).strip() for x in et if str(x).strip() and str(x).strip().lower()
+          not in ("e3", "e4", "e5")]              # şablon yer tutucularını ele
+    for z in ("tuzak", "tüketici", "tüketici hakları", "tasarruf", "para"):
+        if z not in et:
+            et.append(z)
+    d["etiketler"] = et[:12]
     return d
 
 
