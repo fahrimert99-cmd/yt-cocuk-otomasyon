@@ -1,0 +1,59 @@
+name: Ingilizce Surum ONIZLEME (YUKLEMEZ)
+# Elle calistirilir. Bir senaryoyu Ingilizceye cevirip TAM bir English Short
+# uretir (stok/AI sahne + ElevenLabs ses + muzik). YouTube secret'lari BILEREK
+# verilmez -> kanala YUKLEYEMEZ. Cikti artifact + 'ingilizce-video' dalina.
+on:
+  workflow_dispatch:
+    inputs:
+      konu:
+        description: "Belirli bir baslik denemek istersen (bos = rastgele tuzak senaryosu)."
+        required: false
+        default: ""
+permissions:
+  contents: write
+jobs:
+  ingilizce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: FFmpeg kur
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Ingilizce surum uret (YouTube'a YUKLENMEZ)
+        env:
+          # YT secret'lari BILEREK yok -> yukleme imkansiz.
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
+          KONU: ${{ github.event.inputs.konu }}
+        run: python3 ingilizce_uret.py
+      - name: Ingilizce videoyu artifact yap
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: ingilizce
+          path: output/ingilizce.mp4
+          if-no-files-found: warn
+          retention-days: 7
+      # Videoyu 'ingilizce-video' dalina yayinla -> asistan cekip gosterebilsin.
+      - name: Ingilizce videoyu dala yayinla
+        if: always()
+        run: |
+          test -f output/ingilizce.mp4 || exit 0
+          cp output/ingilizce.mp4 /tmp/ingilizce.mp4
+          git config user.name "ingilizce-bot"
+          git config user.email "ingilizce-bot@users.noreply.github.com"
+          git checkout --orphan ingilizce_video_tmp
+          git rm -rf . >/dev/null 2>&1 || true
+          cp /tmp/ingilizce.mp4 ingilizce.mp4
+          git add ingilizce.mp4
+          git commit -m "ingilizce surum videosu" || exit 0
+          git push -f origin ingilizce_video_tmp:ingilizce-video || echo "push atlandi"

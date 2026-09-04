@@ -86,6 +86,54 @@ def senaryo_iyilestir(sen):
     return d
 
 
+# ---- Çeviri (TR -> EN) : İngilizce sürüm / kardeş kanal için -----------------
+# Senaryoyu doğal, vurucu ABD İngilizcesine çevirir (seslendirme + ekran metni
+# için). Görsel promptları zaten İngilizce -> DEĞİŞMEDEN korunur. NON-FATAL.
+CEVIRI_MODEL = (os.environ.get("NVIDIA_CEVIRI_MODEL", "").strip()
+                or "mistralai/mistral-large-2-instruct")
+
+CEVIRI_PROMPT = """You are a professional TR->EN localizer for a viral YouTube Shorts channel about
+consumer traps and money scams. Translate the Turkish scenario below into natural, punchy US English
+suitable for spoken narration and on-screen text. Make it idiomatic and engaging, NOT word-for-word.
+Keep the same meaning, hook energy, structure and number of scenes. Do NOT invent statistics.
+The "gorsel" fields are ENGLISH image prompts already — copy each one UNCHANGED.
+Return ONLY valid JSON, SAME schema, nothing else:
+{{"baslik":"catchy English title","aciklama":"2-3 sentence English description","etiketler":["english","tags"],
+"kanca":"short English hook","script":"English narration ~100-120 words","sahneler":[{{"metin":"English scene text","gorsel":"unchanged english image prompt"}}],"tema":"tuzak"}}
+
+TURKISH SCENARIO (JSON):
+{mevcut}"""
+
+
+def senaryo_cevir(sen):
+    """Senaryoyu İngilizceye çevirir (dict|None). 'gorsel' alanları orijinalden
+    korunur. Başarısızlıkta None (çağıran İngilizce sürümü atlar). NON-FATAL."""
+    if not isinstance(sen, dict) or not sen.get("script"):
+        return None
+    try:
+        mevcut = json.dumps({k: sen.get(k) for k in
+                             ("baslik", "kanca", "aciklama", "etiketler", "script", "sahneler")},
+                            ensure_ascii=False)
+    except Exception:
+        return None
+    d = _nvidia_json(CEVIRI_PROMPT.format(mevcut=mevcut[:6000]), model=CEVIRI_MODEL)
+    if not isinstance(d, dict) or not d.get("script"):
+        return None
+    d["tema"] = "tuzak"
+    # Görsel promptlarını orijinalden GARANTİ ET (model değiştirmiş olabilir).
+    try:
+        orij = sen.get("sahneler") or []
+        for i, s in enumerate(d.get("sahneler") or []):
+            if i < len(orij) and (orij[i] or {}).get("gorsel"):
+                s["gorsel"] = orij[i]["gorsel"]
+    except Exception:
+        pass
+    # Etiketler güvenceleri (None/boş gelmesin)
+    if not isinstance(d.get("etiketler"), list) or not d["etiketler"]:
+        d["etiketler"] = ["consumer traps", "scams", "money", "saving", "shopping tips"]
+    return d
+
+
 # ---- Reasoning ile kanca/açılış güçlendirme (nemotron reasoning) ------------
 # Havuz doldururken (trend.py) YENİ senaryonun ilk 2 saniyesini bir REASONING
 # modeline tasarlatır: hangi merak boşluğu/şok kaydırmayı durdurur diye adım adım
