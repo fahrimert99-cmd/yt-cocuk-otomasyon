@@ -12,7 +12,7 @@ Araçlar:
   benzer_var_mi(baslik, mevcut) -> embedding ile ANLAMSAL tekrar tespiti (bool).
 
 Env (opsiyonel):
-  NVIDIA_KRITIK_MODEL  varsayılan mistralai/mistral-large-2-instruct (senaryo eleştirisi)
+  NVIDIA_KRITIK_MODEL  varsayılan deepseek-ai/deepseek-v4-pro-0813 (senaryo eleştirisi)
   NVIDIA_EMBED_MODEL   varsayılan nvidia/nv-embedqa-mistral-7b-v2 (anlamsal benzerlik)
   NVIDIA_BENZERLIK_ESIK varsayılan 0.90 (bu ve üstü kosinüs -> tekrar say)
 """
@@ -20,7 +20,8 @@ import os, re, json, math, urllib.request, urllib.error
 import ai_script as A
 
 # Senaryo eleştirisi için buffet'ten güçlü bir reasoning modeli.
-KRITIK_MODEL = os.environ.get("NVIDIA_KRITIK_MODEL", "").strip() or "mistralai/mistral-large-2-instruct"
+# DeepSeek-v4-pro: güçlü akıl yürütme -> senaryo eleştirisi/güçlendirmesi için ideal.
+KRITIK_MODEL = os.environ.get("NVIDIA_KRITIK_MODEL", "").strip() or "deepseek-ai/deepseek-v4-pro-0813"
 # Anlamsal benzerlik için embedding modeli.
 EMBED_MODEL = os.environ.get("NVIDIA_EMBED_MODEL", "").strip() or "nvidia/nv-embedqa-mistral-7b-v2"
 
