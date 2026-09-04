@@ -35,6 +35,7 @@
   "haber_gizlilik": "public",
   "ai_kapak": true,
   "ai_sahne": true,
+  "ai_beyani": true,
   "arka_muzik": true,
   "arka_muzik_ses": 0.24,
   "arka_muzik_kaynaklar": {

@@ -249,7 +249,8 @@ def main():
              gizlilik=cfg.get("gizlilik", "private"),
              kategori=str(cfg.get("kategori", "28")),
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
-             kapak=kapak_yolu, yayin_zamani=yayin_zamani)
+             kapak=kapak_yolu, yayin_zamani=yayin_zamani,
+             sentetik=bool(cfg.get("ai_beyani", True)))
     # OYNATMA LİSTESİ: videoyu kategori/temasına göre listeye ekle (izlenme
     # süresi/oturum uzunluğu -> algoritma sever). Hata olursa yükleme bozulmaz.
     if cfg.get("oynatma_listesi", True):
