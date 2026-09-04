@@ -35,7 +35,7 @@ jobs:
         run: python3 muzik_test.py
       - name: Test videosunu artifact yap
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: test-muzik
           path: output/test_muzik.mp4

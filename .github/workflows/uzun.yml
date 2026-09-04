@@ -49,7 +49,7 @@ jobs:
           python3 uzun_otomasyon.py 2>&1 | sed -E 's/anahtar:.*/anahtar: [redacted]/' | tee uzun_run.log
       - name: Run log artifact
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: uzun-run-log
           path: uzun_run.log

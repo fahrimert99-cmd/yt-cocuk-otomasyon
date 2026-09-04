@@ -52,7 +52,7 @@ jobs:
       # Uretilen video/kapak repoya commit edilmez; buradan indirilebilir.
       - name: Video artifact (son_video.mp4 / son_kapak.jpg)
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: son-video
           path: |
