@@ -86,6 +86,86 @@ def senaryo_iyilestir(sen):
     return d
 
 
+# ---- Reasoning ile kanca/açılış güçlendirme (nemotron reasoning) ------------
+# Havuz doldururken (trend.py) YENİ senaryonun ilk 2 saniyesini bir REASONING
+# modeline tasarlatır: hangi merak boşluğu/şok kaydırmayı durdurur diye adım adım
+# düşünüp en vurucu kanca + açılış cümlesini üretir. Video yükleme yolunda DEĞİL,
+# havuz üretiminde çalışır -> reasoning'in yavaşlığı sorun olmaz. NON-FATAL.
+REASONING_MODEL = (os.environ.get("NVIDIA_REASONING_MODEL", "").strip()
+                   or "nvidia/llama-3.1-nemotron-ultra-253b-v1")
+
+
+def _reasoning_json(prompt, sistem="detailed thinking on", model=None):
+    """Reasoning modeline sorar; <think>...</think> bloğunu ayıklar; JSON dict
+    döndürür. Her hata None (asla fırlatmaz)."""
+    key = A._nvidia_key()
+    if not key:
+        return None
+    url = "https://integrate.api.nvidia.com/v1/chat/completions"
+    body = {"model": model or REASONING_MODEL, "temperature": 0.6,
+            "max_tokens": 4096,
+            "messages": [{"role": "system", "content": sistem},
+                         {"role": "user", "content": prompt}]}
+    req = urllib.request.Request(
+        url, data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json", "Accept": "application/json",
+                 "Authorization": f"Bearer {key}"})
+    try:
+        with urllib.request.urlopen(req, timeout=150) as r:
+            d = json.loads(r.read().decode())
+        txt = d["choices"][0]["message"]["content"] or ""
+        txt = re.sub(r"(?is)<think>.*?</think>", "", txt)   # düşünme bloğunu at
+        return json.loads(A._temizle(txt))
+    except Exception:
+        return None
+
+
+KANCA_PROMPT = """Sen viral Türk YouTube Shorts uzmanısın. Aşağıdaki tüketici-tuzağı videosu için
+İZLEYİCİYİ İLK 2 SANİYEDE DURDURAN en vurucu açılışı tasarla. Adım adım düşün: hangi merak
+boşluğu, hangi şok, hangi kişisel tehdit ("senin paran/hakkın") en çok kaydırmayı durdurur?
+
+BAŞLIK: {baslik}
+MEVCUT KANCA: {kanca}
+METİN: {script}
+
+Kurallar: Türkçe, KUSURSUZ imlâ (ç,ğ,ı,İ,ö,ş,ü; ASCII'ye sadeleştirme). Uydurma sayı/istatistik
+YOK. Küfür/abartılı iddia YOK. Konu AYNI kalsın.
+- "kanca": kapakta/açılışta kullanılacak 2-6 kelimelik MERAK/ŞOK ifadesi.
+- "ilk_cumle": seslendirmenin İLK cümlesi; kurulum DEĞİL, doğrudan şok/twist; en fazla 18 kelime.
+SADECE JSON döndür, başka hiçbir şey yazma: {{"kanca":"...","ilk_cumle":"..."}}"""
+
+
+def _reasoning_acik():
+    return (os.environ.get("NVIDIA_REASONING", "1").strip() not in ("0", "false", ""))
+
+
+def kanca_guclendir(sen):
+    """Reasoning modeliyle senaryonun KANCA'sını ve AÇILIŞ cümlesini güçlendirir.
+    Dönen alanlar geçerliyse uygular; başarısızsa/kapalıysa orijinali korur.
+    Girdiyi yerinde değiştirip döner (NON-FATAL, başlık/konu korunur)."""
+    if not _reasoning_acik() or not isinstance(sen, dict) or not sen.get("script"):
+        return sen
+    d = _reasoning_json(KANCA_PROMPT.format(
+        baslik=(sen.get("baslik") or "")[:120],
+        kanca=(sen.get("kanca") or "")[:80],
+        script=(sen.get("script") or "")[:1600]))
+    if not isinstance(d, dict):
+        return sen
+    yeni_kanca = (d.get("kanca") or "").strip()
+    yeni_ilk = (d.get("ilk_cumle") or "").strip()
+    if yeni_kanca and 1 <= len(yeni_kanca.split()) <= 8:
+        sen["kanca"] = yeni_kanca
+    # Açılış cümlesini değiştir: metnin İLK cümlesini yenisiyle değiştir, kalanı koru.
+    if yeni_ilk and 3 <= len(yeni_ilk.split()) <= 24:
+        eski = sen.get("script") or ""
+        m = re.search(r"[.!?]\s", eski)
+        kalan = eski[m.end():] if m else eski
+        yeni_script = (yeni_ilk.rstrip(".!?") + ". " + kalan).strip()
+        if len(yeni_script.split()) >= 55:      # güvenlik: metni kısaltıp bozma
+            sen["script"] = yeni_script
+    return sen
+
+
 # ---- Anlamsal benzerlik (embedding) -----------------------------------------
 def _embed(metinler, input_type="query"):
     """NVIDIA embeddings -> vektör listesi. Hata None döner (asla fırlatmaz)."""

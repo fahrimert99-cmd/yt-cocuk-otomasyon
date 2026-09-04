@@ -301,6 +301,12 @@ def main():
                 mevcut_norm - {_norm(bas)}):
             sen = gelismis
             print(f"      ✎ senaryo güçlendirildi (NVIDIA/{NA.KRITIK_MODEL})")
+        # REASONING ile kanca/açılış (ilk 2 sn) güçlendirme — havuz üretiminde,
+        # non-fatal. Başlık/konu korunur; yalnızca kanca + açılış cümlesi keskinleşir.
+        _onceki_kanca = sen.get("kanca", "")
+        sen = NA.kanca_guclendir(sen)
+        if sen.get("kanca", "") != _onceki_kanca:
+            print(f"      ⚡ kanca/açılış güçlendirildi (NVIDIA/{NA.REASONING_MODEL})")
         if _norm(sen.get("baslik", "")) in mevcut_norm:
             continue
         # ANLAMSAL TEKRAR: farklı kelime ama aynı konu -> ele (embedding, non-fatal).
