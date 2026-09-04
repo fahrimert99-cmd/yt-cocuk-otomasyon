@@ -22,8 +22,12 @@ def _kimlik():
         scopes=["https://www.googleapis.com/auth/youtube.force-ssl"],
     )
 
-def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani):
+def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani, sentetik=True):
     st = {"selfDeclaredMadeForKids": bool(cocuk_icerigi)}
+    # AI/SENTETİK İÇERİK BEYANI (YouTube "Altered or Synthetic Content"):
+    # AI ses + fotogerçekçi AI görseller kullandığımız için beyan ediyoruz
+    # (containsSyntheticMedia; Data API v3, 30 Ekim 2024'ten beri destekli).
+    st["containsSyntheticMedia"] = bool(sentetik)
     if yayin_zamani:
         # zamanlanmis yayin: video 'private' yuklenir, publishAt'ta otomatik public olur
         st["privacyStatus"] = "private"
@@ -33,10 +37,12 @@ def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani):
     return st
 
 
-def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False, kapak=None, yayin_zamani=None):
+def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27", cocuk_icerigi=False, kapak=None, yayin_zamani=None, sentetik=True):
     """
     gizlilik: 'public' | 'unlisted' | 'public'
     kategori: 27=Eğitim, 24=Eğlence, 28=Bilim&Teknoloji, 22=İnsanlar&Bloglar
+    sentetik: AI/sentetik içerik beyanı (YouTube). AI ses+görsel kullandığımız
+              için varsayılan True; config.ai_beyani=false ile kapatılabilir.
     """
     yt = build("youtube", "v3", credentials=_kimlik())
     body = {
@@ -46,7 +52,7 @@ def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27",
             "tags": etiketler,
             "categoryId": kategori,
         },
-        "status": _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani),
+        "status": _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani, sentetik),
     }
     media = MediaFileUpload(dosya, chunksize=-1, resumable=True, mimetype="video/mp4")
     istek = yt.videos().insert(part="snippet,status", body=body, media_body=media)
