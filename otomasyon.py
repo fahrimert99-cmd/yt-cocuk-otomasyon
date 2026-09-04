@@ -148,7 +148,8 @@ def main():
                  gorsel_stil=str(cfg.get("gorsel_stil", "stok")),
                  kanca=veri.get("kanca"),
                  eleven_once=bool(cfg.get("kisa_eleven", True)),
-                 eleven_voice_id=str(cfg.get("kisa_ses_id", "")).strip() or None)
+                 eleven_voice_id=str(cfg.get("kisa_ses_id", "")).strip() or None,
+                 ai_sahne=bool(cfg.get("ai_sahne", False)))
     print(f"      Çıktı: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
     kapak_yolu = None
