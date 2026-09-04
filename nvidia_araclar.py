@@ -465,7 +465,10 @@ Return ONLY JSON: {{"prompt":"extreme close-up photorealistic cinematic image pr
 # tabela var mı, konuya uygun mu diye denetler. flux zaman zaman kadraja anlamsız
 # yazı/tabela sızdırabiliyor; bu kapı onu yakalayıp yeniden ürettirir. NON-FATAL:
 # VLM erişilemezse ya da hata olursa denetimsiz kabul edilir (eski davranış).
-VLM_MODEL = os.environ.get("NVIDIA_VLM_MODEL", "").strip() or "meta/llama-3.2-90b-vision-instruct"
+# 11b: yazı/konu denetimi için fazlasıyla yeterli VE 90b'den çok daha HIZLI
+# (90b cold-start 60 sn'yi aşıp timeout veriyordu -> denetim atlanıyordu). Daha
+# güçlü denetim istenirse NVIDIA_VLM_MODEL=meta/llama-3.2-90b-vision-instruct.
+VLM_MODEL = os.environ.get("NVIDIA_VLM_MODEL", "").strip() or "meta/llama-3.2-11b-vision-instruct"
 
 
 def _kucuk_jpg(path):
@@ -510,7 +513,7 @@ def _vlm_json(image_path, prompt, model=None):
         headers={"Content-Type": "application/json", "Accept": "application/json",
                  "Authorization": f"Bearer {key}"})
     try:
-        with urllib.request.urlopen(req, timeout=60) as r:
+        with urllib.request.urlopen(req, timeout=120) as r:
             d = json.loads(r.read().decode())
         txt = d["choices"][0]["message"]["content"]
         return json.loads(A._temizle(txt))
