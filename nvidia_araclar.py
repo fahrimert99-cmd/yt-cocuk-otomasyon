@@ -16,7 +16,7 @@ Env (opsiyonel):
   NVIDIA_EMBED_MODEL   varsayılan nvidia/nv-embedqa-mistral-7b-v2 (anlamsal benzerlik)
   NVIDIA_BENZERLIK_ESIK varsayılan 0.90 (bu ve üstü kosinüs -> tekrar say)
 """
-import os, re, json, math, urllib.request, urllib.error
+import os, re, json, math, subprocess, tempfile, urllib.request, urllib.error
 import ai_script as A
 
 # Senaryo eleştirisi için buffet'ten güçlü bir reasoning modeli.
@@ -327,7 +327,133 @@ Return ONLY JSON: {{"prompt":"extreme close-up photorealistic cinematic image pr
             "no text, no words, no letters, no numbers, no signage, no signboard, no neon sign, "
             "no billboard, no banner, no poster, no menu board, no logo, no watermark, "
             "no hooded figure, no ghost, no random silhouette")
-    return gorsel_uret(gpr, cikti, genislik=768, yukseklik=1344)
+    # VLM görsel-denetimi: bozuk yazı/tabela ya da konu-dışı görseli reddedip
+    # yeniden ürettir (en görünür yer kapak olduğu için burada her zaman açık).
+    return gorsel_uret_denetimli(gpr, cikti, konu=baslik, genislik=768, yukseklik=1344)
+
+
+# ---- VLM görsel-denetimi (llama-3.2-vision) ---------------------------------
+# Üretilen kapak/sahne görselini İKİNCİ bir modele (VLM) baktırıp bozuk yazı/
+# tabela var mı, konuya uygun mu diye denetler. flux zaman zaman kadraja anlamsız
+# yazı/tabela sızdırabiliyor; bu kapı onu yakalayıp yeniden ürettirir. NON-FATAL:
+# VLM erişilemezse ya da hata olursa denetimsiz kabul edilir (eski davranış).
+VLM_MODEL = os.environ.get("NVIDIA_VLM_MODEL", "").strip() or "meta/llama-3.2-90b-vision-instruct"
+
+
+def _kucuk_jpg(path):
+    """VLM'e göndermek için görseli ~384px'e küçültür (inline base64 < 180KB
+    olsun; NVIDIA VLM daha büyük görseli reddeder). ffmpeg ile; başarısızsa
+    orijinali döner (boyut kontrolü çağıran tarafta)."""
+    try:
+        out = os.path.join(tempfile.gettempdir(),
+                           "vlm_" + os.path.basename(path) + ".jpg")
+        subprocess.run(["ffmpeg", "-y", "-i", path, "-vf", "scale=384:-2",
+                        "-q:v", "7", out], capture_output=True, timeout=30)
+        if os.path.exists(out) and os.path.getsize(out) > 500:
+            return out
+    except Exception:
+        pass
+    return path
+
+
+def _vlm_json(image_path, prompt, model=None):
+    """Görsel + metni VLM'e (OpenAI-uyumlu chat) gönderip JSON dict döndürür.
+    Her hata None (asla fırlatmaz)."""
+    import base64
+    key = A._nvidia_key()
+    if not key or not image_path or not os.path.exists(image_path):
+        return None
+    try:
+        with open(image_path, "rb") as f:
+            b64 = base64.b64encode(f.read()).decode()
+    except Exception:
+        return None
+    if len(b64) > 180_000:      # inline sınırı aşılırsa güvenli tarafta atla
+        _log(f"VLM: görsel çok büyük ({len(b64)} b64) -> denetim atlandı")
+        return None
+    url = "https://integrate.api.nvidia.com/v1/chat/completions"
+    body = {"model": model or VLM_MODEL, "max_tokens": 120, "temperature": 0.0,
+            "messages": [{"role": "user", "content": [
+                {"type": "text", "text": prompt},
+                {"type": "image_url",
+                 "image_url": {"url": f"data:image/jpeg;base64,{b64}"}}]}]}
+    req = urllib.request.Request(
+        url, data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json", "Accept": "application/json",
+                 "Authorization": f"Bearer {key}"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            d = json.loads(r.read().decode())
+        txt = d["choices"][0]["message"]["content"]
+        return json.loads(A._temizle(txt))
+    except Exception as e:
+        _log(f"VLM hata: {type(e).__name__}: {str(e)[:80]}")
+        return None
+
+
+DENETIM_PROMPT = (
+    "You are a strict QA checker for a YouTube thumbnail/scene BACKGROUND image. "
+    "Look at the image carefully and answer STRICTLY as JSON: "
+    "{{\"yazi\": true or false, \"uygun\": true or false}}. "
+    "\"yazi\" = true if the image contains ANY readable or garbled text, letters, "
+    "words, numbers, a sign, signboard, logo, menu board, price label with writing, "
+    "banner, poster or watermark anywhere (even small, partial or nonsensical). "
+    "\"uygun\" = true if the image is a clear, photorealistic scene related to this "
+    "topic: \"{konu}\". Be strict about \"yazi\". Return ONLY the JSON, nothing else.")
+
+
+def gorsel_denetle(image_path, konu):
+    """VLM ile görseli denetler. dict {yazi:bool, uygun:bool} | None (VLM yok/
+    hata -> None; çağıran denetimsiz kabul eder). NON-FATAL."""
+    if not image_path or not os.path.exists(image_path):
+        return None
+    kucuk = _kucuk_jpg(image_path)
+    d = _vlm_json(kucuk, DENETIM_PROMPT.format(konu=(konu or "a consumer trap")[:120]))
+    if kucuk != image_path:
+        try:
+            os.remove(kucuk)
+        except Exception:
+            pass
+    if not isinstance(d, dict):
+        return None
+    return {"yazi": bool(d.get("yazi")), "uygun": bool(d.get("uygun", True))}
+
+
+def _denetim_acik():
+    return (os.environ.get("NVIDIA_GORSEL_DENETIM", "1").strip() not in ("0", "false", ""))
+
+
+def _deneme_sayisi():
+    try:
+        return max(1, int(os.environ.get("NVIDIA_DENETIM_DENEME", "2") or "2"))
+    except Exception:
+        return 2
+
+
+def gorsel_uret_denetimli(prompt, cikti, konu, genislik=768, yukseklik=1344):
+    """Görsel üretir; VLM ile denetler; bozuk yazı VAR ya da konuya UYGUN DEĞİLSE
+    (deneme sınırınca) prompt'u güçlendirip yeniden üretir; kabul edilebilir olanı
+    döner. VLM erişilemezse ya da denetim kapalıysa TEK üretimle döner (eski yol).
+    Hepsi denetimden kalırsa yine de son üretileni döner (siyah ekrandan iyidir)."""
+    if not _denetim_acik():
+        return gorsel_uret(prompt, cikti, genislik, yukseklik)
+    en_iyi, pr = None, prompt
+    for i in range(_deneme_sayisi()):
+        yol = gorsel_uret(pr, cikti, genislik, yukseklik)
+        if not yol:
+            continue
+        en_iyi = yol
+        rapor = gorsel_denetle(yol, konu)
+        if rapor is None:                       # VLM yok -> denetimsiz kabul
+            return yol
+        if not rapor["yazi"] and rapor["uygun"]:
+            _log(f"VLM denetim OK (deneme {i+1})")
+            return yol
+        _log(f"VLM denetim RED (deneme {i+1}): yazi={rapor['yazi']} uygun={rapor['uygun']}")
+        # yeniden üretimde yazı yasağını daha da vurgula
+        pr = prompt + (", absolutely no text, no letters, no signage, no logo anywhere; "
+                       "pure photographic scene, clean surfaces only")
+    return en_iyi
 
 
 def sahne_gorsel(prompt, cikti, dikey=True):
@@ -347,7 +473,9 @@ def sahne_gorsel(prompt, cikti, dikey=True):
     gpr = (prompt.strip() +
            ", photorealistic, cinematic dramatic lighting, high detail, sharp focus, "
            "no text, no words, no letters, no watermark, no caption, no subtitle")
-    return gorsel_uret(gpr, cikti, genislik=w, yukseklik=h)
+    # VLM görsel-denetimi (kapaktaki ile aynı kapı); sahne tarifi 'konu' olur.
+    return gorsel_uret_denetimli(gpr, cikti, konu=prompt.strip()[:120],
+                                 genislik=w, yukseklik=h)
 
 
 if __name__ == "__main__":
