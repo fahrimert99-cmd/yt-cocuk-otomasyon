@@ -17,6 +17,7 @@ jobs:
       - name: NVIDIA erisim raporu
         env:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_VIDEO_KEY: ${{ secrets.NVIDIA_VIDEO_KEY }}
         run: python3 nvidia_kontrol.py
       - name: Tam model listesi artifact
         if: always()
