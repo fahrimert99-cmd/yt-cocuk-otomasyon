@@ -104,18 +104,20 @@ def _llm(prompt):
     _clean = lambda s: re.sub(r"\s", "", s or "")
     hatalar = []
     # 0) NVIDIA NIM — en güvenilir ücretsiz sağlayıcı (kota dolmadan çalışır).
+    #    Sırayla: palmyra-creative -> nemotron-super-120b -> nemotron-70b.
     nkey = A._nvidia_key()
     if nkey:
-        for deneme in range(2):
-            try:
-                return A._nvidia(prompt, nkey)
-            except Exception as e:
-                msg = str(e)
-                hatalar.append(f"nvidia#{deneme+1}: {msg[:80]}")
-                if "429" in msg and deneme == 0:
-                    _t.sleep(15)
-                else:
-                    break
+        for mdl in A._nvidia_modeller():
+            for deneme in range(2):
+                try:
+                    return A._nvidia(prompt, nkey, model=mdl)
+                except Exception as e:
+                    msg = str(e)
+                    hatalar.append(f"nvidia/{mdl.split('/')[-1][:16]}#{deneme+1}: {msg[:70]}")
+                    if "429" in msg and deneme == 0:
+                        _t.sleep(15)
+                    else:
+                        break
     # Aday Gemini anahtarları: önce GEMINI_KEY (vision'da kanıtlı), sonra GEMINI_API_KEY.
     gkeys, gorulen = [], set()
     for k in (os.environ.get("GEMINI_KEY"), os.environ.get("GEMINI_API_KEY")):

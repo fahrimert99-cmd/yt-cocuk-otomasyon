@@ -129,11 +129,14 @@ def benzer_var_mi(baslik, mevcut_basliklar, esik=None):
     return any(_kosinus(aday, v) >= esik for v in digerleri)
 
 
-# ---- Görsel üretim (image-gen: SDXL / FLUX) ---------------------------------
+# ---- Görsel üretim (image-gen: SDXL / FLUX / DiffusionGemma) -----------------
 # NVIDIA genai görsel endpoint'i. Model NVIDIA_GORSEL_MODEL ile değiştirilebilir.
-# Varsayılan flux.1-dev: hesap kontrolünde ERİŞİLEBİLİR çıkan tek görsel model
+# Varsayılan flux.1-dev: hesap kontrolünde ERİŞİLEBİLİR çıkan görsel model
 # (SDXL/SD3/turbo -> 404, schnell -> timeout). flux-dev daha çok adım ister (>=~30).
 GORSEL_MODEL = os.environ.get("NVIDIA_GORSEL_MODEL", "").strip() or "black-forest-labs/flux.1-dev"
+# YEDEK görsel modeli: flux başarısız/timeout olursa denenir (hesapta /v1/models
+# içinde görünen image-gen). Boş bırakılırsa yedek denenmez.
+GORSEL_YEDEK = os.environ.get("NVIDIA_GORSEL_YEDEK", "google/diffusiongemma-26b-a4b-it").strip()
 
 
 def _base64_cikar(d):
@@ -193,35 +196,28 @@ def _nvcf_iste(url, data, hdr, timeout):
 
 
 def _gorsel_govde(model, prompt, w, h):
-    """Model ailesine göre istek gövdesi. SDXL -> text_prompts; FLUX -> prompt."""
+    """Model ailesine göre istek gövdesi. SDXL -> text_prompts; FLUX/diğer -> prompt."""
     m = model.lower()
     if "stable-diffusion" in m or "sdxl" in m:
         return {"text_prompts": [{"text": prompt, "weight": 1}],
                 "cfg_scale": 5, "sampler": "K_EULER_ANCESTRAL", "seed": 0,
                 "steps": 25, "width": w, "height": h}
+    if "diffusiongemma" in m or "gemma" in m:
+        # DiffusionGemma: sade prompt gövdesi (kesin şema bilinmiyor -> guarded).
+        return {"prompt": prompt, "width": w, "height": h, "seed": 0}
     # FLUX: schnell guidance-distilled (4 adım); dev daha çok adım ister (>=~30).
     adim = 4 if "schnell" in m else 50
     return {"prompt": prompt, "width": w, "height": h, "steps": adim, "seed": 0}
 
 
-def gorsel_uret(prompt, cikti, genislik=768, yukseklik=1344, timeout=None):
-    # NOT: FLUX schnell yalnızca şu boyutları kabul eder: 768,832,896,960,1024,
-    # 1088,1152,1216,1280,1344. 768x1344 = dikey 9:16'ya en yakın izinli oran.
-    """NVIDIA image-gen ile görsel üretip `cikti`ya kaydeder. Yol|None döner
-    (her hata/erişim sorunu None -> çağıran mevcut kapağa düşer)."""
+def _gorsel_tek(model, prompt, cikti, w, h, timeout):
+    """TEK model ile görsel dener. Yol|None döner (hata -> None + teşhis logu)."""
     key = A._nvidia_key()
-    if not key or not prompt:
-        return None
-    if timeout is None:
-        try:
-            timeout = int(os.environ.get("NVIDIA_GORSEL_TIMEOUT", "300") or "300")
-        except Exception:
-            timeout = 300
-    url = f"https://ai.api.nvidia.com/v1/genai/{GORSEL_MODEL}"
-    body = _gorsel_govde(GORSEL_MODEL, prompt, genislik, yukseklik)
+    url = f"https://ai.api.nvidia.com/v1/genai/{model}"
+    body = _gorsel_govde(model, prompt, w, h)
     hdr = {"Content-Type": "application/json", "Accept": "application/json",
            "Authorization": f"Bearer {key}"}
-    _log(f"model={GORSEL_MODEL} boyut={genislik}x{yukseklik} timeout={timeout}")
+    _log(f"model={model} boyut={w}x{h} timeout={timeout}")
     try:
         d = _nvcf_iste(url, json.dumps(body).encode(), hdr, timeout)
     except urllib.error.HTTPError as he:
@@ -230,25 +226,49 @@ def gorsel_uret(prompt, cikti, genislik=768, yukseklik=1344, timeout=None):
             govde = he.read().decode()[:200]
         except Exception:
             pass
-        _log(f"HTTP {he.code}: {govde}")
-        print(f"      (NVIDIA görsel HTTP {he.code}: {govde[:160]})")
+        _log(f"{model} HTTP {he.code}: {govde}")
+        print(f"      (NVIDIA görsel [{model}] HTTP {he.code}: {govde[:140]})")
         return None
     except Exception as e:
-        _log(f"HATA {type(e).__name__}: {str(e)[:140]}")
-        print(f"      (NVIDIA görsel atlandı: {str(e)[:140]})")
+        _log(f"{model} HATA {type(e).__name__}: {str(e)[:120]}")
+        print(f"      (NVIDIA görsel [{model}] atlandı: {str(e)[:120]})")
         return None
     ham = _base64_cikar(d)
     if not ham:
-        _log(f"base64 bulunamadı. yanıt anahtarları={list(d)[:8] if isinstance(d, dict) else type(d).__name__}")
+        _log(f"{model} base64 yok. anahtarlar={list(d)[:8] if isinstance(d, dict) else type(d).__name__}")
         return None
-    _log(f"BAŞARILI: {len(ham)} bayt görsel çözüldü")
     try:
         os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
         with open(cikti, "wb") as f:
             f.write(ham)
-        return cikti if os.path.getsize(cikti) > 1000 else None
+        if os.path.getsize(cikti) > 1000:
+            _log(f"{model} BAŞARILI: {len(ham)} bayt")
+            return cikti
     except Exception:
+        pass
+    return None
+
+
+def gorsel_uret(prompt, cikti, genislik=768, yukseklik=1344, timeout=None):
+    # NOT: FLUX yalnızca şu boyutları kabul eder: 768,832,896,960,1024,1088,1152,
+    # 1216,1280,1344. 768x1344 = dikey 9:16'ya en yakın izinli oran.
+    """NVIDIA image-gen ile görsel üretir. Önce GORSEL_MODEL (flux), başarısızsa
+    GORSEL_YEDEK (diffusiongemma) denenir. Yol|None döner (hepsi başarısızsa None
+    -> çağıran mevcut kapağa/stok'a düşer)."""
+    key = A._nvidia_key()
+    if not key or not prompt:
         return None
+    if timeout is None:
+        try:
+            timeout = int(os.environ.get("NVIDIA_GORSEL_TIMEOUT", "300") or "300")
+        except Exception:
+            timeout = 300
+    modeller = [GORSEL_MODEL] + ([GORSEL_YEDEK] if (GORSEL_YEDEK and GORSEL_YEDEK != GORSEL_MODEL) else [])
+    for model in modeller:
+        yol = _gorsel_tek(model, prompt, cikti, genislik, yukseklik, timeout)
+        if yol:
+            return yol
+    return None
 
 
 def kapak_arkaplani(baslik, kanca="", cikti="output/ai_kapak_bg.jpg"):
