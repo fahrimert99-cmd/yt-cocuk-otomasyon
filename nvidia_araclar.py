@@ -178,7 +178,7 @@ METİN: {script}
 
 Kurallar: Türkçe, KUSURSUZ imlâ (ç,ğ,ı,İ,ö,ş,ü; ASCII'ye sadeleştirme). Uydurma sayı/istatistik
 YOK. Küfür/abartılı iddia YOK. Konu AYNI kalsın.
-- "kanca": kapakta/açılışta kullanılacak 2-6 kelimelik MERAK/ŞOK ifadesi.
+- "kanca": kapakta/açılışta kullanılacak EN FAZLA 3 KELİMELİK (2-3 kelime) MERAK/ŞOK ifadesi. 3 kelimeyi ASLA geçme.
 - "ilk_cumle": seslendirmenin İLK cümlesi; kurulum DEĞİL, doğrudan şok/twist; en fazla 18 kelime.
 SADECE JSON döndür, başka hiçbir şey yazma: {{"kanca":"...","ilk_cumle":"..."}}"""
 
@@ -201,8 +201,14 @@ def kanca_guclendir(sen):
         return sen
     yeni_kanca = (d.get("kanca") or "").strip()
     yeni_ilk = (d.get("ilk_cumle") or "").strip()
-    if yeni_kanca and 1 <= len(yeni_kanca.split()) <= 8:
-        sen["kanca"] = yeni_kanca
+    # ÜÇ KELİME KURALI: kanca en fazla 3 kelime olmalı (kapak/açılış kısa-vurucu).
+    # Model daha uzun döndürürse İLK 3 kelimeye kırp; boşsa orijinali koru.
+    if yeni_kanca:
+        kelimeler = yeni_kanca.split()
+        if len(kelimeler) > 3:
+            yeni_kanca = " ".join(kelimeler[:3])
+        if 1 <= len(yeni_kanca.split()) <= 3:
+            sen["kanca"] = yeni_kanca
     # Açılış cümlesini değiştir: metnin İLK cümlesini yenisiyle değiştir, kalanı koru.
     if yeni_ilk and 3 <= len(yeni_ilk.split()) <= 24:
         eski = sen.get("script") or ""
