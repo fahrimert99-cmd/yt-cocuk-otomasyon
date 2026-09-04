@@ -4418,5 +4418,38 @@
       }
     ],
     "tema": "tuzak"
+  },
+  {
+    "baslik": "RESTORAN MENÜSÜNDE 'ŞEF ÖNERİSİ' TUZAĞI: GEREKSİZ EK MALİYET! 🍽️",
+    "aciklama": "Bu videoda restoran menülerindeki ‘şef önerisi’ tuzağının nasıl çalıştığı ve tüketicileri nasıl etkilediği açıklanır. İzleyiciler, bu tuzağa karşı nasıl korunabileceği konusunda basit ve uygulanabilir ipuçları öğretir. Sonuç olarak daha bilinçli ve bütçe dostu yemek seçimleri yapmayı sağlar.",
+    "kanca": "Şef önerisi tuzağı!",
+    "script": "Restoran menüsünde ‘şef önerisi’yle gösterilen yemekler, aslında menünün en pahalı seçeneklerinden biri olabilir ve fark etmeden ekstra ödeme yaparsınız. Bu tuzak, müşteriyi özel ve önerilmiş gibi sunarak psikolojik etkileyi kullanır ve fiyatı sorgulatmadan sipariş verirsiniz. Korunmak için menüyü tamamen inceleyin, fiyatları karşılaştırın ve şef önerisi etiketli ürünün fiyatını normal menüye göre kontrol edin; eğer fark fazlaysa başka bir seçenek tercih edin. Ayrıca garsona detaylı malzeme ve fiyat sorarak şeffaf bilgi talep edin. Bu basit adımlarla hem bütçenizi korur hem de lezzetinden ödün vermezsiniz. Abone ol ve daha fazla tüketici tuzağını öğrenmek için kanalımıza katılın. Bir sonraki videoda Marketlerdeki ‘indirim’ etiketlerinin gerisini keşfedeceğiz.",
+    "sahneler": [
+      {
+        "metin": "Restoran menüsünde ‘şef önerisi’yle gösterilen yemekler, aslında menünün en pahalı seçeneklerinden biri olabilir ve fark etmeden ekstra ödeme yaparsınız.",
+        "gorsel": "A bustling restaurant interior, camera glides over a menu board where 'Chef's Recommendation' is highlighted in bold letters, close-up of a customer's finger pointing at the highlighted item."
+      },
+      {
+        "metin": "Bu tuzak, müşteriyi özel ve önerilmiş gibi sunarak psikolojik etkileyi kullanır ve fiyatı sorgulatmadan sipariş verirsiniz.",
+        "gorsel": "Warm lighting focuses on a smiling waiter presenting the dish, a subtle halo effect glows around the recommended item while price tags in the background remain blurred."
+      },
+      {
+        "metin": "Korunmak için menüyü tamamen inceleyin, fiyatları karşılaştırın ve şef önerisi etiketli ürünün fiyatını normal menüye göre kontrol edin; eğer fark fazlaysa başka bir seçenek tercih edin.",
+        "gorsel": "Customer opens the menu, fingers trace prices, split-screen shows the recommended dish price beside regular items, a green checkmark appears when they compare."
+      },
+      {
+        "metin": "Ayrıca garsona detaylı malzeme ve fiyat sorarak şeffaf bilgi talep edin.",
+        "gorsel": "Customer asks the waiter for ingredient details, waiter leans in, a notepad shows itemized costs, a transparent overlay displays clear pricing information."
+      },
+      {
+        "metin": "Bu basit adımlarla hem bütçenizi korur hem de lezzetinden ödün vermezsiniz.",
+        "gorsel": "Customer smiles, places a regular dish on the table, a small graphic shows a saved-money icon, thumbs-up gesture appears."
+      },
+      {
+        "metin": "Abone ol ve daha fazla tüketici tuzağını öğrenmek için kanalımıza katılın. Bir sonraki videoda Marketlerdeki ‘indirim’ etiketlerinin gerisini keşfedeceğiz.",
+        "gorsel": "End screen with animated subscribe button, then a teaser clip of a supermarket shelf where discount tags flicker, zoom on a tag as it flips to reveal a hidden cost."
+      }
+    ],
+    "tema": "tuzak"
   }
 ]
