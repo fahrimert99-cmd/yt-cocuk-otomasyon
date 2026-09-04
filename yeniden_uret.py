@@ -142,7 +142,7 @@ def main():
     print("[3/4] Yeni video YouTube'a yukleniyor ...")
     import youtube_yukle as YT
     yeni_id = YT.yukle(cikti, baslik, veri.get("aciklama", ""),
-                       veri.get("etiketler", []),
+                       veri.get("etiketler") or [],
                        gizlilik=gizlilik,
                        kategori=str(cfg.get("kategori", "28")),
                        cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),

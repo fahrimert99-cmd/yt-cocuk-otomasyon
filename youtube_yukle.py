@@ -45,11 +45,17 @@ def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27",
               için varsayılan True; config.ai_beyani=false ile kapatılabilir.
     """
     yt = build("youtube", "v3", credentials=_kimlik())
+    # SINIR KORUMASI: etiketler None/boş/tekil string gelse bile YouTube'a
+    # her zaman temiz bir liste git (tags=None API'yi kırabilir).
+    if isinstance(etiketler, str):
+        etiketler = [etiketler]
+    temiz_etiket = [str(t).strip() for t in (etiketler or [])
+                    if t is not None and str(t).strip()]
     body = {
         "snippet": {
             "title": baslik[:100],
             "description": aciklama,
-            "tags": etiketler,
+            "tags": temiz_etiket,
             "categoryId": kategori,
         },
         "status": _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani, sentetik),

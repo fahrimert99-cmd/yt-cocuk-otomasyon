@@ -245,7 +245,7 @@ def main():
         print(f"      Açıklama şablonu atlandı: {str(e)[:100]}")
         _aciklama = veri.get("aciklama", "")
     _vid = YT.yukle(cikti, veri["baslik"], _aciklama,
-             veri.get("etiketler", []),
+             veri.get("etiketler") or [],
              gizlilik=cfg.get("gizlilik", "private"),
              kategori=str(cfg.get("kategori", "28")),
              cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
