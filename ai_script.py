@@ -72,9 +72,11 @@ NVIDIA_MODEL = os.environ.get("NVIDIA_MODEL", "").strip() or "writer/palmyra-cre
 
 
 def _nvidia_modeller():
-    """NVIDIA LLM deneme sirasi: once yaratici (palmyra), sonra guclu instruct
-    modelleri (JSON'a daha sadik). Hesap kontrolunde erisilebilir cikanlar."""
+    """NVIDIA LLM deneme sirasi: once yaratici (palmyra), sonra guclu akil-yurutme
+    (deepseek-v4-pro) ve instruct modelleri (JSON'a sadik). Hepsi hesap
+    kontrolunde erisilebilir cikanlar; biri uymazsa sonrakine dusulur."""
     ms = [NVIDIA_MODEL,
+          "deepseek-ai/deepseek-v4-pro-0813",
           "nvidia/nemotron-3-super-120b-a12b",
           "nvidia/llama-3.1-nemotron-70b-instruct"]
     out = []
