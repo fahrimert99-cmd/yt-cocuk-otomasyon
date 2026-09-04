@@ -643,10 +643,11 @@ def _eleven_seslendir(text, mp3_path, voice_id=None):
     if not key:
         raise RuntimeError("ElevenLabs anahtarı yok")
     voice_id = (voice_id or "").strip() or os.environ.get("ELEVEN_VOICE_ID", "").strip() or "dDcfsSsiSzmphdMGCECb"
-    # output_format=mp3_44100_192: EN YÜKSEK mp3 kalitesi (düşük-bitrate cızırtı
-    # artefaktlarını kökten önler; with-timestamps varsayılanı daha düşüktür).
+    # output_format=mp3_44100_128: ücretsiz/Starter planda İZİNLİ en yüksek mp3
+    # (192 yalnızca Creator+; 403 verip ElevenLabs'i komple devre dışı bırakıyordu).
+    # Kalan cızırtı temizliği _ses_temizle (de-esser) ile yapılır.
     url = (f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
-           f"?output_format=mp3_44100_192")
+           f"?output_format=mp3_44100_128")
     body = {"text": text, "model_id": "eleven_multilingual_v2",
             # Daha PÜRÜZSÜZ ses: speaker_boost kapalı + style=0 (tiz/cızırtı
             # artefaktlarını azaltır), stability biraz yüksek, similarity ölçülü.
