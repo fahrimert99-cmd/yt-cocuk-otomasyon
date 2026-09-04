@@ -77,10 +77,18 @@ def main():
         chat = bul("instruct", "nemotron", "-chat", "llama-3", "qwen", "mistral",
                    "mixtral", "gemma", "deepseek", "phi-4")
         chat = [c for c in chat if c not in vision]   # görselleri ayıkla
+        # YENİ KATEGORİLER (kanal için hedeflenen yetenekler)
+        reasoning = bul("reason", "-r1", "-qwq", "thinker", "nemotron-super",
+                        "nemotron-ultra", "o1", "deepseek-r", "-think")
+        rerank = bul("rerank", "reranker", "rankqa")
+        ceviri = bul("translate", "megatron", "seamless", "nllb", "gemma")
         _o(f"Toplam erişilebilir model: {len(ids)} (tam liste artifact'ta: nvidia_modeller.txt)")
         _o(f"  SOHBET/LLM ({len(chat)}):")
         for c in chat[:30]:
             _o(f"      - {c}")
+        _o(f"  REASONING adayları ({len(reasoning)}): {', '.join(reasoning[:10]) or 'YOK'}")
+        _o(f"  RERANK adayları ({len(rerank)}): {', '.join(rerank[:6]) or 'YOK'}")
+        _o(f"  ÇEVİRİ/çok-dilli adayları ({len(ceviri)}): {', '.join(ceviri[:8]) or 'YOK'}")
         # VIDEO üretim adayları (isim sezgisi)
         video = bul("video", "svd", "cosmos-predict", "cosmos-transfer", "sora", "ltx",
                     "mochi", "hunyuan-video", "gen-3", "wan", "runway")
@@ -166,6 +174,56 @@ def main():
             f"https://ai.api.nvidia.com/v1/genai/{mm}",
             {"prompt": "a busy supermarket aisle", "image": ""}, timeout=20))
         _o(f"  {durum:<34} {m}")
+
+    # 5) VLM (görsel-anlama) CANLI probe — kapak/sahne denetimi için lazım.
+    #    Vision modelleri OpenAI-uyumlu chat; küçük bir kırmızı piksel (PNG) +
+    #    metin gönderip "cevap veriyor mu" bakarız. İlk birkaç vision adayını dener.
+    KIRMIZI_PNG = ("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1"
+                   "HAwCAAAAC0lEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==")
+    vlm_adaylar = (vision[:4] if ids else []) + [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/llama-3.2-90b-vision-instruct",
+        "microsoft/phi-3.5-vision-instruct",
+        "nvidia/vila",
+    ]
+    gorulen = set()
+    _o("VLM (görsel-anlama) canlı yoklaması:")
+    for m in vlm_adaylar:
+        if m in gorulen:
+            continue
+        gorulen.add(m)
+        durum = _durum(lambda mm=m: _post(
+            "https://integrate.api.nvidia.com/v1/chat/completions",
+            {"model": m, "max_tokens": 8, "messages": [{"role": "user", "content": [
+                {"type": "text", "text": "renk?"},
+                {"type": "image_url", "image_url": {"url": KIRMIZI_PNG}}]}]}, timeout=25))
+        _o(f"  {durum:<34} {m}")
+
+    # 6) RERANK canlı probe — senaryo/trend seçimi sıralaması için.
+    rerank_adaylar = (rerank[:3] if ids else []) + [
+        "nvidia/llama-3.2-nv-rerankqa-1b-v2",
+        "nvidia/nv-rerankqa-mistral-4b-v3",
+    ]
+    gorulen2 = set()
+    _o("RERANK canlı yoklaması (integrate .../v1/ranking):")
+    for m in rerank_adaylar:
+        if m in gorulen2:
+            continue
+        gorulen2.add(m)
+        durum = _durum(lambda mm=m: _post(
+            "https://integrate.api.nvidia.com/v1/ranking",
+            {"model": m, "query": {"text": "ucuz market tuzağı"},
+             "passages": [{"text": "market fiyat etiketi hilesi"},
+                          {"text": "hava durumu raporu"}]}, timeout=25))
+        _o(f"  {durum:<34} {m}")
+
+    # Tam yapılandırılmış raporu dosyaya da yaz (dala yayınlanır -> asistan okur).
+    try:
+        os.makedirs("output", exist_ok=True)
+        with open("output/nvidia_rapor.txt", "w", encoding="utf-8") as f:
+            f.write("\n".join(OZET))
+    except Exception:
+        pass
 
     print("\n===== NVIDIA MODEL ERISIM OZETI =====")
     for s in OZET:
