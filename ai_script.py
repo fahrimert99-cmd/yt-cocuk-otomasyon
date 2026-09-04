@@ -72,13 +72,16 @@ NVIDIA_MODEL = os.environ.get("NVIDIA_MODEL", "").strip() or "writer/palmyra-cre
 
 
 def _nvidia_modeller():
-    """NVIDIA LLM deneme sirasi: once yaratici (palmyra), sonra guclu akil-yurutme
-    (deepseek-v4-pro) ve instruct modelleri (JSON'a sadik). Hepsi hesap
-    kontrolunde erisilebilir cikanlar; biri uymazsa sonrakine dusulur."""
-    ms = [NVIDIA_MODEL,
-          "deepseek-ai/deepseek-v4-pro-0813",
+    """NVIDIA LLM deneme sirasi — JSON-URETEN adimlar icin. Once HIZLI + JSON'a
+    SADIK instruct modeli (nemotron-70b: kanitli, hizli), sonra daha guclu
+    yedekler; palmyra-creative EN SON (yaratici yazimda iyi ama kati JSON'da
+    tutarsiz olabilir -> once denenirse yavaslatir/tekrar yaptirirdi). Senaryolar
+    ayrica DeepSeek ile ELESTIRILIP guclendiriliyor (nvidia_araclar.KRITIK_MODEL),
+    yani kalite orada da yukseliyor. Biri uymazsa sonrakine dusulur."""
+    ms = ["nvidia/llama-3.1-nemotron-70b-instruct",
           "nvidia/nemotron-3-super-120b-a12b",
-          "nvidia/llama-3.1-nemotron-70b-instruct"]
+          "deepseek-ai/deepseek-v4-pro-0813",
+          NVIDIA_MODEL]   # palmyra-creative (yaratici) en son yedek
     out = []
     for m in ms:
         if m and m not in out:
