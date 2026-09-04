@@ -66,8 +66,22 @@ def _claude(prompt, key, model=None, max_tokens=8192):
 
 # --- NVIDIA NIM (build.nvidia.com) — OpenAI-uyumlu, ~260 ucretsiz model --------
 # Anahtar NVIDIA_API_KEY ile gelir. Varsayilan model NVIDIA_MODEL ile degistirilebilir.
-# Llama 3.3 70B: Turkcesi iyi, JSON'a sadik, ucretsiz kotasi haftalik cron icin bol.
-NVIDIA_MODEL = os.environ.get("NVIDIA_MODEL", "").strip() or "nvidia/llama-3.1-nemotron-70b-instruct"
+# palmyra-creative-122b: yaratici yazim icin en iyi (hook/senaryo kalitesi). JSON'a
+# uymazsa zincir guclu instruct modellerine duser (nemotron-super-120b -> nemotron-70b).
+NVIDIA_MODEL = os.environ.get("NVIDIA_MODEL", "").strip() or "writer/palmyra-creative-122b"
+
+
+def _nvidia_modeller():
+    """NVIDIA LLM deneme sirasi: once yaratici (palmyra), sonra guclu instruct
+    modelleri (JSON'a daha sadik). Hesap kontrolunde erisilebilir cikanlar."""
+    ms = [NVIDIA_MODEL,
+          "nvidia/nemotron-3-super-120b-a12b",
+          "nvidia/llama-3.1-nemotron-70b-instruct"]
+    out = []
+    for m in ms:
+        if m and m not in out:
+            out.append(m)
+    return out
 
 
 def _nvidia_key():
@@ -121,7 +135,9 @@ def uret(baslik):
     nkey = _nvidia_key()
     yollar = []
     if nkey:
-        yollar.append(("nvidia", lambda: _nvidia(prompt, nkey)))
+        for _m in _nvidia_modeller():
+            yollar.append((f"nvidia:{_m.split('/')[-1][:16]}",
+                           lambda mm=_m: _nvidia(prompt, nkey, model=mm)))
     if ckey:
         yollar.append(("claude", lambda: _claude(prompt, ckey)))
     if key:
@@ -131,7 +147,7 @@ def uret(baslik):
 
     hatalar = []
     for ad, yol in yollar:
-        denemeler = 4 if ad in ("gemini", "claude", "nvidia") else 1
+        denemeler = 4 if ad in ("gemini", "claude") else (2 if ad.startswith("nvidia") else 1)
         for k in range(denemeler):
             try:
                 ham = yol()
