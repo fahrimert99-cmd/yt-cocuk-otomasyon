@@ -38,6 +38,9 @@ def main():
     bg = NA.kapak_arkaplani(baslik, kanca, "output/ai_kapak_bg.jpg")
     if bg:
         print(f"✓ AI arka plan üretildi: {bg} ({os.path.getsize(bg)//1024} KB)")
+        # VLM görsel-denetimi kararı (yazi=bozuk yazı var mı, uygun=konuya uygun mu)
+        rapor = NA.gorsel_denetle(bg, baslik)
+        print(f"  VLM görsel-denetim kararı: {rapor}  (model: {NA.VLM_MODEL})")
     else:
         print("✗ AI arka plan ÜRETİLEMEDİ (anahtar/endpoint/model erişimi?). "
               "Nihai kapak düz zemine düşer; endpoint/model adını kontrol edelim.")
