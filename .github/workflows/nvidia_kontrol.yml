@@ -4,7 +4,7 @@ name: NVIDIA Model Erisim Kontrolu (YUKLEMEZ)
 on:
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   kontrol:
     runs-on: ubuntu-latest
@@ -24,6 +24,24 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: nvidia-modeller
-          path: output/nvidia_modeller.txt
+          path: |
+            output/nvidia_modeller.txt
+            output/nvidia_rapor.txt
           if-no-files-found: warn
           retention-days: 7
+      # Raporu 'nvidia-rapor' dalina yayinla -> asistan cekip dogrudan okuyabilsin.
+      - name: Raporu dala yayinla
+        if: always()
+        run: |
+          test -f output/nvidia_rapor.txt || exit 0
+          cp output/nvidia_rapor.txt /tmp/nvidia_rapor.txt
+          cp output/nvidia_modeller.txt /tmp/nvidia_modeller.txt 2>/dev/null || true
+          git config user.name "nvidia-bot"
+          git config user.email "nvidia-bot@users.noreply.github.com"
+          git checkout --orphan nvidia_rapor_tmp
+          git rm -rf . >/dev/null 2>&1 || true
+          cp /tmp/nvidia_rapor.txt nvidia_rapor.txt
+          cp /tmp/nvidia_modeller.txt nvidia_modeller.txt 2>/dev/null || true
+          git add nvidia_rapor.txt nvidia_modeller.txt 2>/dev/null || git add nvidia_rapor.txt
+          git commit -m "nvidia erisim raporu" || exit 0
+          git push -f origin nvidia_rapor_tmp:nvidia-rapor || echo "push atlandi"
