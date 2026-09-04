@@ -126,20 +126,45 @@ def main():
 
     # 4) VIDEO üretim endpoint'lerini yokla (bilinen NVIDIA genai video modelleri).
     #    404 = hesapta yok, 422 = erişilebilir (parametre), timeout = ağır/cold.
+    #    Video için ayrı bir anahtar (NVIDIA_VIDEO_KEY) varsa onu kullan.
+    vkey = re.sub(r"\s", "", os.environ.get("NVIDIA_VIDEO_KEY") or "") or KEY
+    def _vpost(url, body, timeout=25):
+        req = urllib.request.Request(url, data=json.dumps(body).encode(),
+                                     headers={"Authorization": f"Bearer {vkey}",
+                                              "Content-Type": "application/json",
+                                              "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.status, r.read().decode()
+    def _vdurum(fn):
+        try:
+            fn(); return "OK 200"
+        except urllib.error.HTTPError as he:
+            try:
+                det = json.loads(he.read().decode())
+                msg = det.get("detail") or det.get("title") or det.get("message") or ""
+            except Exception:
+                msg = ""
+            return f"HTTP {he.code} {str(msg)[:70]}"
+        except Exception as e:
+            return f"{type(e).__name__}: {str(e)[:60]}"
     video_adaylar = [
+        # WAN (Alibaba) — build.nvidia.com'da video/animasyon modelleri
+        "wan-ai/wan2.2-animate-2-14b",
+        "alibaba/wan2.2-animate-2-14b",
+        "wan-ai/wan2.2-t2v-a14b",
+        "wan-ai/wan2.2-i2v-a14b",
+        "wan-ai/wan2.1-t2v-14b",
+        # Diğer bilinen video modelleri
         "stabilityai/stable-video-diffusion",
-        "nvidia/cosmos-predict1-7b",
         "nvidia/cosmos-predict2-2b",
-        "nvidia/cosmos-1.0-7b-text2world",
-        "genmo/mochi-1-preview",
         "lightricks/ltx-video",
         "tencent/hunyuan-video",
     ]
-    _o("VIDEO endpoint yoklaması (ai.api.nvidia.com/v1/genai):")
+    _o(f"VIDEO endpoint yoklaması (video anahtarı {'ayrı' if vkey != KEY else 'ana anahtar'}):")
     for m in video_adaylar:
-        durum = _durum(lambda mm=m: _post(
+        durum = _vdurum(lambda mm=m: _vpost(
             f"https://ai.api.nvidia.com/v1/genai/{mm}",
-            {"prompt": "a red apple on a table", "image": ""}, timeout=20))
+            {"prompt": "a busy supermarket aisle", "image": ""}, timeout=20))
         _o(f"  {durum:<34} {m}")
 
     print("\n===== NVIDIA MODEL ERISIM OZETI =====")
