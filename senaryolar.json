@@ -52,7 +52,7 @@
       "tasarruf"
     ],
     "script": "İlk saat ücretsiz yazısı seni içeri çekmek içindir. İçeri girdikten sonra ücret saat başı katlanarak artar ve çıkışta şaşırırsın. Girmeden önce tam tarifeyi oku ve süreni bilerek ayarla, kör girme. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
-    "kanca": "İLK SAAT NEDEN BEDAVA?",
+    "kanca": "İLK SAAT BEDAVA?",
     "sahneler": [
       {
         "metin": "İlk saat ücretsiz yazısı seni içeri çekmek içindir.",
@@ -93,7 +93,7 @@
       "psikoloji"
     ],
     "script": "Menüdeki en pahalı yemek satılmak için değil, yanındakini sana ucuz göstermek için oradadır. Gözünü de sağ üst köşeye çekerler, çünkü orası en kârlı bölgedir. Fiyatın yönlendirmesine değil, canının çektiğine bak. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
-    "kanca": "EN PAHALI YEMEK NEDEN ORADA?",
+    "kanca": "MENÜ TUZAĞI",
     "sahneler": [
       {
         "metin": "Menüdeki o aşırı pahalı yemek, çoğu zaman satılmak için değil, yanındakini makul göstermek için oradadır.",
@@ -134,7 +134,7 @@
       "tüketici"
     ],
     "script": "Üstü çizili o eski fiyat çoğu zaman hiç var olmadı bile. O yüksek rakam, indirimli fiyatı sana ucuz göstermek için konur; ürün belki o fiyattan hiç satılmadı. Sahte bir kıyas yaratırlar. Ürünün gerçek değerine bak, çizgiye değil. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
-    "kanca": "ESKİ FİYAT GERÇEK Mİ?",
+    "kanca": "SAHTE ESKİ FİYAT",
     "sahneler": [
       {
         "metin": "Üstü çizili o yüksek eski fiyat, indirimli fiyatı sana ucuz göstermek için konur.",
@@ -175,7 +175,7 @@
       "tüketici"
     ],
     "script": "Kuaförde ekstralar tam 'hayır' demenin en zor olduğu anda önerilir. Koltuğa oturup işlem başlayınca yıkama, maske, fön gibi eklemeleri teklif ederler; her biri küçük ücret, toplamı büyük. Baştan ne istediğini ve bütçeni net söyle, akış içinde ekletme. Böyle tuzaklara düşmemek için abone ol, yarın yeni bir tuzağı çözüyoruz.",
-    "kanca": "SEN İSTEMEDEN NASIL ARTAR?",
+    "kanca": "SESSİZCE ARTAN HESAP",
     "sahneler": [
       {
         "metin": "Koltuğa oturup işlem başlayınca, yıkama, maske, fön gibi ekstraları eklemeyi teklif ederler.",
@@ -336,7 +336,7 @@
         "gorsel": "full trash bin with food waste closeup"
       }
     ],
-    "kanca": "O TARİH GERÇEK Mİ?",
+    "kanca": "SAHTE SON TARİH",
     "tema": "tuzak"
   },
   {
@@ -430,7 +430,7 @@
         "gorsel": "rating stars on smartphone closeup"
       }
     ],
-    "kanca": "O YORUMLAR GERÇEK Mİ?",
+    "kanca": "SAHTE YORUMLAR",
     "tema": "tuzak"
   },
   {
@@ -477,7 +477,7 @@
         "gorsel": "aware person using laptop closeup"
       }
     ],
-    "kanca": "O BUTON NEDEN BÜYÜK?",
+    "kanca": "ÇEREZ TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -524,7 +524,7 @@
         "gorsel": "tapping free app install"
       }
     ],
-    "kanca": "BEDAVA NASIL PARA EDER?",
+    "kanca": "BEDAVA'NIN BEDELİ",
     "tema": "tuzak"
   },
   {
@@ -665,7 +665,7 @@
         "gorsel": "woman calculating savings closeup"
       }
     ],
-    "kanca": "SIRA SANA NE ZAMAN GELİR?",
+    "kanca": "ALTIN GÜNÜ TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -712,7 +712,7 @@
         "gorsel": "spreadsheet with numbers closeup"
       }
     ],
-    "kanca": "O FAİZ NEDEN DÜŞÜK?",
+    "kanca": "DÜŞÜK FAİZ YALANI",
     "tema": "tuzak"
   },
   {
@@ -947,7 +947,7 @@
         "gorsel": "price label close up"
       }
     ],
-    "kanca": "O FİYAT NEDEN VAR?",
+    "kanca": "İLK FİYAT TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -1135,7 +1135,7 @@
         "gorsel": "person enjoying shopping closeup"
       }
     ],
-    "kanca": "O KOKU NEDEN VAR?",
+    "kanca": "KOKUNUN GİZLİ GÜCÜ",
     "tema": "tuzak"
   },
   {
@@ -1276,7 +1276,7 @@
         "gorsel": "person giving gift card closeup"
       }
     ],
-    "kanca": "O BAKİYE KİME KALIR?",
+    "kanca": "KAYIP KART BAKİYESİ",
     "tema": "tuzak"
   },
   {
@@ -1464,7 +1464,7 @@
         "gorsel": "customer deciding size closeup"
       }
     ],
-    "kanca": "BÜYÜK BOY MANTIKLI MI?",
+    "kanca": "BÜYÜK BOY YANILGISI",
     "tema": "tuzak"
   },
   {
@@ -1511,7 +1511,7 @@
         "gorsel": "rewards screen on smartphone closeup"
       }
     ],
-    "kanca": "O YILDIZLAR KİME YARAR?",
+    "kanca": "SADAKAT TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -1699,7 +1699,7 @@
         "gorsel": "skeptical shopper at sale closeup"
       }
     ],
-    "kanca": "O İNDİRİM GERÇEK Mİ?",
+    "kanca": "SAHTE İNDİRİM",
     "tema": "tuzak"
   },
   {
@@ -1793,7 +1793,7 @@
         "gorsel": "online shopping on phone closeup"
       }
     ],
-    "kanca": "BEDAVA İADE NEDEN İYİ?",
+    "kanca": "BEDAVA İADE TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -1840,7 +1840,7 @@
         "gorsel": "beach vacation destination closeup"
       }
     ],
-    "kanca": "NEDEN HEP SON DAKİKA?",
+    "kanca": "SON DAKİKA TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -2028,7 +2028,7 @@
         "gorsel": "signing warranty paper closeup"
       }
     ],
-    "kanca": "O GARANTİ GEREKLİ Mİ?",
+    "kanca": "GEREKSİZ GARANTİ",
     "tema": "tuzak"
   },
   {
@@ -2075,7 +2075,7 @@
         "gorsel": "calendar reminder to cancel closeup"
       }
     ],
-    "kanca": "İLK AY NEDEN BEDAVA?",
+    "kanca": "İLK AY BEDAVA?",
     "tema": "tuzak"
   },
   {
@@ -2216,7 +2216,7 @@
         "gorsel": "person spending in game closeup"
       }
     ],
-    "kanca": "NEDEN GERÇEK PARA DEĞİL?",
+    "kanca": "SANAL PARA TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -2310,7 +2310,7 @@
         "gorsel": "limited products on display"
       }
     ],
-    "kanca": "BOŞ RAF NEDEN VAR?",
+    "kanca": "BOŞ RAF OYUNU",
     "tema": "tuzak"
   },
   {
@@ -2592,7 +2592,7 @@
         "gorsel": "remote changing tv channels"
       }
     ],
-    "kanca": "REKLAM NEDEN YÜKSEK SESLİ?",
+    "kanca": "YÜKSEK SESLİ REKLAM",
     "tema": "tuzak"
   },
   {
@@ -2639,7 +2639,7 @@
         "gorsel": "various price tags closeup"
       }
     ],
-    "kanca": "İLK GÖRDÜĞÜN NEDEN PAHALI?",
+    "kanca": "İLK ÜRÜN TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -2780,7 +2780,7 @@
         "gorsel": "filling cart to threshold"
       }
     ],
-    "kanca": "O EŞİK NEDEN VAR?",
+    "kanca": "KARGO EŞİĞİ TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -3062,7 +3062,7 @@
         "gorsel": "person considering upgrade closeup"
       }
     ],
-    "kanca": "NEDEN HER YIL YENİ?",
+    "kanca": "YENİ MODEL TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -3438,7 +3438,7 @@
         "gorsel": "espresso machine brewing"
       }
     ],
-    "kanca": "O KAHVE NEYE MAL OLUR?",
+    "kanca": "BEDAVA KAHVE TUZAĞI",
     "tema": "tuzak"
   },
   {
@@ -3485,7 +3485,7 @@
         "gorsel": "completing online purchase closeup"
       }
     ],
-    "kanca": "KOD NEDEN KOLAY BULUNUR?",
+    "kanca": "SAHTE İNDİRİM KODU",
     "tema": "tuzak"
   },
   {
@@ -3756,7 +3756,7 @@
   },
   {
     "baslik": "BÜYÜK PAKET HER ZAMAN UCUZ DEĞİL! ⚖️",
-    "kanca": "RAFTAKİ KÜÇÜK YAZIYA BAK",
+    "kanca": "KÜÇÜK YAZIYA BAK",
     "script": "Büyük paket ucuzdur sanıyorsun. Her zaman değil. Etikette küçük bir yazı var: birim fiyat. Kilogram ya da litre başına fiyat. Bazen küçük paket birim başına daha ucuzdur. Toplam fiyata değil, o küçük yazıya bak. Bir bakışta kim kazanır belli olur. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "tasarruf ipuçları",
@@ -3801,7 +3801,7 @@
   },
   {
     "baslik": "AÇKEN MARKETE GİTME! 🍎",
-    "kanca": "AÇ KARIN = DOLU SEPET",
+    "kanca": "AÇ KARIN TUZAĞI",
     "script": "Aç karnına markete girme. Aç beyin her şeyi lezzetli görür, sepet kendiliğinden dolar. Araştırmalar açken daha çok ve daha çok kalorili aldığını söylüyor. Önce bir şeyler ye, sonra çık. Küçük numara, büyük tasarruf. Aç karın, dolu sepet demektir. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "tasarruf ipuçları",
@@ -4071,7 +4071,7 @@
   },
   {
     "baslik": "REKLAM BİNLERCE YIL ÖNCE DE VARDI! 📜",
-    "kanca": "İLK REKLAM ÇOK ESKİ",
+    "kanca": "REKLAMIN ESKİ SIRRI",
     "script": "Reklam yeni bir şey sanıyorsun ama binlerce yıl öncesine dayanır. Antik şehirlerin duvarlarında dükkânları öven yazılar, pazarlarda bağıran satıcılar hep birer reklamdı. İnsan olduğu sürece birileri bir şey satmaya çalıştı. Değişen tek şey ekran. Yani reklam, sandığından çok daha yaşlı. Beğendiysen abone ol, yarın yeni bir video seni bekliyor.",
     "etiketler": [
       "biliyor muydun",

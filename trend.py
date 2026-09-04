@@ -217,6 +217,10 @@ def _senaryo_uret(baslik, kanca):
     # şema güvenceleri
     d.setdefault("baslik", baslik)
     d.setdefault("kanca", kanca)
+    # ÜÇ KELİME KURALI: kanca en fazla 3 kelime olmalı (kapak/açılış kısa-vurucu).
+    _kk = (d.get("kanca") or kanca or "").split()
+    if len(_kk) > 3:
+        d["kanca"] = " ".join(_kk[:3])
     d["tema"] = "tuzak"
     # ETİKETLER GARANTİSİ: model null/eksik döndürse de her zaman geçerli, dolu
     # bir liste olsun (SEO tag'leri boş kalmasın).
