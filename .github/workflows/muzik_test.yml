@@ -10,7 +10,7 @@ on:
         required: false
         default: ""
 permissions:
-  contents: read
+  contents: write
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -41,3 +41,17 @@ jobs:
           path: output/test_muzik.mp4
           if-no-files-found: warn
           retention-days: 7
+      # Klibi 'muzik-test-video' dalina yayinla -> asistan cekip dogrudan gosterebilsin.
+      - name: Klibi dala yayinla
+        if: always()
+        run: |
+          test -f output/test_muzik.mp4 || exit 0
+          cp output/test_muzik.mp4 /tmp/test_muzik.mp4
+          git config user.name "muzik-bot"
+          git config user.email "muzik-bot@users.noreply.github.com"
+          git checkout --orphan muzik_test_tmp
+          git rm -rf . >/dev/null 2>&1 || true
+          cp /tmp/test_muzik.mp4 test_muzik.mp4
+          git add test_muzik.mp4
+          git commit -m "muzik test klibi" || exit 0
+          git push -f origin muzik_test_tmp:muzik-test-video || echo "push atlandi"
