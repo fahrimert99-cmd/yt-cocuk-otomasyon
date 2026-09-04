@@ -1,0 +1,71 @@
+Toplam erişilebilir model: 81 (tam liste artifact'ta: nvidia_modeller.txt)
+  SOHBET/LLM (52):
+      - ai21labs/jamba-1.5-large-instruct
+      - aisingapore/sea-lion-7b-instruct
+      - databricks/dbrx-instruct
+      - deepseek-ai/deepseek-coder-6.7b-instruct
+      - deepseek-ai/deepseek-v4-flash-0731
+      - deepseek-ai/deepseek-v4-pro-0813
+      - google/codegemma-1.1-7b
+      - google/codegemma-7b
+      - google/diffusiongemma-26b-a4b-it
+      - google/gemma-2b
+      - google/gemma-3-12b-it
+      - google/gemma-3-4b-it
+      - google/gemma-4-31b-it
+      - google/recurrentgemma-2b
+      - ibm/granite-3.0-3b-a800m-instruct
+      - ibm/granite-3.0-8b-instruct
+      - ibm/granite-34b-code-instruct
+      - ibm/granite-8b-code-instruct
+      - microsoft/phi-3.5-moe-instruct
+      - mistralai/codestral-22b-instruct-v0.1
+      - mistralai/mistral-7b-instruct-v0.3
+      - mistralai/mistral-large
+      - mistralai/mistral-large-2-instruct
+      - mistralai/mistral-nemotron
+      - mistralai/mixtral-8x22b-v0.1
+      - nv-mistralai/mistral-nemo-12b-instruct
+      - nvidia/llama-3.1-nemoguard-8b-content-safety
+      - nvidia/llama-3.1-nemoguard-8b-topic-control
+      - nvidia/llama-3.1-nemotron-51b-instruct
+      - nvidia/llama-3.1-nemotron-70b-instruct
+  REASONING adayları (3): nvidia/cosmos-reason2-8b, nvidia/llama-3.1-nemotron-ultra-253b-v1, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning
+  RERANK adayları (0): YOK
+  ÇEVİRİ/çok-dilli adayları (11): google/codegemma-1.1-7b, google/codegemma-7b, google/diffusiongemma-26b-a4b-it, google/gemma-2b, google/gemma-3-12b-it, google/gemma-3-4b-it, google/gemma-4-31b-it, google/recurrentgemma-2b
+  EMBEDDING (7): nvidia/embed-qa-4, nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1, nvidia/llama-3.2-nv-embedqa-1b-v1, nvidia/llama-nemotron-embed-vl-1b-v2, nvidia/nemotron-3-embed-1b, nvidia/nv-embedqa-mistral-7b-v2
+  VISION (6): meta/llama-3.2-11b-vision-instruct, meta/llama-3.2-90b-vision-instruct, microsoft/phi-3-vision-128k-instruct, nvidia/cosmos-reason2-8b, nvidia/neva-22b, nvidia/vila
+  GÖRSEL adayları /v1/models içinde (0): YOK (genai ayrı)
+  VIDEO adayları /v1/models içinde (1): nvidia/ai-synthetic-video-detector
+  LLM ✗ meta/llama-3.3-70b-instruct
+  LLM ✗ deepseek-ai/deepseek-v3
+  LLM ✗ qwen/qwen2.5-72b-instruct
+  LLM ✗ meta/llama-3.1-70b-instruct
+LLM canlı test (llama-3.3-70b): HTTP 410 The model 'meta/llama-3.3-70b-instruct' has reached its end of life on
+GÖRSEL endpoint yoklaması (ai.api.nvidia.com/v1/genai, 1024x1024):
+  TimeoutError: The read operation timed out black-forest-labs/flux.1-schnell
+  HTTP 422 [{'type': 'greater_than_equal', 'loc': ['body', 'steps'], 'msg': 'Inpu black-forest-labs/flux.1-dev
+  HTTP 404 Function '387f6e3e-469c-4c35-be6c-eda8af91161e': Not found for account stabilityai/stable-diffusion-xl
+  HTTP 404 Function '1a89a4d9-bbf6-432c-95ca-4ab78fb02f28': Not found for account stabilityai/stable-diffusion-3-medium
+  HTTP 404 Function 'f886140c-424e-4c82-a841-99e23f9ae35d': Not found for account stabilityai/sdxl-turbo
+  HTTP 404                           bria/bria-2.3
+VIDEO endpoint yoklaması (video anahtarı ayrı):
+  HTTP 404                           wan-ai/wan2.2-animate-2-14b
+  HTTP 404                           alibaba/wan2.2-animate-2-14b
+  HTTP 404                           wan-ai/wan2.2-t2v-a14b
+  HTTP 404                           wan-ai/wan2.2-i2v-a14b
+  HTTP 404                           wan-ai/wan2.1-t2v-14b
+  HTTP 404 Function '8cd594f1-6a4d-4f8f-82b4-d1bf89adae98': Not found for account stabilityai/stable-video-diffusion
+  HTTP 404                           nvidia/cosmos-predict2-2b
+  HTTP 404                           lightricks/ltx-video
+  HTTP 404                           tencent/hunyuan-video
+VLM (görsel-anlama) canlı yoklaması:
+  OK 200                             meta/llama-3.2-11b-vision-instruct
+  OK 200                             meta/llama-3.2-90b-vision-instruct
+  HTTP 404 Function '20f2537e-8593-4eb9-ad40-60eee3bbaa55': Not found for account microsoft/phi-3-vision-128k-instruct
+  HTTP 404 Function 'e199b43b-6c62-4a63-9379-f60e1a953236': Not found for account nvidia/cosmos-reason2-8b
+  HTTP 404                           microsoft/phi-3.5-vision-instruct
+  HTTP 404 Function '1c8df143-2303-419b-8b28-b4dd82cfe113': Not found for account nvidia/vila
+RERANK canlı yoklaması (integrate .../v1/ranking):
+  HTTP 404                           nvidia/llama-3.2-nv-rerankqa-1b-v2
+  HTTP 404                           nvidia/nv-rerankqa-mistral-4b-v3
