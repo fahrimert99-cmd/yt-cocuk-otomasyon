@@ -881,11 +881,12 @@ def stok_video_ara(query, boyut, path, dikey=True, oncelik=None):
     return None
 
 
-def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="stok"):
-    """Her sahne için konuya en uygun gerçek stok videoyu seçer. Kaynak (Pexels/Pixabay)
-    sahnenin KONUSUNA göre belirlenir: o sorgu için hangi kaynakta daha çok video varsa
-    oradan alınır (zorunlu bir oran yoktur). Seçilen kaynakta indirme başarısızsa diğeri
-    devreye girer; hiçbiri bulamazsa fotogerçekçi AI görseline düşülür.
+def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="stok",
+                             ai_sahne=False):
+    """Her sahne için görsel hazırlar. ai_sahne=True ise ÖNCE NVIDIA flux ile
+    sahneye özel fotogerçekçi görsel üretilir (Ken Burns ile hareketlenir);
+    başarısızsa stok videoya, o da yoksa eski AI görseline düşülür.
+    ai_sahne=False (varsayılan) ise mevcut davranış: stok video -> AI görsel.
     ('video', yol) veya ('image', yol) listesi döndürür."""
     if sahneler:
         prompts = [s.get("gorsel") or s.get("metin") or "" for s in sahneler if s]
@@ -893,9 +894,27 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
         prompts = [" ".join(cumleler[i:i+2]) for i in range(0, len(cumleler), 2)]
     prompts = [p for p in prompts if p.strip()] or ["colorful scene"]
     dikey = boyut[1] > boyut[0]
+    NA = None
+    if ai_sahne:
+        try:
+            import nvidia_araclar as NA
+        except Exception as e:
+            print(f"      AI sahne kapalı (nvidia_araclar yok: {str(e)[:60]})")
+            NA = None
     gorseller = []
-    sayac = {"pexels": 0, "pixabay": 0, "ai": 0}
+    sayac = {"pexels": 0, "pixabay": 0, "ai": 0, "nvidia": 0}
     for i, p in enumerate(prompts):
+        # 0) NVIDIA flux ile sahneye özel görsel (opsiyonel, non-fatal)
+        if NA is not None:
+            aipath = os.path.join(tmp, f"sahne_ai_{i:03d}.jpg")
+            try:
+                if NA.sahne_gorsel(p, aipath, dikey=dikey):
+                    sayac["nvidia"] += 1
+                    gorseller.append(("image", aipath))
+                    print(f"      Sahne {i+1}/{len(prompts)}: NVIDIA flux görseli ✓")
+                    continue
+            except Exception as e:
+                print(f"      Sahne {i+1}: NVIDIA flux atlandı ({str(e)[:60]})")
         vpath = os.path.join(tmp, f"sahne_{i:03d}.mp4")
         stok = (stok_video_ara(p, boyut, vpath, dikey=dikey)
                 if (stil == "stok" and not cocuk) else None)
@@ -910,8 +929,8 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
             sayac["ai"] += 1
             gorseller.append(("image", ipath))
             print(f"      Sahne {i+1}/{len(prompts)}: AI görseli ({stil})")
-    print(f"      [dağılım: pexels={sayac['pexels']}, pixabay={sayac['pixabay']}, "
-          f"ai={sayac['ai']} / toplam {len(prompts)} sahne]")
+    print(f"      [dağılım: nvidia={sayac['nvidia']}, pexels={sayac['pexels']}, "
+          f"pixabay={sayac['pixabay']}, ai={sayac['ai']} / toplam {len(prompts)} sahne]")
     return gorseller
 
 
@@ -1234,7 +1253,7 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
 def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
                sahneler=None, animasyon=True, cocuk=True, tonlama="+0Hz",
                gorsel_stil="stok", kanca=None, eleven_once=False, eleven_voice_id=None,
-               muzik_tema=None):
+               muzik_tema=None, ai_sahne=False):
     """Orkestratör tarafından çağrılır: script -> mp4.
     sahneler verilirse (Gemini'den), her sahne için AI görsel üretir ve
     Ken Burns + çapraz geçişle animasyonlu montaj yapar.
@@ -1290,7 +1309,7 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     mp3 = _muzik_ekle(mp3, tmp, muzik_tema)
     if animasyon:
         gorseller = sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp,
-                                             cocuk=cocuk, stil=gorsel_stil)
+                                             cocuk=cocuk, stil=gorsel_stil, ai_sahne=ai_sahne)
         # UZUN (yatay) videolarda görselleri seslendirmeye TAM senkronla:
         # her sahne, metninin konuşulduğu gerçek zaman aralığında görünür.
         _ss = _sahne_sureleri(sahneler, boundaries, sure_al(mp3)) if (not dikey and sahneler) else None

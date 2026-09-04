@@ -48,7 +48,8 @@ def main():
                  tonlama=str(cfg.get("tonlama", "+0Hz")),
                  gorsel_stil=str(cfg.get("gorsel_stil", "stok")), kanca=s.get("kanca"),
                  eleven_once=bool(cfg.get("kisa_eleven", True)),
-                 eleven_voice_id=ses_id, muzik_tema="genel")
+                 eleven_voice_id=ses_id, muzik_tema="genel",
+                 ai_sahne=bool(cfg.get("ai_sahne", False)))
     print(f"ÖNİZLEME TAMAM ✓  {cikti}  ({os.path.getsize(cikti)//1024} KB)")
     print("Bu video YouTube'a YÜKLENMEDİ; çalışmanın 'Artifacts' bölümünden "
           "onizleme.zip olarak indirilir.")

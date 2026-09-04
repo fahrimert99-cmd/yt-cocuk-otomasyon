@@ -304,6 +304,26 @@ Return ONLY JSON: {{"prompt":"extreme close-up photorealistic cinematic image pr
     return gorsel_uret(gpr, cikti, genislik=768, yukseklik=1344)
 
 
+def sahne_gorsel(prompt, cikti, dikey=True):
+    """Bir SAHNE için NVIDIA flux ile fotogerçekçi görsel üretir (sahnenin
+    İngilizce 'gorsel' tarifiyle). Yol|None döner (başarısızsa çağıran stok/
+    eski-AI görsele düşer). Boyut flux'ın kabul ettiği en yakın dikey/yatay.
+    """
+    key = A._nvidia_key()
+    if not key or not (prompt or "").strip():
+        return None
+    # flux kabul edilen boyutlar: 768..1344 (64 katı). Dikey 9:16 -> 768x1344,
+    # yatay 16:9 -> 1344x768.
+    if dikey:
+        w, h = 768, 1344
+    else:
+        w, h = 1344, 768
+    gpr = (prompt.strip() +
+           ", photorealistic, cinematic dramatic lighting, high detail, sharp focus, "
+           "no text, no words, no letters, no watermark, no caption, no subtitle")
+    return gorsel_uret(gpr, cikti, genislik=w, yukseklik=h)
+
+
 if __name__ == "__main__":
     print("KRITIK_MODEL:", KRITIK_MODEL, "| EMBED_MODEL:", EMBED_MODEL,
           "| GORSEL_MODEL:", GORSEL_MODEL, "| NVIDIA key:", bool(A._nvidia_key()))

@@ -27,6 +27,7 @@ jobs:
       - name: Onizleme uret (YouTube'a YUKLENMEZ)
         env:
           # YT secret'lari BILEREK yok -> yukleme imkansiz.
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
