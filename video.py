@@ -643,11 +643,14 @@ def _eleven_seslendir(text, mp3_path, voice_id=None):
     if not key:
         raise RuntimeError("ElevenLabs anahtarı yok")
     voice_id = (voice_id or "").strip() or os.environ.get("ELEVEN_VOICE_ID", "").strip() or "dDcfsSsiSzmphdMGCECb"
-    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
+    # output_format=mp3_44100_192: EN YÜKSEK mp3 kalitesi (düşük-bitrate cızırtı
+    # artefaktlarını kökten önler; with-timestamps varsayılanı daha düşüktür).
+    url = (f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
+           f"?output_format=mp3_44100_192")
     body = {"text": text, "model_id": "eleven_multilingual_v2",
             # Daha PÜRÜZSÜZ ses: speaker_boost kapalı + style=0 (tiz/cızırtı
             # artefaktlarını azaltır), stability biraz yüksek, similarity ölçülü.
-            "voice_settings": {"stability": 0.50, "similarity_boost": 0.75,
+            "voice_settings": {"stability": 0.55, "similarity_boost": 0.72,
                                "style": 0.0, "use_speaker_boost": False}}
     req = urllib.request.Request(url, data=json.dumps(body).encode(),
                                  headers={"xi-api-key": key, "Content-Type": "application/json"})
@@ -1150,6 +1153,45 @@ def _muzik_yerel_sec(tema):
     return None
 
 
+def _ses_temizle(narration_mp3, tmp):
+    """ANLATIM SESİNİ cızırtı/tizlikten arındırır (de-esser + fizzy-tepe kesimi +
+    hafif de-harsh EQ). Süreyi DEĞİŞTİRMEZ -> altyazı senkronu korunur. Çıktı WAV
+    (kayıpsız) -> sonraki miks/mux'ta fazladan mp3 sıkıştırması olmaz. Hata olursa
+    orijinal mp3 aynen döner (akış asla bozulmaz).
+
+    Zincir:
+      highpass 70Hz      -> gürültü/uğultu temizliği (net alt uç)
+      deesser            -> 's/ş/z' tizliğini (sibilance) bastırır (cızırtının ana kaynağı)
+      equalizer 7.5kHz -4 -> sertlik/keskinlik bandını yumuşatır
+      lowpass 15.5kHz    -> konuşmada gereksiz ultra-tiz fizzi keser
+      alimiter 0.95      -> kontrollü tepe (sonraki aşamalarda clipping olmaz)
+    """
+    try:
+        out = os.path.join(tmp, "narration_temiz.wav")
+        af = ("highpass=f=70,deesser=i=0.45,"
+              "equalizer=f=7500:width_type=q:w=1.6:g=-4,"
+              "lowpass=f=15500,alimiter=limit=0.95")
+        r = subprocess.run(["ffmpeg", "-y", "-i", narration_mp3, "-af", af,
+                            "-ar", "44100", "-c:a", "pcm_s16le", out],
+                           capture_output=True, text=True)
+        if r.returncode == 0 and os.path.exists(out) and os.path.getsize(out) > 20000:
+            print("      Ses temizlendi (de-esser + tiz/cızırtı bastırma).")
+            return out
+        # deesser yoksa (eski ffmpeg) -> deesser'sız yeniden dene
+        af2 = ("highpass=f=70,equalizer=f=7500:width_type=q:w=1.6:g=-4,"
+               "lowpass=f=15500,alimiter=limit=0.95")
+        r2 = subprocess.run(["ffmpeg", "-y", "-i", narration_mp3, "-af", af2,
+                             "-ar", "44100", "-c:a", "pcm_s16le", out],
+                            capture_output=True, text=True)
+        if r2.returncode == 0 and os.path.exists(out) and os.path.getsize(out) > 20000:
+            print("      Ses temizlendi (tiz/cızırtı bastırma; deesser yok).")
+            return out
+        print(f"      Ses temizleme atlandı: {(r.stderr or '')[-120:]}")
+    except Exception as e:
+        print(f"      Ses temizleme atlandı: {str(e)[:100]}")
+    return narration_mp3
+
+
 def _muzik_ekle(narration_mp3, tmp, tema=None):
     """Anlatım sesine arka fon müziğini DUCKING ile karıştırır.
     Kaynak önceliği: (1) YEREL assets/muzik/ (ElevenLabs ile üretilmiş set,
@@ -1303,6 +1345,9 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     ass = os.path.join(tmp, "sub.ass")
     ass_yaz(cues, ass, CONFIG, dikey, kanca=kanca)
     os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
+    # SES TEMİZLEME: anlatımı cızırtı/tizlikten arındır (de-esser + fizzy-tepe
+    # kesimi). Süreyi değiştirmez -> altyazı senkronu korunur. Müzikten ÖNCE.
+    mp3 = _ses_temizle(mp3, tmp)
     # ARKA FON MÜZİĞİ: anlatım sesine CC0 müzik (ducking ile) karıştır. Alt yazı
     # zamanlaması yukarıda GERÇEK anlatım sesinden çıkarıldığı için müziği burada
     # ekliyoruz (senkron bozulmaz). Kapalıysa/başarısızsa mp3 değişmeden döner.
