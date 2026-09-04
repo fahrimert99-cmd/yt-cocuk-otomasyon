@@ -1230,11 +1230,16 @@ def _muzik_ekle(narration_mp3, tmp, tema=None):
         # Gain-staging: müzik makeup düşük + miks çıkışı 0.89'a sınırlanır (final
         # mux'taki 0.95 limiter'ın ALTINDA -> çift limitleme/cızırtı önlenir).
         # Müzikte lowpass 11k: konuşma tizinde yer açar (netlik).
+        # DUCKING (yeniden dengelendi): anlatım sürekli olduğu için eski ayar
+        # (ratio 2.5 + makeup 1) müziği tüm video boyunca yerde tutuyordu ->
+        # ses artırmak işe yaramıyordu. Şimdi: daha YUMUŞAK kısma (ratio 1.8) +
+        # kısma sonrası TELAFİ (makeup 2.2) -> müzik anlatımın ALTINDA net duyulur.
+        # threshold yükseltildi (0.18): yalnızca gerçekten yüksek konuşmada kısar.
         fc = (f"[0:a]asplit=2[v0][sc];"
-              f"[1:a]volume={vol:.3f},highpass=f=90,lowpass=f=11000[m];"
-              f"[m][sc]sidechaincompress=threshold=0.09:ratio=2.5:attack=25:release=240:makeup=1[md];"
+              f"[1:a]volume={vol:.3f},highpass=f=80,lowpass=f=12000[m];"
+              f"[m][sc]sidechaincompress=threshold=0.18:ratio=1.8:attack=20:release=350:makeup=2.2[md];"
               f"[v0][md]amix=inputs=2:duration=first:normalize=0,"
-              f"aresample=44100,alimiter=limit=0.89[a]")
+              f"aresample=44100,alimiter=limit=0.9[a]")
         subprocess.run(
             ["ffmpeg", "-y", "-i", narration_mp3, "-stream_loop", "-1", "-i", muzik_ham,
              "-filter_complex", fc, "-map", "[a]",
