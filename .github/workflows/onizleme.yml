@@ -10,7 +10,7 @@ on:
         required: false
         default: ""
 permissions:
-  contents: read
+  contents: write
 jobs:
   onizle:
     runs-on: ubuntu-latest
@@ -44,3 +44,18 @@ jobs:
           path: output/onizleme.mp4
           if-no-files-found: warn
           retention-days: 7
+      # Videoyu 'onizleme-video' dalina yayinla (orphan) -> asistan cekip
+      # kullaniciya dogrudan gosterebilsin. main'e DOKUNMAZ.
+      - name: Onizleme videosunu dala yayinla
+        if: always()
+        run: |
+          test -f output/onizleme.mp4 || exit 0
+          cp output/onizleme.mp4 /tmp/onizleme.mp4
+          git config user.name "onizleme-bot"
+          git config user.email "onizleme-bot@users.noreply.github.com"
+          git checkout --orphan onizleme_video_tmp
+          git rm -rf . >/dev/null 2>&1 || true
+          cp /tmp/onizleme.mp4 onizleme.mp4
+          git add onizleme.mp4
+          git commit -m "onizleme videosu" || exit 0
+          git push -f origin onizleme_video_tmp:onizleme-video || echo "push atlandi"
