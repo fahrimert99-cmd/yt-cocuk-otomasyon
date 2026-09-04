@@ -73,7 +73,7 @@ def main():
         if h<=datetime.now(timezone.utc)+timedelta(minutes=10): h+=timedelta(days=1)
         yayin=h.isoformat().replace("+00:00","Z")
     print("[3/4] Yukleniyor ...")
-    vid=YT.yukle(cikti,uzun["baslik"],uzun.get("aciklama",""),uzun.get("etiketler",[]),gizlilik=gizlilik,
+    vid=YT.yukle(cikti,uzun["baslik"],uzun.get("aciklama",""),uzun.get("etiketler") or [],gizlilik=gizlilik,
                  kategori=str(cfg.get("kategori","27")),cocuk_icerigi=bool(cfg.get("cocuk_icerigi",False)),kapak=kapak,yayin_zamani=yayin)
     uzun_url=f"https://youtu.be/{vid}"; print("✓ uzun yuklendi:",uzun_url,f"({gizlilik})")
 

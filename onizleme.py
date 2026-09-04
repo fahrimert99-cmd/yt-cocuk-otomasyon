@@ -32,7 +32,7 @@ def main():
         with open("config.json", encoding="utf-8") as f:
             cfg = json.load(f)
     s = _senaryo_sec()
-    print(f"[önizleme] Senaryo: {s.get('baslik')}  ({len(s.get('sahneler', []))} sahne)")
+    print(f"[önizleme] Senaryo: {s.get('baslik')}  ({len(s.get('sahneler') or [])} sahne)")
     tmp = tempfile.mkdtemp()
     sp = os.path.join(tmp, "script.txt")
     with open(sp, "w", encoding="utf-8") as f:
