@@ -4461,5 +4461,88 @@
       "yeme içme",
       "tasarruf"
     ]
+  },
+  {
+    "baslik": "ÇOKLU İNDİRIM KUPONU ZALIMI! 🎟️",
+    "aciklama": "Bu video, indirim kuponlarının arkasında hidden fiyat manipülasyonlarını gösterir. Tüketicileri gerçek tasarrufu distinguishing from aldatıcı promosyonlarla nasıl ayırt edeceklerini öğretir.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "kanca": "İndirim aldatması",
+    "script": "İndirim kuponu alıp sevinirken, aslında fiyatı zaten yüksek tutulan ürüne ekstra bir indirim sanatıyla aldatılıyoruz. Mağazalar, eski fiyatı yükseltip sonra %50 indirim göstererek tasarruf hissi yaratı; bu yüzden indirim yüzdesine güvenmemek gerekir. Kuponu kullanmadan önce ürünün geçmiş fiyatını bir fiyat karşılaştırma sitesinde veya uygulamasından kontrol edin; gerçek indirim oranı genellikle çok daha düşük olur. Ayrıca kuponun minimum alışveriş tutarı, kullanım süresi ve dışlanan kategorileri dikkatlice okuyun; şartları ihlak etmek indirimi geçersiz kılar. Son olarak, alışveriş listesini tutup sadece ihtiyacınız olan ürünleri alın; gereksiz alışverişi önleyerek hem cüzdanınız hem de zamanınızı korurun. ABONE olayı unutmayın, bir sonraki videoda sahte 'ücretsiz kargo' tuzağını keşfedeceğiz!",
+    "sahneler": [
+      {
+        "metin": "İndirim kuponu alıp sevinirken, aslında fiyatı zaten yüksek tutulan ürüne ekstra bir indirim sanatıyla aldatılıyoruz.",
+        "gorsel": "Close-up of a shopper's excited hand grabbing a colorful discount coupon, bright supermarket shelves blurred in background."
+      },
+      {
+        "metin": "Mağazalar, eski fiyatı yükseltip sonra %50 indirim göstererek tasarruf hissi yaratı; bu yüzden indirim yüzdesine güvenmemek gerekir.",
+        "gorsel": "A store employee raising a price tag on a product, then slapping a large 50% OFF sticker over it, with a skeptical shopper watching."
+      },
+      {
+        "metin": "Kuponu kullanmadan önce ürünün geçmiş fiyatını bir fiyat karşılaştırma sitesinde veya uygulamasından kontrol edin; gerçek indirim oranı genellikle çok daha düşük olur.",
+        "gorsel": "A smartphone screen showing a price history graph fluctuating, a finger tapping to reveal the real discount is minimal."
+      },
+      {
+        "metin": "Ayrıca kuponun minimum alışveriş tutarı, kullanım süresi ve dışlanan kategorileri dikkatlice okuyun; şartları ihlak etmek indirimi geçersiz kılar.",
+        "gorsel": "A coupon's fine print zooming in, highlighting minimum spend, expiry date, and excluded categories, with a red X over ignored terms."
+      },
+      {
+        "metin": "Son olarak, alışveriş listesini tutup sadece ihtiyacınız olan ürünleri alın; gereksiz alışverişi önleyerek hem cüzdanınız hem de zamanınızı korurun.",
+        "gorsel": "A shopper checking a written shopping list, placing only needed items in a basket, while impulse items stay on the shelf."
+      },
+      {
+        "metin": "ABONE olayı unutmayın, bir sonraki videoda sahte 'ücretsiz kargo' tuzağını keşfedeceğiz!",
+        "gorsel": "The host pointing to a subscribe button animation, then a teaser thumbnail of a fake free‑offer trap, with a curious expression."
+      }
+    ],
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "SON KULLANMA TARİHİNİN ÖNÜNDE FİYAT MANİPÜLASYONU! 📅",
+    "aciklama": "Marketlerdeki son kullanma tarihi oyunlarına dikkat! Nasıl anlarsınız, nasıl korunursunuz? Bu video, sizi bilinçli bir tüketici yapacak.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "fiyat",
+      "son kullanma tarihi",
+      "alışveriş",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "kanca": "Tarih tuzağı",
+    "script": "Market rafında elinizi uzattığınız o ürünün üzerindeki etiket, farkında olmadan sağlığınızla oynuyor olabilir. Bazı marketler, son kullanma tarihi geçmek üzere olan ürünlerin üzerine eski fiyat etiketlerini yapıştırıp hem fiyatı artırıyor hem de gerçek miadı gizliyor. Fiyat etiketi ile son kullanma tarihi arasında boşluk varsa veya etiketin altında bir kabarıklık görüyorsanız, hemen şüphelenin. Etiketi yavaşça kaldırın, altındaki tarihi kontrol edin. Eğer tarih yakın veya geçmişse o ürünü kesinlikle almayın, yetkililere bildirin. Bu basit kontrol sizi hem maddi zarardan hem de sağlık riskinden korur. Daha fazla tüketici tuzağı için kanalımıza abone olun, sıradaki videoda market arabası hilesini deşifre edeceğiz.",
+    "sahneler": [
+      {
+        "metin": "Market rafında elinizi uzattığınız o ürünün üzerindeki etiket, farkında olmadan sağlığınızla oynuyor olabilir.",
+        "gorsel": "EXTREME CLOSE UP of a hand reaching for a product on a supermarket shelf, the camera focuses on the price sticker, a subtle shadow reveals an uneven edge. Dramatic lighting with a shallow depth of field, creating tension."
+      },
+      {
+        "metin": "Bazı marketler, son kullanma tarihi geçmek üzere olan ürünlerin üzerine eski fiyat etiketlerini yapıştırıp hem fiyatı artırıyor hem de gerçek miadı gizliyor.",
+        "gorsel": "A stack of identical products on a shelf, one product in the foreground has a double sticker, the top one slightly peeled, revealing a glimpse of a date underneath. The lighting is harsh, creating a suspicious atmosphere."
+      },
+      {
+        "metin": "Fiyat etiketi ile son kullanma tarihi arasında boşluk varsa veya etiketin altında bir kabarıklık görüyorsanız, hemen şüphelenin.",
+        "gorsel": "MACRO SHOT of a product label, a finger points to a distinct bulge or air bubble under the sticker, the gap between the sticker and the packaging is clearly visible. High contrast lighting to highlight the anomaly."
+      },
+      {
+        "metin": "Etiketi yavaşça kaldırın, altındaki tarihi kontrol edin. Eğer tarih yakın veya geçmişse o ürünü kesinlikle almayın, yetkililere bildirin.",
+        "gorsel": "A consumer's hand carefully peels back the price sticker, the camera follows the movement, revealing a clearly printed 'TETT' or expiry date. The expression in the hand is cautious and deliberate, with a background of blurred supermarket aisles."
+      },
+      {
+        "metin": "Bu basit kontrol sizi hem maddi zarardan hem de sağlık riskinden korur.",
+        "gorsel": "A graphic overlay appears over a supermarket aisle, showing a shield icon protecting a shopping cart, with a subtle green checkmark and a heart symbol. The mood is empowering and protective, with a clean, modern design."
+      },
+      {
+        "metin": "Daha fazla tüketici tuzağı için kanalımıza abone olun, sıradaki videoda market arabası hilesini deşifre edeceğiz.",
+        "gorsel": "A stylized 'SUBSCRIBE' button animation flashes, followed by a quick, low-angle shot of a supermarket shopping cart from below, its wheels slightly off-center, implying a hidden secret within its structure. The lighting is mysterious, with a dark background."
+      }
+    ],
+    "tema": "tuzak"
   }
 ]
