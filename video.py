@@ -314,17 +314,29 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         if cues:
             son = cues[-1]["end"]
             orta = son / 2.0
-            btn = "\u25B6 ABONE OL  \u2022  her ak\u015fam yeni tuzak"
-            # tek yumuşak "nefes": 100->108->100 (yumuşak, titremez)
-            puls = "\\t(0,500,\\fscx108\\fscy108)\\t(500,1000,\\fscx100\\fscy100)\\t(1000,1500,\\fscx108\\fscy108)\\t(1500,2000,\\fscx100\\fscy100)"
+            # BEĞEN + ABONE OL: iki eylem tek satırda. NOT: font DejaVu Sans;
+            # emoji (👍) DESTEKLENMEZ (kutu çıkar) -> DejaVu'da bulunan
+            # ♥ (U+2665) ve ▶ (U+25B6) sembolleri kullanılıyor.
+            btn = "\u2665 BE\u011eEN   \u25B6 ABONE OL"
+            # ZIPLAYARAK GİR + iki kalp atışı + renk parlaması:
+            # 1) bounce-in (116%->100%, ~0.3sn) -> göz anında yakalar
+            # 2) iki nabız (110%->100%) + beyaza parlayıp sarıya dönme
+            puls = ("\\t(0,140,\\fscx116\\fscy116)\\t(140,320,\\fscx100\\fscy100)"
+                    "\\t(820,1050,\\fscx110\\fscy110\\c&H00FFFFFF&)"
+                    "\\t(1050,1300,\\fscx100\\fscy100\\c&H0000DDFF&)"
+                    "\\t(1700,1930,\\fscx110\\fscy110\\c&H00FFFFFF&)"
+                    "\\t(1930,2180,\\fscx100\\fscy100\\c&H0000DDFF&)")
             # ERKEN ABONE CTA KALDIRILDI (bilerek): Shorts analitigi ilk saniyede
             # %76 "izlemeden gecti" gosterdi. Izleyici daha degeri gormeden abone
             # istemek kaydirmayi tetikliyor. CTA artik yalnizca ORTA ve SON'da;
             # once deger ver, sonra iste.
-            # ORTA: 2.2sn görünür
-            o_bas, o_bit = orta - 1.1, orta + 1.1
-            f.write(f"Dialogue: 2,{_ass_zaman(o_bas)},{_ass_zaman(o_bit)},Abone,,0,0,0,,"
-                    f"{{\\fad(250,250){puls}}}{btn}\n")
+            # ORTA: 2.2sn görünür. GÜVENLİK TABANI: kısa videolarda orta nokta
+            # ilk saniyelere düşebiliyor; CTA 6. saniyeden önce ASLA görünmesin
+            # (ilk saniyeler yalnızca kancaya ait -> kaydırmayı tetiklemesin).
+            o_bas, o_bit = max(6.0, orta - 1.1), orta + 1.1
+            if o_bit - o_bas >= 0.8:
+                f.write(f"Dialogue: 2,{_ass_zaman(o_bas)},{_ass_zaman(o_bit)},Abone,,0,0,0,,"
+                        f"{{\\fad(250,250){puls}}}{btn}\n")
             # SON: 2.6sn görünür
             s_bas, s_bit = max(o_bit + 0.4, son - 2.6), son + 0.4
             f.write(f"Dialogue: 2,{_ass_zaman(s_bas)},{_ass_zaman(s_bit)},Abone,,0,0,0,,"
