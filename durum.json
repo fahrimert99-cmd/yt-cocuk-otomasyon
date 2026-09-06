@@ -8,6 +8,7 @@
     "ALTIN GÜNÜ BİR TUZAK MI? 💰",
     "AVM'DE NEDEN SAAT YOK?! 🏬",
     "AVM'LER SENİ BÖYLE İÇERDE TUTUYOR! 🏬",
+    "AÇIK BÜFE NASIL KÂR EDER? 🍽️",
     "BANKALAR GİZLİ ÜCRETLERLE KANDIRIYOR! 🏦",
     "BEDAVA KAHVE NEDEN VERİLİR? ☕",
     "BEDAVA OYUN PARANI NASIL ALIR? 🕹️",
@@ -73,10 +74,10 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 62)\n[1/3] Senaryo (97/99) [yeme]: RESTORAN MENÜSÜNDE 'ŞEF ÖNERİSİ' TUZAĞI: GEREKSİZ EK MALİYET! 🍽️\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel2.mp3, ses %24, ducking).\n      Sahne 1/6: NVIDIA flux görseli ✓\n      Sahne 2/6: NVIDIA flux görseli ✓\n      Sahne 3/6: NVIDIA flux görseli ✓\n      Sahne 4/6: NVIDIA flux görseli ✓\n      Sahne 5/6: NVIDIA flux görseli ✓\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (31919 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Markalı ilk kare eklendi (1.5sn intro).\n      Planlı yayın: 2026-09-06T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: yZ7uKREe3xQ\n✓ Yüklendi: https://youtu.be/1HJPLNnLW8Q  (yayın: 2026-09-06T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      Oynatma listesine eklendi: 🍔 Restoran & Yeme-İçme Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 61)\n[1/3] Senaryo (1/99) [market]: AÇIK BÜFE NASIL KÂR EDER? 🍽️\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel.mp3, ses %24, ducking).\n      Sahne 1/6: NVIDIA flux görseli ✓\n      Sahne 2/6: NVIDIA flux görseli ✓\n      Sahne 3/6: NVIDIA flux görseli ✓\n      Sahne 4/6: NVIDIA flux görseli ✓\n      Sahne 5/6: NVIDIA flux görseli ✓\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (14065 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Markalı ilk kare eklendi (1.5sn intro).\n      Planlı yayın: 2026-09-07T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 1HJPLNnLW8Q\n✓ Yüklendi: https://youtu.be/EH953YFASnU  (yayın: 2026-09-07T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      Oynatma listesine eklendi: 🛒 Market & AVM Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "1HJPLNnLW8Q",
-    "metin": "Şef önerisi tuzağı!\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
+    "video_id": "EH953YFASnU",
+    "metin": "NEDEN TABAKLAR KÜÇÜK?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
   },
-  "son_kategori": "yeme"
+  "son_kategori": "market"
 }
