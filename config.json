@@ -30,7 +30,7 @@
   "marka_slogan": "Her gün yeni bir tüketici tuzağı",
   "marka_handle": "@tuzakavcisitv",
   "oynatma_listesi": true,
-  "marka_ilk_kare": true,
+  "marka_ilk_kare": false,
   "marka_ilk_kare_sn": 1.5,
   "haber_gizlilik": "public",
   "ai_kapak": true,

@@ -317,13 +317,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             btn = "\u25B6 ABONE OL  \u2022  her ak\u015fam yeni tuzak"
             # tek yumuşak "nefes": 100->108->100 (yumuşak, titremez)
             puls = "\\t(0,500,\\fscx108\\fscy108)\\t(500,1000,\\fscx100\\fscy100)\\t(1000,1500,\\fscx108\\fscy108)\\t(1500,2000,\\fscx100\\fscy100)"
-            # BAS (erken): hook biter bitmez ~2.9sn belirir, orta CTA'ya carpmaz.
-            # Amac: izleyici ilk saniyelerde abone ipucunu gorsun -> donusum artar.
-            e_bas = 2.9
-            e_bit = min(5.6, orta - 1.3, son - 0.5)
-            if e_bit - e_bas >= 0.8:
-                f.write(f"Dialogue: 2,{_ass_zaman(e_bas)},{_ass_zaman(e_bit)},Abone,,0,0,0,,"
-                        f"{{\\fad(200,200){puls}}}{btn}\n")
+            # ERKEN ABONE CTA KALDIRILDI (bilerek): Shorts analitigi ilk saniyede
+            # %76 "izlemeden gecti" gosterdi. Izleyici daha degeri gormeden abone
+            # istemek kaydirmayi tetikliyor. CTA artik yalnizca ORTA ve SON'da;
+            # once deger ver, sonra iste.
             # ORTA: 2.2sn görünür
             o_bas, o_bit = orta - 1.1, orta + 1.1
             f.write(f"Dialogue: 2,{_ass_zaman(o_bas)},{_ass_zaman(o_bit)},Abone,,0,0,0,,"
@@ -908,6 +905,14 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
     gorseller = []
     sayac = {"pexels": 0, "pixabay": 0, "ai": 0, "nvidia": 0}
     for i, p in enumerate(prompts):
+        # İLK KARE ÇARPICI OLSUN: Shorts akışında video otomatik oynar ve izleyici
+        # kararını ilk anda verir (analitik: %76 "izlemeden geçti"). Bu yüzden 1.
+        # sahnenin görselini dramatik MAKRO yakın çekime zorluyoruz -> kadraj dolu,
+        # yüksek kontrast, boş/durgun bir açılış karesi oluşmaz.
+        if i == 0:
+            p = (p.strip() + ", extreme close-up macro shot filling the frame, "
+                 "shallow depth of field, dramatic high-contrast lighting, "
+                 "bold striking composition, eye-catching opening frame")
         # 0) NVIDIA flux ile sahneye özel görsel (opsiyonel, non-fatal)
         if NA is not None:
             aipath = os.path.join(tmp, f"sahne_ai_{i:03d}.jpg")
