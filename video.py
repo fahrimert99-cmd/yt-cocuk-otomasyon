@@ -1340,6 +1340,18 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
         except Exception as e:
             print(f"      {_ad} TTS hata ({str(e)[:200]}), sonraki saglayiciya geciliyor")
             boundaries = None
+            # SESSİZ BOZULMA UYARISI: ElevenLabs düşerse ses YEDEK motora kayar
+            # ve videonun sesi değişir. Bunu fark etmemek marka tutarlılığını
+            # bozuyordu -> Telegram'dan haber ver (non-fatal).
+            if _ad == "eleven":
+                try:
+                    import bildirim as B
+                    B.mesaj("\u26a0\ufe0f ElevenLabs seslendirme BAŞARISIZ — video "
+                            "yedek sese düşüyor (ses değişecek).\n\n"
+                            f"Hata: {str(e)[:300]}\n\n"
+                            "Kota bitmiş olabilir; kontrol et.")
+                except Exception:
+                    pass
     if boundaries is None:
         try:
             boundaries = seslendir_prosodik(cumleler, voice, hiz, mp3, pitch=tonlama)

@@ -23,6 +23,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Analiz + rapor
         env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
@@ -49,3 +51,13 @@ jobs:
             echo "push denemesi $i basarisiz, bekleniyor..."; sleep $((2 ** i))
           done
           echo "push atlandi (5 deneme)"; exit 0
+      # Bu is BASARISIZ olursa Telegram'dan haber ver (sessiz cokusu onler).
+      - name: Hata bildirimi (Telegram)
+        if: failure()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 bildirim.py "🚨 ${{ github.workflow }} BAŞARISIZ
+          Repo: ${{ github.repository }}
+          Log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

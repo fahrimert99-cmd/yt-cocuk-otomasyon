@@ -1,0 +1,40 @@
+name: Telegram Bildirim Testi
+# Elle calistir. TELEGRAM_TOKEN / TELEGRAM_CHAT_ID secret'lari dogru mu diye
+# telefonuna bir test mesaji gonderir. Kanala HICBIR SEY yapmaz.
+on:
+  workflow_dispatch:
+    inputs:
+      mesaj:
+        description: "Gonderilecek test mesaji (bos = varsayilan)."
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Test bildirimi gonder
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MESAJ: ${{ github.event.inputs.mesaj }}
+        run: |
+          python3 - <<'PY'
+          import os, bildirim as B
+          if not B.acik():
+              raise SystemExit("HATA: TELEGRAM_TOKEN / TELEGRAM_CHAT_ID secret'lari eksik.")
+          m = (os.environ.get("MESAJ") or "").strip() or (
+              "✅ TUZAK AVCISI bildirim sistemi çalışıyor!\n\n"
+              "Bundan sonra şunları buraya göndereceğim:\n"
+              "• 🚨 Workflow hataları\n"
+              "• ⚠️ Ses kotası uyarıları\n"
+              "• 📊 Günlük kanal raporu\n"
+              "• ✅ Video yayınlandı bildirimi (kapakla)")
+          print("gönderildi ✓" if B.mesaj(m) else "GÖNDERİLEMEDİ — token/chat id kontrol et")
+          PY
