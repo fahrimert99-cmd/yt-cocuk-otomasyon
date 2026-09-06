@@ -32,6 +32,8 @@ jobs:
         run: python3 haber.py 2>&1 | tee haber_run.log
       - name: Uygun haber varsa video uret ve yukle
         env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DIKEY: "evet"
           SENARYO_DOSYA: output/haber_senaryo.json
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -67,3 +69,13 @@ jobs:
             echo "push denemesi $i basarisiz"; sleep $((2 ** i))
           done
           echo "push atlandi"; exit 0
+      # Bu is BASARISIZ olursa Telegram'dan haber ver (sessiz cokusu onler).
+      - name: Hata bildirimi (Telegram)
+        if: failure()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 bildirim.py "🚨 ${{ github.workflow }} BAŞARISIZ
+          Repo: ${{ github.repository }}
+          Log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
