@@ -295,13 +295,12 @@ def _ai_gemini_key():
 
 
 def _ai_yorum(rapor, bulgular, aksiyonlar):
-    """Verileri bir LLM'e (NVIDIA DeepSeek → Claude → Gemini) verip 'danışman' ağzıyla anlatısal bir
+    """Verileri NVIDIA'ya (DeepSeek → Nemotron, kısa timeout) verip 'danışman' ağzıyla anlatısal bir
     değerlendirme yazdırır. Anahtar yoksa / hata olursa None döner (rapor yine
     kural-tabanlı önerilerle çıkar). Ekstra bağımlılık yok; ai_script'in ham-HTTP
     yardımcıları kullanılır."""
     try:
-        from ai_script import (_claude, _claude_key, _gemini, _temizle,
-                               _nvidia, _nvidia_key)
+        from ai_script import _temizle, _nvidia, _nvidia_key
     except Exception:
         return None
     veri = {
@@ -330,42 +329,33 @@ def _ai_yorum(rapor, bulgular, aksiyonlar):
         y = (data.get("yorum") or "").strip()
         return y or None
 
-    # 0) NVIDIA DeepSeek (BİRİNCİL): bol/ücretsiz kota, hızlı, güçlü akıl yürütme.
-    # Claude/Gemini kotaya/model-EOL'e takılıyordu ve her koşuyu ~9 dk uzatıyordu;
-    # DeepSeek ilk denemede döndüğü için hem çalışır hem hızlanır.
+    # NVIDIA içinde HIZLI zincir (kota bol): DeepSeek dene -> yavaş/timeout ise
+    # düşünmesiz hızlı Nemotron'a düş. Her çağrı KISA timeout'lu; böylece AI yorum
+    # koşuyu en fazla ~100 sn uzatır (eskiden 120 sn timeout + çalışmayan
+    # Claude/Gemini yedekleri ile 9 dk'ya çıkıyordu). max_tokens=900: yorum kısa,
+    # DeepSeek'in reasoning "düşünme" token israfını da sınırlar.
     nk = _nvidia_key()
     if nk:
+        try:
+            yorum_tout = int(os.environ.get("NVIDIA_YORUM_TIMEOUT", "50") or "50")
+        except Exception:
+            yorum_tout = 50
         ds_model = (os.environ.get("NVIDIA_YORUM_MODEL", "").strip()
                     or "deepseek-ai/deepseek-v4-flash-0731")
-        try:
-            y = _cikar(_nvidia(prompt, nk, model=ds_model))
-            if y:
-                print(f"  ✓ AI yorum: NVIDIA DeepSeek ({ds_model})")
-                return y
-        except Exception as e:
-            print(f"  [AI yorum deepseek hata: {str(e)[:90]}]")
-    # 1) Claude (yedek)
-    ck = _claude_key()
-    if ck:
-        try:
-            y = _cikar(_claude(prompt, ck, max_tokens=1200))
-            if y:
-                print("  ✓ AI yorum: Claude")
-                return y
-        except Exception as e:
-            print(f"  [AI yorum claude hata: {str(e)[:90]}]")
-    # 2) Gemini (yedek)
-    gk = _ai_gemini_key()
-    if gk:
-        for model in ("gemini-2.5-flash", "gemini-flash-latest"):
+        for _ad, _model in ((f"DeepSeek ({ds_model})", ds_model),
+                            ("Nemotron-70b", "nvidia/llama-3.1-nemotron-70b-instruct")):
             try:
-                y = _cikar(_gemini(prompt, gk, model=model))
+                y = _cikar(_nvidia(prompt, nk, model=_model,
+                                   timeout=yorum_tout, max_tokens=900))
                 if y:
-                    print(f"  ✓ AI yorum: Gemini ({model})")
+                    print(f"  ✓ AI yorum: NVIDIA {_ad}")
                     return y
             except Exception as e:
-                print(f"  [AI yorum gemini {model} hata: {str(e)[:80]}]")
-    print("  [AI yorum atlandı: anahtar yok / tüm sağlayıcılar başarısız]")
+                print(f"  [AI yorum NVIDIA {_ad} hata/yavaş: {str(e)[:80]}]")
+    # NVIDIA başarısızsa AI yorumu ATLA -> rapor kural-tabanlı önerilerle yine çıkar.
+    # (Claude 400 + Gemini EOL yedekleri kaldırıldı: çalışmıyorlardı ve koşuyu
+    #  dakikalarca uzatıyorlardı. Kota bol NVIDIA yeterli.)
+    print("  [AI yorum atlandı: NVIDIA erişilemedi / yavaş — kural-tabanlı devam]")
     return None
 
 
