@@ -267,22 +267,6 @@ def main():
             print(f"      Oynatma listesine eklendi: {_liste}")
         except Exception as e:
             print(f"      Oynatma listesi atlandı: {str(e)[:120]}")
-    # TELEGRAM BİLDİRİM: video yayınlandı (kapak + link). Tamamen non-fatal;
-    # anahtar yoksa sessizce atlanır, yükleme akışını asla etkilemez.
-    try:
-        import bildirim as B
-        _ne = (f"\u23f0 Planlandı: {yayin_zamani} UTC" if yayin_zamani
-               else f"\U0001f310 {cfg.get('gizlilik', 'private')}")
-        _msg = (f"\u2705 Video yüklendi\n\n"
-                f"\U0001f3ac {veri['baslik']}\n"
-                f"\U0001f517 https://youtu.be/{_vid}\n"
-                f"{_ne}")
-        if kapak_yolu and os.path.exists(kapak_yolu):
-            B.foto(kapak_yolu, _msg)
-        else:
-            B.mesaj(_msg)
-    except Exception as e:
-        print(f"      Telegram bildirimi atlandı: {str(e)[:100]}")
     # Yorum, video public olduktan SONRA atilir (ozel videoya yorum yasak).
     # Video ID + yorum metni durum.json'a yazilir; yorum.yml 19:15'te gonderir.
     durum["bekleyen_yorum"] = {
