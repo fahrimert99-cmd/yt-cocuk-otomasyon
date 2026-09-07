@@ -13,8 +13,69 @@
       "izlenme_dk": 2527,
       "abone_kazanc": 38
     },
-    "ctr_28g_hata": "<HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-08-10&endDate=2026-09-07&metrics=impressi",
-    "video_28g_hata": "<HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-08-10&endDate=2026-09-07&dimensions=video"
+    "ctr_28g_not": "CTR/gösterim API'den çekilemiyor (Studio'dan bakın).",
+    "video_28g": [
+      {
+        "baslik": "OYUNCAK NEDEN KASADA? 🧸",
+        "izlenme": 1847,
+        "retention_yuzde": 65.6,
+        "ort_izleme_sn": 15
+      },
+      {
+        "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
+        "izlenme": 1614,
+        "retention_yuzde": 146.5,
+        "ort_izleme_sn": 30
+      },
+      {
+        "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
+        "izlenme": 1300,
+        "retention_yuzde": 82.1,
+        "ort_izleme_sn": 15
+      },
+      {
+        "baslik": "SİNEMADA MISIR NEDEN PAHALI? 🍿",
+        "izlenme": 1256,
+        "retention_yuzde": 76.8,
+        "ort_izleme_sn": 12
+      },
+      {
+        "baslik": "DUTY FREE GERÇEKTEN UCUZ MU? ✈️",
+        "izlenme": 1162,
+        "retention_yuzde": 145.3,
+        "ort_izleme_sn": 23
+      },
+      {
+        "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
+        "izlenme": 1152,
+        "retention_yuzde": 53.2,
+        "ort_izleme_sn": 9
+      },
+      {
+        "baslik": "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
+        "izlenme": 1129,
+        "retention_yuzde": 71.3,
+        "ort_izleme_sn": 13
+      },
+      {
+        "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
+        "izlenme": 1100,
+        "retention_yuzde": 62.4,
+        "ort_izleme_sn": 12
+      },
+      {
+        "baslik": "KASA SIRASI NEDEN UZUN? 🧾",
+        "izlenme": 1062,
+        "retention_yuzde": 61.0,
+        "ort_izleme_sn": 14
+      },
+      {
+        "baslik": "MENÜDEKİ GİZLİ TUZAK! 📋",
+        "izlenme": 1035,
+        "retention_yuzde": 72.6,
+        "ort_izleme_sn": 10
+      }
+    ]
   },
   "degerlendirme": {
     "bulgular": [
@@ -29,7 +90,7 @@
       "**tuzak** temasında yeni üretimi azalt; mevcutların başlık/kapağını gözden geçir.",
       "Son 7 günün düşük performansını incele: başlık kancası ve kapak yeterince çarpıcı mı?"
     ],
-    "ai_yorum": null
+    "ai_yorum": "Kanaldaki genel performansa baktığımızda, \"gizem\" temalı videolarınızın ciddi bir potansiyel taşıdığını görüyoruz. Sadece 4 video ile en yüksek ortalama izlenmeyi (1252) elde etmeniz, bu temanın izleyicilerinizde güçlü bir merak uyandırdığını gösteriyor. İlk 10'daki iki \"gizem\" temalı video da bunun kanıtı. Ayrıca, \"tuzak\" teması, en çok videonuzun olduğu alan olsa da, %1.51'lik etkileşim oranıyla izleyiciyi en çok yorum ve beğeni bırakmaya teşvik eden bir damar. İlk 10 videomuzun 6'sının \"tuzak\" temalı olması, bu alanda da doğru başlık ve kancalarla çok başarılı sonuçlar alabileceğinizi gösteriyor. Bu, Shorts formatında belirli konuların ne kadar iyi karşılık bulabildiğinin net bir işareti.\n\nAncak, son 7 günlük verilere baktığımızda genel ortalama izlenmenin (741) oldukça altında, ortalama 186 izlenme ile ciddi bir düşüş yaşandığını görüyoruz. Bu durum, son dönemde yayınlanan içeriklerin başlık, kapak görseli veya konu seçiminde bir gözden geçirme ihtiyacını ortaya koyuyor. Özellikle \"tuzak\" temasındaki videoların ortalama izlenme sayısının (646), kanalın toplam izlenme ortalamasının altında kalması, bu temadaki bazı videoların beklenen etkiyi yaratmadığını işaret ediyor. Kanalın toplam 39033 izlenmeye sahip olmasına karşın abone sayınızın 88'de kalması da endişe verici; izleyicileri videoyu izledikten sonra kanala abone olmaya teşvik etme konusunda daha stratejik olmamız gerektiğini gösteriyor.\n\nÖnümüzdeki hafta için önceliğimiz, \"gizem\" temasındaki başarınızı sürdürmek ve bu alanda yeni, merak uyandırıcı konular üretmeye odaklanmak olmalı. Aynı zamanda, \"tuzak\" temalı videolarınızdaki etkileşim potansiyelini kaybetmeden, son 7 gündeki düşüşün nedenlerini detaylıca incelemeliyiz. Başlık kancalarınızı ve kapak görsellerinizi, özellikle başarılı \"tuzak\" videolarınızın stratejilerini analiz ederek güçlendirmeliyiz. Son olarak, izleyicileri abone olmaya teşvik edecek, samimi ama etkili çağrılar ekleyerek izlenme sayısını abone sayısına dönüştürme oranımızı artırmak için somut adımlar atmalıyız. Bu sayede, kanalınızın sürdürülebilir büyümesini sağlayabiliriz."
   },
   "top10": [
     {

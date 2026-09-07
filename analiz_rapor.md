@@ -2,9 +2,30 @@
 
 **Abone:** 88  |  **Toplam izlenme:** 39033  |  **Video:** 53
 
-## 🎯 Retention & CTR (son 28 gün)
+## 🎯 Retention & İzleme Süresi (son 28 gün)
 - **Ortalama izlenme oranı (retention): %58.0** — ort. izleme süresi 15 sn
 - İzlenme: 23050 · İzlenme süresi: 2527 dk · Abone kazancı: 38
+> CTR (kapak tıklama oranı) API'den çekilemiyor; YouTube Studio > İçerik > (video) > Analiz'den bakılır.
+
+| Başlık | İzlenme | Retention % | Ort. sn |
+|--------|---------|-------------|---------|
+| OYUNCAK NEDEN KASADA? 🧸 | 1847 | 65.6 | 15 |
+| OKYANUSUN DİBİNDE NE VAR? 🌊 | 1614 | 146.5 | 30 |
+| MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊 | 1300 | 82.1 | 15 |
+| SİNEMADA MISIR NEDEN PAHALI? 🍿 | 1256 | 76.8 | 12 |
+| DUTY FREE GERÇEKTEN UCUZ MU? ✈️ | 1162 | 145.3 | 23 |
+| ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️ | 1152 | 53.2 | 9 |
+| DENİZDE KAYBOLAN HAYALET GEMİLER 🚢 | 1129 | 71.3 | 13 |
+| BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊 | 1100 | 62.4 | 12 |
+| KASA SIRASI NEDEN UZUN? 🧾 | 1062 | 61.0 | 14 |
+| MENÜDEKİ GİZLİ TUZAK! 📋 | 1035 | 72.6 | 10 |
+
+## 🗣️ Danışman Yorumu (AI)
+Kanaldaki genel performansa baktığımızda, "gizem" temalı videolarınızın ciddi bir potansiyel taşıdığını görüyoruz. Sadece 4 video ile en yüksek ortalama izlenmeyi (1252) elde etmeniz, bu temanın izleyicilerinizde güçlü bir merak uyandırdığını gösteriyor. İlk 10'daki iki "gizem" temalı video da bunun kanıtı. Ayrıca, "tuzak" teması, en çok videonuzun olduğu alan olsa da, %1.51'lik etkileşim oranıyla izleyiciyi en çok yorum ve beğeni bırakmaya teşvik eden bir damar. İlk 10 videomuzun 6'sının "tuzak" temalı olması, bu alanda da doğru başlık ve kancalarla çok başarılı sonuçlar alabileceğinizi gösteriyor. Bu, Shorts formatında belirli konuların ne kadar iyi karşılık bulabildiğinin net bir işareti.
+
+Ancak, son 7 günlük verilere baktığımızda genel ortalama izlenmenin (741) oldukça altında, ortalama 186 izlenme ile ciddi bir düşüş yaşandığını görüyoruz. Bu durum, son dönemde yayınlanan içeriklerin başlık, kapak görseli veya konu seçiminde bir gözden geçirme ihtiyacını ortaya koyuyor. Özellikle "tuzak" temasındaki videoların ortalama izlenme sayısının (646), kanalın toplam izlenme ortalamasının altında kalması, bu temadaki bazı videoların beklenen etkiyi yaratmadığını işaret ediyor. Kanalın toplam 39033 izlenmeye sahip olmasına karşın abone sayınızın 88'de kalması da endişe verici; izleyicileri videoyu izledikten sonra kanala abone olmaya teşvik etme konusunda daha stratejik olmamız gerektiğini gösteriyor.
+
+Önümüzdeki hafta için önceliğimiz, "gizem" temasındaki başarınızı sürdürmek ve bu alanda yeni, merak uyandırıcı konular üretmeye odaklanmak olmalı. Aynı zamanda, "tuzak" temalı videolarınızdaki etkileşim potansiyelini kaybetmeden, son 7 gündeki düşüşün nedenlerini detaylıca incelemeliyiz. Başlık kancalarınızı ve kapak görsellerinizi, özellikle başarılı "tuzak" videolarınızın stratejilerini analiz ederek güçlendirmeliyiz. Son olarak, izleyicileri abone olmaya teşvik edecek, samimi ama etkili çağrılar ekleyerek izlenme sayısını abone sayısına dönüştürme oranımızı artırmak için somut adımlar atmalıyız. Bu sayede, kanalınızın sürdürülebilir büyümesini sağlayabiliriz.
 
 ## 🧭 Değerlendirme & Öneriler
 - 🎯 **En çok tutan tema: gizem** — ort. 1252 izlenme (4 video). Bu damardan daha çok konu üret.
