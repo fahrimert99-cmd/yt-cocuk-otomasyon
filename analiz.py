@@ -295,12 +295,13 @@ def _ai_gemini_key():
 
 
 def _ai_yorum(rapor, bulgular, aksiyonlar):
-    """Verileri bir LLM'e (Claude → Gemini) verip 'danışman' ağzıyla anlatısal bir
+    """Verileri bir LLM'e (NVIDIA DeepSeek → Claude → Gemini) verip 'danışman' ağzıyla anlatısal bir
     değerlendirme yazdırır. Anahtar yoksa / hata olursa None döner (rapor yine
     kural-tabanlı önerilerle çıkar). Ekstra bağımlılık yok; ai_script'in ham-HTTP
     yardımcıları kullanılır."""
     try:
-        from ai_script import _claude, _claude_key, _gemini, _temizle
+        from ai_script import (_claude, _claude_key, _gemini, _temizle,
+                               _nvidia, _nvidia_key)
     except Exception:
         return None
     veri = {
@@ -329,7 +330,21 @@ def _ai_yorum(rapor, bulgular, aksiyonlar):
         y = (data.get("yorum") or "").strip()
         return y or None
 
-    # 1) Claude (en kaliteli Türkçe)
+    # 0) NVIDIA DeepSeek (BİRİNCİL): bol/ücretsiz kota, hızlı, güçlü akıl yürütme.
+    # Claude/Gemini kotaya/model-EOL'e takılıyordu ve her koşuyu ~9 dk uzatıyordu;
+    # DeepSeek ilk denemede döndüğü için hem çalışır hem hızlanır.
+    nk = _nvidia_key()
+    if nk:
+        ds_model = (os.environ.get("NVIDIA_YORUM_MODEL", "").strip()
+                    or "deepseek-ai/deepseek-v4-flash-0731")
+        try:
+            y = _cikar(_nvidia(prompt, nk, model=ds_model))
+            if y:
+                print(f"  ✓ AI yorum: NVIDIA DeepSeek ({ds_model})")
+                return y
+        except Exception as e:
+            print(f"  [AI yorum deepseek hata: {str(e)[:90]}]")
+    # 1) Claude (yedek)
     ck = _claude_key()
     if ck:
         try:
@@ -342,7 +357,7 @@ def _ai_yorum(rapor, bulgular, aksiyonlar):
     # 2) Gemini (yedek)
     gk = _ai_gemini_key()
     if gk:
-        for model in ("gemini-2.5-flash", "gemini-2.0-flash"):
+        for model in ("gemini-2.5-flash", "gemini-flash-latest"):
             try:
                 y = _cikar(_gemini(prompt, gk, model=model))
                 if y:
