@@ -560,7 +560,7 @@ def main():
     # LLM ile anlatısal 'danışman yorumu' (varsa); başarısızsa None kalır
     # AI danışman yorumu opsiyonel: AI_YORUM=0 ile tamamen kapatılır (rapor yine
     # kural-tabanlı önerilerle çıkar). Varsayılan açık; hard-timeout ile korumalı.
-    if os.environ.get("AI_YORUM", "1").strip() not in ("0", "false", ""):
+    if os.environ.get("AI_YORUM", "0").strip() not in ("0", "false", ""):
         ai_yorum = _ai_yorum(rapor, bulgular, aksiyonlar)
     else:
         ai_yorum = None
