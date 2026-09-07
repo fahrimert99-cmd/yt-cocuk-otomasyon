@@ -21,11 +21,11 @@
 | MENÜDEKİ GİZLİ TUZAK! 📋 | 1035 | 72.6 | 10 |
 
 ## 🗣️ Danışman Yorumu (AI)
-Kanaldaki genel performansa baktığımızda, "gizem" temalı videolarınızın ciddi bir potansiyel taşıdığını görüyoruz. Sadece 4 video ile en yüksek ortalama izlenmeyi (1252) elde etmeniz, bu temanın izleyicilerinizde güçlü bir merak uyandırdığını gösteriyor. İlk 10'daki iki "gizem" temalı video da bunun kanıtı. Ayrıca, "tuzak" teması, en çok videonuzun olduğu alan olsa da, %1.51'lik etkileşim oranıyla izleyiciyi en çok yorum ve beğeni bırakmaya teşvik eden bir damar. İlk 10 videomuzun 6'sının "tuzak" temalı olması, bu alanda da doğru başlık ve kancalarla çok başarılı sonuçlar alabileceğinizi gösteriyor. Bu, Shorts formatında belirli konuların ne kadar iyi karşılık bulabildiğinin net bir işareti.
+Merhaba, kanalının mevcut performansını detaylıca inceledim. Öncelikle, 53 video ve Shorts formatındaki içeriklerinle ulaştığın yaklaşık 40.000 toplam izlenme sayısı, içeriklerinin genel keşfedilebilirliğinin iyi olduğunu gösteriyor. Özellikle 'gizem' temalı videoların, az sayıda (4 video) olmalarına rağmen ortalama 1252 izlenme ile açık ara en yüksek performansı sergilemesi harika bir bulgu. Ayrıca, en çok video ürettiğin 'tuzak' teması, ortalama izlenme sayısı 646 ile en düşük olsa da, %1.51 gibi yüksek bir etkileşim oranıyla izleyicini harekete geçirmede başarılı olduğunu, hatta ilk 10 videonun 6'sını bu temadan çıkardığını gösteriyor. Bu temada büyük bir potansiyel var. 
 
-Ancak, son 7 günlük verilere baktığımızda genel ortalama izlenmenin (741) oldukça altında, ortalama 186 izlenme ile ciddi bir düşüş yaşandığını görüyoruz. Bu durum, son dönemde yayınlanan içeriklerin başlık, kapak görseli veya konu seçiminde bir gözden geçirme ihtiyacını ortaya koyuyor. Özellikle "tuzak" temasındaki videoların ortalama izlenme sayısının (646), kanalın toplam izlenme ortalamasının altında kalması, bu temadaki bazı videoların beklenen etkiyi yaratmadığını işaret ediyor. Kanalın toplam 39033 izlenmeye sahip olmasına karşın abone sayınızın 88'de kalması da endişe verici; izleyicileri videoyu izledikten sonra kanala abone olmaya teşvik etme konusunda daha stratejik olmamız gerektiğini gösteriyor.
+Ancak, yaklaşık 40.000 izlenmeye rağmen 88 abone sayısına sahip olman, izleyicileri aboneye dönüştürme konusunda ciddi bir eksiklik olduğunu gösteriyor ki bu, kanalın sürdürülebilir büyümesi için en büyük endişemiz. Ayrıca, son 7 gündeki ortalama izlenme sayılarının (186), genel ortalamanın (741) çok altında kalması, yeni içeriklerinin izleyiciyle buluşmasında veya onları yakalamasında bir problem olduğuna işaret ediyor. 'Tuzak' temasının yüksek etkileşime rağmen düşük ortalama izlenmesi ise, bu temadaki videolarının kalitesinin veya başlık/kanca stratejisinin tutarsız olduğunu düşündürüyor; bazıları çok iyi giderken, bazıları beklentinin altında kalıyor. 
 
-Önümüzdeki hafta için önceliğimiz, "gizem" temasındaki başarınızı sürdürmek ve bu alanda yeni, merak uyandırıcı konular üretmeye odaklanmak olmalı. Aynı zamanda, "tuzak" temalı videolarınızdaki etkileşim potansiyelini kaybetmeden, son 7 gündeki düşüşün nedenlerini detaylıca incelemeliyiz. Başlık kancalarınızı ve kapak görsellerinizi, özellikle başarılı "tuzak" videolarınızın stratejilerini analiz ederek güçlendirmeliyiz. Son olarak, izleyicileri abone olmaya teşvik edecek, samimi ama etkili çağrılar ekleyerek izlenme sayısını abone sayısına dönüştürme oranımızı artırmak için somut adımlar atmalıyız. Bu sayede, kanalınızın sürdürülebilir büyümesini sağlayabiliriz.
+Önümüzdeki hafta için somut olarak şunlara odaklanmalısın: Birincisi, 'gizem' temasının yüksek potansiyelini değerlendirerek bu alanda daha fazla yeni ve ilgi çekici konu üretmelisin. İkincisi, 'tuzak' temalı içeriklerinde üretimi azaltmak yerine, en çok izlenen 'tuzak' videolarının başlık ve giriş kancalarını detaylıca inceleyerek yeni videolarında benzer stratejileri uygulamalı ve bu temanın ortalama performansını yükseltmelisin. Üçüncüsü ve en önemlisi, abone dönüşümünü artırmak için her videonda net ve çekici abone ol çağrıları kullanmalısın. Son 7 gündeki düşük performansı tetikleyen başlık, kapak ve konu seçimlerini acilen gözden geçirmeliyiz.
 
 ## 🧭 Değerlendirme & Öneriler
 - 🎯 **En çok tutan tema: gizem** — ort. 1252 izlenme (4 video). Bu damardan daha çok konu üret.
@@ -42,7 +42,7 @@ Ancak, son 7 günlük verilere baktığımızda genel ortalama izlenmenin (741) 
 ## Format performansı (son ~50 video)
 | Format | Video | Ort. izlenme | Ort. günlük* | Toplam izlenme | Etkileşim % |
 |--------|-------|--------------|--------------|----------------|-------------|
-| short | 54 | 741 | 42 | 39991 | 1.44 |
+| short | 54 | 741 | 42 | 39992 | 1.44 |
 
 ## Tema performansı
 | Tema | Video | Ort. izlenme | Ort. günlük* | Toplam izlenme | Etkileşim % |
@@ -50,7 +50,7 @@ Ancak, son 7 günlük verilere baktığımızda genel ortalama izlenmenin (741) 
 | gizem | 4 | 1252 | 82 | 5009 | 1.04 |
 | diger | 13 | 845 | 28 | 10991 | 1.48 |
 | cesitlilik | 1 | 748 | 37 | 748 | 0.94 |
-| tuzak | 36 | 646 | 43 | 23243 | 1.51 |
+| tuzak | 36 | 646 | 43 | 23244 | 1.51 |
 
 > *Ort. günlük = izlenme / video yaşı (gün). Yaşa göre normalize; farklı yaştaki videoları adil kıyaslar. Kümülatif izlenme eski videoyu şişirir.
 
@@ -74,7 +74,7 @@ Ancak, son 7 günlük verilere baktığımızda genel ortalama izlenmenin (741) 
 | Başlık | İzlenme | Günlük* | Yaş (g) | Tema | Yayın |
 |--------|---------|---------|---------|------|-------|
 | TUZAK AVCISI'NA HOŞ GELDİN 🎯 | 860 | 143 | 6 | tuzak | 2026-09-01 |
-| RESTORAN MENÜSÜNDE 'ŞEF ÖNERİSİ' TUZAĞI: | 63 | 63 | 1 | tuzak | 2026-09-06 |
+| RESTORAN MENÜSÜNDE 'ŞEF ÖNERİSİ' TUZAĞI: | 64 | 64 | 1 | tuzak | 2026-09-06 |
 | ÜCRETSİZ KARGO EŞİĞİ NEDEN VAR? 🚚 | 250 | 62 | 4 | tuzak | 2026-09-03 |
 | İNTERNET PAKETİ NEDEN KARMAŞIK? 🌐 | 218 | 54 | 4 | tuzak | 2026-09-03 |
 | İSVEÇLİ MOBİLYA DEVİ 1500 ÜRÜNDE İNDİRİM | 322 | 54 | 6 | tuzak | 2026-09-01 |
