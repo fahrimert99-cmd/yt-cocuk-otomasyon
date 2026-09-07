@@ -93,12 +93,13 @@ def _nvidia_key():
     return re.sub(r"\s", "", os.environ.get("NVIDIA_API_KEY") or "")
 
 
-def _nvidia(prompt, key, model=None):
-    """NVIDIA NIM chat/completions (OpenAI-uyumlu). Hata govdesini okur."""
+def _nvidia(prompt, key, model=None, timeout=120, max_tokens=4096):
+    """NVIDIA NIM chat/completions (OpenAI-uyumlu). Hata govdesini okur.
+    timeout: yavas/dusunen modellerde (reasoning) cagriyi sinirlamak icin."""
     import urllib.error
     model = model or NVIDIA_MODEL
     url = "https://integrate.api.nvidia.com/v1/chat/completions"
-    body = {"model": model, "temperature": 0.85, "max_tokens": 4096,
+    body = {"model": model, "temperature": 0.85, "max_tokens": max_tokens,
             "messages": [{"role": "system", "content": "Yalnizca gecerli JSON dondur."},
                          {"role": "user", "content": prompt}]}
     req = urllib.request.Request(
@@ -106,7 +107,7 @@ def _nvidia(prompt, key, model=None):
         headers={"Content-Type": "application/json", "Accept": "application/json",
                  "Authorization": f"Bearer {key}"})
     try:
-        with urllib.request.urlopen(req, timeout=120) as r:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
             d = json.loads(r.read().decode())
     except urllib.error.HTTPError as he:
         raise RuntimeError(f"{he.code}: {he.read().decode()[:160]}")
