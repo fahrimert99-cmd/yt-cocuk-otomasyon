@@ -3,22 +3,22 @@
   "kanal": {
     "abone": "88",
     "toplam_izlenme": "39033",
-    "video_sayisi": "53"
+    "video_sayisi": "56"
   },
   "analytics": {
     "kanal_28g": {
-      "izlenme": 23050,
+      "izlenme": 23290,
       "retention_yuzde": 58.0,
       "ort_izleme_sn": 15,
-      "izlenme_dk": 2527,
-      "abone_kazanc": 38
+      "izlenme_dk": 2540,
+      "abone_kazanc": 39
     },
     "ctr_28g_not": "CTR/gösterim API'den çekilemiyor (Studio'dan bakın).",
     "video_28g": [
       {
         "baslik": "OYUNCAK NEDEN KASADA? 🧸",
-        "izlenme": 1847,
-        "retention_yuzde": 65.6,
+        "izlenme": 1848,
+        "retention_yuzde": 65.5,
         "ort_izleme_sn": 15
       },
       {
@@ -29,19 +29,19 @@
       },
       {
         "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
-        "izlenme": 1300,
-        "retention_yuzde": 82.1,
+        "izlenme": 1305,
+        "retention_yuzde": 82.0,
         "ort_izleme_sn": 15
       },
       {
         "baslik": "SİNEMADA MISIR NEDEN PAHALI? 🍿",
-        "izlenme": 1256,
-        "retention_yuzde": 76.8,
+        "izlenme": 1257,
+        "retention_yuzde": 76.7,
         "ort_izleme_sn": 12
       },
       {
         "baslik": "DUTY FREE GERÇEKTEN UCUZ MU? ✈️",
-        "izlenme": 1162,
+        "izlenme": 1163,
         "retention_yuzde": 145.3,
         "ort_izleme_sn": 23
       },
@@ -53,7 +53,7 @@
       },
       {
         "baslik": "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
-        "izlenme": 1129,
+        "izlenme": 1131,
         "retention_yuzde": 71.3,
         "ort_izleme_sn": 13
       },
@@ -65,8 +65,8 @@
       },
       {
         "baslik": "KASA SIRASI NEDEN UZUN? 🧾",
-        "izlenme": 1062,
-        "retention_yuzde": 61.0,
+        "izlenme": 1064,
+        "retention_yuzde": 60.9,
         "ort_izleme_sn": 14
       },
       {
@@ -80,17 +80,17 @@
   "degerlendirme": {
     "bulgular": [
       "- 🎯 **En çok tutan tema: gizem** — ort. 1252 izlenme (4 video). Bu damardan daha çok konu üret.",
-      "- ⚠️ **En zayıf tema: tuzak** — ort. 646 izlenme (36 video). Bu temada üretimi azalt ya da başlık/kancayı güçlendir.",
-      "- 💬 **En yüksek etkileşim: tuzak** (%1.51). İzleyici en çok burada yorum/beğeni bırakıyor — CTA'yı bu içerikte koru.",
+      "- ⚠️ **En zayıf tema: tuzak** — ort. 625 izlenme (38 video). Bu temada üretimi azalt ya da başlık/kancayı güçlendir.",
+      "- 💬 **En yüksek etkileşim: tuzak** (%1.52). İzleyici en çok burada yorum/beğeni bırakıyor — CTA'yı bu içerikte koru.",
       "- 🏆 En çok izlenen 10 videonun **6'i tuzak** teması — kanıtlanmış damar, önceliklendir.",
-      "- 📉 **Dikkat:** son 7 gün ort. 186 < genel ort. 741. Son üretimleri gözden geçir (başlık/kapak/tema seçimi)."
+      "- 📉 **Dikkat:** son 7 gün ort. 193 < genel ort. 723. Son üretimleri gözden geçir (başlık/kapak/tema seçimi)."
     ],
     "aksiyonlar": [
       "`senaryolar.json`'a **gizem** temasında yeni konular ekle (en çok izlenen damar).",
       "**tuzak** temasında yeni üretimi azalt; mevcutların başlık/kapağını gözden geçir.",
       "Son 7 günün düşük performansını incele: başlık kancası ve kapak yeterince çarpıcı mı?"
     ],
-    "ai_yorum": "Merhaba, kanalının mevcut performansını detaylıca inceledim. Öncelikle, 53 video ve Shorts formatındaki içeriklerinle ulaştığın yaklaşık 40.000 toplam izlenme sayısı, içeriklerinin genel keşfedilebilirliğinin iyi olduğunu gösteriyor. Özellikle 'gizem' temalı videoların, az sayıda (4 video) olmalarına rağmen ortalama 1252 izlenme ile açık ara en yüksek performansı sergilemesi harika bir bulgu. Ayrıca, en çok video ürettiğin 'tuzak' teması, ortalama izlenme sayısı 646 ile en düşük olsa da, %1.51 gibi yüksek bir etkileşim oranıyla izleyicini harekete geçirmede başarılı olduğunu, hatta ilk 10 videonun 6'sını bu temadan çıkardığını gösteriyor. Bu temada büyük bir potansiyel var. \n\nAncak, yaklaşık 40.000 izlenmeye rağmen 88 abone sayısına sahip olman, izleyicileri aboneye dönüştürme konusunda ciddi bir eksiklik olduğunu gösteriyor ki bu, kanalın sürdürülebilir büyümesi için en büyük endişemiz. Ayrıca, son 7 gündeki ortalama izlenme sayılarının (186), genel ortalamanın (741) çok altında kalması, yeni içeriklerinin izleyiciyle buluşmasında veya onları yakalamasında bir problem olduğuna işaret ediyor. 'Tuzak' temasının yüksek etkileşime rağmen düşük ortalama izlenmesi ise, bu temadaki videolarının kalitesinin veya başlık/kanca stratejisinin tutarsız olduğunu düşündürüyor; bazıları çok iyi giderken, bazıları beklentinin altında kalıyor. \n\nÖnümüzdeki hafta için somut olarak şunlara odaklanmalısın: Birincisi, 'gizem' temasının yüksek potansiyelini değerlendirerek bu alanda daha fazla yeni ve ilgi çekici konu üretmelisin. İkincisi, 'tuzak' temalı içeriklerinde üretimi azaltmak yerine, en çok izlenen 'tuzak' videolarının başlık ve giriş kancalarını detaylıca inceleyerek yeni videolarında benzer stratejileri uygulamalı ve bu temanın ortalama performansını yükseltmelisin. Üçüncüsü ve en önemlisi, abone dönüşümünü artırmak için her videonda net ve çekici abone ol çağrıları kullanmalısın. Son 7 gündeki düşük performansı tetikleyen başlık, kapak ve konu seçimlerini acilen gözden geçirmeliyiz."
+    "ai_yorum": null
   },
   "top10": [
     {
@@ -116,7 +116,7 @@
     },
     {
       "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1309,
+      "izlenme": 1311,
       "izlenme_gunluk": 109,
       "tema": "diger",
       "format": "short"
@@ -166,18 +166,36 @@
   ],
   "son7gun": [
     {
-      "baslik": "AÇIK BÜFE NASIL KÂR EDER? 🍽️",
-      "izlenme": 1,
-      "izlenme_gunluk": 1,
+      "baslik": "OTOPARKTA SAAT TUZAĞI! 🅿️",
+      "izlenme": 324,
+      "izlenme_gunluk": 324,
       "yas_gun": 1,
       "tema": "tuzak",
       "format": "short",
-      "yayin": "2026-09-06"
+      "yayin": "2026-09-07"
+    },
+    {
+      "baslik": "BULMACANIN EKSİK PARÇASI 'ENFLASYON': ALTIN FİYATLARI KRİTİK HAFTAYA DÜŞÜŞLE GİRDİ... 📰",
+      "izlenme": 40,
+      "izlenme_gunluk": 40,
+      "yas_gun": 1,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-07"
+    },
+    {
+      "baslik": "AÇIK BÜFE NASIL KÂR EDER? 🍽️",
+      "izlenme": 96,
+      "izlenme_gunluk": 96,
+      "yas_gun": 1,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-07"
     },
     {
       "baslik": "RESTORAN MENÜSÜNDE 'ŞEF ÖNERİSİ' TUZAĞI: GEREKSİZ EK MALİYET! 🍽️",
-      "izlenme": 64,
-      "izlenme_gunluk": 64,
+      "izlenme": 102,
+      "izlenme_gunluk": 102,
       "yas_gun": 1,
       "tema": "tuzak",
       "format": "short",
@@ -194,8 +212,8 @@
     },
     {
       "baslik": "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠",
-      "izlenme": 89,
-      "izlenme_gunluk": 44,
+      "izlenme": 90,
+      "izlenme_gunluk": 45,
       "yas_gun": 2,
       "tema": "tuzak",
       "format": "short",
@@ -293,8 +311,8 @@
     },
     {
       "baslik": "TUZAK AVCISI'NA HOŞ GELDİN 🎯",
-      "izlenme": 860,
-      "izlenme_gunluk": 143,
+      "izlenme": 861,
+      "izlenme_gunluk": 144,
       "yas_gun": 6,
       "tema": "tuzak",
       "format": "short",
@@ -303,26 +321,26 @@
   ],
   "format_ozet": {
     "short": {
-      "video": 54,
-      "ort_izlenme": 741,
-      "ort_izlenme_gunluk": 42,
-      "toplam_izlenme": 39992,
+      "video": 56,
+      "ort_izlenme": 723,
+      "ort_izlenme_gunluk": 50,
+      "toplam_izlenme": 40495,
       "etkilesim_orani": 1.44
     }
   },
   "tema_ozet": {
     "tuzak": {
-      "video": 36,
-      "ort_izlenme": 646,
-      "ort_izlenme_gunluk": 43,
-      "toplam_izlenme": 23244,
-      "etkilesim_orani": 1.51
+      "video": 38,
+      "ort_izlenme": 625,
+      "ort_izlenme_gunluk": 54,
+      "toplam_izlenme": 23745,
+      "etkilesim_orani": 1.52
     },
     "diger": {
       "video": 13,
-      "ort_izlenme": 845,
+      "ort_izlenme": 846,
       "ort_izlenme_gunluk": 28,
-      "toplam_izlenme": 10991,
+      "toplam_izlenme": 10993,
       "etkilesim_orani": 1.48
     },
     "gizem": {
