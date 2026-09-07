@@ -2,7 +2,7 @@
   "tarih": "2026-09-07",
   "kanal": {
     "abone": "88",
-    "toplam_izlenme": "39033",
+    "toplam_izlenme": "39038",
     "video_sayisi": "56"
   },
   "analytics": {
@@ -83,7 +83,7 @@
       "- ⚠️ **En zayıf tema: tuzak** — ort. 625 izlenme (38 video). Bu temada üretimi azalt ya da başlık/kancayı güçlendir.",
       "- 💬 **En yüksek etkileşim: tuzak** (%1.52). İzleyici en çok burada yorum/beğeni bırakıyor — CTA'yı bu içerikte koru.",
       "- 🏆 En çok izlenen 10 videonun **6'i tuzak** teması — kanıtlanmış damar, önceliklendir.",
-      "- 📉 **Dikkat:** son 7 gün ort. 193 < genel ort. 723. Son üretimleri gözden geçir (başlık/kapak/tema seçimi)."
+      "- 📉 **Dikkat:** son 7 gün ort. 194 < genel ort. 724. Son üretimleri gözden geçir (başlık/kapak/tema seçimi)."
     ],
     "aksiyonlar": [
       "`senaryolar.json`'a **gizem** temasında yeni konular ekle (en çok izlenen damar).",
@@ -167,8 +167,8 @@
   "son7gun": [
     {
       "baslik": "OTOPARKTA SAAT TUZAĞI! 🅿️",
-      "izlenme": 324,
-      "izlenme_gunluk": 324,
+      "izlenme": 339,
+      "izlenme_gunluk": 339,
       "yas_gun": 1,
       "tema": "tuzak",
       "format": "short",
@@ -176,8 +176,8 @@
     },
     {
       "baslik": "BULMACANIN EKSİK PARÇASI 'ENFLASYON': ALTIN FİYATLARI KRİTİK HAFTAYA DÜŞÜŞLE GİRDİ... 📰",
-      "izlenme": 40,
-      "izlenme_gunluk": 40,
+      "izlenme": 44,
+      "izlenme_gunluk": 44,
       "yas_gun": 1,
       "tema": "tuzak",
       "format": "short",
@@ -185,8 +185,8 @@
     },
     {
       "baslik": "AÇIK BÜFE NASIL KÂR EDER? 🍽️",
-      "izlenme": 96,
-      "izlenme_gunluk": 96,
+      "izlenme": 97,
+      "izlenme_gunluk": 97,
       "yas_gun": 1,
       "tema": "tuzak",
       "format": "short",
@@ -322,9 +322,9 @@
   "format_ozet": {
     "short": {
       "video": 56,
-      "ort_izlenme": 723,
+      "ort_izlenme": 724,
       "ort_izlenme_gunluk": 50,
-      "toplam_izlenme": 40495,
+      "toplam_izlenme": 40516,
       "etkilesim_orani": 1.44
     }
   },
@@ -333,14 +333,14 @@
       "video": 38,
       "ort_izlenme": 625,
       "ort_izlenme_gunluk": 54,
-      "toplam_izlenme": 23745,
+      "toplam_izlenme": 23765,
       "etkilesim_orani": 1.52
     },
     "diger": {
       "video": 13,
       "ort_izlenme": 846,
       "ort_izlenme_gunluk": 28,
-      "toplam_izlenme": 10993,
+      "toplam_izlenme": 10994,
       "etkilesim_orani": 1.48
     },
     "gizem": {
