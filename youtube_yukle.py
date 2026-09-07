@@ -19,7 +19,12 @@ def _kimlik():
         token_uri=TOKEN_URI,
         client_id=os.environ["YT_CLIENT_ID"],
         client_secret=os.environ["YT_CLIENT_SECRET"],
-        scopes=["https://www.googleapis.com/auth/youtube.force-ssl"],
+        # NOT: refresh token'a GERÇEKTE hangi izinlerin verildiği token'ın
+        # kendisinde saklıdır; buradaki liste bildirimseldir. Analytics
+        # (retention/CTR) izni token_al.py ile verildiğinde burada da yazılı
+        # olsun ki niyet kodda görünsün ve istemci doğru kurulsun.
+        scopes=["https://www.googleapis.com/auth/youtube.force-ssl",
+                "https://www.googleapis.com/auth/yt-analytics.readonly"],
     )
 
 def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani, sentetik=True):
