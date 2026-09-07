@@ -164,10 +164,55 @@ def _llm_json(prompt, tries=3):
     raise RuntimeError(f"JSON çözülemedi ({tries} deneme): {son}")
 
 
+def _performans_ipuclari():
+    """GERİ BESLEME: analiz_rapor.json'dan KAZANAN ve ZAYIF başlık kalıplarını
+    çıkarır -> yeni fikirler kanıtlanmış yöne kayar. MARKA GÜVENLİĞİ: açık
+    gizem/keşif başlıkları elenir (kanal 'tuzak' kimliğinde kalır; miras gizem
+    videolarının yüksek retention'ı yanlış yöne çekmesin). Rapor yoksa ([],[]).
+    - kazanan: retention'ı yüksek (>=%60) TUZAK videoları (video_28g) ya da en
+      çok izlenen tuzak başlıkları (top10) -> 'bu kalıptan üret'.
+    - zayif: son 7 günde günlük izlenmesi en düşük tuzak videoları -> 'bundan kaçın'.
+    """
+    try:
+        with open("analiz_rapor.json", encoding="utf-8") as f:
+            r = json.load(f)
+    except Exception:
+        return [], []
+    # Açık gizem/keşif işaretleri (marka dışı) -> ele
+    GIZEM = ("OKYANUS", "BERMUDA", "MARIANA", "HAYALET", "ÜÇGEN", "GEMİ", "DİBİNDE",
+             "ATLANTİS", "PİRAMİT", "UZAY", "NAZCA", "MUMYA", "LOCH", "ANTİK",
+             "SFENKS", "STONEHENGE", "PASKALYA", "KARA DELİK", "EVREN")
+    def tuzak_mi(b):
+        B = (b or "").upper()
+        return b and not any(k in B for k in GIZEM)
+    a = r.get("analytics") or {}
+    vd = [v for v in (a.get("video_28g") or []) if tuzak_mi(v.get("baslik"))]
+    # retention'ı yüksek (loop/%100+ hariç, gerçek tutma) tuzak videoları
+    kazanan = [v["baslik"] for v in sorted(vd, key=lambda x: -(x.get("retention_yuzde") or 0))
+               if 60 <= (v.get("retention_yuzde") or 0) <= 100][:6]
+    if not kazanan:                       # retention yoksa en çok izlenen tuzağa düş
+        top = [v for v in (r.get("top10") or []) if tuzak_mi(v.get("baslik"))]
+        kazanan = [v["baslik"] for v in top[:6]]
+    zayif = [v["baslik"] for v in
+             sorted((r.get("son7gun") or []), key=lambda x: (x.get("izlenme_gunluk") or 0))
+             if tuzak_mi(v.get("baslik"))][:5]
+    return kazanan, zayif
+
+
 def _fikir_uret(populer, mevcut_basliklar, sayi):
     ozet = "\n".join(f"- {v['izlenme']:>9,} izlenme | {v['baslik'][:80]}"
                      for v in populer[:20])
     mevcut = "\n".join(f"- {b}" for b in mevcut_basliklar)
+    # GERİ BESLEME: kendi kanalımızın gerçek performansından öğren.
+    _kazanan, _zayif = _performans_ipuclari()
+    _perf = ""
+    if _kazanan:
+        _perf += ("\n\nKENDİ KANALIMIZDA EN İYİ TUTAN videolarımız (yüksek izlenme/"
+                  "retention — BU KALIBA/TARZA benzer, SOMUT günlük tuzaklar üret):\n"
+                  + "\n".join(f"- {b}" for b in _kazanan))
+    if _zayif:
+        _perf += ("\n\nEN ZAYIF performans gösterenler (bu tarz/soyut açılardan KAÇIN):\n"
+                  + "\n".join(f"- {b}" for b in _zayif))
     prompt = f"""Sen "TUZAK AVCISI" adlı Türk YouTube Shorts kanalının içerik stratejistisin.
 Kanal TEK KONU: tüketici tuzakları (market, banka/kart, restoran, dijital/uygulama,
 hizmet/abonelik, psikolojik satış oyunları). Amaç: izleyiciyi uyarmak + merak.
@@ -177,6 +222,7 @@ AŞAĞIDA YouTube'da SON DÖNEMDE EN ÇOK İZLENEN benzer Türkçe videolar (izl
 
 BİZİM HAVUZDA ZATEN OLAN başlıklar (BUNLARI TEKRARLAMA, farklı açı bul):
 {mevcut}
+{_perf}
 
 GÖREV:
 1) Yukarıdaki popüler videolardan çıkan TREND'i ve neden tuttuklarını (viral HOOK
