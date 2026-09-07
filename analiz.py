@@ -12,7 +12,18 @@ DERİN metrikler YouTube Analytics API + yt-analytics.readonly izni ister; yoksa
 o bölüm atlanır (rapor yine üretilir).
 """
 import os, json, re, glob, datetime as dt
-import smtplib, ssl
+import smtplib, ssl, socket
+# GLOBAL SOCKET TIMEOUT: googleapiclient (YouTube API) timeout'suz -> bir cagri
+# asilirsa SONSUZA kadar bekler ve workflow 10 dk'da kill edilir (run #25).
+# Bu taban, TUM HTTP cagrilarini (YouTube + NVIDIA + Gemini + SMTP) sinirlar;
+# daha kisa istek-ici timeout'lar (or. _nvidia 50 sn) yine gecerli kalir.
+socket.setdefaulttimeout(90)
+# stdout satir-tamponlu: takilirsa nerede oldugunu logdan gorelim (bufferda kalmasin)
+try:
+    import sys as _sys
+    _sys.stdout.reconfigure(line_buffering=True)
+except Exception:
+    pass
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
@@ -510,8 +521,10 @@ def _analytics(id2title):
 
 
 def main():
+    print("[analiz] baslıyor: YouTube istemcisi + video verisi çekiliyor ...", flush=True)
     yt = build("youtube", "v3", credentials=_kimlik())
     videolar, kanal_ist = _videolar(yt)
+    print(f"[analiz] {len(videolar)} video çekildi; analytics + rapor ...", flush=True)
     if not videolar:
         print("Video bulunamadı."); return
     bugun = dt.date.today().isoformat()
