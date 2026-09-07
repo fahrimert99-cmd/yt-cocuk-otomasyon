@@ -45,6 +45,7 @@
     "OKYANUSTAN GELEN ESRARENGİZ SES 🔊",
     "OKYANUSUN DİBİNDE NE VAR? 🌊",
     "OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨",
+    "OTOPARKTA SAAT TUZAĞI! 🅿️",
     "OYUNCAK NEDEN KASADA? 🧸",
     "OYUNLARDAKİ SATIN ALMA TUZAĞI! 🎮",
     "PAKET KÜÇÜLDÜ, FİYAT AYNI! 📉",
@@ -74,10 +75,10 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 61)\n[1/3] Senaryo (1/99) [market]: AÇIK BÜFE NASIL KÂR EDER? 🍽️\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel.mp3, ses %24, ducking).\n      Sahne 1/6: NVIDIA flux görseli ✓\n      Sahne 2/6: NVIDIA flux görseli ✓\n      Sahne 3/6: NVIDIA flux görseli ✓\n      Sahne 4/6: NVIDIA flux görseli ✓\n      Sahne 5/6: NVIDIA flux görseli ✓\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (14065 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Markalı ilk kare eklendi (1.5sn intro).\n      Planlı yayın: 2026-09-07T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 1HJPLNnLW8Q\n✓ Yüklendi: https://youtu.be/EH953YFASnU  (yayın: 2026-09-07T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      Oynatma listesine eklendi: 🛒 Market & AVM Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "] HTTP 404: 404 page not found\n)\n      [Pexels: 8 klip / ~8000 toplam -> 'hand taking ticket']\n      [Pixabay: 12 klip / ~990 toplam -> 'hand taking ticket']\n      [seçim(vision): pexels~8000 / pixabay~990 -> önce pexels]\n      Sahne 5/6: gerçek stok video ✓ (pexels)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] atlandı: Remote end closed connection without response)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] atlandı: Remote end closed connection without response)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      [Pexels: 8 klip / ~7608 toplam -> 'car exit barrier']\n      [Pixabay: 12 klip / ~2305 toplam -> 'car exit barrier']\n      [seçim(vision): pexels~7608 / pixabay~2305 -> önce pixabay]\n      Sahne 6/6: gerçek stok video ✓ (pixabay)\n      [dağılım: nvidia=0, pexels=5, pixabay=1, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (15732 KB)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] atlandı: Remote end closed connection without response)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] atlandı: Remote end closed connection without response)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-07T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: EH953YFASnU\n✓ Yüklendi: https://youtu.be/j8h20H560_E  (yayın: 2026-09-07T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı\n      Oynatma listesine eklendi: 🏨 Hizmet & Abonelik Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "EH953YFASnU",
-    "metin": "NEDEN TABAKLAR KÜÇÜK?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
+    "video_id": "j8h20H560_E",
+    "metin": "İLK SAAT BEDAVA?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
   },
-  "son_kategori": "market"
+  "son_kategori": "hizmet"
 }
