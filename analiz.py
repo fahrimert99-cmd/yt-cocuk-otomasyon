@@ -63,7 +63,17 @@ def _pdf_uret(md_metin, cikti="analiz_rapor.pdf"):
 
     def yaz(font, stil, boy, metin):
         pdf.set_font(font, stil, boy)
-        pdf.multi_cell(0, boy * 0.55, _EMOJI.sub("", metin).rstrip() or " ")
+        t = _EMOJI.sub("", metin).rstrip() or " "
+        try:
+            # wrapmode=CHAR: cok uzun kirpilamayan kelimeleri (URL/token) karakterden kir
+            pdf.multi_cell(0, boy * 0.55, t, wrapmode=WrapMode.CHAR)
+        except Exception:
+            # yine de sigmazsa (fpdf 'single character' hatasi): satiri guvenli kisalt
+            try:
+                pdf.multi_cell(0, boy * 0.55, t[:120] + ("..." if len(t) > 120 else ""),
+                               wrapmode=WrapMode.CHAR)
+            except Exception:
+                pass
 
     satirlar = md_metin.split("\n")
     i = 0
@@ -448,22 +458,16 @@ def _analytics(id2title):
     except Exception as e:
         out["kanal_28g_hata"] = str(e)[:160]
 
-    # 2) CTR (kapak gösterim/tıklama)
-    try:
-        h, rows = _satir(_q(metrics="impressions,impressionsClickThroughRate"))
-        m = dict(zip(h, rows[0])) if rows else {}
-        out["ctr_28g"] = {
-            "gosterim": m.get("impressions"),
-            "ctr_yuzde": round(float(m.get("impressionsClickThroughRate", 0)), 2),
-        }
-    except Exception as e:
-        out["ctr_28g_hata"] = str(e)[:160]
+    # 2) CTR (kapak gösterim/tıklama): 'impressions' ve 'impressionsClickThroughRate'
+    # metrikleri YouTube Analytics API'de yalnızca CONTENT OWNER raporlarında var;
+    # normal kanal sahibi (channel==MINE) sorgusunda HTTP 400 döner. Bu yüzden API'den
+    # ÇEKİLEMEZ -> denemiyoruz. CTR'ye YouTube Studio > İçerik > analiz'den bakılır.
+    out["ctr_28g_not"] = "CTR/gösterim API'den çekilemiyor (Studio'dan bakın)."
 
     # 3) Video bazında (ilk 10, izlenmeye göre)
     try:
         h, rows = _satir(_q(dimensions="video", sort="-views", maxResults=10,
-                            metrics="views,averageViewPercentage,averageViewDuration,"
-                                    "impressionsClickThroughRate"))
+                            metrics="views,averageViewPercentage,averageViewDuration"))
         vids = []
         for row in rows:
             d = dict(zip(h, row))
@@ -472,7 +476,6 @@ def _analytics(id2title):
                 "izlenme": d.get("views"),
                 "retention_yuzde": round(float(d.get("averageViewPercentage", 0)), 1),
                 "ort_izleme_sn": round(float(d.get("averageViewDuration", 0))),
-                "ctr_yuzde": round(float(d.get("impressionsClickThroughRate", 0)), 2),
             })
         out["video_28g"] = vids
     except Exception as e:
@@ -529,24 +532,22 @@ def main():
     L.append(f"**Abone:** {k['abone']}  |  **Toplam izlenme:** {k['toplam_izlenme']}  |  **Video:** {k['video_sayisi']}\n")
     # --- DERİN metrikler (retention/CTR, son 28 gün) ---
     _an = rapor.get("analytics") or {}
-    _kg = _an.get("kanal_28g"); _ct = _an.get("ctr_28g")
-    if _kg or _ct:
-        L.append("## 🎯 Retention & CTR (son 28 gün)")
-        if _kg:
-            L.append(f"- **Ortalama izlenme oranı (retention): %{_kg.get('retention_yuzde')}** "
-                     f"— ort. izleme süresi {_kg.get('ort_izleme_sn')} sn")
-            L.append(f"- İzlenme: {_kg.get('izlenme')} · İzlenme süresi: {_kg.get('izlenme_dk')} dk "
-                     f"· Abone kazancı: {_kg.get('abone_kazanc')}")
-        if _ct:
-            L.append(f"- **CTR (kapak tıklama oranı): %{_ct.get('ctr_yuzde')}** "
-                     f"— {_ct.get('gosterim')} gösterim")
+    _kg = _an.get("kanal_28g")
+    if _kg:
+        L.append("## 🎯 Retention & İzleme Süresi (son 28 gün)")
+        L.append(f"- **Ortalama izlenme oranı (retention): %{_kg.get('retention_yuzde')}** "
+                 f"— ort. izleme süresi {_kg.get('ort_izleme_sn')} sn")
+        L.append(f"- İzlenme: {_kg.get('izlenme')} · İzlenme süresi: {_kg.get('izlenme_dk')} dk "
+                 f"· Abone kazancı: {_kg.get('abone_kazanc')}")
+        L.append("> CTR (kapak tıklama oranı) API'den çekilemiyor; "
+                 "YouTube Studio > İçerik > (video) > Analiz'den bakılır.")
         _vd = _an.get("video_28g") or []
         if _vd:
-            L.append("\n| Başlık | İzlenme | Retention % | CTR % | Ort. sn |")
-            L.append("|--------|---------|-------------|-------|---------|")
+            L.append("\n| Başlık | İzlenme | Retention % | Ort. sn |")
+            L.append("|--------|---------|-------------|---------|")
             for v in _vd:
                 L.append(f"| {str(v['baslik'])[:40]} | {v['izlenme']} | "
-                         f"{v['retention_yuzde']} | {v['ctr_yuzde']} | {v['ort_izleme_sn']} |")
+                         f"{v['retention_yuzde']} | {v['ort_izleme_sn']} |")
         L.append("")
     # --- AI danışman yorumu (varsa) en üstte, anlatısal ---
     if ai_yorum:
@@ -603,7 +604,11 @@ def main():
     print(f"  Tema:   {tema_ozet}")
     # Günlük raporu e-postayla gönder (kurulmuşsa) — rapor PDF ek olarak gider,
     # PDF üretilemezse mail gövdesinde düz metin olarak.
-    pdf_yol = _pdf_uret(md)
+    try:
+        pdf_yol = _pdf_uret(md)
+    except Exception as e:
+        print(f"  [pdf uretimi atlandi: {str(e)[:120]}]")
+        pdf_yol = None
     if pdf_yol:
         print(f"  ✓ PDF üretildi: {pdf_yol}")
     govde = ("Merhaba,\n\nGünlük kanal denetim raporu ekte PDF olarak yer alıyor.\n"
@@ -619,12 +624,11 @@ def main():
                      f"\U0001f465 Abone: {_k['abone']}  |  \U0001f3ac Video: {_k['video_sayisi']}",
                      f"\U0001f440 Toplam izlenme: {_k['toplam_izlenme']}", ""]
             _kg = (rapor.get("analytics") or {}).get("kanal_28g")
-            _ct = (rapor.get("analytics") or {}).get("ctr_28g")
+            # CTR API'den gelmiyor (Studio'da); telegram ozetinde yok
             if _kg:
                 _ozet.append(f"\U0001f3af Retention: %{_kg.get('retention_yuzde')} "
                              f"({_kg.get('ort_izleme_sn')} sn)")
-            if _ct:
-                _ozet.append(f"\U0001f5b1 CTR: %{_ct.get('ctr_yuzde')}")
+
             _yeni = rapor.get("son7gun") or []
             if _yeni:
                 _ozet.append("")
