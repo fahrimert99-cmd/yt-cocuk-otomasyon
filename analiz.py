@@ -294,6 +294,26 @@ def _ai_gemini_key():
     return raw
 
 
+def _sert_sinir(saniye, fn):
+    """fn'i EN FAZLA 'saniye' icinde calistir (Linux SIGALRM hard-timeout).
+    urllib'in socket-timeout'u toplam sureyi sinirlamiyor; DeepSeek gibi
+    streaming/reasoning modelleri token-token yavas veri gonderince cagri
+    dakikalarca asili kalabiliyordu. SIGALRM bunu OS seviyesinde keser.
+    SIGALRM yoksa ( or. Windows) sinirsiz calisir (fallback)."""
+    import signal
+    if not hasattr(signal, "SIGALRM"):
+        return fn()
+    def _patla(_s, _f):
+        raise TimeoutError(f"AI yorum {saniye} sn'yi asti")
+    eski = signal.signal(signal.SIGALRM, _patla)
+    signal.alarm(max(1, int(saniye)))
+    try:
+        return fn()
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, eski)
+
+
 def _ai_yorum(rapor, bulgular, aksiyonlar):
     """Verileri NVIDIA'ya (DeepSeek → Nemotron, kısa timeout) verip 'danışman' ağzıyla anlatısal bir
     değerlendirme yazdırır. Anahtar yoksa / hata olursa None döner (rapor yine
@@ -345,8 +365,8 @@ def _ai_yorum(rapor, bulgular, aksiyonlar):
         for _ad, _model in ((f"DeepSeek ({ds_model})", ds_model),
                             ("Nemotron-70b", "nvidia/llama-3.1-nemotron-70b-instruct")):
             try:
-                y = _cikar(_nvidia(prompt, nk, model=_model,
-                                   timeout=yorum_tout, max_tokens=900))
+                y = _cikar(_sert_sinir(yorum_tout + 5, lambda: _nvidia(
+                    prompt, nk, model=_model, timeout=yorum_tout, max_tokens=900)))
                 if y:
                     print(f"  ✓ AI yorum: NVIDIA {_ad}")
                     return y
@@ -525,7 +545,13 @@ def main():
         "tema_ozet": tema_ozet,
     }
     # LLM ile anlatısal 'danışman yorumu' (varsa); başarısızsa None kalır
-    ai_yorum = _ai_yorum(rapor, bulgular, aksiyonlar)
+    # AI danışman yorumu opsiyonel: AI_YORUM=0 ile tamamen kapatılır (rapor yine
+    # kural-tabanlı önerilerle çıkar). Varsayılan açık; hard-timeout ile korumalı.
+    if os.environ.get("AI_YORUM", "1").strip() not in ("0", "false", ""):
+        ai_yorum = _ai_yorum(rapor, bulgular, aksiyonlar)
+    else:
+        ai_yorum = None
+        print("  [AI yorum kapalı (AI_YORUM=0)]")
     rapor["degerlendirme"]["ai_yorum"] = ai_yorum
     with open("analiz_rapor.json", "w", encoding="utf-8") as f:
         json.dump(rapor, f, ensure_ascii=False, indent=2)
