@@ -38,8 +38,6 @@ jobs:
         run: pip install -r requirements.txt
       - name: Video uret ve yukle
         env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
@@ -77,13 +75,3 @@ jobs:
           done
           echo "push 5 denemede basarisiz — durum.json bir sonraki calismada tekrar denenir"
           exit 0
-      # Bu is BASARISIZ olursa Telegram'dan haber ver (sessiz cokusu onler).
-      - name: Hata bildirimi (Telegram)
-        if: failure()
-        env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          python3 bildirim.py "🚨 ${{ github.workflow }} BAŞARISIZ
-          Repo: ${{ github.repository }}
-          Log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

@@ -615,31 +615,5 @@ def main():
              if pdf_yol else md)
     _mail_gonder(f"📊 Kanal Denetim Raporu — {bugun}", govde, ek=pdf_yol)
 
-    # TELEGRAM: günlük özeti telefona gönder (+ PDF varsa dosya olarak). Non-fatal.
-    try:
-        import bildirim as B
-        if B.acik():
-            _k = rapor["kanal"]
-            _ozet = [f"\U0001f4ca Kanal Raporu — {bugun}",
-                     f"\U0001f465 Abone: {_k['abone']}  |  \U0001f3ac Video: {_k['video_sayisi']}",
-                     f"\U0001f440 Toplam izlenme: {_k['toplam_izlenme']}", ""]
-            _kg = (rapor.get("analytics") or {}).get("kanal_28g")
-            # CTR API'den gelmiyor (Studio'da); telegram ozetinde yok
-            if _kg:
-                _ozet.append(f"\U0001f3af Retention: %{_kg.get('retention_yuzde')} "
-                             f"({_kg.get('ort_izleme_sn')} sn)")
-
-            _yeni = rapor.get("son7gun") or []
-            if _yeni:
-                _ozet.append("")
-                _ozet.append("Son 7 gün (günlük izlenme):")
-                for v in sorted(_yeni, key=lambda x: -x["izlenme_gunluk"])[:5]:
-                    _ozet.append(f"  {v['izlenme_gunluk']:>4}/gün · {v['baslik'][:38]}")
-            B.mesaj("\n".join(_ozet))
-            if pdf_yol and os.path.exists(pdf_yol):
-                B.belge(pdf_yol, f"Detaylı rapor — {bugun}")
-    except Exception as e:
-        print(f"  [telegram raporu atlandı: {str(e)[:120]}]")
-
 if __name__ == "__main__":
     main()
