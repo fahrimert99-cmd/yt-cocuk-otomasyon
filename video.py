@@ -275,7 +275,7 @@ def _ass_zaman(t):
     cs = int((t - s) * 100)
     return f"{h:d}:{m:02d}:{s:02d}.{cs:02d}"
 
-def ass_yaz(cues, path, cfg, dikey, kanca=None):
+def ass_yaz(cues, path, cfg, dikey, kanca=None, seamless_tekrar=False):
     a = cfg["altyazi"]
     punto = a["punto_dikey"] if dikey else a["punto_yatay"]
     head = f"""[Script Info]
@@ -341,6 +341,17 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             s_bas, s_bit = max(o_bit + 0.4, son - 2.6), son + 0.4
             f.write(f"Dialogue: 2,{_ass_zaman(s_bas)},{_ass_zaman(s_bit)},Abone,,0,0,0,,"
                     f"{{\\fad(250,150){puls}}}{btn}\n")
+            # SEAMLESS LOOP — KANCA TEKRARI (merak döngüsü): video başa dönmeden
+            # hemen önce (son ~1.2sn) açılış sorusunu YENİDEN göster. Shorts başa
+            # döndüğünde izleyici aynı soruyla karşılaşır -> döngü kesintisiz
+            # hissettirir, tekrar izleme olasılığı artar. Kanca ÜST'te (MarginV
+            # ayrı), CTA ALT'ta -> fiziksel çakışma yok. Yalnızca kanca varsa.
+            if seamless_tekrar and kanca:
+                kk = str(kanca).strip().replace("\n", " ")
+                r_bas = max(s_bas + 0.2, son - 1.2)
+                f.write(f"Dialogue: 1,{_ass_zaman(r_bas)},{_ass_zaman(son + 0.4)},Kanca,,0,0,0,,"
+                        f"{{\\fad(200,120)\\t(0,140,\\fscx112\\fscy112)"
+                        f"\\t(140,300,\\fscx100\\fscy100)}}{kk}\n")
 
 # ----------------------------------------------------------
 # 4. GÖRSELLER
@@ -1126,6 +1137,50 @@ def sure_al(mp3):
 
 
 # ----------------------------------------------------------
+# SEAMLESS LOOP (dikişsiz döngü) — Shorts başa dönerken araya ölü hava girmesin
+# ----------------------------------------------------------
+def _seamless_cfg():
+    """config.json'dan seamless loop ayarlarını okur (yoksa kapalı)."""
+    cfg = {}
+    try:
+        with open("config.json", encoding="utf-8") as f:
+            cfg = json.load(f)
+    except Exception:
+        pass
+    return {
+        "acik": bool(cfg.get("seamless_loop", False)),
+        "kanca_tekrar": bool(cfg.get("seamless_kanca_tekrar", False)),
+    }
+
+
+def _kuyruk_kirp(mp3, tmp, kuyruk_sn=0.5):
+    """SEAMLESS LOOP: anlatım sesinin SONUNDAKİ ölü havayı (sessizlik) kırpar,
+    yalnızca kısa bir kuyruk (kuyruk_sn) bırakır. Böylece Shorts başa döndüğünde
+    araya sessizlik girmez -> dikişsiz döngü, izleyici farkında olmadan 2. tura
+    girer (ortalama izlenme % artar). Yalnızca SON'daki sessizlik kesilir; baş ve
+    orta korunur -> altyazı senkronu BOZULMAZ. Hata olursa mp3 aynen döner."""
+    try:
+        eski = sure_al(mp3)
+        out = os.path.join(tmp, "narration_loop.mp3")
+        # areverse -> (ters çevrilmiş seste) baştaki sessizliği sil, kuyruk_sn kadar
+        # koru -> tekrar ters çevir. Net etki: yalnızca ORİJİNAL SONDAKİ sessizlik gider.
+        af = (f"areverse,silenceremove=start_periods=1:start_threshold=-50dB:"
+              f"start_silence={kuyruk_sn},areverse")
+        r = subprocess.run(["ffmpeg", "-y", "-i", mp3, "-af", af, "-ar", "44100", out],
+                           capture_output=True, text=True)
+        if r.returncode == 0 and os.path.exists(out) and os.path.getsize(out) > 20000:
+            yeni = sure_al(out)
+            if yeni + 0.05 < eski:          # gerçekten kırpıldıysa kullan
+                print(f"      Seamless loop: kuyruk sessizliği kırpıldı "
+                      f"({eski:.2f}sn -> {yeni:.2f}sn).")
+                return out
+            print("      Seamless loop: kırpılacak kuyruk sessizliği yok (ses aynen).")
+    except Exception as e:
+        print(f"      Seamless kuyruk kırpma atlandı: {str(e)[:120]}")
+    return mp3
+
+
+# ----------------------------------------------------------
 # ARKA FON MÜZİĞİ (telifsiz / CC0) — konuşma altında otomatik kısılma (ducking)
 # ----------------------------------------------------------
 def _muzik_cfg():
@@ -1364,9 +1419,17 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
         except Exception as e:
             print(f"      Prosodik mod başarısız ({e}), tek parça seslendirmeye dönülüyor")
             boundaries = seslendir(text, voice, hiz, mp3, pitch=tonlama)
+    # SEAMLESS LOOP (yalnızca dikey/Shorts): anlatım sesinin sonundaki ölü havayı
+    # kırp -> Shorts başa dönerken araya sessizlik girmez (dikişsiz döngü). Altyazı
+    # cue'ları GERÇEK TTS'ten geldiği ve yalnızca SON sessizlik kesildiği için
+    # senkron bozulmaz. TTS'ten hemen sonra, cue üretiminden önce yapılır.
+    _sl = _seamless_cfg()
+    if dikey and _sl["acik"]:
+        mp3 = _kuyruk_kirp(mp3, tmp)
     cues = cue_olustur(boundaries, CONFIG["altyazi_max_kelime"], CONFIG["altyazi_max_sure"])
     ass = os.path.join(tmp, "sub.ass")
-    ass_yaz(cues, ass, CONFIG, dikey, kanca=kanca)
+    ass_yaz(cues, ass, CONFIG, dikey, kanca=kanca,
+            seamless_tekrar=(dikey and _sl["acik"] and _sl["kanca_tekrar"]))
     os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
     # SES TEMİZLEME: anlatımı cızırtı/tizlikten arındır (de-esser + fizzy-tepe
     # kesimi). Süreyi değiştirmez -> altyazı senkronu korunur. Müzikten ÖNCE.
