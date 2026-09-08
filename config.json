@@ -32,8 +32,6 @@
   "oynatma_listesi": true,
   "marka_ilk_kare": false,
   "marka_ilk_kare_sn": 1.5,
-  "seamless_loop": false,
-  "seamless_kanca_tekrar": false,
   "haber_gizlilik": "public",
   "ai_kapak": true,
   "ai_sahne": true,
