@@ -1,0 +1,54 @@
+name: Seamless Loop Testi (YUKLEMEZ)
+# Sadece elle (workflow_dispatch). Dikişsiz döngü (seamless loop) açıkken kısa bir
+# DİKEY test klibi üretir ve ARTIFACT + 'loop-test-video' dalı olarak sunar.
+# YouTube secret'ları BİLEREK verilmez -> bu iş kanala video YÜKLEYEMEZ.
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: FFmpeg kur
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Test klibi uret (YouTube'a YUKLENMEZ)
+        env:
+          # YT secret'lari BILEREK yok -> yukleme imkansiz. Sadece uretim.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+        run: python3 loop_test.py
+      - name: Test videosunu artifact yap
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: test-loop
+          path: output/test_loop.mp4
+          if-no-files-found: warn
+          retention-days: 7
+      # Klibi 'loop-test-video' dalina yayinla -> asistan cekip dogrudan gosterebilsin.
+      - name: Klibi dala yayinla
+        if: always()
+        run: |
+          test -f output/test_loop.mp4 || exit 0
+          cp output/test_loop.mp4 /tmp/test_loop.mp4
+          git config user.name "loop-bot"
+          git config user.email "loop-bot@users.noreply.github.com"
+          git checkout --orphan loop_test_tmp
+          git rm -rf . >/dev/null 2>&1 || true
+          cp /tmp/test_loop.mp4 test_loop.mp4
+          git add test_loop.mp4
+          git commit -m "seamless loop test klibi" || exit 0
+          git push -f origin loop_test_tmp:loop-test-video || echo "push atlandi"
