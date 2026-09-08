@@ -81,8 +81,19 @@ def main():
         reasoning = bul("reason", "-r1", "-qwq", "thinker", "nemotron-super",
                         "nemotron-ultra", "o1", "deepseek-r", "-think")
         rerank = bul("rerank", "reranker", "rankqa")
-        ceviri = bul("translate", "megatron", "seamless", "nllb", "gemma")
+        ceviri = bul("translate", "riva-translate", "megatron", "seamless", "nllb")
+        # HEDEFLI SAGLAYICILAR (kullanici sordu): MiniMax, Yi, DeepSeek, Qwen + guvenlik
+        minimax = bul("minimax")
+        yi = bul("yi-", "01-ai")
+        deepseek = bul("deepseek")
+        qwen = bul("qwen")
+        guvenlik = bul("guard", "safety", "shield", "topic-control", "nemoguard")
         _o(f"Toplam erişilebilir model: {len(ids)} (tam liste artifact'ta: nvidia_modeller.txt)")
+        _o(f"  MiniMax ({len(minimax)}): {', '.join(minimax) or 'YOK'}")
+        _o(f"  DeepSeek ({len(deepseek)}): {', '.join(deepseek) or 'YOK'}")
+        _o(f"  Qwen ({len(qwen)}): {', '.join(qwen[:8]) or 'YOK'}")
+        _o(f"  Yi/01 ({len(yi)}): {', '.join(yi) or 'YOK'}")
+        _o(f"  GÜVENLİK/guard ({len(guvenlik)}): {', '.join(guvenlik[:8]) or 'YOK'}")
         _o(f"  SOHBET/LLM ({len(chat)}):")
         for c in chat[:30]:
             _o(f"      - {c}")
