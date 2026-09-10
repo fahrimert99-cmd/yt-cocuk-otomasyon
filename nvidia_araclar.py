@@ -17,7 +17,32 @@ Env (opsiyonel):
   NVIDIA_BENZERLIK_ESIK varsayılan 0.90 (bu ve üstü kosinüs -> tekrar say)
 """
 import os, re, json, math, subprocess, tempfile, urllib.request, urllib.error
+import signal
 import ai_script as A
+
+
+def _sert_cagir(saniye, fn):
+    """fn()'i en fazla `saniye` sn içinde tamamlar; aşarsa çağrıyı KESER ve
+    None döner. urllib'in socket zaman aşımı okuma-arası olduğu için toplam
+    süreyi sınırlamıyor (reasoning/deepseek akışta asılabiliyor); SIGALRM ile
+    OS-seviyesi SERT sınır koyar. SIGALRM yoksa (ana thread değil / Windows) ya
+    da hata olursa fn() aynen çalışır ve istisna çağırana bırakılır."""
+    if not hasattr(signal, "SIGALRM"):
+        return fn()
+
+    def _patla(_s, _f):
+        raise TimeoutError(f"sert sınır {saniye}s aşıldı")
+
+    try:
+        eski = signal.signal(signal.SIGALRM, _patla)   # ana thread değilse ValueError
+    except (ValueError, OSError):
+        return fn()                                    # sinyal kurulamadı -> sarmadan çalış
+    signal.alarm(int(max(1, saniye)))
+    try:
+        return fn()
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, eski)
 
 # Senaryo eleştirisi için buffet'ten güçlü bir reasoning modeli.
 # DeepSeek-v4-pro: güçlü akıl yürütme -> senaryo eleştirisi/güçlendirmesi için ideal.
@@ -34,7 +59,8 @@ def _nvidia_json(prompt, model=None):
     if not key:
         return None
     try:
-        ham = A._nvidia(prompt, key, model=model)
+        # SERT zaman aşımı: deepseek/kritik model asılırsa 90s'de kes (non-fatal).
+        ham = _sert_cagir(90, lambda: A._nvidia(prompt, key, model=model))
         return json.loads(A._temizle(ham))
     except Exception:
         return None
@@ -158,9 +184,13 @@ def _reasoning_json(prompt, sistem="detailed thinking on", model=None):
         url, data=json.dumps(body).encode(),
         headers={"Content-Type": "application/json", "Accept": "application/json",
                  "Authorization": f"Bearer {key}"})
-    try:
+    def _cagir():
         with urllib.request.urlopen(req, timeout=150) as r:
-            d = json.loads(r.read().decode())
+            return json.loads(r.read().decode())
+    try:
+        # SERT zaman aşımı: reasoning modeli akışta asılırsa 100s'de kes (non-fatal
+        # -> kanca orijinalinde kalır). socket timeout=150 okuma-arası; bu toplam sınır.
+        d = _sert_cagir(100, _cagir)
         txt = d["choices"][0]["message"]["content"] or ""
         txt = re.sub(r"(?is)<think>.*?</think>", "", txt)   # düşünme bloğunu at
         return json.loads(A._temizle(txt))
