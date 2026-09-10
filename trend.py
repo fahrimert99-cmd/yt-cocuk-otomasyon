@@ -40,6 +40,37 @@ def _norm(s):
     return (s or "").translate(str.maketrans("İIŞĞÜÖÇ", "iışğüöç")).lower().strip()
 
 
+# KONU-TEKRARI FİLTRESİ (embedding'e bağlı DEĞİL): iki başlık, jenerik kelimeler
+# atıldıktan sonra >=2 anlamlı kök paylaşıyorsa AYNI KONU sayılır. Türkçe eklerden
+# etkilenmemek için her kelimenin ilk 4 harfi 'kök' kabul edilir (FAİZSİZ/FAİZİNDEKİ
+# -> FAİZ; TAKSİT/TAKSİTSİZ -> TAKS; KARGO -> KARG). TÜM havuza karşı çalışır
+# (benzer_var_mi'nin son-60 penceresi eski konuları kaçırıyordu).
+_KONU_STOP = {
+    "NEDEN", "NASIL", "TUZAĞI", "TUZAK", "GİZLİ", "GERÇEK", "GERÇEKTE", "BÖYLE",
+    "SENİ", "KADAR", "DAHA", "İLE", "BİR", "NEDİR", "VAR", "YOK", "İLAVE", "EDİLEN",
+    "AYLIK", "GÜNDE", "GERÇEKTEN", "KİM", "HANGİ", "NELER", "ÖNÜNDE", "İÇİN",
+    "OLAN", "OLUR", "GİDER", "MALİYET",
+}
+
+
+def _kokler(baslik):
+    import re
+    t = re.sub(r"[^0-9A-Za-zÇĞİÖŞÜçğıöşü ]", " ", (baslik or "").upper())
+    return {w[:4] for w in t.split() if len(w) >= 4 and w not in _KONU_STOP}
+
+
+def _konu_cakismasi(baslik, tum_basliklar):
+    """baslik, havuzdaki bir başlıkla >=2 anlamlı kök paylaşıyorsa O başlığı döner
+    (aynı konu); yoksa None."""
+    k = _kokler(baslik)
+    if len(k) < 2:
+        return None
+    for e in (tum_basliklar or []):
+        if e and len(k & _kokler(e)) >= 2:
+            return e
+    return None
+
+
 def _populer_videolar(yt, gun=90, k_basina=15):
     since = (datetime.datetime.utcnow() - datetime.timedelta(days=gun)).strftime("%Y-%m-%dT%H:%M:%SZ")
     bulunan = {}
@@ -313,7 +344,8 @@ def main():
     with open("senaryolar.json", encoding="utf-8") as f:
         havuz = json.load(f)
     mevcut_norm = {_norm(s.get("baslik", "")) for s in havuz}
-    mevcut_basliklar = [s.get("baslik", "") for s in havuz][-45:]  # son 45 (prompt kısa kalsın)
+    tum_basliklar = [s.get("baslik", "") for s in havuz]           # TÜM havuz (konu dedup)
+    mevcut_basliklar = tum_basliklar[-45:]                         # son 45 (prompt kısa kalsın)
 
     print(f"[2/4] LLM ile trend analizi + {sayi} yeni fikir üretiliyor ...")
     analiz = _fikir_uret(populer, mevcut_basliklar, sayi)
@@ -359,12 +391,19 @@ def main():
             print(f"      ⚡ kanca/açılış güçlendirildi (NVIDIA/{NA.REASONING_MODEL})")
         if _norm(sen.get("baslik", "")) in mevcut_norm:
             continue
-        # ANLAMSAL TEKRAR: farklı kelime ama aynı konu -> ele (embedding, non-fatal).
-        if NA.benzer_var_mi(sen.get("baslik", ""), mevcut_basliklar):
+        # KONU TEKRARI (kök-kelime, TÜM havuz, embedding'siz): farklı kelime ama
+        # aynı konu -> ele. Eski havuzdaki konuları da yakalar.
+        _cak = _konu_cakismasi(sen.get("baslik", ""), tum_basliklar)
+        if _cak:
+            print(f"      · atlandı (konu tekrarı ~ '{_cak[:40]}'): {sen.get('baslik','')[:45]}")
+            continue
+        # ANLAMSAL TEKRAR: farklı kelime ama aynı konu -> ele (embedding, TÜM havuz, non-fatal).
+        if NA.benzer_var_mi(sen.get("baslik", ""), tum_basliklar):
             print(f"      · atlandı (anlamsal tekrar): {sen.get('baslik','')[:55]}")
             continue
         havuz.append(sen)
         mevcut_norm.add(_norm(sen.get("baslik", "")))
+        tum_basliklar.append(sen.get("baslik", ""))
         mevcut_basliklar.append(sen.get("baslik", ""))
         eklenen.append(sen)
         print(f"      + eklendi: {sen['baslik'][:60]}")
