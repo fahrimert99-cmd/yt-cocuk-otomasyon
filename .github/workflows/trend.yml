@@ -4,11 +4,13 @@ name: Trend & Senaryo Besleme
 # Video YÜKLEMEZ; yalnızca senaryo havuzunu büyütür + trend_rapor.md yazar.
 on:
   schedule:
-    - cron: "0 6 * * 0"   # HAFTALIK: her Pazar 09:00 TR — otomatik trend + senaryo
+    # HAFTADA 2 KEZ: Pazar + Çarşamba 09:00 TR. Tüketim 2 video/gün = 14/hafta;
+    # her koşu +8 senaryo -> +16/hafta > 14 -> havuz kurumaz, aksine büyür.
+    - cron: "0 6 * * 0,3"
   workflow_dispatch:
     inputs:
       sayi:
-        description: "Eklenecek yeni senaryo sayısı (1-10, boş = 4)"
+        description: "Eklenecek yeni senaryo sayısı (1-10, boş = 8)"
         required: false
         default: ""
       gun:
@@ -42,7 +44,8 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
-          SAYI: ${{ github.event.inputs.sayi }}
+          # Girdi boşsa (zamanlanmış koşu dahil) 8 kullan -> +16/hafta.
+          SAYI: ${{ github.event.inputs.sayi || '8' }}
           GUN: ${{ github.event.inputs.gun }}
         run: python3 trend.py
       - name: Yeni senaryolari commit et
