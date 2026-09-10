@@ -29,11 +29,27 @@ ARAMALAR = [
     "market psikolojisi satış", "restoran menü tuzağı", "tüketici hakları aldatıcı",
 ]
 
+# YABANCI (İngilizce) NİŞ ARAMALAR: uluslararası tüketici-tuzağı/dark-pattern
+# kanallarından, TR havuzunda AZ İŞLENMİŞ niş açılar bulmak için (shrinkflation,
+# drip pricing, dark pattern, loyalty/points oyunları, confusion pricing vb.).
+# YABANCI=0 env ile kapatılabilir (arama kotası: her sorgu 100 birim).
+ARAMALAR_YABANCI = [
+    "consumer traps explained", "dark patterns online shopping", "shrinkflation examples",
+    "hidden fees exposed", "how supermarkets trick you", "drip pricing scam",
+    "subscription trap cancel", "grocery store psychology tricks", "sneaky pricing tactics",
+    "loyalty program trap", "airline hidden fees", "restaurant menu psychology",
+]
+
 # Alakasız (oyun/vlog vb.) sonuçları elemek için: başlıkta bunlardan biri geçmeli.
+# TR + EN anahtarlar (yabancı niş videolar da filtreden geçebilsin).
 ALAKA = ["tuzak", "tüketici", "kandır", "aldat", "dolandır", "gizli ücret", "ücret",
          "indirim", "fiyat", "market", "banka", "kart", "faiz", "komisyon", "abonelik",
          "zam", "kâr", "kar ", "satış", "psikoloji", "hile", "kandırıyor", "menü",
-         "kargo", "fatura", "hak", "para tuza", "kredi"]
+         "kargo", "fatura", "hak", "para tuza", "kredi",
+         # EN:
+         "trap", "scam", "hidden fee", "hidden cost", "dark pattern", "shrinkflation",
+         "drip pricing", "trick", "rip off", "rip-off", "consumer", "subscription",
+         "fee", "pricing", "psychology", "sneaky", "loyalty", "gotcha", "fine print"]
 
 
 def _norm(s):
@@ -73,7 +89,9 @@ def _konu_cakismasi(baslik, tum_basliklar):
 
 def _populer_videolar(yt, gun=90, k_basina=15):
     since = (datetime.datetime.utcnow() - datetime.timedelta(days=gun)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    # (video_id -> yabanci mi) ; yabanci geçişte True işaretlenir.
     bulunan = {}
+    # 1) TÜRKÇE geçiş (TR bölge/dil)
     for q in ARAMALAR:
         try:
             r = yt.search().list(part="snippet", q=q, type="video", order="viewCount",
@@ -83,7 +101,20 @@ def _populer_videolar(yt, gun=90, k_basina=15):
             print(f"  ! arama hata ({q}): {str(e)[:90]}")
             continue
         for it in r.get("items", []):
-            bulunan[it["id"]["videoId"]] = True
+            bulunan.setdefault(it["id"]["videoId"], False)
+    # 2) YABANCI geçiş (US bölge / EN dil) — niş içerik. YABANCI=0 ile kapatılır.
+    if (os.environ.get("YABANCI", "1") or "1").strip() != "0":
+        for q in ARAMALAR_YABANCI:
+            try:
+                r = yt.search().list(part="snippet", q=q, type="video", order="viewCount",
+                                     maxResults=k_basina, publishedAfter=since,
+                                     regionCode="US", relevanceLanguage="en").execute()
+            except Exception as e:
+                print(f"  ! yabanci arama hata ({q}): {str(e)[:90]}")
+                continue
+            for it in r.get("items", []):
+                bulunan[it["id"]["videoId"]] = True   # yabanci işaretle
+        print(f"      (yabancı niş arama açık: {len(ARAMALAR_YABANCI)} sorgu)")
     ids = list(bulunan)
     veriler = []
     for i in range(0, len(ids), 50):
@@ -96,7 +127,8 @@ def _populer_videolar(yt, gun=90, k_basina=15):
             st = it.get("statistics", {})
             veriler.append({"id": it["id"], "baslik": it["snippet"].get("title", ""),
                             "izlenme": int(st.get("viewCount", 0) or 0),
-                            "kanal": it["snippet"].get("channelTitle", "")})
+                            "kanal": it["snippet"].get("channelTitle", ""),
+                            "yabanci": bool(bulunan.get(it["id"], False))})
     veriler.sort(key=lambda x: x["izlenme"], reverse=True)
     # ALAKA filtresi: başlığı tüketici-tuzağı kelimesi içerenleri tut (oyun/vlog ele).
     alakali = [v for v in veriler if any(a in _norm(v["baslik"]) for a in ALAKA)]
@@ -231,8 +263,13 @@ def _performans_ipuclari():
 
 
 def _fikir_uret(populer, mevcut_basliklar, sayi):
+    _yerli = [v for v in populer if not v.get("yabanci")]
+    _yabanci = [v for v in populer if v.get("yabanci")]
     ozet = "\n".join(f"- {v['izlenme']:>9,} izlenme | {v['baslik'][:80]}"
-                     for v in populer[:20])
+                     for v in _yerli[:15])
+    # YABANCI NİŞ: uluslararası kanallardan, TR'de az işlenmiş açılar.
+    yabanci_ozet = "\n".join(f"- {v['izlenme']:>9,} | {v['baslik'][:80]} ({v.get('kanal','')[:24]})"
+                             for v in _yabanci[:15])
     mevcut = "\n".join(f"- {b}" for b in mevcut_basliklar)
     # GERİ BESLEME: kendi kanalımızın gerçek performansından öğren.
     _kazanan, _zayif = _performans_ipuclari()
@@ -251,6 +288,10 @@ hizmet/abonelik, psikolojik satış oyunları). Amaç: izleyiciyi uyarmak + mera
 AŞAĞIDA YouTube'da SON DÖNEMDE EN ÇOK İZLENEN benzer Türkçe videolar (izlenme + başlık):
 {ozet}
 
+YABANCI (uluslararası) KANALLARDAN POPÜLER TÜKETİCİ-TUZAĞI videoları — Türkiye'de
+HENÜZ AZ İŞLENMİŞ NİŞ konular için ilham (İngilizce başlık + kanal):
+{yabanci_ozet}
+
 BİZİM HAVUZDA ZATEN OLAN başlıklar (BUNLARI TEKRARLAMA, farklı açı bul):
 {mevcut}
 {_perf}
@@ -260,6 +301,11 @@ GÖREV:
    kalıpları) kısaca analiz et.
 2) Kanalımız için {sayi} adet YENİ, ÖZGÜN video fikri öner (havuzda olmayan). Her
    fikir tüketici tuzağı temalı, merak uyandıran olsun.
+   ÖNCELİK: Yabancı kanallardaki NİŞ konuları (ör. shrinkflation/gramaj küçültme,
+   drip pricing/parça parça fiyat, dark pattern/karanlık arayüz oyunları, sadakat-
+   puan tuzakları, 'confusion pricing') TÜRK tüketicisine ve günlük hayatına UYARLA.
+   Türkiye'de az bilinen ama yaygın yaşanan tuzakları öne çıkar. Doğrudan çeviri
+   değil, yerel örnekle (Türk marketleri, bankaları, uygulamaları) yeniden kurgula.
 
 SADECE geçerli JSON döndür, başka hiçbir şey yazma:
 {{"trend":"1-2 cümle trend özeti","hook_kaliplari":["kalıp1","kalıp2","kalıp3"],
