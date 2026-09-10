@@ -259,7 +259,7 @@ def benzer_var_mi(baslik, mevcut_basliklar, esik=None):
             esik = float(os.environ.get("NVIDIA_BENZERLIK_ESIK", "0.90") or "0.90")
         except Exception:
             esik = 0.90
-    liste = [b for b in (mevcut_basliklar or []) if b][-60:]   # maliyet: son 60
+    liste = [b for b in (mevcut_basliklar or []) if b][-160:]   # maliyet sınırı: son 160 (tüm havuzu kapsar)
     if not baslik or not liste:
         return False
     vekt = _embed([baslik] + liste)
