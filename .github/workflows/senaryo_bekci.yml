@@ -20,6 +20,7 @@ concurrency:
 jobs:
   bekci:
     runs-on: ubuntu-latest
+    timeout-minutes: 25   # asili kalirsa 25 dk'da kes (reasoning asilmasi yasandi)
     steps:
       - uses: actions/checkout@v5
       - name: Python kur
