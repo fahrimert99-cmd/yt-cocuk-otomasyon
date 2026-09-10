@@ -22,11 +22,21 @@ import youtube_yukle as YT
 import ai_script as A
 import nvidia_araclar as NA   # NVIDIA NIM kalite araçları (hepsi non-fatal)
 
+# ARAMALAR 5 İÇERİK KOLUNA göre çeşitlendirildi (döngüyü kırmak için — kanal
+# eskiden çoğunlukla 'market/banka genel tuzağı' üretiyordu). Her kol farklı bir
+# viral niş: 1) shrinkflation/gramaj  2) dark pattern/arayüz oyunu  3) retail
+# psikoloji  4) finansal gotcha  5) test/ifşa.
 ARAMALAR = [
-    "tüketici tuzağı", "market fiyat tuzağı", "gizli ücret tüketici",
-    "market bizi nasıl kandırıyor", "indirim yalanı", "kargo ücreti tuzağı",
-    "abonelik iptal tuzağı", "bankalar gizli ücret", "kredi kartı tuzağı",
-    "market psikolojisi satış", "restoran menü tuzağı", "tüketici hakları aldatıcı",
+    # 1) SHRINKFLATION / gramaj küçültme (2026'da en viral kol; TR'de az işlendi)
+    "gramaj küçültme market", "shrinkflation türkiye", "paket küçüldü fiyat aynı",
+    # 2) DARK PATTERN / karanlık arayüz oyunları
+    "sahte indirim etiketi", "abonelik iptal edilmiyor tuzak", "sahte son ürün uyarısı",
+    # 3) RETAIL PSİKOLOJİSİ
+    "market raf düzeni psikoloji", "market bizi nasıl kandırıyor",
+    # 4) FİNANSAL GOTCHA
+    "kredi kartı gizli ücret", "alışveriş kredisi tuzağı", "puan iade tuzağı",
+    # 5) TEST / İFŞA
+    "pahalı ürün gerçekten daha iyi mi", "market marka farkı test",
 ]
 
 # YABANCI (İngilizce) NİŞ ARAMALAR: uluslararası tüketici-tuzağı/dark-pattern
@@ -34,10 +44,16 @@ ARAMALAR = [
 # drip pricing, dark pattern, loyalty/points oyunları, confusion pricing vb.).
 # YABANCI=0 env ile kapatılabilir (arama kotası: her sorgu 100 birim).
 ARAMALAR_YABANCI = [
-    "consumer traps explained", "dark patterns online shopping", "shrinkflation examples",
-    "hidden fees exposed", "how supermarkets trick you", "drip pricing scam",
-    "subscription trap cancel", "grocery store psychology tricks", "sneaky pricing tactics",
-    "loyalty program trap", "airline hidden fees", "restaurant menu psychology",
+    # 1) SHRINKFLATION (küresel olarak en viral; 2026 yasal davalar gündemde)
+    "shrinkflation examples 2026", "shrinkflation before after", "double labeling packaging",
+    # 2) DARK PATTERNS
+    "dark patterns subscription trap", "click to cancel scam", "fake urgency countdown online",
+    # 3) RETAIL PSİKOLOJİSİ
+    "supermarket psychology tricks", "decoy pricing effect",
+    # 4) FİNANSAL GOTCHA
+    "buy now pay later trap", "hidden bank fees exposed", "loyalty points devaluation",
+    # 5) TEST / İFŞA
+    "name brand vs generic test", "is expensive product worth it",
 ]
 
 # Alakasız (oyun/vlog vb.) sonuçları elemek için: başlıkta bunlardan biri geçmeli.
@@ -46,10 +62,14 @@ ALAKA = ["tuzak", "tüketici", "kandır", "aldat", "dolandır", "gizli ücret", 
          "indirim", "fiyat", "market", "banka", "kart", "faiz", "komisyon", "abonelik",
          "zam", "kâr", "kar ", "satış", "psikoloji", "hile", "kandırıyor", "menü",
          "kargo", "fatura", "hak", "para tuza", "kredi",
+         # yeni TR kollar:
+         "gramaj", "küçül", "shrinkflation", "sahte", "karanlık", "puan", "test",
+         "greedflation", "aldatıcı paket", "birim fiyat",
          # EN:
          "trap", "scam", "hidden fee", "hidden cost", "dark pattern", "shrinkflation",
          "drip pricing", "trick", "rip off", "rip-off", "consumer", "subscription",
-         "fee", "pricing", "psychology", "sneaky", "loyalty", "gotcha", "fine print"]
+         "fee", "pricing", "psychology", "sneaky", "loyalty", "gotcha", "fine print",
+         "generic", "brand vs", "worth it", "before after", "downsizing", "packaging"]
 
 
 def _norm(s):
@@ -301,11 +321,25 @@ GÖREV:
    kalıpları) kısaca analiz et.
 2) Kanalımız için {sayi} adet YENİ, ÖZGÜN video fikri öner (havuzda olmayan). Her
    fikir tüketici tuzağı temalı, merak uyandıran olsun.
-   ÖNCELİK: Yabancı kanallardaki NİŞ konuları (ör. shrinkflation/gramaj küçültme,
-   drip pricing/parça parça fiyat, dark pattern/karanlık arayüz oyunları, sadakat-
-   puan tuzakları, 'confusion pricing') TÜRK tüketicisine ve günlük hayatına UYARLA.
-   Türkiye'de az bilinen ama yaygın yaşanan tuzakları öne çıkar. Doğrudan çeviri
-   değil, yerel örnekle (Türk marketleri, bankaları, uygulamaları) yeniden kurgula.
+
+   KANAL DÖNGÜYE GİRDİ: eskiden hep 'market/banka genel tuzağı' ürettik. BUNU KIR.
+   Fikirleri ŞU 5 İÇERİK KOLUNA DAĞIT (mümkünse her koldan en az bir tane, aynı
+   koldan 2'den fazla verme):
+     A) SHRINKFLATION / gramaj küçültme (aynı fiyat, küçülen paket — 2026'nın en
+        viral konusu; TR'de az işlendi. Ör: çikolata 100g→90g, cips havası).
+     B) DARK PATTERN / karanlık arayüz (sahte geri sayım, 'son 2 ürün' yalanı,
+        iptal edilemeyen abonelik, varsayılan işaretli ek ürün).
+     C) RETAIL PSİKOLOJİSİ (raf düzeni, çapa fiyat, decoy/tuzak seçenek).
+     D) FİNANSAL GOTCHA (alışveriş kredisi/BNPL, gizli faiz, puan devalüasyonu).
+     E) TEST / İFŞA ('pahalı olan gerçekten daha mı iyi', sahte yorum, markup).
+
+   KURALLAR:
+   - SOMUT ve SPESİFİK ol: 'marketler kandırır' DEĞİL -> 'X paket 3 ayda 500g'dan
+     450g'a düştü, fiyat aynı' gibi net, kanıtlanabilir açı.
+   - Yabancı NİŞ konuları TÜRK hayatına UYARLA (doğrudan çeviri değil; Türk
+     marketleri/bankaları/uygulamaları ile yerel örnek). Güncel küresel olayları
+     (gramaj davaları, 'double labeling', click-to-cancel) yerelleştir.
+   - Havuzda çok işlenmiş kolları (klasik market/banka geneli) TEKRARLAMA.
 
 SADECE geçerli JSON döndür, başka hiçbir şey yazma:
 {{"trend":"1-2 cümle trend özeti","hook_kaliplari":["kalıp1","kalıp2","kalıp3"],
