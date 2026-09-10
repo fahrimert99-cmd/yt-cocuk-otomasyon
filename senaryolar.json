@@ -4666,5 +4666,245 @@
       }
     ],
     "tema": "tuzak"
+  },
+  {
+    "baslik": "ÇİKOLATAN NEDEN KÜÇÜLDÜ? 🍫",
+    "kanca": "GİZLİ KÜÇÜLME",
+    "tema": "tuzak",
+    "aciklama": "Aynı fiyata küçülen paket (shrinkflation) nasıl çalışır ve birim fiyatla nasıl korunursun. Somut örnek ve bir sonraki videonun teaserı da var.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "shrinkflation",
+      "tasarruf",
+      "market"
+    ],
+    "sahneler": [
+      {
+        "metin": "Sevdiğin çikolata dün yüz gramdı, bugün doksan gram; ama fiyatı hiç değişmedi.",
+        "gorsel": "extreme close up of a chocolate bar on a bright supermarket shelf with a price tag, shallow depth of field"
+      },
+      {
+        "metin": "Buna shrinkflation denir: üretici zam yapmak yerine paketi sessizce küçültür, çünkü boyutu fiyat kadar kolay fark etmezsin.",
+        "gorsel": "hands holding two chocolate packages of slightly different sizes, comparison, studio lighting"
+      },
+      {
+        "metin": "Avrupa'da bir mahkeme, ambalajı aynı tutup gramajı düşüren bir markayı bu yüzden mahkûm etti.",
+        "gorsel": "wooden gavel on a desk with legal documents, dramatic cinematic lighting"
+      },
+      {
+        "metin": "Korunmak için etikete değil, birim fiyata bak: yüz gram başına düşen liraya.",
+        "gorsel": "finger pointing at a unit price label on a supermarket shelf, macro shot"
+      },
+      {
+        "metin": "Eski paketle yenisini yan yana koy, gramajı karşılaştır; 'yeni ambalaj' yazısına şüpheyle yaklaş.",
+        "gorsel": "old and new product packaging side by side on a kitchen table, top down view"
+      },
+      {
+        "metin": "Abone ol, çünkü bir sonraki videoda cips paketindeki 'hava' oyununu anlatacağım.",
+        "gorsel": "person writing product weights in a notebook next to grocery receipts, warm light"
+      }
+    ],
+    "script": "Sevdiğin çikolata dün yüz gramdı, bugün doksan gram; ama fiyatı hiç değişmedi. Buna shrinkflation denir: üretici zam yapmak yerine paketi sessizce küçültür, çünkü boyutu fiyat kadar kolay fark etmezsin. Avrupa'da bir mahkeme, ambalajı aynı tutup gramajı düşüren bir markayı bu yüzden mahkûm etti. Korunmak için etikete değil, birim fiyata bak: yüz gram başına düşen liraya. Eski paketle yenisini yan yana koy, gramajı karşılaştır; 'yeni ambalaj' yazısına şüpheyle yaklaş. Abone ol, çünkü bir sonraki videoda cips paketindeki 'hava' oyununu anlatacağım."
+  },
+  {
+    "baslik": "CİPS PAKETİ NEDEN YARI BOŞ? 🥔",
+    "kanca": "HAVAYA PARA",
+    "tema": "tuzak",
+    "aciklama": "Cips paketindeki boşluk (slack fill) neden var, gerçekten ürün mü hava mı ödüyorsun. Korunma ipucu ve teaser içerir.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "shrinkflation",
+      "market",
+      "ambalaj"
+    ],
+    "sahneler": [
+      {
+        "metin": "Kocaman cips paketini açıyorsun ve yarısı boş çıkıyor; işte parasını ödediğin şeyin bir kısmı sadece hava.",
+        "gorsel": "opening a large chips bag revealing it is half empty, disappointed expression, close up"
+      },
+      {
+        "metin": "Üreticiler buna 'ürünü koruyan gaz' der ama bu boşluk paketi büyük gösterip pahalı hissettirmene de yarar.",
+        "gorsel": "inflated snack bag on a store shelf looking large and full, bright retail lighting"
+      },
+      {
+        "metin": "Net ağırlık gramla yazar, paketin boyutuyla ilgisi yoktur; büyük paket her zaman daha çok ürün demek değildir.",
+        "gorsel": "macro shot of net weight in grams printed on a snack package"
+      },
+      {
+        "metin": "Korunmak için gram başına fiyatı hesapla ve küçük paketle karşılaştır, çoğu zaman küçük olan daha ekonomiktir.",
+        "gorsel": "calculator and two snack bags of different sizes on a table, comparison"
+      },
+      {
+        "metin": "Salla değil, tart: mümkünse market terazisinde net ağırlığı doğrula.",
+        "gorsel": "hands placing a snack bag on a small kitchen scale, digital display"
+      },
+      {
+        "metin": "Abone ol, bir sonraki videoda 'son iki ürün' yazısının neden çoğu zaman yalan olduğunu göstereceğim.",
+        "gorsel": "shopper comparing price per gram labels on a shelf, focused expression"
+      }
+    ],
+    "script": "Kocaman cips paketini açıyorsun ve yarısı boş çıkıyor; işte parasını ödediğin şeyin bir kısmı sadece hava. Üreticiler buna 'ürünü koruyan gaz' der ama bu boşluk paketi büyük gösterip pahalı hissettirmene de yarar. Net ağırlık gramla yazar, paketin boyutuyla ilgisi yoktur; büyük paket her zaman daha çok ürün demek değildir. Korunmak için gram başına fiyatı hesapla ve küçük paketle karşılaştır, çoğu zaman küçük olan daha ekonomiktir. Salla değil, tart: mümkünse market terazisinde net ağırlığı doğrula. Abone ol, bir sonraki videoda 'son iki ürün' yazısının neden çoğu zaman yalan olduğunu göstereceğim."
+  },
+  {
+    "baslik": "SAHTE GERİ SAYIM TUZAĞI! ⏳",
+    "kanca": "SAHTE ACELE",
+    "tema": "tuzak",
+    "aciklama": "Alışveriş sitelerindeki sahte geri sayım sayaçları seni nasıl aceleye getirir ve nasıl test edersin. Koruma + teaser.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "dark pattern",
+      "alışveriş",
+      "psikoloji"
+    ],
+    "sahneler": [
+      {
+        "metin": "Sepetteki ürünün altında 'bu fiyat 9 dakika sonra bitiyor' yazan sayaç çoğu zaman tamamen sahtedir.",
+        "gorsel": "smartphone screen showing an online store countdown timer, urgent red numbers, close up"
+      },
+      {
+        "metin": "Amaç seni düşünmeden, karşılaştırmadan hemen satın aldırmak; buna karanlık arayüz deniyor.",
+        "gorsel": "anxious person quickly tapping buy button on a phone, dim lighting"
+      },
+      {
+        "metin": "Test etmek çok kolay: sayfayı yenile ya da yarın tekrar aç, sayaç sıfırlanıp aynı 'son dakika' baştan başlar.",
+        "gorsel": "hand refreshing a web page, the countdown resetting, screen recording style"
+      },
+      {
+        "metin": "Gerçek kampanyanın süresi bellidir ve sayfa yenilenince değişmez; değişiyorsa oyundur.",
+        "gorsel": "split screen of two identical countdown timers showing different times, comparison"
+      },
+      {
+        "metin": "Korunmak için fiyatı ekran görüntüsüyle kaydet, birkaç saat bekle ve gerçekten değişip değişmediğine bak.",
+        "gorsel": "taking a screenshot of a product price on a phone, calm and deliberate"
+      },
+      {
+        "metin": "Abone ol, bir sonraki videoda sahte 'stokta son ürünler' yazısını ifşa edeceğim.",
+        "gorsel": "person calmly closing a shopping app, relaxed, natural light"
+      }
+    ],
+    "script": "Sepetteki ürünün altında 'bu fiyat 9 dakika sonra bitiyor' yazan sayaç çoğu zaman tamamen sahtedir. Amaç seni düşünmeden, karşılaştırmadan hemen satın aldırmak; buna karanlık arayüz deniyor. Test etmek çok kolay: sayfayı yenile ya da yarın tekrar aç, sayaç sıfırlanıp aynı 'son dakika' baştan başlar. Gerçek kampanyanın süresi bellidir ve sayfa yenilenince değişmez; değişiyorsa oyundur. Korunmak için fiyatı ekran görüntüsüyle kaydet, birkaç saat bekle ve gerçekten değişip değişmediğine bak. Abone ol, bir sonraki videoda sahte 'stokta son ürünler' yazısını ifşa edeceğim."
+  },
+  {
+    "baslik": "'SON 2 ÜRÜN' YALANI! 🔥",
+    "kanca": "SAHTE KITLIK",
+    "tema": "tuzak",
+    "aciklama": "Sahte stok/kıtlık uyarıları (son 2 ürün, 12 kişi bakıyor) seni nasıl kandırır ve nasıl anlarsın. Koruma + teaser.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "dark pattern",
+      "alışveriş",
+      "kıtlık"
+    ],
+    "sahneler": [
+      {
+        "metin": "'Stokta son 2 ürün' ya da 'şu an 14 kişi bakıyor' uyarıları çoğu zaman gerçek stokla ilgili değildir.",
+        "gorsel": "online product page showing only 2 left in stock warning, red urgent badge, close up"
+      },
+      {
+        "metin": "Bu sayılar çoğu sitede rastgele üretilir; amaç kaçırma korkusuyla seni hızlandırmaktır.",
+        "gorsel": "crowd of blurred shoppers reaching for one product, motion blur, dramatic"
+      },
+      {
+        "metin": "Anlamak kolay: gizli sekmede aynı ürünü aç, sayı çoğu zaman farklı çıkar ya da saatlerce değişmez.",
+        "gorsel": "two browser windows side by side showing different stock numbers for the same item"
+      },
+      {
+        "metin": "Gerçek kıtlık olsaydı ürün gerçekten tükenir, ertesi gün hâlâ 'son 2' yazmazdı.",
+        "gorsel": "calendar pages turning while a same low stock label stays unchanged, time lapse feel"
+      },
+      {
+        "metin": "Korunmak için karar vermeden önce ürünü favorilere ekle, bir gece bekle; acele hissi geçince gerçek ihtiyacını görürsün.",
+        "gorsel": "person adding an item to a wishlist and setting the phone down, evening light"
+      },
+      {
+        "metin": "Abone ol, bir sonraki videoda 'al şimdi öde sonra' tuzağını anlatacağım.",
+        "gorsel": "hand placing phone face down on a table, calm decision, soft light"
+      }
+    ],
+    "script": "'Stokta son 2 ürün' ya da 'şu an 14 kişi bakıyor' uyarıları çoğu zaman gerçek stokla ilgili değildir. Bu sayılar çoğu sitede rastgele üretilir; amaç kaçırma korkusuyla seni hızlandırmaktır. Anlamak kolay: gizli sekmede aynı ürünü aç, sayı çoğu zaman farklı çıkar ya da saatlerce değişmez. Gerçek kıtlık olsaydı ürün gerçekten tükenir, ertesi gün hâlâ 'son 2' yazmazdı. Korunmak için karar vermeden önce ürünü favorilere ekle, bir gece bekle; acele hissi geçince gerçek ihtiyacını görürsün. Abone ol, bir sonraki videoda 'al şimdi öde sonra' tuzağını anlatacağım."
+  },
+  {
+    "baslik": "AL ŞİMDİ ÖDE SONRA TUZAĞI! 💳",
+    "kanca": "SESSİZ BORÇ",
+    "tema": "tuzak",
+    "aciklama": "Al-şimdi-öde-sonra (BNPL) sistemleri neden fark etmeden borç biriktirtir ve nasıl korunursun. Koruma + teaser.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "borç",
+      "kredi",
+      "finans"
+    ],
+    "sahneler": [
+      {
+        "metin": "'Faizsiz, üç taksit' diyen al-şimdi-öde-sonra sistemleri, harcamayı acısız gösterip fark etmeden borç biriktirir.",
+        "gorsel": "smartphone checkout screen showing pay in 3 installments option, clean UI, close up"
+      },
+      {
+        "metin": "Her alışveriş küçük görünür ama üst üste binen taksitler ay sonunda gerçek gelirini aşabilir.",
+        "gorsel": "multiple small installment reminders stacking up on a phone notification screen"
+      },
+      {
+        "metin": "Asıl tuzak gecikmede: bir ödemeyi kaçırınca devreye giren ceza ve gecikme faizi 'faizsiz' vaadini bozar.",
+        "gorsel": "red overdue payment notice on a phone screen, warning icon, tense lighting"
+      },
+      {
+        "metin": "Bu sistemler kredi kartından farklı olarak harcamanı tek yerde toplamaz, ne kadar borçlandığını görmen zorlaşır.",
+        "gorsel": "scattered payment app icons on a phone home screen, confusing layout"
+      },
+      {
+        "metin": "Korunmak için tüm taksitleri tek bir takvime yaz, aylık toplamı hesapla ve gelirinin üstündeyse vazgeç.",
+        "gorsel": "person writing installment dates on a paper calendar, organized desk, warm light"
+      },
+      {
+        "metin": "Abone ol, bir sonraki videoda market markası ürünlerin gerçeğini test edeceğiz.",
+        "gorsel": "hand closing a payment app with a confident expression, natural light"
+      }
+    ],
+    "script": "'Faizsiz, üç taksit' diyen al-şimdi-öde-sonra sistemleri, harcamayı acısız gösterip fark etmeden borç biriktirir. Her alışveriş küçük görünür ama üst üste binen taksitler ay sonunda gerçek gelirini aşabilir. Asıl tuzak gecikmede: bir ödemeyi kaçırınca devreye giren ceza ve gecikme faizi 'faizsiz' vaadini bozar. Bu sistemler kredi kartından farklı olarak harcamanı tek yerde toplamaz, ne kadar borçlandığını görmen zorlaşır. Korunmak için tüm taksitleri tek bir takvime yaz, aylık toplamı hesapla ve gelirinin üstündeyse vazgeç. Abone ol, bir sonraki videoda market markası ürünlerin gerçeğini test edeceğiz."
+  },
+  {
+    "baslik": "MARKET MARKASI KÖTÜ MÜ? 🏷️",
+    "kanca": "AYNI FABRİKA",
+    "tema": "tuzak",
+    "aciklama": "Marketlerin kendi markası gerçekten kalitesiz mi, yoksa aynı fabrikadan mı çıkıyor. Nasıl test edersin + teaser.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "test",
+      "market",
+      "tasarruf"
+    ],
+    "sahneler": [
+      {
+        "metin": "Marketin kendi markası ucuz diye kalitesiz sanılır ama çoğu zaman ünlü markayla aynı fabrikadan çıkar.",
+        "gorsel": "two similar products, a brand name and a store brand, side by side on a shelf"
+      },
+      {
+        "metin": "Üreticiler aynı üretim hattında hem pahalı markayı hem ucuz market markasını doldurur; fark çoğu zaman sadece ambalaj ve reklamdır.",
+        "gorsel": "factory production line filling identical products into different labeled packages"
+      },
+      {
+        "metin": "Anlamak için etiketteki 'üretici firma' ve adres bilgisine bak; ikisinde de aynı firma çıkabilir.",
+        "gorsel": "macro shot of manufacturer info printed on the back of a product label"
+      },
+      {
+        "metin": "Emin olmak istiyorsan kendi kör testini yap: markaları gizle, tadına bak, gerçekten fark var mı gör.",
+        "gorsel": "blind taste test setup, two unlabeled cups on a table, hands presenting"
+      },
+      {
+        "metin": "İçerik listesi ve gramaj aynıysa, marka için ödediğin fazlalık çoğu zaman sadece isme gider.",
+        "gorsel": "comparing ingredient lists of two products under a magnifier, close up"
+      },
+      {
+        "metin": "Abone ol, bir sonraki videoda 'indirimli' etiketlerin gerçekten indirim olup olmadığını ifşa edeceğim.",
+        "gorsel": "shopper confidently placing a store brand product into a cart, bright supermarket"
+      }
+    ],
+    "script": "Marketin kendi markası ucuz diye kalitesiz sanılır ama çoğu zaman ünlü markayla aynı fabrikadan çıkar. Üreticiler aynı üretim hattında hem pahalı markayı hem ucuz market markasını doldurur; fark çoğu zaman sadece ambalaj ve reklamdır. Anlamak için etiketteki 'üretici firma' ve adres bilgisine bak; ikisinde de aynı firma çıkabilir. Emin olmak istiyorsan kendi kör testini yap: markaları gizle, tadına bak, gerçekten fark var mı gör. İçerik listesi ve gramaj aynıysa, marka için ödediğin fazlalık çoğu zaman sadece isme gider. Abone ol, bir sonraki videoda 'indirimli' etiketlerin gerçekten indirim olup olmadığını ifşa edeceğim."
   }
 ]
