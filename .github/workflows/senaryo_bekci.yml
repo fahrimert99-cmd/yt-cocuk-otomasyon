@@ -1,0 +1,76 @@
+name: Senaryo Bekcisi (dusuk havuz korumasi)
+# Her gun paylasilmamis (yayinlanmamis) senaryo sayisini kontrol eder. Esigin
+# ALTINA duserse otomatik trend calistirip havuzu doldurur. Boylece haftalik
+# (Pazar+Carsamba) uretim gecikse/atlansa bile stok asla kritik seviyeye inmez.
+# Video YUKLEMEZ; yalnizca gerekince senaryo havuzunu buyutur.
+on:
+  schedule:
+    - cron: "0 5 * * *"   # her gun 08:00 TR (gunluk analiz + yayindan once)
+  workflow_dispatch:
+    inputs:
+      esik:
+        description: "Paylasilmamis senaryo alt esigi (bos = 10)"
+        required: false
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: kisa-video          # senaryolar.json/durum cakismasini serialize et
+  cancel-in-progress: false
+jobs:
+  bekci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Havuz kontrol
+        id: kontrol
+        env:
+          ESIK: ${{ github.event.inputs.esik }}
+        run: |
+          python3 - > kontrol.txt <<'PY'
+          import json, os
+          hav = json.load(open("senaryolar.json", encoding="utf-8"))
+          yap = json.load(open("durum.json", encoding="utf-8")).get("yapilan", [])
+          bos = len(hav) - len(yap)
+          esik = int((os.environ.get("ESIK") or "").strip() or "10")
+          print(f"bos={bos}")
+          print(f"dusuk={'true' if bos < esik else 'false'}")
+          PY
+          cat kontrol.txt >> "$GITHUB_OUTPUT"
+          bos=$(grep '^bos=' kontrol.txt | cut -d= -f2)
+          dusuk=$(grep '^dusuk=' kontrol.txt | cut -d= -f2)
+          echo "[bekci] paylasilmamis=$bos -> $([ "$dusuk" = "true" ] && echo 'URETILECEK' || echo 'yeterli, uretilmeyecek')"
+      - name: Dusukse senaryo uret
+        if: steps.kontrol.outputs.dusuk == 'true'
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
+          SAYI: "8"
+        run: python3 trend.py
+      - name: Yeni senaryolari commit et
+        if: steps.kontrol.outputs.dusuk == 'true'
+        run: |
+          git config user.name "bekci-bot"
+          git config user.email "bekci-bot@users.noreply.github.com"
+          git add senaryolar.json trend_rapor.md || true
+          git commit -m "bekci: dusuk havuz -> otomatik senaryo" || { echo "degisiklik yok"; exit 0; }
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "push tamam (deneme $i)"; exit 0
+            fi
+            echo "push denemesi $i basarisiz"; sleep $((2 ** i))
+          done
+          echo "push atlandi"; exit 0
