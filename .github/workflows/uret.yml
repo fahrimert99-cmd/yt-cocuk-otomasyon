@@ -30,7 +30,7 @@ jobs:
   uret:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: FFmpeg kur
         run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu

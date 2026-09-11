@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12   # asili kalirsa runner'i 12 dk'da kes (10 dk sessiz asilma yasandi)
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Python kur
         uses: actions/setup-python@v6
         with:
