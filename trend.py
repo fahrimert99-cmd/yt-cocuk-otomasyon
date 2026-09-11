@@ -384,9 +384,20 @@ GÖREV:
      marketleri/bankaları/uygulamaları ile yerel örnek). Güncel küresel olayları
      (gramaj davaları, 'double labeling', click-to-cancel) yerelleştir.
    - Havuzda çok işlenmiş kolları (klasik market/banka geneli) TEKRARLAMA.
-   - MARKA/ŞİRKET ADI VERME (yasal risk). Gerçek marka yerine JENERİK kullan:
-     'ünlü bir çikolata markası', 'bir dijital abonelik', 'popüler bir market
-     zinciri'. Başlıkta da metinde de asla belirli bir şirketi hedef gösterme.
+   - HUKUKİ RİSK SIFIR — 4 ALTIN KURAL (marka adı meselesi):
+     1) Marka yerine JENERİK SEKTÖR: 'X markası kandırıyor' DEĞİL -> 'küresel
+        tekstil devleri', 'akıllı telefon üreticileri', 'büyük süpermarket
+        zincirleri', 'fast fashion sektörü' gibi genel kategoriyi hedefle.
+     2) AKADEMİK/LİTERATÜR TERİMLERİ serbest (marka geçse bile telif/karalama
+        olamaz çünkü bilimsel kavram): 'Gruen Etkisi', 'Pepsi Paradoksu',
+        'Phoebus Karteli', 'Nöropazarlama', 'Dunning-Kruger' vb. rahatça kullan.
+     3) Soruyu MARKAYA değil TÜKETİCİ PSİKOLOJİSİNE yönelt: 'şirketler bize ne
+        yapıyor' DEĞİL -> 'beynimiz kıtlık algısına neden yenik düşer', 'koku ve
+        renk kararımızı nasıl etkiler'.
+     4) RESMİ/TARİHSEL/KAMUYA AÇIK raporlara dayan (Phoebus Karteli 1924, Marshall
+        Planı, kamuya açık çevre/işgücü raporları) — bunlar güvenli referans.
+     ÖZET: canlı bir şirketi suçlayan başlık YASAK; jenerik sektör + akademik terim
+     + psikoloji odağı + tarihsel/resmi referans SERBEST.
    - BAŞLIK KALIBI (veriyle kanıtlandı): tercihen 'X NEDEN Y?', 'X NASIL Y?' ya da
      'GERÇEKTEN ... Mİ?' — KISA, TEK konu, merak sorusu. (En iyi retention bu
      kalıpta: 'DUTY FREE GERÇEKTEN UCUZ MU?' %145, 'OYUNCAK NEDEN KASADA?' %65.)
@@ -419,8 +430,11 @@ Bir Türkçe seslendirme metni yaz (~100-120 kelime). KURALLAR:
   bıraksın. İlk cümle ile son cümle birbirine bağlanabilsin (kusursuz loop).
 - Tüketiciyi bu tuzağa karşı NASIL koruyacağını da anlat (pratik uyarı).
 - Uydurma istatistik/sayı verme.
-- MARKA/ŞİRKET ADI VERME (yasal risk): gerçek marka yerine jenerik kullan
-  ('ünlü bir çikolata markası', 'bir dijital abonelik', 'popüler bir zincir').
+- MARKA/ŞİRKET ADI VERME: canlı bir şirketi suçlama; jenerik SEKTÖR kullan
+  ('küresel tekstil devleri', 'büyük süpermarket zincirleri', 'fast fashion
+  sektörü'). AMA akademik/literatür terimleri SERBEST (marka geçse de bilimsel
+  kavram): 'Gruen Etkisi', 'Pepsi Paradoksu', 'Phoebus Karteli', 'Nöropazarlama'.
+  Soruyu markaya değil TÜKETİCİ PSİKOLOJİSİNE yönelt; tarihsel/resmi raporlara dayan.
 - SONDA şu iki şey olsun: (a) kısa bir ABONE çağrısı, (b) bir sonraki videoya
   merak bırakan TEASER cümlesi.
 - Emoji/başlık/madde YOK; düz paragraf.
