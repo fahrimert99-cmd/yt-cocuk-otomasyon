@@ -39,6 +39,10 @@ ARAMALAR = [
     "pahalı ürün gerçekten daha iyi mi", "market marka farkı test",
     # 6) RESALE / DEAL / DEĞER (Amerikan format -> TR: ikinci el, flip, koleksiyon)
     "ikinci el fiyat şişirme", "sıfır ayarında ikinci el tuzağı", "koleksiyon değeri balon",
+    # 7) GREENWASHING / 8) LÜKS-STATÜ / 9) GIDA-SAĞLIK / tarihsel
+    "yeşil badana greenwashing", "doğa dostu etiket yalanı",
+    "lüks marka neden pahalı statü", "light diyet ürün yanılsaması",
+    "organik etiket aldatmaca", "planlı eskitme phoebus karteli",
 ]
 
 # AMERİKAN (İngilizce) ARAMALAR = PRİMER TREND KAYNAĞI. Strateji: ABD'de kanıtlanmış
@@ -58,6 +62,10 @@ ARAMALAR_YABANCI = [
     # 6) RESALE / DEAL / DEĞER (Amerikan viral format: ikinci el/flip/koleksiyon)
     "reseller markup exposed", "thrift store flipping profit", "retail markup how much",
     "collector items scam value", "dropshipping markup exposed", "is it worth the hype",
+    # 7) GREENWASHING / 8) LÜKS-STATÜ / 9) GIDA-SAĞLIK / tarihsel
+    "greenwashing exposed marketing", "why luxury brands so expensive markup",
+    "diet food label lie health", "organic label marketing trick",
+    "planned obsolescence phoebus cartel", "status symbol consumer psychology",
 ]
 
 # Alakasız (oyun/vlog vb.) sonuçları elemek için: başlıkta bunlardan biri geçmeli.
@@ -76,7 +84,12 @@ ALAKA = ["tuzak", "tüketici", "kandır", "aldat", "dolandır", "gizli ücret", 
          "generic", "brand vs", "worth it", "before after", "downsizing", "packaging",
          # resale/deal/değer kolu:
          "reseller", "resale", "flip", "flipping", "thrift", "markup", "collector",
-         "ikinci el", "koleksiyon", "şişir", "dropshipping"]
+         "ikinci el", "koleksiyon", "şişir", "dropshipping",
+         # greenwashing / lüks-statü / gıda-sağlık / tarihsel kollar:
+         "greenwash", "yeşil badana", "doğa dostu", "sürdürülebil", "geri dönüş",
+         "lüks", "statü", "prestij", "diyet", "light", "organik", "katkısız",
+         "planlı eskit", "phoebus", "luxury", "status", "organic", "diet",
+         "obsolescence", "sustainab"]
 
 
 def _norm(s):
@@ -335,19 +348,34 @@ GÖREV:
 
    KANAL DÖNGÜYE GİRDİ: eskiden hep 'market/banka genel tuzağı' ürettik. BUNU KIR.
    Fikirleri ŞU 6 İÇERİK KOLUNA DAĞIT (mümkünse her koldan en az bir tane, aynı
-   koldan 2'den fazla verme). ÖNCELİK: havuzda EKSİK + küresel VİRAL olan
-   B) DARK PATTERN ve F) RESALE/DEĞER kollarından bu koşuda EN AZ 2'şer fikir ver.
-     A) SHRINKFLATION / gramaj küçültme (aynı fiyat, küçülen paket — 2026'nın en
-        viral konusu; TR'de az işlendi. Ör: çikolata 100g→90g, cips havası).
+   koldan 2'den fazla verme). Kollardan FARKLI olanları seç (çeşitlilik şart):
+     A) SHRINKFLATION / gramaj küçültme (aynı fiyat, küçülen paket. Ör: çikolata
+        100g→90g, cips havası).
      B) DARK PATTERN / karanlık arayüz (sahte geri sayım, 'son 2 ürün' yalanı,
-        iptal edilemeyen abonelik, varsayılan işaretli ek ürün).
-     C) RETAIL PSİKOLOJİSİ (raf düzeni, çapa fiyat, decoy/tuzak seçenek).
-     D) FİNANSAL GOTCHA (alışveriş kredisi/BNPL, gizli faiz, puan devalüasyonu).
+        iptal edilemeyen abonelik, varsayılan işaretli ek ürün, bildirim manipülasyonu).
+     C) NÖROPAZARLAMA & DUYU HİLELERİ (mağaza kokusu, arka plan müziği/tempo, renk
+        kodları, raf/göz hizası, menü tasarımı, çapa fiyat, decoy/tuzak seçenek).
+     D) FİNANSAL GOTCHA (alışveriş kredisi/BNPL, gizli faiz, puan devalüasyonu, komisyon).
      E) TEST / İFŞA ('pahalı olan gerçekten daha mı iyi', sahte yorum, markup).
-     F) RESALE / DEAL / DEĞER (Amerikan viral format -> TR: ikinci el fiyat şişirme,
-        sıfır ayarında satma tuzağı, koleksiyon/hype ürün değer balonu, dropshipping
-        markup'ı, 'bu gerçekten değer mi'). Nick Giovanni / resale-kralı tarzı ama
-        kanalın TUZAK diliyle: izleyiciyi ALDANMAKTAN koru.
+     F) RESALE / DEAL / DEĞER (ikinci el fiyat şişirme, sıfır ayarında satma tuzağı,
+        koleksiyon/hype ürün değer balonu, dropshipping markup'ı — izleyiciyi
+        ALDANMAKTAN koru).
+     G) GREENWASHING / YEŞİL BADANA ('doğa dostu/geri dönüşümlü' etiketinin arkasındaki
+        gerçek; sürdürülebilirlik yalanları, imaj tazeleme).
+     H) LÜKS ALGISI & STATÜ PSİKOLOJİSİ (maliyeti düşük ürün neden çok pahalıya satılır;
+        aidiyet/kabul görme arzusu, marka primi — yine JENERİK, marka adı yok).
+     I) GIDA & SAĞLIK MANİPÜLASYONU ('diyet/light/organik' yanılsaması, ucuz yağ
+        karışımı hilesi, 'katkısız' aldatmacası, ambalajdaki sağlık iddiaları).
+
+   FORMAT ÇEŞİTLİLİĞİ (ara sıra bunlardan biriyle sun — hep düz anlatım olmasın):
+     • KARŞI STRATEJİ / TÜKETİCİ HACK'İ: sadece tuzağı değil, ondan korunmanın
+       zihinsel savunma yöntemini merkeze al.
+     • TARİHSEL KIRILMA NOKTASI: tüketim kültürünü değiştiren gerçek olaylar
+       (ör. ampul ömrünü kısan Phoebus Karteli, margarin propagandası). Tarihsel/
+       kamuya mal olmuş olaylar serbest — CANLI/güncel şirket adı YOK.
+     • "İKİ DEV" KARŞILAŞTIRMASI: rakip iki büyük oyuncunun psikolojik taktikleri —
+       ama JENERİK ver ('iki büyük kola devi', 'iki fast-fashion markası'); ASLA
+       gerçek marka adı yazma (yasal risk).
 
    KURALLAR:
    - SOMUT ve SPESİFİK ol: 'marketler kandırır' DEĞİL -> 'X paket 3 ayda 500g'dan
