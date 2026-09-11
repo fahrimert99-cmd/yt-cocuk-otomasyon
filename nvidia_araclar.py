@@ -422,26 +422,58 @@ def _gorsel_tek(model, prompt, cikti, w, h, timeout):
     return None
 
 
+def _gorsel_pollinations(prompt, cikti, genislik=768, yukseklik=1344, timeout=90):
+    """ÜCRETSİZ YEDEK görsel üretici (Pollinations). Anahtar GEREKMEZ. NVIDIA flux
+    500/404 verince devreye girer (flux.1-dev NVIDIA'da sık çöküyor). Dönen görsel
+    yine gorsel_uret_denetimli'deki VLM denetiminden geçer -> kalite korunur.
+    GORSEL_FALLBACK=0 ile kapatılır. Yol|None."""
+    if (os.environ.get("GORSEL_FALLBACK", "1") or "1").strip() == "0":
+        return None
+    try:
+        import urllib.parse
+        q = urllib.parse.quote(prompt[:1200], safe="")
+        url = (f"https://image.pollinations.ai/prompt/{q}"
+               f"?width={genislik}&height={yukseklik}&nologo=true&model=flux")
+        req = urllib.request.Request(url, headers={"User-Agent": "yt-otomasyon/1.0"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            ham = r.read()
+        if ham and len(ham) > 1500:
+            os.makedirs(os.path.dirname(cikti) or ".", exist_ok=True)
+            with open(cikti, "wb") as f:
+                f.write(ham)
+            if os.path.getsize(cikti) > 1500:
+                _log(f"pollinations(yedek) BAŞARILI: {len(ham)} bayt")
+                print("      (görsel ücretsiz yedekten üretildi: pollinations)")
+                return cikti
+    except Exception as e:
+        _log(f"pollinations HATA {type(e).__name__}: {str(e)[:120]}")
+        print(f"      (pollinations yedek atlandı: {str(e)[:100]})")
+    return None
+
+
 def gorsel_uret(prompt, cikti, genislik=768, yukseklik=1344, timeout=None):
     # NOT: FLUX yalnızca şu boyutları kabul eder: 768,832,896,960,1024,1088,1152,
     # 1216,1280,1344. 768x1344 = dikey 9:16'ya en yakın izinli oran.
-    """NVIDIA image-gen ile görsel üretir. Önce GORSEL_MODEL (flux), başarısızsa
-    GORSEL_YEDEK (diffusiongemma) denenir. Yol|None döner (hepsi başarısızsa None
-    -> çağıran mevcut kapağa/stok'a düşer)."""
-    key = A._nvidia_key()
-    if not key or not prompt:
+    """Görsel üretir. Önce NVIDIA GORSEL_MODEL (flux) + GORSEL_YEDEK; hepsi
+    başarısızsa ÜCRETSİZ Pollinations yedeği (flux.1-dev NVIDIA'da sık 500 veriyor).
+    Yol|None döner (hepsi başarısızsa None -> çağıran mevcut kapağa/stok'a düşer)."""
+    if not prompt:
         return None
     if timeout is None:
         try:
             timeout = int(os.environ.get("NVIDIA_GORSEL_TIMEOUT", "300") or "300")
         except Exception:
             timeout = 300
-    modeller = [GORSEL_MODEL] + ([GORSEL_YEDEK] if (GORSEL_YEDEK and GORSEL_YEDEK != GORSEL_MODEL) else [])
-    for model in modeller:
-        yol = _gorsel_tek(model, prompt, cikti, genislik, yukseklik, timeout)
-        if yol:
-            return yol
-    return None
+    key = A._nvidia_key()
+    if key:
+        modeller = [GORSEL_MODEL] + ([GORSEL_YEDEK] if (GORSEL_YEDEK and GORSEL_YEDEK != GORSEL_MODEL) else [])
+        for model in modeller:
+            yol = _gorsel_tek(model, prompt, cikti, genislik, yukseklik, timeout)
+            if yol:
+                return yol
+    # NVIDIA yok/başarısız -> ücretsiz yedek (anahtarsız)
+    return _gorsel_pollinations(prompt, cikti, genislik, yukseklik,
+                                timeout=min(120, timeout))
 
 
 def kapak_arkaplani(baslik, kanca="", cikti="output/ai_kapak_bg.jpg"):
