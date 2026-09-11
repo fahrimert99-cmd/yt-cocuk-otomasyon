@@ -37,12 +37,13 @@ ARAMALAR = [
     "kredi kartı gizli ücret", "alışveriş kredisi tuzağı", "puan iade tuzağı",
     # 5) TEST / İFŞA
     "pahalı ürün gerçekten daha iyi mi", "market marka farkı test",
+    # 6) RESALE / DEAL / DEĞER (Amerikan format -> TR: ikinci el, flip, koleksiyon)
+    "ikinci el fiyat şişirme", "sıfır ayarında ikinci el tuzağı", "koleksiyon değeri balon",
 ]
 
-# YABANCI (İngilizce) NİŞ ARAMALAR: uluslararası tüketici-tuzağı/dark-pattern
-# kanallarından, TR havuzunda AZ İŞLENMİŞ niş açılar bulmak için (shrinkflation,
-# drip pricing, dark pattern, loyalty/points oyunları, confusion pricing vb.).
-# YABANCI=0 env ile kapatılabilir (arama kotası: her sorgu 100 birim).
+# AMERİKAN (İngilizce) ARAMALAR = PRİMER TREND KAYNAĞI. Strateji: ABD'de kanıtlanmış
+# tüketici/deal/resale formatlarını bul -> Türk tüketicisine uyarla (fikir arbitrajı;
+# risk önceden test edilmiş, TR'de arz az). YABANCI=0 ile kapatılır (her sorgu 100 birim).
 ARAMALAR_YABANCI = [
     # 1) SHRINKFLATION (küresel olarak en viral; 2026 yasal davalar gündemde)
     "shrinkflation examples 2026", "shrinkflation before after", "double labeling packaging",
@@ -54,6 +55,9 @@ ARAMALAR_YABANCI = [
     "buy now pay later trap", "hidden bank fees exposed", "loyalty points devaluation",
     # 5) TEST / İFŞA
     "name brand vs generic test", "is expensive product worth it",
+    # 6) RESALE / DEAL / DEĞER (Amerikan viral format: ikinci el/flip/koleksiyon)
+    "reseller markup exposed", "thrift store flipping profit", "retail markup how much",
+    "collector items scam value", "dropshipping markup exposed", "is it worth the hype",
 ]
 
 # Alakasız (oyun/vlog vb.) sonuçları elemek için: başlıkta bunlardan biri geçmeli.
@@ -69,7 +73,10 @@ ALAKA = ["tuzak", "tüketici", "kandır", "aldat", "dolandır", "gizli ücret", 
          "trap", "scam", "hidden fee", "hidden cost", "dark pattern", "shrinkflation",
          "drip pricing", "trick", "rip off", "rip-off", "consumer", "subscription",
          "fee", "pricing", "psychology", "sneaky", "loyalty", "gotcha", "fine print",
-         "generic", "brand vs", "worth it", "before after", "downsizing", "packaging"]
+         "generic", "brand vs", "worth it", "before after", "downsizing", "packaging",
+         # resale/deal/değer kolu:
+         "reseller", "resale", "flip", "flipping", "thrift", "markup", "collector",
+         "ikinci el", "koleksiyon", "şişir", "dropshipping"]
 
 
 def _norm(s):
@@ -285,11 +292,11 @@ def _performans_ipuclari():
 def _fikir_uret(populer, mevcut_basliklar, sayi):
     _yerli = [v for v in populer if not v.get("yabanci")]
     _yabanci = [v for v in populer if v.get("yabanci")]
+    # PRİMER KAYNAK = AMERİKAN trendler (daha geniş liste). TR yerelleştirme referansı.
+    yabanci_ozet = "\n".join(f"- {v['izlenme']:>10,} | {v['baslik'][:80]} ({v.get('kanal','')[:24]})"
+                             for v in _yabanci[:20]) or "(bu koşuda ABD sonucu gelmedi)"
     ozet = "\n".join(f"- {v['izlenme']:>9,} izlenme | {v['baslik'][:80]}"
-                     for v in _yerli[:15])
-    # YABANCI NİŞ: uluslararası kanallardan, TR'de az işlenmiş açılar.
-    yabanci_ozet = "\n".join(f"- {v['izlenme']:>9,} | {v['baslik'][:80]} ({v.get('kanal','')[:24]})"
-                             for v in _yabanci[:15])
+                     for v in _yerli[:10])
     mevcut = "\n".join(f"- {b}" for b in mevcut_basliklar)
     # GERİ BESLEME: kendi kanalımızın gerçek performansından öğren.
     _kazanan, _zayif = _performans_ipuclari()
@@ -305,25 +312,29 @@ def _fikir_uret(populer, mevcut_basliklar, sayi):
 Kanal TEK KONU: tüketici tuzakları (market, banka/kart, restoran, dijital/uygulama,
 hizmet/abonelik, psikolojik satış oyunları). Amaç: izleyiciyi uyarmak + merak.
 
-AŞAĞIDA YouTube'da SON DÖNEMDE EN ÇOK İZLENEN benzer Türkçe videolar (izlenme + başlık):
-{ozet}
-
-YABANCI (uluslararası) KANALLARDAN POPÜLER TÜKETİCİ-TUZAĞI videoları — Türkiye'de
-HENÜZ AZ İŞLENMİŞ NİŞ konular için ilham (İngilizce başlık + kanal):
+*** PRİMER TREND KAYNAĞI — AMERİKAN/ULUSLARARASI videolar ***
+Strateji: ABD'de KANITLANMIŞ (yüksek izlenmeli) tüketici/deal/resale formatlarını
+al, TÜRK tüketicisine UYARLA (fikir arbitrajı — risk test edilmiş, TR'de arz az).
+Aşağıdakiler ABD'de en çok izlenen ilgili videolar (izlenme | başlık | kanal):
 {yabanci_ozet}
+
+İkincil — Türkiye'de bu konularda popüler videolar (YERELLEŞTİRME referansı; neyin
+zaten TR'de yapıldığını gör, kopyalama, ABD trendini TR'ye taşırken buradan dil/örnek al):
+{ozet}
 
 BİZİM HAVUZDA ZATEN OLAN başlıklar (BUNLARI TEKRARLAMA, farklı açı bul):
 {mevcut}
 {_perf}
 
 GÖREV:
-1) Yukarıdaki popüler videolardan çıkan TREND'i ve neden tuttuklarını (viral HOOK
-   kalıpları) kısaca analiz et.
+1) ABD listesindeki TREND'i ve neden tuttuklarını (viral HOOK kalıpları) kısaca
+   analiz et. Sonra bu trendlerin Türkiye'ye NASIL uyarlanacağını düşün.
 2) Kanalımız için {sayi} adet YENİ, ÖZGÜN video fikri öner (havuzda olmayan). Her
-   fikir tüketici tuzağı temalı, merak uyandıran olsun.
+   fikir bir ABD trendinden ESİNLENİP Türk hayatına UYARLANMIŞ olsun (doğrudan çeviri
+   DEĞİL — Türk marketleri/bankaları/uygulamaları/ikinci el pazarları ile yerel örnek).
 
    KANAL DÖNGÜYE GİRDİ: eskiden hep 'market/banka genel tuzağı' ürettik. BUNU KIR.
-   Fikirleri ŞU 5 İÇERİK KOLUNA DAĞIT (mümkünse her koldan en az bir tane, aynı
+   Fikirleri ŞU 6 İÇERİK KOLUNA DAĞIT (mümkünse her koldan en az bir tane, aynı
    koldan 2'den fazla verme):
      A) SHRINKFLATION / gramaj küçültme (aynı fiyat, küçülen paket — 2026'nın en
         viral konusu; TR'de az işlendi. Ör: çikolata 100g→90g, cips havası).
@@ -332,6 +343,10 @@ GÖREV:
      C) RETAIL PSİKOLOJİSİ (raf düzeni, çapa fiyat, decoy/tuzak seçenek).
      D) FİNANSAL GOTCHA (alışveriş kredisi/BNPL, gizli faiz, puan devalüasyonu).
      E) TEST / İFŞA ('pahalı olan gerçekten daha mı iyi', sahte yorum, markup).
+     F) RESALE / DEAL / DEĞER (Amerikan viral format -> TR: ikinci el fiyat şişirme,
+        sıfır ayarında satma tuzağı, koleksiyon/hype ürün değer balonu, dropshipping
+        markup'ı, 'bu gerçekten değer mi'). Nick Giovanni / resale-kralı tarzı ama
+        kanalın TUZAK diliyle: izleyiciyi ALDANMAKTAN koru.
 
    KURALLAR:
    - SOMUT ve SPESİFİK ol: 'marketler kandırır' DEĞİL -> 'X paket 3 ayda 500g'dan
