@@ -38,7 +38,7 @@ jobs:
         run: python3 ingilizce_uret.py
       - name: Ingilizce videoyu artifact yap
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: ingilizce
           path: output/ingilizce.mp4

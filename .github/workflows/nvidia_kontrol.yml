@@ -21,7 +21,7 @@ jobs:
         run: python3 nvidia_kontrol.py
       - name: Tam model listesi artifact
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: nvidia-modeller
           path: |
