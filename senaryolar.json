@@ -4908,83 +4908,43 @@
     "script": "Marketin kendi markası ucuz diye kalitesiz sanılır ama çoğu zaman ünlü markayla aynı fabrikadan çıkar. Üreticiler aynı üretim hattında hem pahalı markayı hem ucuz market markasını doldurur; fark çoğu zaman sadece ambalaj ve reklamdır. Anlamak için etiketteki 'üretici firma' ve adres bilgisine bak; ikisinde de aynı firma çıkabilir. Emin olmak istiyorsan kendi kör testini yap: markaları gizle, tadına bak, gerçekten fark var mı gör. İçerik listesi ve gramaj aynıysa, marka için ödediğin fazlalık çoğu zaman sadece isme gider. Abone ol, bir sonraki videoda 'indirimli' etiketlerin gerçekten indirim olup olmadığını ifşa edeceğim."
   },
   {
-    "baslik": "ÜLKER MILKA ÇİKOLATASI 100g → 90g, FİYAT AYNI! 🍫",
-    "aciklama": "Bu videosunda Ülker Milka çikolatasının net ağırlığındaki düşürülmeyi ortaya çıkarıyoruz. Tüketicilere bu tür tuzaklara karşı nasıl korunduğuyla ilgili pratik ipuçları veriyoruz.",
+    "baslik": "PAHALI PAKET OTOMATİK SEÇİLİ! 🔒",
+    "kanca": "VARSAYILAN ÜCRET",
+    "tema": "tuzak",
+    "aciklama": "Dijital aboneliklerde en pahalı paketin varsayılan seçili gelmesi (dark pattern) nasıl gizli ücret yaratır ve nasıl korunursun. Koruma + teaser.",
     "etiketler": [
       "tuzak",
       "tüketici",
-      "tüketici hakları",
-      "tasarruf",
-      "para"
+      "dark pattern",
+      "abonelik",
+      "dijital"
     ],
-    "kanca": "10 gram eksik?",
-    "script": "Ülker Milka çikolatasının paketinde 100 gram yazıyor ama içeriği sadece 90 gram, fiyat aynı kalıyor. Bu durum tüketicileri yanlışlıkla daha fazla ödeme yapmaya zorlar. Etiket üzerindeki net ağırlığı mutlaka kontrol edin ve gram başına fiyatı hesaplayarak gerçek değeri öğrenin. Market raflarında yer alan benzer ürünlerin etiketlerini yan yana koyarak gram başına fiyat farkını görüyorsunuz. Bir mutfak ağırlığı ile ürünü terazi üzerinden ölçerek eksikliği doğrulayabilirsiniz. Terazi yoksa marketlerin müşteri hizmetlerinde bulunan ağırlık ölçüm aletlerini kullanabilirsiniz. Şüphelenilen ürünler için satıcıya veya tüketici hakları kurumuna bildirimde bulunmak önemlidir. Şikayetinizi yazılı olarak tutmak ve ürünün barkodunu fotoğraf çekmek süreci hızlandırır. Daha fazla tuzak açığa çıkarmak için kanalıma abone olayı unutmayın. Bir sonraki videoda başka bir popüler markanın ağırlık tuzağını ortaya çıkarıyoruz.",
     "sahneler": [
       {
-        "metin": "Ülker Milka çikolatasının paketinde 100 gram yazıyor ama içeriği sadece 90 gram, fiyat aynı kalıyor. Bu durum tüketicileri yanlışlıkla daha fazla ödeme yapmaya zorlar.",
-        "gorsel": "Close-up of the Ulker Milka chocolate bar packaging showing the 100g label, then a quick cut to a scale displaying only 90g."
+        "metin": "Bir dijital abonelikte üye olurken en pahalı paket çoğu zaman varsayılan olarak seçili gelir ve faturana sessiz bir artış ekler.",
+        "gorsel": "smartphone subscription signup screen with the most expensive plan pre-selected, close up"
       },
       {
-        "metin": "Etiket üzerindeki net ağırlığı mutlaka kontrol edin ve gram başına fiyatı hesaplayarak gerçek değeri öğrenin.",
-        "gorsel": "A hand rotating the product to highlight the nutrition label, with a magnifying glass focusing on the net weight."
+        "metin": "Kullanmadığın yüksek çözünürlük ya da ekstra ekran özelliği için farkında olmadan her ay ödersin.",
+        "gorsel": "monthly bill notification on a phone showing an unexpected higher charge, tense lighting"
       },
       {
-        "metin": "Market raflarında yer alan benzer ürünlerin etiketlerini yan yana koyarak gram başına fiyat farkını görüyorsunuz.",
-        "gorsel": "Side-by-side view of several chocolate bars on a supermarket shelf, their labels aligned for comparison."
+        "metin": "Korunmak için üyelik ekranında seçili paketi kontrol et, ihtiyacın olan temel pakete düşür.",
+        "gorsel": "finger changing a plan selection from premium to basic on a phone screen"
       },
       {
-        "metin": "Bir mutfak ağırlığı ile ürünü terazi üzerinden ölçerek eksikliği doğrulayabilirsiniz. Terazi yoksa marketlerin müşteri hizmetlerinde bulunan ağırlık ölçüm aletlerini kullanabilirsiniz.",
-        "gorsel": "A kitchen scale weighing the chocolate bar, numbers fluctuating; then a store customer service scale being used by a shopper."
+        "metin": "Ödeme adımında 'önerilen' ya da önceden işaretli seçeneklere dikkat et; bunlar senin için değil, satıcı için seçilmiştir.",
+        "gorsel": "checkout page with a pre-checked upgrade option highlighted, macro shot"
       },
       {
-        "metin": "Şüphelenilen ürünler için satıcıya veya tüketici hakları kurumuna bildirimde bulunmak önemlidir. Şikayetinizi yazılı olarak tutmak ve ürünün barkodunu fotoğraf çekmek süreci hızlandırır.",
-        "gorsel": "Consumer filling out a complaint form on a smartphone, close-up of a barcode being photographed."
+        "metin": "Her ay fatura detayını gözden geçir, ekran görüntüsü al ve istemediğin ücreti hemen iptal et.",
+        "gorsel": "person reviewing billing details and taking a screenshot, organized, warm light"
       },
       {
-        "metin": "Daha fazla tuzak açığa çıkarmak için kanalıma abone olayı unutmayın. Bir sonraki videoda başka bir popüler markanın ağırlık tuzağını ortaya çıkarıyoruz.",
-        "gorsel": "Creator pointing to the subscribe button, then a teaser shot of another product being examined on a scale."
+        "metin": "Abone ol, bir sonraki videoda ücretsiz deneme bitince sessizce başlayan ücretlendirmeyi anlatacağım.",
+        "gorsel": "hand tapping cancel on an unwanted add-on, calm confident expression"
       }
     ],
-    "tema": "tuzak"
-  },
-  {
-    "baslik": "NETFLIX'te 'PREMIUM EKRAN' SEÇİMİ OTOMATİK! 🔒",
-    "aciklama": "Bu video, Netflix'te varsayılan olarak aktif olan 'Premium Ekran' seçiminin nasıl gizli bir ücret artışına yol açtığını açıklar. İzleyiciler, bu ayarı nasıl kapatacak ve fatura üzerinden beklenmeyen yükleri önleyeceklerini öğrenecek.",
-    "etiketler": [
-      "tuzak",
-      "tüketici",
-      "tüketici hakları",
-      "tasarruf",
-      "para"
-    ],
-    "kanca": "Varsayılan ücret mi?",
-    "script": "Varsayılan olarak 'Premium Ekran' seçimi otomatik olarak aktif hale geliyor ve fatura üzerinden gizli bir artış yapıyor. Bu ayar, hesabınızda daha yüksek çözünürlük izleme hakkı tanıyorsa bile, kullanmadığınız ekstra özellik için ödeme yapmanızı zorunlu kılıyor. Korunmak için hesabınıza giriş yapıp profil ayarlarından oynatma kalitesini standart olan 'Temel Ekran' olarak değiştirin ve fatura detaylarını her ay kontrol ederek istenmeyen ücretleri hemen iptal edin. Ayrıca, abonelik bilgilerinizi paylaşmayın ve iki faktörlü doğrulama etkinleştirerek hesabınızın güvenliğini artırın. Abone olmayı unutmayanlar için daha fazla tuzakı keşfetmek üzere bir sonraki videomuzda, ücretsiz deneme süresinin sonrasında nasıl otomatik olarak ücretlendirildiğine dair bir açıklama bulacaksınız. Daha fazlası için hemen abone ol, bildirimleri aç ve kaçırma!",
-    "sahneler": [
-      {
-        "metin": "Varsayılan olarak 'Premium Ekran' seçimi otomatik olarak aktif hale geliyor ve fatura üzerinden gizli bir artış yapıyor.",
-        "gorsel": "A close-up of a Netflix account screen showing the 'Premium Screen' toggle switched on automatically, with a subtle red alert icon appearing beside the billing section."
-      },
-      {
-        "metin": "Bu ayar, hesabınızda daha yüksek çözünürlük izleme hakkı tanıyorsa bile, kullanmadığınız ekstra özellik için ödeme yapmanızı zorunlu kılıyor.",
-        "gorsel": "The user navigates to profile settings, clicks on playback settings, and changes the screen option from Premium to Basic, while a checkmark appears confirming the change."
-      },
-      {
-        "metin": "Korunmak için hesabınıza giriş yapıp profil ayarından oynatma kalitesini standart olan 'Temel Ekran' olarak değiştirin ve fatura detaylarını her ay kontrol ederek istenmeyen ücretleri hemen iptal edin.",
-        "gorsel": "A shield icon overlay appears on the account page as two-factor authentication is enabled, and a hand hides sharing details, emphasizing privacy protection."
-      },
-      {
-        "metin": "Ayrıca, abonelik bilgilerinizi paylaşmayın ve iki faktörlü doğrulama etkinleştirerek hesabınızın güvenliğini artırın.",
-        "gorsel": "The screen splits: left side shows a user watching a video, right side shows a teaser thumbnail for the next video about free trial traps, with a play button pulsing."
-      },
-      {
-        "metin": "Abone olmayı unutmayanlar için daha fazla tuzakı keşfetmek üzere bir sonraki videomuzda, ücretsiz deneme süresinin sonrasında nasıl otomatik olarak ücretlendirildiğine dair bir açıklama bulacaksınız.",
-        "gorsel": "A timer counts down the end of a free trial, then a billing notification pops up, highlighting an automatic charge, while a magnifying glass focuses on the fine print."
-      },
-      {
-        "metin": "Daha fazlası için hemen abone ol, bildirimleri aç ve kaçırma!",
-        "gorsel": "The creator points to a subscribe button, bell icon lights up, and a 'Don't miss out' banner flashes, encouraging viewers to subscribe and stay updated."
-      }
-    ],
-    "tema": "tuzak"
+    "script": "Bir dijital abonelikte üye olurken en pahalı paket çoğu zaman varsayılan olarak seçili gelir ve faturana sessiz bir artış ekler. Kullanmadığın yüksek çözünürlük ya da ekstra ekran özelliği için farkında olmadan her ay ödersin. Korunmak için üyelik ekranında seçili paketi kontrol et, ihtiyacın olan temel pakete düşür. Ödeme adımında 'önerilen' ya da önceden işaretli seçeneklere dikkat et; bunlar senin için değil, satıcı için seçilmiştir. Her ay fatura detayını gözden geçir, ekran görüntüsü al ve istemediğin ücreti hemen iptal et. Abone ol, bir sonraki videoda ücretsiz deneme bitince sessizce başlayan ücretlendirmeyi anlatacağım."
   }
 ]

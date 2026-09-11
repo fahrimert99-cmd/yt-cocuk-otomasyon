@@ -355,6 +355,9 @@ GÖREV:
      marketleri/bankaları/uygulamaları ile yerel örnek). Güncel küresel olayları
      (gramaj davaları, 'double labeling', click-to-cancel) yerelleştir.
    - Havuzda çok işlenmiş kolları (klasik market/banka geneli) TEKRARLAMA.
+   - MARKA/ŞİRKET ADI VERME (yasal risk). Gerçek marka yerine JENERİK kullan:
+     'ünlü bir çikolata markası', 'bir dijital abonelik', 'popüler bir market
+     zinciri'. Başlıkta da metinde de asla belirli bir şirketi hedef gösterme.
 
 SADECE geçerli JSON döndür, başka hiçbir şey yazma:
 {{"trend":"1-2 cümle trend özeti","hook_kaliplari":["kalıp1","kalıp2","kalıp3"],
@@ -371,6 +374,8 @@ Bir Türkçe seslendirme metni yaz (~100-120 kelime). KURALLAR:
 - İLK CÜMLE vurucu olsun; kurulumla başlama, doğrudan tuzağı/şaşırtıcı gerçeği ver.
 - Tüketiciyi bu tuzağa karşı NASIL koruyacağını da anlat (pratik uyarı).
 - Uydurma istatistik/sayı verme.
+- MARKA/ŞİRKET ADI VERME (yasal risk): gerçek marka yerine jenerik kullan
+  ('ünlü bir çikolata markası', 'bir dijital abonelik', 'popüler bir zincir').
 - SONDA şu iki şey olsun: (a) kısa bir ABONE çağrısı, (b) bir sonraki videoya
   merak bırakan TEASER cümlesi.
 - Emoji/başlık/madde YOK; düz paragraf.
