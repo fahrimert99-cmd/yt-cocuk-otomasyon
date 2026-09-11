@@ -72,6 +72,7 @@ Aşağıda bir tüketici-tuzağı senaryosu var. Görevin onu DAHA VURUCU hale g
 - Tuzak net anlatılsın; izleyiciye pratik bir KORUNMA ipucu versin.
 - Sonda kısa bir ABONE çağrısı + bir sonraki videoya merak bırakan TEASER olsun.
 - Uydurma istatistik YOK. Emoji/başlık/madde YOK; düz paragraf. ~100-120 kelime.
+- MARKA/ŞİRKET ADI VERME (yasal risk): varsa jenerikle değiştir ('ünlü bir marka').
 - 6 sahne; her sahne için İNGİLİZCE sinematik görsel tarifi.
 - TÜRKÇE İMLÂ KUSURSUZ: ç,ğ,ı,İ,ö,ş,ü harflerini eksiksiz kullan; ASCII'ye sadeleştirme.
 Anlam/konu AYNI kalsın; sadece güçlendir. Zaten güçlüyse küçük rötuşla iyileştir.
@@ -207,7 +208,7 @@ MEVCUT KANCA: {kanca}
 METİN: {script}
 
 Kurallar: Türkçe, KUSURSUZ imlâ (ç,ğ,ı,İ,ö,ş,ü; ASCII'ye sadeleştirme). Uydurma sayı/istatistik
-YOK. Küfür/abartılı iddia YOK. Konu AYNI kalsın.
+YOK. Küfür/abartılı iddia YOK. MARKA/ŞİRKET ADI VERME (jenerik kullan). Konu AYNI kalsın.
 - "kanca": kapakta/açılışta kullanılacak EN FAZLA 3 KELİMELİK (2-3 kelime) MERAK/ŞOK ifadesi. 3 kelimeyi ASLA geçme.
 - "ilk_cumle": seslendirmenin İLK cümlesi; kurulum DEĞİL, doğrudan şok/twist; en fazla 18 kelime.
 SADECE JSON döndür, başka hiçbir şey yazma: {{"kanca":"...","ilk_cumle":"..."}}"""
