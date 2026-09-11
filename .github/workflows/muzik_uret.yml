@@ -26,6 +26,7 @@ jobs:
       - name: Muzik seti uret (ElevenLabs)
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MUZIK_SN: ${{ github.event.inputs.muzik_sn }}
         run: python3 muzik_uret.py
       - name: Ciplak parcalari artifact yap (dinlemek icin)

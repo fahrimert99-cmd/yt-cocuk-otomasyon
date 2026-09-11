@@ -690,6 +690,64 @@ def _eleven_seslendir(text, mp3_path, voice_id=None):
     return boundaries
 
 
+def _openai_key():
+    return (os.environ.get("OPENAI_API_KEY", "") or "").strip()
+
+
+def _openai_acik():
+    """config.openai_tts (varsayılan True). Anahtar varsa OpenAI TTS zincirde önce."""
+    try:
+        with open("config.json", encoding="utf-8") as f:
+            return bool(json.load(f).get("openai_tts", True))
+    except Exception:
+        return True
+
+
+def _openai_seslendir(text, mp3_path, voice_id=None):
+    """OpenAI TTS (gpt-4o-mini-tts) ile seslendirme. API kelime zaman damgası
+    VERMEZ -> süreyi ölçüp kelimeleri kelime-uzunluğuna göre ORANTISAL dağıtarak
+    altyazı zamanlaması üretiriz (Google fallback ile aynı yaklaşım; kelime-kelime
+    kısa altyazıda kabul edilebilir). Ses ve 'talimat' (vibe) env/config'ten.
+    Hata -> istisna (çağıran sonraki sağlayıcıya geçer)."""
+    import urllib.request, urllib.error
+    key = _openai_key()
+    if not key:
+        raise RuntimeError("OpenAI anahtarı yok")
+    voice = ((voice_id or "").strip()
+             or os.environ.get("OPENAI_TTS_VOICE", "").strip()
+             or "onyx")
+    talimat = (os.environ.get("OPENAI_TTS_TALIMAT", "").strip()
+               or "Türkçe. Enerjik, net ve merak uyandıran bir tüketici-farkındalık "
+                  "anlatıcısı gibi konuş; akıcı, güven veren, hafif uyarı tonunda; abartma.")
+    body = {"model": os.environ.get("OPENAI_TTS_MODEL", "").strip() or "gpt-4o-mini-tts",
+            "voice": voice, "input": text, "instructions": talimat,
+            "response_format": "mp3"}
+    req = urllib.request.Request(
+        "https://api.openai.com/v1/audio/speech",
+        data=json.dumps(body).encode(),
+        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=180) as r:
+            ham = r.read()
+    except urllib.error.HTTPError as he:
+        raise RuntimeError(f"{he.code}: {he.read().decode()[:200]}")
+    if not ham or len(ham) < 1500:
+        raise RuntimeError("OpenAI TTS boş/kısa ses döndü")
+    with open(mp3_path, "wb") as f:
+        f.write(ham)
+    # Süre-orantılı kelime zamanlaması (kelime uzunluğuna göre ağırlıklı)
+    sure = sure_al(mp3_path)
+    words = text.split()
+    agir = [len(w) + 1 for w in words] or [1]
+    tot = float(sum(agir)) or 1.0
+    boundaries, t = [], 0.0
+    for w, a in zip(words, agir):
+        pay = sure * (a / tot)
+        boundaries.append({"start": t, "dur": max(0.05, pay), "text": w})
+        t += pay
+    return boundaries
+
+
 def _indir(link, path):
     """Verilen linki path'e indirir; dosya makul boyuttaysa path döner, yoksa None."""
     import urllib.request
@@ -1340,15 +1398,21 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     # Seslendirme saglayici sirasi. eleven_once=True (uzun videolar) ise
     # ElevenLabs (daha gercekci insan sesi) once denenir; degilse mevcut
     # davranis korunur (Google TTS once, ElevenLabs yedek).
+    _openai = ("openai", _openai_seslendir, "OpenAI TTS (gpt-4o-mini-tts, yönlendirilebilir)")
     _eleven = ("eleven", _eleven_seslendir, "ElevenLabs (gerçekçi insan sesi)")
     _google = ("google", _google_seslendir, "Google TTS (nöral Türkçe)")
-    sira = ([_eleven, _google] if eleven_once else [_google, _eleven])
+    _temel = ([_eleven, _google] if eleven_once else [_google, _eleven])
+    # OpenAI TTS açık ve anahtar varsa ZİNCİRDE ÖNCE (yönlendirilebilir ses);
+    # başarısızsa mevcut ElevenLabs/Google zincirine düşer.
+    sira = ([_openai] + _temel) if (_openai_acik() and _openai_key()) else _temel
     for _ad, _fn, _etiket in sira:
         if boundaries is not None:
             break
         if _ad == "eleven" and not _eleven_key():
             continue
         if _ad == "google" and not _google_key():
+            continue
+        if _ad == "openai" and not _openai_key():
             continue
         try:
             boundaries = (_fn(text, mp3, eleven_voice_id) if _ad == "eleven"
