@@ -364,6 +364,13 @@ GÖREV:
      kalıpta: 'DUTY FREE GERÇEKTEN UCUZ MU?' %145, 'OYUNCAK NEDEN KASADA?' %65.)
    - YASAK BAŞLIK (veriyle en düşük performans): liste formatı ('3 tuzak', '5 şey'),
      uzun HABER-BAŞLIĞI ('NE X NE Y: İŞTE ...'), soyut/genel ('en sık düşülen tuzak').
+   - SOMUT KONU SEÇ (veriyle kanıtlı — erişim farkı): gözle görülür, FİZİKSEL, günlük
+     bir durum seç (otopark, market rafı, kasa, restoran, indirim reyonu -> 500-1000
+     izlenme). SOYUT/DİJİTAL-BELİRSİZ ve ÇİFT ANLAMLI konulardan KAÇIN — bunlar
+     Shorts akışına itilmiyor ('ÇEREZLERİ NEDEN KABUL ETTİRİRLER' = web çerezi ama
+     kapak yiyecek çıktı -> 25 izlenme; 'SEPETTEKİ ÜRÜN NEDEN PAHALANDI' soyut -> 1).
+     Dijital tuzak işleyeceksen bile SOMUT bir ekran/an göster (sahte geri sayım
+     EKRANI, otomatik seçili kutu) ve başlıkta net/tek anlamlı kelime kullan.
 
 SADECE geçerli JSON döndür, başka hiçbir şey yazma:
 {{"trend":"1-2 cümle trend özeti","hook_kaliplari":["kalıp1","kalıp2","kalıp3"],
@@ -390,6 +397,10 @@ Bir Türkçe seslendirme metni yaz (~100-120 kelime). KURALLAR:
   merak bırakan TEASER cümlesi.
 - Emoji/başlık/madde YOK; düz paragraf.
 - Anlatımı 6 SAHNEYE böl; her sahne için İNGİLİZCE sinematik görsel tarifi yaz.
+- GÖRSEL, konunun GERÇEK anlamına uysun (çift anlamlı/dijital konuda düz karşılık
+  DEĞİL): web çerezi -> 'cookie consent popup on a laptop screen' (yiyecek çerez
+  DEĞİL); 'veri/abonelik/uygulama' -> ilgili EKRAN/arayüz. Yanlış anlamı çizersen
+  kapak da yanlış olur, video akışa girmez.
 TÜRKÇE YAZIM: ç,ğ,ı,İ,ö,ş,ü harflerini EKSİKSİZ kullan; ASCII'ye sadeleştirme.
 (Yalnızca 'gorsel' İngilizce olacak.)
 
