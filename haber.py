@@ -228,13 +228,21 @@ def _akici_script(item):
     try:
         import ai_script, json as _json
         gkey = os.environ.get("GEMINI_API_KEY", "").strip()
+        nkey = ai_script._nvidia_key()
         ckey = ai_script._claude_key()
         ham = None
+        # Sağlayıcı zinciri: Gemini -> NVIDIA (DeepSeek/Mistral) -> Claude.
+        # NVIDIA eklendi: Gemini kotası dolunca ham-RSS'e düşüp SAÇMA metin
+        # üretmesin (kullanıcı bozuk/devrik cümleler için şikayet etti).
         if gkey:
             try: ham = ai_script._gemini(prompt, gkey)
             except Exception: ham = None
+        if not ham and nkey:
+            try: ham = ai_script._nvidia(prompt, nkey)
+            except Exception: ham = None
         if not ham and ckey:
-            ham = ai_script._claude(prompt, ckey)
+            try: ham = ai_script._claude(prompt, ckey)
+            except Exception: ham = None
         if not ham:
             return None
         veri = _json.loads(ai_script._temizle(ham))
@@ -314,17 +322,15 @@ def senaryo_yap(item):
     if len(ozet) > 240:
         ozet = ozet[:237].rsplit(" ", 1)[0] + "..."
     llm = _akici_script(item)
-    llm_gorseller = None
-    if llm:
-        ham_baslik, script, llm_gorseller = llm
-        baslik = _tr_upper(ham_baslik)[:90] + " 📰"
-    else:
-        # Yedek: LLM yoksa/başarısızsa ham-metin şablonu (kesik olabilir ama üretir)
-        korunma = _korunma(item)
-        baslik = _tr_upper(item["baslik"])[:90] + " 📰"
-        script = (f"Tüketiciyi ilgilendiren son gelişme. Habere göre: {ozet} "
-                  f"Peki sen ne yapmalısın? {korunma} Kaynak: {kaynak}. "
-                  f"Böyle gelişmeleri kaçırmamak için abone ol, yarın yeni bir tuzak.")
+    if not llm:
+        # LLM rewrite BAŞARISIZ -> ham RSS özeti kesik/devrik olur, TTS saçma okur.
+        # ARTIK ham-RSS şablonuna DÜŞMÜYORUZ: bu haberi ATLA (None). Çağıran bir
+        # sonraki uygun haberi dener; hiçbiri olmazsa o tur video üretilmez.
+        # (Kullanıcı bozuk cümleli haber videosunu silmek zorunda kaldı.)
+        print(f"  [haber atlandı — akıcı script üretilemedi]: {item['baslik'][:50]}")
+        return None
+    ham_baslik, script, llm_gorseller = llm
+    baslik = _tr_upper(ham_baslik)[:90] + " 📰"
     kanca = re.split(r"(?<=[.!?])\s+", script.strip())[0][:80]
     # Görsel: (1) LLM'in verdiği konu-uyumlu sorgular, yoksa (2) anahtar-kelime
     # eşlemesi, yoksa (3) jenerik. Böylece her haber KONUSUNA göre görsel alır.
@@ -364,9 +370,20 @@ def main():
     if not uygun:
         print("      Uygun taze haber yok — bu turda video üretilmeyecek.")
         raise SystemExit(0)
-    sec = uygun[0]
+    # İlk uygun haberde LLM akıcı script üretemezse SIRADAKİ uygun habere geç
+    # (ham-RSS saçmalığı yayınlamaktansa iyi bir haber bul). En çok 5 dene.
+    sen = None
+    sec = None
+    for aday in uygun[:5]:
+        s = senaryo_yap(aday)
+        if s:
+            sen, sec = s, aday
+            break
+    if not sen:
+        print("      Hiçbir uygun haberde akıcı/eksiksiz script üretilemedi — "
+              "bu turda video üretilmeyecek (saçma metin yayınlamıyoruz).")
+        raise SystemExit(0)
     print(f"      Seçilen: {sec['baslik'][:70]}  [{sec['kaynak']}]")
-    sen = senaryo_yap(sec)
     # Haber gizliliği config'ten (ilk testlerde 'unlisted' -> önce incele,
     # beğenince config.haber_gizlilik'i 'public' yap).
     sen["gizlilik"] = str(cfg.get("haber_gizlilik", "unlisted") or "unlisted").strip()
