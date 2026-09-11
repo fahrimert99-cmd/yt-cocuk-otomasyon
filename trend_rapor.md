@@ -1,27 +1,24 @@
-# Trend Raporu — 2026-09-10
+# Trend Raporu — 2026-09-11
 
-**Trend özeti:** Popüler videolar, şok edici istatistikler, soru biçimindeki başlıklar ve 'yanlış/yalan' ifşa formatlarıyla izleyiciyi anlık merak ve endişe içinde tutar.
+**Trend özeti:** Son dönemde izlenen Türkçe Shorts videoları, ürünlerin gerçek değeri, paketlerdeki gramaj düşüşleri ve gizli finansal ücretlerle ilgili somut örnekleri ön plana çıkarıyor; izleyicileri 'Ödediğim ücretin karşılığında ne aldığım?' sorusuyla tutuyor ve kanıtlanabilir verilerle merak uyandırıyor.
 
 **Viral hook kalıpları:**
-- Neden ... ?
-- ... Yalanı İfşa Oldu!
-- ... Tuzağı: Ne Kadar Kaybedersin?
+- X gram eksik mi?
+- Fiyat aynı ama miktar düştü!
+- Gerçekten değeri var mı?
 
 **En çok izlenen 10 rakip video:**
-- 75,866 izlenme — Bitcoin Surges To $80K: New Bull Market Or Trap?  _(kanal: Gareth Soloway)_
-- 68,369 izlenme — Your Brain Was Designed To Lose Money In The Market  _(kanal: Samuel Leach)_
-- 49,602 izlenme — 330 TRİLYONLUK BORÇ KRİZİ: FED Bizi Kandırıyor mu? | Berk Dinçtürk & Meryem Kenan  _(kanal: Dikkat Boğa Çıkabilir)_
-- 49,199 izlenme — Market Trap Trading🚨🔥 | The Funded Room | Mayank Raj 🔴 #trading #liquidity #money #crypto #viral  _(kanal: The Funded Room)_
-- 46,446 izlenme — Abonelik Tuzağı: Neden Her Şey Aylık Ödemeye Döndü?  _(kanal: Arman ACAR)_
-- 20,954 izlenme — Bim Bizi Nasıl Kandırıyor?  _(kanal: Canbo)_
-- 19,110 izlenme — BITCOIN BEAR MARKET END OR BULL TRAP?  _(kanal: THE BITCOIN FAMILY Didi Taihuttu)_
-- 7,583 izlenme — "Kredi Kartı Bataklığından Nasıl Kurtulurum?" | Dr. Turhan Güldaş Cevaplıyor #kişiselgelişim #mantra  _(kanal: Dr. GULDAS_tr)_
-- 6,405 izlenme — Hamburgercilerin İndirim Yalanı İfşa Oldu! 😱  _(kanal: Meraklı Timsah)_
-- 5,753 izlenme — KREDİ KARTINDA ASGARİ ÖDEME TUZAĞI  _(kanal: Borsadan Hisse)_
+- 3,056,484 izlenme — I Tested The Cheapest VS Most Expensive Kitchen Gadgets  _(kanal: Joshua Weissman)_
+- 1,872,567 izlenme — Taste Testing Hilarious ALDI DUPES vs Original Brands  _(kanal: Sorted Food)_
+- 838,975 izlenme — I Fell For The Counterfeit Tool Scam! Have You Been Scammed Too?  _(kanal: Project Farm)_
+- 637,958 izlenme — ₹300 vs. ₹3000 Mascara Battle: Which is more worth it? Cheap vs. Expensive Mascara #vaishnavithakur  _(kanal: Vaishnavi Thakur)_
+- 333,172 izlenme — Expensive products can be worth it !!  _(kanal: Lucy Presco)_
+- 190,728 izlenme — The NEW 'Credit Card' Trap, Explained  _(kanal: Grant Rudow)_
+- 153,509 izlenme — How Supermarkets TRICK You Into Spending More! (D-Mart Business Model Explained)  _(kanal: Rahul Explains Money)_
+- 139,930 izlenme — How Are Brits Affording This?!  The Fake Rich Trap  _(kanal: British Finance with Jack)_
+- 119,807 izlenme — Parasını Hak Eden Ürünler | Ucuz ya da Pahalı, Gerçekten Değer!  _(kanal: Jumble Mag)_
+- 110,900 izlenme — The Loans That Can Keep You Poor #DebtTrap #FinancialLiteracy #MoneyManagement #PersonalFinance  _(kanal: ShankarKulkarni)_
 
-**Havuza eklenen 5 yeni senaryo:**
-- KREDİ KARTI CASHBACK TUZAĞI: GERÇEK KAZANÇ NE KADAR? 💳  — kanca: _GERÇEK KAZANÇ_
-- UYGULAMA İÇİ SATIN ALMA TUZAĞI: ÇOCUKLARIN PARASI NASIL GİDER? 🎮  — kanca: _PARA KAYBİ_
-- ABONELİK İPTALİNİ GİZLEYEN SAYFA TUZAĞI 🔒  — kanca: _GİZLİ İPTAL_
-- KARGO ÜCRETİ 'ÜCRETSİZ' İLAVE EDİLEN MALİYET 📦  — kanca: _SAKLI ÜCRET_
-- KREDİ KARTI FAİZSİZ TAKSİT TUZAĞI: AYLIK ÖDEME GERÇEK MALİYET 💳  — kanca: _AYLIK MALİYET_
+**Havuza eklenen 2 yeni senaryo:**
+- ÜLKER MILKA ÇİKOLATASI 100g → 90g, FİYAT AYNI! 🍫  — kanca: _10 gram eksik?_
+- NETFLIX'te 'PREMIUM EKRAN' SEÇİMİ OTOMATİK! 🔒  — kanca: _Varsayılan ücret mi?_
