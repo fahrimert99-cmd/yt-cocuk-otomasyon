@@ -69,6 +69,8 @@ def _nvidia_json(prompt, model=None):
 IYILESTIR_PROMPT = """Sen "TUZAK AVCISI" Türk YouTube Shorts kanalının KIDEMLİ senaryo editörüsün.
 Aşağıda bir tüketici-tuzağı senaryosu var. Görevin onu DAHA VURUCU hale getirmek:
 - İLK CÜMLE ilk 2 saniyede kaydırmayı durduracak kadar şok/merak dolu olsun.
+- AÇIK-DÖNGÜ: son cümle konuyu düz kapatmasın; başa dönünce anlamlı olacak yeni
+  bir merak/soru bıraksın (loop -> yüksek retention). İlk ve son cümle bağlansın.
 - Tuzak net anlatılsın; izleyiciye pratik bir KORUNMA ipucu versin.
 - Sonda kısa bir ABONE çağrısı + bir sonraki videoya merak bırakan TEASER olsun.
 - Uydurma istatistik YOK. Emoji/başlık/madde YOK; düz paragraf. ~100-120 kelime.
