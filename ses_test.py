@@ -25,10 +25,13 @@ def _cfg_ses():
         return ""
 
 
-def _seg(ad, voice_id, tmp, idx, deess=True):
+def _seg(ad, voice_id, tmp, idx, deess=True, saglayici="eleven"):
     mp3 = os.path.join(tmp, f"v{idx}.mp3")
     try:
-        V._eleven_seslendir(METIN, mp3, voice_id=voice_id or None)
+        if saglayici == "openai":
+            V._openai_seslendir(METIN, mp3, voice_id=voice_id or None)
+        else:
+            V._eleven_seslendir(METIN, mp3, voice_id=voice_id or None)
     except Exception as e:
         print(f"  ! {ad}: TTS hata {str(e)[:120]}")
         return None
@@ -59,18 +62,19 @@ def main():
     os.makedirs(tmp, exist_ok=True)
     mevcut = _cfg_ses() or os.environ.get("ELEVEN_VOICE_ID", "").strip()
     print(f"Mevcut ses id: {mevcut or '(varsayılan)'}")
-    # (etiket, voice_id, de-esser?) — premade temiz ElevenLabs sesleri:
+    # (etiket, voice_id, de-esser?, saglayici) — MEVCUT ElevenLabs vs OpenAI TTS
+    # karşılaştırması (Türkçe). OpenAI sesleri: onyx/ash/ballad/sage/echo...
     testler = [
-        ("1 - MEVCUT ses (ham)",        mevcut,                 False),
-        ("2 - MEVCUT ses (temizli)",    mevcut,                 True),
-        ("3 - SES B (Daniel)",          "onwK4e9ZLuTAKqWW03F9", True),
-        ("4 - SES C (Brian)",           "nPczCjzI2devNBz1zQrb", True),
-        ("5 - SES D (Bill)",            "pqHfZKP75CvOlQylNhV4", True),
-        ("6 - SES E (Charlie)",         "IKne3meq5aSn9XLyUdCD", True),
+        ("1 - MEVCUT (ElevenLabs Bill)", mevcut or "pqHfZKP75CvOlQylNhV4", True, "eleven"),
+        ("2 - OpenAI ONYX",              "onyx",                            True, "openai"),
+        ("3 - OpenAI ASH",               "ash",                             True, "openai"),
+        ("4 - OpenAI BALLAD",            "ballad",                          True, "openai"),
+        ("5 - OpenAI SAGE",              "sage",                            True, "openai"),
+        ("6 - OpenAI ECHO",              "echo",                            True, "openai"),
     ]
     segs = []
-    for i, (ad, vid, de) in enumerate(testler):
-        s = _seg(ad, vid, tmp, i, deess=de)
+    for i, (ad, vid, de, sag) in enumerate(testler):
+        s = _seg(ad, vid, tmp, i, deess=de, saglayici=sag)
         if s:
             segs.append(s)
     if not segs:
