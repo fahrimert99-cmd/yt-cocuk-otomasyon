@@ -335,7 +335,8 @@ GÖREV:
 
    KANAL DÖNGÜYE GİRDİ: eskiden hep 'market/banka genel tuzağı' ürettik. BUNU KIR.
    Fikirleri ŞU 6 İÇERİK KOLUNA DAĞIT (mümkünse her koldan en az bir tane, aynı
-   koldan 2'den fazla verme):
+   koldan 2'den fazla verme). ÖNCELİK: havuzda EKSİK + küresel VİRAL olan
+   B) DARK PATTERN ve F) RESALE/DEĞER kollarından bu koşuda EN AZ 2'şer fikir ver.
      A) SHRINKFLATION / gramaj küçültme (aynı fiyat, küçülen paket — 2026'nın en
         viral konusu; TR'de az işlendi. Ör: çikolata 100g→90g, cips havası).
      B) DARK PATTERN / karanlık arayüz (sahte geri sayım, 'son 2 ürün' yalanı,
@@ -358,6 +359,11 @@ GÖREV:
    - MARKA/ŞİRKET ADI VERME (yasal risk). Gerçek marka yerine JENERİK kullan:
      'ünlü bir çikolata markası', 'bir dijital abonelik', 'popüler bir market
      zinciri'. Başlıkta da metinde de asla belirli bir şirketi hedef gösterme.
+   - BAŞLIK KALIBI (veriyle kanıtlandı): tercihen 'X NEDEN Y?', 'X NASIL Y?' ya da
+     'GERÇEKTEN ... Mİ?' — KISA, TEK konu, merak sorusu. (En iyi retention bu
+     kalıpta: 'DUTY FREE GERÇEKTEN UCUZ MU?' %145, 'OYUNCAK NEDEN KASADA?' %65.)
+   - YASAK BAŞLIK (veriyle en düşük performans): liste formatı ('3 tuzak', '5 şey'),
+     uzun HABER-BAŞLIĞI ('NE X NE Y: İŞTE ...'), soyut/genel ('en sık düşülen tuzak').
 
 SADECE geçerli JSON döndür, başka hiçbir şey yazma:
 {{"trend":"1-2 cümle trend özeti","hook_kaliplari":["kalıp1","kalıp2","kalıp3"],
@@ -372,6 +378,10 @@ KANCA (kapak/açılış merak cümlesi): {kanca}
 
 Bir Türkçe seslendirme metni yaz (~100-120 kelime). KURALLAR:
 - İLK CÜMLE vurucu olsun; kurulumla başlama, doğrudan tuzağı/şaşırtıcı gerçeği ver.
+- AÇIK-DÖNGÜ (retention'ın EN büyük kaldıracı; 'DUTY FREE %145' bunu yapıyor):
+  cevabı SONUNDA düz kapatma. Son cümle konuyu tam bitirmesin; başa dönünce
+  anlamlı olacak, izleyiciyi 'bir daha izleyeyim' dedirtecek yeni bir merak/soru
+  bıraksın. İlk cümle ile son cümle birbirine bağlanabilsin (kusursuz loop).
 - Tüketiciyi bu tuzağa karşı NASIL koruyacağını da anlat (pratik uyarı).
 - Uydurma istatistik/sayı verme.
 - MARKA/ŞİRKET ADI VERME (yasal risk): gerçek marka yerine jenerik kullan
