@@ -6,9 +6,43 @@ Refresh token ile kimlik doğrular (bir kere token_al.py ile alınır).
 Gerekli GitHub Secret / env: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN
 """
 import os
+import time
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
+
+
+def _kapak_bas(yt, vid, kapak, deneme=1):
+    """Kapağı basar; başarısızsa `deneme` kadar tekrar. True/False."""
+    for i in range(max(1, deneme)):
+        try:
+            yt.thumbnails().set(videoId=vid, media_body=MediaFileUpload(kapak)).execute()
+            return True
+        except Exception as e:
+            print(f"  ! kapak deneme {i+1} olmadı: {str(e)[:100]}")
+            time.sleep(4)
+    return False
+
+
+def _islem_bekle(yt, vid, azami_sn=240):
+    """Video YouTube tarafında İŞLENENE kadar bekler (azami azami_sn). İşlenme
+    bitmeden basılan kapağı YouTube'un otomatik thumbnail'ı EZEBİLİYOR; bu yüzden
+    kapağı işlenme sonrası bir kez daha basmak için beklenir. Zaman aşımı/hata ->
+    False (yine de son bir deneme yapılır)."""
+    son = time.time() + azami_sn
+    while time.time() < son:
+        try:
+            r = yt.videos().list(part="processingDetails,status", id=vid).execute()
+            items = r.get("items") or []
+            if items:
+                pd = (items[0].get("processingDetails") or {}).get("processingStatus")
+                us = (items[0].get("status") or {}).get("uploadStatus")
+                if pd in ("succeeded", "terminated") or us == "processed":
+                    return True
+        except Exception:
+            pass
+        time.sleep(20)
+    return False
 
 TOKEN_URI = "https://oauth2.googleapis.com/token"
 
@@ -72,13 +106,24 @@ def yukle(dosya, baslik, aciklama, etiketler, gizlilik="private", kategori="27",
         _, yanit = istek.next_chunk()
     vid = yanit["id"]
     print(f"✓ Yüklendi: https://youtu.be/{vid}" + (f"  (yayın: {yayin_zamani} UTC)" if yayin_zamani else f"  (gizlilik: {gizlilik})"))
-    # Çarpıcı kapak fotoğrafını yükle (kanal doğrulanmamışsa atlanır, video kaybolmaz)
+    # Çarpıcı kapak fotoğrafını yükle (kanal doğrulanmamışsa atlanır, video kaybolmaz).
+    # ÖNEMLİ: kapağı İKİ kez basıyoruz — (1) hemen, (2) YouTube işlemeyi bitirince.
+    # Sebep: işlenme sırasında YouTube kendi otomatik karesini üretip erken basılan
+    # kapağı EZİYOR (Shorts'ta kapağın ızgarada görünmeme sebebi buydu). İşlenme
+    # sonrası yeniden basınca tasarım kapağımız kalıcı olur. KAPAK_RESET=0 kapatır.
     if kapak and os.path.exists(kapak):
-        try:
-            yt.thumbnails().set(videoId=vid, media_body=MediaFileUpload(kapak)).execute()
-            print("✓ Kapak fotoğrafı ayarlandı")
-        except Exception as e:
-            print(f"! Kapak ayarlanamadı (kanal doğrulanmamış olabilir): {str(e)[:120]}")
+        if _kapak_bas(yt, vid, kapak):
+            print("✓ Kapak fotoğrafı ayarlandı (ilk)")
+        else:
+            print("! Kapak ilk denemede ayarlanamadı (kanal doğrulanmamış olabilir)")
+        if (os.environ.get("KAPAK_RESET", "1") or "1").strip() != "0":
+            if _islem_bekle(yt, vid):
+                if _kapak_bas(yt, vid, kapak, deneme=2):
+                    print("✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)")
+            else:
+                # işlenme onayı gelmese de son bir deneme (bekleme boşa gitmesin)
+                if _kapak_bas(yt, vid, kapak, deneme=2):
+                    print("✓ Kapak (işlenme onayı yok) yine de yeniden basıldı")
     return vid
 
 
