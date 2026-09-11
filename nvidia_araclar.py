@@ -468,8 +468,15 @@ CRITICAL RULES:
   supermarket/market -> macro close-up of grocery products packed on a shelf, or a cart full of items;
   bank/credit card -> extreme close-up of credit cards fanned out with coins and cash on a dark table;
   subscription/app -> close-up of a hand holding a smartphone whose screen glows with colorful app icons;
-  discount/sale -> macro close-up of blank red price tags and stickers on products.
+  discount/sale -> macro close-up of blank red price tags and stickers on products;
+  web cookies / data / privacy / online consent -> extreme close-up of a laptop or phone SCREEN
+  showing a cookie-consent / settings popup (glowing UI), NOT edible cookies or any food;
+  fake countdown / scarcity / dark pattern -> macro close-up of a phone screen with a red
+  countdown timer or a pre-checked box.
   Pick the close-up that matches THIS title.
+- DISAMBIGUATE by the CONSUMER-TRAP MEANING, never the literal wordplay: Turkish 'çerez' here
+  means WEB COOKIE (screen/UI), not a snack; if a word is digital/abstract, show the relevant
+  SCREEN/interface, never a literal food/physical pun.
 - Photorealistic, high detail, dramatic cinematic lighting, high contrast, moody, a subtle sense
   of a hidden trap/deception. Eye-catching for a thumbnail.
 - ABSOLUTELY FORBIDDEN: any storefront, shop entrance, building facade, wall, glass door, room
