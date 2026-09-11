@@ -22,7 +22,6 @@ jobs:
         env:
           # YT secret'lari BILEREK yok -> yukleme imkansiz.
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
         run: python3 ses_test.py
       - name: Videoyu artifact yap

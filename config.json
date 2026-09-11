@@ -53,6 +53,5 @@
       "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Hidden%20Truth.mp3",
       "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Deep%20Tones.mp3"
     ]
-  },
-  "openai_tts": true
+  }
 }
