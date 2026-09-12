@@ -17,6 +17,7 @@
     "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
     "BÜYÜK PAKET HER ZAMAN UCUZ DEĞİL! ⚖️",
     "BİR GÜNDE DÜŞTÜĞÜN 3 TUZAK! ⚠️",
+    "CİPS PAKETİ NEDEN YARI BOŞ? 🥔",
     "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
     "DENİZİN DİBİNDEKİ KAYIP ŞEHİRLER 🏛️",
     "DUTY FREE GERÇEKTEN UCUZ MU? ✈️",
@@ -85,10 +86,10 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 67)\n[1/3] Senaryo (108/116) [market]: MARKET MARKASI KÖTÜ MÜ? 🏷️\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel2.mp3, ses %24, ducking).\n      Sahne 1/6: NVIDIA flux görseli ✓\n      Sahne 2/6: NVIDIA flux görseli ✓\n      Sahne 3/6: NVIDIA flux görseli ✓\n      Sahne 4/6: NVIDIA flux görseli ✓\n      Sahne 5/6: NVIDIA flux görseli ✓\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (25419 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-12T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: Rr86VMex_lk\n✓ Yüklendi: https://youtu.be/k7fbV43ny00  (yayın: 2026-09-12T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🛒 Market & AVM Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 66)\n[1/3] Senaryo (104/116) [diger]: CİPS PAKETİ NEDEN YARI BOŞ? 🥔\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel2.mp3, ses %24, ducking).\n      Sahne 1/6: NVIDIA flux görseli ✓\n      Sahne 2/6: NVIDIA flux görseli ✓\n      Sahne 3/6: NVIDIA flux görseli ✓\n      Sahne 4/6: NVIDIA flux görseli ✓\n      Sahne 5/6: NVIDIA flux görseli ✓\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (24691 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-13T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: k7fbV43ny00\n✓ Yüklendi: https://youtu.be/R8f_ywFvuwA  (yayın: 2026-09-13T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "k7fbV43ny00",
-    "metin": "AYNI FABRİKA\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
+    "video_id": "R8f_ywFvuwA",
+    "metin": "HAVAYA PARA\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
   },
-  "son_kategori": "market"
+  "son_kategori": "diger"
 }
