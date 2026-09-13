@@ -367,7 +367,15 @@ GÖREV:
      I) GIDA & SAĞLIK MANİPÜLASYONU ('diyet/light/organik' yanılsaması, ucuz yağ
         karışımı hilesi, 'katkısız' aldatmacası, ambalajdaki sağlık iddiaları).
 
-   FORMAT ÇEŞİTLİLİĞİ (ara sıra bunlardan biriyle sun — hep düz anlatım olmasın):
+   *** KOL ÖNCELİĞİ (VERİYLE — erişimi en yüksek damar MERAK/GİZLİ MEKANİZMA) ***
+   Kanalın en çok izlenen videoları MERAK BOŞLUĞU taşıyanlar: 'OYUNCAK NEDEN KASADA?'
+   (1849), 'MARKET KOKUSU BİLE TUZAK!' (1552), 'SİNEMADA MISIR NEDEN PAHALI?' (1264) —
+   hepsi GÖRÜNMEYEN/GİZLİ bir mekanizmayı ifşa ediyor. En az izlenenler soyut/açıklayıcı
+   olanlar. Bu yüzden fikirlerin ÇOĞUNLUĞU (en az yarısı) şu YÜKSEK-MERAK kollardan gelsin:
+     • B) DARK PATTERN  • C) NÖROPAZARLAMA & DUYU HİLELERİ  • H) LÜKS/STATÜ PSİKOLOJİSİ
+   ve mutlaka 'GÖRÜNEN sıradan bir şeyin ARKASINDAKİ gizli sebep' açısıyla kurgula
+   (ör: 'neden hep sağa yönelirsin', 'market rafı neden göz hizasında', 'kasa neden dar').
+   Genel finansal/market anlatımları (klasik, doygun) EN FAZLA 1-2 fikir olsun.
      • KARŞI STRATEJİ / TÜKETİCİ HACK'İ: sadece tuzağı değil, ondan korunmanın
        zihinsel savunma yöntemini merkeze al.
      • TARİHSEL KIRILMA NOKTASI: tüketim kültürünü değiştiren gerçek olaylar
@@ -401,6 +409,10 @@ GÖREV:
    - BAŞLIK KALIBI (veriyle kanıtlandı): tercihen 'X NEDEN Y?', 'X NASIL Y?' ya da
      'GERÇEKTEN ... Mİ?' — KISA, TEK konu, merak sorusu. (En iyi retention bu
      kalıpta: 'DUTY FREE GERÇEKTEN UCUZ MU?' %145, 'OYUNCAK NEDEN KASADA?' %65.)
+   - MERAK BOŞLUĞU ZORUNLU (erişimin #1 kaldıracı): her başlık, cevabı 'aa demek
+     oöyleymiş' dedirtecek GİZLİ/karşı-sezgisel bir bilgi VAAT etmeli. İzleyici
+     başlığı görünce 'dur, neden ki?' demeli. Cevabı başlıkta VERME (spoiler yok),
+     merakı aç. Sıkıcı/tahmin edilebilir ('indirimler tuzaktır') = düşük erişim.
    - YASAK BAŞLIK (veriyle en düşük performans): liste formatı ('3 tuzak', '5 şey'),
      uzun HABER-BAŞLIĞI ('NE X NE Y: İŞTE ...'), soyut/genel ('en sık düşülen tuzak').
    - SOMUT KONU SEÇ (veriyle kanıtlı — erişim farkı): gözle görülür, FİZİKSEL, günlük
@@ -423,7 +435,11 @@ Konu bir TÜKETİCİ TUZAĞI. BAŞLIK: {baslik}
 KANCA (kapak/açılış merak cümlesi): {kanca}
 
 Bir Türkçe seslendirme metni yaz (~100-120 kelime). KURALLAR:
-- İLK CÜMLE vurucu olsun; kurulumla başlama, doğrudan tuzağı/şaşırtıcı gerçeği ver.
+- İLK CÜMLE = MERAK BOMBASI (ilk 1-2 saniye erişimin kaderini belirler; izleyici
+  burada kaydırırsa video ölür). Kurulum/tanım YAPMA, 'bu videoda' DEME. Doğrudan
+  karşı-sezgisel/şaşırtıcı iddiayı at ve hemen bir SORU merakı aç. Örnek kalıp:
+  'Kasaya en yakın rafın neden hep şeker dolu olduğunu fark ettin mi? Sebebi hiç
+  tesadüf değil.' — kısa, iddialı, cevabı geciktiren.
 - AÇIK-DÖNGÜ (retention'ın EN büyük kaldıracı; 'DUTY FREE %145' bunu yapıyor):
   cevabı SONUNDA düz kapatma. Son cümle konuyu tam bitirmesin; başa dönünce
   anlamlı olacak, izleyiciyi 'bir daha izleyeyim' dedirtecek yeni bir merak/soru
