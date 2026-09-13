@@ -5466,5 +5466,164 @@
       }
     ],
     "script": "Aynı yemek, küçük tabakta neden daha bol görünür? Buna Delboeuf yanılsaması denir: küçük tabakta porsiyon büyük, büyük tabakta küçük görünür. Küçük tabak, az miktarı bol gösterip 'değerini aldım' hissi verir. Büyük tabak ise porsiyonu küçük gösterip daha fazla sipariş ettirir. Korunmak için: tabağın boyutuna değil, gerçek miktara ve fiyata odaklan. Bu algı oyunları için abone ol; yarın bir başka sunum tuzağını çözeceğiz. Bir dahaki lokmada sor: doydum mu, yoksa tabak mı doydum dedirtti?"
+  },
+  {
+    "baslik": "ÇIKOLATA PAKETİ NEDEN HER YIL 10g AZALDI? 🍫",
+    "aciklama": "Aynı fiyat, daha küçük paket. Süpermarket raflarında her yıl sessizce değişen boyutların ardındaki tüketici tuzağını ve kendinizi nasıl koruyacağınızı öğrenin.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "küçülme enflasyonu",
+      "market",
+      "çikolata",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "kanca": "şok azalma",
+    "script": "Çikolatanın 100 gramdan 90'a düştüğünü fark ettin mi? Fiyat aynı, poşet aynı görünüyor. Buna küçülme enflasyonu deniyor; üreticiler fiyat artışı yerine gramajı sessizce azaltıyor. Beynin bunu fiyat zammı kadar algılamıyor. Paketin önündeki 'yeni boyut' ibaresi bile dikkat çekmeyecek kadar silik. Korumak için raf etiketinde yazan kilogram fiyatına bak, gramajı mutlaka karşılaştır. Bu tuzak sadece çikolatada değil; cips, deterjan, hatta tuvalet kağıdında. Peki ya bir paketin içindeki gerçek kayıp ne kadar?",
+    "sahneler": [
+      {
+        "metin": "Çikolatanın 100 gramdan 90'a düştüğünü fark ettin mi? Fiyat aynı, poşet aynı görünüyor.",
+        "gorsel": "Close-up of a chocolate bar wrapper being squeezed slightly, showing a subtle indentation where the chocolate has shrunk, supermarket shelf in soft focus background"
+      },
+      {
+        "metin": "Buna küçülme enflasyonu deniyor; üreticiler fiyat artışı yerine gramajı sessizce azaltıyor. Beynin bunu fiyat zammı kadar algılamıyor.",
+        "gorsel": "Macro shot of a retail price tag with 'per kg' price in tiny print next to the total price, hand holding a smaller chocolate bar, shallow depth of field"
+      },
+      {
+        "metin": "Paketin önündeki 'yeni boyut' ibaresi bile dikkat çekmeyecek kadar silik.",
+        "gorsel": "Extreme close-up of chocolate packaging corner showing faint embossed text 'new size', lighting from side to reveal subtle deboss, dark moody backdrop"
+      },
+      {
+        "metin": "Korumak için raf etiketinde yazan kilogram fiyatına bak, gramajı mutlaka karşılaştır. Bu tuzak sadece çikolatada değil; cips, deterjan, hatta tuvalet kağıdında. Peki ya bir paketin içindeki gerçek kayıp ne kadar?",
+        "gorsel": "Shopping cart view from behind as a hand reaches for a shelf, split screen showing different products with shrinking sizes, overlay of magnifying glass over unit price label"
+      }
+    ],
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "PREMIUM ETİKETLİ SU NEDEN 5 KAT DAHA PAHALI? 💧",
+    "kanca": "premium etki",
+    "aciklama": "Aynı kaynaktan çıkan suların üzerine 'premium' yazılınca fiyatı neden beş katına çıkıyor? Tüketici psikolojisindeki bu tuzağı öğrenince raf seçimin tamamen değişecek.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "nöropazarlama",
+      "premium",
+      "su",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "script": "Aynı kaynaktan doldurulan iki şişe su: biri 5 lira, diğeri 25 lira. Tek fark, etiketteki o sihirli kelime: premium. Beynimiz yüksek fiyatı otomatik olarak kaliteyle eşleştiriyor; cam şişe ve sade tasarım, suyun tadını bile değiştiriyor. Halbuki saf suyun tadı yoktur, algı pahalıdır. Bu tuzağa düşmemek için etikete değil, kaynak raporuna bak. Oradaki bilgi, şişenin süsünden çok daha dürüsttür. Peki bu 'premium' algısı sadece suda mı işliyor? Bir sonraki videoda 'yüzde elli indirim' tabelalarının aslında fiyatı nasıl artırdığını anlatacağım. Ama önce, hangi şişeyi alırdın?",
+    "sahneler": [
+      {
+        "metin": "Aynı kaynaktan doldurulan iki şişe su: biri 5 lira, diğeri 25 lira. Tek fark, etiketteki o sihirli kelime: premium.",
+        "gorsel": "Close-up of two identical water bottles on a shelf, one with a plain label showing 5 TL, the other with an elegant premium label showing 25 TL, dramatic lighting highlighting the price tags"
+      },
+      {
+        "metin": "Beynimiz yüksek fiyatı otomatik olarak kaliteyle eşleştiriyor; cam şişe ve sade tasarım, suyun tadını bile değiştiriyor.",
+        "gorsel": "MRI brain scan visualization showing neural activity in the prefrontal cortex as a camera zooms in on a glass water bottle with minimalist label, neural pathways lighting up"
+      },
+      {
+        "metin": "Halbuki saf suyun tadı yoktur, algı pahalıdır. Bu tuzağa düşmemek için etikete değil, kaynak raporuna bak.",
+        "gorsel": "A consumer's hand turning a water bottle to inspect the tiny source report text on the back label, blurred premium branding in background, sharp focus on the source details"
+      },
+      {
+        "metin": "Peki bu 'premium' algısı sadece suda mı işliyor? Bir sonraki videoda 'yüzde elli indirim' tabelalarının aslında fiyatı nasıl artırdığını anlatacağım.",
+        "gorsel": "A red discount sign hanging above a shelf, camera slowly zooming out to reveal the original inflated price tag hidden behind it, fluorescent supermarket glow"
+      },
+      {
+        "metin": "Ama önce, hangi şişeyi alırdın?",
+        "gorsel": "Split screen showing a consumer's hand hesitating between the two water bottles, then slowly moving toward the premium one, dramatic tension in the lighting"
+      }
+    ],
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "DOMATES SOSU MARKALARI NEDEN FARKLI? 🍅",
+    "aciklama": "Bu videoda domates sosu markalarındaki tat farklarının gerçek nedenini ve görsel tuzakların nasıl işlediğini gösteriyoruz. Tüketici olarak korunmanın pratik yolunu öğrenip, raflarda sizi bekleyen diğer gizli hileleri keşfedeceksiniz.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para",
+      "market"
+    ],
+    "kanca": "tat karşılaştırması",
+    "script": "Aynı reçeteyle üretilmiş iki domates sosu, biri parlak kırmızı, diğeri soluk kahverengi bir kavanozda. Kutunun rengi değişince tadı neden bambaşka algılanıyor? Bu, beyninin renge göre lezzet önyargısı oluşturan Gruen Etkisi'nin bir oyunu. Tuzak şu: markalar, ambalaj rengiyle senin damak zevkini manipüle ediyor. Korunmanın tek yolu, gözünü kapatıp etiketi değil, içeriği test etmek. Güvendiğin bir markayı, aynı fiyattaki jenerik ürünle evde kör bir testte karşılaştır. Sonuç seni şaşırtacak. Aradaki fark gerçek mi yoksa sadece algı mı? Bunu ancak kendi testinle öğrenirsin. Abone ol, bir sonraki videoda market raflarındaki diğer renk tuzaklarını tek tek deşifre edeceğiz. Hazır mısın?",
+    "sahneler": [
+      {
+        "metin": "Aynı reçeteyle üretilmiş iki domates sosu, biri parlak kırmızı, diğeri soluk kahverengi bir kavanozda. Kutunun rengi değişince tadı neden bambaşka algılanıyor?",
+        "gorsel": "Cinematic close-up of two identical glass jars of tomato sauce on a rustic wooden table, one jar with a vivid red label and the other with a muted brown label, dramatic side lighting emphasizing the color contrast, shallow depth of field."
+      },
+      {
+        "metin": "Bu, beyninin renge göre lezzet önyargısı oluşturan Gruen Etkisi'nin bir oyunu.",
+        "gorsel": "Over-the-shoulder shot of a person in a dark room tasting sauce from a spoon, with a ghostly overlay of a color wheel rotating from red to brown, suggesting subconscious perception, high-contrast lighting."
+      },
+      {
+        "metin": "Tuzak şu: markalar, ambalaj rengiyle senin damak zevkini manipüle ediyor.",
+        "gorsel": "Cinematic shot of a supermarket shelf with rows of colorful sauce jars, a red spotlight on one jar, while a subtle digital distortion effect around the label implies sensory manipulation, slow-motion camera movement."
+      },
+      {
+        "metin": "Korunmanın tek yolu, gözünü kapatıp etiketi değil, içeriği test etmek.",
+        "gorsel": "A person blindfolded, holding two spoons with sauce from different jars, a neutral background, soft studio lighting, focus on the spoons and the expression of concentration on the face."
+      },
+      {
+        "metin": "Güvendiğin bir markayı, aynı fiyattaki jenerik ürünle evde kör bir testte karşılaştır. Sonuç seni şaşırtacak.",
+        "gorsel": "Cinematic top-down view of a kitchen table with two unmarked bowls of sauce, a blindfold aside, breadsticks, and a notebook with tasting notes, natural window light creating shadows."
+      },
+      {
+        "metin": "Aradaki fark gerçek mi yoksa sadece algı mı? Bunu ancak kendi testinle öğrenirsin. Abone ol, bir sonraki videoda market raflarındaki diğer renk tuzaklarını tek tek deşifre edeceğiz. Hazır mısın?",
+        "gorsel": "Close-up of a hand pressing a glowing subscribe button, then transition to a magnifying glass hovering over a colorful cereal box with a suspiciously bright packaging, hinting at hidden consumer traps in a cinematic style."
+      }
+    ],
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "İKİNCİ EL KİTAP PAZARINDA 'SIFIR' İLANI NEDEN YALAN? 📚",
+    "kanca": "sahte sıfır",
+    "aciklama": "İkinci el kitap pazarında 'sıfır' etiketi aslında bir tüketici tuzağı olabilir. Bu videoda sahte sıfır ilanlarının ardındaki psikolojiyi ve korunma yollarını anlatıyorum. Daha fazla tuzak için abone ol.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "ikinci el",
+      "kitap",
+      "sıfır ilan",
+      "tüketici psikolojisi",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "script": "Elinde 'sıfır' etiketiyle duran o kitap, aslında bir başkasının bitirdiği roman olabilir. Çünkü satıcı, elinde tuttuğu kitabı zihninde 'sıfır' sayıyor; raftan hiç açılmamış gibi. Ama asıl tuzak şu: 'sıfır' etiketi beyninde fiyatı otomatik yükseltiyor. Gerçek sıfır, sadece jelatinli ve faturalı olur. İlanda fotoğrafta kitap açık mı, sırtında kırışıklık var mı, bunlara bak. Satıcıya 'kaç kez okudunuz' diye sor; cevap kaçamaksa uzaklaş. Bu numara neden hep aynı rafta işe yarıyor? Çünkü gözün, 'sıfır' yazısını görünce beyninin şüphe filtresini kapatıyor. Aynı rafta herkes neden bu yalana kanıyor?",
+    "sahneler": [
+      {
+        "metin": "Elinde 'sıfır' etiketiyle duran o kitap, aslında bir başkasının bitirdiği roman olabilir.",
+        "gorsel": "Close-up of a hand holding a book with a red 'SIFIR' sticker, background a blurred second-hand bookstore shelf, harsh overhead lighting casting shadows"
+      },
+      {
+        "metin": "Çünkü satıcı, elinde tuttuğu kitabı zihninde 'sıfır' sayıyor; raftan hiç açılmamış gibi. Ama asıl tuzak şu: 'sıfır' etiketi beyninde fiyatı otomatik yükseltiyor.",
+        "gorsel": "Split screen: left side a seller placing a used book on a shelf with a 'SIFIR' tag, right side a glowing brain with a price tag floating above it, dark cinematic lighting, slow zoom"
+      },
+      {
+        "metin": "Gerçek sıfır, sadece jelatinli ve faturalı olur. İlanda fotoğrafta kitap açık mı, sırtında kırışıklık var mı, bunlara bak.",
+        "gorsel": "Macro shot of a book spine with visible creases and a torn shrink wrap, a magnifying glass hovering over it, moody desk lamp lighting, shallow depth of field"
+      },
+      {
+        "metin": "Satıcıya 'kaç kez okudunuz' diye sor; cevap kaçamaksa uzaklaş. Bu numara neden hep aynı rafta işe yarıyor?",
+        "gorsel": "Over-the-shoulder shot of a person texting a seller on a smartphone, screen shows 'kaç kez okudunuz?', background a dimly lit second-hand book stall, seller's blurred figure in distance"
+      },
+      {
+        "metin": "Çünkü gözün, 'sıfır' yazısını görünce beyninin şüphe filtresini kapatıyor.",
+        "gorsel": "Close-up of an eye with a reflection of a 'SIFIR' sticker, digital overlay of a filter being switched off, neon blue and red lighting, macro photography"
+      },
+      {
+        "metin": "Aynı rafta herkes neden bu yalana kanıyor?",
+        "gorsel": "Wide shot of a crowded second-hand book market, many books with 'SIFIR' stickers, people picking them up, camera slowly tilts down to a single book on the floor with a torn sticker, mysterious atmosphere"
+      }
+    ],
+    "tema": "tuzak"
   }
 ]
