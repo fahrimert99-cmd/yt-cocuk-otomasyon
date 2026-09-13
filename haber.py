@@ -204,7 +204,9 @@ def _akici_script(item):
         "Sen 'TUZAK AVCISI' adlı tüketici farkındalığı YouTube kanalı için metin "
         "yazarısın. Aşağıdaki GÜNCEL HABERİ bir GİRİŞ/kanca olarak kullan; sonra o "
         "konuda tüketiciyi bilinçlendiren NET ve EKSİKSİZ bir Short metni yaz "
-        "(~40 saniye, yaklaşık 80-110 kelime, DİKEY Short, tek parça seslendirme).\n"
+        "(yaklaşık 60-75 kelime; seslendirme %12 hızlı olduğu için ~30 saniyeye "
+        "denk gelir, 35 saniyeyi GEÇMESİN, DİKEY Short, tek parça seslendirme). "
+        "Kısa ve dolu yaz, doldurma cümle yok.\n"
         "KURALLAR:\n"
         "- Haberin KENDİSİ hakkında yeni RAKAM/TARİH/oran UYDURMA. Kesin veri yoksa "
         "  rakam verme; 'habere göre ... gündemde' gibi söyle.\n"
@@ -249,7 +251,7 @@ def _akici_script(item):
         b = _kisaltma_ac((veri.get("baslik") or item["baslik"]).strip())
         s = _kisaltma_ac(re.sub(r"\s+", " ", (veri.get("script") or "")).strip())
         # Çok kısa (eksik) script'i kabul etme -> yeniden/şablona düşsün
-        if len(s.split()) < 40:
+        if len(s.split()) < 32:
             print("  [akici script cok kisa, atlandi]:", len(s.split()), "kelime")
             return None
         # Yarım bitmişse son eksik cümleyi at (tam cümlede bitsin)

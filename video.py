@@ -660,8 +660,11 @@ def _eleven_seslendir(text, mp3_path, voice_id=None):
     body = {"text": text, "model_id": "eleven_multilingual_v2",
             # Daha PÜRÜZSÜZ ses: speaker_boost kapalı + style=0 (tiz/cızırtı
             # artefaktlarını azaltır), stability biraz yüksek, similarity ölçülü.
+            # speed: 1.12 -> ~%12 hizli (Shorts icin ideal sure; pitch bozulmaz,
+            # kelime timestamp'leri de hizli sese gore doner, altyazi senkron kalir).
             "voice_settings": {"stability": 0.55, "similarity_boost": 0.72,
-                               "style": 0.0, "use_speaker_boost": False}}
+                               "style": 0.0, "use_speaker_boost": False,
+                               "speed": 1.12}}
     req = urllib.request.Request(url, data=json.dumps(body).encode(),
                                  headers={"xi-api-key": key, "Content-Type": "application/json"})
     try:

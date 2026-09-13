@@ -434,7 +434,9 @@ SENARYO_PROMPT = """Sen "TUZAK AVCISI" Türk YouTube Shorts kanalı için senary
 Konu bir TÜKETİCİ TUZAĞI. BAŞLIK: {baslik}
 KANCA (kapak/açılış merak cümlesi): {kanca}
 
-Bir Türkçe seslendirme metni yaz (~100-120 kelime). KURALLAR:
+Bir Türkçe seslendirme metni yaz (~60-75 kelime — seslendirme %12 hızlı olduğu
+için bu ~30 saniyeye denk gelir; VİDEO 35 SANİYEYİ GEÇMESİN. Shorts'ta kısa video
+daha yüksek tamamlanma/erişim alır. Uzun anlatım/doldurma cümle YOK). KURALLAR:
 - İLK CÜMLE = MERAK BOMBASI (ilk 1-2 saniye erişimin kaderini belirler; izleyici
   burada kaydırırsa video ölür). Kurulum/tanım YAPMA, 'bu videoda' DEME. Doğrudan
   karşı-sezgisel/şaşırtıcı iddiayı at ve hemen bir SORU merakı aç. Örnek kalıp:
@@ -454,7 +456,7 @@ Bir Türkçe seslendirme metni yaz (~100-120 kelime). KURALLAR:
 - SONDA şu iki şey olsun: (a) kısa bir ABONE çağrısı, (b) bir sonraki videoya
   merak bırakan TEASER cümlesi.
 - Emoji/başlık/madde YOK; düz paragraf.
-- Anlatımı 6 SAHNEYE böl; her sahne için İNGİLİZCE sinematik görsel tarifi yaz.
+- Anlatımı 4 SAHNEYE böl (kısa video); her sahne için İNGİLİZCE sinematik görsel tarifi yaz.
 - GÖRSEL, konunun GERÇEK anlamına uysun (çift anlamlı/dijital konuda düz karşılık
   DEĞİL): web çerezi -> 'cookie consent popup on a laptop screen' (yiyecek çerez
   DEĞİL); 'veri/abonelik/uygulama' -> ilgili EKRAN/arayüz. Yanlış anlamı çizersen
@@ -497,7 +499,7 @@ def _gecerli(d):
         return False
     if not (d.get("script") and d.get("baslik") and d.get("sahneler")):
         return False
-    if len((d["script"] or "").split()) < 55:      # çok kısa -> ele
+    if len((d["script"] or "").split()) < 45:      # çok kısa -> ele (~30 sn hedefi: 60-75 kelime, %12 hızlı ses)
         return False
     if not isinstance(d["sahneler"], list) or len(d["sahneler"]) < 4:
         return False
