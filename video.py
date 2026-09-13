@@ -1213,6 +1213,87 @@ def _ses_temizle(narration_mp3, tmp):
     return narration_mp3
 
 
+def _bosluk_daralt(mp3_in, boundaries, tmp, ic_max=0.20, kenar_max=0.10,
+                   esik_db=-32, min_sessiz=0.16):
+    """KONUŞMA BOŞLUKLARINI kısaltır: cümle araları + baş/son sessizliği kırpar,
+    kelime zamanlamalarını (boundaries) buna göre KAYDIRIR -> altyazı senkronu
+    korunur. Daha sıkı, ekonomik tempo (uzun ölü hava erişimi düşürür). Hata olursa
+    orijinal (mp3, boundaries) aynen döner -> akış asla bozulmaz.
+      ic_max:   cümleler arası korunacak en fazla sessizlik (sn)
+      kenar_max: baştaki/sondaki korunacak en fazla sessizlik (sn)"""
+    try:
+        toplam = sure_al(mp3_in)
+        if not toplam or toplam < 1.0 or not boundaries:
+            return mp3_in, boundaries
+        r = subprocess.run(["ffmpeg", "-i", mp3_in, "-af",
+                            f"silencedetect=noise={esik_db}dB:d={min_sessiz}", "-f", "null", "-"],
+                           capture_output=True, text=True)
+        sess, cur = [], None
+        for line in (r.stderr or "").splitlines():
+            m = re.search(r"silence_start:\s*([-\d.]+)", line)
+            if m:
+                cur = max(0.0, float(m.group(1)))
+            m2 = re.search(r"silence_end:\s*([-\d.]+)", line)
+            if m2 and cur is not None:
+                sess.append((cur, float(m2.group(1)))); cur = None
+        if not sess:
+            return mp3_in, boundaries
+        # Kaldırılacak bölgeler: korunacak süreyi bırakıp fazlasını kes
+        kesikler = []
+        for s, e in sess:
+            uz = e - s
+            bas = s <= 0.06
+            son = e >= toplam - 0.06
+            koru = kenar_max if (bas or son) else ic_max
+            if uz > koru + 0.02:
+                if bas:                       # baştaki ölü hava: sondan 'koru' kadar bırak
+                    kesikler.append((s, e - koru))
+                else:                         # iç/son: baştan 'koru' kadar bırak
+                    kesikler.append((s + koru, e))
+        if not kesikler:
+            return mp3_in, boundaries
+        kesikler.sort()
+        # Korunan (tutulacak) segmentler = kesiklerin tümleyeni
+        tut, p = [], 0.0
+        for a, b in kesikler:
+            if a > p:
+                tut.append((p, a))
+            p = max(p, b)
+        if p < toplam:
+            tut.append((p, toplam))
+        if not tut:
+            return mp3_in, boundaries
+        fc, parts = [], []
+        for i, (a, b) in enumerate(tut):
+            fc.append(f"[0:a]atrim=start={a:.3f}:end={b:.3f},asetpts=PTS-STARTPTS[s{i}]")
+            parts.append(f"[s{i}]")
+        fc.append("".join(parts) + f"concat=n={len(tut)}:v=0:a=1[a]")
+        out = os.path.join(tmp, "narration_tight.wav")
+        rr = subprocess.run(["ffmpeg", "-y", "-i", mp3_in, "-filter_complex", ";".join(fc),
+                             "-map", "[a]", "-ar", "44100", "-c:a", "pcm_s16le", out],
+                            capture_output=True, text=True)
+        if rr.returncode != 0 or not os.path.exists(out) or os.path.getsize(out) < 20000:
+            print(f"      Boşluk daraltma atlandı: {(rr.stderr or '')[-120:]}")
+            return mp3_in, boundaries
+
+        def _kaydir(t):
+            rem = 0.0
+            for a, b in kesikler:
+                if b <= t:
+                    rem += (b - a)
+                elif a < t < b:
+                    rem += (t - a)
+            return max(0.0, t - rem)
+
+        yeni = [{**w, "start": _kaydir(w["start"])} for w in boundaries]
+        kazanc = toplam - sure_al(out)
+        print(f"      Konuşma boşlukları daraltıldı (~{kazanc:.1f} sn kısaldı, senkron korundu).")
+        return out, yeni
+    except Exception as e:
+        print(f"      Boşluk daraltma atlandı: {str(e)[:100]}")
+        return mp3_in, boundaries
+
+
 def _muzik_ekle(narration_mp3, tmp, tema=None):
     """Anlatım sesine arka fon müziğini DUCKING ile karıştırır.
     Kaynak önceliği: (1) YEREL assets/muzik/ (ElevenLabs ile üretilmiş set,
@@ -1367,6 +1448,9 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
         except Exception as e:
             print(f"      Prosodik mod başarısız ({e}), tek parça seslendirmeye dönülüyor")
             boundaries = seslendir(text, voice, hiz, mp3, pitch=tonlama)
+    # KONUŞMA BOŞLUKLARINI DARALT: cümle araları + baş/son ölü havayı kıs, kelime
+    # zamanlamalarını kaydır (altyazı senkronu korunur). Cue'lardan ve müzikten ÖNCE.
+    mp3, boundaries = _bosluk_daralt(mp3, boundaries, tmp)
     cues = cue_olustur(boundaries, CONFIG["altyazi_max_kelime"], CONFIG["altyazi_max_sure"])
     ass = os.path.join(tmp, "sub.ass")
     ass_yaz(cues, ass, CONFIG, dikey, kanca=kanca)
