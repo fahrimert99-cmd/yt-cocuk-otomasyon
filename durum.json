@@ -60,6 +60,7 @@
     "REKLAMLARDA NEDEN ÇOCUK VAR? 👶",
     "RESTORAN MENÜSÜ BİR TUZAK! 🍽️",
     "RESTORAN MENÜSÜNDE 'ŞEF ÖNERİSİ' TUZAĞI: GEREKSİZ EK MALİYET! 🍽️",
+    "RESTORANDA TABAKLAR NEDEN KÜÇÜLDÜ? 🍽️",
     "SADAKAT KARTININ GERÇEK AMACI! 💳",
     "SEPETTEKİ ÜRÜN NEDEN PAHALANDI? 🛒",
     "SES REKLAMLARI NEDEN YÜKSEK? 🔊",
@@ -89,10 +90,10 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 73)\n[1/3] Senaryo (118/126) [market]: MARKET ARABASI NEDEN GİTTİKÇE BÜYÜDÜ? 🛒\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Konuşma boşlukları daraltıldı (~5.4 sn kısaldı, senkron korundu).\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel2.mp3, ses %24, ducking).\n      Sahne 1/6: NVIDIA flux görseli ✓\n      Sahne 2/6: NVIDIA flux görseli ✓\n      Sahne 3/6: NVIDIA flux görseli ✓\n      Sahne 4/6: NVIDIA flux görseli ✓\n      Sahne 5/6: NVIDIA flux görseli ✓\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (19384 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-14T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: JA0piz8qwJM\n✓ Yüklendi: https://youtu.be/_ZOlyAmRYgg  (yayın: 2026-09-14T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🛒 Market & AVM Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 72)\n[1/3] Senaryo (122/126) [yeme]: RESTORANDA TABAKLAR NEDEN KÜÇÜLDÜ? 🍽️\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Konuşma boşlukları daraltıldı (~5.5 sn kısaldı, senkron korundu).\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel2.mp3, ses %24, ducking).\n      Sahne 1/6: NVIDIA flux görseli ✓\n      Sahne 2/6: NVIDIA flux görseli ✓\n      Sahne 3/6: NVIDIA flux görseli ✓\n      Sahne 4/6: NVIDIA flux görseli ✓\n      Sahne 5/6: NVIDIA flux görseli ✓\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (14867 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-14T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: _ZOlyAmRYgg\n✓ Yüklendi: https://youtu.be/a5FC-osvvr4  (yayın: 2026-09-14T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🍔 Restoran & Yeme-İçme Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "_ZOlyAmRYgg",
-    "metin": "BOŞLUK HİLESİ\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
+    "video_id": "a5FC-osvvr4",
+    "metin": "TABAK YANILGISI\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
   },
-  "son_kategori": "market"
+  "son_kategori": "yeme"
 }
