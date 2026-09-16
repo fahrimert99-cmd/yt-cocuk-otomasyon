@@ -143,23 +143,53 @@ def _http(yontem, yol, govde=None, sorgu=None, timeout=90, deneme=3):
     raise RuntimeError(f"Manus istegi basarisiz ({yontem} {yol}): {son}")
 
 
+def _govde_bicimleri(prompt, model, baslik, sema, gizli):
+    """task.create govde adaylari — API'nin kabul ettigi ilki kullanilir.
+
+    v2 sozlesmesi istegi {"message": {"content": ...}} bicimde bekler (duz
+    "prompt" alani 400/invalid_argument dondurur). Opsiyonel alanlardan biri
+    reddedilirse once sade govdeye, o da olmazsa content'in parca dizisi
+    bicimine dusulur.
+    """
+    ortak = {"agent_profile": model}
+    if baslik:
+        ortak["title"] = baslik[:120]
+    if sema:
+        ortak["structured_output_schema"] = sema
+    tam = dict(ortak, message={"content": prompt},
+               locale="tr-TR", hide_in_task_list=bool(gizli))
+    sade = dict(ortak, message={"content": prompt})
+    parcali = dict(ortak, message={"content": [{"type": "text", "text": prompt}]})
+    return [("message+opsiyon", tam), ("message", sade), ("message+parca", parcali)]
+
+
 def gorev_olustur(prompt, profil="lite", baslik=None, sema=None, gizli=True):
     model, _ = _profil(profil)
-    govde = {"prompt": prompt, "agent_profile": model, "locale": "tr-TR",
-             "hide_in_task_list": bool(gizli)}
-    if baslik:
-        govde["title"] = baslik[:120]
-    if sema:
-        govde["structured_output_schema"] = sema
-    try:
-        return _http("POST", "/v2/task.create", govde)
-    except RuntimeError as e:
-        # Sema desteklenmiyorsa semasiz tekrar dene (JSON'u metinden ayikilacak).
-        if sema and ("structured_output" in str(e) or "schema" in str(e).lower()):
-            print("      [uyari] structured_output_schema reddedildi, semasiz deneniyor")
-            govde.pop("structured_output_schema", None)
-            return _http("POST", "/v2/task.create", govde)
-        raise
+    hatalar = []
+    for ad, govde in _govde_bicimleri(prompt, model, baslik, sema, gizli):
+        try:
+            y = _http("POST", "/v2/task.create", govde)
+            print(f"      [task.create govde bicimi: {ad}]")
+            return y
+        except RuntimeError as e:
+            msg = str(e)
+            hatalar.append(f"{ad}: {msg[:150]}")
+            # Sema desteklenmiyorsa ayni bicimi semasiz dene.
+            if sema and ("structured_output" in msg or "schema" in msg.lower()):
+                semasiz = {k: v for k, v in govde.items()
+                           if k != "structured_output_schema"}
+                try:
+                    y = _http("POST", "/v2/task.create", semasiz)
+                    print(f"      [task.create govde bicimi: {ad}, sema olmadan]")
+                    return y
+                except RuntimeError as e2:
+                    hatalar.append(f"{ad}/semasiz: {str(e2)[:150]}")
+            # Yalnizca govde bicimi hatalarinda sonraki bicimi dene; yetki,
+            # kredi vb. hatalarda bicim degistirmenin anlami yok.
+            if "400" not in msg and "invalid_argument" not in msg:
+                raise
+    raise RuntimeError("Manus task.create hicbir govde bicimini kabul etmedi:\n  "
+                       + "\n  ".join(hatalar))
 
 
 def gorev_detay(tid):
