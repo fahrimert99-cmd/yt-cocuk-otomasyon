@@ -1,0 +1,7 @@
+{
+  "butce_kredi": 1100,
+  "harcanan_kredi": 0,
+  "kalan_kredi": 1100,
+  "not": "Manus kredi defteri. 'butce_kredi' Manus hesabindaki gercek bakiyeye gore elle guncellenir; her gorevden sonra manus_besle.py buraya tuketimi isler ve butce bitince yeni gorev baslatmaz.",
+  "gorevler": []
+}

@@ -152,3 +152,49 @@ Sistem hatalara karşı sağlamlaştırılmıştır (ayrıntı: `RESILIENCE_GUID
 ## GÜVENLİK
 Tüm anahtarları **yalnızca GitHub Secrets**'a gir; düz metin olarak repoya koyma.
 `client_secret.json`'u repoya **yükleme**.
+
+---
+
+## 🧠 MANUS (ajan) — arastirma katmani, kredi korumali
+
+Manus normal bir LLM degil, **ajandir**: web'de gezer, kaynak dogrular, rapor uretir.
+Gorev basina **~100-500 kredi** harcar. Bu yuzden **gunluk uretim hattina bilerek
+baglanmadi** — kisa/uzun/haber hatlari eskisi gibi ucretsiz saglayicilarla
+(NVIDIA → Claude → Gemini → Pollinations) calisir. Manus yalnizca **elle** tetiklenen
+`Manus Arastirma (Elle)` is akisindan calisir.
+
+### Kurulum
+1. Repo → **Settings → Secrets → Actions** → `MANUS_API_KEY` ekle.
+2. Actions → **Manus Arastirma (Elle)** → `mod: ping` ile anahtari dogrula (~5-15 kredi).
+3. `manus_durum.json` icindeki `butce_kredi` degerini gercek bakiyene esitle.
+
+### Modlar
+| Mod | Ne yapar | Cikti | Tipik maliyet |
+|-----|----------|-------|----------------|
+| `ping` | Anahtari en dusuk maliyetle dogrular | log | ~5-15 kredi |
+| `senaryo` | Web'den **dogrulanmis** yeni tuzak senaryolari uretir, dedup + kalite elemesinden gecirip `senaryolar.json`'a ekler | `senaryolar.json`, `manus_rapor.md` | ~100-250 |
+| `strateji` | `analiz_rapor.json` + havuzu okuyup 30 gunluk buyume plani yazar | `manus_strateji.md` | ~250 |
+| `rakip` | Nis rakip/icerik boslugu analizi + 15 video fikri | `manus_rakip.md` | ~250-500 |
+
+`senaryo` modunun trend.py'den farki: trend.py YouTube trendine bakip LLM'e yazdirir;
+Manus **kaynak dogrular** ve her senaryoya `kaynaklar` URL listesi ekler
+(kanal "uydurma istatistik verme" kuralinda oldugundan bu dogrudan kalite kazancidir).
+
+### Kredi defteri
+Her gorev `manus_durum.json`'a islenir (gercek tuketim bildirilmezse muhafazakar
+tahmin yazilir). **Kalan butce gorev maliyetinin altina duserse yeni gorev baslamaz**;
+bilerek gecmek icin `MANUS_BUTCE_ZORLA=1`.
+
+### 1100 kredilik onerilen plan
+| Sira | Mod | Profil | Tahmin |
+|------|-----|--------|--------|
+| 1 | `ping` | lite | ~10 |
+| 2 | `rakip` | standart | ~250 |
+| 3 | `strateji` | standart | ~250 |
+| 4-6 | `senaryo` ×3 (her biri 5-6 senaryo) | lite | ~300 |
+| — | **Toplam** | | **~810** (≈290 kredi yedek) |
+
+Yerel deneme (API'ye istek atmadan promptu gormek icin):
+```bash
+MANUS_KURU=1 MOD=senaryo SAYI=5 python3 manus_besle.py
+```
