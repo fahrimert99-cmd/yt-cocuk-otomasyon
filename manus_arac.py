@@ -189,8 +189,14 @@ def _durum(detay):
     return str(d).lower().strip() if d else ""
 
 
-def _metin_topla(mesajlar):
-    """Mesaj listesinden ajanin URETTIGI metni birlestir (en yeniden eskiye)."""
+def _metin_topla(mesajlar, ters=True):
+    """Mesaj listesinden ajanin URETTIGI metni birlestir.
+
+    Liste API'den EN YENI ONCE (order=desc) gelir — boylece uzun bir gorevde
+    nihai cevabin ilk sayfada oldugu garanti olur. Ama rapor metni KRONOLOJIK
+    okunmali (cok parcali bir cevap ters sirada birlesirse rapor bastan sona
+    degil sondan basa okunur), bu yuzden birlestirmeden once ters cevrilir.
+    """
     kayitlar = mesajlar
     if isinstance(mesajlar, dict):
         for k in ("messages", "data", "items", "list"):
@@ -199,6 +205,8 @@ def _metin_topla(mesajlar):
                 break
     if not isinstance(kayitlar, list):
         return ""
+    if ters:
+        kayitlar = list(reversed(kayitlar))
     parcalar = []
     for m in kayitlar:
         if not isinstance(m, dict):
