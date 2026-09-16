@@ -116,6 +116,35 @@ def main():
             break
     print(f"      Tema (marka: sadece tuzak): '{istenen_tema}' "
           f"(tuzak kalan: {sum(1 for t in kalan if _tema(t[1])=='tuzak')})")
+    # --- A/B KOHORTU (v1 eski havuz / v2 yeni prompt) -------------------------
+    # Senaryo secimi dosya SIRASINA gore yapiliyor ve yeni senaryolar havuzun
+    # SONUNA ekleniyor. Bekleyen 82 senaryo varken (gunde 2 video = ~41 gun)
+    # yeni prompt'la uretilen senaryolar bir ay icinde HIC yayinlanmazdi; yani
+    # "bir ay veri toplayalim" hicbir sey olcmezdi.
+    # Cozum: iki kohortu DONUSUMLU yayinla. Boylece ikisi ayni donemde,
+    # ayni algoritma kosullarinda yarisir (once/sonra kiyasi mevsimsellige ve
+    # algoritma degisikligine takilirdi; es zamanli kiyas takilmaz).
+    def _kohort(s):
+        return s.get("uretim") or "v1"
+
+    _kohort_map = {s.get("baslik", ""): _kohort(s) for s in senaryolar}
+    _yayin = {"v1": 0, "v2": 0}
+    for _b in yapilan:
+        _yayin[_kohort_map.get(_b, "v1")] = _yayin.get(_kohort_map.get(_b, "v1"), 0) + 1
+    _v1 = [x for x in tema_havuz if _kohort(x[1]) == "v1"]
+    _v2 = [x for x in tema_havuz if _kohort(x[1]) == "v2"]
+    if _v1 and _v2:
+        # Geride kalan kohorttan yayinla -> ikisi yaklasik esit ilerler.
+        _sec = "v2" if _yayin["v2"] <= _yayin["v1"] else "v1"
+        tema_havuz = _v2 if _sec == "v2" else _v1
+        print(f"      Kohort: {_sec} (yayinlanan v1={_yayin['v1']} v2={_yayin['v2']}, "
+              f"bekleyen v1={len(_v1)} v2={len(_v2)})")
+    elif _v2:
+        tema_havuz = _v2
+        print(f"      Kohort: v2 (v1 havuzu bitti, bekleyen v2={len(_v2)})")
+    else:
+        print(f"      Kohort: v1 (henuz v2 senaryo yok, bekleyen v1={len(_v1)})")
+
     son_kat = durum.get("son_kategori")
     # Önce bir önceki videodan FARKLI kategorideki konulara bak; yoksa tüm havuza.
     havuz = [t for t in tema_havuz if _kategori(t[1]["baslik"]) != son_kat] or tema_havuz

@@ -491,6 +491,11 @@ def _senaryo_uret(baslik, kanca):
         if z not in et:
             et.append(z)
     d["etiketler"] = et[:12]
+    # A/B KOHORTU: bu senaryo, rakip analizi sonrasi guncellenen prompt'la
+    # uretildi. otomasyon.py v1 (eski havuz) ile v2'yi DONUSUMLU yayinlar,
+    # analiz.py ikisini ayri raporlar. Boylece yeni kurallarin etkisi havuz
+    # sirasi yuzunden haftalarca gecikmeden, ayni donemde olculebilir.
+    d["uretim"] = "v2"
     return d
 
 
