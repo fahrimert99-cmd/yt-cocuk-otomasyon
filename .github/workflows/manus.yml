@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
     inputs:
       mod:
-        description: "Is kolu"
+        description: "Is kolu — DIKKAT: varsayilan 'ping' yalnizca baglanti testidir, rapor uretmez. Rakip analizi icin ayri 'Manus RAKIP Analizi (tek tik)' is akisi var."
         required: true
         default: "ping"
         type: choice
