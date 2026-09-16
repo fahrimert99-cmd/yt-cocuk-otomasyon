@@ -3,9 +3,9 @@
   "aylik_limit": 1500,
   "rezerv_kredi": 1100,
   "gun": "2026-09-16",
-  "gunluk_harcanan": 3,
+  "gunluk_harcanan": 8,
   "ay": "2026-09",
-  "aylik_harcanan": 3,
+  "aylik_harcanan": 8,
   "not": "Manus kredi defteri. gunluk_limit: her gun yenilenen ve DEVREDILMEYEN kredi (UTC gece yarisi sifirlanir). aylik_limit: yenilenen kredilerin aylik tuketim tavani — asil kisitlayici sinir budur. rezerv_kredi: hesaptaki kalici bakiye; yalnizca MANUS_REZERV=1 verilirse harcanir. Degerler Manus hesabindaki gercek duruma gore elle guncellenebilir.",
   "gorevler": [
     {
@@ -19,9 +19,20 @@
       "sure_sn": 10,
       "url": "https://manus.im/app/bMLZQBt4FmRAhLKzbSgnJd",
       "not": "gercek tuketim ~3 kredi (olculen ping maliyeti); eski kaba tahmin duzeltildi"
+    },
+    {
+      "tarih": "2026-09-16 06:28 UTC",
+      "mod": "ping",
+      "profil": "lite",
+      "kaynak": "gunluk",
+      "task_id": "JYjxx29m8bXPVy8UyPxeHR",
+      "kredi": 5,
+      "tahmini": true,
+      "sure_sn": 11,
+      "url": "https://manus.im/app/JYjxx29m8bXPVy8UyPxeHR"
     }
   ],
-  "gunluk_kalan": 297,
-  "aylik_kalan": 1497,
-  "guncelleme": "2026-09-16 06:21:49 UTC"
+  "gunluk_kalan": 292,
+  "aylik_kalan": 1492,
+  "guncelleme": "2026-09-16 06:28:07 UTC"
 }
