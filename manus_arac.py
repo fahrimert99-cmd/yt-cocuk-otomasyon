@@ -270,16 +270,22 @@ _AJAN_TIP = ("assistant_message", "assistant", "agent_message", "result", "final
 
 
 def _kayit(m):
-    """Bir mesaj kaydindan (tip, metin) cikar."""
+    """Bir mesaj kaydindan (tip, teslim_turu, metin) cikar.
+
+    teslim_turu = assistant_message.delivery_kind. Ajan uzun bir gorevde once
+    ilerleme mesajlari yazar ("arastirmayi uc hatta boluyorum..."), nihai cevabi
+    ise delivery_kind="result" ile gonderir. Rapora yalnizca sonuc girmeli.
+    """
     if not isinstance(m, dict):
-        return "", _parca_metin(m)
+        return "", "", _parca_metin(m)
     ham_tip = m.get("type")
     govde = m.get(ham_tip) if isinstance(m.get(ham_tip), dict) else None
     tip = str(ham_tip or "").lower()
+    teslim = str((govde or {}).get("delivery_kind") or "").lower()
     if govde is None:                     # "type" yoksa rol alanlarina bak
         govde = m.get("content") if "content" in m else m
         tip = tip or str(m.get("role") or m.get("sender") or m.get("author") or "").lower()
-    return tip, _parca_metin(govde)
+    return tip, teslim, _parca_metin(govde)
 
 
 def _metin_topla(mesajlar, ters=True):
@@ -293,15 +299,21 @@ def _metin_topla(mesajlar, ters=True):
     kayitlar = _kayitlar(mesajlar)
     if ters:
         kayitlar = list(reversed(kayitlar))
-    ajan, diger = [], []
+    ajan, sonuc, diger = [], [], []
     for m in kayitlar:
-        tip, metin = _kayit(m)
+        tip, teslim, metin = _kayit(m)
         if not metin:
             continue
         if any(a in tip for a in _ATLA_TIP):
             continue
-        (ajan if (not tip or any(a in tip for a in _AJAN_TIP)) else diger).append(metin)
-    return "\n\n".join(ajan) or "\n\n".join(diger)
+        if not tip or any(a in tip for a in _AJAN_TIP):
+            ajan.append(metin)
+            if teslim == "result":
+                sonuc.append(metin)
+        else:
+            diger.append(metin)
+    # Nihai cevap isaretlenmisse yalnizca onu al (ilerleme anlatimi rapora girmesin).
+    return "\n\n".join(sonuc or ajan or diger)
 
 
 def _yapi_ozeti(ad, obj, sinir=500):
