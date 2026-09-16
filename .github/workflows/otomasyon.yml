@@ -8,7 +8,7 @@ on:
     # public olur. Erken üretim, GitHub cron'unun gecikmesine karşı tampon sağlar.
     # concurrency grubu çakışmayı serialize eder.
     - cron: "0 7 * * *"    # üretim -> 12:00 TR yayını (09:00 UTC publishAt)
-    - cron: "0 15 * * *"   # üretim -> 20:00 TR yayını (17:00 UTC publishAt)
+    - cron: "0 13 * * *"   # akşam üretimi -> 20:00 TR yayını (17:00 UTC publishAt); cron gecikmesine tampon
   # GARANTİLİ TETİK: GitHub'ın kendi cron'u gecikebilir/atlayabilir; dıştan bir
   # zamanlayıcı (ör. cron-job.org) repository_dispatch ile bunu tetikler.
   repository_dispatch:
