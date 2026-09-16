@@ -23,6 +23,11 @@ import manus_arac as M
 CIKTI_RAPOR = {"senaryo": "manus_rapor.md", "strateji": "manus_strateji.md",
                "rakip": "manus_rakip.md"}
 
+# Is kolu basina kredi tahmini. API gercek tuketimi bildirdiginde O kullanilir;
+# bunlar yalnizca (a) gorev oncesi butce rezervasyonu ve (b) bildirilmediginde
+# deftere islenecek deger icin. Olculen: ping ~3 kredi (kosu 35062848507).
+MOD_KREDI = {"ping": 5, "senaryo": 150, "strateji": 200, "rakip": 250}
+
 
 # ---------------------------------------------------------------- yardimci
 def _norm(s):
@@ -235,19 +240,21 @@ def _rapor_yaz(yol, baslik, govde, meta):
 
 
 def mod_ping(profil):
-    d, kaynak = M.butce_kontrol("lite")
+    d, kaynak = M.butce_kontrol("lite", tahmin=MOD_KREDI["ping"])
     veri, metin, meta = M.calistir(
         "Sadece su tek kelimeyi yaz, baska hicbir sey yazma: TAMAM",
-        profil="lite", baslik="anahtar testi", zaman_asimi=600, aralik=10)
+        profil="lite", baslik="anahtar testi", zaman_asimi=600, aralik=10,
+        tahmin=MOD_KREDI["ping"])
     print(f"      Yanit: {(metin or '')[:200]!r}")
     M.butce_isle(d, "ping", meta, kaynak)
     return 0
 
 
 def mod_senaryo(profil, sayi):
-    d, kaynak = M.butce_kontrol(profil)
+    d, kaynak = M.butce_kontrol(profil, tahmin=MOD_KREDI["senaryo"])
     veri, metin, meta = M.calistir(_senaryo_prompt(sayi), sema=SENARYO_SEMA,
-                                   profil=profil, baslik=f"{sayi} yeni tuzak senaryosu")
+                                   profil=profil, baslik=f"{sayi} yeni tuzak senaryosu",
+                                   tahmin=MOD_KREDI["senaryo"])
     d = M.butce_isle(d, "senaryo", meta, kaynak)
 
     if isinstance(veri, list):
@@ -323,9 +330,9 @@ def mod_senaryo(profil, sayi):
 def mod_rapor(mod, profil):
     prompt = _strateji_prompt() if mod == "strateji" else _rakip_prompt()
     baslik = ("Kanal Buyume Stratejisi" if mod == "strateji" else "Nis Rakip & Bosluk Analizi")
-    d, kaynak = M.butce_kontrol(profil)
+    d, kaynak = M.butce_kontrol(profil, tahmin=MOD_KREDI[mod])
     veri, metin, meta = M.calistir(prompt, profil=profil, baslik=baslik,
-                                   zaman_asimi=3000, aralik=25)
+                                   zaman_asimi=3000, aralik=25, tahmin=MOD_KREDI[mod])
     d = M.butce_isle(d, mod, meta, kaynak)
     govde = metin or (json.dumps(veri, ensure_ascii=False, indent=2) if veri else "")
     if not govde.strip():

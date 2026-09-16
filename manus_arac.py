@@ -259,35 +259,49 @@ def _kayitlar(mesajlar, _derinlik=0):
     return []
 
 
+# Manus mesaj kayitlari "type" alani tasir ve GOVDE, TIPLE AYNI ADLI alandadir:
+#   {"type":"assistant_message","assistant_message":{"content":"...","delivery_kind":"result"}}
+#   {"type":"status_update","status_update":{"brief":"Manus finished working",...}}
+# (Canli kosu 35063335761'in tani dokumunden.) Ajan ciktisi yalnizca
+# assistant_message kayitlarindadir; durum/arac kayitlari rapora girmemeli.
+_ATLA_TIP = ("status_update", "user_message", "tool", "progress", "plan",
+             "system", "error", "user", "human")
+_AJAN_TIP = ("assistant_message", "assistant", "agent_message", "result", "final")
+
+
+def _kayit(m):
+    """Bir mesaj kaydindan (tip, metin) cikar."""
+    if not isinstance(m, dict):
+        return "", _parca_metin(m)
+    ham_tip = m.get("type")
+    govde = m.get(ham_tip) if isinstance(m.get(ham_tip), dict) else None
+    tip = str(ham_tip or "").lower()
+    if govde is None:                     # "type" yoksa rol alanlarina bak
+        govde = m.get("content") if "content" in m else m
+        tip = tip or str(m.get("role") or m.get("sender") or m.get("author") or "").lower()
+    return tip, _parca_metin(govde)
+
+
 def _metin_topla(mesajlar, ters=True):
     """Ajanin URETTIGI metni birlestir.
 
     Liste API'den EN YENI ONCE (order=desc) gelir — nihai cevabin ilk sayfada
-    oldugu garanti olsun diye. Rapor kronolojik okunmali, bu yuzden once ters
-    cevrilir. Rol alani beklenenden farkli adlandirilmissa (ilk canli kosuda
-    metin bos donmustu) suzgecsiz ikinci bir deneme yapilir.
+    oldugu garanti olsun diye; rapor kronolojik okunmali, bu yuzden ters cevrilir.
+    Once yalnizca ajan mesajlari alinir; hicbiri yoksa (bicim beklenenden
+    farkliysa) durum/kullanici disindaki tum metinlere dusulur.
     """
     kayitlar = _kayitlar(mesajlar)
     if ters:
         kayitlar = list(reversed(kayitlar))
-
-    def _topla(rol_suz):
-        parcalar = []
-        for m in kayitlar:
-            if not isinstance(m, dict):
-                s = _parca_metin(m)
-                if s:
-                    parcalar.append(s)
-                continue
-            rol = str(m.get("role") or m.get("sender") or m.get("author") or "").lower()
-            if rol_suz and rol in ("user", "human"):
-                continue
-            s = _parca_metin(m.get("content") if "content" in m else m)
-            if s:
-                parcalar.append(s)
-        return "\n\n".join(parcalar)
-
-    return _topla(True) or _topla(False)
+    ajan, diger = [], []
+    for m in kayitlar:
+        tip, metin = _kayit(m)
+        if not metin:
+            continue
+        if any(a in tip for a in _ATLA_TIP):
+            continue
+        (ajan if (not tip or any(a in tip for a in _AJAN_TIP)) else diger).append(metin)
+    return "\n\n".join(ajan) or "\n\n".join(diger)
 
 
 def _yapi_ozeti(ad, obj, sinir=500):
@@ -300,7 +314,7 @@ def _yapi_ozeti(ad, obj, sinir=500):
 
 
 def calistir(prompt, sema=None, profil="lite", baslik=None,
-             zaman_asimi=2400, aralik=20):
+             zaman_asimi=2400, aralik=20, tahmin=None):
     """Gorevi olustur, bitene kadar bekle, (veri, metin, meta) dondur."""
     _, profil_ad = _profil(profil)
 
@@ -357,9 +371,20 @@ def calistir(prompt, sema=None, profil="lite", baslik=None,
             print(f"      [uyari] ayrintili mesajlar alinamadi: {str(e)[:90]}")
 
     kredi = _kredi_bul(detay) or _kredi_bul(mesajlar)
+    if kredi is None:
+        # Gorev bittikten sonra kullanim bazen gec islenir: detayi bir kez daha oku.
+        try:
+            detay_son = gorev_detay(tid)
+            kredi = _kredi_bul(detay_son)
+        except Exception:
+            pass
+    if kredi is None:
+        print("      [not] API gercek kredi tuketimi bildirmedi; tahmin isleniyor. "
+              "Manus panelindeki gercek rakamla arada fark olusursa "
+              f"{DURUM_DOSYA} elle duzeltilebilir.")
     meta = {"task_id": tid, "url": url, "durum": durum, "profil": profil_ad,
             "sure_sn": int(time.time() - t0),
-            "kredi": kredi or TAHMINI_KREDI[profil_ad],
+            "kredi": kredi or tahmin or TAHMINI_KREDI[profil_ad],
             "kredi_tahmini": kredi is None}
 
     if durum in HATA:
@@ -423,14 +448,14 @@ def durum_yaz(d):
         json.dump(d, f, ensure_ascii=False, indent=2)
 
 
-def butce_kontrol(profil="lite", rezerv_izin=False):
+def butce_kontrol(profil="lite", rezerv_izin=False, tahmin=None):
     """Gorevden ONCE cagir. (defter, kaynak) dondurur; yetmezse calismayi durdurur.
 
     kaynak = "gunluk" (bedava yenilenen kredi) | "rezerv" (kalici bakiye).
     Gunluk yenilenen kredi kullanilmazsa YANAR, bu yuzden once o harcanir.
     """
     _, ad = _profil(profil)
-    tahmin = TAHMINI_KREDI[ad]
+    tahmin = tahmin or TAHMINI_KREDI[ad]
     d = durum_oku()
     if not rezerv_izin:
         rezerv_izin = os.environ.get("MANUS_REZERV") == "1"
