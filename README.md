@@ -116,7 +116,10 @@ Bundan sonra iki hat da **zamanlanmış cron** ile her gün kendiliğinden çal�
 ### Konu havuzu
 - **Kısa hat:** `senaryolar.json` içindeki hazır senaryolardan sırayla ilerler; ilerleme `durum.json`'da tutulur.
 - **Uzun hat:** işlenen konuyu `uzun_scripts/<slug>.json` altında manuel script varsa ondan, yoksa AI ile üretir; durum `uzun_durum.json`'da tutulur.
-- Yeni konu eklemek için `senaryolar.json`'a giriş ekle veya `basliklar.txt`'yi kullan.
+- Yeni konu eklemek için `senaryolar.json`'a giriş ekle; ya da `trend.py`'yi çalıştırıp
+  havuzu otomatik beslet.
+  > ⚠️ `basliklar.txt` **hiçbir koda bağlı değil** (eski bilim kanalı döneminden kalma).
+  > Oraya başlık eklemek üretimi etkilemez.
 
 ---
 
