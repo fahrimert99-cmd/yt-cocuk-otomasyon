@@ -415,6 +415,25 @@ GÖREV:
      merakı aç. Sıkıcı/tahmin edilebilir ('indirimler tuzaktır') = düşük erişim.
    - YASAK BAŞLIK (veriyle en düşük performans): liste formatı ('3 tuzak', '5 şey'),
      uzun HABER-BAŞLIĞI ('NE X NE Y: İŞTE ...'), soyut/genel ('en sık düşülen tuzak').
+
+   - RAKİP ANALİZİNİN AÇTIĞI TAZE DAMARLAR (bu konularda Türkiye'de resmî kaynakla
+     kanıtlanmış TALEP var ama düzenli işleyen Türkçe seri YOK — havuzumuz
+     "market/banka geneli"nde yığıldı, buralara yönel):
+     · ÖDEME EKRANI: ilk görünen fiyat ile son ödenen tutar arasındaki fark
+       (zorunlu teslimat/hizmet bedeli). Mesafeli satışta önceden bildirilmeyen
+       ek masraf tüketiciye yüklenemez — Ticaret Bakanlığı rehberi.
+     · SAHTE İNDİRİM MATEMATİĞİ: indirim öncesi fiyatın "son 30/10 günün en düşük
+       fiyatı" esası. Reklam Kurulu Kasım 2024'te 64 dosyanın 57'sini aykırı buldu.
+     · ABONELİK EKRAN SAYACI: kaydolmak kaç tık, iptal kaç ekran/çağrı.
+       Reklam Kurulu dijital yayın platformlarına bu konuda yaptırım uyguladı.
+     · TESLİMAT / "STOK BİTTİ" İPTALİ: hangi sürede ne hakkın doğuyor.
+       2022'de 130.680 tüketici başvurusunun 35.020'si mesafeli sözleşmelerden.
+     · YORUM DOĞRULAMA İZİ: satın alma rozeti, tarih, fotoğraf tutarlılığı.
+     · REKLAM AÇIKLAMASI: ücretli tanıtım ilk saniyelerde belirtiliyor mu.
+     · KİŞİYE GÖRE FİYAT: aynı link farklı cihaz/hesapta neden farklı görünür.
+     · ÜRÜN GÜVENLİĞİ: almadan önce barkod/uyarı/uygunluk izi. 2024 PGD raporu
+       262.898 parti denetiminde 13.520 uygunsuzluk bildirdi.
+     · SİBER HİJYEN: kargo SMS'i, sahte site, taklit hesap — linke basmadan kontrol.
    - SOMUT KONU SEÇ (veriyle kanıtlı — erişim farkı): gözle görülür, FİZİKSEL, günlük
      bir durum seç (otopark, market rafı, kasa, restoran, indirim reyonu -> 500-1000
      izlenme). SOYUT/DİJİTAL-BELİRSİZ ve ÇİFT ANLAMLI konulardan KAÇIN — bunlar
@@ -446,8 +465,18 @@ daha yüksek tamamlanma/erişim alır. Uzun anlatım/doldurma cümle YOK). KURAL
   cevabı SONUNDA düz kapatma. Son cümle konuyu tam bitirmesin; başa dönünce
   anlamlı olacak, izleyiciyi 'bir daha izleyeyim' dedirtecek yeni bir merak/soru
   bıraksın. İlk cümle ile son cümle birbirine bağlanabilsin (kusursuz loop).
-- Tüketiciyi bu tuzağa karşı NASIL koruyacağını da anlat (pratik uyarı).
+- TEK SONRAKİ İŞLEM (rakip analizinden: rakipler "dikkat et" diyor, biz
+  UYGULANABİLİR olacağız): genel uyarı yerine izleyicinin BUGÜN yapabileceği
+  TEK somut hareketi ver — hangi ekranı açacağı, hangi belgeyi saklayacağı,
+  neyi neyle karşılaştıracağı. "Dikkatli ol" DEĞİL -> "fişteki birim fiyata bak",
+  "ödeme ekranındaki son tutarı ilk fiyatla karşılaştır" gibi.
+- MÜMKÜNSE SAYIYLA GÖSTER (kanıt hissi): ilk fiyat → son tutar, kaç tık → kaç
+  ekran, 100 gram başına fiyat gibi somut bir karşılaştırma kur. Sayıyı UYDURMA;
+  uyduramayacaksan sayı yerine "şunu şununla karşılaştır" yöntemini anlat.
 - Uydurma istatistik/sayı verme.
+- İDDİA İLE KANIT AYRIMI: "gözlenen davranış" ile "kesin ihlal" aynı şey değil.
+  "Şu uygulama yasa dışı" DEME -> "şu davranış gözleniyor, tüketici açısından
+  şu riski doğuruyor" de. Tek örnekten bütün sektöre genelleme yapma.
 - MARKA/ŞİRKET ADI VERME: canlı bir şirketi suçlama; jenerik SEKTÖR kullan
   ('küresel tekstil devleri', 'büyük süpermarket zincirleri', 'fast fashion
   sektörü'). AMA akademik/literatür terimleri SERBEST (marka geçse de bilimsel

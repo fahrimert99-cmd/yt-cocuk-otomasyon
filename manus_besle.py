@@ -160,6 +160,12 @@ YAZIM KURALLARI (kanalin uretim hatti bunlara gore calisir):
   (birlestirildiginde script'i vermeli). "gorsel" alani INGILIZCE, 2-5 kelimelik
   stok video arama terimi olsun ve konunun GERCEK anlamina uysun (ornek: web
   cerezi -> "cookie consent popup screen", yiyecek kurabiye DEGIL).
+- TEK SONRAKI ISLEM: genel uyari yerine izleyicinin BUGUN yapabilecegi TEK somut
+  hareketi ver (hangi ekrani acacagi, hangi belgeyi saklayacagi, neyi neyle
+  karsilastiracagi). Mumkunse somut bir karsilastirma kur: ilk fiyat -> son tutar,
+  kac tik -> kac ekran, 100 gram basina fiyat. Sayiyi UYDURMA.
+- IDDIA/KANIT AYRIMI: "su uygulama yasa disi" DEME -> "su davranis gozleniyor,
+  tuketici acisindan su riski doguruyor" de. Tek ornekten sektore genelleme yapma.
 - "aciklama": 2-3 cumle + abone cagrisi. "etiketler": 6-10 Turkce etiket.
 - TURKCE YAZIM KUSURSUZ olsun: c,g,i,I,o,s,u harflerini EKSIKSIZ kullan
   (guclu DEGIL guclu -> "güçlü"). ASCII'ye sadelestirme. Yalnizca "gorsel" Ingilizce.
