@@ -143,7 +143,7 @@ def _http(yontem, yol, govde=None, sorgu=None, timeout=90, deneme=3):
     raise RuntimeError(f"Manus istegi basarisiz ({yontem} {yol}): {son}")
 
 
-def _govde_bicimleri(prompt, model, baslik, sema, gizli):
+def _govde_bicimleri(prompt, model, baslik, sema):
     """task.create govde adaylari — API'nin kabul ettigi ilki kullanilir.
 
     v2 sozlesmesi istegi {"message": {"content": ...}} bicimde bekler (duz
@@ -156,17 +156,18 @@ def _govde_bicimleri(prompt, model, baslik, sema, gizli):
         ortak["title"] = baslik[:120]
     if sema:
         ortak["structured_output_schema"] = sema
-    tam = dict(ortak, message={"content": prompt},
-               locale="tr-TR", hide_in_task_list=bool(gizli))
+    # CANLI DOGRULAMA (kosu 35062848507): "message" + agent_profile + title
+    # kabul ediliyor; locale / hide_in_task_list ALANLARI REDDEDILIYOR, bu
+    # yuzden gonderilmiyor (yoksa her kosuda bir istek bosa gidiyordu).
     sade = dict(ortak, message={"content": prompt})
     parcali = dict(ortak, message={"content": [{"type": "text", "text": prompt}]})
-    return [("message+opsiyon", tam), ("message", sade), ("message+parca", parcali)]
+    return [("message", sade), ("message+parca", parcali)]
 
 
-def gorev_olustur(prompt, profil="lite", baslik=None, sema=None, gizli=True):
+def gorev_olustur(prompt, profil="lite", baslik=None, sema=None):
     model, _ = _profil(profil)
     hatalar = []
-    for ad, govde in _govde_bicimleri(prompt, model, baslik, sema, gizli):
+    for ad, govde in _govde_bicimleri(prompt, model, baslik, sema):
         try:
             y = _http("POST", "/v2/task.create", govde)
             print(f"      [task.create govde bicimi: {ad}]")
@@ -196,9 +197,11 @@ def gorev_detay(tid):
     return _http("GET", "/v2/task.detail", sorgu={"task_id": tid})
 
 
-def gorev_mesajlar(tid, limit=30):
-    return _http("GET", "/v2/task.listMessages",
-                 sorgu={"task_id": tid, "limit": limit, "order": "desc"})
+def gorev_mesajlar(tid, limit=30, verbose=None):
+    sorgu = {"task_id": tid, "limit": limit, "order": "desc"}
+    if verbose is not None:
+        sorgu["verbose"] = "true" if verbose else "false"
+    return _http("GET", "/v2/task.listMessages", sorgu=sorgu)
 
 
 def gorev_durdur(tid):
@@ -219,37 +222,81 @@ def _durum(detay):
     return str(d).lower().strip() if d else ""
 
 
-def _metin_topla(mesajlar, ters=True):
-    """Mesaj listesinden ajanin URETTIGI metni birlestir.
+_METIN_ALAN = ("text", "content", "message", "value", "output", "answer", "body")
+_LISTE_ALAN = ("messages", "data", "items", "list", "records", "events", "results")
 
-    Liste API'den EN YENI ONCE (order=desc) gelir — boylece uzun bir gorevde
-    nihai cevabin ilk sayfada oldugu garanti olur. Ama rapor metni KRONOLOJIK
-    okunmali (cok parcali bir cevap ters sirada birlesirse rapor bastan sona
-    degil sondan basa okunur), bu yuzden birlestirmeden once ters cevrilir.
-    """
-    kayitlar = mesajlar
-    if isinstance(mesajlar, dict):
-        for k in ("messages", "data", "items", "list"):
-            if isinstance(mesajlar.get(k), list):
-                kayitlar = mesajlar[k]
-                break
-    if not isinstance(kayitlar, list):
+
+def _parca_metin(icerik, _derinlik=0):
+    """Mesaj icerigini duz metne cevir: string, parca listesi ya da ic ice sozluk."""
+    if _derinlik > 4 or icerik is None:
         return ""
+    if isinstance(icerik, str):
+        return icerik.strip()
+    if isinstance(icerik, list):
+        return "\n".join(p for p in (_parca_metin(x, _derinlik + 1) for x in icerik) if p)
+    if isinstance(icerik, dict):
+        for k in _METIN_ALAN:
+            if k in icerik:
+                s = _parca_metin(icerik[k], _derinlik + 1)
+                if s:
+                    return s
+    return ""
+
+
+def _kayitlar(mesajlar, _derinlik=0):
+    """Yanit zarfinin icindeki mesaj listesini bul (alan adi surume gore degisir)."""
+    if isinstance(mesajlar, list):
+        return mesajlar
+    if isinstance(mesajlar, dict) and _derinlik < 4:
+        for k in _LISTE_ALAN:
+            v = mesajlar.get(k)
+            if isinstance(v, list):
+                return v
+            if isinstance(v, dict):
+                ic = _kayitlar(v, _derinlik + 1)
+                if ic:
+                    return ic
+    return []
+
+
+def _metin_topla(mesajlar, ters=True):
+    """Ajanin URETTIGI metni birlestir.
+
+    Liste API'den EN YENI ONCE (order=desc) gelir — nihai cevabin ilk sayfada
+    oldugu garanti olsun diye. Rapor kronolojik okunmali, bu yuzden once ters
+    cevrilir. Rol alani beklenenden farkli adlandirilmissa (ilk canli kosuda
+    metin bos donmustu) suzgecsiz ikinci bir deneme yapilir.
+    """
+    kayitlar = _kayitlar(mesajlar)
     if ters:
         kayitlar = list(reversed(kayitlar))
-    parcalar = []
-    for m in kayitlar:
-        if not isinstance(m, dict):
-            continue
-        rol = str(m.get("role") or m.get("sender") or m.get("type") or "").lower()
-        if rol in ("user", "human"):
-            continue
-        icerik = m.get("content") or m.get("text") or m.get("message") or ""
-        if isinstance(icerik, list):
-            icerik = "".join(p.get("text", "") for p in icerik if isinstance(p, dict))
-        if isinstance(icerik, str) and icerik.strip():
-            parcalar.append(icerik.strip())
-    return "\n\n".join(parcalar)
+
+    def _topla(rol_suz):
+        parcalar = []
+        for m in kayitlar:
+            if not isinstance(m, dict):
+                s = _parca_metin(m)
+                if s:
+                    parcalar.append(s)
+                continue
+            rol = str(m.get("role") or m.get("sender") or m.get("author") or "").lower()
+            if rol_suz and rol in ("user", "human"):
+                continue
+            s = _parca_metin(m.get("content") if "content" in m else m)
+            if s:
+                parcalar.append(s)
+        return "\n\n".join(parcalar)
+
+    return _topla(True) or _topla(False)
+
+
+def _yapi_ozeti(ad, obj, sinir=500):
+    """Tani: beklenmedik yanit bicimini bir sonraki kosuda gorebilmek icin dok."""
+    try:
+        ham = json.dumps(obj, ensure_ascii=False)
+    except Exception:
+        ham = str(obj)
+    print(f"      [tani] {ad}: {ham[:sinir]}")
 
 
 def calistir(prompt, sema=None, profil="lite", baslik=None,
@@ -292,11 +339,22 @@ def calistir(prompt, sema=None, profil="lite", baslik=None,
         gorev_durdur(tid)
         raise RuntimeError(f"Manus gorevi {zaman_asimi}sn icinde bitmedi (task_id={tid}).")
 
-    mesajlar = {}
+    mesajlar, metin = {}, ""
     try:
         mesajlar = gorev_mesajlar(tid)
+        metin = _metin_topla(mesajlar)
     except Exception as e:
         print(f"      [uyari] mesajlar alinamadi: {str(e)[:90]}")
+    if not metin:
+        # Sade listede govde gelmiyorsa ayrintili listeyi dene (ek kredi yok).
+        try:
+            ayrintili = gorev_mesajlar(tid, verbose=True)
+            ayrintili_metin = _metin_topla(ayrintili)
+            if ayrintili_metin:
+                mesajlar, metin = ayrintili, ayrintili_metin
+                print("      [not] metin ayrintili mesaj listesinden alindi (verbose)")
+        except Exception as e:
+            print(f"      [uyari] ayrintili mesajlar alinamadi: {str(e)[:90]}")
 
     kredi = _kredi_bul(detay) or _kredi_bul(mesajlar)
     meta = {"task_id": tid, "url": url, "durum": durum, "profil": profil_ad,
@@ -311,9 +369,12 @@ def calistir(prompt, sema=None, profil="lite", baslik=None,
     veri = _derin_ara(detay, {"structured_output", "structured_result", "output", "result"})
     if isinstance(veri, str):
         veri = _json_ayikla(veri) or veri
-    metin = _metin_topla(mesajlar)
     if not isinstance(veri, (dict, list)):
         veri = _json_ayikla(metin)
+    if not metin and not veri:
+        # Hicbir sey ayiklanamadi: bir sonraki kosuda bicimi gorebilmek icin dok.
+        _yapi_ozeti("task.detail", detay)
+        _yapi_ozeti("task.listMessages", mesajlar)
     return veri, metin, meta
 
 

@@ -70,8 +70,13 @@ jobs:
         run: |
           git config user.name "manus-bot"
           git config user.email "manus-bot@users.noreply.github.com"
-          git add senaryolar.json manus_durum.json manus_rapor.md \
-                  manus_strateji.md manus_rakip.md 2>/dev/null || true
+          # Var olan dosyalari TEK TEK ekle: 'git add a b c' listedeki bir dosya
+          # yoksa tamamen basarisiz olur ve HICBIR SEYI stage etmez (ilk ping
+          # kosusunda kredi defteri bu yuzden commit'lenmeden kaldi).
+          for f in senaryolar.json manus_durum.json manus_rapor.md \
+                   manus_strateji.md manus_rakip.md; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
           git commit -m "manus: otomatik kosu ciktisi" || { echo "degisiklik yok"; exit 0; }
           for i in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main && git push; then
