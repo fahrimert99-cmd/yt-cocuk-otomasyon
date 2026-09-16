@@ -152,3 +152,69 @@ Sistem hatalara karşı sağlamlaştırılmıştır (ayrıntı: `RESILIENCE_GUID
 ## GÜVENLİK
 Tüm anahtarları **yalnızca GitHub Secrets**'a gir; düz metin olarak repoya koyma.
 `client_secret.json`'u repoya **yükleme**.
+
+---
+
+## 🧠 MANUS (ajan) — arastirma katmani, kredi kurgusuna gore zamanlanmis
+
+Manus normal bir LLM degil, **ajandir**: web'de gezer, kaynak dogrular, rapor uretir.
+Gunluk video uretim hattina (kisa/uzun/haber) **bilerek baglanmadi** — o hatlar eskisi
+gibi ucretsiz saglayicilarla (NVIDIA → Claude → Gemini → Pollinations) calisir.
+Manus yalnizca arastirma gerektiren, seyrek ve yuksek degerli isleri yapar.
+
+### Kredi modeli (ucretsiz plan) — kurgunun dayandigi kurallar
+| Kural | Sonuc |
+|-------|-------|
+| Her gun **300 kredi** yenilenir, UTC gece yarisi **sifirlanir, devretmez** | Kullanilmayan kredi **yanar** → duzenli, kucuk gorevler mantikli |
+| Tuketim sirasi: **gunluk → aylik → kalici bakiye** | Gunde 300'u asmayan gorev, hesaptaki **kalici 1100 krediye hic dokunmaz** |
+| Yenilenen kredilerin **aylik tavani 1500** | Asil kisitlayici sinir bu → ayda **~10-12 lite gorev** |
+| Ucretsiz planda yalnizca **Manus 1.6 Lite** | `profil: lite` varsayilan; `standart`/`max` ucretli plan ister |
+
+### Takvim (`.github/workflows/manus.yml`)
+| Ne zaman | Is kolu | Cikti | Tahmini |
+|----------|---------|-------|---------|
+| **3 gunde bir** 05:00 UTC | `senaryo` (3 adet) | `senaryolar.json` + `manus_rapor.md` | ~100-150 |
+| **Ayin 1'i** 04:00 UTC | `strateji` | `manus_strateji.md` | ~100-250 |
+| Elle | `rakip` | `manus_rakip.md` | ~250 |
+| Elle | `ping` | anahtar dogrulama | ~10 |
+
+Aylik toplam ~1100-1400 kredi → **1500 tavaninin altinda**, yani surekli ve
+**bedava** calisir. Kalici 1100 kredi rezerv olarak dokunulmadan durur.
+
+### Kredi defteri — `manus_durum.json`
+Uc kova ayri tutulur: `gunluk_harcanan` (UTC gun degisince sifirlanir),
+`aylik_harcanan` (ay degisince sifirlanir) ve `rezerv_kredi` (kalici bakiye).
+Her gorevden **once** kontrol, **sonra** isleme yapilir:
+
+- Gunluk kredi yetiyorsa oradan harcanir (bedava).
+- Gunluk bittiyse ya da aylik tavan dolduysa gorev **baslatilmaz** — ertesi gun
+  yeniden dener.
+- Rezervden harcamak **acik izin ister**: is akisinda `rezerv: true` girdisi ya
+  da `MANUS_REZERV=1`.
+
+> Defterdeki rakamlar tahmine dayanabilir (API gercek tuketimi bildirmezse
+> muhafazakar tahmin yazilir). Manus panelindeki gercek bakiyeyle arada fark
+> olusursa `manus_durum.json`'daki degerleri elle duzelt.
+
+### Kurulum
+1. Repo → **Settings → Secrets → Actions** → `MANUS_API_KEY` ekle.
+2. Actions → **Manus Arastirma** → `mod: ping` ile anahtari dogrula (~10 kredi).
+3. Zamanlanmis kosular kendiliginde baslar. Durdurmak icin `manus.yml` icindeki
+   `schedule` blogunu kaldir.
+
+### Modlar
+| Mod | Ne yapar |
+|-----|----------|
+| `ping` | Anahtari en dusuk maliyetle dogrular |
+| `senaryo` | Web'den **dogrulanmis** yeni tuzak senaryolari uretir, dedup + kalite elemesi + `senaryolar_validator` kontrolunden gecirip `senaryolar.json`'a ekler; her senaryoya `kaynaklar` URL listesi iliskilendirir |
+| `strateji` | `analiz_rapor.json` + havuzu okuyup 30 gunluk buyume plani yazar |
+| `rakip` | Nis rakip/icerik boslugu analizi + 15 video fikri |
+
+`senaryo` modunun `trend.py`'den farki: `trend.py` YouTube trendine bakip LLM'e
+yazdirir; Manus **kaynak dogrular**. Kanal "uydurma istatistik verme" kuralinda
+oldugundan bu dogrudan kalite kazancidir.
+
+Yerel deneme (API'ye istek atmadan promptu gormek icin):
+```bash
+MANUS_KURU=1 MOD=senaryo SAYI=3 python3 manus_besle.py
+```
