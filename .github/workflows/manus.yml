@@ -1,10 +1,17 @@
-name: Manus Arastirma (Elle)
+name: Manus Arastirma
 
-# KREDI KORUMASI: Bu is akisi BILEREK cron'suzdur — yalnizca elle calisir.
-# Manus bir ajan servisidir ve gorev basina ~100-500 kredi harcar; gunluk
-# uretim hatti (otomasyon/uzun/haber) Manus'a BAGLANMAMISTIR ve ucretsiz
-# saglayicilarla calismaya devam eder.
+# KREDI KURGUSU (Manus ucretsiz plan):
+#   · Her gun 300 kredi yenilenir, UTC gece yarisi SIFIRLANIR ve devredilmez
+#     -> kullanilmayan kredi YANAR, bu yuzden duzenli/kucuk gorevler mantikli.
+#   · Tuketim sirasi gunluk -> aylik -> kalici bakiye; gunde 300'u asmayan bir
+#     gorev hesaptaki kalici 1100 krediye HIC dokunmaz.
+#   · Yenilenen kredilerin AYLIK tavani 1500'dur (asil sinir) -> ayda ~10-12
+#     lite gorev. Takvim buna gore 3 GUNDE BIR senaryo + ayda 1 strateji.
+#   · Ucretsiz planda yalnizca 'lite' (Manus 1.6 Lite) calisir.
 on:
+  schedule:
+    - cron: "0 4 1 * *"      # ayin 1'i 04:00 UTC — aylik strateji raporu
+    - cron: "0 5 */3 * *"    # 3 gunde bir 05:00 UTC — kaynakli senaryo besleme
   workflow_dispatch:
     inputs:
       mod:
@@ -14,7 +21,7 @@ on:
         type: choice
         options: [ping, senaryo, strateji, rakip]
       profil:
-        description: "Ajan profili (lite ~100, standart ~250, max ~500 kredi)"
+        description: "Ajan profili (ucretsiz planda yalnizca lite calisir)"
         required: false
         default: "lite"
         type: choice
@@ -22,11 +29,12 @@ on:
       sayi:
         description: "senaryo modunda uretilecek adet (1-8)"
         required: false
-        default: "5"
-      butce:
-        description: "Toplam kredi butcesi (bos = manus_durum.json'daki deger)"
+        default: "3"
+      rezerv:
+        description: "Gunluk/aylik kredi bittiyse kalici bakiyeden (rezerv) harca"
         required: false
-        default: ""
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -50,10 +58,12 @@ jobs:
       - name: Manus gorevi
         env:
           MANUS_API_KEY: ${{ secrets.MANUS_API_KEY }}
-          MANUS_BUTCE: ${{ github.event.inputs.butce }}
-          MOD: ${{ github.event.inputs.mod }}
-          PROFIL: ${{ github.event.inputs.profil }}
-          SAYI: ${{ github.event.inputs.sayi }}
+          # Zamanlanmis kosuda mod cron'dan belirlenir; elle kosuda girdiden.
+          MOD: ${{ github.event.inputs.mod || (github.event.schedule == '0 4 1 * *' && 'strateji' || 'senaryo') }}
+          PROFIL: ${{ github.event.inputs.profil || 'lite' }}
+          SAYI: ${{ github.event.inputs.sayi || '3' }}
+          # Rezerv (kalici 1100 kredi) yalnizca elle ve bilerek acilir.
+          MANUS_REZERV: ${{ github.event.inputs.rezerv == 'true' && '1' || '0' }}
         run: python3 manus_besle.py
       - name: Ciktilari commit et
         if: always()
@@ -62,7 +72,7 @@ jobs:
           git config user.email "manus-bot@users.noreply.github.com"
           git add senaryolar.json manus_durum.json manus_rapor.md \
                   manus_strateji.md manus_rakip.md 2>/dev/null || true
-          git commit -m "manus: ${{ github.event.inputs.mod }} ciktisi" || { echo "degisiklik yok"; exit 0; }
+          git commit -m "manus: otomatik kosu ciktisi" || { echo "degisiklik yok"; exit 0; }
           for i in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main && git push; then
               echo "push tamam (deneme $i)"; exit 0

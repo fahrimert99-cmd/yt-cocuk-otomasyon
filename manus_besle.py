@@ -235,20 +235,20 @@ def _rapor_yaz(yol, baslik, govde, meta):
 
 
 def mod_ping(profil):
-    d = M.butce_kontrol("lite")
+    d, kaynak = M.butce_kontrol("lite")
     veri, metin, meta = M.calistir(
         "Sadece su tek kelimeyi yaz, baska hicbir sey yazma: TAMAM",
         profil="lite", baslik="anahtar testi", zaman_asimi=600, aralik=10)
     print(f"      Yanit: {(metin or '')[:200]!r}")
-    M.butce_isle(d, "ping", meta)
+    M.butce_isle(d, "ping", meta, kaynak)
     return 0
 
 
 def mod_senaryo(profil, sayi):
-    d = M.butce_kontrol(profil)
+    d, kaynak = M.butce_kontrol(profil)
     veri, metin, meta = M.calistir(_senaryo_prompt(sayi), sema=SENARYO_SEMA,
                                    profil=profil, baslik=f"{sayi} yeni tuzak senaryosu")
-    d = M.butce_isle(d, "senaryo", meta)
+    d = M.butce_isle(d, "senaryo", meta, kaynak)
 
     if isinstance(veri, list):
         veri = {"senaryolar": veri}
@@ -323,10 +323,10 @@ def mod_senaryo(profil, sayi):
 def mod_rapor(mod, profil):
     prompt = _strateji_prompt() if mod == "strateji" else _rakip_prompt()
     baslik = ("Kanal Buyume Stratejisi" if mod == "strateji" else "Nis Rakip & Bosluk Analizi")
-    d = M.butce_kontrol(profil)
+    d, kaynak = M.butce_kontrol(profil)
     veri, metin, meta = M.calistir(prompt, profil=profil, baslik=baslik,
                                    zaman_asimi=3000, aralik=25)
-    d = M.butce_isle(d, mod, meta)
+    d = M.butce_isle(d, mod, meta, kaynak)
     govde = metin or (json.dumps(veri, ensure_ascii=False, indent=2) if veri else "")
     if not govde.strip():
         raise SystemExit("Manus bos rapor dondurdu.")
@@ -338,10 +338,13 @@ def main():
     mod = (sys.argv[1] if len(sys.argv) > 1 else os.environ.get("MOD", "ping")).strip().lower()
     profil = (os.environ.get("PROFIL") or "lite").strip().lower()
     try:
-        sayi = max(1, min(8, int(os.environ.get("SAYI") or 5)))
+        sayi = max(1, min(8, int(os.environ.get("SAYI") or 3)))
     except ValueError:
-        sayi = 5
+        sayi = 3
     print(f"[Manus] mod={mod} profil={profil} sayi={sayi}")
+    if profil != "lite":
+        print("      [uyari] ucretsiz planda yalnizca 'lite' (Manus 1.6 Lite) "
+              "calisir; standart/max ucretli plan gerektirir.")
     if mod == "ping":
         return mod_ping(profil)
     if mod == "senaryo":

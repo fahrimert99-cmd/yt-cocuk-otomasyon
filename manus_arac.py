@@ -31,7 +31,17 @@ PROFILLER = {
 }
 # Muhafazakar kredi tahmini (Manus gercek tuketimi yanitta bildirirse o kullanilir).
 TAHMINI_KREDI = {"lite": 100, "standart": 250, "max": 500}
-VARSAYILAN_BUTCE = 1100
+
+# KREDI MODELI (Manus ucretsiz plan):
+#   · 300 kredi HER GUN yenilenir, UTC gece yarisi sifirlanir ve DEVREDILMEZ.
+#   · Tuketim sirasi gunluk -> aylik -> ek paket -> kalici bakiye; yani gunde
+#     300'u asmayan bir gorev kalici bakiyeye HIC dokunmaz (bedava calisir).
+#   · Gunluk yenileme kredilerinin AYLIK tuketim tavani 1500'dur — asil
+#     kisitlayici sinir budur (ayda ~10-12 lite gorev).
+#   · Kalici bakiye (rezerv) yalnizca ACIKCA izin verilirse harcanir.
+GUNLUK_LIMIT = 300
+AYLIK_LIMIT = 1500
+VARSAYILAN_REZERV = 1100
 
 
 # --------------------------------------------------------------- yardimcilar
@@ -270,58 +280,105 @@ def calistir(prompt, sema=None, profil="lite", baslik=None,
 
 
 # ------------------------------------------------------------------- butce
+def _bugun():
+    return time.strftime("%Y-%m-%d", time.gmtime())
+
+
+def _bu_ay():
+    return time.strftime("%Y-%m", time.gmtime())
+
+
 def durum_oku():
+    """Kredi defterini oku; gun/ay degistiyse ilgili sayaci sifirla."""
     try:
         with open(DURUM_DOSYA, encoding="utf-8-sig") as f:
             d = json.load(f)
     except Exception:
         d = {}
-    d.setdefault("butce_kredi", int(os.environ.get("MANUS_BUTCE") or VARSAYILAN_BUTCE))
-    if os.environ.get("MANUS_BUTCE"):
-        d["butce_kredi"] = int(os.environ["MANUS_BUTCE"])
-    d.setdefault("harcanan_kredi", 0)
+    d["gunluk_limit"] = int(os.environ.get("MANUS_GUNLUK_LIMIT") or
+                            d.get("gunluk_limit") or GUNLUK_LIMIT)
+    d["aylik_limit"] = int(os.environ.get("MANUS_AYLIK_LIMIT") or
+                           d.get("aylik_limit") or AYLIK_LIMIT)
+    d["rezerv_kredi"] = int(os.environ.get("MANUS_REZERV_KREDI") or
+                            d.get("rezerv_kredi") or VARSAYILAN_REZERV)
+    if d.get("gun") != _bugun():                  # UTC gece yarisi sifirlanir
+        d["gun"], d["gunluk_harcanan"] = _bugun(), 0
+    if d.get("ay") != _bu_ay():
+        d["ay"], d["aylik_harcanan"] = _bu_ay(), 0
+    d.setdefault("gunluk_harcanan", 0)
+    d.setdefault("aylik_harcanan", 0)
     d.setdefault("gorevler", [])
-    d["kalan_kredi"] = d["butce_kredi"] - d["harcanan_kredi"]
+    return _kalanlar(d)
+
+
+def _kalanlar(d):
+    d["gunluk_kalan"] = max(0, d["gunluk_limit"] - d["gunluk_harcanan"])
+    d["aylik_kalan"] = max(0, d["aylik_limit"] - d["aylik_harcanan"])
     return d
 
 
 def durum_yaz(d):
-    d["kalan_kredi"] = d["butce_kredi"] - d["harcanan_kredi"]
+    _kalanlar(d)
     d["guncelleme"] = time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
     with open(DURUM_DOSYA, "w", encoding="utf-8") as f:
         json.dump(d, f, ensure_ascii=False, indent=2)
 
 
-def butce_kontrol(profil="lite"):
-    """Gorevden ONCE cagir. Kalan butce yetmiyorsa calismayi durdurur."""
+def butce_kontrol(profil="lite", rezerv_izin=False):
+    """Gorevden ONCE cagir. (defter, kaynak) dondurur; yetmezse calismayi durdurur.
+
+    kaynak = "gunluk" (bedava yenilenen kredi) | "rezerv" (kalici bakiye).
+    Gunluk yenilenen kredi kullanilmazsa YANAR, bu yuzden once o harcanir.
+    """
     _, ad = _profil(profil)
     tahmin = TAHMINI_KREDI[ad]
     d = durum_oku()
-    print(f"      Kredi: butce {d['butce_kredi']} | harcanan {d['harcanan_kredi']} | "
-          f"kalan {d['kalan_kredi']} | bu gorev ~{tahmin}")
-    if d["kalan_kredi"] < tahmin and os.environ.get("MANUS_BUTCE_ZORLA") != "1":
-        raise SystemExit(
-            f"BUTCE KORUMASI: kalan {d['kalan_kredi']} kredi, bu gorev icin ~{tahmin} "
-            f"gerekiyor. Gercek bakiyen daha yuksekse {DURUM_DOSYA} icindeki "
-            f"'butce_kredi' degerini guncelle ya da MANUS_BUTCE_ZORLA=1 ver.")
-    return d
+    if not rezerv_izin:
+        rezerv_izin = os.environ.get("MANUS_REZERV") == "1"
+    print(f"      Kredi defteri: gunluk {d['gunluk_kalan']}/{d['gunluk_limit']} | "
+          f"aylik {d['aylik_kalan']}/{d['aylik_limit']} | "
+          f"rezerv {d['rezerv_kredi']} | bu gorev ~{tahmin}")
+
+    if d["gunluk_kalan"] >= tahmin and d["aylik_kalan"] >= tahmin:
+        return d, "gunluk"
+
+    neden = ("gunluk yenilenen kredi bitti" if d["gunluk_kalan"] < tahmin
+             else "aylik yenileme tavani (1500) doldu")
+    if rezerv_izin and d["rezerv_kredi"] >= tahmin:
+        print(f"      [{neden}] -> REZERVDEN harcanacak ({d['rezerv_kredi']} kredi)")
+        return d, "rezerv"
+    if os.environ.get("MANUS_BUTCE_ZORLA") == "1":
+        print(f"      [{neden}] -> MANUS_BUTCE_ZORLA=1, yine de calistiriliyor")
+        return d, "gunluk"
+    raise SystemExit(
+        f"BUTCE KORUMASI: {neden}. Bu gorev ~{tahmin} kredi gerektiriyor "
+        f"(gunluk kalan {d['gunluk_kalan']}, aylik kalan {d['aylik_kalan']}, "
+        f"rezerv {d['rezerv_kredi']}). Yenilenen kredi UTC gece yarisi sifirlanir; "
+        f"yarin tekrar dene. Rezervden harcamak icin MANUS_REZERV=1 ver.")
 
 
-def butce_isle(d, mod, meta):
-    """Gorevden SONRA cagir: tuketimi deftere isle."""
+def butce_isle(d, mod, meta, kaynak="gunluk"):
+    """Gorevden SONRA cagir: tuketimi dogru kovaya isle."""
     if meta.get("kuru"):
         return d
-    d["harcanan_kredi"] = int(d.get("harcanan_kredi", 0)) + int(meta.get("kredi", 0))
+    kredi = int(meta.get("kredi", 0))
+    if kaynak == "rezerv":
+        d["rezerv_kredi"] = max(0, int(d.get("rezerv_kredi", 0)) - kredi)
+    else:
+        d["gunluk_harcanan"] = int(d.get("gunluk_harcanan", 0)) + kredi
+        d["aylik_harcanan"] = int(d.get("aylik_harcanan", 0)) + kredi
     d["gorevler"] = (d.get("gorevler") or [])[-49:] + [{
         "tarih": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
-        "mod": mod, "profil": meta.get("profil"), "task_id": meta.get("task_id"),
-        "kredi": meta.get("kredi"), "tahmini": meta.get("kredi_tahmini"),
-        "sure_sn": meta.get("sure_sn"), "url": meta.get("url"),
+        "mod": mod, "profil": meta.get("profil"), "kaynak": kaynak,
+        "task_id": meta.get("task_id"), "kredi": kredi,
+        "tahmini": meta.get("kredi_tahmini"), "sure_sn": meta.get("sure_sn"),
+        "url": meta.get("url"),
     }]
     durum_yaz(d)
-    print(f"      Kredi islendi: -{meta.get('kredi')} "
-          f"({'tahmini' if meta.get('kredi_tahmini') else 'gercek'}) | "
-          f"kalan {d['kalan_kredi']}")
+    print(f"      Kredi islendi: -{kredi} ({kaynak}, "
+          f"{'tahmini' if meta.get('kredi_tahmini') else 'gercek'}) | "
+          f"gunluk kalan {d['gunluk_kalan']} · aylik kalan {d['aylik_kalan']} · "
+          f"rezerv {d['rezerv_kredi']}")
     return d
 
 

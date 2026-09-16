@@ -1,7 +1,11 @@
 {
-  "butce_kredi": 1100,
-  "harcanan_kredi": 0,
-  "kalan_kredi": 1100,
-  "not": "Manus kredi defteri. 'butce_kredi' Manus hesabindaki gercek bakiyeye gore elle guncellenir; her gorevden sonra manus_besle.py buraya tuketimi isler ve butce bitince yeni gorev baslatmaz.",
+  "gunluk_limit": 300,
+  "aylik_limit": 1500,
+  "rezerv_kredi": 1100,
+  "gun": "",
+  "gunluk_harcanan": 0,
+  "ay": "",
+  "aylik_harcanan": 0,
+  "not": "Manus kredi defteri. gunluk_limit: her gun yenilenen ve DEVREDILMEYEN kredi (UTC gece yarisi sifirlanir). aylik_limit: yenilenen kredilerin aylik tuketim tavani — asil kisitlayici sinir budur. rezerv_kredi: hesaptaki kalici bakiye; yalnizca MANUS_REZERV=1 verilirse harcanir. Degerler Manus hesabindaki gercek duruma gore elle guncellenebilir.",
   "gorevler": []
 }
