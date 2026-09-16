@@ -1,0 +1,50 @@
+name: Manus Raporu KURTAR (kredi harcamaz)
+
+# Manus uzun raporlari mesaj govdesine degil DOSYAYA yazar; dosyaya mesajdaki
+# "attachments" alanindaki cdn.manus.im URL'siyle erisilir. Bu is akisi, BITMIS
+# bir gorevin ciktisini yeniden alir: yeni gorev ACMAZ, dolayisiyla KREDI
+# HARCAMAZ. Hangi gorev oldugunu manus_durum.json'daki son rapor kaydindan
+# kendisi bulur — secilecek bir sey yok.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kisa-video
+  cancel-in-progress: false
+
+jobs:
+  kurtar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Raporu kurtar
+        env:
+          MANUS_API_KEY: ${{ secrets.MANUS_API_KEY }}
+          MOD: kurtar
+        run: python3 manus_besle.py
+      - name: Raporu commit et
+        if: always()
+        run: |
+          git config user.name "manus-bot"
+          git config user.email "manus-bot@users.noreply.github.com"
+          for f in manus_rakip.md manus_strateji.md manus_rapor.md manus_durum.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          git commit -m "manus: rapor kurtarildi (ek dosyadan)" || { echo "degisiklik yok"; exit 0; }
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "push tamam (deneme $i)"; exit 0
+            fi
+            echo "push denemesi $i basarisiz"; sleep $((2 ** i))
+          done
+          echo "push atlandi"; exit 0

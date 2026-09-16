@@ -408,11 +408,65 @@ def calistir(prompt, sema=None, profil="lite", baslik=None,
         veri = _json_ayikla(veri) or veri
     if not isinstance(veri, (dict, list)):
         veri = _json_ayikla(metin)
+    meta["ekler"] = ekler(mesajlar)
+    if meta["ekler"]:
+        print(f"      {len(meta['ekler'])} ek dosya bulundu: "
+              + ", ".join(e["ad"][:40] for e in meta["ekler"][:3]))
     if not metin and not veri:
         # Hicbir sey ayiklanamadi: bir sonraki kosuda bicimi gorebilmek icin dok.
         _yapi_ozeti("task.detail", detay)
         _yapi_ozeti("task.listMessages", mesajlar)
     return veri, metin, meta
+
+
+# --- EKLER (attachments) --------------------------------------------------
+# Manus uzun ciktilari mesaj govdesine degil DOSYAYA yazar; dosyalar
+# assistant_message icindeki "attachments" alaninda cdn.manus.im URL'si olarak
+# gelir (kosu 35068344792'de rapor boyle kayboldu). Bu ekleri toplayip
+# indirmek YENI GOREV BASLATMAZ, yani KREDI HARCAMAZ.
+_EK_ALAN = ("attachments", "files", "attachment", "file_list")
+
+
+def ekler(mesajlar):
+    """Mesajlardaki ek dosyalari (url, ad) listesi olarak dondur."""
+    out, gorulen = [], set()
+
+    def _gez(o, _d=0):
+        if _d > 6 or o is None:
+            return
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if str(k).lower() in _EK_ALAN and isinstance(v, list):
+                    for e in v:
+                        if isinstance(e, str) and e.startswith("http"):
+                            u, ad = e, e.rsplit("/", 1)[-1]
+                        elif isinstance(e, dict):
+                            u = (e.get("url") or e.get("file_url") or e.get("download_url")
+                                 or e.get("link") or "")
+                            ad = (e.get("filename") or e.get("name") or e.get("file_name")
+                                  or (u.rsplit("/", 1)[-1] if u else ""))
+                        else:
+                            continue
+                        if u and u.startswith("http") and u not in gorulen:
+                            gorulen.add(u)
+                            out.append({"url": u, "ad": ad or "ek"})
+                _gez(v, _d + 1)
+        elif isinstance(o, list):
+            for v in o:
+                _gez(v, _d + 1)
+
+    _gez(mesajlar)
+    return out
+
+
+def ek_indir(url, timeout=90):
+    """Ek dosyayi metin olarak indir (API anahtari basligiyla; gerekmezse de calisir)."""
+    req = urllib.request.Request(url, headers={
+        "Accept": "*/*", "User-Agent": "yt-otomasyon",
+        "x-manus-api-key": anahtar()})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        ham = r.read()
+    return ham.decode("utf-8", "ignore")
 
 
 # ------------------------------------------------------------------- butce
