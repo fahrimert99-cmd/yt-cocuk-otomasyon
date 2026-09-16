@@ -202,6 +202,24 @@ def _pool_tema_map(_cache={}):
             _cache["__yok__"] = True
     return _cache
 
+def _pool_uretim_map(_cache={}):
+    """Baslik -> uretim kohortu (v1 eski havuz / v2 yeni prompt). Bkz. otomasyon.py."""
+    if not _cache:
+        try:
+            with open("senaryolar.json", encoding="utf-8-sig") as f:
+                for s in json.load(f):
+                    b = (s.get("baslik") or "").strip()
+                    if b:
+                        _cache[b] = s.get("uretim") or "v1"
+        except Exception:
+            _cache["__yok__"] = True
+    return _cache
+
+
+def _uretim(baslik):
+    return _pool_uretim_map().get((baslik or "").strip()) or "v1"
+
+
 def _tema(baslik):
     m = _pool_tema_map()
     kayitli = m.get((baslik or "").strip())
@@ -265,6 +283,7 @@ def _videolar(yt):
                 "begeni": int(st.get("likeCount", 0)),
                 "yorum": int(st.get("commentCount", 0)),
                 "sure_sn": sn, "format": _format(sn), "tema": _tema(v["snippet"]["title"]),
+            "uretim": _uretim(v["snippet"]["title"]),
             })
     return videolar, kanal_ist
 
@@ -338,6 +357,7 @@ def _ai_yorum(rapor, bulgular, aksiyonlar):
         "kanal": rapor.get("kanal"),
         "format_ozet": rapor.get("format_ozet"),
         "tema_ozet": rapor.get("tema_ozet"),
+        "uretim_ozet": rapor.get("uretim_ozet"),
         "top10": rapor.get("top10"),
         "son7gun": rapor.get("son7gun"),
         "kural_bulgular": [b.lstrip("- ") for b in bulgular],
@@ -530,6 +550,7 @@ def main():
     bugun = dt.date.today().isoformat()
     format_ozet = _grup_ozet(videolar, "format")
     tema_ozet = _grup_ozet(videolar, "tema")
+    uretim_ozet = _grup_ozet(videolar, "uretim")   # v1/v2 A/B karsilastirmasi
     top = sorted(videolar, key=lambda x: -x["izlenme"])[:10]
     # son 7 gün yayınlananlar
     esik = (dt.date.today() - dt.timedelta(days=7)).isoformat()
@@ -556,6 +577,7 @@ def main():
                      "tema": v["tema"], "format": v["format"], "yayin": v["yayin"]} for v in yeni],
         "format_ozet": format_ozet,
         "tema_ozet": tema_ozet,
+        "uretim_ozet": uretim_ozet,
     }
     # LLM ile anlatısal 'danışman yorumu' (varsa); başarısızsa None kalır
     # AI danışman yorumu opsiyonel: AI_YORUM=0 ile tamamen kapatılır (rapor yine
@@ -615,6 +637,22 @@ def main():
     L.append("|------|-------|--------------|--------------|----------------|-------------|")
     for t, d in sorted(tema_ozet.items(), key=lambda x: -x[1]["ort_izlenme"]):
         L.append(f"| {t} | {d['video']} | {d['ort_izlenme']} | {d.get('ort_izlenme_gunluk','-')} | {d['toplam_izlenme']} | {d['etkilesim_orani']} |")
+    # A/B: eski havuz (v1) ile yeni prompt (v2) ayni donemde yarisiyor.
+    _uo = rapor.get("uretim_ozet") or {}
+    if len(_uo) >= 2:
+        L.append("\n## 🧪 A/B — üretim kohortu (v1 eski havuz / v2 yeni prompt)")
+        L.append("| Kohort | Video | Ort. izlenme | Ort. günlük* | Etkileşim % |")
+        L.append("|--------|-------|--------------|--------------|-------------|")
+        for k in sorted(_uo):
+            d = _uo[k]
+            L.append(f"| {k} | {d['video']} | {d['ort_izlenme']} | "
+                     f"{d.get('ort_izlenme_gunluk','-')} | {d['etkilesim_orani']} |")
+        _v1, _v2 = _uo.get("v1"), _uo.get("v2")
+        if _v1 and _v2 and _v1["ort_izlenme_gunluk"]:
+            _fark = (_v2["ort_izlenme_gunluk"] - _v1["ort_izlenme_gunluk"]) / _v1["ort_izlenme_gunluk"] * 100
+            L.append(f"\n> v2 günlük ortalaması v1'e göre **%{_fark:+.0f}**. "
+                     f"Kohort başına {min(_v1['video'], _v2['video'])} video var; "
+                     "10'un altında fark gürültü sayılmalı.")
     L.append("\n> *Ort. günlük = izlenme / video yaşı (gün). Yaşa göre normalize; farklı "
              "yaştaki videoları adil kıyaslar. Kümülatif izlenme eski videoyu şişirir.")
     L.append("\n## En çok izlenen 10 video")

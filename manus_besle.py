@@ -310,6 +310,7 @@ def mod_senaryo(profil, sayi):
         s["etiketler"] = et[:12]
         s["tema"] = s.get("tema") or "tuzak"
         s["kaynak"] = "manus"
+        s["uretim"] = "v2"          # A/B kohortu (bkz. otomasyon.py)
         if not _gecerli(s):
             elenen.append(f"{bas} (sema/kalite)")
             continue
