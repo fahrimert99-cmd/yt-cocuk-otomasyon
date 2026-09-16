@@ -5,12 +5,68 @@ GitHub-native otomasyon (AI BAĞIMLILIĞI YOK).
 senaryolar.json'daki hazır senaryolardan sıradakini alır -> video üretir ->
 YouTube'a yükler -> sırayı ilerletir. Ayarlar: config.json
 """
-import os, json, tempfile, io, sys
+import os, json, tempfile, io, sys, re
 import video as V
 
 SENARYOLAR = "senaryolar.json"
 DURUM = "durum.json"
 LOG = io.StringIO()
+LOCK = ".otomasyon.lock"
+
+# Başlık değişse bile aynı fikrin yeniden yayınlanmasını önlemek için kullanılan
+# hafif, yerel konu parmak izi.  Üretim hattındaki trend.py ile aynı kök mantığını
+# kullanır; böylece eski durum.json kayıtları da geriye dönük çalışır.
+_KONU_STOP = {
+    "NEDEN", "NASIL", "TUZAĞI", "TUZAK", "GİZLİ", "GERÇEK", "GERÇEKTE",
+    "SENİ", "KADAR", "DAHA", "İLE", "BİR", "NEDİR", "VAR", "YOK", "İLAVE",
+    "EDİLEN", "AYLIK", "GÜNDE", "GERÇEKTEN", "KİM", "HANGİ", "NELER",
+    "ÖNÜNDE", "İÇİN", "OLAN", "OLUR", "GİDER", "MALİYET",
+}
+
+
+def _konu_kokleri(baslik):
+    metin = re.sub(r"[^0-9A-Za-zÇĞİÖŞÜçğıöşü ]", " ", (baslik or "").upper())
+    return {kelime[:4] for kelime in metin.split()
+            if len(kelime) >= 4 and kelime not in _KONU_STOP}
+
+
+def _konu_tekrari(baslik, kullanilan_basliklar):
+    """Başlık, daha önce yayınlanmış aynı konuya aitse eşleşen başlığı döndür."""
+    kokler = _konu_kokleri(baslik)
+    if len(kokler) < 2:
+        return None
+    for eski in kullanilan_basliklar or []:
+        if eski and len(kokler & _konu_kokleri(eski)) >= 2:
+            return eski
+    return None
+
+
+def _kilit_al():
+    try:
+        fd = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write(str(os.getpid()))
+        return True
+    except FileExistsError:
+        # Önceki süreç zorla sonlandırıldıysa eski kilidi güvenle temizle.
+        try:
+            with open(LOCK, encoding="utf-8") as f:
+                pid = int(f.read().strip())
+            os.kill(pid, 0)
+        except (FileNotFoundError, ProcessLookupError, ValueError, PermissionError):
+            try:
+                os.unlink(LOCK)
+            except FileNotFoundError:
+                pass
+            return _kilit_al()
+        return False
+
+
+def _kilit_birak():
+    try:
+        os.unlink(LOCK)
+    except FileNotFoundError:
+        pass
 
 
 def _senaryolar():
@@ -98,7 +154,19 @@ def main():
         # "cesitlilik" (eski: tasarruf/'biliyor muydun'). Alan yoksa "tuzak".
         return s.get("tema", "tuzak")
 
-    kalan = [(i, s) for i, s in enumerate(senaryolar) if s["baslik"] not in yapilan]
+    # Başlık emojisi/kelime sırası değişmiş olsa bile daha önce yayınlanan aynı
+    # konuyu tekrar seçme. Bu kontrol, geçmişte havuza yanlışlıkla eklenmiş
+    # mükerrer senaryoları da etkisiz hale getirir.
+    kalan = []
+    for i, s in enumerate(senaryolar):
+        baslik = s.get("baslik", "")
+        if baslik in yapilan:
+            continue
+        eski = _konu_tekrari(baslik, yapilan)
+        if eski:
+            print(f"      · atlandı (yayınlanmış konu tekrarı ~ '{eski[:45]}'): {baslik[:55]}")
+            continue
+        kalan.append((i, s))
     if not kalan:
         print("✓ Tüm konular yayınlanmış! Yeni içerik için senaryolar.json'a konu ekleyin.")
         _durum_yaz(durum)
@@ -336,6 +404,9 @@ if __name__ == "__main__":
                 except Exception: pass
     sys.stdout = Tee(sys.__stdout__, LOG)
     sys.stderr = Tee(sys.__stderr__, LOG)
+    if not _kilit_al():
+        print("! Başka bir otomasyon çalışıyor; bu koşu tekrar üretim yapmadan sonlandırıldı.")
+        raise SystemExit(0)
     try:
         main()
         # Basarili calisma: eski hata.log'u temizle ki gecmis hatalar
@@ -363,3 +434,5 @@ if __name__ == "__main__":
                   ["git","add","-A"], ["git","commit","-m","tani/hata"], ["git","push"]):
             subprocess.run(c, check=False)
         raise
+    finally:
+        _kilit_birak()
