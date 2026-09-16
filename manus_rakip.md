@@ -1,28 +1,27 @@
 # Nis Rakip & Bosluk Analizi
 
-> Manus ajani ile uretildi · 2026-09-16 07:15 UTC · profil `lite` · ~67 kredi
+> Manus ajani ile uretildi · 2026-09-16 07:50 UTC · profil `lite` · ~110 kredi
 
-Türkiye ve uluslararası örnekleri doğrulanabilir web/YouTube kaynaklarıyla tarayıp, içerik havuzundaki boşlukları ve uygulanabilir video fikirlerini kaynaklı bir Türkçe Markdown raporunda birleştireceğim.
+Araştırma tamamlandı ve kaynakları doğrudan YouTube kanal/video sayfaları, Ticaret Bakanlığı, Reklam Kurulu, BDDK, Rekabet Kurumu, FTC, CMA, Avrupa Komisyonu, OECD ve tüketici kuruluşlarıyla çaprazlandı.
 
-Araştırmayı üç paralel hatta böleceğim: Türkiye rekabeti, ABD/İngiltere formatları ve tüketici talebi/içerik boşlukları; ardından kaynakları çapraz kontrol edip tek rapora dönüştüreceğim.
+Rapor; Türkiye’deki rakip kanalları, yaklaşık abone ve izlenme sinyallerini, yayın formatlarını, ABD/İngiltere’den fikir arbitrajlarını, içerik boşluklarını, üç farklılaşma seçeneğini ve **tam 15 yeni video fikrini** içeriyor.
 
-Paralel araştırma işi kuyruğa alındı; Türkiye kanalları, Batı formatları ve talep boşlukları ayrı ayrı doğrulanırken sonuçları tek kaynaklı raporda sentezleyeceğim.
+Öne çıkan stratejik sonuç:
 
-Araştırma ve kaynak doğrulama devam ediyor; tamamlandığında raporu kontrol edip teslim edeceğim.
+> **TUZAK AVCISI yalnızca tüketici şikâyeti anlatan veya mevzuat okuyan bir kanal olmamalı; “iddia + görünür kanıt + kontrollü test + tüketicinin atacağı tek sonraki adım” sistemini sahiplenmeli.**
 
-Araştırma tamamlandı; şimdi oluşturulan Markdown raporunu dosya düzeyinde doğrulayıp kaynak, bölüm ve 15 fikir bütünlüğünü kontrol ederek teslim edeceğim.
+En güçlü konumlandırma önerisi:
 
-Araştırma tamamlandı ve kaynakları doğrulanmış Türkçe Markdown raporu hazırlandı:
+**Bağımsız tüketici test laboratuvarı + günlük siber hijyen/hak kartları.**
 
-[**Tuzak Avcısı – Niş Rekabet Analizi ve Video Fırsatları**]( /home/ubuntu/tuzak-avcisi-nis-rekabet-analizi.md )
+Başlıca fırsat serileri:
 
-Raporda şunlar yer alıyor:
+- Haftalık standart market sepeti ve “fiş adliyesi”
+- Abonelik kayıt–iptal ekran sayacı
+- Türkçe dark-pattern kanıt hattı
+- Gizli ücret ve checkout nihai fiyat testleri
+- Sahte yorum ve influencer reklam etiketi denetimi
+- Aynı ürünü farklı kullanıcı koşullarında fiyat karşılaştırması
+- Kargo, banka, GSM ve e-ticaret için kontrollü müşteri hizmeti testleri
 
-- Türkiye’deki 7 rakip kanal/seri, abone ve izlenme bilgileri doğrulanabildiği ölçüde
-- ABD ve İngiltere’den 9 kanıtlanmış içerik formatı
-- Türkiye’de doğrudan eşdeğeri doğrulanmayan fikir arbitrajları
-- 12 öncelikli içerik boşluğu
-- Artıları ve eksileriyle 3 farklılaşma stratejisi
-- Her biri başlık, tek cümlelik açı ve boşluk etiketi içeren 15 somut video fikri
-- 74 numaralı kaynak tanımı ve tam URL listesi
-- YouTube metriklerinin dinamik olduğu ve doğrulanamayan sayıların rapora eklenmediğine ilişkin metodoloji notları
+[**TUZAK AVCISI Türkiye–ABD/İngiltere Rekabet ve Format Arbitrajı Raporu**](</home/ubuntu/jobs/job_bsABmVZK_a9/tuzak-avcisi-rapor-taslagi.md>)
