@@ -105,7 +105,10 @@ class SenaryoValidator:
     # süreklilik/teaser ("yarın yeni video") yok. İzleyici geri dönmek için
     # sebep bulamayınca abone olmuyor. Bu denetim üretimi ENGELLEMEZ.
     ABONE_KW = ("abone", "subscribe", "kanala katıl", "takip et")
-    TEASER_KW = ("yarın", "bir sonraki", "sonraki video", "yeni video", "seri", "kaçırma")
+    # "sıradaki video(da)" da gecerli bir sureklilik kancasi — eksikti ve gecerli
+    # senaryolar yanlislikla "teaser yok" diye isaretleniyordu.
+    TEASER_KW = ("yarın", "bir sonraki", "sonraki video", "sıradaki", "yeni video",
+                 "seri", "kaçırma")
 
     # İlk cümle (sözlü açılış) Shorts'ta ilk 2-3 saniyeyi ve retention'ı belirler.
     # Punchy bir kanca kısa olur; uzun/yavaş açılış izleyiciyi kaydırtır.
