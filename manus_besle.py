@@ -12,6 +12,8 @@ Modlar:
   senaryo   : web'den DOGRULANMIS yeni tuzak senaryolari uretip senaryolar.json'a ekler
   strateji  : analiz_rapor.json + havuzu okuyup buyume strateji raporu yazar
   rakip     : nis rakip/bosluk analizi raporu yazar
+  kurtar    : BITMIS bir gorevin ciktisini (ek dosyalar dahil) yeniden alir;
+              yeni gorev acmaz, KREDI HARCAMAZ
 
 Kullanim:
   MOD=senaryo SAYI=6 PROFIL=lite python3 manus_besle.py
@@ -350,12 +352,16 @@ def mod_rapor(mod, profil):
                                    zaman_asimi=3000, aralik=25, tahmin=MOD_KREDI[mod])
     d = M.butce_isle(d, mod, meta, kaynak)
     govde = metin or (json.dumps(veri, ensure_ascii=False, indent=2) if veri else "")
+    # Ajan uzun raporu mesaja degil DOSYAYA yazmis olabilir; ek varsa onu indir.
+    # Ek indirmek yeni gorev baslatmaz, KREDI HARCAMAZ.
+    if meta.get("ekler"):
+        govde = _ekten_govde(meta["ekler"]) or govde
     if not govde.strip():
         raise SystemExit("Manus bos rapor dondurdu.")
     # Ajan raporu kendi sanal makinesine DOSYA olarak yazdiysa sohbete yalnizca
     # bizim erisemedigimiz bir yerel yol dusuyor (kosu 35066375092'de yasandi).
     # Boyle bir cikti kullanilamaz — sessizce commit'lemek yerine acikca bildir.
-    _yerel_yol = re.search(r"\]\(\s*/(home|tmp|root|var|mnt)/", govde)
+    _yerel_yol = re.search(r"\]\(\s*<?\s*/(home|tmp|root|var|mnt)/", govde)
     if _yerel_yol and len(govde) < 4000:
         raise SystemExit(
             "Manus raporu mesaj icinde DEGIL, kendi sanal makinesinde dosya olarak "
@@ -364,6 +370,79 @@ def mod_rapor(mod, profil):
             "Prompt 'dosya olusturma, mesaj govdesinde yaz' diyor; yine de olduysa "
             "gorevi tekrar calistir.")
     _rapor_yaz(CIKTI_RAPOR[mod], baslik, govde, meta)
+    return 0
+
+
+
+def _ekten_govde(ekler):
+    """Ek dosyalardan metin/markdown olani indirip rapor govdesi yap."""
+    if not ekler:
+        return ""
+    parcalar = []
+    for e in ekler:
+        ad = (e.get("ad") or "").lower()
+        if ad and not ad.endswith((".md", ".markdown", ".txt", ".json", ".csv")):
+            continue                        # gorsel/pdf vb. atla
+        try:
+            icerik = M.ek_indir(e["url"])
+        except Exception as ex:
+            print(f"      [uyari] ek indirilemedi ({e.get('ad')}): {str(ex)[:110]}")
+            continue
+        if icerik and icerik.strip():
+            print(f"      Ek indirildi: {e.get('ad')} ({len(icerik)} karakter)")
+            parcalar.append(icerik.strip())
+    return "\n\n".join(parcalar)
+
+
+def _son_gorev(modlar=("rakip", "strateji", "senaryo")):
+    """Kredi defterindeki en son rapor gorevinin task_id'sini bul."""
+    d = M.durum_oku()
+    for g in reversed(d.get("gorevler") or []):
+        if g.get("mod") in modlar and g.get("task_id"):
+            return g
+    return None
+
+
+def mod_kurtar(hedef_mod=None, task_id=None):
+    """BITMIS bir gorevin ciktisini yeniden alir — YENI GOREV ACMAZ, KREDI HARCAMAZ.
+
+    Manus uzun raporu mesaj govdesine degil dosyaya yazdiginda, dosya mesajin
+    "attachments" alanindan indirilebiliyor. Bu mod tam olarak bunu yapar.
+    """
+    g = None
+    if not task_id:
+        g = _son_gorev()
+        if not g:
+            raise SystemExit("Kurtarilacak gorev bulunamadi (manus_durum.json bos).")
+        task_id, hedef_mod = g["task_id"], hedef_mod or g["mod"]
+    hedef_mod = hedef_mod or "rakip"
+    print(f"      Kurtariliyor: task_id={task_id} mod={hedef_mod} (kredi harcanmaz)")
+
+    mesajlar = M.gorev_mesajlar(task_id, limit=60)
+    metin = M._metin_topla(mesajlar)
+    ek = M.ekler(mesajlar)
+    if not ek:
+        try:
+            ayrintili = M.gorev_mesajlar(task_id, limit=60, verbose=True)
+            ek = M.ekler(ayrintili)
+            metin = metin or M._metin_topla(ayrintili)
+        except Exception as e:
+            print(f"      [uyari] ayrintili liste alinamadi: {str(e)[:100]}")
+    print(f"      {len(ek)} ek bulundu")
+    for e in ek:
+        print(f"        · {e['ad']}  {e['url'][:80]}")
+
+    govde = _ekten_govde(ek) or metin
+    if not govde.strip():
+        raise SystemExit(
+            f"Gorevden ne ek ne metin alinabildi (task_id={task_id}).\n"
+            f"Rapor Manus panelinde: https://manus.im/app/{task_id}")
+    yol = CIKTI_RAPOR.get(hedef_mod, "manus_rapor.md")
+    _rapor_yaz(yol, {"rakip": "Nis Rakip & Bosluk Analizi",
+                     "strateji": "Kanal Buyume Stratejisi"}.get(hedef_mod, "Manus Raporu"),
+               govde, {"profil": (g or {}).get("profil", "lite"),
+                       "kredi": 0, "kredi_tahmini": False})
+    print(f"      Kurtarildi -> {yol} ({len(govde)} karakter)")
     return 0
 
 
@@ -384,7 +463,10 @@ def main():
         return mod_senaryo(profil, sayi)
     if mod in ("strateji", "rakip"):
         return mod_rapor(mod, profil)
-    raise SystemExit(f"Bilinmeyen mod: {mod} (ping|senaryo|strateji|rakip)")
+    if mod == "kurtar":
+        return mod_kurtar(os.environ.get("HEDEF_MOD") or None,
+                          os.environ.get("TASK_ID") or None)
+    raise SystemExit(f"Bilinmeyen mod: {mod} (ping|senaryo|strateji|rakip|kurtar)")
 
 
 if __name__ == "__main__":
