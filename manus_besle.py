@@ -25,8 +25,11 @@ CIKTI_RAPOR = {"senaryo": "manus_rapor.md", "strateji": "manus_strateji.md",
 
 # Is kolu basina kredi tahmini. API gercek tuketimi bildirdiginde O kullanilir;
 # bunlar yalnizca (a) gorev oncesi butce rezervasyonu ve (b) bildirilmediginde
-# deftere islenecek deger icin. Olculen: ping ~3 kredi (kosu 35062848507).
-MOD_KREDI = {"ping": 5, "senaryo": 150, "strateji": 200, "rakip": 250}
+# deftere islenecek deger icin.
+# OLCULEN GERCEK MALIYETLER: ping ~3 kredi (kosu 35062848507); rakip 67 kredi /
+# 861 sn (kosu 35066375092) — 14 dakikalik derin arastirma. Tahminler olculen
+# degerin ~2 kati tutuluyor (guvenlik payi).
+MOD_KREDI = {"ping": 5, "senaryo": 150, "strateji": 150, "rakip": 150}
 
 
 # ---------------------------------------------------------------- yardimci
@@ -200,7 +203,13 @@ Rapor basliklari:
 
 Cikti: TURKCE, Markdown baslik yapisiyla, tam ve kusursuz Turkce imla ile
 (c,g,i,I,o,s,u harfleri eksiksiz). Kullandigin kaynaklarin URL'lerini raporun
-sonunda "Kaynaklar" basligi altinda listele. UYDURMA VERI KULLANMA."""
+sonunda "Kaynaklar" basligi altinda listele. UYDURMA VERI KULLANMA.
+
+CIKTI BICIMI — COK ONEMLI:
+Raporu DOSYA OLARAK OLUSTURMA, kaydetme ya da bir dosya yoluna baglanti verme.
+Raporun TAMAMINI, SON MESAJININ GOVDESINDE duz Markdown metni olarak yaz.
+Yerel dosya yolu (/home/... gibi) iceren baglanti verirsen cikti KULLANILAMAZ.
+Ilerleme/durum aciklamasi yazma; son mesajin dogrudan raporun kendisi olsun."""
 
 
 def _rakip_prompt():
@@ -225,7 +234,13 @@ HAVUZUMUZDAKI SON BASLIKLAR:
 
 Cikti: TURKCE Markdown rapor, kusursuz Turkce imla ile. Kanal/video iddialarini
 kaynak URL ile destekle; emin olmadigin rakamı yazma. Raporun sonunda
-"Kaynaklar" basliginda URL listesi ver."""
+"Kaynaklar" basliginda URL listesi ver.
+
+CIKTI BICIMI — COK ONEMLI:
+Raporu DOSYA OLARAK OLUSTURMA, kaydetme ya da bir dosya yoluna baglanti verme.
+Raporun TAMAMINI, SON MESAJININ GOVDESINDE duz Markdown metni olarak yaz.
+Yerel dosya yolu (/home/... gibi) iceren baglanti verirsen cikti KULLANILAMAZ.
+Ilerleme/durum aciklamasi yazma; son mesajin dogrudan raporun kendisi olsun."""
 
 
 # --------------------------------------------------------------------- modlar
@@ -337,6 +352,17 @@ def mod_rapor(mod, profil):
     govde = metin or (json.dumps(veri, ensure_ascii=False, indent=2) if veri else "")
     if not govde.strip():
         raise SystemExit("Manus bos rapor dondurdu.")
+    # Ajan raporu kendi sanal makinesine DOSYA olarak yazdiysa sohbete yalnizca
+    # bizim erisemedigimiz bir yerel yol dusuyor (kosu 35066375092'de yasandi).
+    # Boyle bir cikti kullanilamaz — sessizce commit'lemek yerine acikca bildir.
+    _yerel_yol = re.search(r"\]\(\s*/(home|tmp|root|var|mnt)/", govde)
+    if _yerel_yol and len(govde) < 4000:
+        raise SystemExit(
+            "Manus raporu mesaj icinde DEGIL, kendi sanal makinesinde dosya olarak "
+            f"uretmis (yerel yol baglantisi var, govde {len(govde)} karakter).\n"
+            f"Raporun kendisi Manus panelinde duruyor: {meta.get('url')}\n"
+            "Prompt 'dosya olusturma, mesaj govdesinde yaz' diyor; yine de olduysa "
+            "gorevi tekrar calistir.")
     _rapor_yaz(CIKTI_RAPOR[mod], baslik, govde, meta)
     return 0
 
