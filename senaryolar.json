@@ -1014,7 +1014,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Sana bedava bir tat ya da küçük bir hediye verdiklerinde içinde tuhaf bir borç hissi oluşur. 'Madem verdiler, ben de bir şey almalıyım' dersin. Buna karşılıklılık kuralı denir ve insan beynine işlemiştir. O küçük hediye aslında bedava değil, seni almaya mecbur hissettirmek için verilir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
+    "script": "O bedava hediye bedava değil; sende borç hissi yaratmak için verildi. 'Madem verdiler, ben de bir şey almalıyım' dersin. Buna karşılıklılık kuralı denir ve insan beynine işlemiştir. O küçük hediye aslında bedava değil, seni almaya mecbur hissettirmek için verilir. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "bedava numune",
@@ -3317,7 +3317,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "'İkincisini yarı fiyatına al' ya da 'üç al iki öde' kampanyaları kazançlı gibi görünür, ama senin ihtiyacın tek bir üründü. İkincisini aldığında çoğu zaman ya bozulur ya da hiç kullanmazsın, yani tek ürünün maliyetinden fazlasını ödemiş olursun. Bu kampanyalar sana ihtiyacın olmayanı aldırır. İhtiyacın kadar alırsan, kampanya sana sahte bir ihtiyaç yaratamaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
+    "script": "'Üç al iki öde' kazanç değil; ihtiyacın olmayanı sana ödettirir. İkincisini aldığında çoğu zaman ya bozulur ya da hiç kullanmazsın, yani tek ürünün maliyetinden fazlasını ödemiş olursun. Bu kampanyalar sana ihtiyacın olmayanı aldırır. İhtiyacın kadar alırsan, kampanya sana sahte bir ihtiyaç yaratamaz. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "ikincisi bedava",
@@ -3364,7 +3364,7 @@
       "satış psikolojisi",
       "bilinçli tüketici"
     ],
-    "script": "Telefonuna düşen 'sadece size özel indirim' mesajı seni değerli hissettirir, ama aynı mesaj milyonlarca kişiye birden gönderilmiştir. 'Sana özel' sözü gerçek bir ayrıcalık değil, seni bağlamak için kurulmuş bir kalıptır. Kendini özel sandığın an, daha rahat harcarsın. Teklif herkese aynıdır. O yüzden duyguya değil, teklifin gerçek değerine bakmalısın. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
+    "script": "'Sana özel' indirim mesajı aynı anda milyonlarca kişiye gitti. 'Sana özel' sözü gerçek bir ayrıcalık değil, seni bağlamak için kurulmuş bir kalıptır. Kendini özel sandığın an, daha rahat harcarsın. Teklif herkese aynıdır. O yüzden duyguya değil, teklifin gerçek değerine bakmalısın. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "sana özel mesaj",
@@ -3635,7 +3635,7 @@
       "para"
     ],
     "kanca": "ÇOĞU KİŞİ BİLMİYOR",
-    "script": "Bunu çoğu kişi bilmiyor: fiyat etiketlerinde lira simgesi çoğu zaman bilerek çok küçük yazılır ya da hiç konmaz. Neden? Para birimini görmek harcamanın acısını hatırlatır. Simge yoksa o rakam sadece bir sayıya dönüşür, sen de daha kolay ödersin. Küçük bir detay ama beynini doğrudan etkiler. Etikete dikkatli bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
+    "script": "Fiyat etiketlerinde lira simgesi bilerek küçültülür ya da hiç konmaz. Neden? Para birimini görmek harcamanın acısını hatırlatır. Simge yoksa o rakam sadece bir sayıya dönüşür, sen de daha kolay ödersin. Küçük bir detay ama beynini doğrudan etkiler. Etikete dikkatli bak. Artık biliyorsun. Her akşam yeni bir tuzak. Abone ol, uyanık kal. Yarın yeni bir tuzağı çözüyoruz, kaçırma.",
     "sahneler": [
       {
         "metin": "fiyat etiketi",
@@ -4473,10 +4473,10 @@
       "para"
     ],
     "kanca": "İndirim aldatması",
-    "script": "İndirim kuponu alıp sevinirken, aslında fiyatı zaten yüksek tutulan ürüne ekstra bir indirim sanatıyla aldatılıyoruz. Mağazalar, eski fiyatı yükseltip sonra %50 indirim göstererek tasarruf hissi yaratı; bu yüzden indirim yüzdesine güvenmemek gerekir. Kuponu kullanmadan önce ürünün geçmiş fiyatını bir fiyat karşılaştırma sitesinde veya uygulamasından kontrol edin; gerçek indirim oranı genellikle çok daha düşük olur. Ayrıca kuponun minimum alışveriş tutarı, kullanım süresi ve dışlanan kategorileri dikkatlice okuyun; şartları ihlak etmek indirimi geçersiz kılar. Son olarak, alışveriş listesini tutup sadece ihtiyacınız olan ürünleri alın; gereksiz alışverişi önleyerek hem cüzdanınız hem de zamanınızı korurun. ABONE olayı unutmayın, bir sonraki videoda sahte 'ücretsiz kargo' tuzağını keşfedeceğiz!",
+    "script": "O indirim kuponu, zaten şişirilmiş bir fiyata yapıştırılmış süsten ibaret. Mağazalar, eski fiyatı yükseltip sonra %50 indirim göstererek tasarruf hissi yaratır; bu yüzden indirim yüzdesine güvenmemek gerekir. Kuponu kullanmadan önce ürünün geçmiş fiyatını bir fiyat karşılaştırma sitesinde veya uygulamasından kontrol edin; gerçek indirim oranı genellikle çok daha düşük olur. Ayrıca kuponun minimum alışveriş tutarı, kullanım süresi ve dışlanan kategorileri dikkatlice okuyun; şartları ihlal etmek indirimi geçersiz kılar. Son olarak, alışveriş listesini tutup sadece ihtiyacınız olan ürünleri alın; gereksiz alışverişi önleyerek hem cüzdanınız hem de zamanınızı korursunuz. Abone olmayı unutmayın, bir sonraki videoda sahte 'ücretsiz kargo' tuzağını keşfedeceğiz!",
     "sahneler": [
       {
-        "metin": "İndirim kuponu alıp sevinirken, aslında fiyatı zaten yüksek tutulan ürüne ekstra bir indirim sanatıyla aldatılıyoruz.",
+        "metin": "O indirim kuponu, zaten şişirilmiş bir fiyata yapıştırılmış süsten ibaret.",
         "gorsel": "Close-up of a shopper's excited hand grabbing a colorful discount coupon, bright supermarket shelves blurred in background."
       },
       {
@@ -4638,10 +4638,10 @@
       "para"
     ],
     "kanca": "GİZLİ İPTAL",
-    "script": "Ücretsiz deneme sayfasında küçük bir yazıyla gizlenen abonelik iptal linki, çoğu kullanıcıyı fatura şokuna sürükler. Bu tuzak, iptal butonunu menünün en altına veya renksiz bir hâle getirir, tıklamak zorlaşır. Korunmak için her deneme süresi başlamadan önce şartları ve gizli bağlantıları dikkatlice okuyun, iptal linkini sayfanın tamamında arayın ve tarayıcı geçmişinizi kontrol ederek otomatik yenilemeyi devre dışı bırakın. Ayrıca bankanızda periyodik ödemeleri izleyin ve gerekirse kartınızı geçici olarak bloke edin. E‑posta gelen onay mesajlarında da iptal linki olup olmadığını kontrol edin, çünkü bazı hizmetler sadece bu yolla iptalı mümkün kılar. Ayrıca geçici sanal kart numarası kullanarak gerçek kart bilgilerinizi gizleyebilir ve istenmeyen çekimleri önleyebilirsiniz. Abone olayı unutmayın ve bir sonraki video da ücretsiz denemelerin diğer gizli maliyetlerini keşfedeceğiz.",
+    "script": "İptal linkini bilerek gizliyorlar; fatura şoku tam da bu yüzden geliyor. Bu tuzak, iptal butonunu menünün en altına veya renksiz bir hâle getirir, tıklamak zorlaşır. Korunmak için her deneme süresi başlamadan önce şartları ve gizli bağlantıları dikkatlice okuyun, iptal linkini sayfanın tamamında arayın ve tarayıcı geçmişinizi kontrol ederek otomatik yenilemeyi devre dışı bırakın. Ayrıca bankanızda periyodik ödemeleri izleyin ve gerekirse kartınızı geçici olarak bloke edin. E‑posta gelen onay mesajlarında da iptal linki olup olmadığını kontrol edin, çünkü bazı hizmetler sadece bu yolla iptali mümkün kılar. Ayrıca geçici sanal kart numarası kullanarak gerçek kart bilgilerinizi gizleyebilir ve istenmeyen çekimleri önleyebilirsiniz. Abone olmayı unutmayın; bir sonraki videoda ücretsiz denemelerin diğer gizli maliyetlerini keşfedeceğiz.",
     "sahneler": [
       {
-        "metin": "Ücretsiz deneme sayfasında küçük bir yazıyla gizlenen abonelik iptal linki, çoğu kullanıcıyı fatura şokuna sürükler.",
+        "metin": "İptal linkini bilerek gizliyorlar; fatura şoku tam da bu yüzden geliyor.",
         "gorsel": "Close‑up of a smartphone screen showing a free trial page with a tiny gray link at the bottom labeled 'Cancel subscription'."
       },
       {
@@ -4761,7 +4761,7 @@
     ],
     "sahneler": [
       {
-        "metin": "Sepetteki ürünün altında 'bu fiyat 9 dakika sonra bitiyor' yazan sayaç çoğu zaman tamamen sahtedir.",
+        "metin": "Sepetteki o geri sayım sayacı çoğu zaman tamamen sahte.",
         "gorsel": "smartphone screen showing an online store countdown timer, urgent red numbers, close up"
       },
       {
@@ -4785,7 +4785,7 @@
         "gorsel": "person calmly closing a shopping app, relaxed, natural light"
       }
     ],
-    "script": "Sepetteki ürünün altında 'bu fiyat 9 dakika sonra bitiyor' yazan sayaç çoğu zaman tamamen sahtedir. Amaç seni düşünmeden, karşılaştırmadan hemen satın aldırmak; buna karanlık arayüz deniyor. Test etmek çok kolay: sayfayı yenile ya da yarın tekrar aç, sayaç sıfırlanıp aynı 'son dakika' baştan başlar. Gerçek kampanyanın süresi bellidir ve sayfa yenilenince değişmez; değişiyorsa oyundur. Korunmak için fiyatı ekran görüntüsüyle kaydet, birkaç saat bekle ve gerçekten değişip değişmediğine bak. Abone ol, bir sonraki videoda sahte 'stokta son ürünler' yazısını ifşa edeceğim."
+    "script": "Sepetteki o geri sayım sayacı çoğu zaman tamamen sahte. Amaç seni düşünmeden, karşılaştırmadan hemen satın aldırmak; buna karanlık arayüz deniyor. Test etmek çok kolay: sayfayı yenile ya da yarın tekrar aç, sayaç sıfırlanıp aynı 'son dakika' baştan başlar. Gerçek kampanyanın süresi bellidir ve sayfa yenilenince değişmez; değişiyorsa oyundur. Korunmak için fiyatı ekran görüntüsüyle kaydet, birkaç saat bekle ve gerçekten değişip değişmediğine bak. Abone ol, bir sonraki videoda sahte 'stokta son ürünler' yazısını ifşa edeceğim."
   },
   {
     "baslik": "'SON 2 ÜRÜN' YALANI! 🔥",
@@ -4801,7 +4801,7 @@
     ],
     "sahneler": [
       {
-        "metin": "'Stokta son 2 ürün' ya da 'şu an 14 kişi bakıyor' uyarıları çoğu zaman gerçek stokla ilgili değildir.",
+        "metin": "'Stokta son 2 ürün' yazısının gerçek stokla çoğu zaman ilgisi yok.",
         "gorsel": "online product page showing only 2 left in stock warning, red urgent badge, close up"
       },
       {
@@ -4825,7 +4825,7 @@
         "gorsel": "hand placing phone face down on a table, calm decision, soft light"
       }
     ],
-    "script": "'Stokta son 2 ürün' ya da 'şu an 14 kişi bakıyor' uyarıları çoğu zaman gerçek stokla ilgili değildir. Bu sayılar çoğu sitede rastgele üretilir; amaç kaçırma korkusuyla seni hızlandırmaktır. Anlamak kolay: gizli sekmede aynı ürünü aç, sayı çoğu zaman farklı çıkar ya da saatlerce değişmez. Gerçek kıtlık olsaydı ürün gerçekten tükenir, ertesi gün hâlâ 'son 2' yazmazdı. Korunmak için karar vermeden önce ürünü favorilere ekle, bir gece bekle; acele hissi geçince gerçek ihtiyacını görürsün. Abone ol, bir sonraki videoda 'al şimdi öde sonra' tuzağını anlatacağım."
+    "script": "'Stokta son 2 ürün' yazısının gerçek stokla çoğu zaman ilgisi yok. Bu sayılar çoğu sitede rastgele üretilir; amaç kaçırma korkusuyla seni hızlandırmaktır. Anlamak kolay: gizli sekmede aynı ürünü aç, sayı çoğu zaman farklı çıkar ya da saatlerce değişmez. Gerçek kıtlık olsaydı ürün gerçekten tükenir, ertesi gün hâlâ 'son 2' yazmazdı. Korunmak için karar vermeden önce ürünü favorilere ekle, bir gece bekle; acele hissi geçince gerçek ihtiyacını görürsün. Abone ol, bir sonraki videoda 'al şimdi öde sonra' tuzağını anlatacağım."
   },
   {
     "baslik": "AL ŞİMDİ ÖDE SONRA TUZAĞI! 💳",
@@ -4961,7 +4961,7 @@
     ],
     "sahneler": [
       {
-        "metin": "Büyük mağazalarda saati ve çıkışı unutup dakikalarca dolaşırsın; bu tesadüf değil, Gruen Etkisi denen bir tasarımdır.",
+        "metin": "Mağazada kaybolman tesadüf değil; buna Gruen Etkisi deniyor.",
         "gorsel": "wide interior of a large maze-like store with no windows and no clocks, shoppers wandering"
       },
       {
@@ -4981,11 +4981,11 @@
         "gorsel": "bottom shelf of a supermarket with cheaper products, macro shot"
       },
       {
-        "metin": "Peki bu labirent bir dahaki gidişinde seni yine yolundan edecek mi?",
+        "metin": "Peki bu labirent bir dahaki gidişinde seni yine yolundan edecek mi? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "a single person standing thoughtful in a huge confusing store aisle"
       }
     ],
-    "script": "Büyük mağazalarda saati ve çıkışı unutup dakikalarca dolaşırsın; bu tesadüf değil, Gruen Etkisi denen bir tasarımdır. Karmaşık koridorlar, penceresizlik ve yavaş müzik zaman algını bulandırıp plansız alışverişe iter. Vanilya ya da taze ekmek kokusu beynin karar bölgesini gevşetir, cüzdanını açman kolaylaşır. Korunmak için içeri girmeden liste yap ve süreni telefonda alarma bağla; sen mağazayı yönlendir. Göz hizasındaki pahalı ürünler yerine en alt ve en üst rafa bak; ucuzlar oraya saklanır. Peki bu labirent bir dahaki gidişinde seni yine yolundan edecek mi?"
+    "script": "Mağazada kaybolman tesadüf değil; buna Gruen Etkisi deniyor. Karmaşık koridorlar, penceresizlik ve yavaş müzik zaman algını bulandırıp plansız alışverişe iter. Vanilya ya da taze ekmek kokusu beynin karar bölgesini gevşetir, cüzdanını açman kolaylaşır. Korunmak için içeri girmeden liste yap ve süreni telefonda alarma bağla; sen mağazayı yönlendir. Göz hizasındaki pahalı ürünler yerine en alt ve en üst rafa bak; ucuzlar oraya saklanır. Peki bu labirent bir dahaki gidişinde seni yine yolundan edecek mi? Abone ol, yarın yeni bir tuzağı çözüyoruz."
   },
   {
     "baslik": "KÖR TADIMDA NEDEN ŞAŞIRIRSIN? 🥤",
@@ -5001,7 +5001,7 @@
     ],
     "sahneler": [
       {
-        "metin": "Kör tadımda çoğu kişi bir içeceği seçer ama şişeyi görünce fikri değişir; buna Pepsi Paradoksu denir.",
+        "metin": "Şişeyi görünce fikrin değişiyor; buna Pepsi Paradoksu deniyor.",
         "gorsel": "two identical unlabeled cups on a table for a blind taste test, hands presenting"
       },
       {
@@ -5021,11 +5021,11 @@
         "gorsel": "comparing ingredient lists of two drinks under a magnifier"
       },
       {
-        "metin": "Peki bir dahaki alışverişinde beynin yine aynı oyuna gelecek mi?",
+        "metin": "Peki bir dahaki alışverişinde beynin yine aynı oyuna gelecek mi? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "person standing thoughtful in a supermarket drinks aisle"
       }
     ],
-    "script": "Kör tadımda çoğu kişi bir içeceği seçer ama şişeyi görünce fikri değişir; buna Pepsi Paradoksu denir. Beyin görüntüleme deneyleri, marka logosunu görünce beynin ödül ve kimlik bölgelerinin devreye girdiğini gösterdi. Yani çoğu zaman ürünün tadını değil, markanın sana hissettirdiği imajı satın alırsın. Korunmak için evde kör test yap: etiketi kapat, iki ürünü tat, gerçekten fark var mı gör. İçerik ve fiyatı karşılaştır; çoğu zaman ucuz olan neredeyse aynı çıkar. Peki bir dahaki alışverişinde beynin yine aynı oyuna gelecek mi?"
+    "script": "Şişeyi görünce fikrin değişiyor; buna Pepsi Paradoksu deniyor. Beyin görüntüleme deneyleri, marka logosunu görünce beynin ödül ve kimlik bölgelerinin devreye girdiğini gösterdi. Yani çoğu zaman ürünün tadını değil, markanın sana hissettirdiği imajı satın alırsın. Korunmak için evde kör test yap: etiketi kapat, iki ürünü tat, gerçekten fark var mı gör. İçerik ve fiyatı karşılaştır; çoğu zaman ucuz olan neredeyse aynı çıkar. Peki bir dahaki alışverişinde beynin yine aynı oyuna gelecek mi? Abone ol, yarın yeni bir tuzağı çözüyoruz."
   },
   {
     "baslik": "AMPUL NEDEN ÇABUK YANAR? 💡",
@@ -5061,11 +5061,11 @@
         "gorsel": "hands replacing a phone battery, macro, careful repair"
       },
       {
-        "metin": "Peki elindeki cihaz gerçekten bozuldu mu, yoksa bozulması mı planlandı?",
+        "metin": "Peki elindeki cihaz gerçekten bozuldu mu, yoksa bozulması mı planlandı? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "person holding an old phone, questioning expression, soft light"
       }
     ],
-    "script": "Bir ampul yüz yıldır yanmaya devam ederken seninkiler neden bir yılda gidiyor? Cevap 1924'te kurulan Phoebus Karteli'nde. Üreticiler bir araya gelip ampul ömrünü bilerek düşürdü; buna planlı eskitme denir. Aynı mantık bugün telefonlarda, yazıcılarda ve yavaşlatılan eski cihazlarda karşına çıkıyor. Korunmak için tamir edilebilir, garantisi uzun ve bataryası değişebilen ürünleri tercih et. Cihazını atmadan önce basit bir tamir ya da batarya değişimi çoğu zaman onu yıllarca kurtarır. Peki elindeki cihaz gerçekten bozuldu mu, yoksa bozulması mı planlandı?"
+    "script": "Bir ampul yüz yıldır yanmaya devam ederken seninkiler neden bir yılda gidiyor? Cevap 1924'te kurulan Phoebus Karteli'nde. Üreticiler bir araya gelip ampul ömrünü bilerek düşürdü; buna planlı eskitme denir. Aynı mantık bugün telefonlarda, yazıcılarda ve yavaşlatılan eski cihazlarda karşına çıkıyor. Korunmak için tamir edilebilir, garantisi uzun ve bataryası değişebilen ürünleri tercih et. Cihazını atmadan önce basit bir tamir ya da batarya değişimi çoğu zaman onu yıllarca kurtarır. Peki elindeki cihaz gerçekten bozuldu mu, yoksa bozulması mı planlandı? Abone ol, yarın yeni bir tuzağı çözüyoruz."
   },
   {
     "baslik": "MARGARİN NASIL BAŞTACI OLDU? 🧈",
@@ -5081,7 +5081,7 @@
     ],
     "sahneler": [
       {
-        "metin": "Mutfağındaki margarin aslında bir kültürel mühendislik projesinin sonucu; savaş sonrası bir yardım politikasıyla sofralara girdi.",
+        "metin": "Mutfağındaki margarin bir kültürel mühendislik projesinin ürünü. Savaş sonrası bir yardım politikasıyla sofralara girdi.",
         "gorsel": "a tub of margarine on a vintage kitchen table, 1950s style"
       },
       {
@@ -5101,11 +5101,11 @@
         "gorsel": "reading a food ingredient label closely, macro shot"
       },
       {
-        "metin": "Peki bugün hangi ürünü ihtiyaç sanıyorsun ama aslında biri onu sana alışkanlık yaptı?",
+        "metin": "Peki bugün hangi ürünü ihtiyaç sanıyorsun ama aslında biri onu sana alışkanlık yaptı? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "reflective person holding a product in a kitchen, soft light"
       }
     ],
-    "script": "Mutfağındaki margarin aslında bir kültürel mühendislik projesinin sonucu; savaş sonrası bir yardım politikasıyla sofralara girdi. Radyo reklamları ve şarkılarla ucuz bitkisel yağ, 'modern' seçenek diye pazarlandı. Zamanla alışkanlık o kadar yerleşti ki çoğu kişi neden tükettiğini bile sorgulamadı. Korunmak için bir ürünü almadan önce 'bunu ihtiyaçtan mı, alışkanlıktan mı alıyorum' diye sor. İçerik listesini oku; 'bitkisel yağ karışımı' çoğu zaman sandığından farklıdır. Peki bugün hangi ürünü ihtiyaç sanıyorsun ama aslında biri onu sana alışkanlık yaptı?"
+    "script": "Mutfağındaki margarin bir kültürel mühendislik projesinin ürünü. Savaş sonrası bir yardım politikasıyla sofralara girdi. Radyo reklamları ve şarkılarla ucuz bitkisel yağ, 'modern' seçenek diye pazarlandı. Zamanla alışkanlık o kadar yerleşti ki çoğu kişi neden tükettiğini bile sorgulamadı. Korunmak için bir ürünü almadan önce 'bunu ihtiyaçtan mı, alışkanlıktan mı alıyorum' diye sor. İçerik listesini oku; 'bitkisel yağ karışımı' çoğu zaman sandığından farklıdır. Peki bugün hangi ürünü ihtiyaç sanıyorsun ama aslında biri onu sana alışkanlık yaptı? Abone ol, yarın yeni bir tuzağı çözüyoruz."
   },
   {
     "baslik": "BİR TİŞÖRT KAÇ LİTRE SU? 👕",
@@ -5121,7 +5121,7 @@
     ],
     "sahneler": [
       {
-        "metin": "Ucuz bir tişörtün etiketinde yazmayan bir maliyet var: tek bir tişört için binlerce litre su harcanıyor.",
+        "metin": "Tek bir tişört için binlerce litre su harcanıyor.",
         "gorsel": "a pile of cheap t-shirts on a fast fashion rack, close up"
       },
       {
@@ -5141,11 +5141,11 @@
         "gorsel": "hands mending a shirt with needle and thread, close up"
       },
       {
-        "metin": "Peki dolabındaki kaç parça gerçekten gerekliydi, kaçı sadece bir kampanya yüzünden alındı?",
+        "metin": "Peki dolabındaki kaç parça gerçekten gerekliydi, kaçı sadece bir kampanya yüzünden alındı? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "person looking at an overfilled closet, thoughtful"
       }
     ],
-    "script": "Ucuz bir tişörtün etiketinde yazmayan bir maliyet var: tek bir tişört için binlerce litre su harcanıyor. Fast fashion sektörü hızlı ve ucuz üretim için büyük su tüketimi ve kimyasal kirlilik yaratıyor. Ucuz fiyatı sen ödemesen de doğa ve üretimdeki işçiler ödüyor; gizli maliyet burada. Korunmak için 'az ama kaliteli' al, kapsül gardırop kur, ikinci el ve dayanıklı ürünleri seç. Bir kıyafeti atmadan önce onar ya da bağışla; her yeni alım yeni bir su ayak izi demek. Peki dolabındaki kaç parça gerçekten gerekliydi, kaçı sadece bir kampanya yüzünden alındı?"
+    "script": "Tek bir tişört için binlerce litre su harcanıyor. Fast fashion sektörü hızlı ve ucuz üretim için büyük su tüketimi ve kimyasal kirlilik yaratıyor. Ucuz fiyatı sen ödemesen de doğa ve üretimdeki işçiler ödüyor; gizli maliyet burada. Korunmak için 'az ama kaliteli' al, kapsül gardırop kur, ikinci el ve dayanıklı ürünleri seç. Bir kıyafeti atmadan önce onar ya da bağışla; her yeni alım yeni bir su ayak izi demek. Peki dolabındaki kaç parça gerçekten gerekliydi, kaçı sadece bir kampanya yüzünden alındı? Abone ol, yarın yeni bir tuzağı çözüyoruz."
   },
   {
     "baslik": "STATÜ SATIN ALINIR MI? 👑",
@@ -5181,11 +5181,11 @@
         "gorsel": "a plain product and a premium-looking product side by side, comparison"
       },
       {
-        "metin": "Peki en son aldığın pahalı şey gerçek bir ihtiyaç mıydı, yoksa bir aidiyet arayışı mı?",
+        "metin": "Peki en son aldığın pahalı şey gerçek bir ihtiyaç mıydı, yoksa bir aidiyet arayışı mı? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "thoughtful person holding a shopping bag, soft window light"
       }
     ],
-    "script": "Maliyeti düşük bir ürün neden bazen on katına satılır? Çünkü sana ürünü değil, bir statü hissini satıyorlar. Reklamlar ürünün kendisini değil; çekicilik, aidiyet ve kabul görme arzunu işler. Yüksek fiyat bir kalite kanıtı sanılır, oysa çoğu zaman sadece algı için ödenen primdir. Korunmak için almadan önce 'bunu ürün için mi, başkalarına görünmek için mi istiyorum' diye sor. Aynı işi gören sade bir alternatifi dene; çoğu zaman fark sadece logoda ve fiyatta kalır. Peki en son aldığın pahalı şey gerçek bir ihtiyaç mıydı, yoksa bir aidiyet arayışı mı?"
+    "script": "Maliyeti düşük bir ürün neden bazen on katına satılır? Çünkü sana ürünü değil, bir statü hissini satıyorlar. Reklamlar ürünün kendisini değil; çekicilik, aidiyet ve kabul görme arzunu işler. Yüksek fiyat bir kalite kanıtı sanılır, oysa çoğu zaman sadece algı için ödenen primdir. Korunmak için almadan önce 'bunu ürün için mi, başkalarına görünmek için mi istiyorum' diye sor. Aynı işi gören sade bir alternatifi dene; çoğu zaman fark sadece logoda ve fiyatta kalır. Peki en son aldığın pahalı şey gerçek bir ihtiyaç mıydı, yoksa bir aidiyet arayışı mı? Abone ol, yarın yeni bir tuzağı çözüyoruz."
   },
   {
     "baslik": "'DOĞA DOSTU' ETİKET GERÇEK Mİ? 🌿",
@@ -5201,7 +5201,7 @@
     ],
     "sahneler": [
       {
-        "metin": "Üzerinde yeşil yapraklar ve 'doğa dostu' yazan ürün çoğu zaman göründüğü kadar temiz değildir; buna yeşil badana denir.",
+        "metin": "O 'doğa dostu' etiket çoğu zaman yeşile boyanmış bir yalan. Buna yeşil badana deniyor.",
         "gorsel": "a product covered in green leaf eco labels on a shelf, close up"
       },
       {
@@ -5221,11 +5221,11 @@
         "gorsel": "comparing two eco labels side by side under a magnifier"
       },
       {
-        "metin": "Peki elindeki 'yeşil' ürün gezegeni mi koruyor, yoksa sadece vicdanını mı rahatlatıyor?",
+        "metin": "Peki elindeki 'yeşil' ürün gezegeni mi koruyor, yoksa sadece vicdanını mı rahatlatıyor? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "person holding a green-labeled product, questioning look"
       }
     ],
-    "script": "Üzerinde yeşil yapraklar ve 'doğa dostu' yazan ürün çoğu zaman göründüğü kadar temiz değildir; buna yeşil badana denir. Şirketler gerçek üretimi değiştirmek yerine ambalajı yeşile boyayıp imajını tazeler. 'Geri dönüştürülebilir' ya da 'doğal' gibi ifadeler çoğu zaman denetimsiz, boş sözlerdir. Korunmak için etikette somut kanıt ara: bağımsız sertifika, oran, gerçek veri; yeşil renk yetmez. Belirsiz 'çevre dostu' iddiası olan ama açıklaması olmayan ürüne şüpheyle yaklaş. Peki elindeki 'yeşil' ürün gezegeni mi koruyor, yoksa sadece vicdanını mı rahatlatıyor?"
+    "script": "O 'doğa dostu' etiket çoğu zaman yeşile boyanmış bir yalan. Buna yeşil badana deniyor. Şirketler gerçek üretimi değiştirmek yerine ambalajı yeşile boyayıp imajını tazeler. 'Geri dönüştürülebilir' ya da 'doğal' gibi ifadeler çoğu zaman denetimsiz, boş sözlerdir. Korunmak için etikette somut kanıt ara: bağımsız sertifika, oran, gerçek veri; yeşil renk yetmez. Belirsiz 'çevre dostu' iddiası olan ama açıklaması olmayan ürüne şüpheyle yaklaş. Peki elindeki 'yeşil' ürün gezegeni mi koruyor, yoksa sadece vicdanını mı rahatlatıyor? Abone ol, yarın yeni bir tuzağı çözüyoruz."
   },
   {
     "baslik": "SÜT NEDEN HEP MARKETİN EN ARKASINDA? 🥛",
@@ -5516,7 +5516,7 @@
       "tasarruf",
       "para"
     ],
-    "script": "Aynı kaynaktan doldurulan iki şişe su: biri 5 lira, diğeri 25 lira. Tek fark, etiketteki o sihirli kelime: premium. Beynimiz yüksek fiyatı otomatik olarak kaliteyle eşleştiriyor; cam şişe ve sade tasarım, suyun tadını bile değiştiriyor. Halbuki saf suyun tadı yoktur, algı pahalıdır. Bu tuzağa düşmemek için etikete değil, kaynak raporuna bak. Oradaki bilgi, şişenin süsünden çok daha dürüsttür. Peki bu 'premium' algısı sadece suda mı işliyor? Bir sonraki videoda 'yüzde elli indirim' tabelalarının aslında fiyatı nasıl artırdığını anlatacağım. Ama önce, hangi şişeyi alırdın?",
+    "script": "Aynı kaynaktan doldurulan iki şişe su: biri 5 lira, diğeri 25 lira. Tek fark, etiketteki o sihirli kelime: premium. Beynimiz yüksek fiyatı otomatik olarak kaliteyle eşleştiriyor; cam şişe ve sade tasarım, suyun tadını bile değiştiriyor. Halbuki saf suyun tadı yoktur, algı pahalıdır. Bu tuzağa düşmemek için etikete değil, kaynak raporuna bak. Oradaki bilgi, şişenin süsünden çok daha dürüsttür. Peki bu 'premium' algısı sadece suda mı işliyor? Bir sonraki videoda 'yüzde elli indirim' tabelalarının aslında fiyatı nasıl artırdığını anlatacağım. Ama önce, hangi şişeyi alırdın? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "sahneler": [
       {
         "metin": "Aynı kaynaktan doldurulan iki şişe su: biri 5 lira, diğeri 25 lira. Tek fark, etiketteki o sihirli kelime: premium.",
@@ -5535,7 +5535,7 @@
         "gorsel": "A red discount sign hanging above a shelf, camera slowly zooming out to reveal the original inflated price tag hidden behind it, fluorescent supermarket glow"
       },
       {
-        "metin": "Ama önce, hangi şişeyi alırdın?",
+        "metin": "Ama önce, hangi şişeyi alırdın? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "Split screen showing a consumer's hand hesitating between the two water bottles, then slowly moving toward the premium one, dramatic tension in the lighting"
       }
     ],
@@ -5597,7 +5597,7 @@
       "tasarruf",
       "para"
     ],
-    "script": "Elinde 'sıfır' etiketiyle duran o kitap, aslında bir başkasının bitirdiği roman olabilir. Çünkü satıcı, elinde tuttuğu kitabı zihninde 'sıfır' sayıyor; raftan hiç açılmamış gibi. Ama asıl tuzak şu: 'sıfır' etiketi beyninde fiyatı otomatik yükseltiyor. Gerçek sıfır, sadece jelatinli ve faturalı olur. İlanda fotoğrafta kitap açık mı, sırtında kırışıklık var mı, bunlara bak. Satıcıya 'kaç kez okudunuz' diye sor; cevap kaçamaksa uzaklaş. Bu numara neden hep aynı rafta işe yarıyor? Çünkü gözün, 'sıfır' yazısını görünce beyninin şüphe filtresini kapatıyor. Aynı rafta herkes neden bu yalana kanıyor?",
+    "script": "Elinde 'sıfır' etiketiyle duran o kitap, aslında bir başkasının bitirdiği roman olabilir. Çünkü satıcı, elinde tuttuğu kitabı zihninde 'sıfır' sayıyor; raftan hiç açılmamış gibi. Ama asıl tuzak şu: 'sıfır' etiketi beyninde fiyatı otomatik yükseltiyor. Gerçek sıfır, sadece jelatinli ve faturalı olur. İlanda fotoğrafta kitap açık mı, sırtında kırışıklık var mı, bunlara bak. Satıcıya 'kaç kez okudunuz' diye sor; cevap kaçamaksa uzaklaş. Bu numara neden hep aynı rafta işe yarıyor? Çünkü gözün, 'sıfır' yazısını görünce beyninin şüphe filtresini kapatıyor. Aynı rafta herkes neden bu yalana kanıyor? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
     "sahneler": [
       {
         "metin": "Elinde 'sıfır' etiketiyle duran o kitap, aslında bir başkasının bitirdiği roman olabilir.",
@@ -5620,7 +5620,7 @@
         "gorsel": "Close-up of an eye with a reflection of a 'SIFIR' sticker, digital overlay of a filter being switched off, neon blue and red lighting, macro photography"
       },
       {
-        "metin": "Aynı rafta herkes neden bu yalana kanıyor?",
+        "metin": "Aynı rafta herkes neden bu yalana kanıyor? Abone ol, yarın yeni bir tuzağı çözüyoruz.",
         "gorsel": "Wide shot of a crowded second-hand book market, many books with 'SIFIR' stickers, people picking them up, camera slowly tilts down to a single book on the floor with a torn sticker, mysterious atmosphere"
       }
     ],
