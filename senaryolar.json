@@ -5625,5 +5625,378 @@
       }
     ],
     "tema": "tuzak"
+  },
+  {
+    "baslik": "BİRİM FİYAT TUZAĞI! ⚖️",
+    "kanca": "BÜYÜK OLAN UCUZ MU?",
+    "script": "Büyük paket görünce çoğumuz otomatik olarak daha ucuz sanıyoruz. Ama raf etiketinin altında küçük bir satır daha var: birim fiyat. Biri 500 gram, diğeri 1 kilogram olabilir; toplam fiyatı karşılaştırınca büyük paket pahalı görünür. Asıl karşılaştırma kilogram veya litre başına yapılır. Bazen büyük paket gerçekten avantajlıdır. Bazen de sadece daha fazla ürün aldırır. Market rafında toplam fiyatın altındaki küçük yazıya bak. Büyük paket değil, düşük birim fiyat kazandırır. Beğendiysen abone ol; yarın ücretsiz denemenin nasıl ücretliye döndüğünü anlatacağım.",
+    "etiketler": [
+      "birim fiyat",
+      "market psikolojisi",
+      "tüketici tuzağı",
+      "bilinçli tüketici",
+      "akıllı alışveriş",
+      "gizli ücret",
+      "para yönetimi",
+      "alışveriş psikolojisi",
+      "tasarruf ipuçları",
+      "günlük ipucu"
+    ],
+    "sahneler": [
+      {
+        "metin": "büyük ve küçük paket",
+        "gorsel": "large and small product packages side by side"
+      },
+      {
+        "metin": "raf etiketi",
+        "gorsel": "a supermarket shelf price label close up"
+      },
+      {
+        "metin": "birim fiyat yazısı",
+        "gorsel": "unit price per kilogram on a price tag macro"
+      },
+      {
+        "metin": "karşılaştırma",
+        "gorsel": "a shopper comparing two products"
+      },
+      {
+        "metin": "hesap makinesi",
+        "gorsel": "calculator next to grocery products"
+      },
+      {
+        "metin": "doğru seçim",
+        "gorsel": "a hand choosing the better value product"
+      }
+    ],
+    "aciklama": "Büyük paket her zaman ucuz değildir. Raf etiketindeki kilogram, litre veya adet başına birim fiyatı karşılaştır.",
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "“ÜCRETSİZ DENE” NEDEN ÜCRETLİ OLUR? ⏰",
+    "kanca": "BEDAVA MI, OTOMATİK Mİ?",
+    "script": "“Ücretsiz dene” yazısını görünce çoğumuz hemen tıklarız. Asıl kritik bilgi bazen butonda değil, altında küçük yazıyla durur: Deneme süresi bitince abonelik otomatik yenilenebilir. Yani bugün para çekilmez; ama süre dolunca kartından çekilebilir. Bu her zaman hile değildir, fakat gözden kaçırılırsa beklenmedik masrafa dönüşür. Denemeyi başlattığın anda bitiş tarihini takvimine kaydet. Ödeme ekranında otomatik yenileme ve aylık ücret satırını bul. İhtiyacın yoksa deneme bitmeden iptal et. Beğendiysen abone ol; sıradaki videoda iptal düğmesinin neden zor bulunduğunu göstereceğim.",
+    "etiketler": [
+      "ücretsiz deneme",
+      "abonelik",
+      "tüketici tuzağı",
+      "bilinçli tüketici",
+      "akıllı alışveriş",
+      "gizli ücret",
+      "para yönetimi",
+      "alışveriş psikolojisi",
+      "tasarruf ipuçları",
+      "günlük ipucu"
+    ],
+    "sahneler": [
+      {
+        "metin": "ücretsiz dene butonu",
+        "gorsel": "free trial button on a generic app screen"
+      },
+      {
+        "metin": "küçük yazı",
+        "gorsel": "small terms below a trial button"
+      },
+      {
+        "metin": "takvim tarihi",
+        "gorsel": "calendar with trial end date marked"
+      },
+      {
+        "metin": "banka bildirimi",
+        "gorsel": "subscription payment notification on phone"
+      },
+      {
+        "metin": "iptal ekranı",
+        "gorsel": "generic subscription cancellation screen"
+      }
+    ],
+    "aciklama": "Ücretsiz denemelerde otomatik yenileme ve bitiş tarihini kontrol et. Deneme başlamadan koşulları kaydet.",
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "İPTAL BUTONU NEDEN YOK? 🖱️",
+    "kanca": "ÇIKIŞI NEREYE SAKLADILAR?",
+    "script": "Bir servise kaydolmak bazen on saniye sürer. İptal etmek ise hesap, ayarlar, üyelik, planı değiştir ve en sonunda iptal et adımlarına bölünür. Buna karanlık tasarım denir: Arayüz seni açıkça zorlamasa bile çıkışı görünmez hale getirebilir. İptal etmek istiyorsan ayarlar ve ödeme geçmişini kontrol et, iptal onay ekranının görüntüsünü al ve onay e-postasını sakla. İptal düğmesi yoksa destek talebini yazılı gönder. Bir hizmete girmek kolay, çıkmak zor olmamalı. Beğendiysen abone ol; yarın ödeme ekranında sonradan eklenen ücretleri inceleyeceğiz.",
+    "etiketler": [
+      "abonelik iptali",
+      "karanlık tasarım",
+      "tüketici tuzağı",
+      "bilinçli tüketici",
+      "akıllı alışveriş",
+      "gizli ücret",
+      "para yönetimi",
+      "alışveriş psikolojisi",
+      "tasarruf ipuçları",
+      "günlük ipucu"
+    ],
+    "sahneler": [
+      {
+        "metin": "tek tıkla kayıt",
+        "gorsel": "one click subscription signup"
+      },
+      {
+        "metin": "karmaşık ayarlar",
+        "gorsel": "generic app settings with hidden menu"
+      },
+      {
+        "metin": "gizli iptal",
+        "gorsel": "faint cancellation button in a menu"
+      },
+      {
+        "metin": "destek kaydı",
+        "gorsel": "customer support chat confirmation"
+      },
+      {
+        "metin": "iptal onayı",
+        "gorsel": "subscription cancellation confirmation"
+      }
+    ],
+    "aciklama": "Bazı dijital servislerde iptal süreci kayıt olmaktan çok daha uzundur. İptal kanıtını ve onay e-postasını sakla.",
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "ÖDEME EKRANINDAKİ GİZLİ ÜCRET! 💳",
+    "kanca": "FİYAT NEDEN DEĞİŞTİ?",
+    "script": "Bir ürünün fiyatı ekranda 500 lira yazıyor. Ödeme sayfasına geliyorsun: teslimat, hizmet, işlem veya ek seçeneklerle toplam 570 liraya çıkıyor. Bu ücretlerin bazıları meşru olabilir; sorun, onları kararın başında görmemendir. Satın almadan önce ürün fiyatını, zorunlu ücretleri ve son toplamı karşılaştır. Son ekranda tutar yükseldiyse hangi satırın eklendiğine bak. Ucuz görünen ilk fiyat değil, kartından çıkan son tutar önemlidir. Beğendiysen abone ol; akşam sepetine senin eklemediğin ürünü kontrol edeceğiz.",
+    "etiketler": [
+      "gizli ücret",
+      "ödeme ekranı",
+      "tüketici tuzağı",
+      "bilinçli tüketici",
+      "akıllı alışveriş",
+      "gizli ücret",
+      "para yönetimi",
+      "alışveriş psikolojisi",
+      "tasarruf ipuçları",
+      "günlük ipucu"
+    ],
+    "sahneler": [
+      {
+        "metin": "ilk fiyat",
+        "gorsel": "generic product page showing initial price"
+      },
+      {
+        "metin": "sepet",
+        "gorsel": "online shopping cart with product"
+      },
+      {
+        "metin": "ek ücret satırları",
+        "gorsel": "checkout summary with delivery and service fees"
+      },
+      {
+        "metin": "ilk-son karşılaştırma",
+        "gorsel": "split screen comparing two totals"
+      },
+      {
+        "metin": "son toplam",
+        "gorsel": "final checkout amount highlighted"
+      }
+    ],
+    "aciklama": "Ödeme öncesinde ürün, teslimat, hizmet ve diğer ücret satırlarını tek tek kontrol et. İlk fiyat ile son toplam aynı olmayabilir.",
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "SEPETİNE BUNU KİM EKLEDİ? 🛒",
+    "kanca": "SEPETTE FAZLADAN NE VAR?",
+    "script": "Sepete bir ürün ekledin ama toplam beklediğinden yüksek. Çünkü bazı siteler ödeme öncesinde hızlı teslimat, ürün koruma, bağış veya tamamlayıcı ürün seçeneklerini öne çıkarır. Bazen kutu önceden seçilidir. Satın almadan önce sepeti baştan aşağı oku. Ürün adedi bir mi, iki mi? Ek hizmet gerçekten gerekli mi? Seçili kutuların işaretini kaldırınca toplam değişiyor mu? Bu kontrol otuz saniye sürer. Sepete giren her satır senin kararın olmalı. Beğendiysen abone ol; yarın son iki ürün mesajının gerçekten kıtlık anlamına gelip gelmediğini test edeceğiz.",
+    "etiketler": [
+      "sepet tuzağı",
+      "ek ücret",
+      "tüketici tuzağı",
+      "bilinçli tüketici",
+      "akıllı alışveriş",
+      "gizli ücret",
+      "para yönetimi",
+      "alışveriş psikolojisi",
+      "tasarruf ipuçları",
+      "günlük ipucu"
+    ],
+    "sahneler": [
+      {
+        "metin": "tek ürün",
+        "gorsel": "one item added to an online cart"
+      },
+      {
+        "metin": "ek hizmet",
+        "gorsel": "preselected shipping insurance option"
+      },
+      {
+        "metin": "fazladan ürün",
+        "gorsel": "extra product appearing in cart"
+      },
+      {
+        "metin": "seçili kutu",
+        "gorsel": "checked add-on checkbox"
+      },
+      {
+        "metin": "temiz sepet",
+        "gorsel": "cart total reduced after removing extras"
+      }
+    ],
+    "aciklama": "Ödeme ekranında ürün adedini, ek hizmetleri ve önceden seçilmiş kutuları kontrol et.",
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "“SON İKİ ÜRÜN” GERÇEK Mİ? ⏳",
+    "kanca": "SON İKİ ÜRÜN MÜ?",
+    "script": "Bir ürünün yanında “son iki ürün” yazıyor. Hemen satın alman mı gerekiyor? Bu yazı gerçek stok bilgisi olabilir; ama tek başına kanıt değildir. Sayfayı yenile. Aynı ürünü gizli sekmede aç. Birkaç saat sonra tekrar bak. Sayı sürekli değişiyor veya hep son iki olarak kalıyorsa, bu mesaj acele ettirmek için kullanılıyor olabilir. Ürünü favoriye alıp bir süre beklemek aciliyet hissini azaltır. Gerçek ihtiyaç, ekrandaki korkudan daha önemlidir. Beğendiysen abone ol; akşam geri sayım sayacının neden sıfırlanabildiğini göstereceğim.",
+    "etiketler": [
+      "kıtlık tuzağı",
+      "stok uyarısı",
+      "tüketici tuzağı",
+      "bilinçli tüketici",
+      "akıllı alışveriş",
+      "gizli ücret",
+      "para yönetimi",
+      "alışveriş psikolojisi",
+      "tasarruf ipuçları",
+      "günlük ipucu"
+    ],
+    "sahneler": [
+      {
+        "metin": "stok uyarısı",
+        "gorsel": "generic online store showing last two items"
+      },
+      {
+        "metin": "sayfayı yenile",
+        "gorsel": "refreshing a product page"
+      },
+      {
+        "metin": "gizli sekme",
+        "gorsel": "private browsing product comparison"
+      },
+      {
+        "metin": "değişen sayı",
+        "gorsel": "stock number changing on screen"
+      },
+      {
+        "metin": "favoriye ekle",
+        "gorsel": "shopper saving product to wishlist"
+      }
+    ],
+    "aciklama": "“Son iki ürün” mesajını tek başına kanıt sayma. Sayfayı yenile, farklı oturumda ve daha sonra tekrar kontrol et.",
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "SAHTE GERİ SAYIM SAYACI! 🔢",
+    "kanca": "SÜRE BİTİNCE NE OLDU?",
+    "script": "Ekranda kampanyanın bitmesine on dakika kaldı. Sayaç sıfıra indi. Sayfayı yeniledin ve yine on dakika başladı. Bu, dikkat edilmesi gereken bir işaret. Sayaç her yenilemede baştan başlıyor, fiyat değişmiyor veya aynı teklif ertesi gün sürüyorsa, amaç seni düşünmeden satın almaya itmek olabilir. Karar vermeden önce fiyatın ekran görüntüsünü al ve birkaç saat sonra tekrar kontrol et. Sayaç sıfırlanıyorsa acele değil, kanıt ara. Beğendiysen abone ol; yarın kuponların neden sürekli karşına çıktığını anlatacağım.",
+    "etiketler": [
+      "geri sayım",
+      "sahte kampanya",
+      "tüketici tuzağı",
+      "bilinçli tüketici",
+      "akıllı alışveriş",
+      "gizli ücret",
+      "para yönetimi",
+      "alışveriş psikolojisi",
+      "tasarruf ipuçları",
+      "günlük ipucu"
+    ],
+    "sahneler": [
+      {
+        "metin": "geri sayım",
+        "gorsel": "generic online sale countdown timer"
+      },
+      {
+        "metin": "sıfıra ulaşma",
+        "gorsel": "countdown reaching zero"
+      },
+      {
+        "metin": "yeniden başlama",
+        "gorsel": "timer restarting after page refresh"
+      },
+      {
+        "metin": "aynı fiyat",
+        "gorsel": "same product price after countdown"
+      },
+      {
+        "metin": "ekran görüntüsü",
+        "gorsel": "shopper documenting offer price"
+      }
+    ],
+    "aciklama": "Geri sayım sıfırlandıktan sonra aynı kampanya sürüyorsa gerçek bitiş tarihini doğrulamadan satın alma.",
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "“SANA ÖZEL” FİYAT OYUNU! 🎯",
+    "kanca": "SANA ÖZEL Mİ?",
+    "script": "Ekranda “Sana özel fiyat” yazıyor. Bu cümle, teklifi kaçırırsan zarar edeceğini düşündürüyor. Ama özel fiyatın şartı olabilir: üyelik, minimum sepet, otomatik yenileme veya kısa bir süre. Teklifi kabul etmeden önce normal fiyatı, üyelik bedelini ve son toplamı karşılaştır. Aynı ürünü farklı bir oturumda veya resmi uygulamada kontrol et. Sana özel demek, otomatik olarak en ucuz demek değildir. Beğendiysen abone ol; yarın sürekli tükenen ürünlerin arkasındaki kıtlık oyununu göstereceğim.",
+    "etiketler": [
+      "kişiselleştirilmiş fiyat",
+      "indirim",
+      "tüketici tuzağı",
+      "bilinçli tüketici",
+      "akıllı alışveriş",
+      "gizli ücret",
+      "para yönetimi",
+      "alışveriş psikolojisi",
+      "tasarruf ipuçları",
+      "günlük ipucu"
+    ],
+    "sahneler": [
+      {
+        "metin": "kişisel teklif",
+        "gorsel": "generic app showing personalized offer"
+      },
+      {
+        "metin": "üyelik şartı",
+        "gorsel": "membership condition under a discount"
+      },
+      {
+        "metin": "normal fiyat",
+        "gorsel": "normal and member prices side by side"
+      },
+      {
+        "metin": "koşullar",
+        "gorsel": "terms and conditions section"
+      },
+      {
+        "metin": "karşılaştırma",
+        "gorsel": "shopper comparing two offers"
+      }
+    ],
+    "aciklama": "“Sana özel” teklifin normal fiyatını, üyelik şartını ve son toplamını karşılaştır.",
+    "tema": "tuzak"
+  },
+  {
+    "baslik": "ONAY KUTUSUNDAKİ KÜÇÜK TUZAK! ✅",
+    "kanca": "NEYE ONAY VERDİN?",
+    "script": "Bir siteye kayıt oluyorsun. E-posta adresini yazdın, devam ettin. Ama aşağıda küçük bir kutu zaten işaretli: kampanya mesajları, kişiselleştirilmiş teklifler veya ek hizmet. Kutuyu fark etmezsen yalnızca alışveriş yapmış olmazsın; pazarlama izni de vermiş olabilirsin. Kabul et butonuna basmadan önce işaretli kutuları kontrol et. Reddetme seçeneği silik görünse bile ara. Kutunun işaretli olması, gerçekten istediğin anlamına gelmez. Beğendiysen abone ol; haftanın son videosunda unutulan aboneliklerin yıllık maliyetini hesaplayacağız.",
+    "etiketler": [
+      "onay kutusu",
+      "pazarlama izni",
+      "tüketici tuzağı",
+      "bilinçli tüketici",
+      "akıllı alışveriş",
+      "gizli ücret",
+      "para yönetimi",
+      "alışveriş psikolojisi",
+      "tasarruf ipuçları",
+      "günlük ipucu"
+    ],
+    "sahneler": [
+      {
+        "metin": "kayıt formu",
+        "gorsel": "generic signup form with checkbox"
+      },
+      {
+        "metin": "işaretli kutu",
+        "gorsel": "prechecked marketing checkbox"
+      },
+      {
+        "metin": "silik seçenek",
+        "gorsel": "faint decline option on a form"
+      },
+      {
+        "metin": "izni kaldır",
+        "gorsel": "unchecked consent box"
+      },
+      {
+        "metin": "bilinçli onay",
+        "gorsel": "thoughtful user reviewing consent"
+      }
+    ],
+    "aciklama": "Kayıt ve ödeme formlarındaki önceden seçilmiş pazarlama, ek hizmet ve izin kutularını kontrol et.",
+    "tema": "tuzak"
   }
 ]
