@@ -116,6 +116,10 @@ def _sayi_sirali(n):
 _SES_KISALTMA = {
     r"\bWi-?Fi\b": "vayfay",
     r"\bWIFI\b": "vayfay",
+    r"\bilizyon\b": "yanılsama",
+    r"\billizyon\b": "yanılsama",
+    r"\billüzyon\b": "yanılsama",
+    r"\billusion\b": "yanılsama",
     r"\bAI\b": "yapay zekâ",
     r"\bA\.I\.\b": "yapay zekâ",
     r"\bVR\b": "sanal gerçeklik",
