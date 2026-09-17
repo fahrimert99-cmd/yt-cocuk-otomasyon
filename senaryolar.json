@@ -6163,5 +6163,74 @@
       "pazarlama izni nasıl kaldırılır",
       "onay kutusundaki tuzaklar"
     ]
+  },
+  {
+    "baslik": "AVM MÜZİĞİ HIZLANINCA CÜZDANIN NEDEN BOŞALIR? 🎶🛍️",
+    "aciklama": "Bu videosunda AVM'deki müziğin temposunun harcadıklarımız üzerindeki nöropazarlama etkisi incelenir. İzleyici, ritim değişikliklerinin impulsi harcama tetiklediğini öğrenir ve hemen uygulayabileceği bir kontrol yöntemi verir.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "kanca": "Nöropazarlama ritmi",
+    "script": "AVM'de müziğin temposu yükseldiğinde harcamalarımız ani bir şekilde artıyor, fark ettin mi? Bu hızlı ritim, beynimizi uyarak impulsi alışverişe itiyor. Çünkü yüksek tempos stresi azaltıp keyif hissi yaratar, fiyatları daha makul gösterir. Bugün yapabileceğin tek şey: alışveriş fişinden bir ürünün birim fiyatını al ve ödeme ekranındaki toplam tutarla karşılaştır; eğer fark varsa ritim etkisi olabilir. Abone ol, sonraki videoda şok edici bir fiyat illusionu keşfedeceğiz!",
+    "sahneler": [
+      {
+        "metin": "AVM'de müziğin temposu yükseldiğinde harcamalarımız ani bir şekilde artıyor, fark ettin mi?",
+        "gorsel": "A shopper walking through a modern mall, the overhead speakers displaying a rising BPM number, the shopper’s eyes widen as they glance at their wallet."
+      },
+      {
+        "metin": "Bu hızlı ritim, beynimizi uyarak impulsi alışverişe itiyor. Çünkü yüksek tempos stresi azaltıp keyif hissi yaratar, fiyatları daha makul gösterir.",
+        "gorsel": "Animated brain diagram with sound waves stimulating the nucleus accumbens, followed by a time-lapse of a shopping cart rapidly filling with items."
+      },
+      {
+        "metin": "Bugün yapabileceğin tek şey: alışveriş fişinden bir ürünün birim fiyatını al ve ödeme ekranındaki toplam tutarla karşılaştır; eğer fark varsa ritim etkisi olabilir.",
+        "gorsel": "Close-up of a paper receipt, a finger highlighting the unit price of a product, split to a smartphone payment screen showing the total amount."
+      },
+      {
+        "metin": "Abone ol, sonraki videoda şok edici bir fiyat illusionu keşfedeceğiz!",
+        "gorsel": "The creator gestures toward a flashing 'Subscribe' button, then transitions to a blurred price tag that reveals a surprising discount illusion."
+      }
+    ],
+    "tema": "tuzak",
+    "uretim": "v2"
+  },
+  {
+    "baslik": "SAHTE İNDİRİMİN MATEMATİĞİ: BÜYÜK YALANI NASIL ANLARSIN? 📉💡",
+    "aciklama": "Büyük indirimlerin ardındaki gizli matematiği ve fiyat manipülasyonlarını öğrenin. Tüketici tuzağına düşmeden akıllı alışveriş yapmanın sırları burada!",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "indirim",
+      "fiyatmanipülasyonu",
+      "shorts",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "kanca": "Fiyat manipülasyonu",
+    "script": "Bir ürünün fiyat etiketindeki yüzde yetmiş indirimin, kasada neden sadece yüzde otuza düştüğünü hiç merak ettin mi? Bu, 'referans fiyat tuzağı' denen bir aldatmaca. Büyük e-ticaret siteleri, ürünün orijinal fiyatını anlık olarak yükseltip, sonra o yüksek fiyattan sözde indirim yaparak aslında sadece küçük bir avantaj sunar. Peki, bu manipülasyonu nasıl yakalarsın? Basit: Ödeme ekranına geldiğinde, ürünün son sepet tutarını, ürün sayfasındaki ilk fiyatla karşılaştır. Eğer indirim oranı aniden azalmışsa, işte o an bir tuzaktasın demektir. Abone olmayı unutma, bir sonraki videoda 'Kargo Bedeli Tuzağı'nı inceliyoruz!",
+    "sahneler": [
+      {
+        "metin": "Bir ürünün fiyat etiketindeki yüzde yetmiş indirimin, kasada neden sadece yüzde otuza düştüğünü hiç merak ettin mi?",
+        "gorsel": "A person looking confusedly at a shopping cart icon on a smartphone screen, with a bright red '70% OFF' tag shrinking to '30% OFF' visually."
+      },
+      {
+        "metin": "Bu, 'referans fiyat tuzağı' denen bir aldatmaca. Büyük e-ticaret siteleri, ürünün orijinal fiyatını anlık olarak yükseltip, sonra o yüksek fiyattan sözde indirim yaparak aslında sadece küçük bir avantaj sunar.",
+        "gorsel": "A split screen showing a product page with a high 'original price' being crossed out and a '70% off' tag. The other half shows a subtly lower 'new original price' and a '30% off' tag for the same product, implying manipulation."
+      },
+      {
+        "metin": "Peki, bu manipülasyonu nasıl yakalarsın? Basit: Ödeme ekranına geldiğinde, ürünün son sepet tutarını, ürün sayfasındaki ilk fiyatla karşılaştır. Eğer indirim oranı aniden azalmışsa, işte o an bir tuzaktasın demektir.",
+        "gorsel": "A close-up shot of a smartphone screen, highlighting the 'checkout' or 'payment' screen, with two price figures: a larger initial price and a smaller final price, with an arrow pointing to the discrepancy. Hands are holding the phone."
+      },
+      {
+        "metin": "Abone olmayı unutma, bir sonraki videoda 'Kargo Bedeli Tuzağı'nı inceliyoruz!",
+        "gorsel": "A stylized 'SUBSCRIBE' button glowing on a dark digital background, with a small, intriguing question mark icon near a package box, hinting at 'shipping fees'."
+      }
+    ],
+    "tema": "tuzak",
+    "uretim": "v2"
   }
 ]
