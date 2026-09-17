@@ -6,6 +6,7 @@
     "99 KURUŞ TUZAĞINA DİKKAT! 💸",
     "ABONELİKLER SENİ BÖYLE KANDIRIYOR! 🔄",
     "ALTIN GÜNÜ BİR TUZAK MI? 💰",
+    "AVM MÜZİĞİ HIZLANINCA CÜZDANIN NEDEN BOŞALIR? 🎶🛍️",
     "AVM'DE NEDEN SAAT YOK?! 🏬",
     "AVM'LER SENİ BÖYLE İÇERDE TUTUYOR! 🏬",
     "AÇIK BÜFE NASIL KÂR EDER? 🍽️",
@@ -95,10 +96,10 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 68)\n      Kohort: v1 (henuz v2 senaryo yok, bekleyen v1=68)\n[1/3] Senaryo (18/126) [diger]: SİNEMA MISIRI NEDEN O KADAR PAHALI? 🍿\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Konuşma boşlukları daraltıldı (~4.6 sn kısaldı, senkron korundu).\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel.mp3, ses %24, ducking).\n      Sahne 1/6: NVIDIA flux görseli ✓\n      Sahne 2/6: NVIDIA flux görseli ✓\n      Sahne 3/6: NVIDIA flux görseli ✓\n      Sahne 4/6: NVIDIA flux görseli ✓\n      Sahne 5/6: NVIDIA flux görseli ✓\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (14817 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-16T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: gckSg2QA6og\n✓ Yüklendi: https://youtu.be/10Fuup1doWE  (yayın: 2026-09-16T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "yınlanmış konu tekrarı ~ 'UÇAK BİLETİ FİYAT OYUNU! ✈️'): “SANA ÖZEL” FİYAT OYUNU! 🎯\n      · atlandı (yayınlanmış konu tekrarı ~ 'İNDİRİM ETİKETLERİ YALAN! 🏷️'): SAHTE İNDİRİMİN MATEMATİĞİ: BÜYÜK YALANI NASIL ANLARSIN\n      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 66)\n      Kohort: v2 (yayinlanan v1=94 v2=0, bekleyen v1=65 v2=1)\n[1/3] Senaryo (136/137) [diger]: AVM MÜZİĞİ HIZLANINCA CÜZDANIN NEDEN BOŞALIR? 🎶🛍️\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Konuşma boşlukları daraltıldı (~3.2 sn kısaldı, senkron korundu).\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel.mp3, ses %24, ducking).\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      Sahne 1/4: NVIDIA flux görseli ✓\n      Sahne 2/4: NVIDIA flux görseli ✓\n      Sahne 3/4: NVIDIA flux görseli ✓\n      Sahne 4/4: NVIDIA flux görseli ✓\n      [dağılım: nvidia=4, pexels=0, pixabay=0, ai=0 / toplam 4 sahne]\n      Çıktı: output/video.mp4  (15912 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-17T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: mo6_DzdbwQM\n✓ Yüklendi: https://youtu.be/uywcTlAfjdQ  (yayın: 2026-09-17T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "mo6_DzdbwQM",
-    "metin": "MISIR NEDEN ALTIN?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
+    "video_id": "uywcTlAfjdQ",
+    "metin": "Nöropazarlama ritmi\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
   },
   "son_kategori": "diger"
 }
