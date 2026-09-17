@@ -116,6 +116,17 @@ def _sayi_sirali(n):
 _SES_KISALTMA = {
     r"\bWi-?Fi\b": "vayfay",
     r"\bWIFI\b": "vayfay",
+    r"\bAI\b": "yapay zekâ",
+    r"\bA\.I\.\b": "yapay zekâ",
+    r"\bVR\b": "sanal gerçeklik",
+    r"\bAR\b": "artırılmış gerçeklik",
+    r"\bUSB\b": "yu es bi",
+    r"\bGPS\b": "ci pi es",
+    r"\bDNA\b": "de en ay",
+    r"\bNASA\b": "nasa",
+    r"\bNVIDIA\b": "en vidya",
+    r"\bYouTube\b": "yu tüp",
+    r"\bTikTok\b": "tik tok",
 }
 
 def _ses_normalize(metin):
