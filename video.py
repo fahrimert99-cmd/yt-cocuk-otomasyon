@@ -496,10 +496,9 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True, stil_ad="foto", gradien
         _resize_cover(ham, boyut, path)
         os.remove(ham)
         return True
-    denemeler = [("gemini-2.5-flash-image", "gemini"),
-                 ("gemini-2.0-flash-preview-image-generation", "gemini"),
-                 ("imagen-4.0-generate-001", "imagen"),
-                 ("imagen-3.0-generate-002", "imagen")]
+    denemeler = [("gemini-3.1-flash-image", "gemini"),
+                 ("gemini-3-pro-image-preview", "gemini"),
+                 ("gemini-2.5-flash-image", "gemini")]
     for model, kind in denemeler:
         try:
             if kind == "imagen":
