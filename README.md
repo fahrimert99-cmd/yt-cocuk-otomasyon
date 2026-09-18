@@ -143,6 +143,20 @@ sonuç vermediği sahneler Pixabay'den doldurulur; böylece nihai video iki stok
 kliplerinin karışımı olur. Alternatif olarak metinden otomatik degrade başlık kartı üretilebilir.
 `assets/` klasörüne telifsiz `.jpg/.png` koyarsan Ken Burns zoom ile kullanılır.
 
+### Gemini görsel üretimi
+
+`config.json` içindeki `"ai_sahne": true` olduğunda, senaryodaki her sahne için
+önce **Gemini Nano Banana** (`gemini-2.5-flash-image`) denenir. Erişim veya kota
+nedeniyle başarısız olursa güvenli üretim zinciri sırasıyla ikinci Gemini görüntü
+modelini, Google Imagen modellerini, NVIDIA görsel üretimini, Pexels/Pixabay stok
+videolarını ve en son degrade kartı dener. Her aşama isteğe bağlı ve hataya dayanıklıdır;
+bir görsel sağlayıcısının çalışmaması videonun tamamını durdurmaz.
+
+Görsel üretimi için `GEMINI_API_KEY` yeterlidir. Eski JSON secret biçimi
+(`{"google":"..."}` veya `{"gemini":"..."}`) de desteklenir; ayrı anahtar kullanmak
+istersen `GEMINI_IMAGE_API_KEY` tanımlayabilirsin. Gemini görselleri yatay videoda
+`16:9`, Shorts'ta `9:16` oranında istenir ve mevcut Ken Burns/FFmpeg montajına girer.
+
 ---
 
 ## DAYANIKLILIK

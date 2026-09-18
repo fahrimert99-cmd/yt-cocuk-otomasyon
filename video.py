@@ -444,7 +444,29 @@ def _resize_cover(src, boyut, dst):
 # Her sahne için senaryoya uygun sevimli çocuk çizimi üretir.
 # Başarısız olursa degrade karta düşer (video asla boş kalmaz).
 # ----------------------------------------------------------
-def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True, stil_ad="foto"):
+def _gemini_image_key():
+    """Düz veya JSON biçimindeki Gemini görsel anahtarını bulur."""
+    for raw in (os.environ.get("GEMINI_IMAGE_API_KEY", ""),
+                os.environ.get("GEMINI_API_KEY", ""),
+                os.environ.get("GOOGLE_TTS_KEY", "")):
+        raw = (raw or "").strip()
+        if not raw:
+            continue
+        if raw.startswith("{"):
+            try:
+                data = json.loads(raw)
+                for name in ("gemini", "google", "image"):
+                    if data.get(name):
+                        return str(data[name]).strip()
+            except Exception:
+                continue
+        else:
+            return raw
+    return ""
+
+
+def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True, stil_ad="foto", gradient=True):
+    """Gemini Nano Banana öncelikli, Google Imagen yedekli görsel üretimi."""
     import urllib.parse, urllib.request
     W, H = boyut
     if cocuk:
@@ -461,7 +483,12 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True, stil_ad="foto"):
     tam = f"{prompt}, {stil}"
     import base64 as _b64
     ar = "16:9" if W > H else ("9:16" if H > W else "1:1")
-    key = _google_key()
+    key = _gemini_image_key()
+    if not key:
+        print(f"      [görsel {idx}: Gemini anahtarı yok]")
+        if gradient:
+            gradient_kart(prompt[:80], boyut, idx, path)
+        return False
     def _save(b):
         ham = path + ".raw"
         with open(ham, "wb") as f:
@@ -469,10 +496,10 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True, stil_ad="foto"):
         _resize_cover(ham, boyut, path)
         os.remove(ham)
         return True
-    denemeler = [("imagen-4.0-generate-001", "imagen"),
-                 ("imagen-3.0-generate-002", "imagen"),
-                 ("gemini-2.5-flash-image", "gemini"),
-                 ("gemini-2.0-flash-preview-image-generation", "gemini")]
+    denemeler = [("gemini-2.5-flash-image", "gemini"),
+                 ("gemini-2.0-flash-preview-image-generation", "gemini"),
+                 ("imagen-4.0-generate-001", "imagen"),
+                 ("imagen-3.0-generate-002", "imagen")]
     for model, kind in denemeler:
         try:
             if kind == "imagen":
@@ -482,7 +509,8 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True, stil_ad="foto"):
             else:
                 url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
                 body = {"contents": [{"parts": [{"text": "Generate an image: " + tam}]}],
-                        "generationConfig": {"responseModalities": ["IMAGE"]}}
+                        "generationConfig": {"responseModalities": ["IMAGE"],
+                                             "imageConfig": {"aspectRatio": ar}}}
             req = urllib.request.Request(url, data=json.dumps(body).encode(),
                                          headers={"Content-Type": "application/json", "User-Agent": "ytbot"})
             with urllib.request.urlopen(req, timeout=150) as r:
@@ -504,8 +532,9 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True, stil_ad="foto"):
             print(f"      [görsel {idx} {model}: görsel yok]")
         except Exception as e:
             print(f"      [görsel {idx} {model} hata: {str(e)[:90]}]")
-    print(f"      [görsel {idx}: tüm AI modelleri başarısız, karta düşülüyor]")
-    gradient_kart(prompt[:80], boyut, idx, path)
+    print(f"      [görsel {idx}: Gemini/Imagen üretimi başarısız]")
+    if gradient:
+        gradient_kart(prompt[:80], boyut, idx, path)
     return False
 
 
@@ -914,9 +943,8 @@ def stok_video_ara(query, boyut, path, dikey=True, oncelik=None):
 
 def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="stok",
                              ai_sahne=False):
-    """Her sahne için görsel hazırlar. ai_sahne=True ise ÖNCE NVIDIA flux ile
-    sahneye özel fotogerçekçi görsel üretilir (Ken Burns ile hareketlenir);
-    başarısızsa stok videoya, o da yoksa eski AI görseline düşülür.
+    """Her sahne için görsel hazırlar. ai_sahne=True ise sıra Gemini Nano
+    Banana/Imagen, NVIDIA, stok ve degrade karttır; API hataları non-fatal'dır.
     ai_sahne=False (varsayılan) ise mevcut davranış: stok video -> AI görsel.
     ('video', yol) veya ('image', yol) listesi döndürür."""
     if sahneler:
@@ -943,9 +971,21 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
             p = (p.strip() + ", extreme close-up macro shot filling the frame, "
                  "shallow depth of field, dramatic high-contrast lighting, "
                  "bold striking composition, eye-catching opening frame")
-        # 0) NVIDIA flux ile sahneye özel görsel (opsiyonel, non-fatal)
+        # 0) Gemini Nano Banana -> Imagen güvenli üretim zinciri
+        if ai_sahne:
+            aipath = os.path.join(tmp, f"sahne_gemini_{i:03d}.jpg")
+            try:
+                if gorsel_uret_ai(p, boyut, i, aipath, cocuk=cocuk, stil_ad=stil):
+                    sayac["ai"] += 1
+                    gorseller.append(("image", aipath))
+                    print(f"      Sahne {i+1}/{len(prompts)}: Gemini/Imagen görseli ✓")
+                    continue
+            except Exception as e:
+                print(f"      Sahne {i+1}: Gemini/Imagen atlandı ({str(e)[:60]})")
+
+        # 1) NVIDIA flux ile sahneye özel görsel (opsiyonel, non-fatal)
         if NA is not None:
-            aipath = os.path.join(tmp, f"sahne_ai_{i:03d}.jpg")
+            aipath = os.path.join(tmp, f"sahne_nvidia_{i:03d}.jpg")
             try:
                 if NA.sahne_gorsel(p, aipath, dikey=dikey):
                     sayac["nvidia"] += 1
