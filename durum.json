@@ -51,6 +51,7 @@
     "MARKETLER SENİ BÖYLE KANDIRIYOR! 🛒",
     "MEGALODON HÂLÂ YAŞIYOR OLABİLİR Mİ? 🦈",
     "MENÜDEKİ GİZLİ TUZAK! 📋",
+    "NEDEN HEP SAĞA YÖNELİRSİN? ➡️",
     "OKYANUSTAN GELEN ESRARENGİZ SES 🔊",
     "OKYANUSUN DİBİNDE NE VAR? 🌊",
     "ONAY KUTUSUNDAKİ KÜÇÜK TUZAK! ✅",
@@ -97,10 +98,10 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "I? 🛒'): EN PAHALI ÜRÜN NEDEN GÖZ HİZASINDA? 👁️\n      · atlandı (yayınlanmış konu tekrarı ~ ''ÜCRETSİZ DENEME' TUZAĞINA DİKKAT! ⏰'): “ÜCRETSİZ DENE” NEDEN ÜCRETLİ OLUR? ⏰\n      · atlandı (yayınlanmış konu tekrarı ~ 'İNDİRİM GÜNÜNDEKİ FİYAT OYUNU! 🛍️'): “SANA ÖZEL” FİYAT OYUNU! 🎯\n      · atlandı (yayınlanmış konu tekrarı ~ 'İNDİRİM ETİKETLERİ YALAN! 🏷️'): SAHTE İNDİRİMİN MATEMATİĞİ: BÜYÜK YALANI NASIL ANLARSIN\n      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 65)\n      Kohort: v1 (henuz v2 senaryo yok, bekleyen v1=65)\n[1/3] Senaryo (135/137) [yeme]: ONAY KUTUSUNDAKİ KÜÇÜK TUZAK! ✅\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Konuşma boşlukları daraltıldı (~5.1 sn kısaldı, senkron korundu).\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel2.mp3, ses %24, ducking).\n      Sahne 1/5: NVIDIA flux görseli ✓\n      Sahne 2/5: NVIDIA flux görseli ✓\n      Sahne 3/5: NVIDIA flux görseli ✓\n      Sahne 4/5: NVIDIA flux görseli ✓\n      Sahne 5/5: NVIDIA flux görseli ✓\n      [dağılım: nvidia=5, pexels=0, pixabay=0, ai=0 / toplam 5 sahne]\n      Çıktı: output/video.mp4  (13342 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-18T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: uywcTlAfjdQ\n✓ Yüklendi: https://youtu.be/GT-6-veS2bU  (yayın: 2026-09-18T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🍔 Restoran & Yeme-İçme Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "hata: HTTP Error 403: Forbidden]\n      [görsel 3: Gemini/Imagen üretimi başarısız]\n      Sahne 4/6: NVIDIA flux görseli ✓\n      [görsel 4 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]\n      [görsel 4 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]\n      [görsel 4 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]\n      [görsel 4 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]\n      [görsel 4: Gemini/Imagen üretimi başarısız]\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      Sahne 5/6: NVIDIA flux görseli ✓\n      [görsel 5 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]\n      [görsel 5 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]\n      [görsel 5 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]\n      [görsel 5 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]\n      [görsel 5: Gemini/Imagen üretimi başarısız]\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (14521 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-18T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: GT-6-veS2bU\n✓ Yüklendi: https://youtu.be/tHEIPOD2SxM  (yayın: 2026-09-18T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🛒 Market & AVM Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "GT-6-veS2bU",
-    "metin": "NEYE ONAY VERDİN?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
+    "video_id": "tHEIPOD2SxM",
+    "metin": "NEDEN SAĞA GİDİYORSUN?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
   },
-  "son_kategori": "yeme"
+  "son_kategori": "market"
 }
