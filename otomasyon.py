@@ -341,13 +341,20 @@ def main():
     except Exception as e:
         print(f"      Açıklama şablonu atlandı: {str(e)[:100]}")
         _aciklama = veri.get("aciklama", "")
-    _vid = YT.yukle(cikti, veri["baslik"], _aciklama,
-             veri.get("etiketler") or [],
-             gizlilik=cfg.get("gizlilik", "private"),
-             kategori=str(cfg.get("kategori", "28")),
-             cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
-             kapak=kapak_yolu, yayin_zamani=yayin_zamani,
-             sentetik=bool(cfg.get("ai_beyani", True)))
+    # Yükleme sonrası GitHub durum kaydı yazılamadan işlem kesilirse workflow
+    # yeniden çalışabilir. Aynı başlık + aynı publishAt slotunu bulursak ikinci
+    # kez YouTube'a yüklemeyiz.
+    _vid = YT.planli_video_bul(veri["baslik"], yayin_zamani)
+    if _vid:
+        print(f"✓ Aynı yayın slotu zaten mevcut; tekrar yükleme atlandı: https://youtu.be/{_vid}")
+    else:
+        _vid = YT.yukle(cikti, veri["baslik"], _aciklama,
+                 veri.get("etiketler") or [],
+                 gizlilik=cfg.get("gizlilik", "private"),
+                 kategori=str(cfg.get("kategori", "28")),
+                 cocuk_icerigi=bool(cfg.get("cocuk_icerigi", False)),
+                 kapak=kapak_yolu, yayin_zamani=yayin_zamani,
+                 sentetik=bool(cfg.get("ai_beyani", True)))
     # OYNATMA LİSTESİ: videoyu kategori/temasına göre listeye ekle (izlenme
     # süresi/oturum uzunluğu -> algoritma sever). Hata olursa yükleme bozulmaz.
     if cfg.get("oynatma_listesi", True):
@@ -366,6 +373,9 @@ def main():
             print(f"      Oynatma listesi atlandı: {str(e)[:120]}")
     # Yorum, video public olduktan SONRA atilir (ozel videoya yorum yasak).
     # Video ID + yorum metni durum.json'a yazilir; yorum.yml 19:15'te gonderir.
+    durum["son_video_id"] = _vid
+    durum["son_baslik"] = veri["baslik"]
+    durum["son_yayin_zamani"] = yayin_zamani
     durum["bekleyen_yorum"] = {
         "video_id": _vid,
         "metin": (f"{veri.get('kanca','Bu tuzağı biliyor muydun?')}\n\n"

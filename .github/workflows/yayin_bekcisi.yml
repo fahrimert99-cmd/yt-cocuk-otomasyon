@@ -1,0 +1,41 @@
+name: YouTube Yayin Bekcisi
+
+on:
+  schedule:
+    - cron: "30 8 * * *"    # 11:30 TR: 12:00 slotunu kontrol et
+    - cron: "30 16 * * *"   # 19:30 TR: 20:00 slotunu kontrol et
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: youtube-yayin-bekcisi
+  cancel-in-progress: false
+
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Bagimliliklar
+        run: pip install -r requirements.txt
+      - name: Yayin slotunu kontrol et
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          if [ "$(date -u +%H)" -lt 12 ]; then
+            export SLOT_UTC="09:00"
+          else
+            export SLOT_UTC="17:00"
+          fi
+          python3 yayin_bekcisi.py

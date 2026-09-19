@@ -61,6 +61,76 @@ def _kimlik():
                 "https://www.googleapis.com/auth/yt-analytics.readonly"],
     )
 
+
+def planli_video_bul(baslik, yayin_zamani, pencere=50):
+    """Aynı başlık ve publishAt slotu daha önce yüklenmiş mi kontrol eder.
+
+    Workflow, YouTube yüklemesinden sonra GitHub durum kaydını yazamadan kesilirse
+    yeniden çalışabilir. Bu kontrol aynı videonun ikinci kez yüklenmesini önler.
+    Yalnızca başlık + kesin yayın zamanı eşleşirse sonuç döndürür; bu yüzden aynı
+    başlıklı farklı gün videoları birbirine karıştırılmaz.
+    """
+    if not baslik or not yayin_zamani:
+        return None
+    try:
+        yt = build("youtube", "v3", credentials=_kimlik())
+        ch = yt.channels().list(part="contentDetails", mine=True).execute()
+        items = ch.get("items") or []
+        if not items:
+            return None
+        uploads = items[0]["contentDetails"]["relatedPlaylists"]["uploads"]
+        tok = None
+        kalan = max(1, int(pencere))
+        while kalan > 0:
+            batch = min(50, kalan)
+            r = yt.playlistItems().list(
+                part="contentDetails", playlistId=uploads,
+                maxResults=batch, pageToken=tok).execute()
+            ids = [x.get("contentDetails", {}).get("videoId")
+                   for x in r.get("items", [])]
+            ids = [x for x in ids if x]
+            if ids:
+                vr = yt.videos().list(part="snippet,status", id=",".join(ids)).execute()
+                for item in vr.get("items", []):
+                    sn = item.get("snippet", {})
+                    st = item.get("status", {})
+                    if (sn.get("title") == baslik[:100]
+                            and st.get("publishAt") == yayin_zamani):
+                        return item["id"]
+            kalan -= len(ids)
+            tok = r.get("nextPageToken")
+            if not tok or not ids:
+                break
+    except Exception as e:
+        # Kontrol başarısızsa güvenli tarafta kal: üretim akışını durdurma.
+        print(f"! Çift yükleme kontrolü yapılamadı: {str(e)[:140]}")
+    return None
+
+
+def planli_slot_var(yayin_zamani, pencere=50):
+    """Belirli UTC publishAt slotunda en az bir video var mı?"""
+    if not yayin_zamani:
+        return False
+    try:
+        yt = build("youtube", "v3", credentials=_kimlik())
+        ch = yt.channels().list(part="contentDetails", mine=True).execute()
+        items = ch.get("items") or []
+        if not items:
+            return False
+        uploads = items[0]["contentDetails"]["relatedPlaylists"]["uploads"]
+        r = yt.playlistItems().list(part="contentDetails", playlistId=uploads,
+                                    maxResults=min(50, max(1, int(pencere)))).execute()
+        ids = [x.get("contentDetails", {}).get("videoId") for x in r.get("items", [])]
+        ids = [x for x in ids if x]
+        if not ids:
+            return False
+        vr = yt.videos().list(part="status", id=",".join(ids)).execute()
+        return any(x.get("status", {}).get("publishAt") == yayin_zamani
+                   for x in vr.get("items", []))
+    except Exception as e:
+        print(f"! Yayın slotu kontrolü yapılamadı: {str(e)[:140]}")
+        return False
+
 def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani, sentetik=True):
     st = {"selfDeclaredMadeForKids": bool(cocuk_icerigi)}
     # AI/SENTETİK İÇERİK BEYANI (YouTube "Altered or Synthetic Content"):
