@@ -3,17 +3,8 @@ name: Uzun Videoyu Temiz Sesle Yeniden Uret
 # Tek seferlik / elle: PLANLI (private + publishAt) bir UZUN gizem videosunu,
 # ses cizirtisi duzeltmesiyle yeniden uretir; eski basligi/aciklamayi/etiketi ve
 # zamanlanmis yayin saatini KORUR, eskisini siler. Gunluk uzun cron'a dokunmaz.
-on:
-  workflow_dispatch:
-    inputs:
-      konu:
-        description: "uzun_konular.json'daki birebir konu basligi"
-        required: true
-        default: "OKYANUSUN HARİTALANMAMIŞ DERİNLİKLERİNDE NE VAR?"
-      eski_video_id:
-        description: "Degistirilecek (silinecek) mevcut YouTube video id"
-        required: true
-        default: "iTzf7lDzQIE"
+# Günlük iki slot dışında video yüklenmemesi için devre dışı.
+on: {}
 
 permissions:
   contents: write

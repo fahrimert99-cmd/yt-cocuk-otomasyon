@@ -3,13 +3,8 @@ name: Guncel Tuketici Haberi (Short)
 # haber.py RSS'ten uygun+taze haberi secip senaryo yazar; uygun haber yoksa
 # video URETILMEZ. Uretim/yukleme mevcut uret_dispatch.py ile yapilir
 # (SEO aciklama + markali ilk kare + oynatma listesi dahil).
-on:
-  schedule:
-    - cron: "0 11 * * 1,4"   # Pazartesi & Perşembe 14:00 TR
-  # GARANTİLİ TETİK: dıştan zamanlayıcı (cron-job.org) repository_dispatch ile.
-  repository_dispatch:
-    types: [uret-haber]
-  workflow_dispatch: {}
+# Günlük iki slot dışında video yüklenmemesi için devre dışı.
+on: {}
 permissions:
   contents: write
 concurrency:

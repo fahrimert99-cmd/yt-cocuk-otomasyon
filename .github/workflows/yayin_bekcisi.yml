@@ -1,10 +1,8 @@
 name: YouTube Yayin Bekcisi
 
-on:
-  schedule:
-    - cron: "30 8 * * *"    # 11:30 TR: 12:00 slotunu kontrol et
-    - cron: "30 16 * * *"   # 19:30 TR: 20:00 slotunu kontrol et
-  workflow_dispatch:
+# Günlük iki ana cron zaten sabit; ek bekçi tetikleri slot çakışmasına yol
+# açmaması için kapalıdır.
+on: {}
 
 permissions:
   contents: read

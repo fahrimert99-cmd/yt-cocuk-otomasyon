@@ -5,21 +5,8 @@ name: Videoyu ElevenLabs ile Yeniden Uret
 # gizliligi/zamanlanmis yayin saati OTOMATIK korunur. Eskisini siler ve
 # durum.json'daki bekleyen_yorum/yapilan_id referanslarini yeni id'ye tasir.
 # Gunluk cron'a (otomasyon.py) dokunmaz.
-on:
-  workflow_dispatch:
-    inputs:
-      baslik:
-        description: "senaryolar.json'daki birebir baslik"
-        required: true
-        default: "SON KULLANMA TARİHİ OYUNU! 📅"
-      eski_video_id:
-        description: "Silinecek eski YouTube video id (bos ise silme atlanir)"
-        required: false
-        default: "EPcHoPwHhfs"
-      yayin_zamani:
-        description: "Planli yayin (UTC). BOS birak -> eski videonun saati/gizliligi korunur"
-        required: false
-        default: ""
+# Günlük iki slot dışında video yüklenmemesi için devre dışı.
+on: {}
 
 permissions:
   contents: write

@@ -9,11 +9,8 @@ on:
     # concurrency grubu çakışmayı serialize eder.
     - cron: "0 0 * * *"    # üretim -> 12:00 TR yayını (09:00 UTC publishAt); 9 saat tampon
     - cron: "0 10 * * *"   # akşam üretimi -> 20:00 TR yayını (17:00 UTC publishAt); 7 saat tampon
-  # GARANTİLİ TETİK: GitHub'ın kendi cron'u gecikebilir/atlayabilir; dıştan bir
-  # zamanlayıcı (ör. cron-job.org) repository_dispatch ile bunu tetikler.
-  repository_dispatch:
-    types: [uret-short]
-  workflow_dispatch:
+  # Yalnızca bu iki cron üretim yapar. Manuel/repository_dispatch tetikleri
+  # kapalıdır; böylece bir yayın slotunda ikinci video oluşturulmaz.
 
 permissions:
   contents: write
