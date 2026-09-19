@@ -342,11 +342,14 @@ def main():
         print(f"      Açıklama şablonu atlandı: {str(e)[:100]}")
         _aciklama = veri.get("aciklama", "")
     # Yükleme sonrası GitHub durum kaydı yazılamadan işlem kesilirse workflow
-    # yeniden çalışabilir. Aynı başlık + aynı publishAt slotunu bulursak ikinci
-    # kez YouTube'a yüklemeyiz.
+    # yeniden çalışabilir. Aynı başlık + aynı publishAt slotunu bulursak veya
+    # manuel tetikleme zaten dolu olan bir slotu hedefliyorsa ikinci kez
+    # YouTube'a yüklemeyiz.
     _vid = YT.planli_video_bul(veri["baslik"], yayin_zamani)
+    if not _vid and yayin_zamani:
+        _vid = YT.planli_slot_video(yayin_zamani)
     if _vid:
-        print(f"✓ Aynı yayın slotu zaten mevcut; tekrar yükleme atlandı: https://youtu.be/{_vid}")
+        print(f"✓ Yayın slotu zaten dolu; tekrar yükleme atlandı: https://youtu.be/{_vid}")
     else:
         _vid = YT.yukle(cikti, veri["baslik"], _aciklama,
                  veri.get("etiketler") or [],

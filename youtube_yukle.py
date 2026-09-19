@@ -107,10 +107,10 @@ def planli_video_bul(baslik, yayin_zamani, pencere=50):
     return None
 
 
-def planli_slot_var(yayin_zamani, pencere=50):
-    """Belirli UTC publishAt slotunda en az bir video var mı?"""
+def planli_slot_video(yayin_zamani, pencere=50):
+    """Belirli UTC publishAt slotundaki ilk video ID'sini döndürür."""
     if not yayin_zamani:
-        return False
+        return None
     try:
         yt = build("youtube", "v3", credentials=_kimlik())
         ch = yt.channels().list(part="contentDetails", mine=True).execute()
@@ -123,13 +123,19 @@ def planli_slot_var(yayin_zamani, pencere=50):
         ids = [x.get("contentDetails", {}).get("videoId") for x in r.get("items", [])]
         ids = [x for x in ids if x]
         if not ids:
-            return False
+            return None
         vr = yt.videos().list(part="status", id=",".join(ids)).execute()
-        return any(x.get("status", {}).get("publishAt") == yayin_zamani
-                   for x in vr.get("items", []))
+        for item in vr.get("items", []):
+            if item.get("status", {}).get("publishAt") == yayin_zamani:
+                return item.get("id")
     except Exception as e:
         print(f"! Yayın slotu kontrolü yapılamadı: {str(e)[:140]}")
-        return False
+    return None
+
+
+def planli_slot_var(yayin_zamani, pencere=50):
+    """Belirli UTC publishAt slotunda en az bir video var mı?"""
+    return bool(planli_slot_video(yayin_zamani, pencere=pencere))
 
 def _durum_bloku(gizlilik, cocuk_icerigi, yayin_zamani, sentetik=True):
     st = {"selfDeclaredMadeForKids": bool(cocuk_icerigi)}
