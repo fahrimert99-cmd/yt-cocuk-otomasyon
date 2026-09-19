@@ -23,7 +23,7 @@ jobs:
         run: python3 gemini_api_test.py
       - name: Test görselini artifact yap
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: gemini-test-image
           path: gemini-test.jpg
