@@ -71,6 +71,7 @@
     "SADAKAT KARTININ GERÇEK AMACI! 💳",
     "SEPETTEKİ ÜRÜN NEDEN PAHALANDI? 🛒",
     "SES REKLAMLARI NEDEN YÜKSEK? 🔊",
+    "SINIRLI SAYIDA YALANI! ⏳",
     "SON KULLANMA TARİHİ OYUNU! 📅",
     "SPOR SALONU ÜYELİK TUZAĞI! 🏋️",
     "SPOR SALONU ÜYELİĞİ TUZAĞI! 💪",
@@ -100,13 +101,13 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "ations)\n      Sahne 5/6: NVIDIA flux görseli ✓\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (pollinations yedek atlandı: HTTP Error 500: Internal Server Error)\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=4, pexels=1, pixabay=1, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (13199 KB)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-19T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The comment thread could not be created \n✓ Yüklendi: https://youtu.be/fUrgNzDp7Dw  (yayın: 2026-09-19T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🛒 Market & AVM Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      Sahne 5/6: NVIDIA flux görseli ✓\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (12505 KB)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-19T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: fUrgNzDp7Dw\n✓ Yüklendi: https://youtu.be/kmEpWFDRt4Y  (yayın: 2026-09-19T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "fUrgNzDp7Dw",
-    "metin": "KOKUNUN GİZLİ GÜCÜ\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
+    "video_id": "kmEpWFDRt4Y",
+    "metin": "GERÇEKTEN SON MU?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
   },
-  "son_kategori": "market",
-  "son_video_id": "fUrgNzDp7Dw",
-  "son_baslik": "KOKUNUN GİZLİ GÜCÜ! 👃",
-  "son_yayin_zamani": "2026-09-19T09:00:00Z"
+  "son_kategori": "diger",
+  "son_video_id": "kmEpWFDRt4Y",
+  "son_baslik": "SINIRLI SAYIDA YALANI! ⏳",
+  "son_yayin_zamani": "2026-09-19T17:00:00Z"
 }
