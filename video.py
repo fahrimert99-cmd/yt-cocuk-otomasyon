@@ -496,10 +496,10 @@ def gorsel_uret_ai(prompt, boyut, idx, path, cocuk=True, stil_ad="foto", gradien
         _resize_cover(ham, boyut, path)
         os.remove(ham)
         return True
-    denemeler = [("gemini-2.5-flash-image", "gemini"),
-                 ("gemini-2.0-flash-preview-image-generation", "gemini"),
-                 ("imagen-4.0-generate-001", "imagen"),
-                 ("imagen-3.0-generate-002", "imagen")]
+    # Gemini yalnızca yedek sağlayıcıdır. Imagen modelleri bu Gemini API anahtarı
+    # ile çağrılmadığı için burada denenmez; aksi halde her sahnede gereksiz 403
+    # üretilir ve çalışan NVIDIA yedeğine geçiş gecikir.
+    denemeler = [("gemini-2.5-flash-image", "gemini")]
     for model, kind in denemeler:
         try:
             if kind == "imagen":
@@ -943,8 +943,8 @@ def stok_video_ara(query, boyut, path, dikey=True, oncelik=None):
 
 def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="stok",
                              ai_sahne=False):
-    """Her sahne için görsel hazırlar. ai_sahne=True ise sıra Gemini Nano
-    Banana/Imagen, NVIDIA, stok ve degrade karttır; API hataları non-fatal'dır.
+    """Her sahne için görsel hazırlar. ai_sahne=True ise sıra NVIDIA,
+    Gemini Nano Banana, stok ve degrade karttır; API hataları non-fatal'dır.
     ai_sahne=False (varsayılan) ise mevcut davranış: stok video -> AI görsel.
     ('video', yol) veya ('image', yol) listesi döndürür."""
     if sahneler:
@@ -971,19 +971,7 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
             p = (p.strip() + ", extreme close-up macro shot filling the frame, "
                  "shallow depth of field, dramatic high-contrast lighting, "
                  "bold striking composition, eye-catching opening frame")
-        # 0) Gemini Nano Banana -> Imagen güvenli üretim zinciri
-        if ai_sahne:
-            aipath = os.path.join(tmp, f"sahne_gemini_{i:03d}.jpg")
-            try:
-                if gorsel_uret_ai(p, boyut, i, aipath, cocuk=cocuk, stil_ad=stil):
-                    sayac["ai"] += 1
-                    gorseller.append(("image", aipath))
-                    print(f"      Sahne {i+1}/{len(prompts)}: Gemini/Imagen görseli ✓")
-                    continue
-            except Exception as e:
-                print(f"      Sahne {i+1}: Gemini/Imagen atlandı ({str(e)[:60]})")
-
-        # 1) NVIDIA flux ile sahneye özel görsel (opsiyonel, non-fatal)
+        # 0) NVIDIA flux ana üretici: hızlı ve mevcut workflow'da doğrulanmış.
         if NA is not None:
             aipath = os.path.join(tmp, f"sahne_nvidia_{i:03d}.jpg")
             try:
@@ -994,6 +982,18 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
                     continue
             except Exception as e:
                 print(f"      Sahne {i+1}: NVIDIA flux atlandı ({str(e)[:60]})")
+        # 1) NVIDIA başarısızsa Gemini Nano Banana yedek olarak denenir.
+        if ai_sahne:
+            aipath = os.path.join(tmp, f"sahne_gemini_{i:03d}.jpg")
+            try:
+                if gorsel_uret_ai(p, boyut, i, aipath, cocuk=cocuk, stil_ad=stil):
+                    sayac["ai"] += 1
+                    gorseller.append(("image", aipath))
+                    print(f"      Sahne {i+1}/{len(prompts)}: Gemini yedek görseli ✓")
+                    continue
+            except Exception as e:
+                print(f"      Sahne {i+1}: Gemini yedek atlandı ({str(e)[:60]})")
+        # 2) API üretimleri başarısızsa stok video, en son degrade kart.
         vpath = os.path.join(tmp, f"sahne_{i:03d}.mp4")
         stok = (stok_video_ara(p, boyut, vpath, dikey=dikey)
                 if (stil == "stok" and not cocuk) else None)
