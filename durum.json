@@ -89,6 +89,7 @@
     "ÇIKOLATA PAKETİ NEDEN HER YIL 10g AZALDI? 🍫",
     "ÜCRETSİZ KARGO EŞİĞİ NEDEN VAR? 🚚",
     "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
+    "İLK FİYAT NEDEN HEP YÜKSEK? 🎯",
     "İNDİRİM ETİKETLERİ YALAN! 🏷️",
     "İNDİRİM GÜNÜNDEKİ FİYAT OYUNU! 🛍️",
     "İNDİRİM REYONU NEDEN GİRİŞTE? 🍎",
@@ -98,10 +99,10 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "hata: HTTP Error 403: Forbidden]\n      [görsel 3: Gemini/Imagen üretimi başarısız]\n      Sahne 4/6: NVIDIA flux görseli ✓\n      [görsel 4 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]\n      [görsel 4 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]\n      [görsel 4 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]\n      [görsel 4 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]\n      [görsel 4: Gemini/Imagen üretimi başarısız]\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (görsel ücretsiz yedekten üretildi: pollinations)\n      Sahne 5/6: NVIDIA flux görseli ✓\n      [görsel 5 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]\n      [görsel 5 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]\n      [görsel 5 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]\n      [görsel 5 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]\n      [görsel 5: Gemini/Imagen üretimi başarısız]\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (14521 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-18T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: GT-6-veS2bU\n✓ Yüklendi: https://youtu.be/tHEIPOD2SxM  (yayın: 2026-09-18T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🛒 Market & AVM Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": " hata: HTTP Error 403: Forbidden]\n      [görsel 3 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]\n      [görsel 3 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]\n      [görsel 3 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]\n      [görsel 3: Gemini/Imagen üretimi başarısız]\n      Sahne 4/6: NVIDIA flux görseli ✓\n      [görsel 4 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]\n      [görsel 4 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]\n      [görsel 4 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]\n      [görsel 4 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]\n      [görsel 4: Gemini/Imagen üretimi başarısız]\n      Sahne 5/6: NVIDIA flux görseli ✓\n      [görsel 5 gemini-2.5-flash-image hata: HTTP Error 403: Forbidden]\n      [görsel 5 gemini-2.0-flash-preview-image-generation hata: HTTP Error 403: Forbidden]\n      [görsel 5 imagen-4.0-generate-001 hata: HTTP Error 403: Forbidden]\n      [görsel 5 imagen-3.0-generate-002 hata: HTTP Error 403: Forbidden]\n      [görsel 5: Gemini/Imagen üretimi başarısız]\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (13043 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-19T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: tHEIPOD2SxM\n✓ Yüklendi: https://youtu.be/9WAzX6CgcRE  (yayın: 2026-09-19T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "tHEIPOD2SxM",
-    "metin": "NEDEN SAĞA GİDİYORSUN?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
+    "video_id": "9WAzX6CgcRE",
+    "metin": "İLK FİYAT TUZAĞI\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
   },
-  "son_kategori": "market"
+  "son_kategori": "diger"
 }
