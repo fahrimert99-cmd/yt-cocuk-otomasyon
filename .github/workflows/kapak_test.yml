@@ -34,7 +34,7 @@ jobs:
         run: python3 kapak_test.py
       - name: Kapaklari artifact yap
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: ai-kapak-onizleme
           path: |
