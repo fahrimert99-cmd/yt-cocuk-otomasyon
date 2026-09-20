@@ -5,7 +5,7 @@ GitHub-native otomasyon (AI BAĞIMLILIĞI YOK).
 senaryolar.json'daki hazır senaryolardan sıradakini alır -> video üretir ->
 YouTube'a yükler -> sırayı ilerletir. Ayarlar: config.json
 """
-import os, json, tempfile, io, sys, re
+import os, json, tempfile, io, sys, re, unicodedata
 import video as V
 
 SENARYOLAR = "senaryolar.json"
@@ -175,6 +175,43 @@ def main():
         # "cesitlilik" (eski: tasarruf/'biliyor muydun'). Alan yoksa "tuzak".
         return s.get("tema", "tuzak")
 
+    # TUZAK AVCISI marka filtresi: konu, izleyicinin parasını/alışverişini,
+    # ödeme kararını veya bir hizmetle ilişkisini açıkça anlatmalı. Yalnızca
+    # genel psikoloji/bilim konuları bu kanalda yayınlanmaz.
+    MARKA_TERIMLERI = (
+        "market", "fiyat", "indirim", "ödeme", "ücret", "alışveriş", "ürün",
+        "mağaza", "reyon", "raf", "sepet", "kasa", "restoran", "menü",
+        "büfe", "sinema", "kart", "kredi", "banka", "faiz", "taksit",
+        "kampanya", "kupon", "abonelik", "üyelik", "iade", "kargo", "garanti",
+        "otopark", "kuaför", "berber", "uygulama", "site", "çerez", "wifi",
+        "internet", "reklam", "kampanya", "para", "satış", "hizmet", "sözleşme",
+        "ek ücret", "gizli ücret", "sana özel", "son iki", "bedava", "ücretsiz",
+    )
+
+    # Kanal konusu ile ilişkili olsa da ilk test döneminde daha zayıf sinyal
+    # veren soyut duyusal/alışkanlık başlıklarını, doğrudan para veya ürün
+    # vaadi olanlar varken seçme. Silinmez; güçlü havuz biterse kullanılabilir.
+    ZAYIF_BASLIK_TERIMLERI = ("müzik", "koku", "sağa", "yön", "hız", "kokunun")
+    DOĞRUDAN_BASLIK_TERIMLERI = (
+        "fiyat", "indirim", "ücret", "ödeme", "para", "ürün", "market", "reyon",
+        "raf", "sepet", "kasa", "kart", "kredi", "banka", "taksit", "kampanya",
+        "abonelik", "üyelik", "iade", "kargo", "garanti", "menü", "gizli tuzak",
+        "ekstra", "bedava", "ücretsiz", "son iki", "sınırlı", "çerez",
+    )
+
+    def _marka_norm(metin):
+        metin = unicodedata.normalize("NFC", str(metin))
+        return metin.replace("İ", "I").replace("ı", "i").lower()
+
+    def _marka_uygun_mu(s):
+        metin = _marka_norm(" ".join(str(s.get(k, "")) for k in ("baslik", "aciklama", "script")))
+        if not any(_marka_norm(t) in metin for t in MARKA_TERIMLERI):
+            return False
+        baslik = _marka_norm(s.get("baslik", ""))
+        zayif = any(_marka_norm(t) in baslik for t in ZAYIF_BASLIK_TERIMLERI)
+        dogrudan = any(_marka_norm(t) in baslik for t in DOĞRUDAN_BASLIK_TERIMLERI)
+        return not zayif or dogrudan
+
     # Başlık emojisi/kelime sırası değişmiş olsa bile daha önce yayınlanan aynı
     # konuyu tekrar seçme. Bu kontrol, geçmişte havuza yanlışlıkla eklenmiş
     # mükerrer senaryoları da etkisiz hale getirir.
@@ -192,19 +229,16 @@ def main():
         print("✓ Tüm konular yayınlanmış! Yeni içerik için senaryolar.json'a konu ekleyin.")
         _durum_yaz(durum)
         return
-    # KANAL KİMLİĞİ = "TUZAK AVCISI": SADECE tuzak üret. Gizem içeriği hem
-    # off-brand (abone tüketici tuzağı için geldi) hem en zayıf tema (ort. 528);
-    # kanal kimliğini bozuyor. Öncelik sırası: tuzak -> (biterse) cesitlilik ->
-    # (o da biterse, havuz boş kalmasın diye en son) gizem.
-    istenen_tema = None
-    tema_havuz = kalan
-    for _t in ("tuzak", "cesitlilik", "gizem"):
-        _h = [t for t in kalan if _tema(t[1]) == _t]
-        if _h:
-            istenen_tema, tema_havuz = _t, _h
-            break
-    print(f"      Tema (marka: sadece tuzak): '{istenen_tema}' "
-          f"(tuzak kalan: {sum(1 for t in kalan if _tema(t[1])=='tuzak')})")
+    # KANAL KİMLİĞİ = "TUZAK AVCISI": sadece marka uyumlu tuzaklar.
+    # Tuzak havuzu boşalırsa üretim yapmak yerine durmak, kanalı konu dışı
+    # videolarla doldurmaktan daha güvenlidir.
+    tema_havuz = [t for t in kalan if _tema(t[1]) == "tuzak" and _marka_uygun_mu(t[1])]
+    print(f"      Tema (katı marka filtresi): 'tuzak' "
+          f"(uygun kalan: {len(tema_havuz)})")
+    if not tema_havuz:
+        print("✓ Marka uyumlu tuzak senaryosu kalmadı; konu dışı video üretilmedi.")
+        _durum_yaz(durum)
+        return
     # --- A/B KOHORTU (v1 eski havuz / v2 yeni prompt) -------------------------
     # Senaryo secimi dosya SIRASINA gore yapiliyor ve yeni senaryolar havuzun
     # SONUNA ekleniyor. Bekleyen 82 senaryo varken (gunde 2 video = ~41 gun)
