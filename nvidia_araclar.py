@@ -14,7 +14,7 @@ Araçlar:
 Env (opsiyonel):
   NVIDIA_KRITIK_MODEL  varsayılan deepseek-ai/deepseek-v4-flash-0731 (senaryo eleştirisi)
   NVIDIA_EMBED_MODEL   varsayılan nvidia/nv-embedqa-mistral-7b-v2 (anlamsal benzerlik)
-  NVIDIA_BENZERLIK_ESIK varsayılan 0.90 (bu ve üstü kosinüs -> tekrar say)
+  NVIDIA_BENZERLIK_ESIK varsayılan 0.93 (bu ve üstü kosinüs -> tekrar say)
 """
 import os, re, json, math, subprocess, tempfile, urllib.request, urllib.error
 import signal
@@ -289,9 +289,9 @@ def benzer_var_mi(baslik, mevcut_basliklar, esik=None):
     görevini düz-metin dedup'a bırakır -> asla yanlışlıkla fikir atmaz)."""
     if esik is None:
         try:
-            esik = float(os.environ.get("NVIDIA_BENZERLIK_ESIK", "0.90") or "0.90")
+            esik = float(os.environ.get("NVIDIA_BENZERLIK_ESIK", "0.93") or "0.93")
         except Exception:
-            esik = 0.90
+            esik = 0.93
     liste = [b for b in (mevcut_basliklar or []) if b][-160:]   # maliyet sınırı: son 160 (tüm havuzu kapsar)
     if not baslik or not liste:
         return False

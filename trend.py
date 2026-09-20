@@ -116,6 +116,17 @@ _KONU_STOP = {
     "OLAN", "OLUR", "GİDER", "MALİYET",
 }
 
+# Tek başına konu ayırt etmeyen ticari/kategori kökleri. İki başlık yalnızca
+# bunları paylaşıyorsa (ör. KARGO + ÜCRE) otomatik tekrar sayılmaz; aksi halde
+# farklı alt konular gereksiz yere eleniyordu (ücretsiz kargo eşiği / ödeme
+# ekranındaki ek ücret gibi). Üç veya daha fazla ortak genel kök hâlâ tekrar
+# kabul edilir.
+_KONU_GENEL = {
+    "MARK", "FİYA", "ÜCRE", "ÖDEM", "KARG", "GİZL", "TUZA", "TÜKE",
+    "SATI", "PARA", "BANK", "KRED", "KART", "TAKS", "İNDİ", "PAHA",
+    "ÜRÜN", "HİZM", "ÜYEL", "KAMP", "MAĞA", "SEPE", "KASA",
+}
+
 
 def _kokler(baslik):
     import re
@@ -124,13 +135,21 @@ def _kokler(baslik):
 
 
 def _konu_cakismasi(baslik, tum_basliklar):
-    """baslik, havuzdaki bir başlıkla >=2 anlamlı kök paylaşıyorsa O başlığı döner
-    (aynı konu); yoksa None."""
+    """Başlıkta konuya özgü en az bir kök varsa iki ortak kökle tekrar say.
+
+    Yalnızca geniş kategori köklerinin (ör. kargo + ücret) kesişmesi farklı
+    alt konuları yanlışlıkla elememeli; üç veya daha fazla genel ortak kök ise
+    yine yeterince güçlü tekrar sinyali kabul edilir.
+    """
     k = _kokler(baslik)
     if len(k) < 2:
         return None
     for e in (tum_basliklar or []):
-        if e and len(k & _kokler(e)) >= 2:
+        if not e:
+            continue
+        ortak = k & _kokler(e)
+        ozel = ortak - _KONU_GENEL
+        if len(ortak) >= 2 and (ozel or len(ortak) >= 3):
             return e
     return None
 
