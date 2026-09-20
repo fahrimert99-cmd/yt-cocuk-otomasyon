@@ -15,7 +15,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Gemini API testini çalıştır
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
