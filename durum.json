@@ -52,6 +52,7 @@
     "MARKETLER SENİ BÖYLE KANDIRIYOR! 🛒",
     "MEGALODON HÂLÂ YAŞIYOR OLABİLİR Mİ? 🦈",
     "MENÜDEKİ GİZLİ TUZAK! 📋",
+    "MÜZİĞİN HIZI NEDEN ÖNEMLİ? 🎵",
     "NEDEN HEP 'YENİ' DERLER? ✨",
     "NEDEN HEP SAĞA YÖNELİRSİN? ➡️",
     "OKYANUSTAN GELEN ESRARENGİZ SES 🔊",
@@ -102,13 +103,13 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "HİZASINDA? 👁️\n      · atlandı (yayınlanmış konu tekrarı ~ ''ÜCRETSİZ DENEME' TUZAĞINA DİKKAT! ⏰'): “ÜCRETSİZ DENE” NEDEN ÜCRETLİ OLUR? ⏰\n      · atlandı (yayınlanmış konu tekrarı ~ 'İNDİRİM GÜNÜNDEKİ FİYAT OYUNU! 🛍️'): “SANA ÖZEL” FİYAT OYUNU! 🎯\n      · atlandı (yayınlanmış konu tekrarı ~ 'İNDİRİM ETİKETLERİ YALAN! 🏷️'): SAHTE İNDİRİMİN MATEMATİĞİ: BÜYÜK YALANI NASIL ANLARSIN\n      Tema (marka: sadece tuzak): 'tuzak' (tuzak kalan: 59)\n      Kohort: v1 (henuz v2 senaryo yok, bekleyen v1=59)\n[1/3] Senaryo (27/137) [psikoloji]: NEDEN HEP 'YENİ' DERLER? ✨\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Konuşma boşlukları daraltıldı (~2.5 sn kısaldı, senkron korundu).\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel2.mp3, ses %24, ducking).\n      Sahne 1/6: NVIDIA flux görseli ✓\n      Sahne 2/6: NVIDIA flux görseli ✓\n      Sahne 3/6: NVIDIA flux görseli ✓\n      Sahne 4/6: NVIDIA flux görseli ✓\n      Sahne 5/6: NVIDIA flux görseli ✓\n      Sahne 6/6: NVIDIA flux görseli ✓\n      [dağılım: nvidia=6, pexels=0, pixabay=0, ai=0 / toplam 6 sahne]\n      Çıktı: output/video.mp4  (12555 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-20T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: kmEpWFDRt4Y\n✓ Yüklendi: https://youtu.be/xjkLcATwOQM  (yayın: 2026-09-20T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🧠 Psikolojik Satış Oyunları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "ernal Server Error)\n      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)\n      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found\n)\n      (pollinations yedek atlandı: HTTP Error 500: Internal Server Error)\n      [görsel 0 gemini-2.5-flash-image hata: HTTP Error 429: Too Many Requests]\n      [görsel 0: Gemini/Imagen üretimi başarısız]\n      [Pexels: 8 klip / ~8000 toplam -> 'supermarket aisle people walking,']\n      [Pixabay: 12 klip / ~4143 toplam -> 'supermarket aisle people walking,']\n      [seçim(vision): pexels~8000 / pixabay~4143 -> önce pexels]\n      Sahne 1/10: gerçek stok video ✓ (pexels)\n      Sahne 2/10: NVIDIA flux görseli ✓\n      Sahne 3/10: NVIDIA flux görseli ✓\n      Sahne 4/10: NVIDIA flux görseli ✓\n      Sahne 5/10: NVIDIA flux görseli ✓\n      Sahne 6/10: NVIDIA flux görseli ✓\n      Sahne 7/10: NVIDIA flux görseli ✓\n      Sahne 8/10: NVIDIA flux görseli ✓\n      Sahne 9/10: NVIDIA flux görseli ✓\n      Sahne 10/10: NVIDIA flux görseli ✓\n      [dağılım: nvidia=9, pexels=1, pixabay=0, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (16029 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-20T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n! Yorum eklenemedi: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&alt=json returned \"The comment thread could not be created \n✓ Yüklendi: https://youtu.be/ufsXXI8nLnY  (yayın: 2026-09-20T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "xjkLcATwOQM",
-    "metin": "NEDEN HEP YENİ?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
+    "video_id": "ufsXXI8nLnY",
+    "metin": "MÜZİK NEDEN YAVAŞ?\n\nSen bu tuzağa hiç düştün mü? Yorumla 👇\n🔔 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"
   },
-  "son_kategori": "psikoloji",
-  "son_video_id": "xjkLcATwOQM",
-  "son_baslik": "NEDEN HEP 'YENİ' DERLER? ✨",
+  "son_kategori": "diger",
+  "son_video_id": "ufsXXI8nLnY",
+  "son_baslik": "MÜZİĞİN HIZI NEDEN ÖNEMLİ? 🎵",
   "son_yayin_zamani": "2026-09-20T09:00:00Z"
 }
