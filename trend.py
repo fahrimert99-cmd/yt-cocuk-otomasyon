@@ -16,11 +16,19 @@ Env:
   SAYI      : eklenecek yeni senaryo sayısı (varsayılan 4, azami 10)
   GUN       : kaç günlük pencere (varsayılan 90)
 """
-import os, re, json, datetime
+import os, re, json, datetime, time
 from googleapiclient.discovery import build
 import youtube_yukle as YT
 import ai_script as A
 import nvidia_araclar as NA   # NVIDIA NIM kalite araçları (hepsi non-fatal)
+
+# GitHub Actions 25 dakikalık sınırına yaklaşmadan bitirmek için trend akışı
+# varsayılan olarak hızlı çalışır. Pahalı kalite katmanları gerektiğinde elle
+# TREND_KALITE=1 ile açılabilir.
+TREND_MAX_SECONDS = max(300, int(os.environ.get("TREND_MAX_SECONDS", "1200") or "1200"))
+TREND_LLM_TRIES = max(1, min(3, int(os.environ.get("TREND_LLM_TRIES", "2") or "2")))
+TREND_KALITE = os.environ.get("TREND_KALITE", "0").strip().lower() in ("1", "true", "yes")
+TREND_ARA_BEKLEME = max(0, int(os.environ.get("TREND_ARA_BEKLEME", "0") or "0"))
 
 # ARAMALAR 5 İÇERİK KOLUNA göre çeşitlendirildi (döngüyü kırmak için — kanal
 # eskiden çoğunlukla 'market/banka genel tuzağı' üretiyordu). Her kol farklı bir
@@ -253,10 +261,11 @@ def _llm(prompt):
     raise RuntimeError("LLM üretilemedi | " + " || ".join(hatalar))
 
 
-def _llm_json(prompt, tries=3):
+def _llm_json(prompt, tries=None):
     """LLM'den JSON alır. YALNIZCA JSON kesik/bozuk gelirse tekrar dener; LLM
     sağlayıcısı çökerse (404/429/kota) HEMEN durur (tekrar denemek kotayı boşa
     yakar). Böylece kota hatasında 3x israf olmaz."""
+    tries = TREND_LLM_TRIES if tries is None else max(1, min(3, int(tries)))
     son = ""
     for k in range(tries):
         ham = _llm(prompt)                 # sağlayıcı hatası -> yukarı fırlar (retry yok)
@@ -544,6 +553,12 @@ def _gecerli(d):
 
 
 def main():
+    baslangic = time.monotonic()
+    son_tarih = baslangic + TREND_MAX_SECONDS
+
+    def kalan_saniye():
+        return max(0, int(son_tarih - time.monotonic()))
+
     sayi = max(1, min(10, int(os.environ.get("SAYI", "4") or "4")))
     gun = max(7, int(os.environ.get("GUN", "90") or "90"))
 
@@ -571,9 +586,17 @@ def main():
     print(f"      Fikir sayısı: {len(fikirler)}")
 
     print("[3/4] Yeni fikirler için tam senaryo üretiliyor ...")
-    import time
+    if TREND_KALITE:
+        print("      Kalite katmanları açık (senaryo başına ek NVIDIA çağrıları yapılacak).")
+    else:
+        print("      Hızlı mod: ek NVIDIA eleştiri/kanca/embedding çağrıları kapalı.")
     eklenen = []
     for _i, fk in enumerate(fikirler):
+        # Rapor/commit için zaman bırak; son dakikada yeni bir API çağrısı
+        # başlatıp workflow'un 25 dakikalık sınırına çarpmayı önle.
+        if kalan_saniye() < 180:
+            print(f"      ! süre bütçesi doluyor ({kalan_saniye()} sn kaldı); kalan fikirler atlandı.")
+            break
         bas = (fk.get("baslik") or "").strip()
         knc = (fk.get("kanca") or "").strip()
         if not bas:
@@ -581,8 +604,8 @@ def main():
         if _norm(bas) in mevcut_norm:
             print(f"      · atlandı (zaten var): {bas[:60]}")
             continue
-        if _i:                     # Gemini ücretsiz kota: çağrılar arası bekle
-            time.sleep(6)
+        if _i and TREND_ARA_BEKLEME:
+            time.sleep(TREND_ARA_BEKLEME)
         try:
             sen = _senaryo_uret(bas, knc)
         except Exception as e:
@@ -591,19 +614,17 @@ def main():
         if not _gecerli(sen):
             print(f"      ! kalite/şema geçmedi, atlandı: {bas[:50]}")
             continue
-        # NVIDIA ÖZ-İYİLEŞTİRME: senaryoyu güçlü bir modele eleştirtip güçlendir.
-        # Sadece dönen sürüm geçerliyse kullan; değilse orijinalde kal (non-fatal).
-        gelismis = NA.senaryo_iyilestir(sen)
-        if gelismis and _gecerli(gelismis) and _norm(gelismis.get("baslik", "")) not in (
-                mevcut_norm - {_norm(bas)}):
-            sen = gelismis
-            print(f"      ✎ senaryo güçlendirildi (NVIDIA/{NA.KRITIK_MODEL})")
-        # REASONING ile kanca/açılış (ilk 2 sn) güçlendirme — havuz üretiminde,
-        # non-fatal. Başlık/konu korunur; yalnızca kanca + açılış cümlesi keskinleşir.
-        _onceki_kanca = sen.get("kanca", "")
-        sen = NA.kanca_guclendir(sen)
-        if sen.get("kanca", "") != _onceki_kanca:
-            print(f"      ⚡ kanca/açılış güçlendirildi (NVIDIA/{NA.REASONING_MODEL})")
+        if TREND_KALITE:
+            # Bu üç çağrı pahalı ve seri çalışır; varsayılan hızlı akışta kapalıdır.
+            gelismis = NA.senaryo_iyilestir(sen)
+            if gelismis and _gecerli(gelismis) and _norm(gelismis.get("baslik", "")) not in (
+                    mevcut_norm - {_norm(bas)}):
+                sen = gelismis
+                print(f"      ✎ senaryo güçlendirildi (NVIDIA/{NA.KRITIK_MODEL})")
+            _onceki_kanca = sen.get("kanca", "")
+            sen = NA.kanca_guclendir(sen)
+            if sen.get("kanca", "") != _onceki_kanca:
+                print(f"      ⚡ kanca/açılış güçlendirildi (NVIDIA/{NA.REASONING_MODEL})")
         if _norm(sen.get("baslik", "")) in mevcut_norm:
             continue
         # KONU TEKRARI (kök-kelime, TÜM havuz, embedding'siz): farklı kelime ama
@@ -612,8 +633,8 @@ def main():
         if _cak:
             print(f"      · atlandı (konu tekrarı ~ '{_cak[:40]}'): {sen.get('baslik','')[:45]}")
             continue
-        # ANLAMSAL TEKRAR: farklı kelime ama aynı konu -> ele (embedding, TÜM havuz, non-fatal).
-        if NA.benzer_var_mi(sen.get("baslik", ""), tum_basliklar):
+        # Hızlı modda kök-kelime dedup zaten tüm havuzu tarıyor.
+        if TREND_KALITE and NA.benzer_var_mi(sen.get("baslik", ""), tum_basliklar):
             print(f"      · atlandı (anlamsal tekrar): {sen.get('baslik','')[:55]}")
             continue
         havuz.append(sen)
@@ -646,7 +667,8 @@ def main():
             f.write(f"- {s['baslik']}  — kanca: _{s.get('kanca','')}_\n")
 
     print(f"\nTAMAM ✓  {len(eklenen)} yeni senaryo senaryolar.json'a eklendi "
-          f"(toplam {len(havuz)}). Rapor: trend_rapor.md")
+          f"(toplam {len(havuz)}). Süre: {int(time.monotonic() - baslangic)} sn. "
+          f"Rapor: trend_rapor.md")
 
 
 if __name__ == "__main__":

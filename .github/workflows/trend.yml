@@ -25,7 +25,7 @@ concurrency:
 jobs:
   trend:
     runs-on: ubuntu-latest
-    timeout-minutes: 25   # asili kalirsa 25 dk'da kes (reasoning asilmasi yasandi)
+    timeout-minutes: 25   # script kendi 20 dk bütçesinden önce kontrollü biter
     steps:
       - uses: actions/checkout@v5
       - name: Python kur
@@ -45,9 +45,15 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
-          # Girdi boşsa 6 kullan (25dk timeout'a guvenli sigar) -> 3x6=+18/hafta.
-          SAYI: ${{ github.event.inputs.sayi || '6' }}
+          # Hızlı modda 4 senaryo üret; haftada 3 koşu = +12, havuzun tükenmesini önler.
+          SAYI: ${{ github.event.inputs.sayi || '4' }}
           GUN: ${{ github.event.inputs.gun }}
+          TREND_MAX_SECONDS: "1200"
+          TREND_LLM_TRIES: "2"
+          TREND_ARA_BEKLEME: "0"
+          # Senaryo başına 3 ek NVIDIA çağrısı 25 dakikayı aşabiliyor. Kalite
+          # karşılaştırması gerektiğinde workflow_dispatch ile TREND_KALITE=1 verilebilir.
+          TREND_KALITE: "0"
         run: python3 trend.py
       - name: Yeni senaryolari commit et
         if: always()
