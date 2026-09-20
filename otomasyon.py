@@ -87,6 +87,27 @@ def _durum_yaz(durum):
         json.dump(durum, f, ensure_ascii=False, indent=2)
 
 
+def _sonraki_yayin_zamani(cfg):
+    """Config'teki en yakın gelecek UTC slotunu ISO-8601 olarak döndürür."""
+    from datetime import datetime, timezone, timedelta
+    saatler = cfg.get("yayin_saatleri_utc")
+    if not saatler:
+        tek = cfg.get("yayin_saati_utc")
+        saatler = [tek] if tek else []
+    adaylar = []
+    now = datetime.now(timezone.utc)
+    for saat in saatler:
+        try:
+            hh, mm = map(int, str(saat).split(":"))
+        except Exception:
+            continue
+        h = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
+        if h <= now + timedelta(minutes=10):
+            h += timedelta(days=1)
+        adaylar.append(h)
+    return min(adaylar).strftime("%Y-%m-%dT%H:%M:%SZ") if adaylar else None
+
+
 def main():
     with open("config.json", encoding="utf-8-sig") as f:
         cfg = json.load(f)
@@ -227,6 +248,18 @@ def main():
     durum["son_kategori"] = _kategori(veri["baslik"])
     print(f"[1/3] Senaryo ({idx+1}/{n}) [{durum['son_kategori']}]: {veri['baslik']}")
 
+    # ÜRETİM ÖNCESİ SLOT KİLİDİ: örneğin 20:00 videosu elle önceden
+    # planlandıysa akşam cron'u yeni video üretmeden temizce çıkar.
+    yayin_zamani = _sonraki_yayin_zamani(cfg)
+    if yayin_zamani:
+        import youtube_yukle as YT
+        mevcut_slot = YT.planli_slot_video(yayin_zamani)
+        if mevcut_slot:
+            print(f"✓ Yayın slotu zaten dolu ({yayin_zamani}); video üretimi atlandı: "
+                  f"https://youtu.be/{mevcut_slot}")
+            _durum_yaz(durum)
+            return
+
     tmp = tempfile.mkdtemp()
     sp = os.path.join(tmp, "script.txt")
     with open(sp, "w", encoding="utf-8") as f:
@@ -300,28 +333,9 @@ def main():
     # otomatik public olur -> Studio'da "Planlanan"da gorunur, tam saatinde cikar.
     # yayin_saatleri_utc (liste) onceliklidir; yoksa tekil yayin_saati_utc; o da
     # yoksa aninda public. Cron slottan ~2 saat once uretir (gecikme payi).
-    yayin_zamani = None
-    saatler = cfg.get("yayin_saatleri_utc")
-    if not saatler:
-        _tek = cfg.get("yayin_saati_utc")
-        saatler = [_tek] if _tek else []
-    if saatler:
-        from datetime import datetime, timezone, timedelta
-        now = datetime.now(timezone.utc)
-        adaylar = []
-        for _s in saatler:
-            try:
-                hh, mm = map(int, str(_s).split(":"))
-            except Exception:
-                continue
-            h = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
-            if h <= now + timedelta(minutes=10):
-                h += timedelta(days=1)   # slot gecti -> ertesi gune kaydir
-            adaylar.append(h)
-        if adaylar:
-            hedef = min(adaylar)         # en yakin gelecek slot
-            yayin_zamani = hedef.strftime("%Y-%m-%dT%H:%M:%SZ")
-            print(f"      Planlı yayın: {yayin_zamani} UTC")
+    yayin_zamani = _sonraki_yayin_zamani(cfg)
+    if yayin_zamani:
+        print(f"      Planlı yayın: {yayin_zamani} UTC")
 
     print("[3/3] YouTube'a yükleniyor ...")
     import youtube_yukle as YT
