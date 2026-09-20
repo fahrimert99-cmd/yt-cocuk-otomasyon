@@ -17,6 +17,10 @@ on:
         description: "Kaç günlük pencere (boş = 90)"
         required: false
         default: ""
+      kalite:
+        description: "Ek NVIDIA kalite katmanlarını çalıştır (true/false)"
+        required: false
+        default: "false"
 permissions:
   contents: write
 concurrency:
@@ -51,9 +55,8 @@ jobs:
           TREND_MAX_SECONDS: "1200"
           TREND_LLM_TRIES: "2"
           TREND_ARA_BEKLEME: "0"
-          # Senaryo başına 3 ek NVIDIA çağrısı 25 dakikayı aşabiliyor. Kalite
-          # karşılaştırması gerektiğinde workflow_dispatch ile TREND_KALITE=1 verilebilir.
-          TREND_KALITE: "0"
+          # Manuel kalite testi için workflow_dispatch'ta kalite=true seçilebilir.
+          TREND_KALITE: ${{ github.event.inputs.kalite || 'false' }}
         run: python3 trend.py
       - name: Yeni senaryolari commit et
         if: always()
