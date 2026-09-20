@@ -257,11 +257,6 @@ def oynatma_listesine_ekle(video_id, liste_adi, liste_aciklama=""):
 
 
 def yorum_at(video_id, metin):
-    """Kanaldan videoya ust duzey yorum ekler (video PUBLIC olmali)."""
-    yt = build("youtube", "v3", credentials=_kimlik())
-    ins = yt.commentThreads().insert(
-        part="snippet",
-        body={"snippet": {"videoId": video_id,
-                          "topLevelComment": {"snippet": {"textOriginal": metin}}}},
-    ).execute()
-    return ins["snippet"]["topLevelComment"]["id"]
+    """Kendi public videosuna yorumu güvenli ve idempotent biçimde gönderir."""
+    from yorum_at import gonder
+    return gonder(video_id, metin)

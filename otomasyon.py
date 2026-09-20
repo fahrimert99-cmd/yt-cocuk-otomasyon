@@ -5,7 +5,7 @@ GitHub-native otomasyon (AI BAĞIMLILIĞI YOK).
 senaryolar.json'daki hazır senaryolardan sıradakini alır -> video üretir ->
 YouTube'a yükler -> sırayı ilerletir. Ayarlar: config.json
 """
-import os, json, tempfile, io, sys, re, unicodedata
+import os, json, tempfile, io, sys, re, unicodedata, hashlib
 import video as V
 
 SENARYOLAR = "senaryolar.json"
@@ -423,15 +423,21 @@ def main():
         except Exception as e:
             print(f"      Oynatma listesi atlandı: {str(e)[:120]}")
     # Yorum, video public olduktan SONRA atilir (ozel videoya yorum yasak).
-    # Video ID + yorum metni durum.json'a yazilir; yorum.yml 19:15'te gonderir.
+    # Video ID + trend.py'den gelen videoya özgü yorum durum.json'a yazılır;
+    # yorum video public olduktan sonra gönderilir.
+    try:
+        import yorum_at as YORUM
+        _yorum_metni = YORUM.yorum_metni_uret(veri)
+    except Exception:
+        _yorum_metni = f"{veri.get('baslik', 'Bu konu')} hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?"
     durum["son_video_id"] = _vid
     durum["son_baslik"] = veri["baslik"]
     durum["son_yayin_zamani"] = yayin_zamani
     durum["bekleyen_yorum"] = {
         "video_id": _vid,
-        "metin": (f"{veri.get('kanca','Bu tuzağı biliyor muydun?')}\n\n"
-                  "Sen bu tuzağa hiç düştün mü? Yorumla \U0001F447\n"
-                  "\U0001F514 Her gün yeni tüketici tuzakları — ABONE OL, kaçırma!"),
+        "metin": _yorum_metni,
+        "kaynak": "trend.yorum" if veri.get("yorum") else "fallback",
+        "hash": hashlib.sha256(_yorum_metni.encode("utf-8")).hexdigest()[:16],
     }
     # TikTok/Reels icin: videoyu + kapagi calisma dizinine kopyala.
     # NOT: Repoya COMMIT EDILMEZ — 18MB'lik mp4'ler git gecmisini sisiriyordu.

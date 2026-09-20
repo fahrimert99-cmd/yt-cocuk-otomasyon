@@ -523,7 +523,8 @@ TÜRKÇE YAZIM: ç,ğ,ı,İ,ö,ş,ü harflerini EKSİKSİZ kullan; ASCII'ye sade
 
 SADECE geçerli JSON döndür, başka hiçbir şey yazma:
 {{"baslik":"{baslik}","aciklama":"2-3 cümle","etiketler":["tuzak","tüketici","e3","e4","e5"],
-"kanca":"{kanca}","script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english"}}],
+"kanca":"{kanca}","yorum":"Videoya özgü, 1-2 doğal cümle; izleyiciye tek bir gözlem veya kontrol sorusu sor, abonelik/bağlantı çağrısı yapma.",
+"script":"...","sahneler":[{{"metin":"...","gorsel":"cinematic english"}}],
 "tema":"tuzak"}}"""
 
 
@@ -532,6 +533,12 @@ def _senaryo_uret(baslik, kanca):
     # şema güvenceleri
     d.setdefault("baslik", baslik)
     d.setdefault("kanca", kanca)
+    # Yorum, videonun konusuna bağlı tek soruluk doğal etkileşim metnidir.
+    # Eski/eksik sağlayıcı yanıtlarında güvenli fallback kullanılır.
+    yorum = (d.get("yorum") or "").strip()
+    if not yorum or len(yorum) > 280 or "http" in yorum.lower():
+        yorum = f"{baslik.rstrip('!?')} konusunda sen en çok hangi ayrıntıyı gözden kaçırıyorsun?"
+    d["yorum"] = yorum
     # ÜÇ KELİME KURALI: kanca en fazla 3 kelime olmalı (kapak/açılış kısa-vurucu).
     _kk = (d.get("kanca") or kanca or "").split()
     if len(_kk) > 3:
