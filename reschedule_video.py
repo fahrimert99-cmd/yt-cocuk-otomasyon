@@ -16,7 +16,8 @@ creds = Credentials(
     token_uri="https://oauth2.googleapis.com/token",
     client_id=client_id,
     client_secret=client_secret,
-    scopes=["https://www.googleapis.com/auth/youtube"],
+    scopes=["https://www.googleapis.com/auth/youtube.force-ssl",
+            "https://www.googleapis.com/auth/yt-analytics.readonly"],
 )
 creds.refresh(Request())
 yt = build("youtube", "v3", credentials=creds)
