@@ -75,7 +75,7 @@ Aşağıda bir tüketici-tuzağı senaryosu var. Görevin onu DAHA VURUCU hale g
 - Sonda kısa bir ABONE çağrısı + bir sonraki videoya merak bırakan TEASER olsun.
 - Uydurma istatistik YOK. Emoji/başlık/madde YOK; düz paragraf. ~100-120 kelime.
 - MARKA/ŞİRKET ADI VERME (yasal risk): varsa jenerikle değiştir ('ünlü bir marka').
-- 6 sahne; her sahne için İNGİLİZCE sinematik görsel tarifi.
+- 10 kısa ve birbirinden farklı sahne; her sahne için İNGİLİZCE sinematik görsel tarifi.
 - TÜRKÇE İMLÂ KUSURSUZ: ç,ğ,ı,İ,ö,ş,ü harflerini eksiksiz kullan; ASCII'ye sadeleştirme.
 Anlam/konu AYNI kalsın; sadece güçlendir. Zaten güçlüyse küçük rötuşla iyileştir.
 

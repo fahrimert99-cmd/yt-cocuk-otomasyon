@@ -6,7 +6,7 @@ Akış:
   1) YouTube'da popüler Türkçe tüketici-tuzağı içeriklerini bulur (izlenmeye göre).
   2) En çok izlenenleri LLM'e analiz ettirir: trend özeti + viral HOOK kalıpları +
      havuzumuzda OLMAYAN yeni video fikirleri (başlık + kanca).
-  3) Her fikir için TAM senaryo üretir (kanalın tuzak şeması: 6 sahne + CTA/teaser).
+  3) Her fikir için TAM senaryo üretir (kanalın tuzak şeması: 10 sahne + CTA/teaser).
   4) Dedup + hafif kalite kontrol -> senaryolar.json'a EKLER.
   5) trend_rapor.md özeti yazar.
 

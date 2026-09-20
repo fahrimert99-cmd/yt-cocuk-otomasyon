@@ -156,7 +156,7 @@ YAZIM KURALLARI (kanalin uretim hatti bunlara gore calisir):
 - "script": 65-85 kelime, TEK paragraf, duz metin. ILK CUMLE en fazla 14 kelime
   ve dogrudan sok edici sonucla baslasin (kurulum/tanim cumlesi YASAK).
   Sonda MUTLAKA hem abone cagrisi hem "yarin yeni bir tuzak" teaser'i olsun.
-- "sahneler": TAM 6 sahne. Her sahnenin "metin"i script'in sirali parcasi olsun
+- "sahneler": TAM 10 sahne. Her sahnenin "metin"i script'in sirali parcasi olsun
   (birlestirildiginde script'i vermeli). "gorsel" alani INGILIZCE, 2-5 kelimelik
   stok video arama terimi olsun ve konunun GERCEK anlamina uysun (ornek: web
   cerezi -> "cookie consent popup screen", yiyecek kurabiye DEGIL).

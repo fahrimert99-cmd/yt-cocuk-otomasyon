@@ -952,6 +952,22 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
     else:
         prompts = [" ".join(cumleler[i:i+2]) for i in range(0, len(cumleler), 2)]
     prompts = [p for p in prompts if p.strip()] or ["colorful scene"]
+    # Shorts'ta 5-6 sahne aynı görselin uzun süre dönmesine yol açıyordu.
+    # Eski senaryoları da geriye dönük olarak 10 farklı kadraj istemine çıkar;
+    # ses/metin ve toplam video süresi değişmez, yalnızca görsel çeşitliliği artar.
+    hedef_gorsel = 10
+    varyasyonlar = [
+        "alternate wide composition, different subject arrangement",
+        "tight detail shot, new camera angle and lighting",
+        "overhead documentary view, distinct composition",
+        "side perspective, contrasting depth of field",
+        "dynamic motion-focused frame, different visual storytelling",
+    ]
+    temel = list(prompts)
+    vi = 0
+    while len(prompts) < hedef_gorsel:
+        prompts.append(f"{temel[vi % len(temel)]}, {varyasyonlar[vi % len(varyasyonlar)]}")
+        vi += 1
     dikey = boyut[1] > boyut[0]
     NA = None
     if ai_sahne:
@@ -1071,7 +1087,7 @@ def _sahne_sureleri(sahneler, boundaries, toplam):
     return sureler
 
 
-def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.28,
+def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.18,
                          max_sahne_sn=3.5, sahne_sureleri=None):
     import math
     W, H = boyut
@@ -1097,11 +1113,11 @@ def video_uret_animasyon(gorseller, mp3, ass, cikti, boyut, fps, gecis=0.28,
             for _ in range(per):
                 klip_gorsel.append(gorseller[i]); klip_sure.append(None)
     else:
-        # SHORTS (dikey): ENERJİK TEMPO -> daha sık kesme (retention). Sahne
-        # başına ~2.6 sn hedef; görsel havuzu döngüyle doldurulur (tekrar eden
-        # kliplerde Ken Burns yönü index'e bağlı değiştiği için aynı görünmez).
-        hedef_sn = 2.6
-        seg = max(n0, math.ceil(toplam / hedef_sn))
+        # SHORTS (dikey): görsel havuzunu 10 ayrı görsele çıkar. Her görsel
+        # daha kısa kalır; toplam süre ses dosyasından gelir ve değişmez.
+        # 10'dan fazla gerçek sahne varsa hiçbiri atılmaz.
+        hedef_gorsel = 10
+        seg = max(n0, hedef_gorsel)
         for i in range(seg):
             klip_gorsel.append(gorseller[i % n0]); klip_sure.append(None)
     n = len(klip_gorsel)
