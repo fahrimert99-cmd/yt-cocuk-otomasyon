@@ -1,53 +1,41 @@
 {
-  "tarih": "2026-09-16",
+  "tarih": "2026-09-21",
   "kanal": {
-    "abone": "101",
-    "toplam_izlenme": "50143",
-    "video_sayisi": "73"
+    "abone": "103",
+    "toplam_izlenme": "51654",
+    "video_sayisi": "83"
   },
   "analytics": {
     "kanal_28g": {
-      "izlenme": 23156,
-      "retention_yuzde": 57.5,
-      "ort_izleme_sn": 15,
-      "izlenme_dk": 2394,
-      "abone_kazanc": 28
+      "izlenme": 21988,
+      "retention_yuzde": 55.2,
+      "ort_izleme_sn": 16,
+      "izlenme_dk": 2256,
+      "abone_kazanc": 32
     },
     "ctr_28g_not": "CTR/gösterim API'den çekilemiyor (Studio'dan bakın).",
     "video_28g": [
       {
         "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
-        "izlenme": 1618,
-        "retention_yuzde": 146.5,
+        "izlenme": 1620,
+        "retention_yuzde": 146.3,
         "ort_izleme_sn": 30
       },
       {
         "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
-        "izlenme": 1336,
+        "izlenme": 1341,
         "retention_yuzde": 81.7,
         "ort_izleme_sn": 15
       },
       {
-        "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
-        "izlenme": 1153,
-        "retention_yuzde": 53.2,
-        "ort_izleme_sn": 9
-      },
-      {
         "baslik": "DENİZDE KAYBOLAN HAYALET GEMİLER 🚢",
-        "izlenme": 1138,
-        "retention_yuzde": 71.3,
+        "izlenme": 1141,
+        "retention_yuzde": 71.4,
         "ort_izleme_sn": 13
       },
       {
-        "baslik": "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
-        "izlenme": 1101,
-        "retention_yuzde": 62.4,
-        "ort_izleme_sn": 12
-      },
-      {
         "baslik": "YILDIZLI YORUMLARI KİM YAZIYOR? ⭐",
-        "izlenme": 1077,
+        "izlenme": 1079,
         "retention_yuzde": 44.4,
         "ort_izleme_sn": 13
       },
@@ -58,32 +46,44 @@
         "ort_izleme_sn": 14
       },
       {
-        "baslik": "MENÜDEKİ GİZLİ TUZAK! 📋",
-        "izlenme": 1036,
-        "retention_yuzde": 72.6,
-        "ort_izleme_sn": 10
-      },
-      {
         "baslik": "KUAFÖRDE EKSTRA TUZAĞI! 💈",
-        "izlenme": 1028,
+        "izlenme": 1029,
         "retention_yuzde": 54.1,
         "ort_izleme_sn": 13
       },
       {
         "baslik": "SEPETTEKİ ÜRÜN NEDEN PAHALANDI? 🛒",
-        "izlenme": 1004,
+        "izlenme": 1006,
         "retention_yuzde": 53.4,
         "ort_izleme_sn": 15
+      },
+      {
+        "baslik": "MARKET MARKASI KÖTÜ MÜ? 🏷️",
+        "izlenme": 986,
+        "retention_yuzde": 27.2,
+        "ort_izleme_sn": 13
+      },
+      {
+        "baslik": "OTOPARKTA SAAT TUZAĞI! 🅿️",
+        "izlenme": 964,
+        "retention_yuzde": 73.5,
+        "ort_izleme_sn": 16
+      },
+      {
+        "baslik": "İNDİRİM REYONU TUZAĞI! 🛒",
+        "izlenme": 949,
+        "retention_yuzde": 48.3,
+        "ort_izleme_sn": 12
       }
     ]
   },
   "degerlendirme": {
     "bulgular": [
-      "- 🎯 **En çok tutan tema: gizem** — ort. 1258 izlenme (4 video). Bu damardan daha çok konu üret.",
-      "- ⚠️ **En zayıf tema: tuzak** — ort. 609 izlenme (55 video). Bu temada üretimi azalt ya da başlık/kancayı güçlendir.",
-      "- 💬 **En yüksek etkileşim: tuzak** (%1.62). İzleyici en çok burada yorum/beğeni bırakıyor — CTA'yı bu içerikte koru.",
+      "- 🎯 **En çok tutan tema: gizem** — ort. 1259 izlenme (4 video). Bu damardan daha çok konu üret.",
+      "- ⚠️ **En zayıf tema: tuzak** — ort. 537 izlenme (65 video). Bu temada üretimi azalt ya da başlık/kancayı güçlendir.",
+      "- 💬 **En yüksek etkileşim: tuzak** (%1.57). İzleyici en çok burada yorum/beğeni bırakıyor — CTA'yı bu içerikte koru.",
       "- 🏆 En çok izlenen 10 videonun **6'i tuzak** teması — kanıtlanmış damar, önceliklendir.",
-      "- 📉 **Dikkat:** son 7 gün ort. 463 < genel ort. 689. Son üretimleri gözden geçir (başlık/kapak/tema seçimi)."
+      "- 📉 **Dikkat:** son 7 gün ort. 223 < genel ort. 623. Son üretimleri gözden geçir (başlık/kapak/tema seçimi)."
     ],
     "aksiyonlar": [
       "`senaryolar.json`'a **gizem** temasında yeni konular ekle (en çok izlenen damar).",
@@ -95,258 +95,265 @@
   "top10": [
     {
       "baslik": "OYUNCAK NEDEN KASADA? 🧸",
-      "izlenme": 1850,
-      "izlenme_gunluk": 62,
+      "izlenme": 1851,
+      "izlenme_gunluk": 53,
       "tema": "tuzak",
       "format": "short"
     },
     {
       "baslik": "OKYANUSUN DİBİNDE NE VAR? 🌊",
       "izlenme": 1620,
-      "izlenme_gunluk": 70,
+      "izlenme_gunluk": 58,
       "tema": "gizem",
       "format": "short"
     },
     {
       "baslik": "MARKET KOKUSU BİLE TUZAK! 👃",
       "izlenme": 1552,
-      "izlenme_gunluk": 27,
+      "izlenme_gunluk": 25,
       "tema": "tuzak",
       "format": "short"
     },
     {
       "baslik": "MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊",
-      "izlenme": 1335,
-      "izlenme_gunluk": 64,
+      "izlenme": 1342,
+      "izlenme_gunluk": 52,
       "tema": "diger",
       "format": "short"
     },
     {
       "baslik": "OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨",
-      "izlenme": 1296,
-      "izlenme_gunluk": 23,
+      "izlenme": 1298,
+      "izlenme_gunluk": 21,
       "tema": "diger",
       "format": "short"
     },
     {
       "baslik": "SİNEMADA MISIR NEDEN PAHALI? 🍿",
-      "izlenme": 1266,
-      "izlenme_gunluk": 36,
+      "izlenme": 1267,
+      "izlenme_gunluk": 32,
       "tema": "tuzak",
       "format": "short"
     },
     {
       "baslik": "REKLAMLAR BEYNİNİ BÖYLE KANDIRIYOR! 📺",
-      "izlenme": 1179,
-      "izlenme_gunluk": 23,
+      "izlenme": 1187,
+      "izlenme_gunluk": 21,
       "tema": "tuzak",
       "format": "short"
     },
     {
       "baslik": "DUTY FREE GERÇEKTEN UCUZ MU? ✈️",
-      "izlenme": 1171,
-      "izlenme_gunluk": 34,
+      "izlenme": 1173,
+      "izlenme_gunluk": 30,
       "tema": "gizem",
       "format": "short"
     },
     {
       "baslik": "KASADAKİ ÇİKOLATA TUZAĞI! 🍫",
       "izlenme": 1162,
-      "izlenme_gunluk": 20,
+      "izlenme_gunluk": 19,
       "tema": "tuzak",
       "format": "short"
     },
     {
       "baslik": "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
       "izlenme": 1154,
-      "izlenme_gunluk": 46,
+      "izlenme_gunluk": 38,
       "tema": "tuzak",
       "format": "short"
     }
   ],
   "son7gun": [
     {
-      "baslik": "BERBER NEDEN FAZLA ÖNERİR? ✂️",
-      "izlenme": 0,
-      "izlenme_gunluk": 0,
+      "baslik": "LOGO YOK OLAN TSİRT NEDEN 3 KAT DAHA PAHALI SATILIOR? 👕",
+      "izlenme": 4,
+      "izlenme_gunluk": 4,
       "yas_gun": 1,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-21"
+    },
+    {
+      "baslik": "NEDEN HEP 'YENİ' DERLER? ✨",
+      "izlenme": 17,
+      "izlenme_gunluk": 17,
+      "yas_gun": 1,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-20"
+    },
+    {
+      "baslik": "MÜZİĞİN HIZI NEDEN ÖNEMLİ? 🎵",
+      "izlenme": 15,
+      "izlenme_gunluk": 15,
+      "yas_gun": 1,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-20"
+    },
+    {
+      "baslik": "SINIRLI SAYIDA YALANI! ⏳",
+      "izlenme": 7,
+      "izlenme_gunluk": 4,
+      "yas_gun": 2,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-19"
+    },
+    {
+      "baslik": "KOKUNUN GİZLİ GÜCÜ! 👃",
+      "izlenme": 11,
+      "izlenme_gunluk": 6,
+      "yas_gun": 2,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-19"
+    },
+    {
+      "baslik": "İLK FİYAT NEDEN HEP YÜKSEK? 🎯",
+      "izlenme": 20,
+      "izlenme_gunluk": 10,
+      "yas_gun": 2,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-19"
+    },
+    {
+      "baslik": "NEDEN HEP SAĞA YÖNELİRSİN? ➡️",
+      "izlenme": 71,
+      "izlenme_gunluk": 24,
+      "yas_gun": 3,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-18"
+    },
+    {
+      "baslik": "ONAY KUTUSUNDAKİ KÜÇÜK TUZAK! ✅",
+      "izlenme": 101,
+      "izlenme_gunluk": 34,
+      "yas_gun": 3,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-18"
+    },
+    {
+      "baslik": "AVM MÜZİĞİ HIZLANINCA CÜZDANIN NEDEN BOŞALIR? 🎶🛍️",
+      "izlenme": 28,
+      "izlenme_gunluk": 7,
+      "yas_gun": 4,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-17"
+    },
+    {
+      "baslik": "DÜĞÜN SALONU EKSTRALARI! 💒",
+      "izlenme": 114,
+      "izlenme_gunluk": 23,
+      "yas_gun": 5,
+      "tema": "tuzak",
+      "format": "short",
+      "yayin": "2026-09-16"
+    },
+    {
+      "baslik": "BERBER NEDEN FAZLA ÖNERİR? ✂️",
+      "izlenme": 779,
+      "izlenme_gunluk": 156,
+      "yas_gun": 5,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-09-16"
     },
     {
       "baslik": "BOZUK PARA NEDEN VERMEZLER? 🪙",
-      "izlenme": 22,
-      "izlenme_gunluk": 22,
-      "yas_gun": 1,
+      "izlenme": 39,
+      "izlenme_gunluk": 6,
+      "yas_gun": 6,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-09-15"
     },
     {
       "baslik": "ÇIKOLATA PAKETİ NEDEN HER YIL 10g AZALDI? 🍫",
-      "izlenme": 789,
-      "izlenme_gunluk": 789,
-      "yas_gun": 1,
+      "izlenme": 832,
+      "izlenme_gunluk": 139,
+      "yas_gun": 6,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-09-15"
     },
     {
       "baslik": "RESTORANDA TABAKLAR NEDEN KÜÇÜLDÜ? 🍽️",
-      "izlenme": 300,
-      "izlenme_gunluk": 150,
-      "yas_gun": 2,
+      "izlenme": 390,
+      "izlenme_gunluk": 56,
+      "yas_gun": 7,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-09-14"
     },
     {
       "baslik": "MARKET ARABASI NEDEN GİTTİKÇE BÜYÜDÜ? 🛒",
-      "izlenme": 908,
-      "izlenme_gunluk": 454,
-      "yas_gun": 2,
+      "izlenme": 915,
+      "izlenme_gunluk": 131,
+      "yas_gun": 7,
       "tema": "tuzak",
       "format": "short",
       "yayin": "2026-09-14"
-    },
-    {
-      "baslik": "SÜT NEDEN HEP MARKETİN EN ARKASINDA? 🥛",
-      "izlenme": 31,
-      "izlenme_gunluk": 10,
-      "yas_gun": 3,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-09-13"
-    },
-    {
-      "baslik": "CİPS PAKETİ NEDEN YARI BOŞ? 🥔",
-      "izlenme": 908,
-      "izlenme_gunluk": 303,
-      "yas_gun": 3,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-09-13"
-    },
-    {
-      "baslik": "MARKET MARKASI KÖTÜ MÜ? 🏷️",
-      "izlenme": 949,
-      "izlenme_gunluk": 237,
-      "yas_gun": 4,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-09-12"
-    },
-    {
-      "baslik": "UYGULAMA İÇİ SATIN ALMA TUZAĞI: ÇOCUKLARIN PARASI NASIL GİDER? 🎮",
-      "izlenme": 47,
-      "izlenme_gunluk": 12,
-      "yas_gun": 4,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-09-12"
-    },
-    {
-      "baslik": "KREDİ KARTI CASHBACK TUZAĞI: GERÇEK KAZANÇ NE KADAR? 💳",
-      "izlenme": 20,
-      "izlenme_gunluk": 4,
-      "yas_gun": 5,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-09-11"
-    },
-    {
-      "baslik": "TAKSİTSİZ NEDEN YOK GİBİ? 💳",
-      "izlenme": 58,
-      "izlenme_gunluk": 12,
-      "yas_gun": 5,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-09-11"
-    },
-    {
-      "baslik": "ÇEREZLERİ NEDEN KABUL ETTİRİRLER? 🍪",
-      "izlenme": 40,
-      "izlenme_gunluk": 7,
-      "yas_gun": 6,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-09-10"
-    },
-    {
-      "baslik": "SEPETTEKİ ÜRÜN NEDEN PAHALANDI? 🛒",
-      "izlenme": 961,
-      "izlenme_gunluk": 160,
-      "yas_gun": 6,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-09-10"
-    },
-    {
-      "baslik": "YILDIZLI YORUMLARI KİM YAZIYOR? ⭐",
-      "izlenme": 1039,
-      "izlenme_gunluk": 148,
-      "yas_gun": 7,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-09-09"
-    },
-    {
-      "baslik": "İNDİRİM REYONU NEDEN GİRİŞTE? 🍎",
-      "izlenme": 867,
-      "izlenme_gunluk": 124,
-      "yas_gun": 7,
-      "tema": "tuzak",
-      "format": "short",
-      "yayin": "2026-09-09"
     }
   ],
   "format_ozet": {
     "short": {
-      "video": 73,
-      "ort_izlenme": 689,
-      "ort_izlenme_gunluk": 56,
-      "toplam_izlenme": 50333,
-      "etkilesim_orani": 1.55
+      "video": 83,
+      "ort_izlenme": 623,
+      "ort_izlenme_gunluk": 30,
+      "toplam_izlenme": 51736,
+      "etkilesim_orani": 1.47
     }
   },
   "tema_ozet": {
     "tuzak": {
-      "video": 55,
-      "ort_izlenme": 609,
-      "ort_izlenme_gunluk": 66,
-      "toplam_izlenme": 33503,
-      "etkilesim_orani": 1.62
+      "video": 65,
+      "ort_izlenme": 537,
+      "ort_izlenme_gunluk": 31,
+      "toplam_izlenme": 34884,
+      "etkilesim_orani": 1.57
     },
     "diger": {
       "video": 13,
-      "ort_izlenme": 850,
-      "ort_izlenme_gunluk": 20,
-      "toplam_izlenme": 11050,
-      "etkilesim_orani": 1.58
+      "ort_izlenme": 851,
+      "ort_izlenme_gunluk": 18,
+      "toplam_izlenme": 11067,
+      "etkilesim_orani": 1.39
     },
     "gizem": {
       "video": 4,
-      "ort_izlenme": 1258,
-      "ort_izlenme_gunluk": 51,
-      "toplam_izlenme": 5031,
+      "ort_izlenme": 1259,
+      "ort_izlenme_gunluk": 42,
+      "toplam_izlenme": 5036,
       "etkilesim_orani": 1.07
     },
     "cesitlilik": {
       "video": 1,
       "ort_izlenme": 749,
-      "ort_izlenme_gunluk": 26,
+      "ort_izlenme_gunluk": 22,
       "toplam_izlenme": 749,
       "etkilesim_orani": 0.93
     }
   },
   "uretim_ozet": {
+    "v2": {
+      "video": 2,
+      "ort_izlenme": 16,
+      "ort_izlenme_gunluk": 6,
+      "toplam_izlenme": 32,
+      "etkilesim_orani": 12.5
+    },
     "v1": {
-      "video": 73,
-      "ort_izlenme": 689,
-      "ort_izlenme_gunluk": 56,
-      "toplam_izlenme": 50333,
-      "etkilesim_orani": 1.55
+      "video": 81,
+      "ort_izlenme": 638,
+      "ort_izlenme_gunluk": 30,
+      "toplam_izlenme": 51704,
+      "etkilesim_orani": 1.46
     }
   }
 }
