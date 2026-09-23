@@ -942,10 +942,11 @@ def stok_video_ara(query, boyut, path, dikey=True, oncelik=None):
 
 
 def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="stok",
-                             ai_sahne=False):
+                             ai_sahne=False, ai_fallback=True):
     """Her sahne için görsel hazırlar. ai_sahne=True ise sıra NVIDIA,
     Gemini Nano Banana, stok ve degrade karttır; API hataları non-fatal'dır.
-    ai_sahne=False (varsayılan) ise mevcut davranış: stok video -> AI görsel.
+    ai_sahne=False (varsayılan) ise stok video -> AI görsel davranışı korunur.
+    ai_fallback=False ile stok bulunamazsa AI yerine yerel başlık kartı kullanılır.
     ('video', yol) veya ('image', yol) listesi döndürür."""
     if sahneler:
         prompts = [s.get("gorsel") or s.get("metin") or "" for s in sahneler if s]
@@ -1018,12 +1019,17 @@ def sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp, cocuk=True, stil="s
             sayac[kaynak] = sayac.get(kaynak, 0) + 1
             gorseller.append(("video", vpath))
             print(f"      Sahne {i+1}/{len(prompts)}: gerçek stok video ✓ ({kaynak})")
-        else:
+        elif ai_fallback:
             ipath = os.path.join(tmp, f"sahne_{i:03d}.jpg")
             gorsel_uret_ai(p, boyut, i, ipath, cocuk=cocuk, stil_ad=stil)
             sayac["ai"] += 1
             gorseller.append(("image", ipath))
             print(f"      Sahne {i+1}/{len(prompts)}: AI görseli ({stil})")
+        else:
+            ipath = os.path.join(tmp, f"sahne_kart_{i:03d}.jpg")
+            gradient_kart(p, boyut, i, ipath)
+            gorseller.append(("image", ipath))
+            print(f"      Sahne {i+1}/{len(prompts)}: yerel başlık kartı ✓")
     print(f"      [dağılım: nvidia={sayac['nvidia']}, pexels={sayac['pexels']}, "
           f"pixabay={sayac['pixabay']}, ai={sayac['ai']} / toplam {len(prompts)} sahne]")
     return gorseller
@@ -1473,7 +1479,7 @@ def video_uret(gorseller, mp3, ass, cikti, boyut, fps):
 def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
                sahneler=None, animasyon=True, cocuk=True, tonlama="+0Hz",
                gorsel_stil="stok", kanca=None, eleven_once=False, eleven_voice_id=None,
-               muzik_tema=None, ai_sahne=False):
+               muzik_tema=None, ai_sahne=False, ai_fallback=True):
     """Orkestratör tarafından çağrılır: script -> mp4.
     sahneler verilirse (Gemini'den), her sahne için AI görsel üretir ve
     Ken Burns + çapraz geçişle animasyonlu montaj yapar.
@@ -1535,7 +1541,8 @@ def uret_video(script_path, cikti, ses="kadin", dikey=False, hiz="+0%",
     mp3 = _muzik_ekle(mp3, tmp, muzik_tema)
     if animasyon:
         gorseller = sahne_gorselleri_hazirla(sahneler, cumleler, boyut, tmp,
-                                             cocuk=cocuk, stil=gorsel_stil, ai_sahne=ai_sahne)
+                                             cocuk=cocuk, stil=gorsel_stil,
+                                             ai_sahne=ai_sahne, ai_fallback=ai_fallback)
         # UZUN (yatay) videolarda görselleri seslendirmeye TAM senkronla:
         # her sahne, metninin konuşulduğu gerçek zaman aralığında görünür.
         _ss = _sahne_sureleri(sahneler, boundaries, sure_al(mp3)) if (not dikey and sahneler) else None

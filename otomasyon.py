@@ -313,7 +313,8 @@ def main():
                  kanca=veri.get("kanca"),
                  eleven_once=bool(cfg.get("kisa_eleven", True)),
                  eleven_voice_id=str(cfg.get("kisa_ses_id", "")).strip() or None,
-                 ai_sahne=bool(cfg.get("ai_sahne", False)))
+                 ai_sahne=bool(cfg.get("ai_sahne", False)),
+                 ai_fallback=bool(cfg.get("ai_gorsel_yedegi", True)))
     print(f"      Çıktı: {cikti}  ({os.path.getsize(cikti)//1024} KB)")
 
     kapak_yolu = None
