@@ -1,31 +1,31 @@
-# 📊 Kanal Denetim Raporu — 2026-09-21
+# 📊 Kanal Denetim Raporu — 2026-09-23
 
-**Abone:** 103  |  **Toplam izlenme:** 51654  |  **Video:** 83
+**Abone:** 103  |  **Toplam izlenme:** 51891  |  **Video:** 87
 
 ## 🎯 Retention & İzleme Süresi (son 28 gün)
-- **Ortalama izlenme oranı (retention): %55.2** — ort. izleme süresi 16 sn
-- İzlenme: 21988 · İzlenme süresi: 2256 dk · Abone kazancı: 32
+- **Ortalama izlenme oranı (retention): %50.9** — ort. izleme süresi 15 sn
+- İzlenme: 19477 · İzlenme süresi: 1863 dk · Abone kazancı: 28
 > CTR (kapak tıklama oranı) API'den çekilemiyor; YouTube Studio > İçerik > (video) > Analiz'den bakılır.
 
 | Başlık | İzlenme | Retention % | Ort. sn |
 |--------|---------|-------------|---------|
-| OKYANUSUN DİBİNDE NE VAR? 🌊 | 1620 | 146.3 | 30 |
-| MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊 | 1341 | 81.7 | 15 |
-| DENİZDE KAYBOLAN HAYALET GEMİLER 🚢 | 1141 | 71.4 | 13 |
-| YILDIZLI YORUMLARI KİM YAZIYOR? ⭐ | 1079 | 44.4 | 13 |
-| KASA SIRASI NEDEN UZUN? 🧾 | 1061 | 61.0 | 14 |
-| KUAFÖRDE EKSTRA TUZAĞI! 💈 | 1029 | 54.1 | 13 |
-| SEPETTEKİ ÜRÜN NEDEN PAHALANDI? 🛒 | 1006 | 53.4 | 15 |
-| MARKET MARKASI KÖTÜ MÜ? 🏷️ | 986 | 27.2 | 13 |
-| OTOPARKTA SAAT TUZAĞI! 🅿️ | 964 | 73.5 | 16 |
-| İNDİRİM REYONU TUZAĞI! 🛒 | 949 | 48.3 | 12 |
+| MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊 | 1340 | 81.5 | 15 |
+| DENİZDE KAYBOLAN HAYALET GEMİLER 🚢 | 1140 | 71.1 | 13 |
+| KASA SIRASI NEDEN UZUN? 🧾 | 1060 | 61.0 | 14 |
+| YILDIZLI YORUMLARI KİM YAZIYOR? ⭐ | 1041 | 44.8 | 13 |
+| KUAFÖRDE EKSTRA TUZAĞI! 💈 | 1024 | 54.2 | 13 |
+| SEPETTEKİ ÜRÜN NEDEN PAHALANDI? 🛒 | 962 | 53.3 | 15 |
+| OTOPARKTA SAAT TUZAĞI! 🅿️ | 960 | 73.7 | 16 |
+| MARKET MARKASI KÖTÜ MÜ? 🏷️ | 952 | 27.2 | 13 |
+| İNDİRİM REYONU TUZAĞI! 🛒 | 943 | 48.3 | 12 |
+| MARKET ARABASI NEDEN GİTTİKÇE BÜYÜDÜ? 🛒 | 915 | 46.9 | 15 |
 
 ## 🧭 Değerlendirme & Öneriler
 - 🎯 **En çok tutan tema: gizem** — ort. 1259 izlenme (4 video). Bu damardan daha çok konu üret.
-- ⚠️ **En zayıf tema: tuzak** — ort. 537 izlenme (65 video). Bu temada üretimi azalt ya da başlık/kancayı güçlendir.
-- 💬 **En yüksek etkileşim: tuzak** (%1.57). İzleyici en çok burada yorum/beğeni bırakıyor — CTA'yı bu içerikte koru.
+- ⚠️ **En zayıf tema: tuzak** — ort. 508 izlenme (69 video). Bu temada üretimi azalt ya da başlık/kancayı güçlendir.
+- 💬 **En yüksek etkileşim: tuzak** (%1.7). İzleyici en çok burada yorum/beğeni bırakıyor — CTA'yı bu içerikte koru.
 - 🏆 En çok izlenen 10 videonun **6'i tuzak** teması — kanıtlanmış damar, önceliklendir.
-- 📉 **Dikkat:** son 7 gün ort. 223 < genel ort. 623. Son üretimleri gözden geçir (başlık/kapak/tema seçimi).
+- 📉 **Dikkat:** son 7 gün ort. 88 < genel ort. 597. Son üretimleri gözden geçir (başlık/kapak/tema seçimi).
 
 ### ✅ Sıradaki aksiyonlar
 1. `senaryolar.json`'a **gizem** temasında yeni konular ekle (en çok izlenen damar).
@@ -35,23 +35,23 @@
 ## Format performansı (son ~50 video)
 | Format | Video | Ort. izlenme | Ort. günlük* | Toplam izlenme | Etkileşim % |
 |--------|-------|--------------|--------------|----------------|-------------|
-| short | 83 | 623 | 30 | 51736 | 1.47 |
+| short | 87 | 597 | 25 | 51906 | 1.6 |
 
 ## Tema performansı
 | Tema | Video | Ort. izlenme | Ort. günlük* | Toplam izlenme | Etkileşim % |
 |------|-------|--------------|--------------|----------------|-------------|
-| gizem | 4 | 1259 | 42 | 5036 | 1.07 |
-| diger | 13 | 851 | 18 | 11067 | 1.39 |
-| cesitlilik | 1 | 749 | 22 | 749 | 0.93 |
-| tuzak | 65 | 537 | 31 | 34884 | 1.57 |
+| gizem | 4 | 1259 | 40 | 5037 | 1.07 |
+| diger | 13 | 852 | 17 | 11071 | 1.58 |
+| cesitlilik | 1 | 749 | 21 | 749 | 0.93 |
+| tuzak | 69 | 508 | 26 | 35049 | 1.7 |
 
 ## 🧪 A/B — üretim kohortu (v1 eski havuz / v2 yeni prompt)
 | Kohort | Video | Ort. izlenme | Ort. günlük* | Etkileşim % |
 |--------|-------|--------------|--------------|-------------|
-| v1 | 81 | 638 | 30 | 1.46 |
-| v2 | 2 | 16 | 6 | 12.5 |
+| v1 | 83 | 624 | 25 | 1.58 |
+| v2 | 4 | 36 | 17 | 7.53 |
 
-> v2 günlük ortalaması v1'e göre **%-80**. Kohort başına 2 video var; 10'un altında fark gürültü sayılmalı.
+> v2 günlük ortalaması v1'e göre **%-32**. Kohort başına 4 video var; 10'un altında fark gürültü sayılmalı.
 
 > *Ort. günlük = izlenme / video yaşı (gün). Yaşa göre normalize; farklı yaştaki videoları adil kıyaslar. Kümülatif izlenme eski videoyu şişirir.
 
@@ -61,11 +61,11 @@
 | 1 | OYUNCAK NEDEN KASADA? 🧸 | 1851 | tuzak | short |
 | 2 | OKYANUSUN DİBİNDE NE VAR? 🌊 | 1620 | gizem | short |
 | 3 | MARKET KOKUSU BİLE TUZAK! 👃 | 1552 | tuzak | short |
-| 4 | MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊 | 1342 | diger | short |
-| 5 | OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨 | 1298 | diger | short |
+| 4 | MARIANA ÇUKURU'NUN DİBİNDE NE VAR? 🌊 | 1344 | diger | short |
+| 5 | OTEL SİTELERİ SENİ BÖYLE KANDIRIYOR! 🏨 | 1299 | diger | short |
 | 6 | SİNEMADA MISIR NEDEN PAHALI? 🍿 | 1267 | tuzak | short |
 | 7 | REKLAMLAR BEYNİNİ BÖYLE KANDIRIYOR! 📺 | 1187 | tuzak | short |
-| 8 | DUTY FREE GERÇEKTEN UCUZ MU? ✈️ | 1173 | gizem | short |
+| 8 | DUTY FREE GERÇEKTEN UCUZ MU? ✈️ | 1174 | gizem | short |
 | 9 | KASADAKİ ÇİKOLATA TUZAĞI! 🍫 | 1162 | tuzak | short |
 | 10 | ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️ | 1154 | tuzak | short |
 
@@ -74,18 +74,18 @@
 **short** (15)
 | Başlık | İzlenme | Günlük* | Yaş (g) | Tema | Yayın |
 |--------|---------|---------|---------|------|-------|
-| BERBER NEDEN FAZLA ÖNERİR? ✂️ | 779 | 156 | 5 | tuzak | 2026-09-16 |
-| ÇIKOLATA PAKETİ NEDEN HER YIL 10g AZALDI | 832 | 139 | 6 | tuzak | 2026-09-15 |
-| MARKET ARABASI NEDEN GİTTİKÇE BÜYÜDÜ? 🛒 | 915 | 131 | 7 | tuzak | 2026-09-14 |
-| RESTORANDA TABAKLAR NEDEN KÜÇÜLDÜ? 🍽️ | 390 | 56 | 7 | tuzak | 2026-09-14 |
-| ONAY KUTUSUNDAKİ KÜÇÜK TUZAK! ✅ | 101 | 34 | 3 | tuzak | 2026-09-18 |
-| NEDEN HEP SAĞA YÖNELİRSİN? ➡️ | 71 | 24 | 3 | tuzak | 2026-09-18 |
-| DÜĞÜN SALONU EKSTRALARI! 💒 | 114 | 23 | 5 | tuzak | 2026-09-16 |
-| NEDEN HEP 'YENİ' DERLER? ✨ | 17 | 17 | 1 | tuzak | 2026-09-20 |
-| MÜZİĞİN HIZI NEDEN ÖNEMLİ? 🎵 | 15 | 15 | 1 | tuzak | 2026-09-20 |
-| İLK FİYAT NEDEN HEP YÜKSEK? 🎯 | 20 | 10 | 2 | tuzak | 2026-09-19 |
-| AVM MÜZİĞİ HIZLANINCA CÜZDANIN NEDEN BOŞ | 28 | 7 | 4 | tuzak | 2026-09-17 |
-| KOKUNUN GİZLİ GÜCÜ! 👃 | 11 | 6 | 2 | tuzak | 2026-09-19 |
-| BOZUK PARA NEDEN VERMEZLER? 🪙 | 39 | 6 | 6 | tuzak | 2026-09-15 |
-| LOGO YOK OLAN TSİRT NEDEN 3 KAT DAHA PAH | 4 | 4 | 1 | tuzak | 2026-09-21 |
-| SINIRLI SAYIDA YALANI! ⏳ | 7 | 4 | 2 | tuzak | 2026-09-19 |
+| BERBER NEDEN FAZLA ÖNERİR? ✂️ | 779 | 111 | 7 | tuzak | 2026-09-16 |
+| LOGO YOK OLAN TSİRT NEDEN 3 KAT DAHA PAH | 79 | 40 | 2 | tuzak | 2026-09-21 |
+| ONAY KUTUSUNDAKİ KÜÇÜK TUZAK! ✅ | 101 | 20 | 5 | tuzak | 2026-09-18 |
+| RAF ÜSTÜNÜN RENGİ NEDEN 15% DAHA FAZLA S | 31 | 16 | 2 | tuzak | 2026-09-21 |
+| DÜĞÜN SALONU EKSTRALARI! 💒 | 115 | 16 | 7 | tuzak | 2026-09-16 |
+| NEDEN HEP SAĞA YÖNELİRSİN? ➡️ | 71 | 14 | 5 | tuzak | 2026-09-18 |
+| MÜZİĞİN HIZI NEDEN ÖNEMLİ? 🎵 | 30 | 10 | 3 | tuzak | 2026-09-20 |
+| NEDEN HEP 'YENİ' DERLER? ✨ | 27 | 9 | 3 | tuzak | 2026-09-20 |
+| BNPL TAKSİT ÜCRETİ NEDEN GİZLİ %3 EK MAL | 7 | 7 | 1 | tuzak | 2026-09-22 |
+| İLK FİYAT NEDEN HEP YÜKSEK? 🎯 | 21 | 5 | 4 | tuzak | 2026-09-19 |
+| AVM MÜZİĞİ HIZLANINCA CÜZDANIN NEDEN BOŞ | 29 | 5 | 6 | tuzak | 2026-09-17 |
+| ÜCRETSİZ WIFI'NIN BEDELİ NE? 📶 | 4 | 4 | 1 | tuzak | 2026-09-23 |
+| NEDEN NAKİTTEN VAZGEÇTİK? 💵 | 4 | 4 | 1 | tuzak | 2026-09-22 |
+| KOKUNUN GİZLİ GÜCÜ! 👃 | 15 | 4 | 4 | tuzak | 2026-09-19 |
+| SINIRLI SAYIDA YALANI! ⏳ | 8 | 2 | 4 | tuzak | 2026-09-19 |
