@@ -98,6 +98,7 @@
     "ÜCRETSİZ KARGO EŞİĞİ NEDEN VAR? 🚚",
     "ÜCRETSİZ WIFI'NIN BEDELİ NE? 📶",
     "ÜSTÜ ÇİZİLİ FİYAT OYUNU! 🏷️",
+    "İADE NEDEN BU KADAR ZOR? 📦",
     "İLK FİYAT NEDEN HEP YÜKSEK? 🎯",
     "İNDİRİM ETİKETLERİ YALAN! 🏷️",
     "İNDİRİM GÜNÜNDEKİ FİYAT OYUNU! 🛍️",
@@ -108,15 +109,15 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "ÜLDÜ, FİYAT AYNI! 📉'): UN PAKETİ NEDEN 1KG'den 900g'a düştü fiyat aynı? 📦\n      · atlandı (yayınlanmış konu tekrarı ~ 'MARKET KOKUSU BİLE TUZAK! 👃'): MARKET GİRİŞİNDE KULLANILAN SIĞIR KOKUSU NEDEN DAHA FAZ\n      Tema (katı marka filtresi): 'tuzak' (uygun kalan: 56)\n      Kohort: v1 (henuz v2 senaryo yok, bekleyen v1=56)\n[1/3] Senaryo (30/142) [dijital]: ÜCRETSİZ WIFI'NIN BEDELİ NE? 📶\n[2/3] Video üretiliyor ...\n      [anahtar: google=AQ.Ab8..len53, pexels=CWBqWE..len56, pixabay=572831..len34]\n      Ses: ElevenLabs (gerçekçi insan sesi)\n      Konuşma boşlukları daraltıldı (~2.3 sn kısaldı, senkron korundu).\n      Ses temizlendi (de-esser + tiz/cızırtı bastırma).\n      Arka fon müziği eklendi (yerel: genel.mp3, ses %24, ducking).\n      Sahne 1/10: NVIDIA flux görseli ✓\n      Sahne 2/10: NVIDIA flux görseli ✓\n      Sahne 3/10: NVIDIA flux görseli ✓\n      Sahne 4/10: NVIDIA flux görseli ✓\n      Sahne 5/10: NVIDIA flux görseli ✓\n      Sahne 6/10: NVIDIA flux görseli ✓\n      Sahne 7/10: NVIDIA flux görseli ✓\n      Sahne 8/10: NVIDIA flux görseli ✓\n      Sahne 9/10: NVIDIA flux görseli ✓\n      Sahne 10/10: NVIDIA flux görseli ✓\n      [dağılım: nvidia=10, pexels=0, pixabay=0, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (11002 KB)\n      AI kapak arka planı üretildi (black-forest-labs/flux.1-dev)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-23T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: fxm-e8Xj79w\n✓ Yüklendi: https://youtu.be/198wcOMbS-4  (yayın: 2026-09-23T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 📱 Dijital & Uygulama Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "xabay: 12 klip / ~143 toplam -> 'return package with label']\n      [seçim(vision): pexels~3001 / pixabay~143 -> önce pexels]\n      Sahne 7/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~4490 toplam -> 'return form paperwork closeup,']\n      [Pixabay: 12 klip / ~1059 toplam -> 'return form paperwork closeup,']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~4490 / pixabay~1059 -> önce pexels]\n      Sahne 8/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5941 toplam -> 'waiting at shipping counter']\n      [Pixabay: 12 klip / ~1814 toplam -> 'waiting at shipping counter']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~5941 / pixabay~1814 -> önce pexels]\n      Sahne 9/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~6189 toplam -> 'frustrated customer with box']\n      [Pixabay: 12 klip / ~419 toplam -> 'frustrated customer with box']\n      [seçim(vision): pexels~6189 / pixabay~419 -> önce pexels]\n      Sahne 10/10: gerçek stok video ✓ (pexels)\n      [dağılım: nvidia=0, pexels=8, pixabay=2, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (18244 KB)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-23T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 198wcOMbS-4\n✓ Yüklendi: https://youtu.be/54rrt3msivY  (yayın: 2026-09-23T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "198wcOMbS-4",
-    "metin": "ÜCRETSİZ WIFI'NIN BEDELİ NE hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?",
+    "video_id": "54rrt3msivY",
+    "metin": "İADE NEDEN BU KADAR ZOR hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?",
     "kaynak": "fallback",
-    "hash": "62d3aaa3158be152"
+    "hash": "366149baceda4453"
   },
-  "son_kategori": "dijital",
-  "son_video_id": "198wcOMbS-4",
-  "son_baslik": "ÜCRETSİZ WIFI'NIN BEDELİ NE? 📶",
-  "son_yayin_zamani": "2026-09-23T09:00:00Z"
+  "son_kategori": "diger",
+  "son_video_id": "54rrt3msivY",
+  "son_baslik": "İADE NEDEN BU KADAR ZOR? 📦",
+  "son_yayin_zamani": "2026-09-23T17:00:00Z"
 }
