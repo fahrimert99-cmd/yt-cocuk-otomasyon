@@ -76,6 +76,7 @@
     "RESTORAN MENÜSÜNDE 'ŞEF ÖNERİSİ' TUZAĞI: GEREKSİZ EK MALİYET! 🍽️",
     "RESTORANDA TABAKLAR NEDEN KÜÇÜLDÜ? 🍽️",
     "SADAKAT KARTININ GERÇEK AMACI! 💳",
+    "SADAKAT PROGRAMI SENİ NASIL BAĞLIYOR? 🎯",
     "SEPETTEKİ ÜRÜN NEDEN PAHALANDI? 🛒",
     "SES REKLAMLARI NEDEN YÜKSEK? 🔊",
     "SINIRLI SAYIDA YALANI! ⏳",
@@ -110,15 +111,15 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": " -> 'restaurant menu closeup hands,']\n      [seçim(vision): pexels~8000 / pixabay~1788 -> önce pexels]\n      Sahne 7/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'elegant restaurant table setting,']\n      [Pixabay: 12 klip / ~1940 toplam -> 'elegant restaurant table setting,']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~1940 -> önce pexels]\n      Sahne 8/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~6490 toplam -> 'waiter serving dish, overhead']\n      [Pixabay: 12 klip / ~289 toplam -> 'waiter serving dish, overhead']\n      [seçim(vision): pexels~6490 / pixabay~289 -> önce pexels]\n      Sahne 9/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'person reading menu, side']\n      [Pixabay: 12 klip / ~1665 toplam -> 'person reading menu, side']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~1665 -> önce pexels]\n      Sahne 10/10: gerçek stok video ✓ (pexels)\n      [dağılım: nvidia=0, pexels=9, pixabay=1, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (17570 KB)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-24T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 54rrt3msivY\n✓ Yüklendi: https://youtu.be/RClMdfd_crA  (yayın: 2026-09-24T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🍔 Restoran & Yeme-İçme Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": "abay~4327 -> önce pexels]\n      Sahne 6/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~7010 toplam -> 'coffee loyalty card stamps']\n      [Pixabay: 12 klip / ~1413 toplam -> 'coffee loyalty card stamps']\n      [seçim(vision): pexels~7010 / pixabay~1413 -> önce pixabay]\n      Sahne 7/10: gerçek stok video ✓ (pixabay)\n      [Pexels: 8 klip / ~5879 toplam -> 'points app on phone']\n      [Pixabay: 12 klip / ~1437 toplam -> 'points app on phone']\n      [seçim(vision): pexels~5879 / pixabay~1437 -> önce pexels]\n      Sahne 8/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'coffee shop counter closeup,']\n      [Pixabay: 12 klip / ~1698 toplam -> 'coffee shop counter closeup,']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~1698 -> önce pexels]\n      Sahne 9/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~7389 toplam -> 'free coffee reward closeup,']\n      [Pixabay: 12 klip / ~1627 toplam -> 'free coffee reward closeup,']\n      [seçim(vision): pexels~7389 / pixabay~1627 -> önce pexels]\n      Sahne 10/10: gerçek stok video ✓ (pexels)\n      [dağılım: nvidia=0, pexels=8, pixabay=2, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (11871 KB)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-24T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: RClMdfd_crA\n✓ Yüklendi: https://youtu.be/bwcZtoxwx58  (yayın: 2026-09-24T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "RClMdfd_crA",
-    "metin": "MENÜDE FİYAT NEDEN SAĞDA DEĞİL? ️ hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?",
+    "video_id": "bwcZtoxwx58",
+    "metin": "SADAKAT PROGRAMI SENİ NASIL BAĞLIYOR hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?",
     "kaynak": "fallback",
-    "hash": "d3122b07f8183df5"
+    "hash": "f57f5146340bc85b"
   },
-  "son_kategori": "yeme",
-  "son_video_id": "RClMdfd_crA",
-  "son_baslik": "MENÜDE FİYAT NEDEN SAĞDA DEĞİL? 🍽️",
-  "son_yayin_zamani": "2026-09-24T09:00:00Z"
+  "son_kategori": "diger",
+  "son_video_id": "bwcZtoxwx58",
+  "son_baslik": "SADAKAT PROGRAMI SENİ NASIL BAĞLIYOR? 🎯",
+  "son_yayin_zamani": "2026-09-24T17:00:00Z"
 }
