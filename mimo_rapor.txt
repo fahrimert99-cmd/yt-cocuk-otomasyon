@@ -1,0 +1,61 @@
+[1] /models: 9 model -> mimo-v2.5, mimo-v2.5-asr, mimo-v2.5-pro, mimo-v2.5-tts, mimo-v2.5-tts-voiceclone, mimo-v2.5-tts-voicedesign, mimo-v2.6-flash, mimo-v2.6-pro, mimo-v2.6-pro-ultraspeed
+    ses/tts adayları: mimo-v2.5-tts, mimo-v2.5-tts-voiceclone, mimo-v2.5-tts-voicedesign | video/vl adayları: YOK
+[2] HATA mimo-v2.6-flash: HTTP 402 {
+    "error": {
+        "code": "402",
+        "message": "Insufficient account balance",
+        "type": "insufficient_balance"
+    }
+}
+
+[2] HATA mimo-v2.6-pro: HTTP 402 {
+    "error": {
+        "code": "402",
+        "message": "Insufficient account balance",
+        "type": "insufficient_balance"
+    }
+}
+
+[2] HATA mimo-v2.5: HTTP 402 {
+    "error": {
+        "code": "402",
+        "message": "Insufficient account balance",
+        "type": "insufficient_balance"
+    }
+}
+
+[2] HATA mimo-v2-flash: HTTP 400 {
+    "error": {
+        "code": "400",
+        "message": "Unsupported model mimo-v2-flash"
+    }
+}
+
+[2] HATA mimo-v2.5-asr: HTTP 402 {
+    "error": {
+        "code": "402",
+        "message": "Insufficient account balance",
+        "type": "insufficient_balance"
+    }
+}
+
+[2] HATA mimo-v2.5-pro: HTTP 402 {
+    "error": {
+        "code": "402",
+        "message": "Insufficient account balance",
+        "type": "insufficient_balance"
+    }
+}
+
+[2] HATA mimo-v2.5-tts: HTTP 400 {"error":{"code":"400","message":"Param Incorrect","param":"messages must contain an assistant role for TTS model","type":""}}
+[2] HATA mimo-v2.5-tts-voiceclone: HTTP 400 {"error":{"code":"400","message":"Param Incorrect","param":"messages must contain an assistant role for TTS model","type":""}}
+[2] HATA mimo-v2.5-tts-voicedesign: HTTP 400 {"error":{"code":"400","message":"Param Incorrect","param":"messages must contain an assistant role for TTS model","type":""}}
+[2] HATA mimo-v2.6-pro-ultraspeed: HTTP 402 {
+    "error": {
+        "code": "402",
+        "message": "Insufficient account balance",
+        "type": "insufficient_balance"
+    }
+}
+
+Çalışan model bulunamadı — anahtar/base URL/kota kontrol edilmeli.
