@@ -53,6 +53,7 @@
     "MARKET NEDEN LABİRENT GİBİ? 🌀",
     "MARKETLER SENİ BÖYLE KANDIRIYOR! 🛒",
     "MEGALODON HÂLÂ YAŞIYOR OLABİLİR Mİ? 🦈",
+    "MENÜDE FİYAT NEDEN SAĞDA DEĞİL? 🍽️",
     "MENÜDEKİ GİZLİ TUZAK! 📋",
     "MÜZİĞİN HIZI NEDEN ÖNEMLİ? 🎵",
     "NEDEN HEP 'YENİ' DERLER? ✨",
@@ -109,15 +110,15 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "xabay: 12 klip / ~143 toplam -> 'return package with label']\n      [seçim(vision): pexels~3001 / pixabay~143 -> önce pexels]\n      Sahne 7/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~4490 toplam -> 'return form paperwork closeup,']\n      [Pixabay: 12 klip / ~1059 toplam -> 'return form paperwork closeup,']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~4490 / pixabay~1059 -> önce pexels]\n      Sahne 8/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~5941 toplam -> 'waiting at shipping counter']\n      [Pixabay: 12 klip / ~1814 toplam -> 'waiting at shipping counter']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~5941 / pixabay~1814 -> önce pexels]\n      Sahne 9/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~6189 toplam -> 'frustrated customer with box']\n      [Pixabay: 12 klip / ~419 toplam -> 'frustrated customer with box']\n      [seçim(vision): pexels~6189 / pixabay~419 -> önce pexels]\n      Sahne 10/10: gerçek stok video ✓ (pexels)\n      [dağılım: nvidia=0, pexels=8, pixabay=2, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (18244 KB)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-23T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 198wcOMbS-4\n✓ Yüklendi: https://youtu.be/54rrt3msivY  (yayın: 2026-09-23T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": " -> 'restaurant menu closeup hands,']\n      [seçim(vision): pexels~8000 / pixabay~1788 -> önce pexels]\n      Sahne 7/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'elegant restaurant table setting,']\n      [Pixabay: 12 klip / ~1940 toplam -> 'elegant restaurant table setting,']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~1940 -> önce pexels]\n      Sahne 8/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~6490 toplam -> 'waiter serving dish, overhead']\n      [Pixabay: 12 klip / ~289 toplam -> 'waiter serving dish, overhead']\n      [seçim(vision): pexels~6490 / pixabay~289 -> önce pexels]\n      Sahne 9/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'person reading menu, side']\n      [Pixabay: 12 klip / ~1665 toplam -> 'person reading menu, side']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~1665 -> önce pexels]\n      Sahne 10/10: gerçek stok video ✓ (pexels)\n      [dağılım: nvidia=0, pexels=9, pixabay=1, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (17570 KB)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-24T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 54rrt3msivY\n✓ Yüklendi: https://youtu.be/RClMdfd_crA  (yayın: 2026-09-24T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🍔 Restoran & Yeme-İçme Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "54rrt3msivY",
-    "metin": "İADE NEDEN BU KADAR ZOR hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?",
+    "video_id": "RClMdfd_crA",
+    "metin": "MENÜDE FİYAT NEDEN SAĞDA DEĞİL? ️ hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?",
     "kaynak": "fallback",
-    "hash": "366149baceda4453"
+    "hash": "d3122b07f8183df5"
   },
-  "son_kategori": "diger",
-  "son_video_id": "54rrt3msivY",
-  "son_baslik": "İADE NEDEN BU KADAR ZOR? 📦",
-  "son_yayin_zamani": "2026-09-23T17:00:00Z"
+  "son_kategori": "yeme",
+  "son_video_id": "RClMdfd_crA",
+  "son_baslik": "MENÜDE FİYAT NEDEN SAĞDA DEĞİL? 🍽️",
+  "son_yayin_zamani": "2026-09-24T09:00:00Z"
 }
