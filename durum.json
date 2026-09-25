@@ -95,6 +95,7 @@
     "UYGULAMA İÇİ SATIN ALMA TUZAĞI: ÇOCUKLARIN PARASI NASIL GİDER? 🎮",
     "UYGULAMALAR SENİ BÖYLE BAĞIMLI YAPIYOR! 📱",
     "UÇAK BİLETİ FİYAT OYUNU! ✈️",
+    "VİTRİN NEDEN HEP DEĞİŞİR? 🪟",
     "YILDIZLI YORUMLARI KİM YAZIYOR? ⭐",
     "ÇEREZLERİ NEDEN KABUL ETTİRİRLER? 🍪",
     "ÇIKOLATA PAKETİ NEDEN HER YIL 10g AZALDI? 🍫",
@@ -112,15 +113,15 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": "am -> 'perfume counter department store']\n      [seçim(vision): pexels~3936 / pixabay~255 -> önce pexels]\n      Sahne 7/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'bright cosmetics display closeup,']\n      [Pixabay: 12 klip / ~3947 toplam -> 'bright cosmetics display closeup,']\n      [seçim(vision): pexels~8000 / pixabay~3947 -> önce pexels]\n      Sahne 8/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~7408 toplam -> 'department store entrance luxury']\n      [Pixabay: 12 klip / ~855 toplam -> 'department store entrance luxury']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~7408 / pixabay~855 -> önce pexels]\n      Sahne 9/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~3574 toplam -> 'testing perfume in store']\n      [Pixabay: 12 klip / ~1345 toplam -> 'testing perfume in store']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~3574 / pixabay~1345 -> önce pexels]\n      Sahne 10/10: gerçek stok video ✓ (pexels)\n      [dağılım: nvidia=0, pexels=10, pixabay=0, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (18579 KB)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-25T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: bwcZtoxwx58\n✓ Yüklendi: https://youtu.be/D6_tdOfTBzk  (yayın: 2026-09-25T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🛒 Market & AVM Tuzakları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": " video ✓ (pixabay)\n      [Pexels: 8 klip / ~8000 toplam -> 'person searching for product']\n      [Pixabay: 12 klip / ~1568 toplam -> 'person searching for product']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~1568 -> önce pexels]\n      Sahne 8/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~4706 toplam -> 'rearranged store shelves closeup,']\n      [Pixabay: 12 klip / ~552 toplam -> 'rearranged store shelves closeup,']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~4706 / pixabay~552 -> önce pexels]\n      Sahne 9/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~3338 toplam -> 'shopper wandering aisles closeup,']\n      [Pixabay: 12 klip / ~476 toplam -> 'shopper wandering aisles closeup,']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~3338 / pixabay~476 -> önce pexels]\n      Sahne 10/10: gerçek stok video ✓ (pexels)\n      [dağılım: nvidia=0, pexels=8, pixabay=2, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (21061 KB)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-25T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: D6_tdOfTBzk\n✓ Yüklendi: https://youtu.be/02WWvl9DoMs  (yayın: 2026-09-25T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "D6_tdOfTBzk",
-    "metin": "PARFÜM NEDEN GİRİŞTE SATILIR hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?",
+    "video_id": "02WWvl9DoMs",
+    "metin": "VİTRİN NEDEN HEP DEĞİŞİR hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?",
     "kaynak": "fallback",
-    "hash": "810cd4c0613cd21f"
+    "hash": "61dd3f817d148d0c"
   },
-  "son_kategori": "market",
-  "son_video_id": "D6_tdOfTBzk",
-  "son_baslik": "PARFÜM NEDEN GİRİŞTE SATILIR? 💐",
-  "son_yayin_zamani": "2026-09-25T09:00:00Z"
+  "son_kategori": "diger",
+  "son_video_id": "02WWvl9DoMs",
+  "son_baslik": "VİTRİN NEDEN HEP DEĞİŞİR? 🪟",
+  "son_yayin_zamani": "2026-09-25T17:00:00Z"
 }
