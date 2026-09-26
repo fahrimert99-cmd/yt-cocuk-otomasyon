@@ -14,6 +14,7 @@
     "BEDAVA KAHVE NEDEN VERİLİR? ☕",
     "BEDAVA OYUN PARANI NASIL ALIR? 🕹️",
     "BEDAVA UYGULAMA NASIL KAZANIR? 📲",
+    "BEDAVA İADE NEDEN VAR? 🔁",
     "BENZİNLİK MARKETİ NEDEN PAHALI? ⛽",
     "BERBER NEDEN FAZLA ÖNERİR? ✂️",
     "BERMUDA ŞEYTAN ÜÇGENİ'NİN SIRRI 🌊",
@@ -113,15 +114,15 @@
     "İSTASYON MARKETİ TUZAĞI! ⛽",
     "İŞTE EN SIK DÜŞÜLEN TUZAK! 🧠"
   ],
-  "son_rapor": " video ✓ (pixabay)\n      [Pexels: 8 klip / ~8000 toplam -> 'person searching for product']\n      [Pixabay: 12 klip / ~1568 toplam -> 'person searching for product']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~1568 -> önce pexels]\n      Sahne 8/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~4706 toplam -> 'rearranged store shelves closeup,']\n      [Pixabay: 12 klip / ~552 toplam -> 'rearranged store shelves closeup,']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~4706 / pixabay~552 -> önce pexels]\n      Sahne 9/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~3338 toplam -> 'shopper wandering aisles closeup,']\n      [Pixabay: 12 klip / ~476 toplam -> 'shopper wandering aisles closeup,']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~3338 / pixabay~476 -> önce pexels]\n      Sahne 10/10: gerçek stok video ✓ (pexels)\n      [dağılım: nvidia=0, pexels=8, pixabay=2, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (21061 KB)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-25T17:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: D6_tdOfTBzk\n✓ Yüklendi: https://youtu.be/02WWvl9DoMs  (yayın: 2026-09-25T17:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🎯 Tüm Tuzaklar\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
+  "son_rapor": " Sahne 7/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~6211 toplam -> 'free return label closeup,']\n      [Pixabay: 12 klip / ~957 toplam -> 'free return label closeup,']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~6211 / pixabay~957 -> önce pexels]\n      Sahne 8/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'trying on clothes at']\n      [Pixabay: 12 klip / ~1001 toplam -> 'trying on clothes at']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~1001 -> önce pexels]\n      Sahne 9/10: gerçek stok video ✓ (pexels)\n      [Pexels: 8 klip / ~8000 toplam -> 'undecided person with product']\n      [Pixabay: 12 klip / ~1199 toplam -> 'undecided person with product']\n      [vision gemini-2.5-flash hata: HTTP Error 429: Too Many Requests]\n      [vision gemini-2.0-flash hata: HTTP Error 404: Not Found]\n      [seçim(sayısal): pexels~8000 / pixabay~1199 -> önce pexels]\n      Sahne 10/10: gerçek stok video ✓ (pexels)\n      [dağılım: nvidia=0, pexels=9, pixabay=1, ai=0 / toplam 10 sahne]\n      Çıktı: output/video.mp4  (15890 KB)\n      Kapak: output/kapak.jpg\n      Planlı yayın: 2026-09-26T09:00:00Z UTC\n[3/3] YouTube'a yükleniyor ...\n✓ Onceki videoya abone yorumu eklendi: 02WWvl9DoMs\n✓ Yüklendi: https://youtu.be/wcqN_h-G760  (yayın: 2026-09-26T09:00:00Z UTC)\n✓ Kapak fotoğrafı ayarlandı (ilk)\n✓ Kapak işleme sonrası YENİDEN basıldı (otomatik kareyi ezmesin diye)\n      Oynatma listesine eklendi: 🧠 Psikolojik Satış Oyunları\n      son_video.mp4 / son_kapak.jpg kaydedildi (workflow artifact olarak alinir)\n",
   "bekleyen_yorum": {
-    "video_id": "02WWvl9DoMs",
-    "metin": "VİTRİN NEDEN HEP DEĞİŞİR hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?",
+    "video_id": "wcqN_h-G760",
+    "metin": "BEDAVA İADE NEDEN VAR hakkında sen en çok hangi ayrıntıyı gözden kaçırıyorsun?",
     "kaynak": "fallback",
-    "hash": "61dd3f817d148d0c"
+    "hash": "dc4ef156700ac1f6"
   },
-  "son_kategori": "diger",
-  "son_video_id": "02WWvl9DoMs",
-  "son_baslik": "VİTRİN NEDEN HEP DEĞİŞİR? 🪟",
-  "son_yayin_zamani": "2026-09-25T17:00:00Z"
+  "son_kategori": "psikoloji",
+  "son_video_id": "wcqN_h-G760",
+  "son_baslik": "BEDAVA İADE NEDEN VAR? 🔁",
+  "son_yayin_zamani": "2026-09-26T09:00:00Z"
 }
