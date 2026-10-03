@@ -53,7 +53,7 @@ def _pdf_uret(md_metin, cikti="analiz_rapor.pdf"):
     fpdf2 veya uygun font yoksa None döner (mail düz metne düşer)."""
     try:
         from fpdf import FPDF
-        from fpdf.enums import WrapMode
+        from fpdf.enums import WrapMode, XPos, YPos
     except Exception:
         print("  [pdf atlandı: fpdf2 kurulu değil]")
         return None
@@ -77,12 +77,18 @@ def _pdf_uret(md_metin, cikti="analiz_rapor.pdf"):
         t = _EMOJI.sub("", metin).rstrip() or " "
         try:
             # wrapmode=CHAR: cok uzun kirpilamayan kelimeleri (URL/token) karakterden kir
-            pdf.multi_cell(0, boy * 0.55, t, wrapmode=WrapMode.CHAR)
+            # new_x=LMARGIN: imleç satır sonunda sağ kenarda kalırsa sonraki
+            # multi_cell genişliği ~0 olur; fpdf2 2.8.x CHAR modunda bu durumda
+            # sonsuz döngüye giriyor (günlük denetim 12 dk'da iptal oluyordu).
+            pdf.multi_cell(0, boy * 0.55, t, wrapmode=WrapMode.CHAR,
+                           new_x=XPos.LMARGIN, new_y=YPos.NEXT)
         except Exception:
             # yine de sigmazsa (fpdf 'single character' hatasi): satiri guvenli kisalt
             try:
+                pdf.set_x(pdf.l_margin)
                 pdf.multi_cell(0, boy * 0.55, t[:120] + ("..." if len(t) > 120 else ""),
-                               wrapmode=WrapMode.CHAR)
+                               wrapmode=WrapMode.CHAR,
+                               new_x=XPos.LMARGIN, new_y=YPos.NEXT)
             except Exception:
                 pass
 
@@ -687,7 +693,8 @@ def main():
     # Günlük raporu e-postayla gönder (kurulmuşsa) — rapor PDF ek olarak gider,
     # PDF üretilemezse mail gövdesinde düz metin olarak.
     try:
-        pdf_yol = _pdf_uret(md)
+        # sert sınır: PDF kütüphanesi asılırsa rapor/mail yine de devam etsin
+        pdf_yol = _sert_sinir(60, lambda: _pdf_uret(md))
     except Exception as e:
         print(f"  [pdf uretimi atlandi: {str(e)[:120]}]")
         pdf_yol = None

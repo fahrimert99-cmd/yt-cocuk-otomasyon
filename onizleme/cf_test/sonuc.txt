@@ -1,0 +1,8 @@
+token: True hesap: True
+CF_API_TOKEN 'cfat_' ile başlıyor mu: False | harf/rakam dışı karakter var mı: False
+CF_ACCOUNT_ID ekrandaki hesapla aynı mı: True
+Workers AI model listesi: {"success":true,"result":[{"id":"fe8904cf-e20e-4884-b829-ed7cec0a01cb","source":1,"name":"@cf/pipecat-ai/smart-turn-v2","description":"An open source, community
+hesap kimliği uzunluğu: 32 | token uzunluğu: 53
+hesap tokeni doğrulama: HTTP 401 {"success":false,"errors":[{"code":1000,"message":"Invalid API Token"}],"messages":[],"result":null}
+kullanıcı tokeni doğrulama: {"result":{"id":"f07fd45c2106f456b7f4898ceb4d3d8a","status":"active"},"success":true,"errors":[],"messages":[{"code":10000,"message":"This API Token is valid and active","type":null}]}
+CF_OK

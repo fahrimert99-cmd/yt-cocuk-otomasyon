@@ -58,8 +58,13 @@ def _claude(prompt, key, model=None, max_tokens=8192):
         url, data=json.dumps(body).encode(),
         headers={"content-type": "application/json", "x-api-key": key,
                  "anthropic-version": "2023-06-01"})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        d = json.loads(r.read().decode())
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            d = json.loads(r.read().decode())
+    except urllib.error.HTTPError as he:
+        # Govdeyi mesaja ekle: 400'un nedeni (kredi, model, parametre) logda gorunsun.
+        # "HTTP Error <kod>" oneki korunur (cagiranlar "429" arar).
+        raise RuntimeError(f"HTTP Error {he.code}: {he.read().decode(errors='replace')[:300]}")
     # content bir blok listesidir; sadece metin bloklarini birlestir
     return "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
 

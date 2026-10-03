@@ -1,0 +1,38 @@
+name: Cloudflare Model Testi (gecici)
+
+# Cloudflare Workers AI'da açık modelleri listeler, görsel modellerini aynı
+# sahneyle karşılaştırır, Whisper'ı Türkçe sesle dener. Sonuç onizleme/cf_test/.
+# Tekrar çalıştırmak için cf_tetik.txt değiştirilir.
+on:
+  push:
+    branches: [claude/adoring-sagan-ni2qvl]
+    paths: [.github/workflows/cf_model_test.yml, cf_model_test.py, onizleme/cf_tetik.txt]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: claude/adoring-sagan-ni2qvl
+      - name: Test
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          pip install -q pillow imageio-ffmpeg
+          python3 cf_model_test.py
+      - name: Dala kaydet
+        if: always()
+        run: |
+          git config user.name "onizleme-bot"
+          git config user.email "onizleme-bot@users.noreply.github.com"
+          git add -f onizleme/cf_test
+          git commit -m "test: Cloudflare model sonuçları" || exit 0
+          git pull --rebase -q origin claude/adoring-sagan-ni2qvl || true
+          git push origin HEAD:claude/adoring-sagan-ni2qvl

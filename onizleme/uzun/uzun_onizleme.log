@@ -1,0 +1,81 @@
+[1/4] Uzun konu (tuketici_belgesel): 'A101 Aldın Aldın Neden Hep Bitiyor?'
+  [onaylı önizleme senaryosu yeniden kullanılıyor]
+  Senaryo: 1122 kelime, 46 sahne
+[2/4] Yatay render ...
+      [anahtar: [redacted]
+      Ses: ücretsiz edge-tts (tr-TR-AhmetNeural) — Google/ElevenLabs atlandı
+      Ses: prosodik mod (cümle bazlı vurgu/tonlama)
+      Ses temizlendi (de-esser + tiz/cızırtı bastırma).
+      Arka fon müziği eklendi (yerel: genel.mp3, ses %24, ducking).
+    (Claude bu koşuda kapatıldı: HTTP Error 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your cr)
+    Türkçe tabela: gemini-3.5-flash-lite ✓
+      Görsel yazıları Türkçeleştirildi (8 prompt değişti)
+      Görsellerde yazı yok; 9 sahneye Türkçe etiket kodla basılacak
+      (Gemini görsel: bir anahtar kapalı — HTTP 429, faturalandırma/kota)
+      (Gemini görsel: bir anahtar kapalı — HTTP 429, faturalandırma/kota)
+      (Gemini görsel: bir anahtar kapalı — HTTP 429, faturalandırma/kota)
+      (Cloudflare görsel kapalı: HTTP 429 — anahtar/günlük kota)
+      (Cloudflare görsel kapalı: HTTP 429 — anahtar/günlük kota)
+      (Cloudflare görsel kapalı: HTTP 429 — anahtar/günlük kota)
+      Sahne 1/46: AI görsel ✓
+      Sahne 2/46: AI görsel ✓
+      Sahne 4/46: AI görsel ✓
+      Sahne 5/46: AI görsel ✓
+      Sahne 3/46: AI görsel ✓
+      Sahne 6/46: AI görsel ✓
+      Sahne 8/46: AI görsel ✓
+      Sahne 10/46: AI görsel ✓
+      Sahne 7/46: AI görsel ✓
+      Sahne 12/46: AI görsel ✓
+      Sahne 13/46: AI görsel ✓
+      Sahne 11/46: AI görsel ✓
+      Sahne 14/46: AI görsel ✓
+      Sahne 15/46: AI görsel ✓
+      Sahne 17/46: AI görsel ✓
+      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)
+      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found
+)
+      (görsel ücretsiz yedekten üretildi: pollinations)
+      Sahne 9/46: AI görsel ✓
+      Sahne 18/46: AI görsel ✓
+      Sahne 19/46: AI görsel ✓
+      Sahne 20/46: AI görsel ✓
+      Sahne 21/46: AI görsel ✓
+      Sahne 22/46: AI görsel ✓
+      Sahne 23/46: AI görsel ✓
+      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)
+      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found
+)
+      (pollinations yedek atlandı: HTTP Error 402: Payment Required)
+      Sahne 24/46: AI görsel ✓
+      Sahne 25/46: AI görsel ✓
+      Sahne 16/46: AI görsel ✓
+      Sahne 26/46: AI görsel ✓
+      Sahne 27/46: AI görsel ✓
+      Sahne 28/46: AI görsel ✓
+      Sahne 29/46: AI görsel ✓
+      Sahne 30/46: AI görsel ✓
+      Sahne 31/46: AI görsel ✓
+      Sahne 32/46: AI görsel ✓
+      Sahne 33/46: AI görsel ✓
+      Sahne 34/46: AI görsel ✓
+      Sahne 35/46: AI görsel ✓
+      Sahne 36/46: AI görsel ✓
+      Sahne 37/46: AI görsel ✓
+      Sahne 38/46: AI görsel ✓
+      Sahne 39/46: AI görsel ✓
+      Sahne 40/46: AI görsel ✓
+      Sahne 41/46: AI görsel ✓
+      Sahne 42/46: AI görsel ✓
+      Sahne 43/46: AI görsel ✓
+      Sahne 44/46: AI görsel ✓
+      Sahne 45/46: AI görsel ✓
+      (NVIDIA görsel [black-forest-labs/flux.1-dev] HTTP 500: Internal Server Error)
+      (NVIDIA görsel [google/diffusiongemma-26b-a4b-it] HTTP 404: 404 page not found
+)
+      (pollinations yedek atlandı: HTTP Error 500: Internal Server Error)
+      Sahne 46/46: AI görsel ✓
+      AI görsel: 46/46 üretildi
+  Anlatım önbelleğe alındı: output/ses_cache/ (aynı senaryo bir daha seslendirilmez)
+  Kapak: onaylı önizleme kapağı
+✓ ONIZLEME hazir (10.7 dk): output/onizleme/ — YouTube'a YUKLENMEDI

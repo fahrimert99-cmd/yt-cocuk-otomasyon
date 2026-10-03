@@ -8,6 +8,7 @@
   "animasyon": true,
   "hiz": "+6%",
   "yayin_saati_utc": "",
+  "marka_slot_utc": "09:00",
   "yayin_saatleri_utc": [
     "09:00",
     "17:00"
@@ -15,9 +16,10 @@
   "gorsel_stil": "stok",
   "kisa_ses_id": "pqHfZKP75CvOlQylNhV4",
   "kisa_eleven": true,
-  "uzun_eleven": true,
-  "uzun_gizlilik": "private",
-  "uzun_gorsel_stil": "stok",
+  "uzun_eleven": false,
+  "uzun_ses": "ucretsiz",
+  "uzun_gizlilik": "unlisted",
+  "uzun_gorsel_stil": "ai_sinematik",
   "uzun_aktif": false,
   "marka_ad": "TUZAK AVCISI",
   "marka_renk": [
@@ -54,5 +56,10 @@
       "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Hidden%20Truth.mp3",
       "https://raw.githubusercontent.com/SoundSafari/CC0-1.0-Music/main/freepd.com/Deep%20Tones.mp3"
     ]
-  }
+  },
+  "uzun_tema": "tuketici_belgesel",
+  "uzun_yayin_gunu": 3,
+  "uzun_yayin_saati_utc": "15:00",
+  "uzun_hiz": "+10%",
+  "uzun_altyazi": false
 }

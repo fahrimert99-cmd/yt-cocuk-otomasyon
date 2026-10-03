@@ -442,6 +442,15 @@ def _gorsel_pollinations(prompt, cikti, genislik=768, yukseklik=1344, timeout=90
             with open(cikti, "wb") as f:
                 f.write(ham)
             if os.path.getsize(cikti) > 1500:
+                # nologo=true artık yok sayılıyor: sağ alttaki "pollinations.ai"
+                # filigranı videoya/kapağa girmesin diye alt %8'i kırp (çağıranlar
+                # görseli zaten hedef orana kırparak ölçekliyor).
+                try:
+                    from PIL import Image
+                    im = Image.open(cikti).convert("RGB")
+                    im.crop((0, 0, im.width, int(im.height * 0.92))).save(cikti, quality=95)
+                except Exception as e:
+                    _log(f"pollinations filigran kırpma atlandı: {e}")
                 _log(f"pollinations(yedek) BAŞARILI: {len(ham)} bayt")
                 print("      (görsel ücretsiz yedekten üretildi: pollinations)")
                 return cikti

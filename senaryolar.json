@@ -6487,5 +6487,1301 @@
     ],
     "tema": "tuzak",
     "uretim": "v2"
+  },
+  {
+    "baslik": "A101 ALDIN ALDIN ÜRÜNÜ NEDEN İLK SAATTE BİTER? ⏰",
+    "uzun_konu": "A101 Aldın Aldın Neden Hep Bitiyor?",
+    "tema": "tuzak",
+    "kanca": "Sınırlı stok",
+    "script": "Perşembe sabahı A101'e gittin, Aldın Aldın ürünü bitmiş. Neden hep böyle? Çünkü bu ürünler her mağazaya çoğu zaman birkaç adet gönderiliyor. Az stok, hızlı tükenme demek; hızlı tükenme de bir sonraki hafta daha erken gelmen demek. Bu, kıtlık etkisi: azalan şeyi daha değerli görürüz. Gelen müşteri o ürünü bulamasa bile sepetine başka şeyler koyar. Bir dahaki sefere sor: bu ürüne gerçekten ihtiyacım var mı, yoksa bittiği için mi istiyorum?",
+    "sahneler": [
+      {
+        "metin": "Perşembe sabahı A101'e gittin, Aldın Aldın ürünü bitmiş. Neden hep böyle?",
+        "gorsel": "early morning queue of shoppers in front of a Turkish discount supermarket, shutters opening"
+      },
+      {
+        "metin": "Çünkü bu ürünler her mağazaya çoğu zaman birkaç adet gönderiliyor. Az stok, hızlı tükenme demek; hızlı tükenme de bir sonraki hafta daha erken gelmen demek.",
+        "gorsel": "a few boxed home appliances on a promotional pallet, an empty spot next to them, fluorescent store lighting"
+      },
+      {
+        "metin": "Bu, kıtlık etkisi: azalan şeyi daha değerli görürüz. Gelen müşteri o ürünü bulamasa bile sepetine başka şeyler koyar.",
+        "gorsel": "shopper looking disappointed at an empty promo pallet, then putting groceries into a basket"
+      },
+      {
+        "metin": "Bir dahaki sefere sor: bu ürüne gerçekten ihtiyacım var mı, yoksa bittiği için mi istiyorum?",
+        "gorsel": "person thinking with a shopping list in hand in a supermarket aisle, calm expression"
+      }
+    ],
+    "yorum": "Sen hiç Aldın Aldın ürünü için sıraya girdin mi?",
+    "aciklama": "A101 Aldın Aldın Neden Hep Bitiyor? sorusunun kısa cevabı: Perşembe sabahı A101'e gittin, Aldın Aldın ürünü bitmiş. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "MARKETTE NEDEN TELEVİZYON SATILIR? 📺",
+    "uzun_konu": "A101 Aldın Aldın Neden Hep Bitiyor?",
+    "tema": "tuzak",
+    "kanca": "Market mi elektronikçi mi",
+    "script": "Ekmek almaya girdiğin markette neden televizyon, süpürge, bisiklet satılıyor? Bu ürünlerin asıl görevi para kazandırmaktan çok seni mağazaya çekmek. A101 gibi indirim marketleri bunu haftalık kampanyalarla yapar. Kampanya ürününe bakmaya gelirsin, çıkarken sepetinde süt, deterjan, atıştırmalık vardır. Asıl satış orada olur. Kampanya gününe ihtiyaç listesiyle git, listede olmayanı sepete atma.",
+    "sahneler": [
+      {
+        "metin": "Ekmek almaya girdiğin markette neden televizyon, süpürge, bisiklet satılıyor?",
+        "gorsel": "television and vacuum cleaner boxes displayed next to bread shelves in a discount supermarket"
+      },
+      {
+        "metin": "Bu ürünlerin asıl görevi para kazandırmaktan çok seni mağazaya çekmek. A101 gibi indirim marketleri bunu haftalık kampanyalarla yapar.",
+        "gorsel": "weekly promotional flyer with appliances on a kitchen table, morning light"
+      },
+      {
+        "metin": "Kampanya ürününe bakmaya gelirsin, çıkarken sepetinde süt, deterjan, atıştırmalık vardır. Asıl satış orada olur.",
+        "gorsel": "checkout belt full of everyday groceries with a small appliance box at the end"
+      },
+      {
+        "metin": "Kampanya gününe ihtiyaç listesiyle git, listede olmayanı sepete atma.",
+        "gorsel": "hand holding a short shopping list next to a shopping cart"
+      }
+    ],
+    "yorum": "Kampanyaya gidip başka şey aldığın oldu mu?",
+    "aciklama": "A101 Aldın Aldın Neden Hep Bitiyor? sorusunun kısa cevabı: Ekmek almaya girdiğin markette neden televizyon, süpürge, bisiklet satılıyor? Bu ürünlerin asıl görevi para kazandırmaktan çok seni mağazaya çekmek. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "TEMU NASIL BU KADAR UCUZ? 📦",
+    "uzun_konu": "Temu Nasıl Bu Kadar Ucuz?",
+    "tema": "tuzak",
+    "kanca": "Fabrikadan kapına",
+    "script": "Temu'da 30 liraya kulaklık nasıl satılıyor? Cevap: arada kimse yok. Ürün çoğu zaman doğrudan fabrikadan, tek tek küçük paketlerle yola çıkıyor. Mağaza kirası yok, toptancı yok, depo masrafı çok az. Peki bedeli kim ödüyor? Sen, bekleme süresiyle ve bazen kaliteyle. Bir sonraki siparişte yorumlardaki gerçek fotoğraflara bak.",
+    "sahneler": [
+      {
+        "metin": "Temu'da 30 liraya kulaklık nasıl satılıyor? Cevap: arada kimse yok.",
+        "gorsel": "cheap wireless earbuds on a table next to a smartphone showing a shopping app with a very low price"
+      },
+      {
+        "metin": "Ürün çoğu zaman doğrudan fabrikadan, tek tek küçük paketlerle yola çıkıyor.",
+        "gorsel": "factory floor in China, workers packing small individual parcels, conveyor belt full of tiny packages"
+      },
+      {
+        "metin": "Mağaza kirası yok, toptancı yok, depo masrafı çok az. Peki bedeli kim ödüyor? Sen, bekleme süresiyle ve bazen kaliteyle.",
+        "gorsel": "empty shop with closed shutters contrasted with a delivery van, a person waiting at a window checking a calendar"
+      },
+      {
+        "metin": "Bir sonraki siparişte yorumlardaki gerçek fotoğraflara bak.",
+        "gorsel": "close-up of a hand scrolling customer review photos on a phone, comparing a product photo with a real one"
+      }
+    ],
+    "yorum": "Sen bu konuda ne düşünüyorsun? Yorumlara yaz.",
+    "aciklama": "Temu Nasıl Bu Kadar Ucuz? sorusunun kısa cevabı: Temu'da 30 liraya kulaklık nasıl satılıyor? Cevap: arada kimse yok. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "TEMU'DAKİ ÇARK NEDEN HEP KAZANDIRIYOR? 🎡",
+    "uzun_konu": "Temu Nasıl Bu Kadar Ucuz?",
+    "tema": "tuzak",
+    "kanca": "Hep kazanan çark",
+    "script": "Temu'yu açınca çıkan çarkı hiç kaybettin mi? Muhtemelen hayır. Çünkü bu bir şans oyunu değil, bir alışveriş başlatıcısı. Kupon kazandığını hissedince beynin ödül alır ve o kuponu harcamak için sepete ürün eklersin. Üstelik kuponların çoğunun süresi kısadır, acele ettirir. Çözüm basit: çarkı çevirmeden önce ne alacağını yaz, listede yoksa alma. Sen hiç kuponu harcamak için alışveriş yaptın mı? Yorumlara yaz.",
+    "sahneler": [
+      {
+        "metin": "Temu'yu açınca çıkan çarkı hiç kaybettin mi? Muhtemelen hayır.",
+        "gorsel": "colorful prize wheel spinning on a smartphone screen, confetti bursting"
+      },
+      {
+        "metin": "Çünkü bu bir şans oyunu değil, bir alışveriş başlatıcısı. Kupon kazandığını hissedince beynin ödül alır ve o kuponu harcamak için sepete ürün eklersin.",
+        "gorsel": "illustration of a brain lighting up with reward signals while a shopping cart fills with items"
+      },
+      {
+        "metin": "Üstelik kuponların çoğunun süresi kısadır, acele ettirir.",
+        "gorsel": "countdown timer ticking on a phone screen next to a coupon, person looking anxious"
+      },
+      {
+        "metin": "Çözüm basit: çarkı çevirmeden önce ne alacağını yaz, listede yoksa alma. Sen hiç kuponu harcamak için alışveriş yaptın mı? Yorumlara yaz.",
+        "gorsel": "hand writing a short shopping list on paper next to a phone, calm confident expression"
+      }
+    ],
+    "yorum": "Sen bu konuda ne düşünüyorsun? Yorumlara yaz.",
+    "aciklama": "Temu Nasıl Bu Kadar Ucuz? sorusunun kısa cevabı: Temu'yu açınca çıkan çarkı hiç kaybettin mi? Muhtemelen hayır. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "AMAZON PRIME İPTALİ NEDEN BU KADAR ZOR? 🔒",
+    "uzun_konu": "Amazon Prime İptali Neden Bu Kadar Zor?",
+    "tema": "tuzak",
+    "kanca": "Üye olmak 1 tık",
+    "script": "Amazon Prime'a üye olmak bir tık, iptal etmek ise sayfalar sürebiliyor. Bu tesadüf mü? ABD Federal Ticaret Komisyonu 2023'te tam da bu iptal akışı yüzünden Amazon'a dava açtı. Amazon 2025'te suçlamaları kabul etmeden 2,5 milyar dolarlık uzlaşmaya gitti. Bu tasarımlara karanlık desen deniyor: seni vazgeçirmek için yazılan her ara sayfa. Bugün telefonundaki aboneliklere bak, kullanmadığını kapat.",
+    "sahneler": [
+      {
+        "metin": "Amazon Prime'a üye olmak bir tık, iptal etmek ise sayfalar sürebiliyor. Bu tesadüf mü?",
+        "gorsel": "split screen: one big friendly sign-up button versus a long maze of grey menus"
+      },
+      {
+        "metin": "ABD Federal Ticaret Komisyonu 2023'te tam da bu iptal akışı yüzünden Amazon'a dava açtı. Amazon 2025'te suçlamaları kabul etmeden 2,5 milyar dolarlık uzlaşmaya gitti.",
+        "gorsel": "courthouse in Washington DC, documents and a gavel on a desk, documentary style"
+      },
+      {
+        "metin": "Bu tasarımlara karanlık desen deniyor: seni vazgeçirmek için yazılan her ara sayfa.",
+        "gorsel": "person tired in front of a laptop clicking through endless confirmation pop-ups late at night"
+      },
+      {
+        "metin": "Bugün telefonundaki aboneliklere bak, kullanmadığını kapat.",
+        "gorsel": "hand opening subscriptions settings on a smartphone and switching one off, relieved expression"
+      }
+    ],
+    "yorum": "Sen bu konuda ne düşünüyorsun? Yorumlara yaz.",
+    "aciklama": "Amazon Prime İptali Neden Bu Kadar Zor? sorusunun kısa cevabı: Amazon Prime'a üye olmak bir tık, iptal etmek ise sayfalar sürebiliyor. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "PRIME ÜYESİ NEDEN DAHA ÇOK HARCAR? 🛒",
+    "uzun_konu": "Amazon Prime İptali Neden Bu Kadar Zor?",
+    "tema": "tuzak",
+    "kanca": "Ücretsiz kargo tuzağı",
+    "script": "Amazon Prime'ın asıl ürünü kargo değil, alışkanlık. Yıllık ücreti bir kere ödeyince beynin 'parasını çıkarmalıyım' der. Buna batık maliyet etkisi deniyor. Kargo bedava olunca küçük siparişleri bile tek tek vermeye başlarsın. Sektör araştırmaları, Prime üyelerinin üye olmayanlardan belirgin şekilde daha fazla harcadığını gösteriyor. Ay sonunda kaç sipariş verdiğini say, şaşırabilirsin. Sence bedava kargo seni daha çok harcatıyor mu?",
+    "sahneler": [
+      {
+        "metin": "Amazon Prime'ın asıl ürünü kargo değil, alışkanlık.",
+        "gorsel": "pile of delivery boxes stacked at a front door, cinematic lighting"
+      },
+      {
+        "metin": "Yıllık ücreti bir kere ödeyince beynin 'parasını çıkarmalıyım' der. Buna batık maliyet etkisi deniyor.",
+        "gorsel": "person looking at a yearly membership receipt, thought bubble with coins draining"
+      },
+      {
+        "metin": "Kargo bedava olunca küçük siparişleri bile tek tek vermeye başlarsın. Sektör araştırmaları, Prime üyelerinin üye olmayanlardan belirgin şekilde daha fazla harcadığını gösteriyor.",
+        "gorsel": "phone screen with many small orders in history list, tiny packages arriving one by one"
+      },
+      {
+        "metin": "Ay sonunda kaç sipariş verdiğini say, şaşırabilirsin. Sence bedava kargo seni daha çok harcatıyor mu?",
+        "gorsel": "person at a desk counting delivery boxes with a calendar showing month end"
+      }
+    ],
+    "yorum": "Sen bu konuda ne düşünüyorsun? Yorumlara yaz.",
+    "aciklama": "Amazon Prime İptali Neden Bu Kadar Zor? sorusunun kısa cevabı: Amazon Prime'ın asıl ürünü kargo değil, alışkanlık. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "GETİR 10 DAKİKADA NASIL GETİRİYORDU? ⏱️",
+    "uzun_konu": "Getir 10 Dakikada Nasıl Getiriyordu?",
+    "tema": "tuzak",
+    "kanca": "Karanlık mağaza",
+    "script": "Getir siparişi 10 dakikada nasıl getiriyordu? Sır, adını hiç görmediğin mağazalarda. Bunlara karanlık mağaza deniyor: müşteriye kapalı, sadece kuryeler için açılan mahalle depoları. Ürün sayısı sınırlı tutulur, raflar en hızlı toplanacak şekilde dizilir ve kurye sadece birkaç kilometrelik alana gider. Hız gerçek, ama maliyeti de yüksek. O yüzden Getir 2024'te yurt dışındaki birçok pazardan çekildi.",
+    "sahneler": [
+      {
+        "metin": "Getir siparişi 10 dakikada nasıl getiriyordu? Sır, adını hiç görmediğin mağazalarda.",
+        "gorsel": "delivery courier on an electric scooter speeding through a Turkish city street at dusk"
+      },
+      {
+        "metin": "Bunlara karanlık mağaza deniyor: müşteriye kapalı, sadece kuryeler için açılan mahalle depoları.",
+        "gorsel": "small warehouse with no customers, shelves densely packed, staff picking groceries into bags"
+      },
+      {
+        "metin": "Ürün sayısı sınırlı tutulur, raflar en hızlı toplanacak şekilde dizilir ve kurye sadece birkaç kilometrelik alana gider.",
+        "gorsel": "top-down map of a neighborhood with a small radius circle around a warehouse, delivery routes drawn"
+      },
+      {
+        "metin": "Hız gerçek, ama maliyeti de yüksek. O yüzden Getir 2024'te yurt dışındaki birçok pazardan çekildi.",
+        "gorsel": "empty delivery scooters parked in a row outside a closed warehouse, overcast sky"
+      }
+    ],
+    "yorum": "Sen bu konuda ne düşünüyorsun? Yorumlara yaz.",
+    "aciklama": "Getir 10 Dakikada Nasıl Getiriyordu? sorusunun kısa cevabı: Getir siparişi 10 dakikada nasıl getiriyordu? Sır, adını hiç görmediğin mağazalarda. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "GETİR'DE MİNİMUM SEPET NEDEN VAR? 🧺",
+    "uzun_konu": "Getir 10 Dakikada Nasıl Getiriyordu?",
+    "tema": "tuzak",
+    "kanca": "Minimum sepet",
+    "script": "Getir gibi hızlı market uygulamasından sadece ekmek almayı denedin mi? Muhtemelen minimum sepet tutarına takıldın. İşte ilk taktik bu: siparişi geçmek için ihtiyacın olmayan bir şey eklersin. İkincisi, ödeme ekranındaki 'bunu da ister misin' önerileri. Üçüncüsü, belli tutarı geçince kalkan teslimat ücreti. Hepsi seni birkaç ürün daha eklemeye iter. Siparişten önce listeni yaz ve tutarı ona göre topla. Sen en son ne ekledin?",
+    "sahneler": [
+      {
+        "metin": "Getir gibi hızlı market uygulamasından sadece ekmek almayı denedin mi? Muhtemelen minimum sepet tutarına takıldın.",
+        "gorsel": "phone screen with a grocery app cart containing only bread and a warning banner"
+      },
+      {
+        "metin": "İşte ilk taktik bu: siparişi geçmek için ihtiyacın olmayan bir şey eklersin. İkincisi, ödeme ekranındaki 'bunu da ister misin' önerileri.",
+        "gorsel": "thumb hovering over snack suggestions at the checkout screen of a delivery app"
+      },
+      {
+        "metin": "Üçüncüsü, belli tutarı geçince kalkan teslimat ücreti. Hepsi seni birkaç ürün daha eklemeye iter.",
+        "gorsel": "progress bar filling up toward a free delivery threshold, cart icons multiplying"
+      },
+      {
+        "metin": "Siparişten önce listeni yaz ve tutarı ona göre topla. Sen en son ne ekledin?",
+        "gorsel": "person in a kitchen writing a short grocery list on a sticky note before ordering"
+      }
+    ],
+    "yorum": "Sen bu konuda ne düşünüyorsun? Yorumlara yaz.",
+    "aciklama": "Getir 10 Dakikada Nasıl Getiriyordu? sorusunun kısa cevabı: Getir gibi hızlı market uygulamasından sadece ekmek almayı denedin mi? Muhtemelen minimum sepet tutarına takıldın. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "YEMEK SİPARİŞİNDE KOMİSYONU KİM ÖDÜYOR? 🍔",
+    "uzun_konu": "Yemek Uygulamalarında Yemek Neden Daha Pahalı?",
+    "tema": "tuzak",
+    "kanca": "Aynı menü farklı fiyat",
+    "script": "Aynı restoranın aynı menüsü, uygulamada neden daha pahalı? Çünkü yemek uygulamaları restorandan her siparişte komisyon alıyor. Restoran da bu payı çoğu zaman menü fiyatına ekliyor. Üstüne teslimat ücreti, servis bedeli ve küçük sepet ücreti gelince fark büyüyor. Yakındaki restoranı kendi telefonundan ya da gel-al ile dene, fiyatı karşılaştır.",
+    "sahneler": [
+      {
+        "metin": "Aynı restoranın aynı menüsü, uygulamada neden daha pahalı?",
+        "gorsel": "two receipts for the same burger menu side by side, different prices highlighted"
+      },
+      {
+        "metin": "Çünkü yemek uygulamaları restorandan her siparişte komisyon alıyor. Restoran da bu payı çoğu zaman menü fiyatına ekliyor.",
+        "gorsel": "restaurant owner looking at a tablet with order commissions, kitchen in background"
+      },
+      {
+        "metin": "Üstüne teslimat ücreti, servis bedeli ve küçük sepet ücreti gelince fark büyüyor.",
+        "gorsel": "phone screen checkout with several small fees adding up, delivery courier waiting outside"
+      },
+      {
+        "metin": "Yakındaki restoranı kendi telefonundan ya da gel-al ile dene, fiyatı karşılaştır.",
+        "gorsel": "person picking up a takeaway bag at a restaurant counter, smiling"
+      }
+    ],
+    "yorum": "Sen uygulama ile restoran fiyatını hiç karşılaştırdın mı?",
+    "aciklama": "Yemek Uygulamalarında Yemek Neden Daha Pahalı? sorusunun kısa cevabı: Aynı restoranın aynı menüsü, uygulamada neden daha pahalı? Çünkü yemek uygulamaları restorandan her siparişte komisyon alıyor. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "İLK SİPARİŞE NEDEN YÜZDE ELLİ İNDİRİM? 🎁",
+    "uzun_konu": "Yemek Uygulamalarında Yemek Neden Daha Pahalı?",
+    "tema": "tuzak",
+    "kanca": "İlk sipariş hediyesi",
+    "script": "Yemek uygulamasında ilk siparişe neden yüzde elli indirim var? Çünkü seni kazanmanın maliyeti, sonraki siparişlerinden çok daha az. Uygulamanın asıl hedefi tek sipariş değil, alışkanlık. İndirim bitince fiyatlar normale döner ama sen artık parmağını uygulamaya alıştırmışsındır. Ay sonunda uygulamaya ne kadar ödediğini kontrol et, bütçene yaz.",
+    "sahneler": [
+      {
+        "metin": "Yemek uygulamasında ilk siparişe neden yüzde elli indirim var?",
+        "gorsel": "smartphone showing a big first order discount banner, food photos around"
+      },
+      {
+        "metin": "Çünkü seni kazanmanın maliyeti, sonraki siparişlerinden çok daha az. Uygulamanın asıl hedefi tek sipariş değil, alışkanlık.",
+        "gorsel": "illustration of a habit loop arrow circling around a phone with food delivery icons"
+      },
+      {
+        "metin": "İndirim bitince fiyatlar normale döner ama sen artık parmağını uygulamaya alıştırmışsındır.",
+        "gorsel": "person late at night on a sofa ordering food on a phone, takeaway boxes on table"
+      },
+      {
+        "metin": "Ay sonunda uygulamaya ne kadar ödediğini kontrol et, bütçene yaz.",
+        "gorsel": "monthly expense notebook with food delivery totals underlined"
+      }
+    ],
+    "yorum": "Ayda yemek uygulamasına ne kadar harcıyorsun?",
+    "aciklama": "Yemek Uygulamalarında Yemek Neden Daha Pahalı? sorusunun kısa cevabı: Yemek uygulamasında ilk siparişe neden yüzde elli indirim var? Çünkü seni kazanmanın maliyeti, sonraki siparişlerinden çok daha az. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "MARKET KARTI NEDEN BEDAVA? 💳",
+    "uzun_konu": "Market Kartları Seni Neden Bedavaya Üye Yapıyor?",
+    "tema": "tuzak",
+    "kanca": "Bedava kartın bedeli",
+    "script": "Market sana kartı bedava veriyor, üstüne puan da veriyor. Peki market ne kazanıyor? Cevap: veri. Her alışverişinde ne aldığın, ne zaman aldığın ve ne kadar harcadığın kaydedilir. Bu bilgiyle sana özel kampanya hazırlanır, raflar düzenlenir ve tam ihtiyacını hissettiğin anda indirim gelir. Kartı kullan ama kampanya mesajı geldi diye ihtiyacın olmayanı alma.",
+    "sahneler": [
+      {
+        "metin": "Market sana kartı bedava veriyor, üstüne puan da veriyor. Peki market ne kazanıyor?",
+        "gorsel": "plastic loyalty card handed over at a supermarket checkout"
+      },
+      {
+        "metin": "Cevap: veri. Her alışverişinde ne aldığın, ne zaman aldığın ve ne kadar harcadığın kaydedilir.",
+        "gorsel": "data visualization of shopping receipts turning into charts on a screen"
+      },
+      {
+        "metin": "Bu bilgiyle sana özel kampanya hazırlanır, raflar düzenlenir ve tam ihtiyacını hissettiğin anda indirim gelir.",
+        "gorsel": "phone notification with a personalized discount while a shopper stands in an aisle"
+      },
+      {
+        "metin": "Kartı kullan ama kampanya mesajı geldi diye ihtiyacın olmayanı alma.",
+        "gorsel": "shopper ignoring a promo notification and checking a list instead"
+      }
+    ],
+    "yorum": "Market kartı kullanıyor musun?",
+    "aciklama": "Market Kartları Seni Neden Bedavaya Üye Yapıyor? sorusunun kısa cevabı: Market sana kartı bedava veriyor, üstüne puan da veriyor. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "MARKET PUANI NEDEN SENİ DAHA ÇOK HARCATIR? 🪙",
+    "uzun_konu": "Market Kartları Seni Neden Bedavaya Üye Yapıyor?",
+    "tema": "tuzak",
+    "kanca": "Az kaldı etkisi",
+    "script": "Kasada 'ödülünüze 20 puan kaldı' dediklerinde ne yaparsın? Çoğumuz eksik puanı tamamlamak için bir şey daha alırız. Buna hedef gradyan etkisi deniyor: hedefe yaklaştıkça daha çok çabalarız. Puanlar ilk bakışta indirim gibi görünür ama çoğu zaman harcamanın küçük bir yüzdesidir. Puan için değil, ihtiyaç için alışveriş yap.",
+    "sahneler": [
+      {
+        "metin": "Kasada 'ödülünüze 20 puan kaldı' dediklerinde ne yaparsın?",
+        "gorsel": "cashier screen showing points almost reaching a reward, shopper hesitating"
+      },
+      {
+        "metin": "Çoğumuz eksik puanı tamamlamak için bir şey daha alırız. Buna hedef gradyan etkisi deniyor: hedefe yaklaştıkça daha çok çabalarız.",
+        "gorsel": "progress bar almost full with a small gap, coins filling it"
+      },
+      {
+        "metin": "Puanlar ilk bakışta indirim gibi görünür ama çoğu zaman harcamanın küçük bir yüzdesidir.",
+        "gorsel": "magnifying glass over a receipt showing tiny percentage of points earned"
+      },
+      {
+        "metin": "Puan için değil, ihtiyaç için alışveriş yap.",
+        "gorsel": "calm shopper leaving store with a small bag"
+      }
+    ],
+    "yorum": "Puan tamamlamak için hiç gereksiz bir şey aldın mı?",
+    "aciklama": "Market Kartları Seni Neden Bedavaya Üye Yapıyor? sorusunun kısa cevabı: Kasada 'ödülünüze 20 puan kaldı' dediklerinde ne yaparsın? Çoğumuz eksik puanı tamamlamak için bir şey daha alırız. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "NETFLIX ŞİFRE PAYLAŞIMINI NEDEN YASAKLADI? 🔐",
+    "uzun_konu": "Netflix Neden Şifre Paylaşımını Yasakladı?",
+    "tema": "tuzak",
+    "kanca": "Paylaşım bitti",
+    "script": "Netflix yıllarca şifre paylaşımına göz yumdu, sonra 2023'te kısıtlamaya başladı. Neden? Çünkü büyüme yavaşlamıştı ve şirkete göre milyonlarca hane başkasının hesabını kullanıyordu. Kısıtlamadan sonra pek çok kullanıcı kendi aboneliğini açtı ve şirket yeni abone kazandı. Kaç dijital aboneliğin olduğunu say, kullanmadığını dondur.",
+    "sahneler": [
+      {
+        "metin": "Netflix yıllarca şifre paylaşımına göz yumdu, sonra 2023'te kısıtlamaya başladı. Neden?",
+        "gorsel": "family on a couch watching a streaming service on TV, a padlock icon appearing"
+      },
+      {
+        "metin": "Çünkü büyüme yavaşlamıştı ve şirkete göre milyonlarca hane başkasının hesabını kullanıyordu.",
+        "gorsel": "chart of subscriber growth flattening, documentary style office background"
+      },
+      {
+        "metin": "Kısıtlamadan sonra pek çok kullanıcı kendi aboneliğini açtı ve şirket yeni abone kazandı.",
+        "gorsel": "person entering credit card details on a laptop to sign up for a streaming service"
+      },
+      {
+        "metin": "Kaç dijital aboneliğin olduğunu say, kullanmadığını dondur.",
+        "gorsel": "phone settings showing several subscriptions with one being switched off"
+      }
+    ],
+    "yorum": "Sen şifre paylaşıyor muydun?",
+    "aciklama": "Netflix Neden Şifre Paylaşımını Yasakladı? sorusunun kısa cevabı: Netflix yıllarca şifre paylaşımına göz yumdu, sonra 2023'te kısıtlamaya başladı. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "NETFLIX BİR SONRAKİ BÖLÜMÜ NEDEN KENDİSİ AÇAR? ▶️",
+    "uzun_konu": "Netflix Neden Şifre Paylaşımını Yasakladı?",
+    "tema": "tuzak",
+    "kanca": "Otomatik oynatma",
+    "script": "Bölüm bitti, kalkacaktın. Ama beş saniye sonra yenisi başladı. Otomatik oynatma, karar verme anını ortadan kaldırır. Durmak için senin bir şey yapman gerekir, devam etmek için hiçbir şey. Platformlar için izlenme süresi en değerli ölçüdür; ne kadar uzun izlersen abonelik o kadar vazgeçilmez görünür. Ayarlardan otomatik oynatmayı kapat, ne zaman duracağına sen karar ver.",
+    "sahneler": [
+      {
+        "metin": "Bölüm bitti, kalkacaktın. Ama beş saniye sonra yenisi başladı.",
+        "gorsel": "TV screen with a countdown to the next episode, remote control on a table"
+      },
+      {
+        "metin": "Otomatik oynatma, karar verme anını ortadan kaldırır. Durmak için senin bir şey yapman gerekir, devam etmek için hiçbir şey.",
+        "gorsel": "person half asleep on a couch while episodes keep playing late at night"
+      },
+      {
+        "metin": "Platformlar için izlenme süresi en değerli ölçüdür; ne kadar uzun izlersen abonelik o kadar vazgeçilmez görünür.",
+        "gorsel": "dashboard chart of watch time increasing, abstract streaming icons"
+      },
+      {
+        "metin": "Ayarlardan otomatik oynatmayı kapat, ne zaman duracağına sen karar ver.",
+        "gorsel": "hand turning off autoplay toggle in settings menu on a TV"
+      }
+    ],
+    "yorum": "Gece kaç bölüm izlediğini hiç fark ettin mi?",
+    "aciklama": "Netflix Neden Şifre Paylaşımını Yasakladı? sorusunun kısa cevabı: Bölüm bitti, kalkacaktın. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "McDONALD'S ASLINDA NE SATIYOR? 🍟",
+    "uzun_konu": "McDonald's Aslında Ne Satıyor?",
+    "tema": "tuzak",
+    "kanca": "Hamburger değil",
+    "script": "McDonald's'ın en büyük işi hamburger mi? Şirketin eski yöneticilerinden birine göre değil. McDonald's, restoranların bulunduğu arsaların ve binaların önemli bir kısmının sahibi. Restoranları işleten bayiler de ona kira öder. Yani hamburger satışı değişse bile kira geliri düzenli akar. Bu yüzden şirket aslında bir gayrimenkul devi gibi de çalışır. Bir markanın asıl nereden kazandığını merak et, fiyatların mantığını daha iyi anlarsın.",
+    "sahneler": [
+      {
+        "metin": "McDonald's'ın en büyük işi hamburger mi? Şirketin eski yöneticilerinden birine göre değil.",
+        "gorsel": "fast food restaurant on a busy street corner, cinematic dusk lighting"
+      },
+      {
+        "metin": "McDonald's, restoranların bulunduğu arsaların ve binaların önemli bir kısmının sahibi. Restoranları işleten bayiler de ona kira öder.",
+        "gorsel": "aerial view of a restaurant on a large plot of land, property lines drawn"
+      },
+      {
+        "metin": "Yani hamburger satışı değişse bile kira geliri düzenli akar. Bu yüzden şirket aslında bir gayrimenkul devi gibi de çalışır.",
+        "gorsel": "calendar with monthly rent payments and coins stacking up"
+      },
+      {
+        "metin": "Bir markanın asıl nereden kazandığını merak et, fiyatların mantığını daha iyi anlarsın.",
+        "gorsel": "person reading a business newspaper in a cafe"
+      }
+    ],
+    "yorum": "Bunu biliyor muydun?",
+    "aciklama": "McDonald's Aslında Ne Satıyor? sorusunun kısa cevabı: McDonald's'ın en büyük işi hamburger mi? Şirketin eski yöneticilerinden birine göre değil. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "McDONALD'S'TA MENÜ NEDEN DAHA CAZİP? 🥤",
+    "uzun_konu": "McDonald's Aslında Ne Satıyor?",
+    "tema": "tuzak",
+    "kanca": "Menü tuzağı",
+    "script": "Sadece hamburger alacaktın, menü sadece biraz daha pahalı. Sen de menü aldın. Paketleme böyle çalışır: tek ürünün fiyatı yüksek tutulur, menü kârlı görünür. İçecek ve patates restoranın en kârlı ürünlerindendir. Sonuçta istediğinden daha fazla yer, daha fazla ödersin ama kazançlı çıktığını düşünürsün. Sipariş vermeden önce gerçekten ne istediğine karar ver.",
+    "sahneler": [
+      {
+        "metin": "Sadece hamburger alacaktın, menü sadece biraz daha pahalı. Sen de menü aldın.",
+        "gorsel": "menu board in a fast food restaurant highlighting a combo meal price"
+      },
+      {
+        "metin": "Paketleme böyle çalışır: tek ürünün fiyatı yüksek tutulur, menü kârlı görünür. İçecek ve patates restoranın en kârlı ürünlerindendir.",
+        "gorsel": "soda cup and fries close-up, price tags floating above them"
+      },
+      {
+        "metin": "Sonuçta istediğinden daha fazla yer, daha fazla ödersin ama kazançlı çıktığını düşünürsün.",
+        "gorsel": "person full after eating looking at a receipt on a tray"
+      },
+      {
+        "metin": "Sipariş vermeden önce gerçekten ne istediğine karar ver.",
+        "gorsel": "hand pointing at a single item on a self-order kiosk screen"
+      }
+    ],
+    "yorum": "Sen menü mü alırsın tek ürün mü?",
+    "aciklama": "McDonald's Aslında Ne Satıyor? sorusunun kısa cevabı: Sadece hamburger alacaktın, menü sadece biraz daha pahalı. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "APPLE ŞARJ ALETİNİ KUTUDAN NEDEN ÇIKARDI? 🔌",
+    "uzun_konu": "Apple Şarj Aletini Kutudan Neden Çıkardı?",
+    "tema": "tuzak",
+    "kanca": "Kutuda adaptör yok",
+    "script": "Apple 2020'de iPhone kutusundan şarj adaptörünü çıkardı. Gerekçe çevreydi. Kutu küçülünce bir paletle çok daha fazla telefon taşınabildi. Bu, nakliye maliyetini de düşürdü. Adaptörü isteyen ise ayrıca satın almak zorunda kaldı. Sonrasında diğer üreticilerin bir kısmı da aynı yolu izledi. Yeni adaptör almadan önce evdeki eski şarj aletlerinin uyumlu olup olmadığını kontrol et.",
+    "sahneler": [
+      {
+        "metin": "Apple 2020'de iPhone kutusundan şarj adaptörünü çıkardı. Gerekçe çevreydi.",
+        "gorsel": "slim smartphone box opened showing only a phone and a cable"
+      },
+      {
+        "metin": "Kutu küçülünce bir paletle çok daha fazla telefon taşınabildi. Bu, nakliye maliyetini de düşürdü.",
+        "gorsel": "pallets of small boxes loaded into a cargo plane, warehouse workers"
+      },
+      {
+        "metin": "Adaptörü isteyen ise ayrıca satın almak zorunda kaldı. Sonrasında diğer üreticilerin bir kısmı da aynı yolu izledi.",
+        "gorsel": "power adapter displayed in a store with a price tag, customer looking at it"
+      },
+      {
+        "metin": "Yeni adaptör almadan önce evdeki eski şarj aletlerinin uyumlu olup olmadığını kontrol et.",
+        "gorsel": "drawer full of old chargers and cables, hand picking one"
+      }
+    ],
+    "yorum": "Evde kaç tane şarj aleti var?",
+    "aciklama": "Apple Şarj Aletini Kutudan Neden Çıkardı? sorusunun kısa cevabı: Apple 2020'de iPhone kutusundan şarj adaptörünü çıkardı. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "iPHONE NEDEN USB-C'YE GEÇTİ? 🔋",
+    "uzun_konu": "Apple Şarj Aletini Kutudan Neden Çıkardı?",
+    "tema": "tuzak",
+    "kanca": "Avrupa kuralı",
+    "script": "Apple yıllarca kendi Lightning girişini kullandı, sonra iPhone 15 ile USB-C'ye geçti. Neden? Çünkü Avrupa Birliği telefonlarda ortak şarj girişini zorunlu hale getiren bir kural çıkardı. Özel giriş, aksesuar satışlarından pay almayı da kolaylaştırıyordu. Ortak giriş ise kabloyu herkes için tek tipe indirdi. Eski kablolarını atmadan önce başka cihazlarda kullanabilir misin bak.",
+    "sahneler": [
+      {
+        "metin": "Apple yıllarca kendi Lightning girişini kullandı, sonra iPhone 15 ile USB-C'ye geçti. Neden?",
+        "gorsel": "close-up of two charging cables, an old proprietary connector next to a USB-C connector"
+      },
+      {
+        "metin": "Çünkü Avrupa Birliği telefonlarda ortak şarj girişini zorunlu hale getiren bir kural çıkardı.",
+        "gorsel": "European Parliament building, documentary photo"
+      },
+      {
+        "metin": "Özel giriş, aksesuar satışlarından pay almayı da kolaylaştırıyordu. Ortak giriş ise kabloyu herkes için tek tipe indirdi.",
+        "gorsel": "many different cables tangled on a table becoming one single neat cable"
+      },
+      {
+        "metin": "Eski kablolarını atmadan önce başka cihazlarda kullanabilir misin bak.",
+        "gorsel": "person sorting cables into a box labeled for reuse"
+      }
+    ],
+    "yorum": "Sen hangi girişi kullanıyorsun?",
+    "aciklama": "Apple Şarj Aletini Kutudan Neden Çıkardı? sorusunun kısa cevabı: Apple yıllarca kendi Lightning girişini kullandı, sonra iPhone 15 ile USB-C'ye geçti. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "GILLETTE BIÇAĞI NEDEN PAHALI? 🪒",
+    "uzun_konu": "Gillette Neden Makineyi Ucuz, Bıçağı Pahalı Satıyor?",
+    "tema": "tuzak",
+    "kanca": "Ucuz makine pahalı bıçak",
+    "script": "Tıraş makinesi ucuz, yedek bıçakları pahalı. Bu tesadüf değil, yüz yıllık bir iş modeli. Bu modele jilet ve bıçak modeli deniyor. Makineyi bir kez satarsın, bıçağı yıllarca satarsın. Bıçaklar çoğu zaman sadece kendi makinesine uyar. Bu yüzden markayı değiştirmek de zorlaşır. Alışverişte makinenin değil, bir yıllık bıçak maliyetinin hesabını yap.",
+    "sahneler": [
+      {
+        "metin": "Tıraş makinesi ucuz, yedek bıçakları pahalı. Bu tesadüf değil, yüz yıllık bir iş modeli.",
+        "gorsel": "razor handle next to an expensive pack of replacement blades in a store"
+      },
+      {
+        "metin": "Bu modele jilet ve bıçak modeli deniyor. Makineyi bir kez satarsın, bıçağı yıllarca satarsın.",
+        "gorsel": "vintage early 1900s advertisement style illustration of a razor"
+      },
+      {
+        "metin": "Bıçaklar çoğu zaman sadece kendi makinesine uyar. Bu yüzden markayı değiştirmek de zorlaşır.",
+        "gorsel": "close-up of a blade cartridge clicking into its own handle, other incompatible cartridges nearby"
+      },
+      {
+        "metin": "Alışverişte makinenin değil, bir yıllık bıçak maliyetinin hesabını yap.",
+        "gorsel": "calculator next to razor blade packs on a bathroom counter"
+      }
+    ],
+    "yorum": "Sen yedek bıçağa yılda ne kadar ödüyorsun?",
+    "aciklama": "Gillette Neden Makineyi Ucuz, Bıçağı Pahalı Satıyor? sorusunun kısa cevabı: Tıraş makinesi ucuz, yedek bıçakları pahalı. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "YEDEK BIÇAK NEDEN SADECE KENDİ MAKİNESİNE UYAR? 🔧",
+    "uzun_konu": "Gillette Neden Makineyi Ucuz, Bıçağı Pahalı Satıyor?",
+    "tema": "tuzak",
+    "kanca": "Uyumsuzluk tuzağı",
+    "script": "Yeni tıraş makinesi aldın, eski bıçaklar takılmıyor. Neden? Çünkü uyumsuzluk, müşteriyi sisteme bağlamanın en kolay yolu. Ekonomide buna kilitlenme etkisi deniyor. Aynı mantık kapsül kahvede, yazıcı kartuşunda ve oyun konsolu aksesuarlarında da karşımıza çıkar. Bir ürünü alırken yedek parçasının fiyatını da sor.",
+    "sahneler": [
+      {
+        "metin": "Yeni tıraş makinesi aldın, eski bıçaklar takılmıyor. Neden?",
+        "gorsel": "person trying to fit an old blade cartridge onto a new razor handle"
+      },
+      {
+        "metin": "Çünkü uyumsuzluk, müşteriyi sisteme bağlamanın en kolay yolu. Ekonomide buna kilitlenme etkisi deniyor.",
+        "gorsel": "illustration of a padlock connecting a razor and its blades"
+      },
+      {
+        "metin": "Aynı mantık kapsül kahvede, yazıcı kartuşunda ve oyun konsolu aksesuarlarında da karşımıza çıkar.",
+        "gorsel": "coffee capsules, printer cartridges and razor blades arranged side by side"
+      },
+      {
+        "metin": "Bir ürünü alırken yedek parçasının fiyatını da sor.",
+        "gorsel": "shopper reading the price of replacement parts in a store aisle"
+      }
+    ],
+    "yorum": "Başka hangi ürünlerde bunu yaşadın?",
+    "aciklama": "Gillette Neden Makineyi Ucuz, Bıçağı Pahalı Satıyor? sorusunun kısa cevabı: Yeni tıraş makinesi aldın, eski bıçaklar takılmıyor. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "YAZICI MÜREKKEBİ NEDEN BU KADAR PAHALI? 🖨️",
+    "uzun_konu": "Yazıcı Mürekkebi Neden Bu Kadar Pahalı?",
+    "tema": "tuzak",
+    "kanca": "Mürekkep altından pahalı",
+    "script": "Yazıcı ucuz, kartuşu neredeyse yazıcı kadar pahalı. Neden? Çünkü üreticiler yazıcıyı çoğu zaman düşük kârla satar, asıl parayı yıllarca aldığın mürekkepten kazanır. Bazı yazıcılar başka marka kartuşu tanımayabilir. Mililitre hesabıyla mürekkep, birçok pahalı parfümden daha pahalıya gelebilir. Yazıcı alırken sayfa başı baskı maliyetine bak, sadece cihazın fiyatına değil.",
+    "sahneler": [
+      {
+        "metin": "Yazıcı ucuz, kartuşu neredeyse yazıcı kadar pahalı. Neden?",
+        "gorsel": "printer with a cartridge price tag almost as high as the printer price"
+      },
+      {
+        "metin": "Çünkü üreticiler yazıcıyı çoğu zaman düşük kârla satar, asıl parayı yıllarca aldığın mürekkepten kazanır.",
+        "gorsel": "stack of empty ink cartridges on an office desk"
+      },
+      {
+        "metin": "Bazı yazıcılar başka marka kartuşu tanımayabilir. Mililitre hesabıyla mürekkep, birçok pahalı parfümden daha pahalıya gelebilir.",
+        "gorsel": "small ink drop next to a perfume bottle with price comparison"
+      },
+      {
+        "metin": "Yazıcı alırken sayfa başı baskı maliyetine bak, sadece cihazın fiyatına değil.",
+        "gorsel": "person comparing printer specs on a laptop, notes on cost per page"
+      }
+    ],
+    "yorum": "Sen kartuşa en son ne kadar ödedin?",
+    "aciklama": "Yazıcı Mürekkebi Neden Bu Kadar Pahalı? sorusunun kısa cevabı: Yazıcı ucuz, kartuşu neredeyse yazıcı kadar pahalı. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "KARTUŞ UYARISI GELİNCE GERÇEKTEN BOŞ MU? 🔍",
+    "uzun_konu": "Yazıcı Mürekkebi Neden Bu Kadar Pahalı?",
+    "tema": "tuzak",
+    "kanca": "Boş mu dolu mu",
+    "script": "Yazıcı 'mürekkep bitti' dedi, kartuşu değiştirdin. Peki gerçekten boş muydu? Bazı testler, uyarı geldiğinde kartuşta hâlâ mürekkep kalabildiğini gösteriyor. Uyarı, baskı kafasını korumak için erken verilebilir. Sonuç: kartuşu daha sık değiştirir, daha fazla ödersin. Uyarı gelince hemen değiştirme, baskı kalitesi düşene kadar kullanmayı dene.",
+    "sahneler": [
+      {
+        "metin": "Yazıcı 'mürekkep bitti' dedi, kartuşu değiştirdin. Peki gerçekten boş muydu?",
+        "gorsel": "printer screen showing an empty ink warning, worried user"
+      },
+      {
+        "metin": "Bazı testler, uyarı geldiğinde kartuşta hâlâ mürekkep kalabildiğini gösteriyor. Uyarı, baskı kafasını korumak için erken verilebilir.",
+        "gorsel": "cut-open ink cartridge showing remaining ink inside"
+      },
+      {
+        "metin": "Sonuç: kartuşu daha sık değiştirir, daha fazla ödersin.",
+        "gorsel": "calendar with frequent cartridge replacement dates marked"
+      },
+      {
+        "metin": "Uyarı gelince hemen değiştirme, baskı kalitesi düşene kadar kullanmayı dene.",
+        "gorsel": "person printing a test page and checking the quality"
+      }
+    ],
+    "yorum": "Sen uyarı gelince hemen değiştiriyor musun?",
+    "aciklama": "Yazıcı Mürekkebi Neden Bu Kadar Pahalı? sorusunun kısa cevabı: Yazıcı 'mürekkep bitti' dedi, kartuşu değiştirdin. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "PEGASUS NASIL BU KADAR UCUZ BİLET SATIYOR? ✈️",
+    "uzun_konu": "Pegasus Nasıl Bu Kadar Ucuz Bilet Satıyor?",
+    "tema": "tuzak",
+    "kanca": "Ucuz bilet sırrı",
+    "script": "Pegasus'ta bazen otobüsten ucuz bilet nasıl olabiliyor? Düşük maliyetli havayolu modeli böyle çalışır: bilet sadece koltuktur. Bagaj, koltuk seçimi, yemek ayrı satılır. Uçaklar gün boyu daha çok sefer yapar, filo benzer modellerden oluşur, bakım ve eğitim maliyeti düşer. Bileti alırken ekstralarla toplam fiyatı karşılaştır, ilk görünen fiyatla değil.",
+    "sahneler": [
+      {
+        "metin": "Pegasus'ta bazen otobüsten ucuz bilet nasıl olabiliyor?",
+        "gorsel": "airplane taking off at sunrise, airport runway"
+      },
+      {
+        "metin": "Düşük maliyetli havayolu modeli böyle çalışır: bilet sadece koltuktur. Bagaj, koltuk seçimi, yemek ayrı satılır.",
+        "gorsel": "checkout screen of an airline booking with many extra options being added"
+      },
+      {
+        "metin": "Uçaklar gün boyu daha çok sefer yapar, filo benzer modellerden oluşur, bakım ve eğitim maliyeti düşer.",
+        "gorsel": "aircraft at a gate being turned around quickly, ground crew working"
+      },
+      {
+        "metin": "Bileti alırken ekstralarla toplam fiyatı karşılaştır, ilk görünen fiyatla değil.",
+        "gorsel": "person comparing total flight prices with extras on a laptop"
+      }
+    ],
+    "yorum": "Sen ucuz bilete ekstra ödeyip pahalıya geldiğini fark ettin mi?",
+    "aciklama": "Pegasus Nasıl Bu Kadar Ucuz Bilet Satıyor? sorusunun kısa cevabı: Pegasus'ta bazen otobüsten ucuz bilet nasıl olabiliyor? Düşük maliyetli havayolu modeli böyle çalışır: bilet sadece koltuktur. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "UÇAKTA YAN YANA OTURMAK NEDEN PARALI? 💺",
+    "uzun_konu": "Pegasus Nasıl Bu Kadar Ucuz Bilet Satıyor?",
+    "tema": "tuzak",
+    "kanca": "Yan yana oturmak",
+    "script": "Ailenle uçuyorsun ama yan yana oturmak için ekstra ödemen gerekiyor. Neden? Koltuk seçimi, düşük maliyetli havayollarının en önemli ek gelirlerinden biri. Bilet ucuz kalsın diye para başka yerden kazanılır. Ödemezsen sistem koltuğu kendisi atar. Ayrı oturma ihtimali seni ödemeye ikna eder. Kısa uçuşta yan yana oturmak şart mı, karar ver; sonra öde.",
+    "sahneler": [
+      {
+        "metin": "Ailenle uçuyorsun ama yan yana oturmak için ekstra ödemen gerekiyor. Neden?",
+        "gorsel": "family looking at seat map on a phone with seats in different rows"
+      },
+      {
+        "metin": "Koltuk seçimi, düşük maliyetli havayollarının en önemli ek gelirlerinden biri. Bilet ucuz kalsın diye para başka yerden kazanılır.",
+        "gorsel": "airline seat map with premium seats highlighted in color"
+      },
+      {
+        "metin": "Ödemezsen sistem koltuğu kendisi atar. Ayrı oturma ihtimali seni ödemeye ikna eder.",
+        "gorsel": "passengers sitting apart in an airplane cabin looking at each other"
+      },
+      {
+        "metin": "Kısa uçuşta yan yana oturmak şart mı, karar ver; sonra öde.",
+        "gorsel": "person calmly boarding a plane alone with headphones"
+      }
+    ],
+    "yorum": "Sen koltuk seçimine para veriyor musun?",
+    "aciklama": "Pegasus Nasıl Bu Kadar Ucuz Bilet Satıyor? sorusunun kısa cevabı: Ailenle uçuyorsun ama yan yana oturmak için ekstra ödemen gerekiyor. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "DUOLINGO SERİSİ NEDEN BIRAKTIRMIYOR? 🔥",
+    "uzun_konu": "Duolingo Seni Neden Suçlu Hissettiriyor?",
+    "tema": "tuzak",
+    "kanca": "Seriyi bozma",
+    "script": "Duolingo'da 200 günlük serin var. Bugün canın istemese bile neden giriyorsun? Çünkü kaybetmekten korkarız. Buna kayıptan kaçınma deniyor: bir şeyi kaybetmenin acısı, kazanmanın sevincinden büyüktür. Seri dondurucu gibi özellikler de serini korumak için uygulamada kalmanı sağlar. Seriye değil öğrendiğine odaklan: bugün gerçekten ne öğrendin?",
+    "sahneler": [
+      {
+        "metin": "Duolingo'da 200 günlük serin var. Bugün canın istemese bile neden giriyorsun?",
+        "gorsel": "phone screen with a long streak fire icon and a day counter"
+      },
+      {
+        "metin": "Çünkü kaybetmekten korkarız. Buna kayıptan kaçınma deniyor: bir şeyi kaybetmenin acısı, kazanmanın sevincinden büyüktür.",
+        "gorsel": "illustration of a scale where losing weighs heavier than winning"
+      },
+      {
+        "metin": "Seri dondurucu gibi özellikler de serini korumak için uygulamada kalmanı sağlar.",
+        "gorsel": "streak freeze icon on a phone screen, snowflake effect"
+      },
+      {
+        "metin": "Seriye değil öğrendiğine odaklan: bugün gerçekten ne öğrendin?",
+        "gorsel": "person studying a language with a notebook, phone face down"
+      }
+    ],
+    "yorum": "Senin en uzun serin kaç gün?",
+    "aciklama": "Duolingo Seni Neden Suçlu Hissettiriyor? sorusunun kısa cevabı: Duolingo'da 200 günlük serin var. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "DUOLINGO BİLDİRİMİ NEDEN TAM O SAATTE GELİR? 🦉",
+    "uzun_konu": "Duolingo Seni Neden Suçlu Hissettiriyor?",
+    "tema": "tuzak",
+    "kanca": "Baykuş seni izliyor",
+    "script": "Duolingo bildirimi neden hep tam ders yaptığın saatte gelir? Uygulama genellikle ders yaptığın saati öğrenir ve hatırlatmayı o saate göre gönderir. Esprili, biraz da suçluluk hissettiren mesajlar seni geri getirmek için tasarlanır. Bildirimleri kendi seçtiğin saate ayarla, kontrol sende olsun.",
+    "sahneler": [
+      {
+        "metin": "Duolingo bildirimi neden hep tam ders yaptığın saatte gelir?",
+        "gorsel": "phone notification from a green owl mascot on a lock screen in the evening"
+      },
+      {
+        "metin": "Uygulama genellikle ders yaptığın saati öğrenir ve hatırlatmayı o saate göre gönderir.",
+        "gorsel": "clock with a phone showing usage times as dots around it"
+      },
+      {
+        "metin": "Esprili, biraz da suçluluk hissettiren mesajlar seni geri getirmek için tasarlanır.",
+        "gorsel": "person smiling guiltily at a phone notification on a sofa"
+      },
+      {
+        "metin": "Bildirimleri kendi seçtiğin saate ayarla, kontrol sende olsun.",
+        "gorsel": "settings screen with notification time being changed"
+      }
+    ],
+    "yorum": "Baykuş seni hiç suçlu hissettirdi mi?",
+    "aciklama": "Duolingo Seni Neden Suçlu Hissettiriyor? sorusunun kısa cevabı: Duolingo bildirimi neden hep tam ders yaptığın saatte gelir? Uygulama genellikle ders yaptığın saati öğrenir ve hatırlatmayı o saate göre gönderir. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "NESPRESSO KAPSÜLLERİ NEDEN BAŞKA MAKİNEYE OLMAZ? ☕",
+    "uzun_konu": "Nespresso Kapsülü Neden Sadece Kendi Makinesine Uyuyor?",
+    "tema": "tuzak",
+    "kanca": "Kapsül kilidi",
+    "script": "Kahve makinesi uygun fiyatlı, kapsüller ise sürekli para istiyor. Tanıdık geldi mi? Nespresso yıllarca kapsül sistemini patentlerle korudu. Patentler bitince uyumlu kapsüller piyasaya çıktı. Bu, jilet ve bıçak modelinin kahve versiyonu: makine bir kere, kapsül her gün. Uyumlu kapsülleri de dene, fiyat farkını kendin gör.",
+    "sahneler": [
+      {
+        "metin": "Kahve makinesi uygun fiyatlı, kapsüller ise sürekli para istiyor. Tanıdık geldi mi?",
+        "gorsel": "capsule coffee machine on a kitchen counter with colorful capsules"
+      },
+      {
+        "metin": "Nespresso yıllarca kapsül sistemini patentlerle korudu. Patentler bitince uyumlu kapsüller piyasaya çıktı.",
+        "gorsel": "close-up of capsules of different brands next to each other"
+      },
+      {
+        "metin": "Bu, jilet ve bıçak modelinin kahve versiyonu: makine bir kere, kapsül her gün.",
+        "gorsel": "calendar with a capsule for each day, coins next to it"
+      },
+      {
+        "metin": "Uyumlu kapsülleri de dene, fiyat farkını kendin gör.",
+        "gorsel": "person tasting coffee from two cups and comparing"
+      }
+    ],
+    "yorum": "Sen orijinal mi uyumlu kapsül mü kullanıyorsun?",
+    "aciklama": "Nespresso Kapsülü Neden Sadece Kendi Makinesine Uyuyor? sorusunun kısa cevabı: Kahve makinesi uygun fiyatlı, kapsüller ise sürekli para istiyor. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "KAPSÜL KAHVENİN KİLO FİYATI NE? ⚖️",
+    "uzun_konu": "Nespresso Kapsülü Neden Sadece Kendi Makinesine Uyuyor?",
+    "tema": "tuzak",
+    "kanca": "Kilo hesabı",
+    "script": "Bir kapsül sadece birkaç gram kahve içerir. Peki kilo fiyatı ne kadar? Kilo hesabıyla kapsül kahve, aynı kalitede çekirdek kahveden kat kat pahalıya gelebilir. Küçük paket algıyı değiştirir; tek kapsülün fiyatı küçük görünür, toplamı görmezsin. Bir ay boyunca kapsüle ne kadar ödediğini hesapla.",
+    "sahneler": [
+      {
+        "metin": "Bir kapsül sadece birkaç gram kahve içerir. Peki kilo fiyatı ne kadar?",
+        "gorsel": "single coffee capsule on a kitchen scale showing a few grams"
+      },
+      {
+        "metin": "Kilo hesabıyla kapsül kahve, aynı kalitede çekirdek kahveden kat kat pahalıya gelebilir.",
+        "gorsel": "bag of coffee beans next to a big pile of capsules with price labels"
+      },
+      {
+        "metin": "Küçük paket algıyı değiştirir; tek kapsülün fiyatı küçük görünür, toplamı görmezsin.",
+        "gorsel": "many small capsules adding up into a large stack of coins"
+      },
+      {
+        "metin": "Bir ay boyunca kapsüle ne kadar ödediğini hesapla.",
+        "gorsel": "person writing monthly coffee spending on a notepad"
+      }
+    ],
+    "yorum": "Ayda kaç kapsül tüketiyorsun?",
+    "aciklama": "Nespresso Kapsülü Neden Sadece Kendi Makinesine Uyuyor? sorusunun kısa cevabı: Bir kapsül sadece birkaç gram kahve içerir. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "STARBUCKS KAHVESİ NEDEN BU KADAR PAHALI? 💸",
+    "uzun_konu": "Starbucks Kahvesi Neden Bu Kadar Pahalı?",
+    "tema": "tuzak",
+    "kanca": "Kahve değil mekân",
+    "script": "Starbucks'ta bir latte, evde yapacağının kat kat fiyatı. Peki parayı neye veriyorsun? Starbucks kendini 'üçüncü mekân' olarak konumlandırdı: ev ve iş dışında vakit geçirdiğin yer. Fiyatın içinde koltuk, internet ve ortam da var. Bardağa yazılan isim gibi küçük dokunuşlar da kahveyi kişisel hissettirir. Sadece kahve için gidiyorsan, evde ya da termosla dene.",
+    "sahneler": [
+      {
+        "metin": "Starbucks'ta bir latte, evde yapacağının kat kat fiyatı. Peki parayı neye veriyorsun?",
+        "gorsel": "latte cup with a name written on it on a cafe table"
+      },
+      {
+        "metin": "Starbucks kendini 'üçüncü mekân' olarak konumlandırdı: ev ve iş dışında vakit geçirdiğin yer. Fiyatın içinde koltuk, internet ve ortam da var.",
+        "gorsel": "cozy cafe interior with people working on laptops and chatting"
+      },
+      {
+        "metin": "Bardağa yazılan isim gibi küçük dokunuşlar da kahveyi kişisel hissettirir.",
+        "gorsel": "barista writing a name on a cup with a marker"
+      },
+      {
+        "metin": "Sadece kahve için gidiyorsan, evde ya da termosla dene.",
+        "gorsel": "person pouring coffee from a thermos on a park bench"
+      }
+    ],
+    "yorum": "Haftada kaç kez kahve dışarıdan alıyorsun?",
+    "aciklama": "Starbucks Kahvesi Neden Bu Kadar Pahalı? sorusunun kısa cevabı: Starbucks'ta bir latte, evde yapacağının kat kat fiyatı. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "TALL, GRANDE, VENTİ: KÜÇÜK BOY NEDEN YOK? 🥤",
+    "uzun_konu": "Starbucks Kahvesi Neden Bu Kadar Pahalı?",
+    "tema": "tuzak",
+    "kanca": "Boy isimleri",
+    "script": "Starbucks'ta en küçük boyun adı 'Tall', yani uzun. Neden? Alışılmadık isimler fiyat karşılaştırmasını zorlaştırır. Küçük yazmadığı için küçük almak da daha az cazip gelir. Çoğu kişi ortadaki boyu seçer. Buna orta seçenek etkisi deniyor ve ortadaki boy genelde en kârlısıdır. Sipariş verirken boyları mililitreyle düşün, isimle değil.",
+    "sahneler": [
+      {
+        "metin": "Starbucks'ta en küçük boyun adı 'Tall', yani uzun. Neden?",
+        "gorsel": "three coffee cups of different sizes labeled tall grande venti on a counter"
+      },
+      {
+        "metin": "Alışılmadık isimler fiyat karşılaştırmasını zorlaştırır. Küçük yazmadığı için küçük almak da daha az cazip gelir.",
+        "gorsel": "customer squinting at a menu board with confusing size names"
+      },
+      {
+        "metin": "Çoğu kişi ortadaki boyu seçer. Buna orta seçenek etkisi deniyor ve ortadaki boy genelde en kârlısıdır.",
+        "gorsel": "hand choosing the middle cup among three sizes"
+      },
+      {
+        "metin": "Sipariş verirken boyları mililitreyle düşün, isimle değil.",
+        "gorsel": "measuring cups with milliliter markings next to coffee cups"
+      }
+    ],
+    "yorum": "Sen hangi boyu alıyorsun?",
+    "aciklama": "Starbucks Kahvesi Neden Bu Kadar Pahalı? sorusunun kısa cevabı: Starbucks'ta en küçük boyun adı 'Tall', yani uzun. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "LEGO NEDEN BU KADAR PAHALI? 🧱",
+    "uzun_konu": "LEGO Neden Bu Kadar Pahalı?",
+    "tema": "tuzak",
+    "kanca": "Plastik değil hassasiyet",
+    "script": "Bir LEGO seti neden bu kadar pahalı? Sonuçta plastik değil mi? LEGO parçaları çok hassas kalıplarla üretilir; yıllar önceki bir parça bugünküyle hâlâ uyumludur. Film ve oyun lisanslı setlerde ayrıca lisans ücreti ödenir, bu da fiyatı artırır. Lisanssız klasik setlerle başla, parça başına fiyatı karşılaştır.",
+    "sahneler": [
+      {
+        "metin": "Bir LEGO seti neden bu kadar pahalı? Sonuçta plastik değil mi?",
+        "gorsel": "large LEGO style brick set box on a shelf with a high price tag"
+      },
+      {
+        "metin": "LEGO parçaları çok hassas kalıplarla üretilir; yıllar önceki bir parça bugünküyle hâlâ uyumludur.",
+        "gorsel": "macro shot of plastic bricks clicking together, precise edges"
+      },
+      {
+        "metin": "Film ve oyun lisanslı setlerde ayrıca lisans ücreti ödenir, bu da fiyatı artırır.",
+        "gorsel": "toy store aisle with licensed themed brick sets"
+      },
+      {
+        "metin": "Lisanssız klasik setlerle başla, parça başına fiyatı karşılaştır.",
+        "gorsel": "child building with a simple box of colorful bricks on the floor"
+      }
+    ],
+    "yorum": "Sen en son hangi seti aldın?",
+    "aciklama": "LEGO Neden Bu Kadar Pahalı? sorusunun kısa cevabı: Bir LEGO seti neden bu kadar pahalı? Sonuçta plastik değil mi? LEGO parçaları çok hassas kalıplarla üretilir; yıllar önceki bir parça bugünküyle hâlâ uyumludur. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "LEGO SETLERİ NEDEN 'EMEKLİYE' AYRILIR? 📦",
+    "uzun_konu": "LEGO Neden Bu Kadar Pahalı?",
+    "tema": "tuzak",
+    "kanca": "Sınırlı ömür",
+    "script": "LEGO setlerinin çoğu birkaç yıl satılıp üretimden kalkıyor. Buna setin emekliye ayrılması deniyor. Üretimi biten setler ikinci elde zamanla değer kazanabiliyor. Bu da 'şimdi almazsam kaçarım' hissi yaratıyor. Kıtlık hissi, oyuncak almayı bir yatırım gibi gösterebilir. Çocuğun için alıyorsan, oynayacağı seti seç; emekliye ayrılacak diye değil.",
+    "sahneler": [
+      {
+        "metin": "LEGO setlerinin çoğu birkaç yıl satılıp üretimden kalkıyor. Buna setin emekliye ayrılması deniyor.",
+        "gorsel": "toy store shelf with a 'last chance' sign next to a building set"
+      },
+      {
+        "metin": "Üretimi biten setler ikinci elde zamanla değer kazanabiliyor. Bu da 'şimdi almazsam kaçarım' hissi yaratıyor.",
+        "gorsel": "collector shelves full of sealed vintage brick set boxes"
+      },
+      {
+        "metin": "Kıtlık hissi, oyuncak almayı bir yatırım gibi gösterebilir.",
+        "gorsel": "person looking at an online auction listing for a sealed toy set"
+      },
+      {
+        "metin": "Çocuğun için alıyorsan, oynayacağı seti seç; emekliye ayrılacak diye değil.",
+        "gorsel": "child happily playing with a simple building set"
+      }
+    ],
+    "yorum": "Sende kutusu açılmamış set var mı?",
+    "aciklama": "LEGO Neden Bu Kadar Pahalı? sorusunun kısa cevabı: LEGO setlerinin çoğu birkaç yıl satılıp üretimden kalkıyor. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "SPOTIFY BEDAVA SÜRÜMÜ NEDEN HÂLÂ VAR? 🎧",
+    "uzun_konu": "Spotify Bedava Sürümü Neden Hâlâ Var?",
+    "tema": "tuzak",
+    "kanca": "Bedava neden var",
+    "script": "Spotify bedava sürümle neden para kaybetmiyor? Bedava sürüm reklamla gelir sağlar ama asıl görevi seni ücretli üyeliğe taşımak. Reklamlar, şarkı atlama sınırı ve çevrimdışı dinleyememe gibi kısıtlar, premium'u daha cazip hale getirir. Ödeme yapmadan önce gerçekten ne kadar müzik dinlediğine bak.",
+    "sahneler": [
+      {
+        "metin": "Spotify bedava sürümle neden para kaybetmiyor?",
+        "gorsel": "person with headphones listening to music on a phone in a city street"
+      },
+      {
+        "metin": "Bedava sürüm reklamla gelir sağlar ama asıl görevi seni ücretli üyeliğe taşımak.",
+        "gorsel": "funnel illustration with many users at the top and fewer paid users at the bottom"
+      },
+      {
+        "metin": "Reklamlar, şarkı atlama sınırı ve çevrimdışı dinleyememe gibi kısıtlar, premium'u daha cazip hale getirir.",
+        "gorsel": "phone screen showing an ad interrupting music, frustrated listener"
+      },
+      {
+        "metin": "Ödeme yapmadan önce gerçekten ne kadar müzik dinlediğine bak.",
+        "gorsel": "person checking screen time stats for a music app"
+      }
+    ],
+    "yorum": "Sen bedava mı premium mu kullanıyorsun?",
+    "aciklama": "Spotify Bedava Sürümü Neden Hâlâ Var? sorusunun kısa cevabı: Spotify bedava sürümle neden para kaybetmiyor? Bedava sürüm reklamla gelir sağlar ama asıl görevi seni ücretli üyeliğe taşımak. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "SPOTIFY DENEMESİ BİTİNCE NE OLUR? 📆",
+    "uzun_konu": "Spotify Bedava Sürümü Neden Hâlâ Var?",
+    "tema": "tuzak",
+    "kanca": "Deneme tuzağı",
+    "script": "Spotify, Netflix ya da başka bir uygulamada ücretsiz deneme başlattın, sonra unuttun ve kartından para çekildi. Deneme süresi bilerek uzun tutulur; o sürede alışkanlık oluşur ve iptal etmeyi unutursun. Otomatik yenileme varsayılan olduğu için hiçbir şey yapmamak, ödemek demektir. Denemeyi başlatır başlatmaz takvime bitiş tarihini yaz.",
+    "sahneler": [
+      {
+        "metin": "Spotify, Netflix ya da başka bir uygulamada ücretsiz deneme başlattın, sonra unuttun ve kartından para çekildi.",
+        "gorsel": "bank app notification showing a subscription charge, surprised person"
+      },
+      {
+        "metin": "Deneme süresi bilerek uzun tutulur; o sürede alışkanlık oluşur ve iptal etmeyi unutursun.",
+        "gorsel": "calendar with a trial period highlighted and a forgotten end date"
+      },
+      {
+        "metin": "Otomatik yenileme varsayılan olduğu için hiçbir şey yapmamak, ödemek demektir.",
+        "gorsel": "toggle switch for auto renew turned on by default"
+      },
+      {
+        "metin": "Denemeyi başlatır başlatmaz takvime bitiş tarihini yaz.",
+        "gorsel": "phone calendar reminder set for trial end date"
+      }
+    ],
+    "yorum": "Deneme yüzünden para ödediğin oldu mu?",
+    "aciklama": "Spotify Bedava Sürümü Neden Hâlâ Var? sorusunun kısa cevabı: Spotify, Netflix ya da başka bir uygulamada ücretsiz deneme başlattın, sonra unuttun ve kartından para çekildi. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "TAAHHÜT BİTİNCE FATURAN NEDEN BİRDEN ARTAR? 📈",
+    "uzun_konu": "Taahhüt Bitince Faturan Neden Birden Artıyor?",
+    "tema": "tuzak",
+    "kanca": "Taahhüt sonu",
+    "script": "Taahhüdün bitti, ertesi ay faturan neredeyse iki katı geldi. Neden? Çünkü taahhütteki indirim bitince tarife liste fiyatına döner. Operatörler bunu çoğu zaman sessizce yapar. Hiçbir şey yapmayan müşteri en çok ödeyen müşteridir; arayıp pazarlık edenlere ise genelde yeni teklif sunulur. Taahhüt bitiş tarihini takvime yaz ve bitmeden önce operatörünü ara.",
+    "sahneler": [
+      {
+        "metin": "Taahhüdün bitti, ertesi ay faturan neredeyse iki katı geldi. Neden?",
+        "gorsel": "person shocked looking at a phone bill with a large amount"
+      },
+      {
+        "metin": "Çünkü taahhütteki indirim bitince tarife liste fiyatına döner. Operatörler bunu çoğu zaman sessizce yapar.",
+        "gorsel": "chart of a monthly bill jumping up after a contract end date"
+      },
+      {
+        "metin": "Hiçbir şey yapmayan müşteri en çok ödeyen müşteridir; arayıp pazarlık edenlere ise genelde yeni teklif sunulur.",
+        "gorsel": "customer service call center, a person on the phone negotiating"
+      },
+      {
+        "metin": "Taahhüt bitiş tarihini takvime yaz ve bitmeden önce operatörünü ara.",
+        "gorsel": "calendar reminder with a phone icon two weeks before contract end"
+      }
+    ],
+    "yorum": "Sen taahhüt bitince ne yapıyorsun?",
+    "aciklama": "Taahhüt Bitince Faturan Neden Birden Artıyor? sorusunun kısa cevabı: Taahhüdün bitti, ertesi ay faturan neredeyse iki katı geldi. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
+  },
+  {
+    "baslik": "OPERATÖRÜ ARAYINCA FİYAT NEDEN DÜŞER? ☎️",
+    "uzun_konu": "Taahhüt Bitince Faturan Neden Birden Artıyor?",
+    "tema": "tuzak",
+    "kanca": "Ayrılacağım de",
+    "script": "Operatörü arayıp ayrılmak istediğini söyleyince neden birden daha ucuz paket çıkar? Çünkü yeni müşteri kazanmak, mevcut müşteriyi tutmaktan çok daha pahalıdır. Bu yüzden çoğu operatörün müşteriyi elde tutmaya ayrılmış teklifleri vardır. Bu teklifler genelde sen sormadan gelmez. Arayınca kibarca rakip teklifleri söyle, karşılaştır, sonra karar ver.",
+    "sahneler": [
+      {
+        "metin": "Operatörü arayıp ayrılmak istediğini söyleyince neden birden daha ucuz paket çıkar?",
+        "gorsel": "person on the phone with a surprised happy face, bill on the table"
+      },
+      {
+        "metin": "Çünkü yeni müşteri kazanmak, mevcut müşteriyi tutmaktan çok daha pahalıdır. Bu yüzden çoğu operatörün müşteriyi elde tutmaya ayrılmış teklifleri vardır.",
+        "gorsel": "chart comparing cost of acquiring vs retaining a customer"
+      },
+      {
+        "metin": "Bu teklifler genelde sen sormadan gelmez.",
+        "gorsel": "closed door with a hidden offer behind it, metaphor illustration"
+      },
+      {
+        "metin": "Arayınca kibarca rakip teklifleri söyle, karşılaştır, sonra karar ver.",
+        "gorsel": "person comparing mobile plans on a laptop with notes"
+      }
+    ],
+    "yorum": "Sen hiç arayıp indirim aldın mı?",
+    "aciklama": "Taahhüt Bitince Faturan Neden Birden Artıyor? sorusunun kısa cevabı: Operatörü arayıp ayrılmak istediğini söyleyince neden birden daha ucuz paket çıkar? Çünkü yeni müşteri kazanmak, mevcut müşteriyi tutmaktan çok daha pahalıdır. Bu Shorts iş modelini tarafsız biçimde anlatır ve sana pratik bir öneri bırakır.",
+    "etiketler": [
+      "tuzak",
+      "tüketici",
+      "tüketici hakları",
+      "tasarruf",
+      "para"
+    ],
+    "uretim": "v2",
+    "seri": "marka"
   }
 ]

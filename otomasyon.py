@@ -120,6 +120,24 @@ def _sonraki_yayin_zamani(cfg):
     return min(adaylar).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def _hedef_slot(cfg, yayin_zamani):
+    """Bu koşunun dolduracağı slotun 'HH:MM' (UTC) değeri. Planlı yayında
+    yayin_zamani'ndan; slot kaçmışsa (yayin_zamani yok) son 4 saatteki slottan."""
+    if yayin_zamani:
+        return yayin_zamani[11:16]
+    from datetime import datetime, timezone, timedelta
+    now = datetime.now(timezone.utc)
+    for saat in (cfg.get("yayin_saatleri_utc") or []):
+        try:
+            hh, mm = map(int, str(saat).split(":"))
+        except Exception:
+            continue
+        h = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
+        if timedelta(0) <= now - h <= timedelta(hours=4):
+            return f"{hh:02d}:{mm:02d}"
+    return None
+
+
 def main():
     with open("config.json", encoding="utf-8-sig") as f:
         cfg = json.load(f)
@@ -235,6 +253,23 @@ def main():
         _durum_yaz(durum)
         return
 
+    # SLOT AYRIMI: marka serisi (Temu, Getir, A101...) yalnız marka slotunda
+    # (varsayılan 12:00 TR = 09:00 UTC); diğer slotlar klasik tuzak konuları.
+    # Marka serisi biterse marka slotu klasik havuzdan devam eder.
+    _marka_slot = str(cfg.get("marka_slot_utc", "09:00") or "")
+    _slot = _hedef_slot(cfg, _sonraki_yayin_zamani(cfg))
+    _marka_modu = False
+    if _marka_slot:
+        _marka = [t for t in tema_havuz if t[1].get("seri") == "marka"]
+        _klasik = [t for t in tema_havuz if t[1].get("seri") != "marka"]
+        _marka_modu = _slot == _marka_slot and bool(_marka)
+        if _marka_modu:
+            tema_havuz = _marka
+            print(f"      Slot {_slot} UTC: marka serisi (kalan: {len(_marka)})")
+        elif _klasik:
+            tema_havuz = _klasik
+            print(f"      Slot {_slot or '?'} UTC: klasik tuzak (kalan: {len(_klasik)})")
+
     def _kohort(s):
         return s.get("uretim") or "v1"
 
@@ -257,6 +292,8 @@ def main():
     havuz = [t for t in tema_havuz if _kategori(t[1]["baslik"]) != son_kat] or tema_havuz
     havuz.sort(key=lambda t: (0 if _okyanus_mu(t[1]["baslik"]) else 1,
                               -_oncelik_skoru(t[1]["baslik"]), t[0]))
+    if _marka_modu:   # marka serisi uzun video konu sırasıyla (A101, Temu, Amazon...)
+        havuz = sorted(tema_havuz, key=lambda t: t[0])
     idx = havuz[0][0]
     force_yolu = "force_next.json"
     if os.path.exists(force_yolu):

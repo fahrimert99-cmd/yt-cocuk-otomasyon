@@ -1,0 +1,40 @@
+name: Rakip Kanal Inceleme (salt okunur)
+
+# Bir rakip kanalı YouTube Data API ile okur; kanala/repoya hiçbir şey yazmaz.
+# Sonuç job log'unda ve "rakip-kanal" artifact'ında.
+on:
+  workflow_dispatch:
+    inputs:
+      rakip:
+        description: "Kanal handle (virgülle alternatifler)"
+        default: "@benonurulger,@benonurülger"
+  push:
+    branches: [claude/adoring-sagan-ni2qvl]
+    paths: [rakip_kanal.py, .github/workflows/rakip_kanal.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  rakip:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Rakip kanal oku
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          RAKIP: ${{ github.event.inputs.rakip || '@benonurulger,@benonurülger' }}
+        run: python3 rakip_kanal.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rakip-kanal
+          path: rakip_kanal.json
+          if-no-files-found: ignore
