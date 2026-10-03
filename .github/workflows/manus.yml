@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60      # Manus gorevleri uzun surebilir (arastirma + rapor)
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Python kur
         uses: actions/setup-python@v6
         with:
